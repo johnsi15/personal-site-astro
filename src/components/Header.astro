@@ -1,10 +1,11 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import Hamburger from './Hamburger.jsx';
+// import { SITE_TITLE } from '../consts';
 ---
 
-<header>
-	<h2>
+<header id='Header'>
+	<!-- <h2>
 		{SITE_TITLE}
 	</h2>
 	<nav>
@@ -13,13 +14,121 @@ import { SITE_TITLE } from '../consts';
 		<HeaderLink href="/about">About</HeaderLink>
 		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
 		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
-	</nav>
+	</nav> -->
+	<!-- 
+		https://benborgers.com/posts/astro-react
+		https://docs.astro.build/en/core-concepts/framework-components/
+	-->
+	<div class='header__menu container'>
+		<Hamburger client:load />
+		<nav>
+			<ul class='menu'>
+				<li>
+					<HeaderLink href="/">Inicio</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href="/sobre-mi">Sobre mi</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href="/blog">Blog</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href="/tags/react">React</HeaderLink>
+				</li>
+				<li>
+					<HeaderLink href="/portafolio">Portafolio</HeaderLink>
+				</li>
+			</ul>
+		</nav>
+		<!-- <Search /> -->
+	</div>
 </header>
 <style>
-	header {
-		margin: 0em 0 2em;
+	#Header {
+		height: 45px;
+		background: #1c1c1c;
+		border-bottom: 5px solid #ffffff;
 	}
-	h2 {
-		margin: 0.5em 0;
+
+	.header__menu {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+
+	nav {
+		display: flex;
+		align-items: center;
+	}
+
+	.menu {
+		list-style: none;
+		margin: 0 auto;
+		padding: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		height: 45px;
+		width: calc((80px * 5));
+	}
+
+	.menu a {
+		text-decoration: none;
+		color: #ffffff;
+		text-transform: uppercase;
+		font-size: 1.2rem;
+		font-weight: 400;
+		line-height: 1.6rem;
+		transition: .2s;
+	}
+
+	.menu a:hover {
+		color: #0078ae;
+	}
+
+	@media screen and (max-width: 768px) {
+		#Header {
+			/* position: ${active ? 'fixed' : 'relative'}; */
+			top: 0;
+			width: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			z-index: 19;
+		}
+		nav {
+			/* display: ${active ? 'block' : 'none'}; */
+			transition: .2s;
+			position: fixed;
+			left: 0;
+			top: 50px;
+			background: #1c1c1c;
+			padding: 0;
+			height: 100vh;
+			width: 100vw;
+			z-index: 20;
+		}
+		.menu {
+			flex-direction: column;
+			margin: 0;
+			height: 100vh;
+			justify-content: center;
+			width: 100%;
+		}
+
+		.menu li {
+			margin: 0;
+			padding: 15px 0;
+			margin: 0;
+			width: 100%;
+		}
+		.menu li:last-child {
+			margin-bottom: 100px;
+		}
+		.menu a {
+			display: block;
+			text-align: center;
+			width: 100%;
+		}
 	}
 </style>

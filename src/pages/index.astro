@@ -58,3 +58,85 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.main {
+		margin: 70px auto 0 auto;
+		max-width: 700px;
+	}
+
+	.cripto {
+		font-size: 1rem;
+	}
+
+	.apoyar {
+		max-width: 700px;
+		margin: 0 auto 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.apoyar p {            
+		text-align: center; 
+		border: none;
+	}
+
+	.pauta {
+		margin: 20px 0;
+	}
+
+	.citaBible {
+		font-style: italic;
+	}
+
+	h2 {
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 70px 0 0;
+	}
+
+	p {
+		font-size: 1.25rem;
+		line-height: 2rem;
+		font-weight: 400;
+		margin: 20px 0 0;
+		border-bottom: 2px solid #eeeeee;
+		padding-bottom: 35px;
+	}
+
+	p strong {
+		font-weight: 700;
+	}
+
+	p > a {
+		position: relative;
+		font-weight: 700;
+		color: #0078ae;
+		text-decoration: none;
+	}
+
+	p > a:hover {
+		color: #1c1c1c;
+	}
+
+	p > a:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: #0078ae;
+		visibility: visible;
+		transform: scaleX(1);
+		transition: all 0.3s ease-in-out 0s;
+	}
+
+	p > a:hover:before {
+		visibility: hidden;
+		transform: scaleX(0);
+	}
+	.contact {
+		margin-bottom: 70px;
+	}
+</style>
