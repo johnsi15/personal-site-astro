@@ -1,12 +1,14 @@
 ---
 import HeaderLink from './HeaderLink.astro'
 import Hamburger from './Hamburger'
+import Search from './Search'
 ---
+<!-- https://github.com/withastro/astro/issues/5493 -->
 
 <header class='Header'>
   <div class='header__menu container'>
     <Hamburger  client:load/>
-    <nav>
+    <nav class="nav">
       <ul class='menu'>
         <li>
           <HeaderLink href='/'>Inicio</HeaderLink>
@@ -25,7 +27,7 @@ import Hamburger from './Hamburger'
         </li>
       </ul>
     </nav>
-    {/* <Search /> */}
+    <Search client:load/> 
   </div>
 </header>
 
@@ -33,14 +35,17 @@ import Hamburger from './Hamburger'
  const hamburger = document.querySelector('#Hamburger')
  if (hamburger) {
     const header = document.querySelector('.Header')
+    const nav = document.querySelector('.Header nav')
    hamburger.addEventListener('click', (e) => {
-      console.log(e?.target)
+      // console.log(e?.target)
       if (header && !header.classList.contains('active_header')) {
-
         header?.classList.add('active_header')
+        nav?.classList.add('active_nav')
+        document.body.style.overflowY = 'hidden'
       } else {
         header?.classList.remove('active_header')
-
+        nav?.classList.remove('active_nav') 
+        document.body.style.overflowY = 'scroll'
       }
    })
  }
@@ -48,9 +53,9 @@ import Hamburger from './Hamburger'
 
 <style>
   .Header {
-    height: 45px;
+    height: 50px;
     background: #1c1c1c;
-    border-bottom: 5px solid #ffffff;
+    /* border-bottom: 2px solid #ffffff;  */
   }
 
   .header__menu {
@@ -91,8 +96,8 @@ import Hamburger from './Hamburger'
 
   @media screen and (max-width: 768px) {
     .Header {
-      position: relative;
-      top: 0;
+      position: fixed;
+      top: 0; 
       width: 100%;
       display: flex;
       align-items: center;
@@ -103,8 +108,7 @@ import Hamburger from './Hamburger'
       position: fixed;
     }
     .nav {
-      /* display: ${active ? 'block' : 'none'}; */
-      display: block;
+      display: none;
       transition: .2s;
       position: fixed;
       left: 0;
@@ -114,6 +118,9 @@ import Hamburger from './Hamburger'
       height: 100vh;
       width: 100vw;
       z-index: 20;
+    }
+    .active_nav {
+      display: block;
     }
     .menu {
       flex-direction: column;
