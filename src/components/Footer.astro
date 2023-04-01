@@ -2,12 +2,67 @@
 const today = new Date();
 ---
 
-<footer>
-	&copy; {today.getFullYear()} YOUR NAME HERE. All rights reserved.
+<footer id='Footer'>
+	<div class='text'>
+		<div class='copyright'>
+			<span>© 2015 - {today.getFullYear()}</span>
+			{' '}
+			por johnserrano.co
+		</div>
+			<a href='/legal' class='legal' rel='nofollow'>Aviso legal y política de privacidad</a>
+		<div class='services'>
+			<a class='alojado' href='https://m.do.co/c/66d901bee48b' rel='noreferrer' target='_blank'>Alojado en Digital Ocean 💧</a>
+			y <a class='alojado' href='https://vercel.com/' rel='noreferrer' target='_blank'>Vercel ❤️</a>
+		</div>
+		<p>All rights reserved</p>
+	</div>
 </footer>
+
 <style>
-	footer {
-		padding: 25px;
-		text-align: center;
+	#Footer {
+		height: 200px;
+		background: #1c1c1c;
+		color: #ffffff;
+		display: flex;
+		align-items: center;
 	}
+
+	.services {
+		display: flex;
+		max-width: 260px;
+		justify-content: space-between;
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	.text {          
+		margin: 0 auto;
+		font-weight: 400;
+		text-align: center;
+		width: 330px;
+	}
+
+	.copyright {
+		margin-bottom: 10px;
+	}
+
+	p { margin: 0 0 10px; }
+
+	.copyright a {
+		text-decoration: none;
+		color: #eaeaea;
+		transition: .2s;
+	}
+
+	.legal, .alojado {
+		text-decoration: none;
+		color: #eaeaea;
+		display: block;
+		margin-bottom: 10px;
+		transition: .2s;
+	}
+
+	.text a:hover { color: #ffffff; }
+
+	.text a:last-child { margin: 0 }
 </style>

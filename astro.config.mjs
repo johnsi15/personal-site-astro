@@ -7,6 +7,9 @@ import react from '@astrojs/react'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  markdown: {
+    drafts: true,
+  },
+  site: 'https://johnserrano.co',
   integrations: [mdx(), sitemap(), react()],
 })
