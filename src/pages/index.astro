@@ -1,65 +1,55 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
 import PostCard from '../components/PostCard.astro'
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Layout from '../layouts/index.astro'
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main id='Home' class='container'>
-			<div class='main'>
-				<h2>¿Quién soy?</h2>
-				<p>Tecnólogo en análisis y desarrollo de sistemas de la información graduado en el SENA(Colombia) y <strong>Desarrollador Web Full-Stack</strong>. Entusiasta de las tecnologías web: JavaScript, Node.js, Docker, Firebase, React, etc.. Comparto mis conocimientos a través de mi
-					<a href='/blog'>blog</a>. Puedes leer más <a href='/sobre-mi'>sobre mi</a>.</p>
+<Layout>
+	<main id='Home' class='container'>
+		<div class='main'>
+			<h2>¿Quién soy?</h2>
+			<p>Tecnólogo en análisis y desarrollo de sistemas de la información graduado en el SENA(Colombia) y <strong>Desarrollador Web Full-Stack</strong>. Entusiasta de las tecnologías web: JavaScript, Node.js, Docker, Firebase, React, etc.. Comparto mis conocimientos a través de mi
+				<a href='/blog'>blog</a>. Puedes leer más <a href='/sobre-mi'>sobre mi</a>.</p>
 
-				<h2>De qué hablo en mi blog</h2>
-				<p>
-					<a href='/tags/desarrollo-web'>
-						Desarrollo web
-					</a>, Tutoriales, artículos sobre tecnologías: JavaScript, Node.js, Docker, React, python, etc.
-				</p>
+			<h2>De qué hablo en mi blog</h2>
+			<p>
+				<a href='/tags/desarrollo-web'>
+					Desarrollo web
+				</a>, Tutoriales, artículos sobre tecnologías: JavaScript, Node.js, Docker, React, python, etc.
+			</p>
 
-				<!-- <Pauta /> -->
+			<!-- <Pauta /> -->
 
-				<h2>📒 Ebooks publicados</h2>
-				<p>
-					<a href='https://pay.hotmart.com/O67718482D' target='_blank' rel='noreferrer'> Fundamentos de programación con JavaScript</a>
-				</p>
+			<h2>📒 Ebooks publicados</h2>
+			<p>
+				<a href='https://pay.hotmart.com/O67718482D' target='_blank' rel='noreferrer'> Fundamentos de programación con JavaScript</a>
+			</p>
 
-				<h2>Últimos artículos publicados</h2>
-				<!-- {posts.length > 0 && <Posts posts={posts} columns='2' />} -->
-				<PostCard columns={2} />
+			<h2>Últimos artículos publicados</h2>
+			<!-- {posts.length > 0 && <Posts posts={posts} columns='2' />} -->
+			<PostCard columns={2} />
 
-				<h2>Contacto</h2>
-				<p class='contact'>Puedes ponerte en contacto conmigo públicamente por las redes sociales Mencíoname en Twitter <a href='https://twitter.com/Jandrey15' rel='noreferrer' target='_blank'>(soy @jandrey15)</a>.</p>
-			</div>
+			<h2>Contacto</h2>
+			<p class='contact'>Puedes ponerte en contacto conmigo públicamente por las redes sociales Mencíoname en Twitter <a href='https://twitter.com/Jandrey15' rel='noreferrer' target='_blank'>(soy @jandrey15)</a>.</p>
+		</div>
 
-			<div class='apoyar'>
-				<p>Si te gusta lo que lees puedes apoyarme haciendo una donación con PayPal, de antemano gracias por tu apoyo.</p>
-				<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
-					<input type='hidden' name='cmd' value='_s-xclick' />
-					<input type='hidden' name='hosted_button_id' value='SJZPTCRX7TYGA' />
-					<input id='button_paypal' type='image' src='https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png' name='submit' title='PayPal - The safer, easier way to pay online!' alt='Donate with PayPal button' />
-				</form>
-				<p class='cripto'>Puedes donar criptomonedas con: <br />
-					<strong>TRX Tron red TRC20:</strong> <br />
-					TDDmbLNFcjYsddsdiUAgxDDTaR5EarDbKo <br />
-					<strong>BTC Bitcoin red BTC:</strong>  <br />
-					1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q
-				</p>
-				<q class='citaBible'>Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q>
-			</div>
-		</main>
-		<Footer />
-	</body>
-</html>
+		<div class='apoyar'>
+			<p>Si te gusta lo que lees puedes apoyarme haciendo una donación con PayPal, de antemano gracias por tu apoyo.</p>
+			<form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
+				<input type='hidden' name='cmd' value='_s-xclick' />
+				<input type='hidden' name='hosted_button_id' value='SJZPTCRX7TYGA' />
+				<input id='button_paypal' type='image' src='https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png' name='submit' title='PayPal - The safer, easier way to pay online!' alt='Donate with PayPal button' />
+			</form>
+			<p class='cripto'>Puedes donar criptomonedas con: <br />
+				<strong>TRX Tron red TRC20:</strong> <br />
+				TDDmbLNFcjYsddsdiUAgxDDTaR5EarDbKo <br />
+				<strong>BTC Bitcoin red BTC:</strong>  <br />
+				1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q
+			</p>
+			<q class='citaBible'>Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q>
+		</div>
+	</main>
+</Layout>
 
 <style>
 	.main {

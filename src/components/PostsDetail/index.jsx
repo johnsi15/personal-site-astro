@@ -2,6 +2,7 @@
 import React from 'react'
 import { formatDistanceStrict } from 'date-fns'
 import { es } from 'date-fns/locale'
+import styles from './PostsDetail.module.css'
 
 const PostsDetail = ({
   slug,
@@ -42,7 +43,10 @@ const PostsDetail = ({
             />
           </a>
           <div className='content'>
-            <a className='title' href={`/blog/${encodeURIComponent(slug)}`}>
+            <a
+              className={styles.title}
+              href={`/blog/${encodeURIComponent(slug)}`}
+            >
               <h2>{title}</h2>
             </a>
             <p className='excerpt'>{excerpt_custom}...</p>

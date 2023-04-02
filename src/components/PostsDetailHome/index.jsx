@@ -30,7 +30,7 @@ const PostsDetailHome = ({
           />
         </a>
         <div className={styles.content}>
-          <h2>
+          <h2 className={styles.title}>
             <a href={`/blog/${encodeURIComponent(slug)}`}>{title}</a>
           </h2>
           <p className='excerpt'>{excerpt_custom}...</p>

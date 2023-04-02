@@ -9,7 +9,7 @@
   width: 100%;
 }
 
-h2 {
+.title {
   font-size: 1.7rem;
   line-height: 2rem;
   margin: 0 0 15px;
@@ -22,13 +22,13 @@ h2 {
   margin: 0;
 }
 
-h2 > a {
+.title > a {
   text-decoration: none;
   color: #1c1c1c;
   display: flex;
 }
 
-h2 > a:hover {
+.title > a:hover {
   opacity: 0.9;
   color: #0078ae;
 }
