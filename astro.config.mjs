@@ -6,10 +6,15 @@ import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
 
 // https://astro.build/config
+import vercel from '@astrojs/vercel/serverless'
+
+// https://astro.build/config
 export default defineConfig({
   markdown: {
     drafts: true,
   },
   site: 'https://johnserrano.co',
   integrations: [mdx(), sitemap(), react()],
+  output: 'server',
+  adapter: vercel(),
 })
