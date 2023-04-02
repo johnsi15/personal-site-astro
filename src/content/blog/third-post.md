@@ -1,8 +1,13 @@
 ---
 title: "Third post"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 15 2022"
-heroImage: "/placeholder-hero.jpg"
+publishDate: "2022-02-20T16:29:10.000Z"
+updatedDate: "2022-03-06T17:09:31.000Z"
+description: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
+tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web"]
+excerpt: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
+canonicalURL: "https://johnserrano.co/blog/closures-en-javascript-que-son-y-para-que-sirven"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1680391473/John%20Serrano/Blog%20Post/closures-en-javascript-que-son-y-para-que-sirven/closures_nq1bkk.jpg"
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.

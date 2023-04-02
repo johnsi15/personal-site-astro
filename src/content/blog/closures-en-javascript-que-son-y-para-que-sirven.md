@@ -7,7 +7,7 @@ tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web
 excerpt: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
 canonicalURL: "https://johnserrano.co/blog/closures-en-javascript-que-son-y-para-que-sirven"
 isDraft: false
-heroImage: "https://johnserrano.co/_next/image?url=https%3A%2F%2Fstatic.johnserrano.co%2Fcontent%2Fimages%2F2022%2F02%2Fclosures.jpg&w=384&q=75"
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1680391473/John%20Serrano/Blog%20Post/closures-en-javascript-que-son-y-para-que-sirven/closures_nq1bkk.jpg"
 ---
 
 Cuando definimos una función y adentro otra función precisamente de eso se trata los **closures** pero veamos cómo funcionan y para qué sirven. Una clausura o closure en pocas palabras me permite acceder al ámbito de una función exterior desde una función interior. Veamos algunos ejemplos.

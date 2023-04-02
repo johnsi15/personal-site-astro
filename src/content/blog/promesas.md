@@ -1,9 +1,13 @@
 ---
 title: "Promesas"
-description: "Lorem ipsum dolor sit amet"
-pubDate: "Jul 05 2023"
-heroImage: "/placeholder-hero.jpg"
-draft: true
+publishDate: "2022-02-20T16:29:10.000Z"
+updatedDate: "2022-03-06T17:09:31.000Z"
+description: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
+tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web"]
+excerpt: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
+canonicalURL: "https://johnserrano.co/blog/closures-en-javascript-que-son-y-para-que-sirven"
+isDraft: true
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1680391473/John%20Serrano/Blog%20Post/closures-en-javascript-que-son-y-para-que-sirven/closures_nq1bkk.jpg"
 ---
 
 Las promesas son un patrón de programación en JavaScript que se utiliza para manejar la asincronía. Las promesas son objetos que representan valores que podrían estar disponibles ahora, en un futuro cercano o nunca. Las promesas se utilizan comúnmente para manejar llamadas a APIs, operaciones de lectura / escritura de archivos y cualquier operación que pueda tardar algún tiempo en completarse.

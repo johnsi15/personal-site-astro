@@ -1,0 +1,31 @@
+.PostsThree {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  margin: 50px auto 0;
+  justify-content: center;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.Posts {
+  display: grid;
+          grid-template-columns: repeat(2, 340px);
+          grid-column-gap: 20px;
+          grid-row-gap: 30px;
+          margin: 30px 0 0;
+          padding-bottom: 50px;
+          border-bottom: 2px solid #eeeeee;
+}
+
+@media screen and (max-width: 768px) {
+  .PostsThree {
+    grid-template-columns: repeat(2, 300px);
+  }
+}
+@media screen and (max-width: 630px) {
+  .PostsThree, .Posts {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+}

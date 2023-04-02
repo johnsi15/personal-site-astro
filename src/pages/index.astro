@@ -1,10 +1,9 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
+import PostCard from '../components/PostCard.astro'
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-const posts = await Astro.glob('../content/blog/*.md');
-console.log({ posts })
 ---
 
 <!DOCTYPE html>
@@ -36,9 +35,7 @@ console.log({ posts })
 
 				<h2>Últimos artículos publicados</h2>
 				<!-- {posts.length > 0 && <Posts posts={posts} columns='2' />} -->
-				<ul>
-					{posts.map(post => <li><a href={post.url}>{post.frontmatter.title}</a></li>)}
-				</ul>
+				<PostCard columns={2} />
 
 				<h2>Contacto</h2>
 				<p class='contact'>Puedes ponerte en contacto conmigo públicamente por las redes sociales Mencíoname en Twitter <a href='https://twitter.com/Jandrey15' rel='noreferrer' target='_blank'>(soy @jandrey15)</a>.</p>

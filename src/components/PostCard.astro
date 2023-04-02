@@ -1,0 +1,14 @@
+---
+import { getCollection } from 'astro:content';
+import PostsGrid from './PostsGrid'
+
+const blogEntries = await getCollection('blog');
+const { columns } = Astro.props;
+// console.log({ posts: blogEntries[0].data })
+const posts = blogEntries.slice(3)
+---
+
+<section class="PostCard">
+  <!-- {blogEntries.map(post => <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>)} -->
+  <PostsGrid client:load posts={posts} columns={columns}/>
+</section>
