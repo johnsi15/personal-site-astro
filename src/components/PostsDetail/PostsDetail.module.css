@@ -3,10 +3,6 @@
   border-top: none;
 }
 
-{/* .post:hover .content {
-  border-color: #0078ae;
-} */}
-
 .post {
   display: flex;
   flex-direction: column;

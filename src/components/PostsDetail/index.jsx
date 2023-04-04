@@ -1,17 +1,18 @@
 /* eslint-disable camelcase */
 import React from 'react'
-import { formatDistanceStrict } from 'date-fns'
-import { es } from 'date-fns/locale'
+// import formatDistanceStrict from 'date-fns/formatDistanceStrict'
+// const formatDistanceStrict = require('date-fns/formatDistanceStrict')
+// import { es } from 'date-fns/locale'
 import styles from './PostsDetail.module.css'
 
 const PostsDetail = ({
   slug,
-  feature_image,
+  featureImage,
   title,
   custom_excerpt = '',
   excerpt = '',
   primary_author = '',
-  published_at,
+  publishDate,
 }) => {
   // {post.excerpt.slice(0, 92)}...
   let excerpt_custom = custom_excerpt
@@ -21,10 +22,40 @@ const PostsDetail = ({
     : ''
   // console.log(published_at)
   // https://github.com/you-dont-need/You-Dont-Need-Momentjs
-  const timeAgo = formatDistanceStrict(new Date(published_at), new Date(), {
-    locale: es,
-    addSuffix: true,
-  })
+  // const timeAgo = formatDistanceStrict(new Date(published_at), new Date(), {
+  //   locale: es,
+  //   addSuffix: true,
+  // })
+
+  const DATE_UNITS = {
+    day: 86400,
+    hour: 3600,
+    minute: 60,
+    second: 1,
+  }
+
+  const getSecondsDiff = (timestamp) => (Date.now() - timestamp) / 1000
+  const getUnitAndValueDate = (secondsElapsed) => {
+    for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
+      if (secondsElapsed >= secondsInUnit || unit === 'second') {
+        const value = Math.floor(secondsElapsed / secondsInUnit) * -1
+        return { value, unit }
+      }
+    }
+  }
+
+  const getTimeAgo = (timestamp) => {
+    const rtf = new Intl.RelativeTimeFormat()
+
+    const secondsElapsed = getSecondsDiff(timestamp)
+    const { value, unit } = getUnitAndValueDate(secondsElapsed)
+    return rtf.format(value, unit)
+  }
+
+  const timestamp = new Date(publishDate).getTime()
+
+  const timeAgo = getTimeAgo(timestamp)
+
   return (
     <>
       <article className='post'>
@@ -32,8 +63,8 @@ const PostsDetail = ({
           <a href={`/blog/${encodeURIComponent(slug)}`}>
             <img
               src={
-                feature_image
-                  ? feature_image.replace('admin', 'static')
+                featureImage
+                  ? featureImage.replace('admin', 'static')
                   : '/static/gallery.jpg'
               }
               alt={title}

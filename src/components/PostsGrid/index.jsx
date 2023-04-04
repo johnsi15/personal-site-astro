@@ -9,9 +9,9 @@ const Posts = ({ posts = [], columns }) => {
   if (columns === '3') {
     return (
       <section id='Posts' className={styles.PostsThree}>
-        {/* {posts.map((post) => (
+        {posts.map((post) => (
           <PostsDetail key={post.id} {...post} />
-        ))} */}
+        ))}
       </section>
     )
   }
