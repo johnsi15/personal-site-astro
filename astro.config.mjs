@@ -17,5 +17,7 @@ export default defineConfig({
   site: 'https://johnserrano.co',
   integrations: [mdx(), sitemap(), react()],
   output: 'static',
-  adapter: vercel(),
+  adapter: vercel({
+    analytics: true,
+  }),
 })

@@ -1,3 +1,6 @@
+![](https://api.checklyhq.com/v1/badges/checks/22b7b4c5-fdf7-46e3-8dc1-c551eba15ee0?style=flat&theme=default)
+
+[Doc astro - vercel](https://vercel.com/docs/frameworks/astro) 
 # Astro Starter Kit: Blog
 
 ```
