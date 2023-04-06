@@ -19,14 +19,11 @@ const PostsDetailHome = ({
         <a href={`/blog/${encodeURIComponent(slug)}`}>
           <img
             className={styles.featureImage}
-            src={
-              featureImage
-                ? featureImage.replace('admin', 'static')
-                : '/static/gallery.jpg'
-            }
+            src={featureImage}
             alt={title}
             width={346}
             height={200}
+            loading='lazy'
           />
         </a>
         <div className={styles.content}>

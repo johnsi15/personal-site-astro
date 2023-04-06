@@ -62,11 +62,7 @@ const PostsDetail = ({
         <header className='post__header'>
           <a href={`/blog/${encodeURIComponent(slug)}`}>
             <img
-              src={
-                featureImage
-                  ? featureImage.replace('admin', 'static')
-                  : '/static/gallery.jpg'
-              }
+              src={featureImage}
               alt={title}
               width='300'
               height='200'
@@ -89,9 +85,8 @@ const PostsDetail = ({
               <img
                 className='profile__image'
                 src={
-                  primary_author.profile_image
-                    ? primary_author.profile_image.replace('admin', 'static')
-                    : 'https://static.ghost.org/v3.0.0/images/ghost.png'
+                  primary_author.profile_image ||
+                  'https://static.ghost.org/v3.0.0/images/ghost.png'
                 }
                 alt={primary_author.name}
                 width='35'
