@@ -1,18 +1,8 @@
 /* eslint-disable camelcase */
 import styles from './PostsDetailHome.module.css'
 
-const PostsDetailHome = ({
-  slug,
-  featureImage,
-  title,
-  custom_excerpt = '',
-  excerpt = '',
-}) => {
-  let excerpt_custom = custom_excerpt
-    ? custom_excerpt.slice(0, 160)
-    : excerpt
-    ? excerpt.slice(0, 160)
-    : ''
+const PostsDetailHome = ({ slug, featureImage, title, excerpt = '' }) => {
+  let excerpt_custom = excerpt ? excerpt.slice(0, 160) : ''
   return (
     <>
       <article className={styles.post}>

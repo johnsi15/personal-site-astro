@@ -4,22 +4,18 @@ import React from 'react'
 // const formatDistanceStrict = require('date-fns/formatDistanceStrict')
 // import { es } from 'date-fns/locale'
 import styles from './PostsDetail.module.css'
+import useGetTimeAgo from '../../hooks/useGetTimeAgo'
 
 const PostsDetail = ({
   slug,
   featureImage,
   title,
-  custom_excerpt = '',
   excerpt = '',
   primary_author = '',
-  publishDate,
+  publishedDate,
 }) => {
   // {post.excerpt.slice(0, 92)}...
-  let excerpt_custom = custom_excerpt
-    ? custom_excerpt.slice(0, 160)
-    : excerpt
-    ? excerpt.slice(0, 160)
-    : ''
+  let excerpt_custom = excerpt ? excerpt.slice(0, 160) : ''
   // console.log(published_at)
   // https://github.com/you-dont-need/You-Dont-Need-Momentjs
   // const timeAgo = formatDistanceStrict(new Date(published_at), new Date(), {
@@ -27,39 +23,12 @@ const PostsDetail = ({
   //   addSuffix: true,
   // })
 
-  const DATE_UNITS = {
-    day: 86400,
-    hour: 3600,
-    minute: 60,
-    second: 1,
-  }
-
-  const getSecondsDiff = (timestamp) => (Date.now() - timestamp) / 1000
-  const getUnitAndValueDate = (secondsElapsed) => {
-    for (const [unit, secondsInUnit] of Object.entries(DATE_UNITS)) {
-      if (secondsElapsed >= secondsInUnit || unit === 'second') {
-        const value = Math.floor(secondsElapsed / secondsInUnit) * -1
-        return { value, unit }
-      }
-    }
-  }
-
-  const getTimeAgo = (timestamp) => {
-    const rtf = new Intl.RelativeTimeFormat()
-
-    const secondsElapsed = getSecondsDiff(timestamp)
-    const { value, unit } = getUnitAndValueDate(secondsElapsed)
-    return rtf.format(value, unit)
-  }
-
-  const timestamp = new Date(publishDate).getTime()
-
-  const timeAgo = getTimeAgo(timestamp)
+  const { timeAgo } = useGetTimeAgo({ publishedDate })
 
   return (
     <>
-      <article className='post'>
-        <header className='post__header'>
+      <article className={styles.post}>
+        <header className={styles.post__header}>
           <a href={`/blog/${encodeURIComponent(slug)}`}>
             <img
               src={featureImage}
@@ -69,21 +38,21 @@ const PostsDetail = ({
               loading='lazy'
             />
           </a>
-          <div className='content'>
+          <div className={styles.content}>
             <a
               className={styles.title}
               href={`/blog/${encodeURIComponent(slug)}`}
             >
               <h2>{title}</h2>
             </a>
-            <p className='excerpt'>{excerpt_custom}...</p>
+            <p className={styles.excerpt}>{excerpt_custom}...</p>
           </div>
         </header>
-        <footer className='post__meta'>
-          <div className='profile'>
-            <a className='profile_avatar' href='/sobre-mi'>
+        <footer className={styles.post__meta}>
+          <div className={styles.profile}>
+            <a className={styles.profile_avatar} href='/sobre-mi'>
               <img
-                className='profile__image'
+                className={styles.profile__image}
                 src={
                   primary_author.profile_image ||
                   'https://static.ghost.org/v3.0.0/images/ghost.png'
@@ -94,7 +63,7 @@ const PostsDetail = ({
                 loading='lazy'
               />
             </a>
-            <span className='profile__name'>{primary_author.name}</span>
+            <span className={styles.profile__name}>{primary_author.name}</span>
           </div>
           <span>{timeAgo}</span>
           <a href={`/blog/${encodeURIComponent(slug)}`}>

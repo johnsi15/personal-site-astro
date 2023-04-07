@@ -10,7 +10,12 @@ const Posts = ({ posts = [], columns }) => {
     return (
       <section id='Posts' className={styles.PostsThree}>
         {posts.map((post) => (
-          <PostsDetail key={post.id} {...post} />
+          <PostsDetail
+            key={post.id}
+            slug={post.slug}
+            {...post.data}
+            collection={post.collection}
+          />
         ))}
       </section>
     )

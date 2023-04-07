@@ -1,54 +1,50 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import Layout from '../../layouts/index.astro'
 import { getCollection } from 'astro:content';
+import PostsFeature from '../../components/PostsFeature'
 import FormattedDate from '../../components/FormattedDate.astro';
+import PostsPagination from '../../components/PostsPagination'
 
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.publishDate.valueOf() - b.data.publishDate.valueOf()
+	(a, b) => a.data.publishedDate.valueOf() - b.data.publishedDate.valueOf()
 );
+const total = posts.length
+const limit = 2
+const pages = Math.ceil(total / limit)
+const meta = {
+	pagination: {
+		limit: 2,
+		page: 1,
+		pages,
+		total
+	}
+}
+console.log({ meta })
+// console.log({ posts: posts[0].data });
+const isProduction = import.meta.env.PROD
 ---
 
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
-			}
-			ul li {
-				display: flex;
-			}
-			ul li :global(time) {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-			ul li a:visited {
-				color: #8e32dc;
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<FormattedDate date={post.data.publishDate} />
-								<a href={`/blog/${post.slug}`}>{post.data.title}</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<Layout>
+	<section id='Blog' class='container'>
+		<PostsFeature client:load {...posts[1]} />
+		<!-- <Pauta /> -->
+		<PostsPagination
+			client:load
+			posts={posts}
+			meta={meta}
+			isProduction={isProduction}
+		/>
+	</section>
+		<!-- <section>
+			<ul>
+				{
+					posts.map((post) => (
+						<li>
+							<FormattedDate date={post.data.publishedDate} />
+							<a href={`/blog/${post.slug}`}>{post.data.title}</a>
+						</li>
+					))
+				}
+			</ul>
+		</section> -->
+</Layout>

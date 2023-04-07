@@ -1,5 +1,5 @@
 import { useEffect, useReducer } from 'react'
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import useSearchReducer from './useSearchReducer'
 import initialState from './initialState'
 import index from '../helpers/algolia'
@@ -12,7 +12,7 @@ function useSearchPage() {
     dispatch({ type: 'INPUT_SEARCH', payload: target.value })
   }
 
-  const router = useRouter()
+  // const router = useRouter()
   // console.log('router obj', router.query.word)
   // console.log(router)
 

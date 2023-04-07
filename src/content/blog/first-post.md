@@ -1,7 +1,7 @@
 ---
 title: "First post"
 description: "Lorem ipsum dolor sit amet"
-publishDate: "2022-02-20T16:29:10.000Z"
+publishedDate: "2022-02-20T16:29:10.000Z"
 updatedDate: "2022-03-06T17:09:31.000Z"
 pubDate: "2022-02-20T16:29:10.000Z"
 tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web"]

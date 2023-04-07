@@ -3,9 +3,10 @@
   border-top: none;
 }
 
-.feature_image {
+.featureImage {
   height: 200px;
   object-fit: cover;
+  aspect-ratio: 1.73;
   width: 100%;
 }
 
@@ -22,10 +23,13 @@
   margin: 0;
 }
 
+.post a {
+  display: flex;
+}
+
 .title > a {
   text-decoration: none;
   color: #1c1c1c;
-  display: flex;
 }
 
 .title > a:hover {
