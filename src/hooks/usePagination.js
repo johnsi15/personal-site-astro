@@ -22,24 +22,8 @@ function usePagination({ meta, posts, isProduction }) {
   }, [])
 
   // useEffect(() => {
-  //   let ignore = false
-  //   async function loadPosts () {
-  //     try {
-  //       // console.log('This is page ->', page)
-  //       const res = await fetch(`${API_URL}/posts/?key=${API_KEY}&limit=5&filter=featured:false&include=authors&page=${page}`)
-
-  //       let { posts } = await res.json()
-  //       // console.log(posts)
-  //       if (!ignore) setData(posts)
-  //     } catch (err) {
-  //       console.error('Algo salio mal ', err)
-  //     }
-  //   }
-
-  //   loadPosts()
-  //   console.log('ok paso por loadPosts')
-  //   return () => { ignore = true }
-  // }, [page])
+  //   setData(posts.slice(0, meta.pagination.limit))
+  // }, [])
 
   async function loadPosts(page) {
     try {
@@ -69,7 +53,7 @@ function usePagination({ meta, posts, isProduction }) {
 
   const handlePageClick = useCallback(
     (event) => {
-      console.log('Event select', event.selected)
+      // console.log('Event select', event.selected)
       let page = event.selected + 1
       // console.log('This si page handle Click ', page)
       setPage(page)
