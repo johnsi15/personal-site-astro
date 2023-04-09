@@ -5,7 +5,7 @@ import PostsGrid from './PostsGrid'
 const blogEntries = await getCollection('blog');
 const { columns } = Astro.props;
 // console.log({ posts: blogEntries[0].data })
-const posts = blogEntries.slice(3)
+const posts = blogEntries.slice(0, 4)
 ---
 
 <section class="PostCard">

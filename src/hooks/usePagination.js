@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 
-function usePagination({ meta, isProduction }) {
-  const [page, setPage] = useState(1)
+function usePagination({ meta, posts, isProduction }) {
+  const [page, setPage] = useState(0)
   const [pageCount, setPageCount] = useState(0)
   const [data, setData] = useState([])
   // console.log(meta)
@@ -44,12 +44,15 @@ function usePagination({ meta, isProduction }) {
   async function loadPosts(page) {
     try {
       // console.log('This is page ->', page)
-      const res = await fetch(`/blog/${page}`)
+      const postsPerPage = meta.pagination.limit
+      // console.log({ postsPerPage })
+      const indexOfLastPost = page * postsPerPage
+      // console.log({ indexOfLastPost })
+      const indexOfFirstPost = indexOfLastPost - postsPerPage
+      const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
-      let { posts } = await res.json()
-      console.log(posts)
-      // // if (!ignore) setData(posts)
-      setData(posts)
+      // console.log(currentPosts)
+      setData(currentPosts)
     } catch (err) {
       console.error('Algo salio mal ', err)
     }
@@ -66,7 +69,7 @@ function usePagination({ meta, isProduction }) {
 
   const handlePageClick = useCallback(
     (event) => {
-      // console.log('Event select', event.selected)
+      console.log('Event select', event.selected)
       let page = event.selected + 1
       // console.log('This si page handle Click ', page)
       setPage(page)

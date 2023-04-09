@@ -6,16 +6,19 @@ import usePagination from '../../hooks/usePagination'
 const PostsPagination = ({ posts, meta, isProduction }) => {
   const { handlePageClick, data, pageCount } = usePagination({
     meta,
+    posts,
     isProduction,
   })
 
+  let newPosts = posts.slice(0, meta.pagination.limit)
+
   if (data.length > 0) {
-    posts = data
+    newPosts = data
   }
 
   return (
     <>
-      {posts.length > 0 && <Posts posts={posts} columns='3' />}
+      {posts.length > 0 && <Posts posts={newPosts} columns='3' />}
 
       <ReactPaginate
         previousLabel={'Anterior'}
