@@ -1,15 +1,17 @@
-import ReactPaginate from 'react-paginate'
+// import ReactPaginate from 'react-paginate'
 import Posts from '../PostsGrid'
-import styles from './PostsPagination.module.css'
+// import styles from './PostsPagination.module.css'
 
 import usePagination from '../../hooks/usePagination'
+import Pagination from '../Pagination'
 
 const PostsPagination = ({ posts, meta, isProduction }) => {
-  const { handlePageClick, data, pageCount } = usePagination({
-    meta,
-    posts,
-    isProduction,
-  })
+  const { handlePageClick, data, previousPage, nextPage, currentPage } =
+    usePagination({
+      meta,
+      posts,
+      isProduction,
+    })
 
   let newPosts = posts.slice(0, meta.pagination.limit)
 
@@ -19,7 +21,16 @@ const PostsPagination = ({ posts, meta, isProduction }) => {
     <>
       {posts.length > 0 && <Posts posts={newPosts} columns='3' />}
 
-      <ReactPaginate
+      <Pagination
+        postsPerPage={meta.pagination.limit}
+        totalPosts={meta.pagination.total}
+        paginate={handlePageClick}
+        previousPage={previousPage}
+        nextPage={nextPage}
+        currentPage={currentPage}
+      />
+
+      {/* <ReactPaginate
         previousLabel={'Anterior'}
         nextLabel={'Siguiente'}
         breakLabel={'...'}
@@ -39,7 +50,7 @@ const PostsPagination = ({ posts, meta, isProduction }) => {
         disabledClassName={styles.disabled}
         previousLinkClassName={styles.itemLink}
         nextLinkClassName={styles.itemLink}
-      />
+      /> */}
     </>
   )
 }

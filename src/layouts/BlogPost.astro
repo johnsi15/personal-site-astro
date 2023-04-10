@@ -34,14 +34,14 @@ const { title, description, publishDate, updatedDate, featureImage } = Astro.pro
 			<article>
 				{featureImage && <img width={720} height={360} src={featureImage} alt="" />}
 				<h1 class="title">{title}</h1>
-				<FormattedDate date={publishDate} />
-				{
+				<!-- <FormattedDate date={publishDate} /> -->
+				<!-- {
 					updatedDate && (
 						<div class="last-updated-on">
 							Last updated on <FormattedDate date={updatedDate} />
 						</div>
 					)
-				}
+				} -->
 				<hr />
 				<slot />
 			</article>

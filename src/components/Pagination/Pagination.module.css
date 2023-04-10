@@ -8,7 +8,7 @@
   max-width: 500px;
 }
 
-.item {
+.pageNumber {
   height: 40px;
   width: 40px;
   background: #eeeeee;
@@ -21,7 +21,7 @@
   font-weight: 700;
 }
 
-.itemLink {
+.pageNumberLink {
   outline: none;
   display: flex;
   height: 100%;
@@ -30,7 +30,7 @@
   align-items: center;
 }
 
-.itemLink:hover {
+.pageNumberLink:hover {
   opacity: .8;
 }
 

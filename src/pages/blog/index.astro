@@ -2,7 +2,6 @@
 import Layout from '../../layouts/index.astro'
 import { getCollection } from 'astro:content';
 import PostsFeature from '../../components/PostsFeature'
-import FormattedDate from '../../components/FormattedDate.astro';
 import PostsPagination from '../../components/PostsPagination'
 
 const posts = (await getCollection('blog')).sort(
