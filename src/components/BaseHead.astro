@@ -59,19 +59,17 @@ const { title, description, image  = '/default.jpg', datePublished = '2015-09-15
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-<script type="application/ld+json"> `{
+<script type="application/ld+json" set:html={JSON.stringify({
 	"@context": "http://schema.org",
 	"@type": "BlogPosting",
 	"mainEntityOfPage": {
 		"@type": "WebPage",
-		"@id": "${Astro.url}"
+		"@id": Astro.url
 	},
-	"headline": "${title}",
-	"image": [
-		"${image}"
-	],
-	"datePublished": "${datePublished}",
-	"dateModified": "${dateModified}",
+	"headline": title,
+	"image": [new URL(image, Astro.url)],
+	"datePublished": datePublished,
+	"dateModified": dateModified,
 	"author": {
 		"@type": "Person",
 		"name": "John Serrano"
@@ -84,8 +82,8 @@ const { title, description, image  = '/default.jpg', datePublished = '2015-09-15
 			"url": "https://johnserrano.co/default.jpg"
 		}
 	},
-	"description": "${description}"
-}`</script>
+	"description": description
+})}/>
 
 <!-- Google Tag Manager -->
 <script type="text/partytown">
@@ -96,3 +94,27 @@ const { title, description, image  = '/default.jpg', datePublished = '2015-09-15
 	})(window,document,'script','dataLayer','GTM-MKJQTJ3');
 </script>
 <!-- End Google Tag Manager -->
+
+<script>
+  partytown = {
+    forward: ['dataLayer.push'],
+    resolveUrl: (url) => {
+      const siteUrl = 'https://dev.johnserrano.co/proxytown'
+
+      if (url.hostname === 'www.googletagmanager.com') {
+        const proxyUrl = new URL(`${siteUrl}/gtm`)
+
+        const gtmId = new URL(url).searchParams.get('id')
+        gtmId && proxyUrl.searchParams.append('id', gtmId)
+
+        return proxyUrl
+      } else if (url.hostname === 'www.google-analytics.com') {
+        const proxyUrl = new URL(`${siteUrl}/ga`)
+
+        return proxyUrl
+      }
+
+      return url
+    }
+  }
+</script>

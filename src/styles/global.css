@@ -7,7 +7,7 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
 
 :root {
---width: 720px;
+--width: 1000px;
 --font-main: 'Source Sans Pro', system-ui, sans-serif;
 --font-secondary: 'Source Sans Pro', system-ui, sans-serif;
 --font-scael: 1em;
@@ -19,6 +19,7 @@
 --code-background-color: #f2f2f2;
 --code-color: #222;
 --blockquote-color: #222;
+--progress-bar-color: #ef1424;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -44,7 +45,7 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: var(--width);
   flex: 1;
   width: 100%;
 }
@@ -71,7 +72,7 @@ body {
   pointer-events: none;
 }
 #nprogress .bar {
-  background: #ef1424;
+  background: var(--progress-bar-color);
   position: fixed;
   z-index: 1031;
   top: 0;
@@ -86,7 +87,7 @@ body {
   right: 0px;
   width: 100px;
   height: 100%;
-  box-shadow: 0 0 10px #ef1424, 0 0 5px #ef1424;
+  box-shadow: 0 0 10px var(--progress-bar-color), 0 0 5px var(--progress-bar-color);
   opacity: 1;
   -webkit-transform: rotate(3deg) translate(0px, -4px);
   -ms-transform: rotate(3deg) translate(0px, -4px);
@@ -105,8 +106,8 @@ body {
   height: 18px;
   box-sizing: border-box;
   border: solid 2px transparent;
-  border-top-color: #ef1424;
-  border-left-color: #ef1424;
+  border-top-color: var(--progress-bar-color);
+  border-left-color: var(--progress-bar-color);
   border-radius: 50%;
   -webkit-animation: nprogress-spinner 400ms linear infinite;
   animation: nprogress-spinner 400ms linear infinite;
