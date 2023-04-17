@@ -2,6 +2,8 @@
 import { CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/BlogPost.astro';
 
+import PostHeader from '../../components/PostHeader';
+
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 
@@ -18,7 +20,15 @@ const { Content } = await post.render();
 ---
 
 <BlogPost {...post.data}>
-	<h3>Hola mundo</h3>
-	<h1>{post.data.title}</h1>
+	<!-- <h3>Hola mundo</h3>
+	<h1>{post.data.title}</h1> -->
+	<PostHeader
+		client:load
+		title={post.data.title}
+		cover={post.feature_image ? post.feature_image : '/gallery.jpg'}
+		published_at={post.published_at}
+		primary_author={post.primary_author}
+		primary_tag={post.primary_tag}
+	/>
 	<Content />
 </BlogPost>

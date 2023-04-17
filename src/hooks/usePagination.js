@@ -20,9 +20,12 @@ function usePagination({ meta, posts, isProduction }) {
       // eslint-disable-next-line no-undef
       dataLayer.push({
         titulo: 'blog',
+        pageNumber: currentPage,
       })
     }
-  }, [])
+    const scrollY = document.querySelector('#Posts').scrollHeight
+    window.scrollTo(0, scrollY)
+  }, [currentPage])
 
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
@@ -31,29 +34,28 @@ function usePagination({ meta, posts, isProduction }) {
   const previousPage = () => {
     if (currentPage !== 1) {
       setCurrentPage(currentPage - 1)
-      window.scrollTo(0, 0)
     }
   }
 
   const nextPage = () => {
     if (currentPage !== meta.pagination.pages) {
       setCurrentPage(currentPage + 1)
-      window.scrollTo(0, 0)
+      // window.scrollTo(0, 0)
     }
   }
 
   const handlePageClick = useCallback(
     (event, pageNumber) => {
       // console.log('Event select', event.selected)
-      console.log({ event: event })
-      console.log({ pageNumber })
+      // console.log({ event: event })
+      // console.log({ pageNumber })
       // let page = event.selected + 1
       // console.log('This si page handle Click ', page)
       // setPage(page)
       // loadPosts(page)
       if (currentPage !== pageNumber) {
         setCurrentPage(pageNumber)
-        window.scrollTo(0, 0)
+        // window.scrollTo(0, 0)
       }
     },
     [currentPage]

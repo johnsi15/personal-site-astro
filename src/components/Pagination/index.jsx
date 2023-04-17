@@ -18,7 +18,9 @@ const Pagination = ({
       <ul className={styles.pagination}>
         <li
           onClick={previousPage}
-          className={`${styles.pageNumber} ${styles.previous}`}
+          className={`${styles.pageNumber} ${styles.previous} ${
+            currentPage === 1 ? styles.disabled : ''
+          }`}
         >
           <a
             className={styles.pageNumberLink}
@@ -34,7 +36,7 @@ const Pagination = ({
             key={number}
             onClick={(e) => paginate(e, number)}
             className={`${styles.pageNumber} ${
-              currentPage === number ? styles.active : null
+              currentPage === number ? styles.active : ''
             }`}
           >
             <a
@@ -50,7 +52,9 @@ const Pagination = ({
 
         <li
           onClick={nextPage}
-          className={`${styles.pageNumber} ${styles.next}`}
+          className={`${styles.pageNumber} ${styles.next} ${
+            currentPage === pageNumbers.length ? styles.disabled : ''
+          }`}
         >
           <a
             className={styles.pageNumberLink}
