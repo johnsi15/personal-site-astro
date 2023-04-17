@@ -22,13 +22,24 @@ const { Content } = await post.render();
 <BlogPost {...post.data}>
 	<!-- <h3>Hola mundo</h3>
 	<h1>{post.data.title}</h1> -->
-	<PostHeader
-		client:load
-		title={post.data.title}
-		cover={post.feature_image ? post.feature_image : '/gallery.jpg'}
-		published_at={post.published_at}
-		primary_author={post.primary_author}
-		primary_tag={post.primary_tag}
-	/>
-	<Content />
+	<section id='Post' class='container'>
+		<Content />
+	</section>
 </BlogPost>
+
+<style>
+	#Post .disqus {
+		max-width: 700px;
+		margin: 0 auto;
+	}
+	#Post {
+		margin-top: 30px;
+	}
+	#Post .more__posts {
+		font-size: 2rem;
+		font-weight: 700;
+		margin: 70px auto 50px;
+		line-height: 2.5rem;
+		max-width: 700px;
+	}
+</style>

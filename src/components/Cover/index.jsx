@@ -9,7 +9,6 @@ const Cover = ({ children, cover, url }) => {
   return (
     <section id='Cover' className={styles.Cover}>
       <div className={styles.inner}>{children}</div>
-      <style jsx>{``}</style>
     </section>
   )
 }

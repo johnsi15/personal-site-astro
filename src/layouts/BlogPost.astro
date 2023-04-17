@@ -4,27 +4,19 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
+import PostHeader from '../components/PostHeader';
+import '../styles/highlight.css'
 
 type Props = CollectionEntry<'blog'>['data'];
 
-const { title, description, publishDate, updatedDate, featureImage } = Astro.props;
+const { title, description, publishDate, updatedDate, featureImage, primaryAuthor = 'John Serrano', primaryTag = 'JavaScript'} = Astro.props;
 ---
 
 <html lang="es">
 	<head>
 		<BaseHead title={title} description={description} />
 		<style>
-			.title {
-				font-size: 2em;
-				margin: 0.25em 0 0;
-			}
-			hr {
-				border-top: 1px solid #ddd;
-				margin: 1rem 0;
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
+			
 		</style>
 	</head>
 
@@ -32,17 +24,14 @@ const { title, description, publishDate, updatedDate, featureImage } = Astro.pro
 		<Header />
 		<main>
 			<article>
-				{featureImage && <img width={720} height={360} src={featureImage} alt="" />}
-				<h1 class="title">{title}</h1>
-				<!-- <FormattedDate date={publishDate} /> -->
-				<!-- {
-					updatedDate && (
-						<div class="last-updated-on">
-							Last updated on <FormattedDate date={updatedDate} />
-						</div>
-					)
-				} -->
-				<hr />
+				<PostHeader
+					client:load
+					title={title}
+					cover={featureImage ? featureImage : '/gallery.jpg'}
+					published_at={publishDate}
+					primary_author={primaryAuthor}
+					primary_tag={primaryTag}
+				/>
 				<slot />
 			</article>
 		</main>
