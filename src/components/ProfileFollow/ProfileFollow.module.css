@@ -1,0 +1,31 @@
+.follow {
+  max-width: 700px;
+  margin: 50px auto 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.25rem;
+  border-top: 2px solid #eeeeee;
+  padding-top: 30px;
+}
+.follow p {
+  border: none;
+  line-height: 1.5rem;
+}
+
+.follow__buttons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 190px;
+  width: 100%;
+}
+
+.follow__buttons li{
+  display: inline;
+}
+.follow__buttons img{
+  width: 32px;
+}

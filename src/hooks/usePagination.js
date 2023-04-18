@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 function usePagination({ meta, posts, isProduction }) {
   // const [page, setPage] = useState(0)
@@ -7,7 +7,11 @@ function usePagination({ meta, posts, isProduction }) {
   // console.log(meta)
 
   const [currentPage, setCurrentPage] = useState(meta.pagination.page)
-  const [postsPerPage] = useState(meta.pagination.limit)
+  const postsPerPage = meta.pagination.limit
+  const indexOfLastPost = currentPage * postsPerPage
+  const indexOfFirstPost = indexOfLastPost - postsPerPage
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
+  const loadPageInitial = useRef(true)
 
   useEffect(() => {
     // loadPosts()
@@ -24,12 +28,13 @@ function usePagination({ meta, posts, isProduction }) {
       })
     }
     const scrollY = document.querySelector('#Posts').scrollHeight
+    if (loadPageInitial.current) {
+      loadPageInitial.current = false
+      return
+    }
+
     window.scrollTo(0, scrollY)
   }, [currentPage])
-
-  const indexOfLastPost = currentPage * postsPerPage
-  const indexOfFirstPost = indexOfLastPost - postsPerPage
-  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
 
   const previousPage = () => {
     if (currentPage !== 1) {
@@ -50,9 +55,6 @@ function usePagination({ meta, posts, isProduction }) {
       // console.log({ event: event })
       // console.log({ pageNumber })
       // let page = event.selected + 1
-      // console.log('This si page handle Click ', page)
-      // setPage(page)
-      // loadPosts(page)
       if (currentPage !== pageNumber) {
         setCurrentPage(pageNumber)
         // window.scrollTo(0, 0)
