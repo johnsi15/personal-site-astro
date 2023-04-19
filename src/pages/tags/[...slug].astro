@@ -1,0 +1,46 @@
+---
+import { CollectionEntry, getCollection } from 'astro:content';
+import Layout from '../../layouts/index.astro'
+
+import PostsGrid from '../../components/PostsGrid';
+import Cover from '../../components/Cover';
+import PostTitle from '../../components/PostTitle';
+
+export async function getStaticPaths() {
+	const posts = await getCollection('blog');
+
+	return posts.map((post) => {
+    console.log({ post })
+
+    return {
+      params: { slug: post.slug },
+      props: post
+    }
+  });
+}
+type Props = CollectionEntry<'blog'>;
+
+// const blogEntries = await getCollection('blog');
+
+const { slug } = Astro.params;
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.publishedDate.valueOf() - b.data.publishedDate.valueOf()
+);
+---
+
+<Layout>
+  <Cover>
+    <PostTitle client:load capitalize='capitalize'>{slug}</PostTitle>
+  </Cover>
+  <section id='Tag' class='container'>
+    <PostsGrid client:load posts={posts} columns='3' />
+  </section>
+</Layout>
+
+<style>
+	#Tag {
+    margin-top: 70px;
+    flex: 1;
+  }
+</style>

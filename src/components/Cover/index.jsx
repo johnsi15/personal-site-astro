@@ -1,5 +1,5 @@
 import styles from './Cover.module.css'
-const Cover = ({ children, cover, url }) => {
+const Cover = ({ children }) => {
   let urlM
   // if (url) {
   //   urlM = url.replace('h_1000', 'h_425')

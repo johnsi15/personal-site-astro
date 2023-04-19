@@ -13,7 +13,7 @@ const PostHeader = ({
 }) => {
   console.log({ primary_tag })
   return (
-    <Cover cover={cover}>
+    <Cover>
       <PostTitle capitalize={capitalize && 'capitalize'}>{title}</PostTitle>
       <PostProfile
         primary_author={primary_author}

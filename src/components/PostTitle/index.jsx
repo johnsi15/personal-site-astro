@@ -1,6 +1,6 @@
 import styles from './PostTitle.module.css'
 
-const PostTitle = ({ children, capitalize, flex }) => {
+const PostTitle = ({ children, capitalize, flex = false }) => {
   return (
     <h1
       className={`${styles.title} ${capitalize ? styles.capitalize : ''} ${
