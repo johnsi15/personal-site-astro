@@ -32,9 +32,9 @@ const init = home()
 init()
 ```
 
-Este ejemplo lo que tenemos es una función en la cual devolvemos una función ***muestraNombre()*** la cual retornamos y en la parte exterior ejecutamos ***creaFunc()*** y guardamos en ***miFunc***el resultado de la función interna ***muestrNombre()*** en este caso nuestro closure seria ***miFunc()*** la cual ejecutamos en la última línea de código.
+Este ejemplo lo que tenemos es una función en la cual devolvemos una función ***muestraNombre()*** la cual retornamos y en la parte exterior ejecutamos ***home()*** y guardamos en ***init*** el resultado de la función interna ***muestrNombre()*** en este caso nuestro closure seria ***init()*** la cual ejecutamos en la última línea de código.
 
-Una cosa especial para dejarlo más claro es que cuando definimos nuestro **closure*miFunc()***lo que sucede con esta función es que guarda el entorno donde fue creada por esta razón la variable ***nombre*** todavía existe al final cuando ejecutamos ***miFunc()***. Un ejemplo más.
+Una cosa especial para dejarlo más claro es que cuando definimos nuestro ***closure init()*** lo que sucede con esta función es que guarda el entorno donde fue creada por esta razón la variable ***nombre*** todavía existe al final cuando ejecutamos ***init()***. Un ejemplo más.
 
 ```js
 function creaSumador(x) {

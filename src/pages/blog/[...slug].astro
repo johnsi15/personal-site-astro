@@ -5,6 +5,7 @@ import BlogPost from '../../layouts/BlogPost.astro';
 import PostHeader from '../../components/PostHeader';
 import ProfileFollow from '../../components/ProfileFollow';
 import ProfileApoyar from '../../components/ProfileApoyar';
+import Newsletter from '../../components/Newsletter';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -29,9 +30,9 @@ const { Content } = await post.render();
 			<Content />
 		</article>
 
-		<ProfileFollow />
-		<ProfileApoyar />
-		<!-- <Newsletter /> -->
+		<ProfileFollow  client:load/>
+		<ProfileApoyar client:visible />
+		<Newsletter client:visible />
 	</section>
 </BlogPost>
 
