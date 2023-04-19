@@ -1,9 +1,15 @@
 /* eslint-disable camelcase */
+import useGetTimeAgo from '../../hooks/useGetTimeAgo'
 import styles from './PostProfile.module.css'
 
-const PostProfile = ({ primary_author, primary_tag, published_at }) => {
-  const formatDate = published_at
-  // console.info(formatDate)
+const PostProfile = ({
+  primary_author,
+  primary_tag,
+  published_at: publishedDate,
+}) => {
+  const { publishedAt } = useGetTimeAgo({ publishedDate })
+
+  console.info(publishedAt)
   return (
     <section className={styles.profile__section}>
       <div className={styles.profile__post}>
@@ -23,10 +29,10 @@ const PostProfile = ({ primary_author, primary_tag, published_at }) => {
           </a>
           <span className={styles.profile__name}>{primary_author.name}</span>
         </div>
-        <span>{formatDate}</span>
+        <span>{publishedAt}</span>
       </div>
       {primary_tag && (
-        <section className='category'>
+        <section className={styles.category}>
           <a href={`/tags/${encodeURIComponent(primary_tag.slug)}`}>
             {primary_tag.name}
           </a>

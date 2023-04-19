@@ -6,6 +6,7 @@ import PostHeader from '../../components/PostHeader';
 import ProfileFollow from '../../components/ProfileFollow';
 import ProfileApoyar from '../../components/ProfileApoyar';
 import Newsletter from '../../components/Newsletter';
+import PostsGrid from '../../components/PostsGrid';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
@@ -17,7 +18,11 @@ export async function getStaticPaths() {
 }
 type Props = CollectionEntry<'blog'>;
 
+const blogEntries = await getCollection('blog');
+
 const post = Astro.props;
+const morePosts = blogEntries.slice(0, 3)
+
 // const { slug } = Astro.params;
 const { Content } = await post.render();
 ---
@@ -33,6 +38,10 @@ const { Content } = await post.render();
 		<ProfileFollow  client:load/>
 		<ProfileApoyar client:visible />
 		<Newsletter client:visible />
+		<h2 class='more__posts'>Otros artículos</h2>
+		{morePosts.length > 0 && (
+			<PostsGrid client:visible posts={morePosts} columns='3' />
+		)}
 	</section>
 </BlogPost>
 

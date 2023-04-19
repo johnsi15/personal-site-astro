@@ -11,14 +11,15 @@ const PostHeader = ({
   primary_tag,
   published_at,
 }) => {
+  console.log({ primary_tag })
   return (
     <Cover cover={cover}>
       <PostTitle capitalize={capitalize && 'capitalize'}>{title}</PostTitle>
-      {/* <PostProfile
+      <PostProfile
         primary_author={primary_author}
         primary_tag={primary_tag}
         published_at={published_at}
-      /> */}
+      />
     </Cover>
   )
 }
