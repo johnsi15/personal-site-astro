@@ -9,7 +9,7 @@ const PostProfile = ({
 }) => {
   const { publishedAt } = useGetTimeAgo({ publishedDate })
 
-  console.info(publishedAt)
+  // console.info(publishedAt)
   return (
     <section className={styles.profile__section}>
       <div className={styles.profile__post}>

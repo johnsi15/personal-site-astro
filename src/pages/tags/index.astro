@@ -2,8 +2,8 @@
 import Layout from '../../layouts/index.astro'
 import { getCollection } from 'astro:content';
 import PostsGrid from '../../components/PostsGrid';
-import Cover from '../../components/Cover';
-import PostTitle from '../../components/PostTitle';
+// import Cover from '../../components/Cover';
+// import PostTitle from '../../components/PostTitle';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.publishedDate.valueOf() - b.data.publishedDate.valueOf()
@@ -13,17 +13,17 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Layout>
-  <Cover client:load>
+  <!-- <Cover client:load>
     <PostTitle client:load capitalize='capitalize'>JavaScript</PostTitle>
-  </Cover>
+  </Cover> -->
 	<section id='Tag' class='container'>
-    {posts.length > 0 && <PostsGrid client:load posts={posts} columns='3' />}
+    {posts.length > 0 && <PostsGrid posts={posts} columns='3' />}
   </section>
 </Layout>
 
 <style>
   #Tag {
-    margin-top: 70px;
+    /* margin-top: 30px; */
     flex: 1;
   }
 </style>
