@@ -3,9 +3,11 @@ import { useEffect, useReducer } from 'react'
 import useSearchReducer from './useSearchReducer'
 import initialState from './initialState'
 import index from '../helpers/algolia'
+import { useState } from 'react'
 
 function useSearchPage() {
   const [state, dispatch] = useReducer(useSearchReducer, initialState)
+  const [word, setWord] = useState('')
 
   const onChange = ({ target }) => {
     // console.log('Value is -> ', target.value)
@@ -15,6 +17,13 @@ function useSearchPage() {
   // const router = useRouter()
   // console.log('router obj', router.query.word)
   // console.log(router)
+  useEffect(() => {
+    const queryString = window.location.search
+    const urlParams = new URLSearchParams(queryString)
+    const word = urlParams.get('word')
+    setWord(word)
+    console.log('This is word', word)
+  }, [])
 
   useEffect(() => {
     let mounted = true
@@ -48,13 +57,13 @@ function useSearchPage() {
     // console.log('This is search useEffect -> ', state.search)
     // console.log('This is router query', router.query)
 
-    if (router.query.word) {
-      dispatch({ type: 'INPUT_SEARCH', payload: router.query.word })
+    if (word) {
+      dispatch({ type: 'INPUT_SEARCH', payload: word })
 
       dispatch({ type: 'FETCH_SEARCH' })
       // console.log('Fetch search router query word', router.query.word)
 
-      index.search(router.query.word).then(({ hits }) => {
+      index.search(word).then(({ hits }) => {
         if (mounted) {
           dispatch({ type: 'FETCH_SEARCH_SUCCESS', payload: hits })
         }
@@ -72,7 +81,7 @@ function useSearchPage() {
 
     // eslint-disable-next-line no-return-assign
     return () => (mounted = false)
-  }, [router.query.word])
+  }, [word])
 
   return { state, onChange }
 }

@@ -4,7 +4,7 @@ import React from 'react'
 // const formatDistanceStrict = require('date-fns/formatDistanceStrict')
 // import { es } from 'date-fns/locale'
 import styles from './PostsDetail.module.css'
-import useGetTimeAgo from '../../hooks/useGetTimeAgo'
+import { getTimeDate } from '../../helpers/formattedDate'
 
 const PostsDetail = ({
   slug,
@@ -22,8 +22,7 @@ const PostsDetail = ({
   //   locale: es,
   //   addSuffix: true,
   // })
-
-  const { timeAgo } = useGetTimeAgo({ publishedDate })
+  const { timeAgo } = getTimeDate({ publishedDate })
 
   return (
     <>

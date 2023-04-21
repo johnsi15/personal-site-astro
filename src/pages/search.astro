@@ -1,0 +1,16 @@
+---
+import SearchPage from "../components/SearchPage";
+import Layout from '../layouts/index.astro'
+---
+
+<Layout>
+  <section id='SearchPage'>
+    <SearchPage client:load />
+  </section>
+</Layout>
+
+<style>
+  #SearchPage {
+    flex: 1;
+  }
+</style>
