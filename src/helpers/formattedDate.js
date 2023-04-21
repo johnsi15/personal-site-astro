@@ -47,4 +47,25 @@ const getDateHuman = (timestamp) => {
   return dateHuman
 }
 
-export { getTimeAgo, getDateHuman }
+// const publishedAt = ({ publishedDate }) => {
+//   const timestamp = new Date(publishedDate).getTime()
+
+//   return getDateHuman(timestamp)
+// }
+
+// const timeAgo = ({ publishedDate }) => {
+//   const timestamp = new Date(publishedDate).getTime()
+
+//   return getTimeAgo(timestamp)
+// }
+
+const getTimeDate = ({ publishedDate }) => {
+  const timestamp = new Date(publishedDate).getTime()
+
+  return {
+    timeAgo: getTimeAgo(timestamp),
+    publishedAt: getDateHuman(timestamp),
+  }
+}
+
+export { getTimeDate }

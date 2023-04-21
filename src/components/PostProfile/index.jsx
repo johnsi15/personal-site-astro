@@ -1,5 +1,6 @@
 /* eslint-disable camelcase */
-import useGetTimeAgo from '../../hooks/useGetTimeAgo'
+// import useGetTimeAgo from '../../hooks/useGetTimeAgo'
+import { getTimeDate } from '../../helpers/formattedDate'
 import styles from './PostProfile.module.css'
 
 const PostProfile = ({
@@ -7,9 +8,8 @@ const PostProfile = ({
   primary_tag,
   published_at: publishedDate,
 }) => {
-  const { publishedAt } = useGetTimeAgo({ publishedDate })
+  const { publishedAt } = getTimeDate({ publishedDate })
 
-  // console.info(publishedAt)
   return (
     <section className={styles.profile__section}>
       <div className={styles.profile__post}>

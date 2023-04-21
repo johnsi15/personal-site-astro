@@ -6,7 +6,7 @@ function useGetTimeAgo({ publishedDate }) {
   const [publishedAt, setPublishedAt] = useState()
 
   const timestamp = new Date(publishedDate).getTime()
-
+  // sacar este hook y volverlo un helper
   useEffect(() => {
     setTimeAgo(getTimeAgo(timestamp))
     setPublishedAt(getDateHuman(timestamp))
