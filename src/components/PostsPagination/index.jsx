@@ -29,28 +29,6 @@ const PostsPagination = ({ posts, meta, isProduction }) => {
         nextPage={nextPage}
         currentPage={currentPage}
       />
-
-      {/* <ReactPaginate
-        previousLabel={'Anterior'}
-        nextLabel={'Siguiente'}
-        breakLabel={'...'}
-        breakClassName={'break-me'}
-        pageCount={pageCount}
-        marginPagesDisplayed={2}
-        pageRangeDisplayed={5}
-        onPageChange={handlePageClick}
-        containerClassName={'pagination'}
-        subContainerClassName={'pages pagination'}
-        activeClassName={styles.active}
-        className={styles.pagination}
-        pageClassName={styles.item}
-        pageLinkClassName={styles.itemLink}
-        previousClassName={`${styles.item} ${styles.previous}`}
-        nextClassName={`${styles.item} ${styles.next}`}
-        disabledClassName={styles.disabled}
-        previousLinkClassName={styles.itemLink}
-        nextLinkClassName={styles.itemLink}
-      /> */}
     </>
   )
 }

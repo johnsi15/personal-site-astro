@@ -25,10 +25,10 @@ const isProduction = import.meta.env.PROD
 
 <Layout>
 	<section id='Blog' class='container'>
-		<PostsFeature client:load {...posts[1]} />
+		<PostsFeature {...posts[1]} />
 		<!-- <Pauta /> -->
 		<PostsPagination
-			client:load
+			client:visible
 			posts={posts}
 			meta={meta}
 			isProduction={isProduction}

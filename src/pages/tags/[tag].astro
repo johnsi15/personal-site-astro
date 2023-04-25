@@ -7,30 +7,58 @@ import Cover from '../../components/Cover';
 import PostTitle from '../../components/PostTitle';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('blog');
+	const allPosts = await getCollection('blog');
 
-	return posts.map((post) => {
-    // console.log({ tags: post.data.primaryTag.slug })
-    const { name, slug } = post.data.primaryTag
-    return {
-      params: { tag: slug },
-      props: { tagName: name }
-    }
+  let filteredPosts = 
+      allPosts.filter((p) => { 
+        return p.data.title && p.data.publishedDate; 
+      });
+
+  let dix = {};
+  // console.log({filteredPosts})
+  filteredPosts.forEach((post) => {
+    // console.log(post.data.tags)
+    post.data.tags.forEach((tag) => {
+      if (!dix[tag]) dix[tag] = 0;
+      dix[tag] += 1;
+    });
   });
+  // console.log('dix', dix); // <-- prints out our tag-cloud data.
+
+  let array = [];
+  // format the data to return from getStaticPaths()
+  for (let prop in dix) {
+    let data = {
+      params: { tag: prop.toLocaleLowerCase().replaceAll(' ', '-') },
+      props: { tagName: prop, count: dix[prop] }
+    }
+    array.push(data);
+  }
+  return array;
 }
+
 type Props = CollectionEntry<'blog'>;
-// const blogEntries = await getCollection('blog');
+const allPosts = await getCollection('blog');
 
-const {tagName} = Astro.props;
-const { tag } = Astro.params;
+const { tagName} = Astro.props;
+// const { tag } = Astro.params;
 
-// console.log({tag})
-// console.log({tagName})
-const blogEntries = (await getCollection('blog')).sort(
+console.log({ tagName });
+// console.log({ tag })
+
+// grab the selected tag from the url (dynamic [tag])
+let filteredPosts = allPosts.filter((p) => { 
+      return p.data.title && p.data.publishedDate; 
+    });
+
+let blogEntries = filteredPosts.sort(
 	(a, b) => a.data.publishedDate.valueOf() - b.data.publishedDate.valueOf()
 );
 
-const posts = blogEntries.filter(post => post.data.primaryTag.slug === tag)
+let posts = blogEntries.filter((p) => { 
+  // console.log(p.data.tags)
+  return p.data.tags.includes(tagName); 
+});
 ---
 
 <Layout>

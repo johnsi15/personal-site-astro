@@ -4,7 +4,7 @@ description: "Lorem ipsum dolor sit amet"
 publishedDate: "2022-02-20T16:29:10.000Z"
 updatedDate: "2022-03-06T17:09:31.000Z"
 pubDate: "2022-02-20T16:29:10.000Z"
-tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web"]
+tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web", "react"]
 primaryTag: { name: 'React', slug: 'react' }
 excerpt: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
 canonicalURL: "https://johnserrano.co/blog/closures-en-javascript-que-son-y-para-que-sirven"
