@@ -1,5 +1,4 @@
 /* eslint-disable camelcase */
-// import useGetTimeAgo from '../../hooks/useGetTimeAgo'
 import { getTimeDate } from '../../helpers/formattedDate'
 import styles from './PostProfile.module.css'
 

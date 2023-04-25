@@ -12,7 +12,7 @@ function Newsletter() {
     e.preventDefault()
     const form = e.target
     const formData = new FormData(form)
-    console.log(formData)
+    // console.log(formData)
 
     // const formJson = Object.fromEntries(formData.entries())
     // console.log(formJson)

@@ -1,5 +1,5 @@
 import styles from './PostsFeature.module.css'
-import useGetTimeAgo from '../../hooks/useGetTimeAgo'
+import { getTimeDate } from '../../helpers/formattedDate'
 
 const PostsFeature = ({ data, slug }) => {
   const {
@@ -9,7 +9,7 @@ const PostsFeature = ({ data, slug }) => {
     publishedDate,
     primaryAuthor = '',
   } = data
-  const { timeAgo } = useGetTimeAgo({ publishedDate })
+  const { timeAgo } = getTimeDate({ publishedDate })
 
   return (
     <article className={styles.PostsFeature}>

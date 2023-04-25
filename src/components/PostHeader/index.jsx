@@ -11,7 +11,7 @@ const PostHeader = ({
   primary_tag,
   published_at,
 }) => {
-  console.log({ primary_tag })
+  // console.log({ primary_tag })
   return (
     <Cover>
       <PostTitle capitalize={capitalize && 'capitalize'}>{title}</PostTitle>

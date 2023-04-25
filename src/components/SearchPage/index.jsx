@@ -4,7 +4,7 @@ import styles from './SearchPage.module.css'
 
 const SearchPage = () => {
   const { state, onChange } = useSearchPage()
-  console.log({ state })
+  // console.log({ state })
   return (
     <>
       <div className={styles.searcher__container}>
