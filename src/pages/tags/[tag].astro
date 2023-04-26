@@ -41,7 +41,7 @@ type Props = CollectionEntry<'blog'>;
 const allPosts = await getCollection('blog');
 
 const { tagName} = Astro.props;
-// const { tag } = Astro.params;
+const { tag } = Astro.params;
 
 // console.log({ tagName });
 // console.log({ tag })
@@ -61,7 +61,15 @@ let posts = blogEntries.filter((p) => {
 });
 ---
 
-<Layout>
+<Layout
+  title={`${tagName} - John Serrano`}
+  description= ''
+  image= ''
+  url={`https://johnserrano.co/tags/${tag}`}
+  titleOpenGraph={`${tagName} - John Serrano`}
+  datePublished= ''
+  modified= ''
+>
   <Cover>
     <PostTitle capitalize='capitalize'>{tagName}</PostTitle>
   </Cover>
