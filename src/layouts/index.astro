@@ -9,11 +9,8 @@ const {
   image,
   url,
   titleOpenGraph,
-  date,
+  datePublished,
   modified,
-  imagenFacebook,
-  imagenTwitter,
-  type 
 } = Astro.props;
 ---
 
@@ -23,6 +20,8 @@ const {
 		<BaseHead 
       title={title || SITE_TITLE} 
       description={description || SITE_DESCRIPTION}
+      image={image}
+      datePublished={datePublished}
     />
 	</head>
 	<body>
