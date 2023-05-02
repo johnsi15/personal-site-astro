@@ -1,10 +1,15 @@
 ---
 title: Docker para desarrolladores
-slug: docker-para-desarrolladores
-date_published: 2018-08-24T17:12:55.000Z
-date_updated: 2019-09-03T16:01:12.000Z
+publishedDate: 2018-08-24T17:12:55.000Z
+updatedDate: 2019-09-03T16:01:12.000Z
+pubDate: 2018-08-24T17:12:55.000Z
 tags: docker, webdeveloper, webdeveloment, container, contenedores, nodejs, wordpress, nginx
 excerpt: Hagamos nuestro primer hola mundo en docker, desde la terminal ejecutamos un docker run hello-world en el output debemos ver algo como esto.
+description: Hagamos nuestro primer hola mundo en docker, desde la terminal ejecutamos un docker run hello-world en el output debemos ver algo como esto.
+primaryTag: { name: 'docker', slug: 'docker' }
+canonicalURL: "https://johnserrano.co/blog/docker-para-desarrolladores"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683056872/John%20Serrano/Blog%20Post/docker-para-desarrolladores/DockerDesarrolladores_bj1bsu.jpg"
 ---
 
 El día de hoy vamos a seguir con **docker** en el último [artículo](https://blog.johnserrano.co/instalacion-de-docker/) quedamos en la instalación hoy vamos a ver como docker nos ayuda a ser mejores desarrolladores web.
@@ -20,7 +25,7 @@ Bueno bien hagamos nuestro primer hola mundo en docker, desde la terminal ejecut
 
 Entonces que estamos haciendo con `docker run` lo que hacemos es ejecutar o crear un contenedor a partir de una imagen, en este caso la imagen se llama hello-world, donde podemos encontrar más imágenes en [docker hub](https://hub.docker.com/) ahora que es una imagen bueno una imagen es el resultado de un contenedor, es decir podemos crear una imagen a partir de un contenedor.
 
-![docker-images](/content/images/2018/08/docker_11.png)
+![docker-images](https://res.cloudinary.com/john-serrano/image/upload/v1683057052/John%20Serrano/Blog%20Post/docker-para-desarrolladores/docker_11_eysupp.png)
 
 Como dije antes las imágenes de docker las podemos encontrar en **docker hub** pero también las podemos buscar desde la terminal.
 
@@ -79,7 +84,7 @@ Con eso iniciamos sesion a nuestro registry de hub ahora hacemos un tag y push p
 
 Después de hacer push de una imagen a un registro, debe aparecer en el tablero de la cuenta, como en la imagen de abajo.
 
-![docker-hub](/content/images/2018/08/docker_12.png)
+![docker-hub](https://res.cloudinary.com/john-serrano/image/upload/v1683057052/John%20Serrano/Blog%20Post/docker-para-desarrolladores/docker_12_wk1tsm.png)
 
 Resumiendo vimos como descargar imágenes, verlas, destruirlas y crear contenedores, listarlos, iniciarlos, detenerlos, eliminarlos y como crear una imagen a partir de un contenedor y subirlo al registro de hub.
 
@@ -105,7 +110,7 @@ Ahora si hacemos un `docker ps` podemos ver corriendo estos dos contenedores si 
 
 **Nota:** si estas en Windows tenemos que ir a [http://192.168.99.100:3777](http://192.168.99.100:3777) con `docker-machine ip` podemos ver la ip.
 
-![docker-phpmyadmin](/content/images/2018/08/docker_13.png)
+![docker-phpmyadmin](https://res.cloudinary.com/john-serrano/image/upload/v1683057052/John%20Serrano/Blog%20Post/docker-para-desarrolladores/docker_13_ek1hpd.png)
 
 En el servidor va el nombre de nuestro contenedor de mysql el user y la **password** y listo con eso ya tenemos fácilmente corriendo mysql y phpmyadmin.
 
@@ -121,7 +126,7 @@ Le damos un nombre a nuestro contenedor le pasamos una variable de entorno le da
 
 **Nota:** si es la primera que se descarga la imagen tomara un tiempo pero después docker guarda eso en cache, es decir si volvemos a crear otro contenedor ya no debe tardar mucho tiempo.
 
-![docker-wordpress](/content/images/2018/08/docker_14.png)
+![docker-wordpress](https://res.cloudinary.com/john-serrano/image/upload/v1683057052/John%20Serrano/Blog%20Post/docker-para-desarrolladores/docker_14_nglteh.png)
 
 Como podemos ver ya tenemos  un **wordpress** solo hace falta hacer la instalación del sitio y desde mismo modo podemos crear otro contenedor con wordpress corriendo en otro puerto. La filosofía de **docker** es tener separado todo lo que se pueda en contenedores.
 
@@ -151,42 +156,44 @@ Con `docker build -t my-app .` creamos nuestra imagen tener en cuenta que el pun
 
 El resto es nuestra app y el package.json.
 
-    // app.js
-    const express = require('express')
-    
-    const app = express();
-    
-    
-    app.get('/', (req, res) => {
-      res.send('hola mundo')
-    })
-    
-    app.listen(3000, () => {
-      console.log('on server in port 3000')
-    })
+```js
+// app.js
+const express = require('express')
+
+const app = express();
+
+
+app.get('/', (req, res) => {
+  res.send('hola mundo')
+})
+
+app.listen(3000, () => {
+  console.log('on server in port 3000')
+})
+```
     
     
 
 *package.json*
 
-    {
-      "name": "server",
-      "version": "1.0.0",
-      "description": "",
-      "main": "index.js",
-      "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-      },
-      "keywords": [],
-      "author": "John Serrano <jandreys15@gmail.com> (https://twitter.com/jandrey15)",
-      "license": "ISC",
-      "dependencies": {
-        "express": "^4.16.3"
-      }
-    }
+```json
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "John Serrano <jandreys15@gmail.com> (https://twitter.com/jandrey15)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
+```
     
-    
-
 Hasta el momento solo tenemos una imagen ahora hay que iniciarla o más bien crear el contendor a partir de nuestra imagen.
 
 `docker run -it --rm --name web-node my-app`
