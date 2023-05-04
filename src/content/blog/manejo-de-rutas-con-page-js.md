@@ -1,10 +1,22 @@
 ---
 title: Manejo de rutas con page.js
-slug: manejo-de-rutas-con-page-js
-date_published: 2018-05-28T02:07:38.000Z
-date_updated: 2020-02-13T21:47:08.000Z
-tags: JavaScript, Html5, development, programación, library, pagejs, middleware
+publishedDate: 2018-05-28T02:07:38.000Z
+updatedDate: 2020-02-13T21:47:08.000Z
+pubDate: 2018-05-28T02:07:38.000Z
+tags: 
+- JavaScript
+- Html5
+- development
+- programación
+- library
+- pagejs
+- middleware
 excerpt: Manejo de rutas del lado del front-end gracias a esta librería que está inspirada en express router veremos unos  ejemplos de su implementación.
+description: Manejo de rutas del lado del front-end gracias a esta librería que está inspirada en express router veremos unos  ejemplos de su implementación.
+primaryTag: { name: 'JavaScript', slug: 'javascript' }
+canonicalURL: "https://johnserrano.co/blog/manejo-de-rutas-con-page-js"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683216196/John%20Serrano/Blog%20Post/manejo-de-rutas-con-page-js/pagejs_lqse0j.jpg"
 ---
 
 Hola amigos el día de hoy les traigo un artículo donde vamos a ver el manejo de rutas del lado del front-end gracias a esta **librería** que está inspirada en express router vamos a ver unos  ejemplos de su implementación pueden ver toda la [documentación](https://github.com/visionmedia/page.js) de esta librería.
@@ -15,15 +27,17 @@ Bueno lo primero descargar la librería en mi caso voy a usar un cdn para usar l
 
 Tenemos nuestro html.
 
-    #index.html
-      <p id="message"></p>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/user">User</a></li>
-        <li><a href="/user/jandrey15">User Name</a></li>
-        <li><a href="/notfound">Not found</a></li>
-        <li><a href="/ergtgt">Cualquier cosa</a></li>
-      </ul>
+```html
+#index.html
+  <p id="message"></p>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/user">User</a></li>
+    <li><a href="/user/jandrey15">User Name</a></li>
+    <li><a href="/notfound">Not found</a></li>
+    <li><a href="/ergtgt">Cualquier cosa</a></li>
+  </ul>
+  ```
     
     
 
@@ -31,34 +45,38 @@ Una **etiqueta p** y una lista con unos enlaces.
 
 Hacemos nuestro llamado a la librería
 
-    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+```html
+<script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+```
     
 
 Dentro del mismo html agregamos un script.
 
-    <script type="text/javascript">
-        page('/', index)
-        page('/user', user)
-        page('/user/:username', user)
-        page('*', notfound)
-        page()
-    
-        function index() {
-          document.getElementById('message')
-            .textContent = 'Viewing home'
-        }
-    
-        function user(ctx) {
-          document.getElementById('message')
-            .textContent = `Viewing user 
-          ${ctx.params.username || ''}`
-        }
-    
-        function notfound(ctx) {
-          document.getElementById('message')
-            .textContent = 'Viewing not found'
-        }
-      </script>
+```html
+<script type="text/javascript">
+  page('/', index)
+  page('/user', user)
+  page('/user/:username', user)
+  page('*', notfound)
+  page()
+
+  function index() {
+    document.getElementById('message')
+      .textContent = 'Viewing home'
+  }
+
+  function user(ctx) {
+    document.getElementById('message')
+      .textContent = `Viewing user 
+    ${ctx.params.username || ''}`
+  }
+
+  function notfound(ctx) {
+    document.getElementById('message')
+      .textContent = 'Viewing not found'
+  }
+</script>
+  ```
     
     
 
@@ -68,28 +86,28 @@ Lo que hacemos es seleccionar el elemento p con el **id message** y enviar un te
 
 Tenemos otro ejemplo pasando el **ctx y next** para trabajar con middlewares veamos cómo se trabaja un ejemplo muy sencillo para ver su funcionamiento y se pueda entender.
 
-    <li><a href="/cambio">Cambiar nombre apellido</a></li>
-    // Se agrega el li al html
-    
-    page('/cambio', nombre, apellido)
-    // Se agrega al script
-    
-    
-      function nombre(ctx, next) {
-         document.getElementById('message')
-            .textContent = 'Viewing john'
-          ctx.nombre = 'John'
-          next()
-      }
-    
-      function apellido(ctx) {
-         setTimeout(() => {
-            document.getElementById('message')
-              .textContent = `Viewing ${ctx.nombre} Serrano`
-          }, 2000)
-      }
-    
-    
+```js
+<li><a href="/cambio">Cambiar nombre apellido</a></li>
+// Se agrega el li al html
+
+page('/cambio', nombre, apellido)
+// Se agrega al script
+
+
+function nombre(ctx, next) {
+  document.getElementById('message')
+    .textContent = 'Viewing john'
+  ctx.nombre = 'John'
+  next()
+}
+
+function apellido(ctx) {
+  setTimeout(() => {
+    document.getElementById('message')
+      .textContent = `Viewing ${ctx.nombre} Serrano`
+  }, 2000)
+}
+``` 
 
 Agregamos en el html un li mas con una ruta agregamos esa ruta con page y le pasamos dos funciones una nombre y otra apellido, definimos esas funciones la primera como siempre pasamos el ctx y ahora también podemos pasar next agregamos un **textContent** seguido de eso pasamos el **ctx.nombre** para podemos usar ese ctx en la siguiente función y hacemos un **next()** para que siga con la siguiente función.
 

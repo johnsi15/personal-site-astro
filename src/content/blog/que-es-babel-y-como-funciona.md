@@ -1,10 +1,28 @@
 ---
 title: ¿Que es babel y como funciona?
-slug: que-es-babel-y-como-funciona
-date_published: 2018-07-27T21:12:00.000Z
-date_updated: 2019-09-03T16:27:27.000Z
-tags: react, react.js, JavaScript, Front-End, webpack, terminal, jsx, babel, presets, plugins, ES2015, nodejs, desarrollo-web
+publishedDate: 2018-07-27T21:12:00.000Z
+updatedDate: 2019-09-03T16:27:27.000Z
+pubDate: 2018-07-27T21:12:00.000Z
+tags: 
+- react
+- react.js
+- JavaScript
+- Front-End
+- webpack
+- terminal
+- jsx
+- babel
+- presets
+- plugins
+- ES2015
+- nodejs
+- desarrollo-web
 excerpt: Babel es una herramienta que nos permite transformar nuestro código JS de última generación a JS que cualquier navegador o versión de node.js entienda.
+description: Babel es una herramienta que nos permite transformar nuestro código JS de última generación a JS que cualquier navegador o versión de node.js entienda.
+primaryTag: { name: 'react', slug: 'react' }
+canonicalURL: "https://johnserrano.co/blog/que-es-babel-y-como-funciona"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683210447/John%20Serrano/Blog%20Post/que-es-babel-y-como-funciona/Babel_f9ipm1.jpg"
 ---
 
 Vamos a ver el día de hoy un artículo algo sencillo sobre que es babel para que sirve y como funciona. **[Babel ](https://babeljs.io/)** es una herramienta que nos permite transformar nuestro código JS de última generación (o con funcionalidades extras) a JS que cualquier navegador o versión de **node.js** entienda.
@@ -27,10 +45,11 @@ Si les devuelve algún error pueden ejecutarlo de la siguiente manera.
 
 Otra forma de hacerlo es crear un script en el package ya que me parece una forma mucho más fácil y cómoda.
 
-    "scripts": {
-        "build": "babel script.js -o script-compiled.js"
-     },
-    
+```json
+"scripts": {
+  "build": "babel script.js -o script-compiled.js"
+}
+```    
 
 Después de agregar ese script podemos ejecutar desde la terminal **`npm run build`**.
 
@@ -50,65 +69,70 @@ Ahora vamos a instalar el preset ES2015 en la terminal escribimos lo siguiente.
 
 Luego vamos a agregarlo a la configuración de Babel en el archivo *.babelrc*.
 
-    {
-      "presets": ["es2015"]
-    }
-    
+```js
+{
+  "presets": ["es2015"]
+}
+```
 
 Ahora cuando volvamos a usar Babel este va a transformar todo el código de ES6 a ES5. Como se puede ver no necesitamos agregar babel-preset- al nombre del preset ya que Babel asume por defecto que tiene ese prefijo.
 
 Un ejemplo usando JS de última generación.
 
-    const array = [1, 2, 3];
+```js
+const array = [1, 2, 3];
     
-    const newArray = array.map((item) => {
-      return item ** 2;
-    })
-    
-    console.log(newArray)
-    
-    const [a, ,b] = ['hola', 2, 'mundo']
-    
-    console.log(`${a} - ${b}`)
-    
-    const { hola, num } = { 
-      hola: 'hola mundo :)', 
-      num: 2018 
-    }
-    
-    console.log(`${hola} -> número ${num}`)
-    
-    // script.js
+const newArray = array.map((item) => {
+  return item ** 2;
+})
+
+console.log(newArray)
+
+const [a, ,b] = ['hola', 2, 'mundo']
+
+console.log(`${a} - ${b}`)
+
+const { hola, num } = { 
+  hola: 'hola mundo :)', 
+  num: 2018 
+}
+
+console.log(`${hola} -> número ${num}`)
+
+// script.js
+```
     
 
 Corremos `npm run build` para que babel haga su trabajo de transformar el código.
 
-    'use strict';
+```js
+'use strict';
     
-    var array = [1, 2, 3];
-    
-    var newArray = array.map(function (item) {
-      return item ** 2;
-    });
-    
-    console.log(newArray);
-    
-    var _ref = ['hola', 2, 'mundo'],
-        a = _ref[0],
-        b = _ref[2];
-    
-    console.log(a + ' - ' + b);
-    
-    var _hola$num = {
-      hola: 'hola mundo :)',
-      num: 2018
-    },
-        hola = _hola$num.hola,
-        num = _hola$num.num;
-    
-    console.log(hola + ' -> n\xFAmero ' + num);
-    
-    // script-compiled.js
+var array = [1, 2, 3];
+
+var newArray = array.map(function (item) {
+  return item ** 2;
+});
+
+console.log(newArray);
+
+var _ref = ['hola', 2, 'mundo'],
+    a = _ref[0],
+    b = _ref[2];
+
+console.log(a + ' - ' + b);
+
+var _hola$num = {
+  hola: 'hola mundo :)',
+  num: 2018
+},
+    hola = _hola$num.hola,
+    num = _hola$num.num;
+
+console.log(hola + ' -> n\xFAmero ' + num);
+
+// script-compiled.js
+```
     
 
 Ahora bien si estamos usando React.js  al crear nuestros componentes, sin embargo los navegadores y Node.js no entienden JSX, así que para que funcionen nuestro components necesitamos transformar nuestro código, para eso usamos Babel.
@@ -119,58 +143,62 @@ Babel tiene plugins para soportar JSX y **[FlowType](https://flow.org/)**, sí d
 
 Ya instalado el preset de react lo agregamos a la configuración.
 
-    {
-      "presets": ["es2015", "react"]
-    }
-    
-    
+```json
+{
+  "presets": ["es2015", "react"]
+}
+```   
 
 Con esto ya podemos usar **JSX** en nuestro código y Babel se va a encargar de que funcione en todos los navegadores realizando las transformaciones necesarias.
 
 Un ejemplo usando react.js con JSX.
 
-    // Component react
-    const HelloWorld = (props) => {
-      return (
-        <div>
-          <h4>Hello world! :)</h4>
-          <p>{props.name}</p>
-        </div>
-      )
-    }
-    
-    const app = document.getElementById('app');
-    
-    ReactDOM.render(<HelloWorld name='John Serrano' />, app);
-    
-    // script.js
+```js
+// Component react
+const HelloWorld = (props) => {
+  return (
+    <div>
+      <h4>Hello world! :)</h4>
+      <p>{props.name}</p>
+    </div>
+  )
+}
+
+const app = document.getElementById('app');
+
+ReactDOM.render(<HelloWorld name='John Serrano' />, app);
+
+// script.js
+```
     
 
 Corremos `npm run build` para que babel haga su trabajo de transformar el código.
 
-    // Component react
-    var HelloWorld = function HelloWorld(props) {
-      return React.createElement(
-        'div',
-        null,
-        React.createElement(
-          'h4',
-          null,
-          'Hello world! :)'
-        ),
-        React.createElement(
-          'p',
-          null,
-          props.name
-        )
-      );
-    };
-    
-    var app = document.getElementById('app');
-    
-    ReactDOM.render(React.createElement(HelloWorld, { name: 'John Serrano' }), app);
-    
-    // script-compiled.js
+```js
+// Component react
+var HelloWorld = function HelloWorld(props) {
+  return React.createElement(
+    'div',
+    null,
+    React.createElement(
+      'h4',
+      null,
+      'Hello world! :)'
+    ),
+    React.createElement(
+      'p',
+      null,
+      props.name
+    )
+  );
+};
+
+var app = document.getElementById('app');
+
+ReactDOM.render(React.createElement(HelloWorld, { name: 'John Serrano' }), app);
+
+// script-compiled.js
+```
     
 
 ###### Nuevas funcionalidades
@@ -187,41 +215,43 @@ Para usar esos preset solo tenemos que instalarlos con npm.
 
 La configuración quedaría de la siguiente manera.
 
-    {
-      "presets": ["latest", "react", "stage-0"]
-    }
+```json
+{
+  "presets": ["latest", "react", "stage-0"]
+}
+```
     
-    
-
 Con esto ya tenemos todo ECMAScript **2015/2016/2017**, React (JSX) y las funciones experimentales del Stage 0.
 
 Un ejemplo usando async await.
 
-    // Async/Await
-    const resolveAfter2Seconds = () => {
-      return new Promise(resolve => {
-        setTimeout(() => {
-          resolve('resolved');
-        }, 2000);
-      });
-    }
-    
-    // async function asyncCall() {
-    //   console.log('calling');
-    //   var result = await resolveAfter2Seconds();
-    //   console.log(result);
-    //   // expected output: "resolved"
-    // }
-    
-    const asyncCall = async () => {
-      console.log('calling');
-      const result = await resolveAfter2Seconds();
-      console.log(result);
-    }
-    
-    asyncCall();
-    
-    // script.js
+```js
+// Async/Await
+const resolveAfter2Seconds = () => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('resolved');
+    }, 2000);
+  });
+}
+
+// async function asyncCall() {
+//   console.log('calling');
+//   var result = await resolveAfter2Seconds();
+//   console.log(result);
+//   // expected output: "resolved"
+// }
+
+const asyncCall = async () => {
+  console.log('calling');
+  const result = await resolveAfter2Seconds();
+  console.log(result);
+}
+
+asyncCall();
+
+// script.js
+```
     
 
 Corremos `npm run build` para que babel haga su trabajo de transformar el código.
@@ -267,17 +297,17 @@ Para usar los plugins tenemos que instalarlos desde la terminal con npm.
 
 Ahora en la configuración de babel debemos agregar estos plugins.
 
-    {
-      "presets": ["latest", "react", "stage-0"],
-      "plugins": ["transform-react-constant-elements"],
-      "env": {
-        "production": {
-          "plugins": ["transform-remove-console"]
-        }
-      }
+```json
+{
+  "presets": ["latest", "react", "stage-0"],
+  "plugins": ["transform-react-constant-elements"],
+  "env": {
+    "production": {
+      "plugins": ["transform-remove-console"]
     }
-    
-    
+  }
+}
+```
 
 Como podemos ver se agregar una llave con plugins la cual es un array hay normalmente van nuestros plugins, también vemos una llave con **env** donde podemos separar los plugins que solo queremos para producción.
 
@@ -313,31 +343,32 @@ Instalamos el package **babel-loader**.
 
 Ahora en la configuración de nuestro webpack agregamos lo siguiente.
 
-    const path = require('path');
+```js
+const path = require('path');
     
-    const config = {
-      entry: './src/index.jsx',
-      output: {
-        path: path.resolve(__dirname, 'public/js'),
-        filename: 'bundle.js'
-      },
-      module: {
-        rules: [
-          {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            use: {
-              loader: 'babel-loader',
-            }
-          }
-        ]
+const config = {
+  entry: './src/index.jsx',
+  output: {
+    path: path.resolve(__dirname, 'public/js'),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+        }
       }
-    }
-    
-    module.exports = config;
-    
-    // webpack.config.js
-    
+    ]
+  }
+}
+
+module.exports = config;
+
+// webpack.config.js
+```  
 
 Con esto y teniendo el archivo de configuración ***.babelrc*** en la raíz del proyecto podemos hacer que Webpack se encargue de usar Babel para transformar todo nuestro código JS y JSX a JS que todos los navegadores entiendan.
 

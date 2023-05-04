@@ -1,9 +1,19 @@
 ---
 title: Instalación de MongoDB
-slug: instalacion-de-mongodb
-date_published: 2018-07-22T20:36:58.000Z
-date_updated: 2019-09-03T20:04:01.000Z
-tags: mongo, mongodb, Windows, Linux
+publishedDate: 2018-07-22T20:36:58.000Z
+updatedDate: 2019-09-03T20:04:01.000Z
+pubDate: 2018-07-22T20:36:58.000Z
+tags: 
+- mongo
+- mongodb
+- Windows
+- Linux
+excerpt: Antes de descargar cualquier instalador de MongoDB es importante verificar que versión de MongoDB necesitas.
+description: Antes de descargar cualquier instalador de MongoDB es importante verificar que versión de MongoDB necesitas.
+primaryTag: { name: 'mongo', slug: 'mongo' }
+canonicalURL: "https://johnserrano.co/blog/introduccion-a-next-js-el-framework-de-react"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683212160/John%20Serrano/Blog%20Post/instalacion-de-mongodb/mongo_1_hzcds5.jpg"
 ---
 
 ##### Instalación en Windows

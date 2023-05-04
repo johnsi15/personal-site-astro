@@ -1,10 +1,20 @@
 ---
 title: Manejo básico de la terminal
-slug: manejo-basico-de-la-terminal
-date_published: 2018-07-23T22:15:00.000Z
-date_updated: 2019-09-03T16:35:43.000Z
-tags: terminal, Windows, Linux, cmd, git
+publishedDate: 2018-07-23T22:15:00.000Z
+updatedDate: 2019-09-03T16:35:43.000Z
+pubDate: 2018-07-23T22:15:00.000Z
+tags: 
+- terminal
+- Windows
+- Linux
+- cmd
+- git
 excerpt: Lo primero que se debe hacer es perderle el miedo usar la terminal y pensar porque no hacerlo desde la terminal vamos a ver algunos casos de uso.
+description: Lo primero que se debe hacer es perderle el miedo usar la terminal y pensar porque no hacerlo desde la terminal vamos a ver algunos casos de uso.
+primaryTag: { name: 'terminal', slug: 'terminal' }
+canonicalURL: "https://johnserrano.co/blog/manejo-basico-de-la-terminal"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683211064/John%20Serrano/Blog%20Post/manejo-basico-de-la-terminal/terminal_1_cinxhp.jpg"
 ---
 
 Lo primero que se debe hacer para comenzar a usar la terminal es perderle el miedo, usar primero la **terminal** antes que hacerlo de una forma gráfica, vamos a ver algunos casos de uso y los comando que a mi parecer son los más usados.

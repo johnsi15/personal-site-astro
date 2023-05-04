@@ -1,10 +1,25 @@
 ---
 title: Test con mocha y chai
-slug: test-con-mocha-y-chai
-date_published: 2018-07-01T21:31:40.000Z
-date_updated: 2019-09-03T16:38:55.000Z
-tags: JavaScript, nodejs, Developer, desarrollo, mocha, chai, test, testing, npm, pruebas
+publishedDate: 2018-07-01T21:31:40.000Z
+updatedDate: 2019-09-03T16:38:55.000Z
+pubDate: 2018-07-01T21:31:40.000Z
+tags: 
+- JavaScript
+- nodejs
+- Developer
+- desarrollo
+- mocha
+- chai
+- test
+- testing
+- npm
+- pruebas
 excerpt: Testing de nuestras aplicaciones web en este caso con mocha y chai, chai es una librería de aserción que nos facilita el uso de mocha y chai usa interfaces.
+description: Testing de nuestras aplicaciones web en este caso con mocha y chai, chai es una librería de aserción que nos facilita el uso de mocha y chai usa interfaces.
+primaryTag: { name: 'JavaScript', slug: 'javascript' }
+canonicalURL: "https://johnserrano.co/blog/test-con-mocha-y-chai"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683212764/John%20Serrano/Blog%20Post/test-con-mocha-y-chai/mocha_nk82oo.jpg"
 ---
 
 El día de hoy vengo con un artículo algo básico pero de ayuda para comenzar con el **testing** de nuestras aplicaciones web en este caso con **[mocha](https://mochajs.org/)** y **[chai](http://www.chaijs.com/)**, chai es una librería de aserción que nos facilita el uso de mocha y chai tiene varias interfaces: **assert, expect y should,** en este post vamos usar chai ya que nos permite usar cualquier tipo de interfaz más adelante podemos ver el uso de algunas de ellas.
@@ -15,38 +30,40 @@ Una prueba unitaria es una forma de comprobar el correcto funcionamiento de una 
 
 Mocha y chai nos permiten crear pruebas unitarias muy completas para nuestro desarrollo de forma simple y divertida en **JavaScript**. Esto nos permite acercarnos a cumplir con la **pirámide de cohn**, la pirámide de pruebas de **[Mike Cohn](https://en.wikipedia.org/wiki/Mike_Cohn)**, descrita en su libro Succeeding with Agile, ha sido un referente en este campo durante mucho tiempo. En ella Cohn establece que hay varios niveles de pruebas, y señala el grado en el que deberíamos automatizarlas.
 
-![Piramide](/content/images/2018/07/piramide.png)
+![Piramide](https://res.cloudinary.com/john-serrano/image/upload/v1683212909/John%20Serrano/Blog%20Post/test-con-mocha-y-chai/piramide_awpqbz.png)
 
 Bueno en este artículo vamos a crear algunos ejemplos para implementar test unitarios con **npm, mocha y chai**. Npm es el gestor de paquetes JavaScript de Node.js en otras palabras nos permite descargar librerías o paquetes tienen que tener **Node.js** instalado ya que npm viene con Node.js, sombre mocha y chai ya les comente que son.
 
 Uso de las diferentes interfaces que nos trae chai.
 
-    Should
-    chai.should();
-    
-    foo.should.be.a('string');
-    foo.should.equal('bar');
-    foo.should.have.lengthOf(3);
-    tea.should.have.property('flavors')
-      .with.lengthOf(3);
-    
-    Expect
-    var expect = chai.expect;
-    
-    expect(foo).to.be.a('string');
-    expect(foo).to.equal('bar');
-    expect(foo).to.have.lengthOf(3);
-    expect(tea).to.have.property('flavors')
-      .with.lengthOf(3);
-    
-    Assert
-    var assert = chai.assert;
-    
-    assert.typeOf(foo, 'string');
-    assert.equal(foo, 'bar');
-    assert.lengthOf(foo, 3)
-    assert.property(tea, 'flavors');
-    assert.lengthOf(tea.flavors, 3);
+```js
+// Should
+chai.should();
+
+foo.should.be.a('string');
+foo.should.equal('bar');
+foo.should.have.lengthOf(3);
+tea.should.have.property('flavors')
+  .with.lengthOf(3);
+
+// Expect
+var expect = chai.expect;
+
+expect(foo).to.be.a('string');
+expect(foo).to.equal('bar');
+expect(foo).to.have.lengthOf(3);
+expect(tea).to.have.property('flavors')
+  .with.lengthOf(3);
+
+// Assert
+var assert = chai.assert;
+
+assert.typeOf(foo, 'string');
+assert.equal(foo, 'bar');
+assert.lengthOf(foo, 3)
+assert.property(tea, 'flavors');
+assert.lengthOf(tea.flavors, 3);
+```
     
     
 
@@ -70,17 +87,17 @@ Creamos un folder más llamado **test** donde van a estar todos nuestros tests y
 
 Agregamos el siguiente código y usamos la librería de **aserción assert** que viene por defecto con nodejs, en otros ejemplos usaremos chai.
 
-    const assert = require('assert');
-    describe('Array', function() {
-      describe('#indexOf()', function() {
-        it('should return -1 when the value is not present', function() {
-          assert.equal([1,2,3].indexOf(4), -1);
-        });
-      });
+```js
+const assert = require('assert');
+describe('Array', function() {
+  describe('#indexOf()', function() {
+    it('should return -1 when the value is not present', function() {
+      assert.equal([1,2,3].indexOf(4), -1);
     });
+  });
+});
+```
     
-    
-
 En nuestro test tenemos la siguiente estructura el **describe** y el **it** que son:
 
 **Describe**
@@ -103,95 +120,96 @@ Ahora bien volviendo a nuestro primer test unitario para correrlo vamos a la ter
     
     
 
-![Test-1](/content/images/2018/07/test-1.png)
+![Test-1](https://res.cloudinary.com/john-serrano/image/upload/v1683212910/John%20Serrano/Blog%20Post/test-con-mocha-y-chai/test-1_wht4vx.png)
 
 El test pasa porque estamos esperando un -1 ya que el valor 4 no está en el array que le estamos pasando, indexOf es una función de javascript el cual nos devuelve 1 si se encuentra el valor y -1 si no se encuentra.
 
 Ahora vamos a crear un test con un script de algunas operaciones matemáticas, bien lo primero instalar chai con `npm install chai --save` lo siguiente importar el módulo de chai y también importar nuestro script de operaciones.
 
-    const assert    = require('chai').assert;
-    const expect    = require('chai').expect;
-    const should = require('chai').should();
-    
-    const Operations = require('../src/app.js');
-    
-    
+```js
+const assert    = require('chai').assert;
+const expect    = require('chai').expect;
+const should = require('chai').should();
+
+const Operations = require('../src/app.js');
+```
 
 Ahora si vamos a los test los divide en 3 describe donde existen operaciones matemáticas y en cada una de ellas uso un tipo de aserción gracias a chai para ver las diferencia y su manera de aplicarlo.
 
-    describe('Mathematical operations', () => {
-      const operation = new Operations(10, 5);
-    
-      describe('Basic operation: sum with assert', () => {
-        it('Sum of 2 numbers equals 15', () => {
-          const sum = operation.sum.value;
-          assert.equal(sum, 15);
-        })
-    
-        it('The sum of 10 + 5 equals 15 ', () => {
-          const sum = operation.sum.text;
-          assert.equal(sum, 'La suma de 10 + 5 = 15');
-        })
-    
-        it('The result is a string', () => {
-          const sum = operation.sum.text;
-          assert.typeOf(sum, 'string');
-        })
-    
-        it('The result is a number', () => {
-          const sum = operation.sum.value;
-          assert.typeOf(sum, 'number');
-        })
-    
-      })
-    
-      describe('Basic operation: subtraction with expect', () => {
-        it('Subtraction of 2 numbers equals 5', () => {
-          const res = operation.subtraction.value;
-          expect(res).to.equal(5);
-        })
-    
-        it('The subtraction of 10 - 5 equals 5 ', () => {
-          const res = operation.subtraction.text;
-          expect(res).to.equal('La resta de 10 - 5 = 5');
-        })
-    
-        it('The result is a string', () => {
-          const res = operation.subtraction.text;
-          expect(res).to.be.a('string');
-        })
-    
-        it('The result is a number', () => {
-          const res = operation.subtraction.value;
-          expect(res).to.be.a('number');
-        })
-      })
-    
-      describe('Basic operation: area of a triangle with should', () => {
-        it('Area of triangle with base 10 x height 5 equal 25', () => {
-          const area = operation.area.value;
-          area.should.equal(25);
-        })
-    
-        it('Area of triangle equals 25 ', () => {
-          const area = operation.area.text;
-          area.should.equal('El área del triángulo es 25');
-        })
-    
-        it('The result is a string', () => {
-          const area = operation.area.text;
-          area.should.be.a('string');
-        })
-    
-        it('The result is a number', () => {
-          const area = operation.area.value;
-          area.should.be.a('number');
-        })
-      })
-    })
-    
-    
+```js
+describe('Mathematical operations', () => {
+  const operation = new Operations(10, 5);
 
+  describe('Basic operation: sum with assert', () => {
+    it('Sum of 2 numbers equals 15', () => {
+      const sum = operation.sum.value;
+      assert.equal(sum, 15);
+    })
+
+    it('The sum of 10 + 5 equals 15 ', () => {
+      const sum = operation.sum.text;
+      assert.equal(sum, 'La suma de 10 + 5 = 15');
+    })
+
+    it('The result is a string', () => {
+      const sum = operation.sum.text;
+      assert.typeOf(sum, 'string');
+    })
+
+    it('The result is a number', () => {
+      const sum = operation.sum.value;
+      assert.typeOf(sum, 'number');
+    })
+
+  })
+
+  describe('Basic operation: subtraction with expect', () => {
+    it('Subtraction of 2 numbers equals 5', () => {
+      const res = operation.subtraction.value;
+      expect(res).to.equal(5);
+    })
+
+    it('The subtraction of 10 - 5 equals 5 ', () => {
+      const res = operation.subtraction.text;
+      expect(res).to.equal('La resta de 10 - 5 = 5');
+    })
+
+    it('The result is a string', () => {
+      const res = operation.subtraction.text;
+      expect(res).to.be.a('string');
+    })
+
+    it('The result is a number', () => {
+      const res = operation.subtraction.value;
+      expect(res).to.be.a('number');
+    })
+  })
+
+  describe('Basic operation: area of a triangle with should', () => {
+    it('Area of triangle with base 10 x height 5 equal 25', () => {
+      const area = operation.area.value;
+      area.should.equal(25);
+    })
+
+    it('Area of triangle equals 25 ', () => {
+      const area = operation.area.text;
+      area.should.equal('El área del triángulo es 25');
+    })
+
+    it('The result is a string', () => {
+      const area = operation.area.text;
+      area.should.be.a('string');
+    })
+
+    it('The result is a number', () => {
+      const area = operation.area.value;
+      area.should.be.a('number');
+    })
+  })
+})
+
+```
+    
 Las operaciones matemáticas están en la carpeta `src/` un file `app.js` es un script basado en clases, el cual llamamos en los test para aplicar los test, Por cuestiones del post no voy a entrar en detalles sobre es script que uso para realizar los test.
 
 Por ultimo solo nos queda ir a la terminal y correr el comando `npm test` y verificar que todos los test pasen, como dije antes mocha tiene otro tipo de estructuras que no se vieron en este post para ampliar toda esa información puedes visitar la documentación de **[mocha](https://mochajs.org/)**.
