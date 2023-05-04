@@ -1,9 +1,22 @@
 ---
 title: ¿Que es Vanilla js  o JavaScript puro?
-slug: que-es-vanilla-js-o-javascript-puro
-date_published: 2017-10-17T01:33:29.000Z
-date_updated: 2018-07-27T21:17:38.000Z
-tags: JavaScript, Jquery, programación, Windows, Linux, Vanillajs, framework
+publishedDate: 2017-10-17T01:33:29.000Z
+updatedDate: 2018-07-27T21:17:38.000Z
+pubDate: 2017-10-17T01:33:29.000Z
+tags: 
+- JavaScript
+- Jquery
+- programación
+- Windows
+- Linux
+- Vanillajs
+- framework
+excerpt: Vanilla JS es una iniciativa, en forma de framework que intenta enseñar las grandes ventajas de no usar frameworks o librerias y es solo JavaScript puro
+description: Vanilla JS es una iniciativa, en forma de framework que intenta enseñar las grandes ventajas de no usar frameworks o librerias y es solo JavaScript puro
+primaryTag: { name: 'JavaScript', slug: 'javascript' }
+canonicalURL: "https://johnserrano.co/blog/que-es-vanilla-js-o-javascript-puro"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683238564/John%20Serrano/Blog%20Post/que-es-vanilla-js-o-javascript-puro/vanillajs_gbyba0.jpg"
 ---
 
 Hola que tal amigos como vamos el día de hoy voy a explicarles un poco de cómo usar **vanilla js** que no es más que otra cosa que **JavaScript** puro , muchas veces comenzamos a usar JavaScript sin saber escribir JavaScript realmente y de la mejor forma, casi siempre aprendemos JavaScript es usando librerías como **Jquery** pero realmente terminamos aprendiendo más de la propia librería que del propio lenguaje de programación.
@@ -20,44 +33,52 @@ El primer ejemplo es la selección de texto o de un elemento primero lo voy hace
 
 Para seleccionar un texto y pasarlo en otro lado con jquery hacemos lo siguiente.
 
-###### Jquery
+## Jquery
 
-    const mensaje = $('#container #title').text();
-    $('#container #salida').text(mensaje);
+```js
+const mensaje = $('#container #title').text();
+$('#container #salida').text(mensaje);
+```
     
 
 Con vanilla js seria de la siguiente manera.
 
-###### Vanilla JS
+## Vanilla JS
 
-    const mensajeVanilla = document.getElementById('title').textContent;
-    document.getElementById('salida').textContent = mensajeVanilla;
-    
+```js
+const mensajeVanilla = document.getElementById('title').textContent;
+document.getElementById('salida').textContent = mensajeVanilla;
+``` 
 
 Como podemos ver usamos **document.getElementById()** para seleccionar un elemento del **DOM**, existen otras forma de hacer selecciones veamos un ejemplo de esto.
 
 Con jquery podemos seleccionar html de la siguiente manera.
 
-###### Jquery
+## Jquery
 
-    const texto = $('#container #texto').html();
-    $('#container #salida').html(texto);
-    
+```js
+const texto = $('#container #texto').html();
+$('#container #salida').html(texto);
+```
 
 Con vanilla js lo podemos hacer de la siguiente manera.
 
-###### Vanilla JS
+## Vanilla JS
 
-    const textVanilla = document.querySelector('#container #texto').innerHTML ;
-    document.querySelector('#container #salida').innerHTML  = textVanilla;
+```js
+const textVanilla = document.querySelector('#container #texto').innerHTML ;
+document.querySelector('#container #salida').innerHTML  = textVanilla;
+```
     
 
 Como podemos ver hacemos lo mismo que con jquery y además estamos usando otro selector de vanilla que es querySelector(), también existe un selector más el cual es **querySelectorAll** y lo que hace es seleccionar todos los elementos de una clase o un id que le indiquemos veamos un ejemplo.
 
-###### Vanilla JS
+## Vanilla JS
 
-    const element = document.querySelectorAll(".opt");
-    document.querySelector('#container #salida').innerHTML  = element[0].innerHTML;
+```js
+const element = document.querySelectorAll(".opt");
+document.querySelector('#container #salida').innerHTML  = element[0].innerHTML;
+```
     
 
 La selección de todos los elementos nos devuelve una lista de elementos y seleccionamos la posición para obtener el html de esa selección, también podemos usar un **forEach** para recorrer esa lista mas adelante vamos a ver un ejemplo de como hacerlo.
@@ -66,55 +87,66 @@ Tenemos dos forma de escribir en vanilla js con comillas simples o comillas dobl
 
 Contamos con length que nos permite contar, nos cuenta cuantos caracteres existen.
 
-    const length = 'John Serrano'.length;
-    console.log(length)
+```js
+const length = 'John Serrano'.length;
+console.log(length)
+```
     
 
 Esta toLowerCase la cual convierte un texto en minúsculas.
 
-    const minusculas = "THE KIDS".toLowerCase();
-    console.log(minusculas);
+```js
+const minusculas = "THE KIDS".toLowerCase();
+console.log(minusculas);
+```
     
 
 Por el contrario también tenemos una función que convierte el texto en mayúscula.
 
-    const mayusculas = "I wish I were big.".toUpperCase();
-    console.log(mayusculas)
+```js
+const mayusculas = "I wish I were big.".toUpperCase();
+console.log(mayusculas)
+```
     
-
 Como se puede notar son funcionalidades propias de JavaScript que en ocasiones no sabemos y terminamos usando con Jquery.
 
 Algo más que normalmente usamos en jquery es agregar clases veamos cómo se hace con vanilla js.
 
-###### Vanilla JS
+## Vanilla JS
 
-    const el = document.querySelector('#container');
-    el.classList.add('newClass');
-    el.classList.remove('otherClass');
-    
-    /*  Revisamo si existen esas clases */
-    // alert(el.classList.contains("newClass")); 
-    // alert(el.classList.contains("otherClass"));
+```js
+const el = document.querySelector('#container');
+el.classList.add('newClass');
+el.classList.remove('otherClass');
+
+/*  Revisamo si existen esas clases */
+// alert(el.classList.contains("newClass")); 
+// alert(el.classList.contains("otherClass"));
+```
     
 
 Como último ejemplo voy a mostrar una función que es muy usado en la librería de Jquery la cual es recorrer una lista de elementos, entonces con Jquery normalmente se hace de la siguiente manera.
 
-###### Jquery
+## Jquery
 
-    $('#lista li').each(function(indice, valor){
-         console.log('Hola soy el índice -> '+ indice + " hay este valor: " + valor);
-    });
+```js
+$('#lista li').each(function(indice, valor){
+        console.log('Hola soy el índice -> '+ indice + " hay este valor: " + valor);
+});
+```
     
 
 Es bastante sencillo con JavaScript es un poco más extenso pero obtenemos el mismo resultado veamos cómo se hace.
 
-###### Vanilla JS
+## Vanilla JS
 
-    const list = document.querySelectorAll('#lista li');
-    list.forEach(function(currentValue, indice, array) {
-       console.log("En el índice " + indice + " hay este 
-       valor: " + currentValue);
-    });
+```js
+const list = document.querySelectorAll('#lista li');
+list.forEach(function(currentValue, indice, array) {
+    console.log("En el índice " + indice + " hay este 
+    valor: " + currentValue);
+});
+```
     
 
 Como puedes ver es el mismo resultado solo un poco más extenso a la hora de escribir el código, podemos obtener el valor, índice que son los dos valores que más usamos a la hora de iterar un array en este caso un array de elementos.
