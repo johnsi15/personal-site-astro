@@ -1,9 +1,25 @@
 ---
 title: Instalación de Ghost en Digital Ocean
-slug: instalacion-de-ghost-en-digital-ocean
-date_published: 2016-06-19T20:36:52.000Z
-date_updated: 2016-06-19T21:09:44.000Z
-tags: mysql, Windows, Linux, conectar, ghost, DigitalOcean, SSH, apache, instalar, conexion
+publishedDate: 2016-06-19T20:36:52.000Z
+updatedDate: 2016-06-19T21:09:44.000Z
+pubDate: 2016-06-19T20:36:52.000Z
+tags: 
+- mysql
+- Windows
+- Linux
+- conectar
+- ghost
+- DigitalOcean
+- SSH
+- apache
+- instalar
+- conexion
+excerpt: El día de hoy les explicare como instalar ghost en DigitalOcean que es un servicio de hosting cloud, donde podemos crear varios servidores y montar el sis..
+description: El día de hoy les explicare como instalar ghost en DigitalOcean que es un servicio de hosting cloud, donde podemos crear varios servidores y montar el sis..
+primaryTag: { name: 'ghost', slug: 'ghost' }
+canonicalURL: "https://johnserrano.co/blog/instalacion-de-ghost-en-digital-ocean"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683580158/John%20Serrano/Blog%20Post/instalacion-de-ghost-en-digital-ocean/digitalOcean_edobba.jpg"
 ---
 
 El día de hoy les explicare como **instalar ghost en DigitalOcean** que es un servicio de hosting cloud, donde podemos crear varios servidores y montar el sistema operativo o cms que necesitemos ellos le llaman **droplets** para cada uno de los servers.
@@ -16,13 +32,13 @@ Lo primero que tenemos que hacer es crear una cuenta ingresado tus datos básico
 
 Una vez creada tu cuenta y confirmada vía email o correo lo que tendremos que hacer en darle click donde dice **créate droplet**, ahora nos aparece algo como esto.
 
-![The Ghost Logo](/content/images/2016/06/digital_1.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683580504/John%20Serrano/Blog%20Post/instalacion-de-ghost-en-digital-ocean/digital_1_porkpw.jpg)
 
 Lo que tenemos que hacer ahora es seleccionar  **one-click-apps** en este caso porque Digital nos ofrece una forma fácil de **instalar ghost** o cualquier otro servicio que necesitemos si lo hacemos de la otra forma nos instalara solo el sistema operativo sin más nada, bueno una vez que seleccionemos one-click-apps buscaremos ghost, seleccionamos luego un cobro de  **$5 dolares**, y una región por lo general yo la dejo en New York depende en la parte que vivas yo como vivo en Colombia lo dejare como esta.
 
-![The Ghost Logo](/content/images/2016/06/digital_2.jpg)
-![The Ghost Logo](/content/images/2016/06/digital_3-1.jpg)
-![The Ghost Logo](/content/images/2016/06/digital_4.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683580504/John%20Serrano/Blog%20Post/instalacion-de-ghost-en-digital-ocean/digital_2_crn2rj.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683580504/John%20Serrano/Blog%20Post/instalacion-de-ghost-en-digital-ocean/digital_3-1_aa0sk5.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683580504/John%20Serrano/Blog%20Post/instalacion-de-ghost-en-digital-ocean/digital_4_dqcap1.jpg)
 
 Donde dice más opciones no escogemos nada y en SSH Keys  agregamos una llave ssh, para crea  una llave ssh lo hacemos de la siguiente forma y copiaremos la llave pública que es la que necesitamos.
 
