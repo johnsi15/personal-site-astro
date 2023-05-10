@@ -1,44 +1,56 @@
 ---
 title: Login con Python Social Auth en Django
-slug: login-con-python-social-auth-en-django
-date_published: 2016-05-09T19:34:32.000Z
-date_updated: 2020-05-05T21:51:09.000Z
-tags: Python, Django, Developer, programación, Web, Login, Python-social-auth
+publishedDate: 2016-05-09T19:34:32.000Z
+updatedDate: 2020-05-05T21:51:09.000Z
+pubDate: 2016-05-09T19:34:32.000Z
+tags: 
+- Python
+- Django
+- Developer
+- programación
+- Web
+- Login
+- Python-social-auth
 excerpt: EL día de hoy vamos a realizar un login con python  Social auth  en django , lo vamos hacer con Facebook de igual
+description: EL día de hoy vamos a realizar un login con python  Social auth  en django , lo vamos hacer con Facebook de igual
+primaryTag: { name: 'Django', slug: 'django' }
+canonicalURL: "https://johnserrano.co/blog/login-con-python-social-auth-en-django"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683735003/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/portadaLoginSocial_vp5sib.jpg"
 ---
 
 EL día de hoy vamos a realizar un login con python  Social auth  en django , lo vamos hacer con **Facebook** de igual forma se puede usar con otras redes sociales como **twitter**, lo primero es tener ya un proyecto creado en un entorno virtual con una aplicación si no sabes cómo crear tu proyecto de invito a que veas este otro **[artículo](http://blog.johnserrano.co/mi-primer-proyecto-en-django-con-virtualenv/)**.
 
 Bueno comencemos para realizar este login auth vamos a Facebook developers **[https://developers.facebook.com](https://developers.facebook.com)** , ya estando logeado crearemos una app, ¿porque necesitamos crear una app?  Porque necesitamos el app id y el app secret de esta aplicación  de esta forma podremos hacer el login de forma exitosa.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_2.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_2_ypt85v.jpg)
 
 Damos en agregar nueva app elegimos la opción de sitio web o www.
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_3.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736232/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_3_xjzvej.jpg)
 
 Le damos un nombre a nuestra app, seguido de esto nos pedirá el correo electrónico y en que categoría se encuentra nuestra app.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_4.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_4_ncq2p2.jpg)
 
 Seguido de eso tendremos que ingresar una url en este caso colocamos la local donde corre nuestro proyecto de django  si fuera un sitio ya con un dominio pues colocamos el dominio de nuestro sitio web.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_5.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_5_pfccqd.jpg)
 
 Una vez creado tendremos algo como esto pero aún falta activar nuestra app ya que se encuentra desactivada, para eso entramos a nuestra app.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_6.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_6_ofmnhf.jpg)
 
 Vamos donde dice app review y donde dice hacer publica el inicio de sesión le damos que sí, ahora vamos a configuraciones.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_7.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_7_hp9bbc.jpg)
 
 Ya tenemos los datos necesarios para realizar nuestro login social.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_8.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_8_vrmwun.jpg)
 
 Ahora si vamos nuestro **proyecto** vamos a instalar **python-social-auth** de la siguiente forma.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_1.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_1_f2ikgi.jpg)
 
 Una vez descargado vamos a las configuraciones de nuestro proyecto django y agregamos  esta aplicación, también agregamos nuestra aplicación para agregar las vistas necesarias para el funcionamiento de nuestro login.
 
@@ -93,7 +105,7 @@ La última url es la que me permite conectarme con facebook para hacer el login,
 
 Creamos nuestra carpeta de templates y agregamos estos dos archivos html inicio y menú.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_11.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_11_j7vgjo.jpg)
 
 En inicio.html agregamos lo siguiente.
 
@@ -102,7 +114,7 @@ En inicio.html agregamos lo siguiente.
     </div>
     
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_12.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_12_ecnjvz.jpg)
 
 En menu.html agregamos lo siguiente.
 
@@ -135,6 +147,6 @@ Donde dice SOCIAL_AUTH_FACEBOOK_KEY agregamos el id que mencione anteriormente y
 
 Una vez le demos click en iniciar con Facebook nos aparece la siguiente ventana le damos aceptar y pasamos a la vista del menú.
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_9.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_9_z46ht6.jpg)
 
-![The Ghost Logo](/content/images/2016/05/SocialLoginAuth_10.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683736231/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/SocialLoginAuth_10_kqpuk2.jpg)
