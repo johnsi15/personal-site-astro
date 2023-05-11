@@ -1,8 +1,8 @@
 ---
 title: Juego Básico  Piedra Papel y Tijera
-publishedDate: 2016-04-10T21:21:52.000Z
-updatedDate: 2016-04-23T02:28:38.000Z
-pubDate: 2016-04-10T21:21:52.000Z
+publishedDate: "2016-04-10T21:21:52.000Z"
+updatedDate: "2016-04-23T02:28:38.000Z"
+pubDate: "2016-04-10T21:21:52.000Z"
 tags: 
 - css3
 - Juego

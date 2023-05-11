@@ -1,8 +1,8 @@
 ---
 title: Manejo básico de la terminal
-publishedDate: 2018-07-23T22:15:00.000Z
-updatedDate: 2019-09-03T16:35:43.000Z
-pubDate: 2018-07-23T22:15:00.000Z
+publishedDate: "2018-07-23T22:15:00.000Z"
+updatedDate: "2019-09-03T16:35:43.000Z"
+pubDate: "2018-07-23T22:15:00.000Z"
 tags: 
 - terminal
 - Windows

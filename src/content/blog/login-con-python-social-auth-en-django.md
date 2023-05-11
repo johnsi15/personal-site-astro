@@ -1,8 +1,8 @@
 ---
 title: Login con Python Social Auth en Django
-publishedDate: 2016-05-09T19:34:32.000Z
-updatedDate: 2020-05-05T21:51:09.000Z
-pubDate: 2016-05-09T19:34:32.000Z
+publishedDate: "2016-05-09T19:34:32.000Z"
+updatedDate: "2020-05-05T21:51:09.000Z"
+pubDate: "2016-05-09T19:34:32.000Z"
 tags: 
 - Python
 - Django

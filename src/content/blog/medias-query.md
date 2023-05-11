@@ -1,8 +1,8 @@
 ---
 title: Medias Query
-publishedDate: 2016-08-15T20:42:24.000Z
-updatedDate: 2017-02-05T19:22:20.000Z
-pubDate: 2016-08-15T20:42:24.000Z
+publishedDate: "2016-08-15T20:42:24.000Z"
+updatedDate: "2017-02-05T19:22:20.000Z"
+pubDate: "2016-08-15T20:42:24.000Z"
 tags: 
 - responsive
 - css

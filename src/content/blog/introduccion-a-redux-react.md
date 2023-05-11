@@ -1,8 +1,8 @@
 ---
 title: Introducción a Redux + React
-publishedDate: 2018-12-02T20:28:53.000Z
-updatedDate: 2020-02-18T15:40:20.000Z
-pubDate: 2018-12-02T20:28:53.000Z
+publishedDate: "2018-12-02T20:28:53.000Z"
+updatedDate: "2020-02-18T15:40:20.000Z"
+pubDate: "2018-12-02T20:28:53.000Z"
 tags: 
 - react
 - JavaScript

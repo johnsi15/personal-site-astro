@@ -1,8 +1,8 @@
 ---
 title: Primeros pasos con React
-publishedDate: 2018-04-22T20:49:50.000Z
-updatedDate: 2019-09-03T16:45:51.000Z
-pubDate: 2018-04-22T20:49:50.000Z
+publishedDate: "2018-04-22T20:49:50.000Z"
+updatedDate: "2019-09-03T16:45:51.000Z"
+pubDate: "2018-04-22T20:49:50.000Z"
 tags: 
 - JavaScript
 - ES2015

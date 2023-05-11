@@ -1,8 +1,8 @@
 ---
 title: Servidor básico con node js
-publishedDate: 2017-02-05T21:37:48.000Z
-updatedDate: 2017-02-06T20:03:12.000Z
-pubDate: 2017-02-05T21:37:48.000Z
+publishedDate: "2017-02-05T21:37:48.000Z"
+updatedDate: "2017-02-06T20:03:12.000Z"
+pubDate: "2017-02-05T21:37:48.000Z"
 tags: 
 - nodejs
 - express

@@ -1,8 +1,8 @@
 ---
 title: Webpack configuración
-publishedDate: 2018-02-04T20:34:32.000Z
-updatedDate: 2019-09-03T16:53:25.000Z
-pubDate: 2018-02-04T20:34:32.000Z
+publishedDate: "2018-02-04T20:34:32.000Z"
+updatedDate: "2019-09-03T16:53:25.000Z"
+pubDate: "2018-02-04T20:34:32.000Z"
 tags:
 - JavaScript
 - ES2015

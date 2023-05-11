@@ -1,8 +1,8 @@
 ---
 title: CRUD en Django Vistas Basadas en Clases
-publishedDate: 2016-03-31T17:00:17.000Z
-updatedDate: 2020-05-05T21:51:24.000Z
-pubDate: 2016-03-31T17:00:17.000Z
+publishedDate: "2016-03-31T17:00:17.000Z"
+updatedDate: "2020-05-05T21:51:24.000Z"
+pubDate: "2016-03-31T17:00:17.000Z"
 tags: 
 - Django
 - Back-End

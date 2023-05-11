@@ -1,8 +1,8 @@
 ---
 title: Configurar ESLint con Visual Studio Code para JavaScript
-publishedDate: 2020-01-31T16:01:58.000Z
-updatedDate: 2020-06-15T16:35:21.000Z
-pubDate: 2020-01-31T16:01:58.000Z
+publishedDate: "2020-01-31T16:01:58.000Z"
+updatedDate: "2020-06-15T16:35:21.000Z"
+pubDate: "2020-01-31T16:01:58.000Z"
 tags:
 - vscode
 - eslint

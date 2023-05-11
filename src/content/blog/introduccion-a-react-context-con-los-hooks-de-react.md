@@ -1,8 +1,8 @@
 ---
 title: Introducción a React Context con los Hooks de React
-publishedDate: 2020-10-02T21:42:03.000Z
-updatedDate: 2020-10-02T22:11:10.000Z
-pubDate: 2020-10-02T21:42:03.000Z
+publishedDate: "2020-10-02T21:42:03.000Z"
+updatedDate: "2020-10-02T22:11:10.000Z"
+pubDate: "2020-10-02T21:42:03.000Z"
 description: Gracias a los context de React podemos pasar datos a través de componentes sin necesidad de pasar esos datos por los props manualmente en cada nivel.
 tags: 
 - react

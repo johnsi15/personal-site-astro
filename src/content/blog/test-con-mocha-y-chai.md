@@ -1,8 +1,8 @@
 ---
 title: Test con mocha y chai
-publishedDate: 2018-07-01T21:31:40.000Z
-updatedDate: 2019-09-03T16:38:55.000Z
-pubDate: 2018-07-01T21:31:40.000Z
+publishedDate: "2018-07-01T21:31:40.000Z"
+updatedDate: "2019-09-03T16:38:55.000Z"
+pubDate: "2018-07-01T21:31:40.000Z"
 tags: 
 - JavaScript
 - nodejs

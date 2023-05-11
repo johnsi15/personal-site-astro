@@ -1,8 +1,8 @@
 ---
 title: Login con python & Django
-publishedDate: 2016-05-15T21:30:52.000Z
-updatedDate: 2020-05-05T21:50:23.000Z
-pubDate: 2016-05-15T21:30:52.000Z
+publishedDate: "2016-05-15T21:30:52.000Z"
+updatedDate: "2020-05-05T21:50:23.000Z"
+pubDate: "2016-05-15T21:30:52.000Z"
 tags: 
 - Python
 - Django

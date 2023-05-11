@@ -1,8 +1,8 @@
 ---
 title: Primeros pasos con Python 02
-publishedDate: 2016-07-04T20:48:52.000Z
-updatedDate: 2020-05-05T21:42:16.000Z
-pubDate: 2016-07-04T20:48:52.000Z
+publishedDate: "2016-07-04T20:48:52.000Z"
+updatedDate: "2020-05-05T21:42:16.000Z"
+pubDate: "2016-07-04T20:48:52.000Z"
 tags:
 - Python
 - desarrollo

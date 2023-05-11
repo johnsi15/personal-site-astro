@@ -1,8 +1,8 @@
 ---
 title: Instalación de Python & Virtualenv
-publishedDate: 2016-03-27T22:12:03.000Z
-updatedDate: 2020-05-05T21:52:01.000Z
-pubDate: 2016-03-27T22:12:03.000Z
+publishedDate: "2016-03-27T22:12:03.000Z"
+updatedDate: "2020-05-05T21:52:01.000Z"
+pubDate: "2016-03-27T22:12:03.000Z"
 description: En este artículo aprenderemos a instalar Python en estos dos sistemas operativos al igual que la instalación de virtualenv y la creación de un entorno
 tags: 
 - Developer

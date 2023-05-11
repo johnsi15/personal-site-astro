@@ -1,8 +1,8 @@
 ---
 title: Manejo de sesiones con express
-publishedDate: 2018-08-05T16:39:56.000Z
-updatedDate: 2019-09-03T16:15:54.000Z
-pubDate: 2018-08-05T16:39:56.000Z
+publishedDate: "2018-08-05T16:39:56.000Z"
+updatedDate: "2019-09-03T16:15:54.000Z"
+pubDate: "2018-08-05T16:39:56.000Z"
 tags:
 - express
 - mongodb

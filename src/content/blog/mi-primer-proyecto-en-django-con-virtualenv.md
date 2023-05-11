@@ -1,8 +1,8 @@
 ---
 title: Mi primer proyecto en Django con virtualenv
-publishedDate: 2016-03-29T16:02:26.000Z
-updatedDate: 2020-05-05T21:51:44.000Z
-pubDate: 2016-03-29T16:02:26.000Z
+publishedDate: "2016-03-29T16:02:26.000Z"
+updatedDate: "2020-05-05T21:51:44.000Z"
+pubDate: "2016-03-29T16:02:26.000Z"
 tags:
 - Developer
 - Web

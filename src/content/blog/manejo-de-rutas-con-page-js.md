@@ -1,8 +1,8 @@
 ---
 title: Manejo de rutas con page.js
-publishedDate: 2018-05-28T02:07:38.000Z
-updatedDate: 2020-02-13T21:47:08.000Z
-pubDate: 2018-05-28T02:07:38.000Z
+publishedDate: "2018-05-28T02:07:38.000Z"
+updatedDate: "2020-02-13T21:47:08.000Z"
+pubDate: "2018-05-28T02:07:38.000Z"
 tags: 
 - JavaScript
 - Html5

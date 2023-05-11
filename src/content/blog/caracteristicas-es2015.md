@@ -1,8 +1,8 @@
 ---
 title: Características ECMAScript 2015 'ES2015'
-publishedDate: 2018-01-08T16:19:53.000Z
-updatedDate: 2020-04-16T16:54:25.000Z
-pubDate: 2018-01-08T16:19:53.000Z
+publishedDate: "2018-01-08T16:19:53.000Z"
+updatedDate: "2020-04-16T16:54:25.000Z"
+pubDate: "2018-01-08T16:19:53.000Z"
 tags: 
 - JavaScript
 - development

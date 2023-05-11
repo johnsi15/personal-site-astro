@@ -1,8 +1,8 @@
 ---
 title: Aprende a crear rutas con React Router
-publishedDate: 2020-06-14T22:49:11.000Z
-updatedDate: 2020-06-15T16:45:25.000Z
-pubDate: 2020-06-14T22:49:11.000Z
+publishedDate: "2020-06-14T22:49:11.000Z"
+updatedDate: "2020-06-15T16:45:25.000Z"
+pubDate: "2020-06-14T22:49:11.000Z"
 tags: 
 - react
 - react-router

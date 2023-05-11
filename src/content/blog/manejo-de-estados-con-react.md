@@ -1,9 +1,9 @@
 ---
 title: Manejo de estados con React
 slug: manejo-de-estados-con-react
-publishedDate: 2018-09-16T16:55:00.000Z
-updatedDate: 2019-09-03T15:10:13.000Z
-pubDate: 2018-09-16T16:55:00.000Z
+publishedDate: "2018-09-16T16:55:00.000Z"
+updatedDate: "2019-09-03T15:10:13.000Z"
+pubDate: "2018-09-16T16:55:00.000Z"
 tags: 
 - react
 - webdeveloper

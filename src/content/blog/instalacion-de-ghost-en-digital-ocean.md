@@ -1,8 +1,8 @@
 ---
 title: Instalación de Ghost en Digital Ocean
-publishedDate: 2016-06-19T20:36:52.000Z
-updatedDate: 2016-06-19T21:09:44.000Z
-pubDate: 2016-06-19T20:36:52.000Z
+publishedDate: "2016-06-19T20:36:52.000Z"
+updatedDate: "2016-06-19T21:09:44.000Z"
+pubDate: "2016-06-19T20:36:52.000Z"
 tags: 
 - mysql
 - Windows

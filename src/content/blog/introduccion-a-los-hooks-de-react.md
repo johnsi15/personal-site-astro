@@ -1,8 +1,8 @@
 ---
 title: Introducción a los Hooks de React
-publishedDate: 2020-03-20T14:45:32.000Z
-updatedDate: 2020-03-20T14:45:32.000Z
-pubDate: 2020-03-20T14:45:32.000Z
+publishedDate: "2020-03-20T14:45:32.000Z"
+updatedDate: "2020-03-20T14:45:32.000Z"
+pubDate: "2020-03-20T14:45:32.000Z"
 tags:
 - Hooks
 - react

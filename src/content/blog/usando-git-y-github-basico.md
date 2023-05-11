@@ -1,8 +1,8 @@
 ---
 title: Instalar Git y Github uso básico
-publishedDate: 2016-04-24T22:16:17.000Z
-updatedDate: 2016-05-01T20:38:08.000Z
-pubDate: 2016-04-24T22:16:17.000Z
+publishedDate: "2016-04-24T22:16:17.000Z"
+updatedDate: "2016-05-01T20:38:08.000Z"
+pubDate: "2016-04-24T22:16:17.000Z"
 tags:
 - Developer
 - programación

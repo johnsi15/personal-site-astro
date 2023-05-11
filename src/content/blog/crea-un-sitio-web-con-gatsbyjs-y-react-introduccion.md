@@ -1,8 +1,8 @@
 ---
 title: Crea un sitio web con GatsbyJS y React - Introducción
-publishedDate: 2020-05-28T16:29:16.000Z
-updatedDate: 2020-10-02T20:56:26.000Z
-pubDate: 2020-05-28T16:29:16.000Z
+publishedDate: "2020-05-28T16:29:16.000Z"
+updatedDate: "2020-10-02T20:56:26.000Z"
+pubDate: "2020-05-28T16:29:16.000Z"
 tags: 
 - react
 - gatsby

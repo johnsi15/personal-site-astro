@@ -1,8 +1,8 @@
 ---
 title: ¿Que es babel y como funciona?
-publishedDate: 2018-07-27T21:12:00.000Z
-updatedDate: 2019-09-03T16:27:27.000Z
-pubDate: 2018-07-27T21:12:00.000Z
+publishedDate: "2018-07-27T21:12:00.000Z"
+updatedDate: "2019-09-03T16:27:27.000Z"
+pubDate: "2018-07-27T21:12:00.000Z"
 tags: 
 - react
 - react.js

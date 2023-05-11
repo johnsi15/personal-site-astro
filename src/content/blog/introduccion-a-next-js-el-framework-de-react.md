@@ -1,8 +1,8 @@
 ---
 title: Introducción a Next.js - El framework de React
-publishedDate: 2020-02-18T14:48:32.000Z
-updatedDate: 2020-06-21T23:26:53.000Z
-pubDate: 2020-02-18T14:48:32.000Z
+publishedDate: "2020-02-18T14:48:32.000Z"
+updatedDate: "2020-06-21T23:26:53.000Z"
+pubDate: "2020-02-18T14:48:32.000Z"
 tags: 
 - Next.js
 - react

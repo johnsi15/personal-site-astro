@@ -1,8 +1,8 @@
 ---
 title: Primeros pasos con Python
-publishedDate: 2016-06-27T04:14:39.000Z
-updatedDate: 2020-05-05T21:42:35.000Z
-pubDate: 2016-06-27T04:14:39.000Z
+publishedDate: "2016-06-27T04:14:39.000Z"
+updatedDate: "2020-05-05T21:42:35.000Z"
+pubDate: "2016-06-27T04:14:39.000Z"
 tags: 
 - Python
 - programacion

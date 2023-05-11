@@ -1,8 +1,8 @@
 ---
 title: Fundamentos de Programación con JavaScript mi primer Ebook
-publishedDate: 2020-08-18T21:21:28.000Z
-updatedDate: 2022-03-20T21:15:23.000Z
-pubDate: 2020-08-18T21:21:28.000Z
+publishedDate: "2020-08-18T21:21:28.000Z"
+updatedDate: "2022-03-20T21:15:23.000Z"
+pubDate: "2020-08-18T21:21:28.000Z"
 description: Aprende los fundamentos de programación con uno de los lenguajes de programación más demandados de la industria. Aprende desde cero hasta dominar JavaScript.
 tags: 
 - ebook

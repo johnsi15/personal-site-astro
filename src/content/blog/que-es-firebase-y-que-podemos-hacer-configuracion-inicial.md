@@ -1,8 +1,8 @@
 ---
 title: ¿Que es Firebase y que podemos hacer? Configuración inicial
-publishedDate: 2021-01-11T20:37:10.000Z
-updatedDate: 2021-01-11T22:42:06.000Z
-pubDate: 2021-01-11T20:37:10.000Z
+publishedDate: "2021-01-11T20:37:10.000Z"
+updatedDate: "2021-01-11T22:42:06.000Z"
+pubDate: "2021-01-11T20:37:10.000Z"
 description: Firebase es un conjunto de herramientas conocido como BAAS (Backend as a Service) o Backend como Servicio el cual nos brinda servicios para desarrollar nuestra.
 tags:
 - JavaScript

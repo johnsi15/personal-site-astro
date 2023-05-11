@@ -1,8 +1,8 @@
 ---
 title: Conectar Mysql con Python & Django
-publishedDate: 2016-05-29T23:56:28.000Z
-updatedDate: 2020-05-05T21:49:25.000Z
-pubDate: 2016-05-29T23:56:28.000Z
+publishedDate: "2016-05-29T23:56:28.000Z"
+updatedDate: "2020-05-05T21:49:25.000Z"
+pubDate: "2016-05-29T23:56:28.000Z"
 tags: 
 - Windows
 - Python

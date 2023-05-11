@@ -1,8 +1,8 @@
 ---
 title: Primeros pasos con Python 03
-publishedDate: 2016-07-20T21:24:55.000Z
-updatedDate: 2020-05-05T21:30:22.000Z
-pubDate: 2016-07-20T21:24:55.000Z
+publishedDate: "2016-07-20T21:24:55.000Z"
+updatedDate: "2020-05-05T21:30:22.000Z"
+pubDate: "2016-07-20T21:24:55.000Z"
 tags: 
 - Python
 - Developer

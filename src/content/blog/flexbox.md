@@ -1,8 +1,8 @@
 ---
 title: FlexBox
-publishedDate: 2016-07-11T02:41:11.000Z
-updatedDate: 2016-07-14T14:10:13.000Z
-pubDate: 2016-07-11T02:41:11.000Z
+publishedDate: "2016-07-11T02:41:11.000Z"
+updatedDate: "2016-07-14T14:10:13.000Z"
+pubDate: "2016-07-11T02:41:11.000Z"
 tags: 
 - css
 - css3

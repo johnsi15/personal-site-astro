@@ -1,8 +1,8 @@
 ---
 title: Responsive slides JS
-publishedDate: 2016-05-23T14:48:21.000Z
-updatedDate: 2016-05-26T03:35:38.000Z
-pubDate: 2016-05-23T14:48:21.000Z
+publishedDate: "2016-05-23T14:48:21.000Z"
+updatedDate: "2016-05-26T03:35:38.000Z"
+pubDate: "2016-05-23T14:48:21.000Z"
 tags: 
 - JavaScript
 - html

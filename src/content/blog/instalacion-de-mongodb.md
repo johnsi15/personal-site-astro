@@ -1,8 +1,8 @@
 ---
 title: Instalación de MongoDB
-publishedDate: 2018-07-22T20:36:58.000Z
-updatedDate: 2019-09-03T20:04:01.000Z
-pubDate: 2018-07-22T20:36:58.000Z
+publishedDate: "2018-07-22T20:36:58.000Z"
+updatedDate: "2019-09-03T20:04:01.000Z"
+pubDate: "2018-07-22T20:36:58.000Z"
 tags: 
 - mongo
 - mongodb

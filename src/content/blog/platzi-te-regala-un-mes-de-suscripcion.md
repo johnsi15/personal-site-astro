@@ -1,8 +1,8 @@
 ---
 title: Platzi te regala un mes de suscripción
-publishedDate: 2016-06-12T20:36:47.000Z
-updatedDate: 2016-06-12T20:46:26.000Z
-pubDate: 2016-06-12T20:36:47.000Z
+publishedDate: "2016-06-12T20:36:47.000Z"
+updatedDate: "2016-06-12T20:46:26.000Z"
+pubDate: "2016-06-12T20:36:47.000Z"
 tags: 
 - programación
 - Developer

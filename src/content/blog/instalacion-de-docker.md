@@ -1,9 +1,9 @@
 ---
 title: Instalación de docker
 slug: instalacion-de-docker
-publishedDate: 2018-08-19T16:24:19.000Z
-updatedDate: 2019-09-03T16:02:52.000Z
-pubDate: 2018-08-19T16:24:19.000Z
+publishedDate: "2018-08-19T16:24:19.000Z"
+updatedDate: "2019-09-03T16:02:52.000Z"
+pubDate: "2018-08-19T16:24:19.000Z"
 tags: 
 - Windows
 - Linux

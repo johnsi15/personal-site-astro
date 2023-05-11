@@ -1,8 +1,8 @@
 ---
 title: ¿Que es Vanilla js  o JavaScript puro?
-publishedDate: 2017-10-17T01:33:29.000Z
-updatedDate: 2018-07-27T21:17:38.000Z
-pubDate: 2017-10-17T01:33:29.000Z
+publishedDate: "2017-10-17T01:33:29.000Z"
+updatedDate: "2018-07-27T21:17:38.000Z"
+pubDate: "2017-10-17T01:33:29.000Z"
 tags: 
 - JavaScript
 - Jquery
