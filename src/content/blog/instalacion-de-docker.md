@@ -26,7 +26,7 @@ El día de hoy vamos hablar sobre **docker** que es y como instalarlo, que es to
 
 ![docker_1](https://res.cloudinary.com/john-serrano/image/upload/v1683148215/John%20Serrano/Blog%20Post/instalacion-de-docker/docker_1_x1o67w.png)
 
-###### ¿Qué es docker?
+## ¿Qué es docker?
 
 La esencia de docker es poder crear contenedores ligeros, portables para todo tipo de aplicación que se puedan ejecutar en cualquier maquina con docker instalado, independiente del sistema operativo con solo tener docker instalado ya podemos ejecutar las aplicaciones y facilitando los despliegues.
 
@@ -44,7 +44,7 @@ Ahora bien que diferencia existe entre **una máquina virtual** y **Docker**, el
 
 ![dockerVSvms](https://res.cloudinary.com/john-serrano/image/upload/v1683148216/John%20Serrano/Blog%20Post/instalacion-de-docker/docker_4_gdpigx.png)
 
-###### Instalación de docker en Windows
+## Instalación de docker en Windows
 
 Lo primero que tenemos que hacer es descargar el instalador del siguiente enlace [https://docs.docker.com/toolbox/toolbox_install_windows/](https://docs.docker.com/toolbox/toolbox_install_windows/) le damos al botón **Get Docker Toolbox for Windows**, una vez descargado el instalador le damos doble clic y hacemos la instalación como cualquier otro programa.
 
@@ -72,7 +72,7 @@ Lo primero que hacemos es listar las máquinas de docker que tenemos creadas, lo
 
 **Nota:** siempre que abrimos una nueva ventana de la terminal o iniciemos la máquina de virtual box debemos cargar las variables es decir `docker-machine env`.
 
-###### Instalación en Linux
+### Instalación en Linux
 
 Lo primero es actualizar la base de datos de paquetes:
 `sudo apt-get update`

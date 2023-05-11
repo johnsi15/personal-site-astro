@@ -3,7 +3,15 @@ title: Docker para desarrolladores
 publishedDate: "2018-08-24T17:12:55.000Z"
 updatedDate: "2019-09-03T16:01:12.000Z"
 pubDate: "2018-08-24T17:12:55.000Z"
-tags: docker, webdeveloper, webdeveloment, container, contenedores, nodejs, wordpress, nginx
+tags:
+- docker
+- webdeveloper
+- webdeveloment
+- container
+- contenedores
+- nodejs
+- wordpress
+- nginx
 excerpt: Hagamos nuestro primer hola mundo en docker, desde la terminal ejecutamos un docker run hello-world en el output debemos ver algo como esto.
 description: Hagamos nuestro primer hola mundo en docker, desde la terminal ejecutamos un docker run hello-world en el output debemos ver algo como esto.
 primaryTag: { name: 'docker', slug: 'docker' }
