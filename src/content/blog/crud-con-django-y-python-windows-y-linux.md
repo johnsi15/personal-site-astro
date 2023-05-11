@@ -1,10 +1,22 @@
 ---
 title: CRUD en Django Vistas Basadas en Clases
-slug: crud-con-django-y-python-windows-y-linux
-date_published: 2016-03-31T17:00:17.000Z
-date_updated: 2020-05-05T21:51:24.000Z
-tags: Django, Back-End, Python, Virtualenv, Windows, Linux, Crud
+publishedDate: 2016-03-31T17:00:17.000Z
+updatedDate: 2020-05-05T21:51:24.000Z
+pubDate: 2016-03-31T17:00:17.000Z
+tags: 
+- Django
+- Back-End
+- Python
+- Virtualenv
+- Windows
+- Linux
+- Crud
 excerpt: El día de hoy les traigo un artículo de la creación de una aplicación web básica con vistas basadas en clases un CRUD completo.
+description: El día de hoy les traigo un artículo de la creación de una aplicación web básica con vistas basadas en clases un CRUD completo.
+primaryTag: { name: 'django', slug: 'django' }
+canonicalURL: "https://johnserrano.co/blog/crud-con-django-y-python-windows-y-linux"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjangoPortada-01_ikzl6o.jpg"
 ---
 
 El día de hoy les traigo un articulo donde les explico como crear una aplicación web básica con vistas basadas en clases un CRUD completo.
@@ -16,8 +28,9 @@ Lo primero que vamos hacer es crear una carpeta llamada apps dentro de esa carpe
 
 **Nota: en el init.py tienen que agregar ___ ___ antes y después del init.py como se muestra en la imagen a continuación**
 
-![The Ghost Logo](/content/images/2016/04/CrudDjango1.png)
-![The Ghost Logo](/content/images/2016/04/CrudDjango2.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango1_tvhy3b.png)
+
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango2_iodyoa.png)
 
 Ahora vamos a la carpeta principal del proyecto donde esta nuestro **settings y urls** principales, en las urls agregamos la siguiente línea de código.
 
@@ -31,7 +44,7 @@ Creamos una url con el nombre de tareas e incluimos las urls de la aplicación l
 
 **Nota: Con esto r'^tareas/' le indicamos que en localhost:8000/tareas/ es la url principal.**
 
-![The Ghost Logo](/content/images/2016/04/CrudDjango3.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango3_e3kqlu.png)
 
 Lo siguiente es irnos a crear nuestro modelo, para eso vamos a **models.py** y escribimos el siguiente código.
 
@@ -46,7 +59,7 @@ Lo siguiente es irnos a crear nuestro modelo, para eso vamos a **models.py** y e
 
 Ahora asemos un **makemigrations** seguido de un migrate en la consola para crear las tablas del modelo.
 
-![The Ghost Logo](/content/images/2016/04/CrudDjango4.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango4_saztsa.png)
 
 Ahora nos vamos para las vistas abrimos el archivos **views.py** y escribimos el siguiente código.
 
@@ -84,7 +97,7 @@ Ahora vamos al archivo urls de la aplicación y agregamos la url para listar nue
 
 Importamos la vista y agregamos la url con un nombre, ahora vamos a crear una carpeta para agregar los templates de nuestra aplicación quedando de la siguiente manera.
 
-![The Ghost Logo](/content/images/2016/04/CrudDjango5.jpg)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango5_ypnzbd.jpg)
 
 Ahora creamos nuestro **template tarea_list.html** agregando el siguiente código.
 
@@ -122,7 +135,7 @@ Si corremos el server y vamos a **localhost:8000/tareas/** nos va a dar un error
 
 Si vamos al navegador en este momento ya corriendo el server en la consola haciendo **python manage.py runserver** obtendremos el siguiente resultado.
 
-![The Ghost Logo](/content/images/2016/04/CrudDjango6-jpg.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango6-jpg_ot2bls.png)
 
 Ahora bien vamos a agregar las otras vistas al igual  que los templates necesarios.
 
@@ -148,7 +161,7 @@ Ahora bien vamos a agregar las otras vistas al igual  que los templates necesari
 
 Tenemos que crear el template para los detalles el de crear y actualizar es el mismo y el de eliminar.
 
-### tarea_detail.html
+## tarea_detail.html
 
     <h1>{{ tarea.name }}</h1>
     
@@ -158,7 +171,7 @@ Tenemos que crear el template para los detalles el de crear y actualizar es el m
     </p>
     
 
-### tarea_form.html
+## tarea_form.html
 
     <form method="post">{% csrf_token %}
     {{form.as_p}}
@@ -166,7 +179,7 @@ Tenemos que crear el template para los detalles el de crear y actualizar es el m
     </form>
     
 
-### tarea_confirm _delete.html
+## tarea_confirm _delete.html
 
     <form method="post">{% csrf_token %}
     ¿Estás seguro que deseas borrar la tarea "{{ tarea.name }}"?
@@ -179,8 +192,9 @@ Tenemos que crear el template para los detalles el de crear y actualizar es el m
 
 Ahora vamos a nuestro navegador le damos nuevo y agregamos una tarea, recuerden que el server siempre debe estar corriendo.
 
-![The Ghost Logo](/content/images/2016/04/CrudDjango7-jpg.png)
-![The Ghost Logo](/content/images/2016/04/CrudDjango8-jpg.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823510/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango7-jpg_xhwo7v.png)
+
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjango8-jpg_cndrj8.png)
 
 Listo ya hemos agregado una tarea pueden entrar en ver le mostrara los detalles de esa tarea al igual que editar y borrar, espero que sea de su ayuda también podemos hacerlo con Ajax implementando la misma metodología de vistas basadas en clases.
 
@@ -192,25 +206,25 @@ En Linux se usa el mismo código no hay problema solo voy a mostrar cómo queda 
 
 Creamos el proyecto
 
-![The Ghost Logo](/content/images/2016/04/CrudLinux1.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudLinux1_cfzk0t.png)
 
 Creamos la app
 
-![The Ghost Logo](/content/images/2016/04/CrudLinux2.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudLinux2_vkdjnt.png)
 
 De esta forma quedaría estructurado el proyecto con sus archivos.
 
-![The Ghost Logo](/content/images/2016/04/CrudLinux5-1.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudLinux5-1_wgx9dt.png)
 
 Hacemos las migraciones de nuestros modelos.
 
-![The Ghost Logo](/content/images/2016/04/CrudLinux3-1.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudLinux3-1_uotwnk.png)
 
 Corremos el servidor y vamos a localhost:8000/tareas/
 
-![The Ghost Logo](/content/images/2016/04/CrudLinux4-2.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudLinux4-2_ehahta.png)
 
-![The Ghost Logo](/content/images/2016/04/CrudTareasDjangoPythonLinux.png)
+![The Ghost Logo](https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudTareasDjangoPythonLinux_hcih2t.png)
 
 Listo este sería el resultado final, espero que sea de su ayuda el código completo esta el github y lo dejare para que lo puedas descargar saludos.
 

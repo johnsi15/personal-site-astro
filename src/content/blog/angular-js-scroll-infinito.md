@@ -1,8 +1,8 @@
 ---
 title: Angular js Scroll infinito
-publishedDate: 2017-02-05T19:22:39.000Z
-updatedDate: 2020-02-13T21:47:34.000Z
-pubDate: 2017-02-05T19:22:39.000Z
+publishedDate: "2017-02-05T19:22:39.000Z"
+updatedDate: "2020-02-13T21:47:34.000Z"
+pubDate: "2017-02-05T19:22:39.000Z"
 tags:
 - JavaScript
 - Front-End
