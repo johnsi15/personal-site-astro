@@ -4,15 +4,17 @@ import { getCollection } from 'astro:content';
 import PostsFeature from '../../components/PostsFeature'
 import PostsPagination from '../../components/PostsPagination'
 
+// DESC
 const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.publishedDate.valueOf() - b.data.publishedDate.valueOf()
+	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
+// https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 const total = posts.length
 const limit = 2
 const pages = Math.ceil(total / limit)
 const meta = {
 	pagination: {
-		limit: 2,
+		limit: 9,
 		page: 1,
 		pages,
 		total
