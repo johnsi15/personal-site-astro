@@ -5,7 +5,9 @@ import PostsFeature from '../../components/PostsFeature'
 import PostsPagination from '../../components/PostsPagination'
 
 // DESC
-const posts = (await getCollection('blog')).sort(
+const posts = (await getCollection('blog', ({ data }) => {
+  return data.isDraft !== true;
+})).sort(
 	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
@@ -35,7 +37,7 @@ const isProduction = import.meta.env.PROD
 	modified= ''
 >
 	<section id='Blog' class='container'>
-		<PostsFeature {...posts[1]} />
+		<PostsFeature {...posts[3]} />
 		<!-- <Pauta /> -->
 		<PostsPagination
 			client:visible

@@ -2,7 +2,9 @@
 import { getCollection } from 'astro:content';
 import PostsGrid from './PostsGrid'
 
-const blogEntries = (await getCollection('blog')).sort(
+const blogEntries = (await getCollection('blog', ({ data }) => {
+  return data.isDraft !== true;
+})).sort(
 	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 
