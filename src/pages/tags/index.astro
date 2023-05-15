@@ -5,8 +5,10 @@ import PostsGrid from '../../components/PostsGrid';
 // import Cover from '../../components/Cover';
 // import PostTitle from '../../components/PostTitle';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => a.data.publishedDate.valueOf() - b.data.publishedDate.valueOf()
+const posts = (await getCollection('blog', ({ data }) => {
+    return data.isDraft !== true;
+  })).sort(
+	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
 );
 // console.log({ posts: posts[0].data });
 // const isProduction = import.meta.env.PROD

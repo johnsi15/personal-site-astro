@@ -20,7 +20,7 @@ const PostsDetailHome = ({ slug, featureImage, title, excerpt = '' }) => {
           <h2 className={styles.title}>
             <a href={`/blog/${encodeURIComponent(slug)}`}>{title}</a>
           </h2>
-          <p className='excerpt'>{excerpt_custom}...</p>
+          <p className={styles.excerpt}>{excerpt_custom}...</p>
         </div>
       </article>
     </>

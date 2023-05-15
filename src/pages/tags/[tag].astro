@@ -40,7 +40,9 @@ export async function getStaticPaths() {
 }
 
 type Props = CollectionEntry<'blog'>;
-const allPosts = await getCollection('blog');
+const allPosts = await getCollection('blog', ({ data }) => {
+    return data.isDraft !== true;
+  });
 
 const { tagName } = Astro.props;
 const { tag } = Astro.params;

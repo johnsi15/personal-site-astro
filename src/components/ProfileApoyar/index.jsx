@@ -26,9 +26,11 @@ const ProfileApoyar = () => {
       <p className={styles.cripto}>
         Puedes donar criptomonedas con: <br />
         <strong>TRX Tron red TRC20:</strong> <br />
-        TDDmbLNFcjYsddsdiUAgxDDTaR5EarDbKo <br />
+        TR3nVEsRexQkdXasRLAXLW2n7DmyS7ksrq <br />
         <strong>BTC Bitcoin red BTC:</strong> <br />
-        1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q
+        1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q <br />
+        <strong>BNB Smart Chain BSC:</strong> <br />
+        0xe8ac8dc8e56208d4dad5f719ba627436187acc16
       </p>
       <q className={styles.citaBible}>
         No hay un amor más grande que el dar la vida por los amigos. Juan 15:13
