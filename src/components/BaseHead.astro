@@ -101,7 +101,7 @@ const { title, description, image  = '/default.jpg', datePublished = '2015-09-15
   partytown = {
     forward: ['dataLayer.push'],
     resolveUrl: (url) => {
-      const siteUrl = 'https://dev.johnserrano.co/proxytown'
+      const siteUrl = 'https://johnserrano.co/proxytown'
 
       if (url.hostname === 'www.googletagmanager.com') {
         const proxyUrl = new URL(`${siteUrl}/gtm`)

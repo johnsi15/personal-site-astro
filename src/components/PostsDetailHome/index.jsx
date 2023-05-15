@@ -11,7 +11,7 @@ const PostsDetailHome = ({ slug, featureImage, title, excerpt = '' }) => {
             className={styles.featureImage}
             src={featureImage}
             alt={title}
-            width={346}
+            width={340}
             height={200}
             loading='lazy'
           />
