@@ -16,11 +16,7 @@ const PostProfile = ({
           <a href='/sobre-mi' className={styles.profile_avatar}>
             <img
               className={styles.profile__image}
-              src={
-                primary_author.profile_image
-                  ? primary_author.profile_image.replace('admin', 'static')
-                  : 'https://static.ghost.org/v3.0.0/images/ghost.png'
-              }
+              src='/profile.jpg'
               alt={primary_author.name}
               width='35'
               height='35'
