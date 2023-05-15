@@ -11,7 +11,7 @@ const PostsDetail = ({
   featureImage,
   title,
   excerpt = '',
-  primary_author = '',
+  primary_author = 'John Serrano',
   publishedDate,
 }) => {
   // {post.excerpt.slice(0, 92)}...
@@ -49,17 +49,21 @@ const PostsDetail = ({
         </header>
         <footer className={styles.post__meta}>
           <div className={styles.profile}>
-            <a className={styles.profile_avatar} href='/sobre-mi'>
+            <a
+              className={styles.profile_avatar}
+              href='/sobre-mi'
+              aria-label={primary_author}
+            >
               <img
                 className={styles.profile__image}
                 src='/profile.jpg'
-                alt={primary_author.name}
+                alt={primary_author}
                 width='35'
                 height='35'
                 loading='lazy'
               />
             </a>
-            <span className={styles.profile__name}>{primary_author.name}</span>
+            <span className={styles.profile__name}>{primary_author}</span>
           </div>
           <span>{timeAgo}</span>
           <a href={`/blog/${encodeURIComponent(slug)}`}>
