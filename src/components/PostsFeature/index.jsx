@@ -38,11 +38,7 @@ const PostsFeature = ({ data, slug }) => {
             <a className={styles.profile_avatar} href='/sobre-mi'>
               <img
                 className={styles.profile__image}
-                src={
-                  primaryAuthor.profile_image
-                    ? primaryAuthor.profile_image
-                    : 'https://static.ghost.org/v3.0.0/images/ghost.png'
-                }
+                src='/profile.jpg'
                 alt={primaryAuthor.name}
                 width='35'
                 height='35'
