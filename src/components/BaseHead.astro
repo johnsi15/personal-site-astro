@@ -9,6 +9,7 @@ export interface Props {
 	description: string;
 	image?: string;
 	datePublished ?: Date
+	dateModified ?: Date
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);

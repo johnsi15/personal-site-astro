@@ -11,7 +11,7 @@ function usePagination({ meta, posts, isProduction }) {
   const indexOfLastPost = currentPage * postsPerPage
   const indexOfFirstPost = indexOfLastPost - postsPerPage
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost)
-  // const loadPageInitial = useRef(true)
+  const loadPageInitial = useRef(true)
 
   useEffect(() => {
     // loadPosts()
@@ -29,13 +29,14 @@ function usePagination({ meta, posts, isProduction }) {
     }
     const section = document.querySelector('#Posts')
 
+    if (loadPageInitial.current) {
+      loadPageInitial.current = false
+      return
+    }
+
     section.scrollIntoView({
       behavior: 'smooth',
     })
-    // if (loadPageInitial.current) {
-    //   loadPageInitial.current = false
-    //   return
-    // }
   }, [currentPage])
 
   const previousPage = () => {
