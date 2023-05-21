@@ -17,27 +17,27 @@ isDraft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682885259/John%20Serrano/Blog%20Post/introduccion-a-react-context-con-los-hooks-de-react/react-context_wcznou.jpg"
 ---
 
-Gracias a los **context** de **React** podemos pasar datos a través de componentes sin necesidad de pasar esos datos por los **props **manualmente en cada nivel. Como sabemos en una aplicación de React los datos se pasan de componentes padres a componentes hijos por medio de las props.
+Gracias a los **context** de **React** podemos pasar datos a través de componentes sin necesidad de pasar esos datos por los **props** manualmente en cada nivel. Como sabemos en una aplicación de React los datos se pasan de componentes padres a componentes hijos por medio de las props.
 
-### Cuidado con el uso de context
+## Cuidado con el uso de context
 
 Antes de entrar en materia quiero aclarar que los context de **React **se deben usar en casos muy especiales o que realmente se tenga la necesidad de usarlos, algunos ejemplos pueden ser como tener los datos globales de un usuario autenticado, el tema de nuestra aplicación o el idioma.
 
 Si lo único que queremos es pasar algunos props por medio de algunos niveles lo más recomendado es usar **composición de componentes** ya que suele ser una opción más simple que usar context.
 
-### Create context
+## Create context
 
 Una de las primeras cosas que debemos hacer es crear un objeto context con **createContext** y pasándole un valor por defecto a nuestro context. Con este objeto podemos hacer uso del componente **Provider** y el Hook de **useContext **el cual nos va a permitir consumir los datos que se pasen por el provider.
 
 `const MyContext = React.createContext(defaultValue);`
 
-### Context provider
+## Context provider
 
 Como ya lo mencioné cada uno de los objetos context que se usen vienen con un componente **Provider** de React el cual permite que los componentes hijos tengas acceso a los datos globales que se pasan al provider.
 
 `<MyContext.Provider value={/* algún valor */}>`
 
-### Use context
+## Use context
 
 El useContext es un consumidor del **Provider** en otras palabras es la forma de acceder o consumir la data que pasamos por el **value** del **Provider** si la data que pasamos por el Provider cambia los consumidores o consumidor en este caso el useContext se va a renderizar nuevamente.
 
@@ -45,11 +45,11 @@ La forma de trabajar con **useContext** es recibiendo el objeto contexto y devue
 
 `const value = useContext(MyContext);`
 
-### Requisitos
+## Requisitos
 
 Tener conocimientos básicos de [React](https://johnserrano.co/blog/primeros-pasos-con-react) y del manejo de los [Hooks](https://johnserrano.co/blog/introduccion-a-los-hooks-de-react).
 
-### Usando React Context
+## Usando React Context
 
 Para este ejemplo vamos a simular el cambio del tema en el Layout de una página web pasando de **light** a **dark**. Me voy apoyar de [create-react-app](https://es.reactjs.org/docs/create-a-new-react-app.html#create-react-app) y de [codesandbox](https://codesandbox.io/%20) que nos da un entorno listo para comenzar a desarrollar en **React**.
 
@@ -183,7 +183,7 @@ Entonces obtenemos el **theme** y la función **handleChangeTheme** del hook **u
 
 El código completo del ejemplo lo puedes encontrar en ➡ [React Context](https://codesandbox.io/s/react-context-hooks-i4bxo).
 
-### Conclusiones 🤔
+## Conclusiones 🤔
 
 ✔ Podemos concluir que el uso de los **context** se debe usar en determinas situaciones especiales que ameriten el uso global de cierta data y tener cuidado con los renders innecesarios.
 
