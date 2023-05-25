@@ -36,7 +36,7 @@ Adicionalmente las clases en React tienen definido unos métodos y buenas práct
 
 ## Requisitos para seguir
 
-Debes tener conocimiento básico en [ES6 (arrow functions, destructuring, classes)](https://johnserrano.co/blog/caracteristicas-es2015), [React](https://johnserrano.co/blog/primeros-pasos-con-react), tener instalado o actualizado React a la versión 16.8 tanto** react** y **react-dom** con esto ya podemos usar **Hooks **sin ningún problema.
+Debes tener conocimiento básico en [ES6 (arrow functions, destructuring, classes)](https://johnserrano.co/blog/caracteristicas-es2015), [React](https://johnserrano.co/blog/primeros-pasos-con-react), tener instalado o actualizado React a la versión 16.8 tanto **react** y **react-dom** con esto ya podemos usar **Hooks** sin ningún problema.
 
 ## Conceptos básicos
 
@@ -50,7 +50,7 @@ function Nombre(props){
 }
 ```
 
-Ahora supongamos que el nombre del usuario sea editable, normalmente tendríamos que pasar este componente a una clase para tener un estado dentro del componente y hacer un **handleChange **de un input para poder editar el nombre.
+Ahora supongamos que el nombre del usuario sea editable, normalmente tendríamos que pasar este componente a una clase para tener un estado dentro del componente y hacer un **handleChange** de un input para poder editar el nombre.
 
 ## Con clases
 
@@ -265,7 +265,7 @@ La solución es muy simple ya que **useEffect** recibe un segundo argumento dond
 
 ## React Hook personalizados
 
-Un **hook **personalizado es una función de JavaScript cuyo nombre comienza con “use”. Veamos un ejemplo de un hook propio para extraer datos.
+Un **hook** personalizado es una función de JavaScript cuyo nombre comienza con “use”. Veamos un ejemplo de un hook propio para extraer datos.
 
 ```js
 import { useState, useEffect } from "react";
