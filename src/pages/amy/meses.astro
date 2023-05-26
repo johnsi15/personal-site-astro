@@ -1,38 +1,107 @@
+---
+import Layout from '../../layouts/generic.astro'
+---
 
-
-<main>
-  <h1>Andrey & Ammi</h1>
-  <ul class="meses">
-    <li class="mes mes1">
-      <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684700047/John%20Serrano/Andrey%20-%20Ammi/pedida-de-noviazgo/20221115_114413_kcj2ul.jpg" alt="mes-1">
-      <p>Mes 1</p>
-    </li>
-    <li class="mes mes2">
-      <img src="" alt="mes-2">
-      <p>Mes 2</p>
-    </li>
-    <li class="mes mes3"><img src="" alt="mes-3">
-      <p>Mes 3</p>
-    </li>
-    <li class="mes mes4"><img src="" alt="mes-4">
-      <p>Mes 4</p>
-    </li>
-    <li class="mes mes5"><img src="" alt="mes-5">
-      <p>Mes 5</p>
-    </li>
-    <li class="mes mes6"><img src="" alt="mes-6">
-      <p>Mes 6</p>
-    </li>
-  </ul>
-</main>
+<Layout>
+  <main>
+    <section class="container_mylove">
+      <h1>Andrey 💖 Ammi</h1>
+      <ul class="meses">
+        <li class="mes mes1">
+          <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684700474/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_210048_msfi3k.jpg" alt="mes-1">
+          <p>Mes 1</p>
+          <button>Ver más</button>
+        </li>
+        <li class="mes mes2">
+          <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684700714/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230107_143748_urlrq6.jpg" alt="mes-2">
+          <p>Mes 2</p>
+          <button>Ver más</button>
+        </li>
+        <li class="mes mes3">
+          <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/IMG_20230213_142218_234_ilernp.jpg" alt="mes-3">
+          <p>Mes 3</p>
+          <button>Ver más</button>
+        </li>
+        <li class="mes mes4">
+          <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684701771/John%20Serrano/Andrey%20-%20Ammi/mes%204/IMG_20230311_195324_016_d4e8kr.webp" alt="mes-4">
+          <p>Mes 4</p>
+          <button>Ver más</button>
+        </li>
+        <li class="mes mes5">
+          <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684870064/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202612_txay1t.jpg" alt="mes-5">
+          <p>Mes 5</p>
+          <button>Ver más</button>
+        </li>
+        <li class="mes mes6">
+          <img src="https://res.cloudinary.com/john-serrano/image/upload/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_202548_tqo1su.jpg" alt="mes-6">
+          <p>Mes 6</p>
+          <button>Ver más</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+</Layout>
 
 <style>
+  main {
+    /* background-color: #002033;
+    background-image: linear-gradient(160deg, #002033 0%, #050d47 100%); */
+    background-color: #000814;
+    background-image: linear-gradient(160deg, #000814 0%, #003566 100%);
+    padding: 20px 0;
+    height: 100%;
+    min-height: 100vh;
+  }
+  h1 {
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+  }
+  .container_mylove {
+    max-width: 870px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  /* https://coolors.co/palette/000814-001d3d-003566-ffc300-ffd60a */
   .meses {
     padding: 0;
-    margin: 0;
+    margin: 30px 0;
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 25px 10px;
+  }
+  .mes {
+    /* width: 300px; */
   }
   .mes img {
-    max-width: 360px;
+    max-width: 280px;
+    min-width: 280px;
+    max-height: 400px;
+    min-height: 400px;
+    width: 100%;
+    object-fit: cover;
+  }
+  p {
+    color: #ffffff;
+    text-align: center;
+    margin: 8px 0;
+    font-size: 1.5rem;
+  }
+  button {
+    margin: 0 auto;
+    display: block;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    background: #FFC300;
+    color: #000814;
+    cursor: pointer;
   }
 </style>
