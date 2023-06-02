@@ -1,0 +1,41 @@
+---
+const {id, open} = Astro.props;
+---
+
+<button onclick={`window.${id}.showModal()`}>{open}</button>
+
+<dialog id={id} onclick="event.target==this && this.close()">
+  <slot name="main" />
+  <form method="dialog">
+    <slot name="close" />
+  </form>
+</dialog>
+
+<style>
+  dialog {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+  }
+  dialog::backdrop {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: rgba(0, 8, 20, 0.8);
+  }
+  button {
+    display: block;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 700;
+    border-radius: 3px;
+    border: none;
+    background: #FFC300;
+    color: #000814;
+    cursor: pointer;
+  }
+</style>
