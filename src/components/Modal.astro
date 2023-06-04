@@ -4,7 +4,7 @@ const {id, open} = Astro.props;
 
 <button onclick={`window.${id}.showModal()`}>{open}</button>
 
-<dialog id={id} onclick="event.target==this && this.close()">
+<dialog id={id} onclick="window.event.target==this && this.close()">
   <slot name="main" />
   <form method="dialog">
     <slot name="close" />

@@ -2,12 +2,35 @@
 import Layout from '../../layouts/generic.astro'
 import Modal from '../../components/Modal.astro';
 const sizeImage = 'c_fill,w_280,h_400,q_90,g_faces'
+import '../../styles/glider.min.css'
 ---
 
 <Layout>
   <main class="main">
     <section class="container_mylove">
       <h1>Andrey 💖 Ammi</h1>
+      <div class="slidersOne">
+        <div class="glider">
+          <div>
+            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 1">
+          </div>
+          <div>
+            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp` alt="Foto 2">
+          </div>
+          <div>
+            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 3">
+          </div>
+          <div>
+            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 4">
+          </div>
+          <div>
+            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 5">
+          </div>
+          <div>
+            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 6">
+          </div>
+        </div>
+      </div>
       <ul class="meses">
         <li class="mes mes1">
           <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684700474/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_210048_msfi3k.jpg` alt="mes-1">
@@ -65,6 +88,19 @@ const sizeImage = 'c_fill,w_280,h_400,q_90,g_faces'
   </main>
 </Layout>
 
+<script>
+  import Glider from 'glider-js'
+  new Glider(document.querySelector('.glider'), {
+    slidesToShow: 1,
+    dots: '#dots',
+    draggable: true,
+    arrows: {
+      prev: '.glider-prev',
+      next: '.glider-next'
+    }
+  });
+</script>
+
 <style>
   .main {
     /* background-color: #002033;
@@ -119,6 +155,7 @@ const sizeImage = 'c_fill,w_280,h_400,q_90,g_faces'
     text-align: center;
     margin: 8px 0;
     font-size: 1.5rem;
+    font-weight: bold;
   }
   .motalText {
     color: #000814;
