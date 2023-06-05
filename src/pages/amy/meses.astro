@@ -2,35 +2,62 @@
 import Layout from '../../layouts/generic.astro'
 import Modal from '../../components/Modal.astro';
 const sizeImage = 'c_fill,w_280,h_400,q_90,g_faces'
-import '../../styles/glider.min.css'
+const sizeImageSlider = 'c_fill,w_870,h_650,q_90,g_faces'
+import '@splidejs/splide/css';
+import '@splidejs/splide/css/core';
 ---
 
 <Layout>
   <main class="main">
     <section class="container_mylove">
       <h1>Andrey 💖 Ammi</h1>
+      <p class="text_nuestro_amor">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ratione officiis quia aut recusandae perferendis eius quo tempore amet nam minus, excepturi exercitationem quae eveniet corrupti, perspiciatis nostrum magnam necessitatibus.</p>
+      <hr>
       <div class="slidersOne">
-        <div class="glider">
-          <div>
-            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 1">
+        <section id="splide1" class="splide" aria-label="Nuestro Noviazgo">
+          <h2 id="carousel-heading">Nuestro Noviazgo</h2>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 1">
+              </li>
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp` alt="Foto 2">
+              </li>
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 3">
+              </li>
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 4">
+              </li>
+            </ul>
           </div>
-          <div>
-            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp` alt="Foto 2">
-          </div>
-          <div>
-            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 3">
-          </div>
-          <div>
-            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 4">
-          </div>
-          <div>
-            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 5">
-          </div>
-          <div>
-            <img src=`https://res.cloudinary.com/john-serrano/image/upload/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 6">
-          </div>
-        </div>
+        </section>
       </div>
+      <hr>
+      <div class="slidersTwo">
+        <section id="splide2" class="splide" aria-label="¿Quieres ser mi Novia?">
+          <h2 id="carousel-heading2">¿Quieres ser mi Novia?</h2>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 1">
+              </li>
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp` alt="Foto 2">
+              </li>
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 3">
+              </li>
+              <li class="splide__slide">
+                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 4">
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+      <hr>
+      <h2>Nuestros Hermosos Meses Juntos 💖</h2>
       <ul class="meses">
         <li class="mes mes1">
           <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684700474/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_210048_msfi3k.jpg` alt="mes-1">
@@ -43,7 +70,7 @@ import '../../styles/glider.min.css'
                 <hr />
                 <img width="60" height="80" src="https://res.cloudinary.com/john-serrano/image/upload/v1684700473/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_123403_gexvpz.jpg" alt="Foto 1">
               </main>
-              <button slot="close">Close modal</button>
+              <button slot="close">Cerrar</button>
             </Modal>
           </footer>
         </li>
@@ -89,19 +116,50 @@ import '../../styles/glider.min.css'
 </Layout>
 
 <script>
-  import Glider from 'glider-js'
-  new Glider(document.querySelector('.glider'), {
-    slidesToShow: 1,
-    dots: '#dots',
-    draggable: true,
-    arrows: {
-      prev: '.glider-prev',
-      next: '.glider-next'
-    }
-  });
+  import Splide from '@splidejs/splide';
+  import { Grid } from '@splidejs/splide-extension-grid';
+
+  const splide1 = new Splide('#splide1', {
+    type       : 'loop',
+    height     : '25rem',
+    perPage    : 2,
+    perMove    : 1,
+    gap: '10px',
+    grid       : {
+      // You can define rows/cols instead of dimensions.
+      dimensions: [ [ 1, 1 ], [ 2, 2 ], [ 2, 1 ], [ 1, 2 ], [ 2, 2 ], [ 3, 2 ] ],
+      gap: {
+        row: '6px',
+        col: '6px',
+      },
+    },
+    breakpoints: {
+      640: {
+        height : '15rem',
+        perPage: 1,
+        grid   : {
+          dimensions: [ [ 2, 2 ], [ 1, 1 ], [ 2, 1 ], [ 1, 2 ], [ 2, 2 ] ],
+        },
+      },
+    },
+  })
+
+  const splide2 = new Splide('#splide2', {
+    type   : 'loop',
+    arrows: false,
+    autoplay: true,
+    interval: 4000
+    // padding: '5rem'
+  })
+
+  splide1.mount({ Grid })
+  splide2.mount()
 </script>
 
 <style>
+  /* .splide__slide {
+    margin-right: 2rem;
+  } */
   .main {
     /* background-color: #002033;
     background-image: linear-gradient(160deg, #002033 0%, #050d47 100%); */
@@ -118,6 +176,14 @@ import '../../styles/glider.min.css'
     color: #ffffff;
     text-align: center;
     margin: 0;
+  }
+  h2 {
+    font-size: 2rem;
+    line-height: 2rem;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin: 0 0 20px;
   }
   .container_mylove {
     max-width: 870px;
@@ -170,5 +236,18 @@ import '../../styles/glider.min.css'
     background: #FFC300;
     color: #000814;
     cursor: pointer;
+  }
+  .slidersOne {
+    margin: 30px auto;
+  }
+
+  .slidersTwo {
+    margin: 0 auto 30px;
+  }
+
+  .splide__list li img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
 </style>
