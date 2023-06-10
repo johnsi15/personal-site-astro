@@ -534,6 +534,36 @@ import '@splidejs/splide/css/core'
         </li>
       </ul>
     </section>
+
+    <section class='bibly'>
+      <section id='splide-bibly' class='splide' aria-label='Bibly text'>
+        <div class='splide__track'>
+          <ul class='splide__list'>
+            <li class='splide__slide'>
+              <div>
+                <span>1 Corintios 13:4-5:</span> “El amor es paciente, es bondadoso.
+                El amor no es envidioso ni jactancioso ni orgulloso. No se comporta
+                con rudeza, no es egoísta, no se enoja fácilmente, no guarda rencor”.
+              </div>
+            </li>
+            <li class='splide__slide'>
+              <div>
+                <span>1 Corintios 13:13:</span> “Ahora, pues, permanecen estas tres
+                virtudes: la fe, la esperanza y el amor. Pero la más excelente de
+                ellas es el amor”.
+              </div>
+            </li>
+            <li class='splide__slide'>
+              <div>
+                <span>1 Corintios 16:14:</span> “Y todo lo que hagan, háganlo con
+                amor”.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
     <footer class='copy'>Made by Andrey Serrano with a lot of Love</footer>
   </section>
 </Layout>
@@ -677,14 +707,42 @@ import '@splidejs/splide/css/core'
     },
   })
 
+  const splideBibly = new Splide('#splide-bibly', {
+    type: 'loop',
+    arrows: false,
+    autoplay: true,
+    interval: 4000,
+    pagination: false,
+  })
+
   splide1.mount({ Grid })
   splide2.mount()
-  splideMes1.mount()
-  splideMes2.mount()
-  splideMes3.mount()
-  splideMes4.mount()
-  splideMes5.mount()
-  splideMes6.mount()
+  splideBibly.mount()
+
+  document.querySelector('.mes1 button')?.addEventListener('click', () => {
+    // console.info('ok click')
+    splideMes1.mount()
+  })
+  document.querySelector('.mes2 button')?.addEventListener('click', () => {
+    // console.info('ok click')
+    splideMes2.mount()
+  })
+  document.querySelector('.mes3 button')?.addEventListener('click', () => {
+    // console.info('ok click')
+    splideMes3.mount()
+  })
+  document.querySelector('.mes4 button')?.addEventListener('click', () => {
+    // console.info('ok click')
+    splideMes4.mount()
+  })
+  document.querySelector('.mes5 button')?.addEventListener('click', () => {
+    // console.info('ok click')
+    splideMes5.mount()
+  })
+  document.querySelector('.mes6 button')?.addEventListener('click', () => {
+    // console.info('ok click')
+    splideMes6.mount()
+  })
 </script>
 
 <style>
@@ -823,6 +881,21 @@ import '@splidejs/splide/css/core'
     color: var(--line-color);
     font-style: italic;
   }
+  .bibly {
+    max-width: 870px;
+    margin: 50px auto 30px;
+    width: 96%;
+  }
+  .bibly li {
+    font-size: 2rem;
+    color: var(--text-color-one);
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  .bibly span {
+    color: var(--line-color);
+  }
   @media screen and (max-width: 768px) {
     .meses .mes .splide__list li img {
       object-fit: cover;
@@ -839,6 +912,12 @@ import '@splidejs/splide/css/core'
     .mes .portada {
       max-width: 100%;
       max-height: 100%;
+    }
+    .bibly {
+      margin-top: 20px;
+    }
+    .bibly li {
+      font-size: 1.5rem;
     }
   }
 </style>
