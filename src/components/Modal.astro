@@ -1,13 +1,15 @@
 ---
-const {id, open} = Astro.props;
+const { id, open } = Astro.props
 ---
 
 <button onclick={`window.${id}.showModal()`}>{open}</button>
 
-<dialog id={id} onclick="window.event.target==this && this.close()">
-  <slot name="main" />
-  <form method="dialog">
-    <slot name="close" />
+<dialog id={id} onclick='
+window.event.target == this && this.close()
+'>
+  <slot name='main' />
+  <form method='dialog'>
+    <slot name='close' />
   </form>
 </dialog>
 
@@ -18,6 +20,11 @@ const {id, open} = Astro.props;
     top: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+    margin: 0;
+    border: none;
+    --text-color-one: #ffffff;
+    --text-color-two: #073b4c;
+    --background-color-one: #ef476f;
   }
   dialog::backdrop {
     position: fixed;
@@ -34,8 +41,19 @@ const {id, open} = Astro.props;
     font-weight: 700;
     border-radius: 3px;
     border: none;
-    background: #FFC300;
-    color: #000814;
+    background: var(--background-color-one);
+    color: var(--text-color-one);
     cursor: pointer;
+  }
+  form {
+    margin: 10px 0 0;
+    padding-left: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    dialog {
+      top: 50%;
+      width: 100%;
+      padding: 10px 0;
+    }
   }
 </style>

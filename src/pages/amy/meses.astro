@@ -1,133 +1,558 @@
 ---
 import Layout from '../../layouts/generic.astro'
-import Modal from '../../components/Modal.astro';
+import Modal from '../../components/Modal.astro'
 const sizeImage = 'c_fill,w_280,h_400,q_90,g_faces'
 const sizeImageSlider = 'c_fill,w_870,h_650,q_90,g_faces'
-import '@splidejs/splide/css';
-import '@splidejs/splide/css/core';
+const sizeImageSlider2 = 'c_fill,w_1080,h_1080,q_90,g_faces'
+const sizeImageSlider3 = 'c_fill,w_1080,h_1080,q_90'
+import '@splidejs/splide/css'
+import '@splidejs/splide/css/core'
 ---
 
 <Layout>
-  <main class="main">
-    <section class="container_mylove">
+  <mn class='main'>
+    <section class='container_mylove'>
       <h1>Andrey 💖 Ammi</h1>
-      <p class="text_nuestro_amor">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ratione officiis quia aut recusandae perferendis eius quo tempore amet nam minus, excepturi exercitationem quae eveniet corrupti, perspiciatis nostrum magnam necessitatibus.</p>
-      <hr>
-      <div class="slidersOne">
-        <section id="splide1" class="splide" aria-label="Nuestro Noviazgo">
-          <h2 id="carousel-heading">Nuestro Noviazgo</h2>
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 1">
+      <p class='text_nuestro_amor'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ratione
+        officiis quia aut recusandae perferendis eius quo tempore amet nam
+        minus, excepturi exercitationem quae eveniet corrupti, perspiciatis
+        nostrum magnam necessitatibus.
+      </p>
+      <hr />
+      <div class='slidersOne'>
+        <section id='splide1' class='splide' aria-label='Nuestro Noviazgo'>
+          <h2 id='carousel-heading'>Nuestro Noviazgo</h2>
+          <div class='splide__track'>
+            <ul class='splide__list'>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp`
+                  alt='Foto 1'
+                />
               </li>
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp` alt="Foto 2">
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp`
+                  alt='Foto 2'
+                />
               </li>
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 3">
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909108/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/20230107_143748_mjgr98.jpg`
+                  alt='Foto 3'
+                />
               </li>
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 4">
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230311_195324_114_wee7bb.webp`
+                  alt='Foto 4'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230523_122407_511_vdhrcn.webp`
+                  alt='Foto 5'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG-20230212-WA0040_zhboj6.jpg`
+                  alt='Foto 6'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/20230412_202612_pdbivo.jpg`
+                  alt='Foto 8'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/20221225_160927_q5xowy.jpg`
+                  alt='Foto 7'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230501_223816_429_ipxwcp.webp`
+                  alt='Foto 9'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/20230528_140634-COLLAGE_xtmdma.jpg`
+                  alt='Foto 10'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/20221017_153903_mnmika.jpg`
+                  alt='Foto 11'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20221113_115652_873_kyeubc.webp`
+                  alt='Foto 12'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/20221001_182534_iidetm.jpg`
+                  alt='Foto 13'
+                />
+              </li>
+              <!-- <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20221016_123515_622_hfjkqw.webp`
+                  alt='Foto 14'
+                />
+              </li> -->
+            </ul>
+          </div>
+        </section>
+      </div>
+      <hr />
+      <div class='slidersTwo'>
+        <section
+          id='splide2'
+          class='splide'
+          aria-label='¿Quieres ser mi Novia?'
+        >
+          <h2 id='carousel-heading2'>¿Quieres ser mi Novia?</h2>
+          <div class='splide__track'>
+            <ul class='splide__list'>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1684700047/John%20Serrano/Andrey%20-%20Ammi/pedida-de-noviazgo/IMG_20221113_115652_813_ud0tdw.webp`
+                  alt='Foto 1'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1684700046/John%20Serrano/Andrey%20-%20Ammi/pedida-de-noviazgo/IMG_20221113_115652_942_iaqucn.webp`
+                  alt='Foto 2'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1684700046/John%20Serrano/Andrey%20-%20Ammi/pedida-de-noviazgo/IMG_20221113_115652_873_yvywhx.webp`
+                  alt='Foto 3'
+                />
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1684700047/John%20Serrano/Andrey%20-%20Ammi/pedida-de-noviazgo/20221115_114413_kcj2ul.jpg`
+                  alt='Foto 4'
+                />
               </li>
             </ul>
           </div>
         </section>
       </div>
-      <hr>
-      <div class="slidersTwo">
-        <section id="splide2" class="splide" aria-label="¿Quieres ser mi Novia?">
-          <h2 id="carousel-heading2">¿Quieres ser mi Novia?</h2>
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 1">
-              </li>
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909106/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20220914_112536_363_irrxbm.webp` alt="Foto 2">
-              </li>
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 3">
-              </li>
-              <li class="splide__slide">
-                <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider}/v1685909107/John%20Serrano/Andrey%20-%20Ammi/nuestro-amor/IMG_20230102_115253_216_ewznay.webp` alt="Foto 4">
-              </li>
-            </ul>
-          </div>
-        </section>
-      </div>
-      <hr>
+      <hr />
       <h2>Nuestros Hermosos Meses Juntos 💖</h2>
-      <ul class="meses">
-        <li class="mes mes1">
-          <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684700474/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_210048_msfi3k.jpg` alt="mes-1">
-          <footer class="footerMes">
+      <ul class='meses'>
+        <li class='mes mes1'>
+          <img
+            class='portada'
+            src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684700474/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_210048_msfi3k.jpg`
+            alt='mes-1'
+          />
+          <footer class='footerMes'>
             <p>Mes 1</p>
             <!-- <button>Ver más</button> -->
-            <Modal id="dialog" open="Ver más">
-              <main slot="main">
-                <p class="motalText">Nuestro primer mes...</p>
-                <hr />
-                <img width="60" height="80" src="https://res.cloudinary.com/john-serrano/image/upload/v1684700473/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_123403_gexvpz.jpg" alt="Foto 1">
+            <Modal id='dialog' open='Ver más'>
+              <main slot='main'>
+                <p class='motalText'>Nuestro primer mes...</p>
+                <!-- <hr /> -->
+                <section id='splide-mes-1' class='splide' aria-label='Mes 1'>
+                  <div class='splide__track'>
+                    <ul class='splide__list'>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684700473/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_123403_gexvpz.jpg`
+                          alt='Foto 1'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684700473/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_123358_fcw08m.jpg`
+                          alt='Foto 2'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684700474/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221218_210048_msfi3k.jpg`
+                          alt='Foto 3'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684700529/John%20Serrano/Andrey%20-%20Ammi/mes%201/20221207_195534_xriimq.jpg`
+                          alt='Foto 4'
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
               </main>
-              <button slot="close">Cerrar</button>
+              <button slot='close'>Cerrar</button>
             </Modal>
           </footer>
         </li>
-        <li class="mes mes2">
-          <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684700714/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230107_143748_urlrq6.jpg` alt="mes-2">
-          <footer class="footerMes">
+        <li class='mes mes2'>
+          <img
+            class='portada'
+            src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684700714/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230107_143748_urlrq6.jpg`
+            alt='mes-2'
+          />
+          <footer class='footerMes'>
             <p>Mes 2</p>
-            <button>Ver más</button>
+            <Modal id='dialog2' open='Ver más'>
+              <main slot='main'>
+                <p class='motalText'>Nuestro segundo mes...</p>
+                <!-- <hr /> -->
+                <section id='splide-mes-2' class='splide' aria-label='Mes 2'>
+                  <div class='splide__track'>
+                    <ul class='splide__list'>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684700714/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230107_143748_urlrq6.jpg`
+                          alt='Foto 1'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684700713/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230107_150417_eitbs6.jpg`
+                          alt='Foto 2'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684700713/John%20Serrano/Andrey%20-%20Ammi/mes%202/Screenshot_20230112-120922_WhatsApp_tyh6pj.jpg`
+                          alt='Foto 3'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684700713/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230107_150259_zp4g2f.jpg`
+                          alt='Foto 4'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684700726/John%20Serrano/Andrey%20-%20Ammi/mes%202/20230112_222328_kcxmhq.jpg`
+                          alt='Foto 5'
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </main>
+              <button slot='close'>Cerrar</button>
+            </Modal>
           </footer>
         </li>
-        <li class="mes mes3">
-          <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/IMG_20230213_142218_234_ilernp.jpg` alt="mes-3">
-          <footer class="footerMes">
+        <li class='mes mes3'>
+          <img
+            class='portada'
+            src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/IMG_20230213_142218_234_ilernp.jpg`
+            alt='mes-3'
+          />
+          <footer class='footerMes'>
             <p>Mes 3</p>
-            <button>Ver más</button>
+            <Modal id='dialog3' open='Ver más'>
+              <main slot='main'>
+                <p class='motalText'>Nuestro tercer mes...</p>
+                <!-- <hr /> -->
+                <section id='splide-mes-3' class='splide' aria-label='Mes 3'>
+                  <div class='splide__track'>
+                    <ul class='splide__list'>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/20230213_082818_gwu3qp.jpg`
+                          alt='Foto 6'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684700920/John%20Serrano/Andrey%20-%20Ammi/mes%203/my_love_3_meses_jnkvws.jpg`
+                          alt='Foto 7'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/IMG_20230213_142218_528_rgka1t.jpg`
+                          alt='Foto 2'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/IMG_20230213_142218_234_ilernp.jpg`
+                          alt='Foto 3'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/20230212_113834_xqswmx.jpg`
+                          alt='Foto 4'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701508/John%20Serrano/Andrey%20-%20Ammi/mes%203/20230212_113938_l4fow0.jpg`
+                          alt='Foto 5'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701506/John%20Serrano/Andrey%20-%20Ammi/mes%203/IMG_20230213_142218_054_diav8c.jpg`
+                          alt='Foto 1'
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </main>
+              <button slot='close'>Cerrar</button>
+            </Modal>
           </footer>
         </li>
-        <li class="mes mes4">
-          <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684701771/John%20Serrano/Andrey%20-%20Ammi/mes%204/IMG_20230311_195324_016_d4e8kr.webp` alt="mes-4">
-          <footer class="footerMes">
+        <li class='mes mes4'>
+          <img
+            class='portada'
+            src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684701771/John%20Serrano/Andrey%20-%20Ammi/mes%204/IMG_20230311_195324_016_d4e8kr.webp`
+            alt='mes-4'
+          />
+          <footer class='footerMes'>
             <p>Mes 4</p>
-            <button>Ver más</button>
+            <Modal id='dialog4' open='Ver más'>
+              <main slot='main'>
+                <p class='motalText'>Nuestro cuarto mes...</p>
+                <!-- <hr /> -->
+                <section id='splide-mes-4' class='splide' aria-label='Mes 4'>
+                  <div class='splide__track'>
+                    <ul class='splide__list'>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684869763/John%20Serrano/Andrey%20-%20Ammi/mes%204/my_love_4_meses_f8wxiv.jpg`
+                          alt='Foto 1'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684701772/John%20Serrano/Andrey%20-%20Ammi/mes%204/20230311_194112_txnfiy.jpg`
+                          alt='Foto 2'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701772/John%20Serrano/Andrey%20-%20Ammi/mes%204/20230311_151549_geyvw9.jpg`
+                          alt='Foto 3'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701771/John%20Serrano/Andrey%20-%20Ammi/mes%204/20230311_194203_wbtqy4.jpg`
+                          alt='Foto 4'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701771/John%20Serrano/Andrey%20-%20Ammi/mes%204/IMG_20230311_195324_016_d4e8kr.webp`
+                          alt='Foto 5'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684701771/John%20Serrano/Andrey%20-%20Ammi/mes%204/IMG_20230311_195324_114_vwpya7.webp`
+                          alt='Foto 6'
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </main>
+              <button slot='close'>Cerrar</button>
+            </Modal>
           </footer>
         </li>
-        <li class="mes mes5">
-          <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684870064/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202612_txay1t.jpg` alt="mes-5">
-          <footer class="footerMes">
+        <li class='mes mes5'>
+          <img
+            class='portada'
+            src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684870064/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202612_txay1t.jpg`
+            alt='mes-5'
+          />
+          <footer class='footerMes'>
             <p>Mes 5</p>
-            <button>Ver más</button>
+            <Modal id='dialog5' open='Ver más'>
+              <main slot='main'>
+                <p class='motalText'>Nuestro quinto mes...</p>
+                <!-- <hr /> -->
+                <section id='splide-mes-5' class='splide' aria-label='Mes 5'>
+                  <div class='splide__track'>
+                    <ul class='splide__list'>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684869924/John%20Serrano/Andrey%20-%20Ammi/mes%205/my_love_5_meses_fxlvdm.jpg`
+                          alt='Foto 1'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870248/John%20Serrano/Andrey%20-%20Ammi/mes%205/Screenshot_20230412-220729_WhatsApp_hbpcfy.jpg`
+                          alt='Foto 2'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684870065/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230413_100324_wjal1z.jpg`
+                          alt='Foto 3'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870064/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202612_txay1t.jpg`
+                          alt='Foto 4'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870065/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202207_pzz8nc.jpg`
+                          alt='Foto 5'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870065/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202345_xl9fjm.jpg`
+                          alt='Foto 6'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870064/John%20Serrano/Andrey%20-%20Ammi/mes%205/20230412_202553_kx3dlk.jpg`
+                          alt='Foto 7'
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </main>
+              <button slot='close'>Cerrar</button>
+            </Modal>
           </footer>
         </li>
-        <li class="mes mes6">
-          <img src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_202548_tqo1su.jpg` alt="mes-6">
-          <footer class="footerMes">
-
+        <li class='mes mes6'>
+          <img
+            class='portada'
+            src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImage}/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_202548_tqo1su.jpg`
+            alt='mes-6'
+          />
+          <footer class='footerMes'>
             <p>Mes 6</p>
-            <button>Ver más</button>
+            <Modal id='dialog6' open='Ver más'>
+              <main slot='main'>
+                <p class='motalText'>Nuestro sexto mes...</p>
+                <!-- <hr /> -->
+                <section id='splide-mes-6' class='splide' aria-label='Mes 6'>
+                  <div class='splide__track'>
+                    <ul class='splide__list'>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684870859/John%20Serrano/Andrey%20-%20Ammi/mes%206/my_love_6_meses_warhro.jpg`
+                          alt='Foto 1'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684870755/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_134125_zonu2e.jpg`
+                          alt='Foto 2'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870755/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_202412-COLLAGE_ry3v66.jpg`
+                          alt='Foto 3'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870755/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_134758_nxppgx.jpg`
+                          alt='Foto 4'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_135249_opheka.jpg`
+                          alt='Foto 5'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_134107_oqly0u.jpg`
+                          alt='Foto 6'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684870859/John%20Serrano/Andrey%20-%20Ammi/mes%206/tarjeta-2_knlzjo.png`
+                          alt='Foto 7'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider3}/v1684870859/John%20Serrano/Andrey%20-%20Ammi/mes%206/tarjeta-1_itdjab.png`
+                          alt='Foto 8'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_202347_ounriw.jpg`
+                          alt='Foto 9'
+                        />
+                      </li>
+                      <li class='splide__slide'>
+                        <img
+                          src=`https://res.cloudinary.com/john-serrano/image/upload/${sizeImageSlider2}/v1684870754/John%20Serrano/Andrey%20-%20Ammi/mes%206/20230512_210806_vnhe65.jpg`
+                          alt='Foto 10'
+                        />
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </main>
+              <button slot='close'>Cerrar</button>
+            </Modal>
           </footer>
         </li>
       </ul>
     </section>
-  </main>
+    <footer class='copy'>Made by Andrey Serrano with a lot of Love</footer>
+  </mn>
 </Layout>
 
 <script>
-  import Splide from '@splidejs/splide';
-  import { Grid } from '@splidejs/splide-extension-grid';
+  import Splide from '@splidejs/splide'
+  import { Grid } from '@splidejs/splide-extension-grid'
 
   const splide1 = new Splide('#splide1', {
-    type       : 'loop',
-    height     : '25rem',
-    perPage    : 2,
-    perMove    : 1,
+    type: 'loop',
+    arrows: false,
+    height: '25rem',
+    perPage: 2,
+    perMove: 1,
     gap: '10px',
-    grid       : {
+    grid: {
       // You can define rows/cols instead of dimensions.
-      dimensions: [ [ 1, 1 ], [ 2, 2 ], [ 2, 1 ], [ 1, 2 ], [ 2, 2 ], [ 3, 2 ] ],
+      dimensions: [
+        [1, 1],
+        [2, 2],
+        [2, 1],
+        [1, 2],
+        [2, 2],
+      ],
       gap: {
         row: '6px',
         col: '6px',
@@ -135,25 +560,109 @@ import '@splidejs/splide/css/core';
     },
     breakpoints: {
       640: {
-        height : '15rem',
+        height: '15rem',
         perPage: 1,
-        grid   : {
-          dimensions: [ [ 2, 2 ], [ 1, 1 ], [ 2, 1 ], [ 1, 2 ], [ 2, 2 ] ],
+        grid: {
+          dimensions: [
+            [2, 2],
+            [1, 1],
+            [2, 1],
+            [1, 2],
+            [2, 2],
+          ],
         },
       },
     },
   })
 
   const splide2 = new Splide('#splide2', {
-    type   : 'loop',
+    type: 'loop',
     arrows: false,
     autoplay: true,
-    interval: 4000
+    interval: 4000,
     // padding: '5rem'
+  })
+
+  const splideMes1 = new Splide('#splide-mes-1', {
+    type: 'loop',
+    arrows: false,
+    height: '730px',
+    // heightRatio: 0.5,
+    breakpoints: {
+      768: {
+        height: '400px',
+      },
+    },
+  })
+
+  const splideMes2 = new Splide('#splide-mes-2', {
+    type: 'loop',
+    arrows: false,
+    height: '730px',
+    // heightRatio: 0.5,
+    breakpoints: {
+      768: {
+        height: '400px',
+      },
+    },
+  })
+
+  const splideMes3 = new Splide('#splide-mes-3', {
+    type: 'loop',
+    arrows: false,
+    height: '730px',
+    // heightRatio: 0.5,
+    breakpoints: {
+      768: {
+        height: '400px',
+      },
+    },
+  })
+
+  const splideMes4 = new Splide('#splide-mes-4', {
+    type: 'loop',
+    arrows: false,
+    height: '730px',
+    // heightRatio: 0.5,
+    breakpoints: {
+      768: {
+        height: '400px',
+      },
+    },
+  })
+
+  const splideMes5 = new Splide('#splide-mes-5', {
+    type: 'loop',
+    arrows: false,
+    height: '730px',
+    // heightRatio: 0.5,
+    breakpoints: {
+      768: {
+        height: '400px',
+      },
+    },
+  })
+
+  const splideMes6 = new Splide('#splide-mes-6', {
+    type: 'loop',
+    arrows: false,
+    height: '730px',
+    // heightRatio: 0.5,
+    breakpoints: {
+      768: {
+        height: '400px',
+      },
+    },
   })
 
   splide1.mount({ Grid })
   splide2.mount()
+  splideMes1.mount()
+  splideMes2.mount()
+  splideMes3.mount()
+  splideMes4.mount()
+  splideMes5.mount()
+  splideMes6.mount()
 </script>
 
 <style>
@@ -161,19 +670,24 @@ import '@splidejs/splide/css/core';
     margin-right: 2rem;
   } */
   .main {
-    /* background-color: #002033;
-    background-image: linear-gradient(160deg, #002033 0%, #050d47 100%); */
-    background-color: #000814;
-    background-image: linear-gradient(160deg, #000814 0%, #003566 100%);
+    /* background-color: #000814;
+    background-image: linear-gradient(160deg, #000814 0%, #003566 100%); */
+    background-color: #073b4c;
+    background-image: linear-gradient(160deg, #073b4c 0%, #118ab2 100%);
     padding: 20px 0;
     height: 100%;
     min-height: 100vh;
+    --text-color-one: #ffffff;
+    --text-color-two: #073b4c;
+    --text-color-three: #ef476f;
+    --background-color-one: #ef476f;
+    --line-color: #ffd166;
   }
   h1 {
     font-size: 3rem;
     line-height: 3rem;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--text-color-one);
     text-align: center;
     margin: 0;
   }
@@ -181,7 +695,7 @@ import '@splidejs/splide/css/core';
     font-size: 2rem;
     line-height: 2rem;
     font-weight: bold;
-    color: #ffffff;
+    color: var(--text-color-one);
     text-align: center;
     margin: 0 0 20px;
   }
@@ -203,7 +717,7 @@ import '@splidejs/splide/css/core';
   .mes {
     /* width: 300px; */
   }
-  .mes img {
+  .mes .portada {
     max-width: 280px;
     min-width: 280px;
     max-height: 400px;
@@ -217,14 +731,18 @@ import '@splidejs/splide/css/core';
     align-items: center;
   }
   p {
-    color: #ffffff;
+    color: var(--text-color-one);
     text-align: center;
     margin: 8px 0;
     font-size: 1.5rem;
     font-weight: bold;
   }
+  .text_nuestro_amor {
+    margin: 30px 0;
+  }
   .motalText {
-    color: #000814;
+    color: var(--text-color-three);
+    margin: 0 0 10px;
   }
   button {
     display: block;
@@ -233,8 +751,8 @@ import '@splidejs/splide/css/core';
     font-weight: 700;
     border-radius: 3px;
     border: none;
-    background: #FFC300;
-    color: #000814;
+    background: var(--background-color-one);
+    color: var(--text-color-one);
     cursor: pointer;
   }
   .slidersOne {
@@ -249,5 +767,33 @@ import '@splidejs/splide/css/core';
     object-fit: cover;
     height: 100%;
     width: 100%;
+  }
+
+  .meses .mes .splide__list li img {
+    object-fit: contain;
+  }
+
+  hr {
+    height: 1px;
+    border: none;
+    width: 100%;
+    background: var(--line-color);
+    margin: 50px auto;
+  }
+  .footerMes main {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+  }
+  footer.copy {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--line-color);
+    font-style: italic;
+  }
+  @media screen and (max-width: 768px) {
+    .meses .mes .splide__list li img {
+      object-fit: cover;
+    }
   }
 </style>
