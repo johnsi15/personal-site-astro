@@ -10,7 +10,7 @@ import '@splidejs/splide/css/core'
 ---
 
 <Layout>
-  <mn class='main'>
+  <section class='main'>
     <section class='container_mylove'>
       <h1>Andrey 💖 Ammi</h1>
       <p class='text_nuestro_amor'>
@@ -530,7 +530,7 @@ import '@splidejs/splide/css/core'
       </ul>
     </section>
     <footer class='copy'>Made by Andrey Serrano with a lot of Love</footer>
-  </mn>
+  </section>
 </Layout>
 
 <script>
@@ -794,6 +794,19 @@ import '@splidejs/splide/css/core'
   @media screen and (max-width: 768px) {
     .meses .mes .splide__list li img {
       object-fit: cover;
+    }
+    h1 {
+      margin: 0 10px;
+    }
+    .text_nuestro_amor {
+      margin: 30px 10px;
+    }
+    .mes {
+      width: 96%;
+    }
+    .mes .portada {
+      max-width: 100%;
+      max-height: 100%;
     }
   }
 </style>
