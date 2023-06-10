@@ -7,19 +7,23 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
 
 :root {
---width: 1000px;
---font-main: 'Source Sans Pro', system-ui, sans-serif;
---font-secondary: 'Source Sans Pro', system-ui, sans-serif;
---font-scael: 1em;
---background-color: #fff;
---heading-color: #1c1c1c;
---text-color: #444;
---link-color: #3273dc;
---visited-color:  #8b6fcb;
---code-background-color: #f2f2f2;
---code-color: #222;
---blockquote-color: #222;
---progress-bar-color: #ef1424;
+  --width: 1000px;
+  --font-main: 'Source Sans Pro', system-ui, sans-serif;
+  --font-secondary: 'Source Sans Pro', system-ui, sans-serif;
+  --font-scael: 1em;
+  --background-color: #fff;
+  --heading-color: #1c1c1c;
+  --text-color: #444;
+  --link-color: #3273dc;
+  --visited-color: #8b6fcb;
+  --code-background-color: #f2f2f2;
+  --code-color: #222;
+  --blockquote-color: #222;
+  --progress-bar-color: #ef1424;
+}
+
+.meses .splide:not(.is-overflow) .splide__pagination {
+  display: flex;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -71,6 +75,7 @@ body {
 #nprogress {
   pointer-events: none;
 }
+
 #nprogress .bar {
   background: var(--progress-bar-color);
   position: fixed;
@@ -80,6 +85,7 @@ body {
   width: 100%;
   height: 2px;
 }
+
 /* Fancy blur effect */
 #nprogress .peg {
   display: block;
@@ -93,6 +99,7 @@ body {
   -ms-transform: rotate(3deg) translate(0px, -4px);
   transform: rotate(3deg) translate(0px, -4px);
 }
+
 /* Remove these to get rid of the spinner */
 #nprogress .spinner {
   display: block;
@@ -101,6 +108,7 @@ body {
   top: 15px;
   right: 15px;
 }
+
 #nprogress .spinner-icon {
   width: 18px;
   height: 18px;
@@ -112,26 +120,32 @@ body {
   -webkit-animation: nprogress-spinner 400ms linear infinite;
   animation: nprogress-spinner 400ms linear infinite;
 }
+
 .nprogress-custom-parent {
   overflow: hidden;
   position: relative;
 }
+
 .nprogress-custom-parent #nprogress .spinner,
 .nprogress-custom-parent #nprogress .bar {
   position: absolute;
 }
+
 @-webkit-keyframes nprogress-spinner {
   0% {
     -webkit-transform: rotate(0deg);
   }
+
   100% {
     -webkit-transform: rotate(360deg);
   }
 }
+
 @keyframes nprogress-spinner {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
