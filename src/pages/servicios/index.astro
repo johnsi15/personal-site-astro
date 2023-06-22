@@ -2,6 +2,8 @@
 import Layout from '../../layouts/generic.astro'
 import PropuestaValor from './propuesta-valor.astro'
 import Services from './services.astro'
+import '@splidejs/splide/css'
+import '@splidejs/splide/css/core'
 ---
 
 <Layout>
@@ -65,19 +67,73 @@ import Services from './services.astro'
         <div class='container_trabajos'>
           <h2>Trabajos completados</h2>
         </div>
-        <ul>
-          <li>
-            <img
-              src='/servicios/works/work-1.webp'
-              alt='Trabajo 1'
-              width='360'
-              height='380'
-            />
-          </li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
+
+        <div id='splide-works' class='splide' aria-label='Works'>
+          <div class='splide__track'>
+            <ul class='splide__list'>
+              <li class='splide__slide'>
+                <img
+                  src='/servicios/works/work-1.webp'
+                  alt='Trabajo 1'
+                  width='360'
+                  height='380'
+                />
+                <h3 class='title'>Multipartscolombia</h3>
+                <!-- <p class='text'></p> -->
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src='/servicios/works/work-1.webp'
+                  alt='Trabajo 1'
+                  width='360'
+                  height='380'
+                />
+                <h3 class='title'>Multipartscolombia</h3>
+                <!-- <p class='text'></p> -->
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src='/servicios/works/work-1.webp'
+                  alt='Trabajo 1'
+                  width='360'
+                  height='380'
+                />
+                <h3 class='title'>Multipartscolombia</h3>
+                <!-- <p class='text'></p> -->
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src='/servicios/works/work-1.webp'
+                  alt='Trabajo 1'
+                  width='360'
+                  height='380'
+                />
+                <h3 class='title'>Multipartscolombia</h3>
+                <!-- <p class='text'></p> -->
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src='/servicios/works/work-1.webp'
+                  alt='Trabajo 1'
+                  width='360'
+                  height='380'
+                />
+                <h3 class='title'>Multipartscolombia</h3>
+                <!-- <p class='text'></p> -->
+              </li>
+              <li class='splide__slide'>
+                <img
+                  src='/servicios/works/work-1.webp'
+                  alt='Trabajo 1'
+                  width='360'
+                  height='380'
+                />
+                <h3 class='title'>Multipartscolombia</h3>
+                <!-- <p class='text'></p> -->
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
 
       <section class='cotizacion'>
@@ -89,6 +145,30 @@ import Services from './services.astro'
     </footer>
   </section>
 </Layout>
+
+<script>
+  import Splide from '@splidejs/splide'
+  const splideWorks = new Splide('#splide-works', {
+    type: 'loop',
+    arrows: false,
+    autoplay: true,
+    interval: 4000,
+    perPage: 5,
+    perMove: 1,
+    fixedWidth: '360px',
+    gap: '3.7rem',
+    breakpoints: {
+      768: {
+        // height: '400px',
+      },
+      1400: {
+        perPage: 3,
+        gap: '2rem',
+      },
+    },
+  })
+  splideWorks.mount()
+</script>
 
 <style>
   #page_services {
@@ -119,6 +199,27 @@ import Services from './services.astro'
   .trabajos .container_trabajos {
     max-width: var(--width);
     margin: 0 auto;
+  }
+  .trabajos h2 {
+    color: var(--text-white);
+    text-align: center;
+    font-size: var(--font-size-lx);
+    margin: 0;
+  }
+  #splide-works {
+    margin: 30px 0 0;
+  }
+  /* .trabajos ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  } */
+  .trabajos ul h3 {
+    font-size: var(--font-size-m);
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 400;
+    margin: 10px 0;
   }
   header {
     background: hsla(221, 51%, 16%, 1);
@@ -175,6 +276,7 @@ import Services from './services.astro'
   }
   header .container_servicios ul a.active {
     color: var(--link-color);
+    font-weight: 700;
   }
   header .grid {
     display: grid;
