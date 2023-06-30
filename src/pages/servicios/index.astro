@@ -72,78 +72,97 @@ import '@splidejs/splide/css/core'
           <div class='splide__track'>
             <ul class='splide__list'>
               <li class='splide__slide'>
-                <img
-                  src='/servicios/works/work-1.webp'
-                  alt='Trabajo 1'
-                  width='360'
-                  height='380'
-                />
-                <h3 class='title'>Multipartscolombia</h3>
-                <!-- <p class='text'></p> -->
+                <a href='https://www.multipartscolombia.com/' target='_blank'>
+                  <img
+                    src='/servicios/works/work-1.webp'
+                    alt='Multiparts Colombia'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Multipartscolombia</h3>
+                  <p class='text'>Tienda en Línea</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a
+                  href='https://especiales.laopinion.com.co/transito/index.html'
+                  target='_blank'
+                >
+                  <img
+                    src='/servicios/works/especial-transito.webp'
+                    alt='Especial transito'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Especial de Tránsito</h3>
+                  <p class='text'>Landing Page</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a
+                  href='https://codesandbox.io/s/echarts-map-colombia-4etjj2'
+                  target='_blank'
+                >
+                  <img
+                    src='/servicios/works/elecciones.webp'
+                    alt='Elecciones Resultados'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Elecciones Resultados</h3>
+                  <p class='text'>Módulo</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a
+                  href='https://especiales.laopinion.com.co/frontera/index.html'
+                  target='_blank'
+                >
+                  <img
+                    src='/servicios/works/especial-frontera.webp'
+                    alt='Especial Frontera'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Especial Frontera</h3>
+                  <p class='text'>Landing Page</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a href='https://qhubocucuta.com/chicaqhubo' target='_blank'>
+                  <img
+                    src='/servicios/works/chicaqhubo.webp'
+                    alt='Chica Qhubo'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Chica Qhubo</h3>
+                  <p class='text'>Sitio Web</p>
+                </a>
               </li>
               <li class='splide__slide'>
                 <img
                   src='/servicios/works/work-1.webp'
-                  alt='Trabajo 1'
+                  alt='Ingresos y Gastos'
                   width='360'
                   height='380'
                 />
-                <h3 class='title'>Multipartscolombia</h3>
-                <!-- <p class='text'></p> -->
-              </li>
-              <li class='splide__slide'>
-                <img
-                  src='/servicios/works/work-1.webp'
-                  alt='Trabajo 1'
-                  width='360'
-                  height='380'
-                />
-                <h3 class='title'>Multipartscolombia</h3>
-                <!-- <p class='text'></p> -->
-              </li>
-              <li class='splide__slide'>
-                <img
-                  src='/servicios/works/work-1.webp'
-                  alt='Trabajo 1'
-                  width='360'
-                  height='380'
-                />
-                <h3 class='title'>Multipartscolombia</h3>
-                <!-- <p class='text'></p> -->
-              </li>
-              <li class='splide__slide'>
-                <img
-                  src='/servicios/works/work-1.webp'
-                  alt='Trabajo 1'
-                  width='360'
-                  height='380'
-                />
-                <h3 class='title'>Multipartscolombia</h3>
-                <!-- <p class='text'></p> -->
-              </li>
-              <li class='splide__slide'>
-                <img
-                  src='/servicios/works/work-1.webp'
-                  alt='Trabajo 1'
-                  width='360'
-                  height='380'
-                />
-                <h3 class='title'>Multipartscolombia</h3>
-                <!-- <p class='text'></p> -->
+                <h3 class='title'>Ingresos y Gastos</h3>
+                <p class='text'>Aplicación Web</p>
               </li>
             </ul>
           </div>
         </div>
       </section>
-
-      <section class='cotizacion'>
-        <h2>Solicita una Cotización</h2>
-      </section>
     </main>
-    <footer>
-      <h2>Información de contacto</h2>
-    </footer>
+
+    <section class='cotizacion'>
+      <h2>Solicita una Cotización</h2>
+    </section>
   </section>
+  <footer>
+    <h2>Información de contacto</h2>
+  </footer>
 </Layout>
 
 <script>
@@ -151,7 +170,7 @@ import '@splidejs/splide/css/core'
   const splideWorks = new Splide('#splide-works', {
     type: 'loop',
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     interval: 4000,
     perPage: 5,
     perMove: 1,
@@ -170,6 +189,14 @@ import '@splidejs/splide/css/core'
   splideWorks.mount()
 </script>
 
+<style is:global>
+  #splide-works .splide__pagination__page {
+    border-radius: 5px;
+    height: 5px;
+    width: 15px;
+  }
+</style>
+
 <style>
   #page_services {
     --width: 1000px;
@@ -179,6 +206,8 @@ import '@splidejs/splide/css/core'
     --heading-color: #14213d;
     --text-white: #ffffff;
     --text-black: #000000;
+    --text-gray: #e5e5e5;
+    --text-yellow: #fca311;
     --background-white: #ffffff;
     --background-color-secondary: #e5e5e5;
     --link-color: #fca311;
@@ -214,12 +243,25 @@ import '@splidejs/splide/css/core'
     list-style: none;
     margin: 0;
   } */
+  .trabajos ul a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
   .trabajos ul h3 {
     font-size: var(--font-size-m);
     color: var(--text-white);
     text-align: center;
     font-weight: 400;
-    margin: 10px 0;
+    margin: 10px 0 5px;
+  }
+  .trabajos ul .text {
+    color: var(--text-yellow);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    margin: 0;
   }
   header {
     background: hsla(221, 51%, 16%, 1);
@@ -253,6 +295,7 @@ import '@splidejs/splide/css/core'
     justify-content: space-between;
     align-items: center;
     align-self: start;
+    margin-bottom: 20px;
     width: 100%;
   }
   header .container_servicios nav ul {
@@ -264,6 +307,7 @@ import '@splidejs/splide/css/core'
   }
   header .container_servicios a {
     text-decoration: none;
+    transition: all ease-in-out 0.2s;
   }
   header .container_servicios ul a {
     color: var(--text-white);
@@ -277,6 +321,9 @@ import '@splidejs/splide/css/core'
   header .container_servicios ul a.active {
     color: var(--link-color);
     font-weight: 700;
+  }
+  header .container_servicios ul a:hover {
+    color: var(--link-color);
   }
   header .grid {
     display: grid;
