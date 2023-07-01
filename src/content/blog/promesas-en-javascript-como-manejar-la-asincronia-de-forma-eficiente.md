@@ -8,8 +8,8 @@ tags: ["Promesas-en-JavaScript", "Asincronía-en-JavaScript", "development", "we
 primaryTag: { name: 'Promesas', slug: 'promesas' }
 excerpt: "Descubre cómo manejar la asincronía de forma eficiente en JavaScript con promesas. Aprende a optimizar tu código asincrónico y simplifica la complejidad de la asincronía en JavaScript."
 canonicalURL: "https://johnserrano.co/blog/promesas-en-javascript-como-manejar-la-asincronia-de-forma-eficiente"
-isDraft: true
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1680391473/John%20Serrano/Blog%20Post/closures-en-javascript-que-son-y-para-que-sirven/closures_nq1bkk.jpg"
+isDraft: false
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1688242692/John%20Serrano/Blog%20Post/promesas-en-javascript-como-manejar-la-asincronia-de-forma-eficiente/Promesas_en_JavaScript_Como_manejar_la_asincron%C3%ADa_de_forma_eficiente_jy0qpm.png"
 ---
 
 Las promesas son un patrón de programación en JavaScript que se utiliza para manejar la asincronía. Las promesas son objetos que representan valores que podrían estar disponibles ahora, en un futuro cercano o nunca. Las promesas se utilizan comúnmente para manejar llamadas a APIs, operaciones de lectura / escritura de archivos y cualquier operación que pueda tardar algún tiempo en completarse.
