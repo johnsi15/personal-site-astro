@@ -1,157 +1,256 @@
 ---
 import Layout from '../../layouts/generic.astro'
+import PropuestaValor from './propuesta-valor.astro'
+import Services from './services.astro'
+import '@splidejs/splide/css'
+import '@splidejs/splide/css/core'
 ---
+
 <Layout>
-  <section id="page_services">
+  <section id='page_services'>
     <header>
-      <div class="container_servicios nav">
-        <a href="/servicios"><h2>John Serrano</h2></a>
+      <div class='container_servicios nav'>
+        <a href='/servicios'><h2>John Serrano</h2></a>
         <nav>
           <ul>
             <li>
-              <a class="active" href="#inicio">Inicio</a>
+              <a class='active' href='#inicio'>Inicio</a>
             </li>
             <li>
-              <a href="#acerca-de-mi">Acerca de mi</a>
+              <a href='#propuesta-de-valor'>Propuesta de Valor</a>
             </li>
             <li>
-              <a href="#servicios">Servicios</a>
+              <a href='#servicios'>Servicios</a>
             </li>
             <li>
-              <a href="#trabajos">Trabajos</a>
+              <a href='#trabajos'>Trabajos</a>
             </li>
             <li>
-              <a href="/blog" target="_blank">Blog</a>
+              <a href='/blog' target='_blank'>Blog</a>
             </li>
             <li>
-              <a href="#contacto">Contacto</a>
+              <a href='#contacto'>Contacto</a>
             </li>
           </ul>
         </nav>
       </div>
 
-      <div class="container_servicios grid">
-        <div class="text">
+      <div class='container_servicios grid'>
+        <div class='text'>
           <h1>Desarrollo de Sitios Web Profesionales</h1>
-          <p>Potencia tu presencia en línea con nuestros servicios profesionales de desarrollo web. Diseñamos sitios web a medida que impulsan tu negocio y capturan la atención de tu audiencia objetivo.</p>
-          <div class="buttons">
-            <a href="#acerca-de-mi" class="button saber_mas">Saber más</a>
-            <a href="#portafolio" class="button portafolio">Portafolio</a>
+          <p>
+            Potencia tu presencia en línea con nuestros servicios profesionales
+            de desarrollo web. Diseñamos sitios web a medida que impulsan tu
+            negocio y capturan la atención de tu audiencia objetivo.
+          </p>
+          <div class='buttons'>
+            <a href='#acerca-de-mi' class='button saber_mas'>Saber más</a>
+            <a href='#portafolio' class='button portafolio'>Portafolio</a>
           </div>
         </div>
-        <div class="image">
-          <img src="/servicios/developer-2.jpg" alt="Desarrollo de sitios web Profesionales">
+        <div class='image'>
+          <img
+            src='/servicios/developer-2.jpg'
+            alt='Desarrollo de sitios web Profesionales'
+          />
         </div>
       </div>
     </header>
     <main>
-      <div class="propuesta_valor">
-        <div class="container_servicios">
-          <h2>Propuesta De Valor</h2>
-          <ul>
-            <li>
-              <img src="/servicios/web-design.png" alt="Diseño web Innovador">
-              <h3>Diseño Web Innovador</h3>
-              <p>Nuestro equipo de diseñadores web altamente creativos y experimentados se dedica a crear sitios web innovadores y atractivos que capturan la esencia de tu marca. Desde diseños modernos hasta elementos visuales impactantes, nos aseguramos de que tu sitio web destaque y genere una impresión duradera en tus visitantes.</p>
-            </li>
-            <li>
-              <img src="/servicios/front-end.png" alt="Experiencia de Usuario Intuitiva">
-              <h3>Experiencia de Usuario Intuitiva</h3>
-              <p>Priorizamos la usabilidad y la experiencia de usuario en cada proyecto que emprendemos. Creamos interfaces intuitivas que guían a tus visitantes a través del contenido de manera fluida, asegurando que encuentren fácilmente lo que están buscando y tengan una experiencia agradable en tu sitio web.</p>
-            </li>
-            <li>
-              <img src="/servicios/search-engine-optimization.png" alt="Optimización para Motores de Búsqueda (SEO)">
-              <h3>Optimización para Motores de Búsqueda (SEO)</h3>
-              <p>Implementamos técnicas de SEO eficaces para que tu sitio web sea fácilmente descubierto por los motores de búsqueda. Mediante la optimización de palabras clave, metaetiquetas y contenido relevante, ayudamos a mejorar la visibilidad en línea de tu sitio web y atraer tráfico cualificado.</p>
-            </li>
-            <li>
-              <img src="/servicios/technical-support.png" alt="Soporte Técnico Confiable">
-              <h3>Soporte Técnico Confiable</h3>
-              <p>Ofrecemos un soporte técnico confiable para resolver cualquier problema técnico o consulta que puedas tener. Nuestro equipo de atención al cliente está disponible para ayudarte en cualquier momento y asegurarse de que tu sitio web funcione sin problemas.</p>
-            </li>
-            <li>
-              <img src="/servicios/project-management.png" alt="Entrega a Tiempo y Presupuesto">
-              <h3>Entrega a Tiempo y Presupuesto</h3>
-              <p>Nos comprometemos a entregar tus proyectos de desarrollo web dentro de los plazos acordados y dentro del presupuesto establecido. Nos enfocamos en la eficiencia y la transparencia en la gestión de proyectos, brindándote tranquilidad y asegurando resultados de calidad.</p>
-            </li>
-          </ul>
+      <!-- Propuesta de valor -->
+      <PropuestaValor />
+
+      <!-- Services -->
+      <Services />
+
+      <section class='trabajos'>
+        <div class='container_trabajos'>
+          <h2>Trabajos completados</h2>
         </div>
-      </div>
-  
-      <div class="mis_servicios">
-        <h2>Servicios</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima magni nihil? Laborum quod recusandae beatae repellat, adipisci ipsa. Est, dicta non iure dolore earum minus hic odit inventore temporibus.</p>
-        <ul class="list_servicios">
-          <li>
-            <div class="logo">logo</div>
-            <div class="description">
-              <h3>Diseño web personalizado UI/UX</h3>
-              <p>Creación de interfaces atractivas y fáciles de usar para garantizar una experiencia de usuario óptima en tu sitio web que reflejen la identidad y los objetivos de tu negocio.</p>
-            </div>
-            <!-- <a href="/">Flecha</a> -->
-          </li>
-          <li>
-            <div class="logo">logo</div>
-            <div class="description">
-              <h3>Análisis y seguimiento web</h3>
-              <p>Implementación de herramientas de análisis web para recopilar datos y proporcionar informes detallados sobre el rendimiento y el comportamiento de los visitantes en tu sitio web..</p>
-            </div>
-            <!-- <a href="/">Flecha</a> -->
-          </li>
-          <li>
-            <div class="logo">logo</div>
-            <div class="description">
-              <h3>Desarrollo de sitios web</h3>
-              <p>Creamos sitios web a medida que combinan diseño estético y funcionalidad excepcionales para impulsar tu presencia en línea. Nuestro enfoque colaborativo nos permite comprender tus necesidades y objetivos comerciales para ofrecerte soluciones web únicas y efectivas.</p>
-            </div>
-            <!-- <a href="/">Flecha</a> -->
-          </li>
-          <li>
-            <div class="logo">logo</div>
-            <div class="description">
-              <h3>Optimización SEO</h3>
-              <p>Implementación de técnicas y estrategias de optimización para mejorar el posicionamiento de tu sitio web en los motores de búsqueda y aumentar su visibilidad en línea.</p>
-            </div>
-            <!-- <a href="/">Flecha</a> -->
-          </li>
-          <li>
-            <div class="logo">logo</div>
-            <div class="description">
-              <h3>Integración de comercio electrónico</h3>
-              <p>Configuración de una tienda en línea completa con pasarelas de pago seguras, carrito de compras y opciones de administración de inventario.</p>
-            </div>
-            <!-- <a href="/">Flecha</a> -->
-          </li>
-          <li>
-            <div class="logo">logo</div>
-            <div class="description">
-              <h3>Marketing Digital</h3>
-              <p>Aumenta tu visibilidad en línea y alcanza a tu audiencia objetivo con nuestras estrategias de marketing digital. Nuestro equipo de expertos desarrollará una estrategia personalizada que incluye publicidad en línea, gestión de redes sociales y análisis de datos para impulsar el crecimiento de tu negocio.</p>
-            </div>
-            <!-- <a href="/">Flecha</a> -->
-          </li>
-        </ul>
-      </div>
-      <h2>CTA Solicita una Cotización</h2>
+
+        <div id='splide-works' class='splide' aria-label='Works'>
+          <div class='splide__track'>
+            <ul class='splide__list'>
+              <li class='splide__slide'>
+                <a href='https://www.multipartscolombia.com/' target='_blank'>
+                  <img
+                    src='/servicios/works/work-1.webp'
+                    alt='Multiparts Colombia'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Multipartscolombia</h3>
+                  <p class='text'>Tienda en Línea</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a
+                  href='https://especiales.laopinion.com.co/transito/index.html'
+                  target='_blank'
+                >
+                  <img
+                    src='/servicios/works/especial-transito.webp'
+                    alt='Especial transito'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Especial de Tránsito</h3>
+                  <p class='text'>Landing Page</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a
+                  href='https://codesandbox.io/s/echarts-map-colombia-4etjj2'
+                  target='_blank'
+                >
+                  <img
+                    src='/servicios/works/elecciones.webp'
+                    alt='Elecciones Resultados'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Elecciones Resultados</h3>
+                  <p class='text'>Módulo</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a
+                  href='https://especiales.laopinion.com.co/frontera/index.html'
+                  target='_blank'
+                >
+                  <img
+                    src='/servicios/works/especial-frontera.webp'
+                    alt='Especial Frontera'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Especial Frontera</h3>
+                  <p class='text'>Landing Page</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a href='https://qhubocucuta.com/chicaqhubo' target='_blank'>
+                  <img
+                    src='/servicios/works/chicaqhubo.webp'
+                    alt='Chica Qhubo'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Chica Qhubo</h3>
+                  <p class='text'>Sitio Web</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a href='https://contabilidad.johnserrano.co/' target='_blank'>
+                  <img
+                    src='/servicios/works/work-1.webp'
+                    alt='Ingresos y Gastos'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Ingresos y Gastos</h3>
+                  <p class='text'>Aplicación Web</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a href='https://johnserrano.co/' target='_blank'>
+                  <img
+                    src='/servicios/works/personal-site.webp'
+                    alt='John Serrano'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Sitio Web Personal</h3>
+                  <p class='text'>Sitio Web</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a href='https://www.laopinion.com.co/' target='_blank'>
+                  <img
+                    src='/servicios/works/module-portafolio.webp'
+                    alt='John Serrano'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Portafolio para Clientes</h3>
+                  <p class='text'>Módulo</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
-      <h2>Información de contacto</h2>
-    </footer>
+
+    <section class='cotizacion'>
+      <h2>Solicita una Cotización</h2>
+    </section>
   </section>
+  <footer>
+    <h2>Información de contacto</h2>
+  </footer>
 </Layout>
+
+<script>
+  import Splide from '@splidejs/splide'
+  const splideWorks = new Splide('#splide-works', {
+    type: 'loop',
+    arrows: false,
+    autoplay: false,
+    interval: 4000,
+    perPage: 5,
+    perMove: 1,
+    fixedWidth: '360px',
+    gap: '3.7rem',
+    breakpoints: {
+      768: {
+        // height: '400px',
+        perPage: 1,
+        fixedWidth: '100%',
+        gap: 0,
+      },
+      1400: {
+        perPage: 3,
+        gap: '2rem',
+      },
+    },
+  })
+  splideWorks.mount()
+</script>
+
+<style is:global>
+  #splide-works .splide__pagination__page {
+    border-radius: 5px;
+    height: 5px;
+    width: 15px;
+  }
+
+  .splide__pagination {
+    bottom: -25px;
+  }
+
+  /* @media screen and (max-width: 768px) {
+    .splide__pagination {
+      bottom: -25px;
+    }
+  } */
+</style>
 
 <style>
   #page_services {
     --width: 1000px;
-    --background-color: #14213D;
+    --background-color: #14213d;
     --background-color-two: #000000;
-    --heading-color: #14213D;
-    --text-white: #FFFFFF;
+    --background-color-three: #fca311;
+    --heading-color: #14213d;
+    --text-white: #ffffff;
     --text-black: #000000;
-    --background-white: #FFFFFF;
-    --background-color-secondary: #E5E5E5;
-    --link-color: #FCA311;
-    --background-color-button: #FCA311;
+    --text-gray: #e5e5e5;
+    --text-yellow: #fca311;
+    --background-white: #ffffff;
+    --background-color-secondary: #e5e5e5;
+    --link-color: #fca311;
+    --background-color-button: #fca311;
     --font-size-s: 1rem;
     --font-size-sm: 1.2rem;
     --font-size-xm: 1.3rem;
@@ -159,11 +258,68 @@ import Layout from '../../layouts/generic.astro'
     --font-size-l: 2rem;
     --font-size-lx: 2.5rem;
   }
+
+  .trabajos {
+    background-color: var(--background-color);
+    height: 500px;
+    padding: 50px 0;
+  }
+  .trabajos .container_trabajos {
+    max-width: var(--width);
+    margin: 0 auto;
+  }
+  .trabajos h2 {
+    color: var(--text-white);
+    text-align: center;
+    font-size: var(--font-size-lx);
+    line-height: 2.8rem;
+    margin: 0;
+  }
+  #splide-works {
+    margin: 30px 0 0;
+  }
+  /* .trabajos ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  } */
+  .trabajos ul a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .trabajos ul h3 {
+    font-size: var(--font-size-m);
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 400;
+    margin: 10px 0 5px;
+  }
+  .trabajos ul .text {
+    color: var(--text-yellow);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    margin: 0;
+  }
   header {
     background: hsla(221, 51%, 16%, 1);
-    background: linear-gradient(130deg, hsla(221, 51%, 16%, 1) 30%, hsla(0, 0%, 0%, 1) 100%);
-    background: -moz-linear-gradient(130deg, hsla(221, 51%, 16%, 1) 30%, hsla(0, 0%, 0%, 1) 100%);
-    background: -webkit-linear-gradient(130deg, hsla(221, 51%, 16%, 1) 30%, hsla(0, 0%, 0%, 1) 100%);
+    background: linear-gradient(
+      130deg,
+      hsla(221, 51%, 16%, 1) 30%,
+      hsla(0, 0%, 0%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+      130deg,
+      hsla(221, 51%, 16%, 1) 30%,
+      hsla(0, 0%, 0%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      130deg,
+      hsla(221, 51%, 16%, 1) 30%,
+      hsla(0, 0%, 0%, 1) 100%
+    );
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#14213D", endColorstr="#000000", GradientType=1 );
     min-height: 50vh;
     padding: 10px 0 30px;
@@ -174,11 +330,12 @@ import Layout from '../../layouts/generic.astro'
     max-width: var(--width);
     margin: 0 auto;
   }
-  header .container_servicios.nav {    
+  header .container_servicios.nav {
     display: flex;
-    justify-content: space-between;    
+    justify-content: space-between;
     align-items: center;
     align-self: start;
+    margin-bottom: 20px;
     width: 100%;
   }
   header .container_servicios nav ul {
@@ -190,6 +347,7 @@ import Layout from '../../layouts/generic.astro'
   }
   header .container_servicios a {
     text-decoration: none;
+    transition: all ease-in-out 0.2s;
   }
   header .container_servicios ul a {
     color: var(--text-white);
@@ -201,6 +359,10 @@ import Layout from '../../layouts/generic.astro'
     margin: 0;
   }
   header .container_servicios ul a.active {
+    color: var(--link-color);
+    font-weight: 700;
+  }
+  header .container_servicios ul a:hover {
     color: var(--link-color);
   }
   header .grid {
@@ -225,11 +387,11 @@ import Layout from '../../layouts/generic.astro'
     font-weight: bold;
     border-radius: 3px;
   }
-  header .saber_mas {    
+  header .saber_mas {
     color: var(--text-black);
     background-color: var(--background-color-button);
   }
-  
+
   header .portafolio {
     color: var(--text-black);
     background-color: var(--background-color-secondary);
@@ -261,47 +423,31 @@ import Layout from '../../layouts/generic.astro'
     object-fit: cover;
   }
 
-  .propuesta_valor {
-    background: var(--background-color-secondary);
-    padding: 50px 0;
-  }
-  .propuesta_valor h2 {
-    margin: 0;
-    text-align: center;
-    font-size: var(--font-size-lx);
-    color: var(--background-color-two);
-  }
-  .propuesta_valor ul {
-    padding: 0;
-    margin: 30px 0 0; 
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 450px);
-    justify-content: center;
-    gap: 20px 30px;
-  }
-
-  .propuesta_valor li h3 {
-    font-size: var(--font-size-m);
-    line-height: 1.8rem;
-    color: var(--background-color-two);
-    margin: 0;
-  }
-  .propuesta_valor li h3:hover {
-    color: var(--link-color);
-  }
-  .propuesta_valor li {
-    background: var(--background-white);
-    padding: 40px 30px;
-    border-radius: 5px;
-  }
-  .propuesta_valor li img{
-    width: 60px;
-   }
-  .propuesta_valor li p {
-    font-size: var(--font-size-sm);
-    line-height: 1.5rem;
-    color: var(--heading-color);
-    margin: 15px 0 0;
+  @media screen and (max-width: 768px) {
+    header .container_servicios.nav {
+      justify-content: center;
+    }
+    header nav {
+      display: none;
+    }
+    header .grid {
+      grid-template-columns: 1fr;
+      margin: 0 10px;
+      align-self: start;
+    }
+    header .image {
+      display: none;
+    }
+    .trabajos {
+      height: auto;
+    }
+    .trabajos ul img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .trabajos h2 {
+      margin: 0 10px;
+    }
   }
 </style>

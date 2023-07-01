@@ -1,0 +1,134 @@
+<section class='propuesta_valor'>
+  <div class='container_servicios'>
+    <h2>Propuesta De Valor</h2>
+    <ul>
+      <li>
+        <img
+          src='/servicios/prop-valor/web-design.png'
+          alt='Diseño web Innovador'
+        />
+        <h3>Diseño Web Innovador</h3>
+        <p>
+          Diseños modernos hasta elementos visuales impactantes, nos aseguramos
+          de que tu sitio web destaque y genere una impresión duradera en tus
+          visitantes.
+        </p>
+      </li>
+      <li>
+        <img
+          src='/servicios/prop-valor/ux.png'
+          alt='Experiencia de Usuario Intuitiva'
+        />
+        <h3>Experiencia de Usuario Intuitiva</h3>
+        <p>
+          Creamos interfaces intuitivas que guían a tus visitantes a través del
+          contenido de manera fluida, asegurando que encuentren fácilmente lo
+          que están buscando y tengan una experiencia agradable en tu sitio web.
+        </p>
+      </li>
+      <li>
+        <img
+          src='/servicios/prop-valor/seo-black.png'
+          alt='Optimización para Motores de Búsqueda (SEO)'
+        />
+        <h3>Optimización para Motores de Búsqueda (SEO)</h3>
+        <p>
+          Implementamos técnicas de SEO eficaces para que tu sitio web sea
+          fácilmente descubierto por los motores de búsqueda. Mediante la
+          optimización de palabras clave, metaetiquetas.
+        </p>
+      </li>
+      <li>
+        <img
+          src='/servicios/prop-valor/support.png'
+          alt='Soporte Técnico Confiable'
+        />
+        <h3>Soporte Técnico Confiable</h3>
+        <p>
+          Ofrecemos un soporte técnico confiable para resolver cualquier
+          problema técnico o consulta que puedas tener. Estamos para ayudarte en
+          cualquier momento y asegurarnos de que tu sitio web funcione sin
+          problemas.
+        </p>
+      </li>
+      <li>
+        <img
+          src='/servicios/prop-valor/social-media.png'
+          alt='Integración de Redes Sociales'
+        />
+        <h3>Integración de Redes Sociales</h3>
+        <p>
+          Añadimos botones y widgets sociales para que tus visitantes puedan
+          seguirte en plataformas como Facebook, Instagram y Twitter, lo que
+          aumenta la visibilidad de tu marca y fomenta la participación de los
+          usuarios.
+        </p>
+      </li>
+      <li>
+        <img
+          src='/servicios/prop-valor/project-management.png'
+          alt='Entrega a Tiempo y Presupuesto'
+        />
+        <h3>Entrega a Tiempo y Presupuesto</h3>
+        <p>
+          Nos comprometemos a entregar tus proyectos de desarrollo web dentro de
+          los plazos acordados y dentro del presupuesto establecido.
+        </p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .propuesta_valor {
+    background: var(--background-color-secondary);
+    padding: 50px 0;
+  }
+  .propuesta_valor h2 {
+    margin: 0;
+    text-align: center;
+    font-size: var(--font-size-lx);
+    color: var(--background-color);
+  }
+  .propuesta_valor ul {
+    padding: 0;
+    margin: 30px 0 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 450px);
+    justify-content: center;
+    gap: 20px 30px;
+  }
+
+  .propuesta_valor li h3 {
+    font-size: var(--font-size-m);
+    line-height: 1.8rem;
+    color: var(--background-color-two);
+    margin: 10px 0 0;
+    transition: all ease-in-out 0.2s;
+  }
+  .propuesta_valor li h3:hover {
+    color: var(--link-color);
+  }
+  .propuesta_valor li {
+    background: var(--background-white);
+    padding: 40px 30px;
+    border-radius: 5px;
+  }
+  .propuesta_valor li img {
+    width: 60px;
+  }
+  .propuesta_valor li p {
+    font-size: var(--font-size-sm);
+    line-height: 1.5rem;
+    color: var(--heading-color);
+    margin: 15px 0 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    .propuesta_valor ul {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      margin: 30px 10px 0;
+    }
+  }
+</style>
