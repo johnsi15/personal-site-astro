@@ -155,13 +155,25 @@ import '@splidejs/splide/css/core'
               <li class='splide__slide'>
                 <a href='https://johnserrano.co/' target='_blank'>
                   <img
-                    src='/servicios/works/work-1.webp'
+                    src='/servicios/works/personal-site.webp'
                     alt='John Serrano'
                     width='360'
                     height='380'
                   />
                   <h3 class='title'>Sitio Web Personal</h3>
                   <p class='text'>Sitio Web</p>
+                </a>
+              </li>
+              <li class='splide__slide'>
+                <a href='https://www.laopinion.com.co/' target='_blank'>
+                  <img
+                    src='/servicios/works/module-portafolio.webp'
+                    alt='John Serrano'
+                    width='360'
+                    height='380'
+                  />
+                  <h3 class='title'>Portafolio para Clientes</h3>
+                  <p class='text'>Módulo</p>
                 </a>
               </li>
             </ul>
@@ -193,6 +205,9 @@ import '@splidejs/splide/css/core'
     breakpoints: {
       768: {
         // height: '400px',
+        perPage: 1,
+        fixedWidth: '100%',
+        gap: 0,
       },
       1400: {
         perPage: 3,
@@ -209,6 +224,16 @@ import '@splidejs/splide/css/core'
     height: 5px;
     width: 15px;
   }
+
+  .splide__pagination {
+    bottom: -25px;
+  }
+
+  /* @media screen and (max-width: 768px) {
+    .splide__pagination {
+      bottom: -25px;
+    }
+  } */
 </style>
 
 <style>
@@ -247,6 +272,7 @@ import '@splidejs/splide/css/core'
     color: var(--text-white);
     text-align: center;
     font-size: var(--font-size-lx);
+    line-height: 2.8rem;
     margin: 0;
   }
   #splide-works {
@@ -395,5 +421,33 @@ import '@splidejs/splide/css/core'
     height: 380px;
     border-radius: 100%;
     object-fit: cover;
+  }
+
+  @media screen and (max-width: 768px) {
+    header .container_servicios.nav {
+      justify-content: center;
+    }
+    header nav {
+      display: none;
+    }
+    header .grid {
+      grid-template-columns: 1fr;
+      margin: 0 10px;
+      align-self: start;
+    }
+    header .image {
+      display: none;
+    }
+    .trabajos {
+      height: auto;
+    }
+    .trabajos ul img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    .trabajos h2 {
+      margin: 0 10px;
+    }
   }
 </style>

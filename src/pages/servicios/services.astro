@@ -2,9 +2,10 @@
   <div class='container_services'>
     <h2>Servicios</h2>
     <p class='summary'>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi minima
-      magni nihil? Laborum quod recusandae beatae repellat, adipisci ipsa. Est,
-      dicta non iure dolore earum minus hic odit inventore temporibus.
+      Nuestros servicios web brindan soluciones personalizadas para tu negocio
+      en línea. Diseño web innovador, experiencia de usuario intuitiva y
+      optimización SEO son solo algunos de los servicios que ofrecemos para
+      ayudarte a destacar en el mundo digital.
     </p>
     <ul class='list_services'>
       <li>
@@ -163,5 +164,15 @@
   }
   .list_services .icono {
     width: 60px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .container_services .summary {
+      margin: 10px;
+    }
+    .list_services {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      margin: 30px 10px 0;
+    }
   }
 </style>
