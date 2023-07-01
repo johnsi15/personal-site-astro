@@ -1,13 +1,13 @@
 ---
-title: "Promesas"
-publishedDate: "2022-02-20T16:29:10.000Z"
-updatedDate: "2022-03-06T17:09:31.000Z"
-pubDate: "2022-02-20T16:29:10.000Z"
-description: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
-tags: ["JavaScript", "closures", "development", "webdeveloment", "desarrollo-web"]
-primaryTag: { name: 'JavaScript', slug: 'javascript' }
-excerpt: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
-canonicalURL: "https://johnserrano.co/blog/closures-en-javascript-que-son-y-para-que-sirven"
+title: "Promesas en JavaScript: Como manejar la asincronía de forma eficiente"
+publishedDate: "2023-07-01T16:29:10.000Z"
+updatedDate: "2023-07-01T17:09:31.000Z"
+pubDate: "2023-07-01T16:29:10.000Z"
+description: "Descubre cómo manejar la asincronía de forma eficiente en JavaScript con promesas. Aprende a optimizar tu código asincrónico y simplifica la complejidad de la asincronía en JavaScript."
+tags: ["Promesas-en-JavaScript", "Asincronía-en-JavaScript", "development", "webdeveloment", "desarrollo-web", "JavaScript", "promesas", "asincronía"]
+primaryTag: { name: 'Promesas', slug: 'promesas' }
+excerpt: "Descubre cómo manejar la asincronía de forma eficiente en JavaScript con promesas. Aprende a optimizar tu código asincrónico y simplifica la complejidad de la asincronía en JavaScript."
+canonicalURL: "https://johnserrano.co/blog/promesas-en-javascript-como-manejar-la-asincronia-de-forma-eficiente"
 isDraft: true
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1680391473/John%20Serrano/Blog%20Post/closures-en-javascript-que-son-y-para-que-sirven/closures_nq1bkk.jpg"
 ---
@@ -130,5 +130,7 @@ Las promesas y los callbacks son dos formas diferentes de manejar operaciones as
 3. Legibilidad del código: En general, el uso de promesas puede hacer que el código sea más legible y fácil de entender que el uso de callbacks. Las promesas se asemejan más a un flujo lineal de código, mientras que los callbacks a menudo involucran funciones anidadas que pueden ser más difíciles de entender.
 
 4. Soporte nativo: Las promesas son una característica nativa del lenguaje JavaScript, lo que significa que están disponibles en todos los navegadores modernos. Los callbacks, por otro lado, son simplemente funciones que se pasan como argumentos a otras funciones, por lo que su uso y compatibilidad depende del entorno en el que se ejecuta el código.
+
+## Conclusiones
 
 En resumen, las promesas ofrecen una forma más fácil y legible de manejar operaciones asíncronas en JavaScript en comparación con los callbacks. Además, las promesas ofrecen ventajas adicionales, como el encadenamiento de operaciones y el manejo de errores más fácil.
