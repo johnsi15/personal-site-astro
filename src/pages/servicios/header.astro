@@ -1,0 +1,228 @@
+<header>
+  <div class='container_servicios nav'>
+    <a href='/servicios'><h2>John Serrano</h2></a>
+    <nav>
+      <ul>
+        <li>
+          <a class='active' href='/servicios'>Inicio</a>
+        </li>
+        <li>
+          <a href='#propuesta-de-valor'>Propuesta de Valor</a>
+        </li>
+        <li>
+          <a href='#servicios'>Servicios</a>
+        </li>
+        <li>
+          <a href='#trabajos'>Trabajos</a>
+        </li>
+        <li>
+          <a href='/blog' target='_blank'>Blog</a>
+        </li>
+        <li>
+          <a href='#contacto'>Contacto</a>
+        </li>
+      </ul>
+    </nav>
+    <div id='menu-backdrop'></div>
+  </div>
+
+  <div class='container_servicios grid'>
+    <div class='text'>
+      <h1>Desarrollo de Sitios Web Profesionales</h1>
+      <p>
+        Potencia tu presencia en línea con nuestros servicios profesionales de
+        desarrollo web. Diseñamos sitios web a medida que impulsan tu negocio y
+        capturan la atención de tu audiencia objetivo.
+      </p>
+      <div class='buttons'>
+        <a href='#servicios' class='button saber_mas'>Saber más</a>
+        <a href='#trabajos' class='button portafolio'>Portafolio</a>
+      </div>
+    </div>
+    <div class='image'>
+      <img
+        src='/servicios/developer-2.jpg'
+        alt='Desarrollo de sitios web Profesionales'
+      />
+    </div>
+  </div>
+</header>
+
+<script>
+  const listItem = document.querySelectorAll('.nav ul > li')
+  const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+
+  listItem.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      const { left, top, width, height } = item.getBoundingClientRect()
+
+      menuBackDrop.style.setProperty('--left', `${left}px`)
+      menuBackDrop.style.setProperty('--top', `${top}px`)
+      menuBackDrop.style.setProperty('--width', `${width}px`)
+      menuBackDrop.style.setProperty('--height', `${height}px`)
+
+      menuBackDrop.style.opacity = '1'
+      menuBackDrop.style.visibility = 'visible'
+    })
+
+    item.addEventListener('mouseleave', () => {
+      menuBackDrop.style.opacity = '0'
+      menuBackDrop.style.visibility = 'hidden'
+    })
+  })
+</script>
+
+<style>
+  #menu-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0.25rem;
+    transition: all ease-in-out 0.5s;
+    opacity: 0;
+    backdrop-filter: blur(16px);
+    background-color: white;
+    transform: translate(var(--left), var(--top));
+    width: var(--width);
+    height: var(--height);
+    /* z-index: -1; */
+  }
+  header {
+    background: hsla(221, 51%, 16%, 1);
+    background: linear-gradient(
+      130deg,
+      hsla(221, 51%, 16%, 1) 30%,
+      hsla(0, 0%, 0%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+      130deg,
+      hsla(221, 51%, 16%, 1) 30%,
+      hsla(0, 0%, 0%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+      130deg,
+      hsla(221, 51%, 16%, 1) 30%,
+      hsla(0, 0%, 0%, 1) 100%
+    );
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#14213D", endColorstr="#000000", GradientType=1 );
+    min-height: 50vh;
+    padding: 10px 0 30px;
+    /* box-sizing: border-box; */
+    display: grid;
+  }
+  .container_servicios {
+    max-width: var(--width);
+    margin: 0 auto;
+  }
+  header .container_servicios.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-self: start;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  header .container_servicios nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  header .container_servicios a {
+    text-decoration: none;
+    transition: all ease-in-out 0.2s;
+  }
+  header .container_servicios ul a {
+    color: var(--text-white);
+    font-size: var(--font-size-xm);
+  }
+  header .container_servicios h2 {
+    font-size: var(--font-size-m);
+    color: var(--text-white);
+    margin: 0;
+  }
+  header .container_servicios ul a.active {
+    color: var(--link-color);
+    font-weight: 700;
+  }
+  header .container_servicios ul a:hover {
+    color: var(--link-color);
+  }
+  header .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-self: center;
+  }
+  header .grid .text {
+    color: var(--text-white);
+    display: flex;
+    flex-direction: column;
+  }
+  header .buttons {
+    display: flex;
+    gap: 20px;
+  }
+  header .button {
+    border: none;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 3px;
+  }
+  header .saber_mas {
+    color: var(--text-black);
+    background-color: var(--background-color-button);
+  }
+
+  header .portafolio {
+    color: var(--text-black);
+    background-color: var(--background-color-secondary);
+  }
+
+  header .grid .text h1 {
+    font-size: var(--font-size-l);
+    line-height: 2.3rem;
+    color: var(--link-color);
+    margin: 0;
+  }
+  header .grid .text p {
+    font-size: var(--font-size-m);
+    line-height: 1.8rem;
+    color: var(--text-white);
+    margin: 20px 0 30px;
+  }
+
+  header .image {
+    display: flex;
+    justify-content: center;
+    color: var(--text-white);
+    justify-self: end;
+  }
+  header .image img {
+    width: 380px;
+    height: 380px;
+    border-radius: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (max-width: 768px) {
+    header .container_servicios.nav {
+      justify-content: center;
+    }
+    header nav {
+      display: none;
+    }
+    header .grid {
+      grid-template-columns: 1fr;
+      margin: 0 10px;
+      align-self: start;
+    }
+    header .image {
+      display: none;
+    }
+  }
+</style>

@@ -3,58 +3,12 @@ import Layout from '../../layouts/generic.astro'
 import PropuestaValor from './propuesta-valor.astro'
 import Services from './services.astro'
 import Works from './works.astro'
+import Header from './header.astro'
 ---
 
 <Layout>
   <section id='page_services'>
-    <header>
-      <div class='container_servicios nav'>
-        <a href='/servicios'><h2>John Serrano</h2></a>
-        <nav>
-          <ul>
-            <li>
-              <a class='active' href='#inicio'>Inicio</a>
-            </li>
-            <li>
-              <a href='#propuesta-de-valor'>Propuesta de Valor</a>
-            </li>
-            <li>
-              <a href='#servicios'>Servicios</a>
-            </li>
-            <li>
-              <a href='#trabajos'>Trabajos</a>
-            </li>
-            <li>
-              <a href='/blog' target='_blank'>Blog</a>
-            </li>
-            <li>
-              <a href='#contacto'>Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class='container_servicios grid'>
-        <div class='text'>
-          <h1>Desarrollo de Sitios Web Profesionales</h1>
-          <p>
-            Potencia tu presencia en línea con nuestros servicios profesionales
-            de desarrollo web. Diseñamos sitios web a medida que impulsan tu
-            negocio y capturan la atención de tu audiencia objetivo.
-          </p>
-          <div class='buttons'>
-            <a href='#acerca-de-mi' class='button saber_mas'>Saber más</a>
-            <a href='#portafolio' class='button portafolio'>Portafolio</a>
-          </div>
-        </div>
-        <div class='image'>
-          <img
-            src='/servicios/developer-2.jpg'
-            alt='Desarrollo de sitios web Profesionales'
-          />
-        </div>
-      </div>
-    </header>
+    <Header />
     <main>
       <!-- Propuesta de valor -->
       <PropuestaValor />
@@ -66,7 +20,11 @@ import Works from './works.astro'
       <Works />
 
       <section class='cotizacion'>
-        <a class='button' href='#'>Solicita una Cotización</a>
+        <a
+          class='button'
+          href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
+          target='_blank'>Solicita una Cotización</a
+        >
       </section>
     </main>
   </section>
@@ -94,6 +52,9 @@ import Works from './works.astro'
 </style>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   #page_services {
     --width: 1000px;
     --background-color: #14213d;
@@ -135,11 +96,11 @@ import Works from './works.astro'
     /* background: linear-gradient(to bottom, #ffed64 5%, #fca211 100%); */
     background-color: #fca211;
     border-radius: 6px;
-    border: 1px solid #14213d;
+    border: 1px solid var(--background-color);
     display: inline-block;
     cursor: pointer;
     color: #000000;
-    font-size: var(--font-size-l);
+    font-size: var(--font-size-m);
     font-weight: bold;
     padding: 12px 24px;
     text-decoration: none;
@@ -148,132 +109,12 @@ import Works from './works.astro'
   }
   .cotizacion .button:hover {
     /* background: linear-gradient(to bottom, #fca211 5%, #ffed64 100%); */
-    background-color: #14213d;
+    background-color: var(--background-color);
     color: #fca211;
   }
   .cotizacion .button:active {
     position: relative;
     top: 1px;
-  }
-
-  header {
-    background: hsla(221, 51%, 16%, 1);
-    background: linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    background: -moz-linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#14213D", endColorstr="#000000", GradientType=1 );
-    min-height: 50vh;
-    padding: 10px 0 30px;
-    /* box-sizing: border-box; */
-    display: grid;
-  }
-  .container_servicios {
-    max-width: var(--width);
-    margin: 0 auto;
-  }
-  header .container_servicios.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: start;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  header .container_servicios nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-  }
-  header .container_servicios a {
-    text-decoration: none;
-    transition: all ease-in-out 0.2s;
-  }
-  header .container_servicios ul a {
-    color: var(--text-white);
-    font-size: var(--font-size-xm);
-  }
-  header .container_servicios h2 {
-    font-size: var(--font-size-m);
-    color: var(--text-white);
-    margin: 0;
-  }
-  header .container_servicios ul a.active {
-    color: var(--link-color);
-    font-weight: 700;
-  }
-  header .container_servicios ul a:hover {
-    color: var(--link-color);
-  }
-  header .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-self: center;
-  }
-  header .grid .text {
-    color: var(--text-white);
-    display: flex;
-    flex-direction: column;
-  }
-  header .buttons {
-    display: flex;
-    gap: 20px;
-  }
-  header .button {
-    border: none;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 3px;
-  }
-  header .saber_mas {
-    color: var(--text-black);
-    background-color: var(--background-color-button);
-  }
-
-  header .portafolio {
-    color: var(--text-black);
-    background-color: var(--background-color-secondary);
-  }
-
-  header .grid .text h1 {
-    font-size: var(--font-size-l);
-    line-height: 2.3rem;
-    color: var(--link-color);
-    margin: 0;
-  }
-  header .grid .text p {
-    font-size: var(--font-size-m);
-    line-height: 1.8rem;
-    color: var(--text-white);
-    margin: 20px 0 30px;
-  }
-
-  header .image {
-    display: flex;
-    justify-content: center;
-    color: var(--text-white);
-    justify-self: end;
-  }
-  header .image img {
-    width: 380px;
-    height: 380px;
-    border-radius: 100%;
-    object-fit: cover;
   }
 
   @media screen and (max-width: 768px) {
