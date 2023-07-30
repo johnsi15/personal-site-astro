@@ -1,0 +1,223 @@
+---
+import '@splidejs/splide/css'
+import '@splidejs/splide/css/core'
+---
+
+<section class='trabajos' id='trabajos'>
+  <div class='container_trabajos'>
+    <h2>Trabajos completados</h2>
+  </div>
+
+  <div id='splide-works' class='splide' aria-label='Works'>
+    <div class='splide__track'>
+      <ul class='splide__list'>
+        <li class='splide__slide'>
+          <a href='https://www.multipartscolombia.com/' target='_blank'>
+            <img
+              src='/servicios/works/work-1.webp'
+              alt='Multiparts Colombia'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Multiparts Colombia</h3>
+            <p class='text'>Tienda en Línea</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a
+            href='https://especiales.laopinion.com.co/transito/index.html'
+            target='_blank'
+          >
+            <img
+              src='/servicios/works/especial-transito.webp'
+              alt='Especial transito'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Especial de Tránsito</h3>
+            <p class='text'>Landing Page</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a
+            href='https://codesandbox.io/s/echarts-map-colombia-4etjj2'
+            target='_blank'
+          >
+            <img
+              src='/servicios/works/elecciones.webp'
+              alt='Elecciones Resultados'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Elecciones Resultados</h3>
+            <p class='text'>Módulo</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a
+            href='https://especiales.laopinion.com.co/frontera/index.html'
+            target='_blank'
+          >
+            <img
+              src='/servicios/works/especial-frontera.webp'
+              alt='Especial Frontera'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Especial Frontera</h3>
+            <p class='text'>Landing Page</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a href='https://qhubocucuta.com/chicaqhubo' target='_blank'>
+            <img
+              src='/servicios/works/chicaqhubo.webp'
+              alt='Chica Qhubo'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Chica Qhubo</h3>
+            <p class='text'>Sitio Web</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a href='https://contabilidad.johnserrano.co/' target='_blank'>
+            <img
+              src='/servicios/works/contabilidad.webp'
+              alt='Ingresos y Gastos'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Ingresos y Gastos</h3>
+            <p class='text'>Aplicación Web</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a href='https://johnserrano.co/' target='_blank'>
+            <img
+              src='/servicios/works/personal-site.webp'
+              alt='John Serrano'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Sitio Web Personal</h3>
+            <p class='text'>Sitio Web</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a href='https://www.laopinion.com.co/' target='_blank'>
+            <img
+              src='/servicios/works/module-portafolio.webp'
+              alt='John Serrano'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Portafolio para Clientes</h3>
+            <p class='text'>Módulo</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a
+            href='https://www.laopinion.com.co/centro-de-preferencias'
+            target='_blank'
+          >
+            <img
+              src='/servicios/works/centro-preferencias.webp'
+              alt='John Serrano'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Centro de Preferencias</h3>
+            <p class='text'>Página Web con Admin</p>
+          </a>
+        </li>
+        <li class='splide__slide'>
+          <a href='https://www.laopinion.com.co/la-o' target='_blank'>
+            <img
+              src='/servicios/works/la-o.webp'
+              alt='John Serrano'
+              width='360'
+              height='380'
+            />
+            <h3 class='title'>Revista La Ó</h3>
+            <p class='text'>Página Web</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<script>
+  import Splide from '@splidejs/splide'
+  const splideWorks = new Splide('#splide-works', {
+    type: 'loop',
+    arrows: false,
+    autoplay: true,
+    interval: 4000,
+    perPage: 5,
+    perMove: 1,
+    fixedWidth: '360px',
+    gap: '3.7rem',
+    breakpoints: {
+      768: {
+        // height: '400px',
+        perPage: 1,
+        fixedWidth: '100%',
+        gap: 0,
+      },
+      1400: {
+        perPage: 3,
+        gap: '2rem',
+      },
+    },
+  })
+  splideWorks.mount()
+</script>
+
+<style>
+  .trabajos {
+    background-color: var(--background-color);
+    /* height: 500px; */
+    padding: 50px 0;
+  }
+  .trabajos .container_trabajos {
+    max-width: var(--width);
+    margin: 0 auto;
+  }
+  .trabajos h2 {
+    color: var(--text-white);
+    text-align: center;
+    font-size: var(--font-size-lx);
+    line-height: 2.8rem;
+    margin: 0;
+  }
+  #splide-works {
+    margin: 30px 0 0;
+  }
+  /* .trabajos ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  } */
+  .trabajos ul a {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .trabajos ul h3 {
+    font-size: var(--font-size-m);
+    color: var(--text-white);
+    text-align: center;
+    font-weight: 400;
+    margin: 10px 0 5px;
+  }
+  .trabajos ul .text {
+    color: var(--text-yellow);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    margin: 0;
+  }
+</style>

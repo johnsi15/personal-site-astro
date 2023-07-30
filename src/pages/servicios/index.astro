@@ -2,60 +2,14 @@
 import Layout from '../../layouts/generic.astro'
 import PropuestaValor from './propuesta-valor.astro'
 import Services from './services.astro'
-import '@splidejs/splide/css'
-import '@splidejs/splide/css/core'
+import Works from './works.astro'
+import Header from './header.astro'
+import Footer from './footer.astro'
 ---
 
 <Layout>
   <section id='page_services'>
-    <header>
-      <div class='container_servicios nav'>
-        <a href='/servicios'><h2>John Serrano</h2></a>
-        <nav>
-          <ul>
-            <li>
-              <a class='active' href='#inicio'>Inicio</a>
-            </li>
-            <li>
-              <a href='#propuesta-de-valor'>Propuesta de Valor</a>
-            </li>
-            <li>
-              <a href='#servicios'>Servicios</a>
-            </li>
-            <li>
-              <a href='#trabajos'>Trabajos</a>
-            </li>
-            <li>
-              <a href='/blog' target='_blank'>Blog</a>
-            </li>
-            <li>
-              <a href='#contacto'>Contacto</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class='container_servicios grid'>
-        <div class='text'>
-          <h1>Desarrollo de Sitios Web Profesionales</h1>
-          <p>
-            Potencia tu presencia en línea con nuestros servicios profesionales
-            de desarrollo web. Diseñamos sitios web a medida que impulsan tu
-            negocio y capturan la atención de tu audiencia objetivo.
-          </p>
-          <div class='buttons'>
-            <a href='#acerca-de-mi' class='button saber_mas'>Saber más</a>
-            <a href='#portafolio' class='button portafolio'>Portafolio</a>
-          </div>
-        </div>
-        <div class='image'>
-          <img
-            src='/servicios/developer-2.jpg'
-            alt='Desarrollo de sitios web Profesionales'
-          />
-        </div>
-      </div>
-    </header>
+    <Header />
     <main>
       <!-- Propuesta de valor -->
       <PropuestaValor />
@@ -63,160 +17,21 @@ import '@splidejs/splide/css/core'
       <!-- Services -->
       <Services />
 
-      <section class='trabajos'>
-        <div class='container_trabajos'>
-          <h2>Trabajos completados</h2>
-        </div>
+      <!-- Works -->
+      <Works />
 
-        <div id='splide-works' class='splide' aria-label='Works'>
-          <div class='splide__track'>
-            <ul class='splide__list'>
-              <li class='splide__slide'>
-                <a href='https://www.multipartscolombia.com/' target='_blank'>
-                  <img
-                    src='/servicios/works/work-1.webp'
-                    alt='Multiparts Colombia'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Multipartscolombia</h3>
-                  <p class='text'>Tienda en Línea</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a
-                  href='https://especiales.laopinion.com.co/transito/index.html'
-                  target='_blank'
-                >
-                  <img
-                    src='/servicios/works/especial-transito.webp'
-                    alt='Especial transito'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Especial de Tránsito</h3>
-                  <p class='text'>Landing Page</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a
-                  href='https://codesandbox.io/s/echarts-map-colombia-4etjj2'
-                  target='_blank'
-                >
-                  <img
-                    src='/servicios/works/elecciones.webp'
-                    alt='Elecciones Resultados'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Elecciones Resultados</h3>
-                  <p class='text'>Módulo</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a
-                  href='https://especiales.laopinion.com.co/frontera/index.html'
-                  target='_blank'
-                >
-                  <img
-                    src='/servicios/works/especial-frontera.webp'
-                    alt='Especial Frontera'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Especial Frontera</h3>
-                  <p class='text'>Landing Page</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a href='https://qhubocucuta.com/chicaqhubo' target='_blank'>
-                  <img
-                    src='/servicios/works/chicaqhubo.webp'
-                    alt='Chica Qhubo'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Chica Qhubo</h3>
-                  <p class='text'>Sitio Web</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a href='https://contabilidad.johnserrano.co/' target='_blank'>
-                  <img
-                    src='/servicios/works/work-1.webp'
-                    alt='Ingresos y Gastos'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Ingresos y Gastos</h3>
-                  <p class='text'>Aplicación Web</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a href='https://johnserrano.co/' target='_blank'>
-                  <img
-                    src='/servicios/works/personal-site.webp'
-                    alt='John Serrano'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Sitio Web Personal</h3>
-                  <p class='text'>Sitio Web</p>
-                </a>
-              </li>
-              <li class='splide__slide'>
-                <a href='https://www.laopinion.com.co/' target='_blank'>
-                  <img
-                    src='/servicios/works/module-portafolio.webp'
-                    alt='John Serrano'
-                    width='360'
-                    height='380'
-                  />
-                  <h3 class='title'>Portafolio para Clientes</h3>
-                  <p class='text'>Módulo</p>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <section class='cotizacion' id='contacto'>
+        <a
+          class='button'
+          href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
+          target='_blank'>Solicita una Cotización</a
+        >
       </section>
     </main>
 
-    <section class='cotizacion'>
-      <h2>Solicita una Cotización</h2>
-    </section>
+    <Footer />
   </section>
-  <footer>
-    <h2>Información de contacto</h2>
-  </footer>
 </Layout>
-
-<script>
-  import Splide from '@splidejs/splide'
-  const splideWorks = new Splide('#splide-works', {
-    type: 'loop',
-    arrows: false,
-    autoplay: true,
-    interval: 4000,
-    perPage: 5,
-    perMove: 1,
-    fixedWidth: '360px',
-    gap: '3.7rem',
-    breakpoints: {
-      768: {
-        // height: '400px',
-        perPage: 1,
-        fixedWidth: '100%',
-        gap: 0,
-      },
-      1400: {
-        perPage: 3,
-        gap: '2rem',
-      },
-    },
-  })
-  splideWorks.mount()
-</script>
 
 <style is:global>
   #splide-works .splide__pagination__page {
@@ -237,6 +52,9 @@ import '@splidejs/splide/css/core'
 </style>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   #page_services {
     --width: 1000px;
     --background-color: #14213d;
@@ -259,168 +77,45 @@ import '@splidejs/splide/css/core'
     --font-size-lx: 2.5rem;
   }
 
-  .trabajos {
-    background-color: var(--background-color);
-    /* height: 500px; */
-    padding: 50px 0;
-  }
-  .trabajos .container_trabajos {
-    max-width: var(--width);
-    margin: 0 auto;
-  }
-  .trabajos h2 {
-    color: var(--text-white);
+  .cotizacion {
     text-align: center;
-    font-size: var(--font-size-lx);
-    line-height: 2.8rem;
-    margin: 0;
-  }
-  #splide-works {
-    margin: 30px 0 0;
-  }
-  /* .trabajos ul {
-    padding: 0;
-    list-style: none;
-    margin: 0;
-  } */
-  .trabajos ul a {
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  .trabajos ul h3 {
-    font-size: var(--font-size-m);
-    color: var(--text-white);
-    text-align: center;
-    font-weight: 400;
-    margin: 10px 0 5px;
-  }
-  .trabajos ul .text {
-    color: var(--text-yellow);
-    font-size: var(--font-size-sm);
-    text-align: center;
-    margin: 0;
-  }
-  header {
-    background: hsla(221, 51%, 16%, 1);
-    background: linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    background: -moz-linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#14213D", endColorstr="#000000", GradientType=1 );
-    min-height: 50vh;
-    padding: 10px 0 30px;
-    /* box-sizing: border-box; */
-    display: grid;
-  }
-  .container_servicios {
-    max-width: var(--width);
-    margin: 0 auto;
-  }
-  header .container_servicios.nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    align-self: start;
-    margin-bottom: 20px;
-    width: 100%;
-  }
-  header .container_servicios nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-  }
-  header .container_servicios a {
-    text-decoration: none;
-    transition: all ease-in-out 0.2s;
-  }
-  header .container_servicios ul a {
-    color: var(--text-white);
-    font-size: var(--font-size-xm);
-  }
-  header .container_servicios h2 {
-    font-size: var(--font-size-m);
-    color: var(--text-white);
-    margin: 0;
-  }
-  header .container_servicios ul a.active {
-    color: var(--link-color);
-    font-weight: 700;
-  }
-  header .container_servicios ul a:hover {
-    color: var(--link-color);
-  }
-  header .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-self: center;
-  }
-  header .grid .text {
-    color: var(--text-white);
-    display: flex;
-    flex-direction: column;
-  }
-  header .buttons {
-    display: flex;
-    gap: 20px;
-  }
-  header .button {
-    border: none;
-    padding: 10px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 3px;
-  }
-  header .saber_mas {
-    color: var(--text-black);
-    background-color: var(--background-color-button);
-  }
-
-  header .portafolio {
-    color: var(--text-black);
+    padding: 150px 0;
     background-color: var(--background-color-secondary);
   }
-
-  header .grid .text h1 {
+  /* .cotizacion .button {
+    border: none;
+    padding: 20px;
+    color: var(--text-black);
+    background-color: var(--text-yellow);
+    text-decoration: none;
     font-size: var(--font-size-l);
-    line-height: 2.3rem;
-    color: var(--link-color);
-    margin: 0;
-  }
-  header .grid .text p {
+    border: none;
+    border-radius: 5px;
+  } */
+  .cotizacion .button {
+    box-shadow: 0px 1px 0px 0px #fca211;
+    /* background: linear-gradient(to bottom, #ffed64 5%, #fca211 100%); */
+    background-color: #fca211;
+    border-radius: 6px;
+    border: 1px solid var(--background-color);
+    display: inline-block;
+    cursor: pointer;
+    color: #000000;
     font-size: var(--font-size-m);
-    line-height: 1.8rem;
-    color: var(--text-white);
-    margin: 20px 0 30px;
+    font-weight: bold;
+    padding: 12px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #ffee66;
+    transition: all ease-in-out 0.2s;
   }
-
-  header .image {
-    display: flex;
-    justify-content: center;
-    color: var(--text-white);
-    justify-self: end;
+  .cotizacion .button:hover {
+    /* background: linear-gradient(to bottom, #fca211 5%, #ffed64 100%); */
+    background-color: var(--background-color);
+    color: #fca211;
   }
-  header .image img {
-    width: 380px;
-    height: 380px;
-    border-radius: 100%;
-    object-fit: cover;
+  .cotizacion .button:active {
+    position: relative;
+    top: 1px;
   }
 
   @media screen and (max-width: 768px) {
