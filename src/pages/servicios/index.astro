@@ -4,6 +4,7 @@ import PropuestaValor from './propuesta-valor.astro'
 import Services from './services.astro'
 import Works from './works.astro'
 import Header from './header.astro'
+import Footer from './footer.astro'
 ---
 
 <Layout>
@@ -19,7 +20,7 @@ import Header from './header.astro'
       <!-- Works -->
       <Works />
 
-      <section class='cotizacion'>
+      <section class='cotizacion' id='contacto'>
         <a
           class='button'
           href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
@@ -27,10 +28,9 @@ import Header from './header.astro'
         >
       </section>
     </main>
+
+    <Footer />
   </section>
-  <footer>
-    <h2>Información de contacto</h2>
-  </footer>
 </Layout>
 
 <style is:global>
@@ -79,7 +79,8 @@ import Header from './header.astro'
 
   .cotizacion {
     text-align: center;
-    padding: 50px 0;
+    padding: 150px 0;
+    background-color: var(--background-color-secondary);
   }
   /* .cotizacion .button {
     border: none;
