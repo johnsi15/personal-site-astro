@@ -69,7 +69,22 @@
       menuBackDrop.style.opacity = '0'
       menuBackDrop.style.visibility = 'hidden'
     })
+
+    item.addEventListener('click', (event) => {
+      const el = event.target as Element
+      removeClassActiev()
+      el.classList.add('active')
+    })
   })
+
+  const removeClassActiev = () => {
+    listItem.forEach((item) => {
+      // console.log(item.firstElementChild)
+      if (item.firstElementChild?.classList.contains('active')) {
+        item.firstElementChild.classList.remove('active')
+      }
+    })
+  }
 </script>
 
 <style>
@@ -78,10 +93,10 @@
     top: 0;
     left: 0;
     border-radius: 0.25rem;
-    transition: all ease-in-out 0.5s;
+    transition: all ease-in-out 0.2s;
     opacity: 0;
     backdrop-filter: blur(16px);
-    background-color: white;
+    background-color: var(--text-white);
     transform: translate(var(--left), var(--top));
     width: var(--width);
     height: var(--height);
@@ -107,7 +122,6 @@
     filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#14213D", endColorstr="#000000", GradientType=1 );
     min-height: 50vh;
     padding: 10px 0 30px;
-    /* box-sizing: border-box; */
     display: grid;
   }
   .container_servicios {
@@ -127,9 +141,12 @@
     padding: 0;
     margin: 0;
     display: flex;
-    gap: 20px;
+    gap: 12px;
     position: relative;
     z-index: 1;
+  }
+  .nav ul li {
+    padding: 5px 8px;
   }
   header .container_servicios a {
     text-decoration: none;
@@ -146,10 +163,9 @@
   }
   header .container_servicios ul a.active {
     color: var(--link-color);
-    font-weight: 700;
   }
-  header .container_servicios ul a:hover {
-    color: var(--link-color);
+  header .container_servicios ul li:hover > a {
+    color: var(--heading-color);
   }
   header .grid {
     display: grid;
