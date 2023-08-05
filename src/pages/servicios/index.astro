@@ -21,11 +21,28 @@ import Footer from './footer.astro'
       <Works />
 
       <section class='cotizacion' id='contacto'>
-        <a
-          class='button'
-          href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
-          target='_blank'>Solicita una Cotización</a
-        >
+        <div class='content'>
+          <figure>
+            <img
+              src='/servicios/quote.svg'
+              alt='Cotización'
+              width='600'
+              height='600'
+            />
+          </figure>
+
+          <p>
+            ¡Obtén tu cotización personalizada hoy mismo! Descubre cómo nuestros
+            servicios de desarrollo web y marketing digital pueden impulsar tu
+            negocio en línea. ¡No esperes más para llevarlo al siguiente nivel!
+            Solicita una cotización y comienza a crecer en el mundo digital.
+            <a
+              class='button'
+              href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
+              target='_blank'>Solicita una Cotización</a
+            >
+          </p>
+        </div>
       </section>
     </main>
 
@@ -79,7 +96,7 @@ import Footer from './footer.astro'
 
   .cotizacion {
     text-align: center;
-    padding: 150px 0;
+    padding: 100px 0;
     background-color: var(--background-color-secondary);
   }
   /* .cotizacion .button {
@@ -92,6 +109,31 @@ import Footer from './footer.astro'
     border: none;
     border-radius: 5px;
   } */
+
+  .cotizacion .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 10px;
+  }
+
+  .cotizacion figure {
+    margin: 0;
+  }
+  .cotizacion figure img {
+    width: 600px;
+  }
+
+  .cotizacion p {
+    margin: 0;
+    display: grid;
+    gap: 30px;
+    font-size: var(--font-size-xm);
+    line-height: 1.6rem;
+    font-weight: 400;
+  }
   .cotizacion .button {
     box-shadow: 0px 1px 0px 0px #fca211;
     /* background: linear-gradient(to bottom, #ffed64 5%, #fca211 100%); */
