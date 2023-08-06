@@ -31,17 +31,20 @@ import Footer from './footer.astro'
             />
           </figure>
 
-          <p>
-            ¡Obtén tu cotización personalizada hoy mismo! Descubre cómo nuestros
-            servicios de desarrollo web y marketing digital pueden impulsar tu
-            negocio en línea. ¡No esperes más para llevarlo al siguiente nivel!
-            Solicita una cotización y comienza a crecer en el mundo digital.
+          <div class='textCotizacion'>
+            <p>
+              ¡Obtén tu <strong>cotización</strong> personalizada hoy mismo! Descubre
+              cómo <strong>nuestros servicios</strong> de desarrollo web y marketing
+              digital pueden impulsar tu negocio en línea. ¡No esperes más para llevarlo
+              al siguiente nivel! Solicita una cotización y comienza a crecer en
+              el mundo digital.
+            </p>
             <a
               class='button'
               href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
               target='_blank'>Solicita una Cotización</a
             >
-          </p>
+          </div>
         </div>
       </section>
     </main>
@@ -123,13 +126,15 @@ import Footer from './footer.astro'
     margin: 0;
   }
   .cotizacion figure img {
-    width: 600px;
+    width: 598px;
   }
-
-  .cotizacion p {
+  .cotizacion .textCotizacion {
     margin: 0;
     display: grid;
     gap: 30px;
+    justify-items: center;
+  }
+  .cotizacion p {
     font-size: var(--font-size-xm);
     line-height: 1.6rem;
     font-weight: 400;
@@ -143,12 +148,14 @@ import Footer from './footer.astro'
     display: inline-block;
     cursor: pointer;
     color: #000000;
-    font-size: var(--font-size-m);
+    font-size: var(--font-size-xm);
     font-weight: bold;
     padding: 12px 24px;
     text-decoration: none;
     text-shadow: 0px 1px 0px #ffee66;
     transition: all ease-in-out 0.2s;
+    width: 320px;
+    box-sizing: border-box;
   }
   .cotizacion .button:hover {
     /* background: linear-gradient(to bottom, #fca211 5%, #ffed64 100%); */
@@ -161,30 +168,17 @@ import Footer from './footer.astro'
   }
 
   @media screen and (max-width: 768px) {
-    header .container_servicios.nav {
-      justify-content: center;
+    .cotizacion {
+      padding-top: 80px;
     }
-    header nav {
+    .cotizacion .content {
+      width: 96%;
+    }
+    .cotizacion figure {
       display: none;
     }
-    header .grid {
-      grid-template-columns: 1fr;
-      margin: 0 10px;
-      align-self: start;
-    }
-    header .image {
-      display: none;
-    }
-    .trabajos {
-      height: auto;
-    }
-    .trabajos ul img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .trabajos h2 {
-      margin: 0 10px;
+    .cotizacion .textCotizacion {
+      gap: 10px;
     }
   }
 </style>
