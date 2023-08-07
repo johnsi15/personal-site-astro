@@ -58,7 +58,7 @@
 
       menuBackDrop.style.setProperty('--left', `${left}px`)
       menuBackDrop.style.setProperty('--top', `${top}px`)
-      menuBackDrop.style.setProperty('--width', `${width}px`)
+      menuBackDrop.style.setProperty('--width-menu', `${width}px`)
       menuBackDrop.style.setProperty('--height', `${height}px`)
 
       menuBackDrop.style.opacity = '1'
@@ -98,7 +98,7 @@
     backdrop-filter: blur(16px);
     background-color: var(--text-white);
     transform: translate(var(--left), var(--top));
-    width: var(--width);
+    width: var(--width-menu);
     height: var(--height);
     /* z-index: -1; */
   }
@@ -126,6 +126,7 @@
   .container_servicios {
     max-width: var(--width);
     margin: 0 auto;
+    width: 100%;
   }
   header .container_servicios.nav {
     display: flex;
@@ -233,8 +234,9 @@
     }
     header .grid {
       grid-template-columns: 1fr;
-      margin: 0 10px;
       align-self: start;
+      margin: 0 auto;
+      width: 96%;
     }
     header .image {
       display: none;
