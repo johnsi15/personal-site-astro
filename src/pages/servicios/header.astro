@@ -100,16 +100,15 @@
 
   btnHamburger.addEventListener('click', () => {
     hamburger?.classList.toggle('is-active')
-    menuMobile.style.display = 'block'
-    close.style.display = 'block'
+    // menuMobile.style.display = 'block'
+    menuMobile.style.transform = 'translateX(0)'
     // if (hamburger?.classList.contains('is-active')) {
     // }
   })
 
   close.addEventListener('click', () => {
     hamburger?.classList.remove('is-active')
-    menuMobile.style.display = 'none'
-    close.style.display = 'none'
+    menuMobile.style.transform = 'translateX(-100%)'
   })
 </script>
 
@@ -358,21 +357,29 @@
     header .container_servicios.nav {
       justify-content: center;
     }
-    header nav {
-      display: none;
+    header .container_servicios ul li:hover > a {
+      color: var(--link-color);
     }
+    /* header nav {
+      display: none;
+    } */
     .close {
       color: var(--text-white);
+      display: block;
     }
     .menuMobile {
       position: fixed;
+      display: block;
       background: var(--background-color-two);
       top: 0;
       bottom: 0;
-      right: 0;
+      /* right: 0; */
       left: 0;
       z-index: 10;
+      transform: translateX(-100%);
+      height: 100%;
       width: 60%;
+      transition: all 0.3s ease-in-out;
     }
     .menuMobile ul {
       flex-direction: column;
