@@ -4,10 +4,14 @@ import PropuestaValor from './propuesta-valor.astro'
 import Services from './services.astro'
 import Works from './works.astro'
 import Header from './header.astro'
+import Cotizacion from './cotizacion.astro'
 import Footer from './footer.astro'
 ---
 
-<Layout>
+<Layout
+  title='Desarrollo de Sitios Web Profesionales'
+  description='Potencia tu presencia en línea con nuestros servicios profesionales de desarrollo web. Diseñamos sitios web a medida que impulsan tu negocio y capturan la atención de tu audiencia objetivo.'
+>
   <section id='page_services'>
     <Header />
     <main>
@@ -20,18 +24,38 @@ import Footer from './footer.astro'
       <!-- Works -->
       <Works />
 
-      <section class='cotizacion' id='contacto'>
-        <a
-          class='button'
-          href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
-          target='_blank'>Solicita una Cotización</a
-        >
-      </section>
+      <Cotizacion />
     </main>
 
     <Footer />
   </section>
 </Layout>
+
+<script>
+  import AOS from 'aos'
+  import 'aos/dist/aos.css'
+
+  AOS.init({
+    // Global settings:
+    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+    initClassName: 'aos-init', // class applied after initialization
+    animatedClassName: 'aos-animate', // class applied on animation
+    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+    offset: 120, // offset (in px) from the original trigger point
+    delay: 0, // values from 0 to 3000, with step 50ms
+    duration: 400, // values from 0 to 3000, with step 50ms
+    easing: 'ease', // default easing for AOS animations
+    once: false, // whether animation should happen only once - while scrolling down
+    mirror: false, // whether elements should animate out while scrolling past them
+    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+  })
+</script>
 
 <style is:global>
   #splide-works .splide__pagination__page {
@@ -61,6 +85,7 @@ import Footer from './footer.astro'
     --background-color-two: #000000;
     --background-color-three: #fca311;
     --heading-color: #14213d;
+    --background-white: #ffffff;
     --text-white: #ffffff;
     --text-black: #000000;
     --text-gray: #e5e5e5;
@@ -75,74 +100,5 @@ import Footer from './footer.astro'
     --font-size-m: 1.5rem;
     --font-size-l: 2rem;
     --font-size-lx: 2.5rem;
-  }
-
-  .cotizacion {
-    text-align: center;
-    padding: 150px 0;
-    background-color: var(--background-color-secondary);
-  }
-  /* .cotizacion .button {
-    border: none;
-    padding: 20px;
-    color: var(--text-black);
-    background-color: var(--text-yellow);
-    text-decoration: none;
-    font-size: var(--font-size-l);
-    border: none;
-    border-radius: 5px;
-  } */
-  .cotizacion .button {
-    box-shadow: 0px 1px 0px 0px #fca211;
-    /* background: linear-gradient(to bottom, #ffed64 5%, #fca211 100%); */
-    background-color: #fca211;
-    border-radius: 6px;
-    border: 1px solid var(--background-color);
-    display: inline-block;
-    cursor: pointer;
-    color: #000000;
-    font-size: var(--font-size-m);
-    font-weight: bold;
-    padding: 12px 24px;
-    text-decoration: none;
-    text-shadow: 0px 1px 0px #ffee66;
-    transition: all ease-in-out 0.2s;
-  }
-  .cotizacion .button:hover {
-    /* background: linear-gradient(to bottom, #fca211 5%, #ffed64 100%); */
-    background-color: var(--background-color);
-    color: #fca211;
-  }
-  .cotizacion .button:active {
-    position: relative;
-    top: 1px;
-  }
-
-  @media screen and (max-width: 768px) {
-    header .container_servicios.nav {
-      justify-content: center;
-    }
-    header nav {
-      display: none;
-    }
-    header .grid {
-      grid-template-columns: 1fr;
-      margin: 0 10px;
-      align-self: start;
-    }
-    header .image {
-      display: none;
-    }
-    .trabajos {
-      height: auto;
-    }
-    .trabajos ul img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
-    .trabajos h2 {
-      margin: 0 10px;
-    }
   }
 </style>

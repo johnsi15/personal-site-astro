@@ -1,7 +1,21 @@
+---
+import Close from './close.astro'
+---
+
 <header>
   <div class='container_servicios nav'>
+    <div class='btnHamburger'>
+      <button class='hamburger hamburger--elastic' type='button'>
+        <span class='hamburger-box'>
+          <span class='hamburger-inner'></span>
+        </span>
+      </button>
+    </div>
     <a href='/servicios'><h2>John Serrano</h2></a>
-    <nav>
+    <nav class='menuMobile'>
+      <span class='close'>
+        <Close />
+      </span>
       <ul>
         <li>
           <a class='active' href='/servicios'>Inicio</a>
@@ -51,6 +65,10 @@
 <script>
   const listItem = document.querySelectorAll('.nav ul > li')
   const menuBackDrop = document.querySelector('#menu-backdrop') as HTMLElement
+  const btnHamburger = document.querySelector('.btnHamburger') as HTMLElement
+  const hamburger = document.querySelector('.btnHamburger .hamburger')
+  const close = document.querySelector('.close') as HTMLElement
+  const menuMobile = document.querySelector('.menuMobile') as HTMLElement
 
   listItem.forEach((item) => {
     item.addEventListener('mouseenter', () => {
@@ -58,7 +76,7 @@
 
       menuBackDrop.style.setProperty('--left', `${left}px`)
       menuBackDrop.style.setProperty('--top', `${top}px`)
-      menuBackDrop.style.setProperty('--width', `${width}px`)
+      menuBackDrop.style.setProperty('--width-menu', `${width}px`)
       menuBackDrop.style.setProperty('--height', `${height}px`)
 
       menuBackDrop.style.opacity = '1'
@@ -74,6 +92,15 @@
       const el = event.target as Element
       removeClassActiev()
       el.classList.add('active')
+
+      if (
+        el.parentElement?.parentElement?.parentElement?.style.transform ===
+        'translateX(0px)'
+      ) {
+        menuMobile.style.transform = 'translateX(-100%)'
+        hamburger?.classList.remove('is-active')
+        document.body.style.overflow = 'scroll'
+      }
     })
   })
 
@@ -85,9 +112,28 @@
       }
     })
   }
+
+  btnHamburger.addEventListener('click', () => {
+    hamburger?.classList.toggle('is-active')
+    // menuMobile.style.display = 'block'
+    menuMobile.style.transform = 'translateX(0)'
+    // if (hamburger?.classList.contains('is-active')) {
+    // }
+    document.body.style.overflow = 'hidden'
+  })
+
+  close.addEventListener('click', () => {
+    hamburger?.classList.remove('is-active')
+    menuMobile.style.transform = 'translateX(-100%)'
+    document.body.style.overflow = 'scroll'
+  })
 </script>
 
 <style>
+  .btnHamburger,
+  .close {
+    display: none;
+  }
   #menu-backdrop {
     position: absolute;
     top: 0;
@@ -98,7 +144,7 @@
     backdrop-filter: blur(16px);
     background-color: var(--text-white);
     transform: translate(var(--left), var(--top));
-    width: var(--width);
+    width: var(--width-menu);
     height: var(--height);
     /* z-index: -1; */
   }
@@ -126,6 +172,7 @@
   .container_servicios {
     max-width: var(--width);
     margin: 0 auto;
+    width: 100%;
   }
   header .container_servicios.nav {
     display: flex;
@@ -224,17 +271,162 @@
     object-fit: cover;
   }
 
+  .hamburger {
+    padding: 15px 15px;
+    display: inline-block;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+  }
+  .hamburger:hover {
+    opacity: 0.7;
+  }
+  .hamburger.is-active:hover {
+    opacity: 0.7;
+  }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: var(--background-white);
+  }
+
+  .hamburger-box {
+    width: 40px;
+    height: 24px;
+    display: inline-block;
+    position: relative;
+  }
+
+  .hamburger-inner {
+    display: block;
+    top: 50%;
+    margin-top: -2px;
+  }
+  .hamburger-inner,
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: var(--background-white);
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+  }
+  .hamburger-inner::before,
+  .hamburger-inner::after {
+    content: '';
+    display: block;
+  }
+  .hamburger-inner::before {
+    top: -10px;
+  }
+  .hamburger-inner::after {
+    bottom: -10px;
+  }
+
+  .hamburger--elastic .hamburger-inner {
+    top: 2px;
+    transition-duration: 0.275s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  .hamburger--elastic .hamburger-inner::before {
+    top: 10px;
+    transition: opacity 0.125s 0.275s ease;
+  }
+  .hamburger--elastic .hamburger-inner::after {
+    top: 20px;
+    transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .hamburger--elastic.is-active .hamburger-inner {
+    transform: translate3d(0, 10px, 0) rotate(135deg);
+    transition-delay: 0.075s;
+  }
+  .hamburger--elastic.is-active .hamburger-inner::before {
+    transition-delay: 0s;
+    opacity: 0;
+  }
+  .hamburger--elastic.is-active .hamburger-inner::after {
+    transform: translate3d(0, -20px, 0) rotate(-270deg);
+    transition-delay: 0.075s;
+  }
+
   @media screen and (max-width: 768px) {
+    header {
+      position: relative;
+      z-index: 2;
+    }
+    .hamburger {
+      padding: 5px 10px;
+    }
+    .btnHamburger {
+      display: block;
+      position: absolute;
+      left: 2px;
+      top: 2px;
+    }
     header .container_servicios.nav {
       justify-content: center;
+      position: fixed;
+      background: #090f1c;
+      top: 0;
+      z-index: 1;
+      height: 40px;
     }
-    header nav {
+    header .container_servicios ul li:hover > a {
+      color: var(--link-color);
+    }
+    /* header nav {
       display: none;
+    } */
+
+    #menu-backdrop {
+      display: none;
+    }
+    .close {
+      color: var(--text-white);
+      display: block;
+      position: absolute;
+      right: 5px;
+      top: 5px;
+      z-index: 11;
+    }
+    .menuMobile {
+      position: fixed;
+      display: block;
+      background: var(--background-color-two);
+      top: 0;
+      bottom: 0;
+      /* right: 0; */
+      left: 0;
+      z-index: 10;
+      transform: translateX(-100%);
+      height: 100%;
+      width: 100%;
+      transition: all 0.3s ease-in-out;
+    }
+    .menuMobile ul {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
     }
     header .grid {
       grid-template-columns: 1fr;
-      margin: 0 10px;
       align-self: start;
+      margin: 40px auto 0;
+      width: 96%;
     }
     header .image {
       display: none;
