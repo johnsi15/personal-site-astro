@@ -182,6 +182,26 @@ let punto: Coordenada = { x: 10, y: 20 };
 
 En este ejemplo, hemos creado un alias de tipo llamado Coordenada para el objeto con propiedades x e y. Luego, utilizamos este alias para declarar una variable punto.
 
+Otro ejemplo:
+````ts
+type Sizes = 'S' | 'M' | 'L' | 'XL';
+type Product = {
+  title: string
+  createdAt: Date
+  stock: number
+  size?: Sizes // size? le indicamos que es un campo optional
+}
+
+const products: Product[] = []; // Definimos un array de type Product
+
+const createProduct = (data: Product) => {
+  products.push(data)
+}
+
+createProduct({ title: 'P1', createdAt: new Date(), stock: 12 })
+````
+Creamos dos **"Type Aliases"** uno Size y otro Product que tiene una estructura parecida a un objecto, luego definimos un array con ese type Product creamos la function y ejecutamos la function pasando el objecto con sus claves y valores.
+
 Los alias de tipos también pueden utilizarse en combinación con otros tipos, **"Union Types"** o cualquier otro tipo complejo.
 
 Ejemplo de alias de tipo con "Union Type" y "Literal Type":
@@ -227,4 +247,24 @@ asignarResultado(4); // Error, solo se permite 1, 2 o 3
 En estos ejemplos, hemos creado "Literal Types" para la variable estado y el parámetro resultado, lo que limita los valores posibles a "activo", "inactivo", 1, 2 o 3.
 
 Los "Literal Types" también son útiles en combinación con "Union Types" y otros conceptos, como **"Type Aliases"** y **"Type Guards"**. Estos tipos pueden mejorar la precisión del código y reducir la posibilidad de errores al garantizar que solo valores específicos sean válidos en determinados contextos.
+
+## Conclusiones
+
+En conclusión, haber explorado los fundamentos básicos de TypeScript te ha proporcionado una sólida base para comprender y aprovechar este lenguaje de programación en tus proyectos de desarrollo. Aquí hay algunas conclusiones clave:
+
+1. **Tipo estático y seguro:** TypeScript te ofrece la ventaja de tipos estáticos, lo que significa que puedes detectar y prevenir errores en tiempo de compilación. Esto resulta en un código más confiable y fácil de mantener.
+
+2. **Inferencia de tipos:** La inferencia de tipos automática en TypeScript simplifica la declaración de variables al tiempo que asegura que los tipos sean coherentes con los valores asignados. Esto mejora la eficiencia y la legibilidad del código.
+
+3. **Union Types y Literal Types:** La capacidad de definir tipos compuestos con Union Types y Literal Types te permite modelar con precisión diferentes escenarios y restringir los valores que una variable puede tomar.
+
+4. **Type Guards:** Los Type Guards son herramientas esenciales para trabajar con Union Types. Ayudan a verificar y garantizar los tipos en tiempo de ejecución, lo que reduce la probabilidad de errores.
+
+5. **Type Aliases:** Los Type Aliases simplifican la declaración y el uso de tipos complejos, mejorando la claridad del código y permitiendo nombrar tipos personalizados de manera significativa.
+
+6. **Ventajas en el Desarrollo:** TypeScript ofrece una transición suave desde JavaScript, un código más sólido para aplicaciones más grandes y una experiencia de desarrollo más segura. Además, su popularidad está en aumento, lo que significa más recursos y apoyo en la comunidad.
+
+7. **Exploración Continua:** Aunque has cubierto los fundamentos, recuerda que el mundo de TypeScript es amplio y sigue en constante evolución. Puedes seguir explorando temas más avanzados y aplicar estos conceptos básicos en proyectos reales.
+
+Al comprender y aplicar estos fundamentos básicos, estarás en una excelente posición para continuar aprendiendo y aprovechando las capacidades de TypeScript en tus futuros desarrollos.
 
