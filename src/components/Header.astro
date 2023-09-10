@@ -3,12 +3,12 @@ import HeaderLink from './HeaderLink.astro'
 import Hamburger from './Hamburger'
 import Search from './Search'
 ---
-<!-- https://github.com/withastro/astro/issues/5493 -->
 
+<!-- https://github.com/withastro/astro/issues/5493 -->
 <header class='Header'>
   <div class='header__menu container'>
-    <Hamburger  client:load/>
-    <nav class="nav">
+    <Hamburger client:load />
+    <nav class='nav'>
       <ul class='menu'>
         <li>
           <HeaderLink href='/'>John Serrano</HeaderLink>
@@ -25,18 +25,21 @@ import Search from './Search'
         <li>
           <HeaderLink href='/portafolio'>Portafolio</HeaderLink>
         </li>
+        <li>
+          <HeaderLink href='/servicios'>Servicios</HeaderLink>
+        </li>
       </ul>
     </nav>
-    <Search client:load/> 
+    <Search client:load />
   </div>
 </header>
 
 <script>
- const hamburger = document.querySelector('#Hamburger')
- if (hamburger) {
+  const hamburger = document.querySelector('#Hamburger')
+  if (hamburger) {
     const header = document.querySelector('.Header')
     const nav = document.querySelector('.Header nav')
-   hamburger.addEventListener('click', (e) => {
+    hamburger.addEventListener('click', (e) => {
       // console.log(e?.target)
       if (header && !header.classList.contains('active_header')) {
         header?.classList.add('active_header')
@@ -44,11 +47,11 @@ import Search from './Search'
         document.body.style.overflowY = 'hidden'
       } else {
         header?.classList.remove('active_header')
-        nav?.classList.remove('active_nav') 
+        nav?.classList.remove('active_nav')
         document.body.style.overflowY = 'scroll'
       }
-   })
- }
+    })
+  }
 </script>
 
 <style>
@@ -78,7 +81,7 @@ import Search from './Search'
     justify-content: space-between;
     align-items: center;
     height: 45px;
-    width: calc((80px * 5));
+    width: calc((80px * 6));
   }
 
   .menu a {
@@ -88,7 +91,7 @@ import Search from './Search'
     font-size: 1.2rem;
     font-weight: 400;
     line-height: 1.6rem;
-    transition: .2s;
+    transition: 0.2s;
   }
 
   .menu a:hover {
@@ -98,7 +101,7 @@ import Search from './Search'
   @media screen and (max-width: 768px) {
     .Header {
       position: fixed;
-      top: 0; 
+      top: 0;
       width: 100%;
       display: flex;
       align-items: center;
@@ -110,7 +113,7 @@ import Search from './Search'
     }
     .nav {
       display: none;
-      transition: .2s;
+      transition: 0.2s;
       position: fixed;
       left: 0;
       top: 50px;
