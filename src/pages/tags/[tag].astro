@@ -1,82 +1,85 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import { CollectionEntry, getCollection } from 'astro:content'
 import Layout from '../../layouts/index.astro'
 
-import PostsGrid from '../../components/PostsGrid';
-import Cover from '../../components/Cover';
-import PostTitle from '../../components/PostTitle';
+import PostsGrid from '../../components/PostsGrid'
+import Cover from '../../components/Cover'
+import PostTitle from '../../components/PostTitle'
 
 export async function getStaticPaths() {
-	const allPosts = await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true;
-  });
+  const allPosts = await getCollection('blog', ({ data }) => {
+    return data.isDraft !== true
+  })
 
-  let filteredPosts = 
-      allPosts.filter((p) => { 
-        return p.data.title && p.data.publishedDate; 
-      });
+  let filteredPosts = allPosts.filter((p) => {
+    return p.data.title && p.data.publishedDate
+  })
 
-  let dix = {};
+  let dix = {}
   // console.log({filteredPosts})
   filteredPosts.forEach((post) => {
     // console.log(post.data.tags)
     post.data.tags.forEach((tag) => {
-      if (!dix[tag]) dix[tag] = 0;
-      dix[tag] += 1;
-    });
-  });
+      if (!dix[tag]) dix[tag] = 0
+      dix[tag] += 1
+    })
+  })
   // console.log('dix', dix); // <-- prints out our tag-cloud data.
+  interface Tags {
+    params: { tag: string }
+    props: { primaryTag: string; count: string }
+  }
 
-  let array = [];
+  let array: Tags[] = []
   // format the data to return from getStaticPaths()
   for (let prop in dix) {
     let data = {
       params: { tag: prop.toLocaleLowerCase().replaceAll(' ', '-') },
-      props: { tagName: prop, count: dix[prop] }
+      props: { primaryTag: prop, count: dix[prop] },
     }
-    array.push(data);
+    array.push(data)
   }
-  return array;
+  return array
 }
 
-type Props = CollectionEntry<'blog'>;
+type Props = CollectionEntry<'blog'>
 const allPosts = await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true;
-  });
+  return data.isDraft !== true
+})
 
-const { tagName } = Astro.props;
-const { tag } = Astro.params;
-
-// console.log({ tagName });
+const { primaryTag } = Astro.props
+const { tag } = Astro.params
+// console.log(Astro.props)
+// console.log({ primaryTag })
 // console.log({ tag })
 
 // grab the selected tag from the url (dynamic [tag])
-let filteredPosts = allPosts.filter((p) => { 
-      return p.data.title && p.data.publishedDate; 
-    });
+let filteredPosts = allPosts.filter((p) => {
+  return p.data.title && p.data.publishedDate
+})
 
 // DESC
 let blogEntries = filteredPosts.sort(
-	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
-);
+  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
+)
 
-let posts = blogEntries.filter((p) => { 
+let posts = blogEntries.filter((p) => {
   // console.log(p.data.tags)
-  return p.data.tags.includes(tagName); 
-});
+  return p.data.tags.includes(primaryTag)
+})
 ---
 
 <Layout
-  title={`${tagName} - John Serrano`}
-  description= ''
-  image= ''
+  title={`${primaryTag} - John Serrano`}
+  description=''
+  image=''
   url={`https://johnserrano.co/tags/${tag}`}
-  titleOpenGraph={`${tagName} - John Serrano`}
-  datePublished= ''
-  modified= ''
+  titleOpenGraph={`${primaryTag} - John Serrano`}
+  datePublished=''
+  modified=''
 >
   <Cover>
-    <PostTitle capitalize='capitalize'>{tagName}</PostTitle>
+    <PostTitle capitalize='capitalize'>{primaryTag}</PostTitle>
   </Cover>
   <section id='Tag' class='container'>
     <PostsGrid posts={posts} columns='3' />
@@ -84,7 +87,7 @@ let posts = blogEntries.filter((p) => {
 </Layout>
 
 <style>
-	#Tag {
+  #Tag {
     /* margin-top: 70px; */
     flex: 1;
   }
