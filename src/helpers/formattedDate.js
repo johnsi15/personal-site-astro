@@ -47,23 +47,30 @@ const getDateHuman = (timestamp) => {
   return dateHuman
 }
 
-// const publishedAt = ({ publishedDate }) => {
-//   const timestamp = new Date(publishedDate).getTime()
 
-//   return getDateHuman(timestamp)
-// }
+const getRelativeTime = (timestamp) => {
+  const currentDate = new Date();
+  const publishedDate = new Date(timestamp);
 
-// const timeAgo = ({ publishedDate }) => {
-//   const timestamp = new Date(publishedDate).getTime()
+  const timeDiffInMilliseconds = currentDate - publishedDate;
+  const timeDiffInDays = timeDiffInMilliseconds / (1000 * 60 * 60 * 24);
 
-//   return getTimeAgo(timestamp)
-// }
+  if (timeDiffInDays >= 365) {
+    const years = Math.floor(timeDiffInDays / 365);
+    return `hace ${years} año${years > 1 ? 's' : ''}`;
+  } else if (timeDiffInDays >= 30) {
+    const months = Math.floor(timeDiffInDays / 30);
+    return `hace ${months} mes${months > 1 ? 'es' : ''}`;
+  } else {
+    return getTimeAgo(timestamp)
+  }
+};
 
 const getTimeDate = ({ publishedDate }) => {
   const timestamp = new Date(publishedDate).getTime()
 
   return {
-    timeAgo: getTimeAgo(timestamp),
+    timeAgo: getRelativeTime(timestamp),
     publishedAt: getDateHuman(timestamp),
   }
 }
