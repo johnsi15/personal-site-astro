@@ -14,7 +14,9 @@ featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1697643034/
 
 ## ¿Qué es Clean Code (Código Limpio)?
 
-El **código limpio** es aquel que se ha escrito con la intensión de que otra persona lo **entienda**, es un concepto en el desarrollo de software que se refiere a escribir código fuente de programación que sea **fácil de leer**, **entender** y **mantener**. Un código limpio es un código que sigue **buenas prácticas** de programación y está escrito de manera que sea **eficiente**, **legible** y **libre de ambigüedades**. El término fue popularizado por el autor Robert C. Martin en su libro "Clean Code: A Handbook of Agile Software Craftsmanship.", de hecho el fue el que acuño el termino SOLID (el no invento estos principios, solo dio el nombre), para las reglas "universales" que se tienen que seguir al escribir una buena arquitectura de software. Sin embargo, la mayoría de sus libros están enfocados en POO.
+El **código limpio** es aquel que se ha escrito con la intensión de que otra persona lo **entienda**, es un concepto en el desarrollo de software que se refiere a escribir código fuente de programación que sea **fácil de leer**, **entender** y **mantener**. Un código limpio es un código que sigue **buenas prácticas** de programación y está escrito de manera que sea **eficiente**, **legible** y **libre de ambigüedades**. 
+
+El término fue popularizado por el autor Robert C. Martin en su libro "Clean Code: A Handbook of Agile Software Craftsmanship.", de hecho el fue el que acuño el termino SOLID (el no invento estos principios, solo dio el nombre), para las reglas "universales" que se tienen que seguir al escribir una buena arquitectura de software. Sin embargo, la mayoría de sus libros están enfocados en POO.
 
 En el caso de **JavaScript**, al ser un lenguaje de programación que esta enfocado en funciones y que tiene **"first-class functions"**, muchas veces las autoproclamadas **"reglas universales"** de programación como **SOLID**, no aplican. Ya que JavaScript nos permite ejercer otros patrones de diseño que en la mayoria de los lenguajes no se pueden hacer. Esto es, debido al feature de "first-class functions" **(Funciones de primera clase)** que nos proporciona JavaScript.
 
@@ -267,7 +269,7 @@ console.log(totalNumbers);
 ## Herencia en JavaScript
 La herencia en JavaScript es un concepto fundamental en la **programación orientada a objetos (POO)**. Permite que los objetos compartan **propiedades** y **métodos de otros objetos**, lo que facilita la reutilización de código y la creación de relaciones entre las clases. En JavaScript, la herencia se implementa a través del **sistema de prototipos** en lugar de clases, como se ve en lenguajes orientados a objetos más tradicionales.
 
-### Sintaxis a partir de ES6, para herencia:
+## Sintaxis a partir de ES6, para herencia:
 
 - constructor
 - extends
