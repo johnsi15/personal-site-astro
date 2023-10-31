@@ -1,0 +1,52 @@
+---
+import Layout from '../../layouts/index.astro'
+import About from './about.astro'
+import Header from './header.astro'
+---
+
+<Layout
+  title='Portafolio - John Serrano'
+  description='Una colección de algunos proyectos en los que he trabajado a lo largo de mi carrera, donde trabajo con diferentes tecnologías: JavaScript, Node.js, Express, React, Drupal 7, Next.js, Firebase, etc.'
+  image=''
+  url='https://johnserrano.co/portafolio'
+  titleOpenGraph='Portafolio - John Serrano'
+  date=''
+  modified=''
+>
+  <main id='Portafolio'>
+    <section class='container'>
+      <Header />
+      <About />
+    </section>
+  </main>
+</Layout>
+
+<style>
+  #Portafolio {
+    --primary-color: #003566;
+    --dark-color: #000814;
+    --color-blue: #001d3d;
+    --secondary-color: #002851;
+    --tertiary-color: #004d94;
+    --light-gray: #344358;
+    --color-gray: #2f3a4c;
+    --dark-gray: #1f2532;
+    --color-white: #fff;
+    --container: 1000px;
+
+    flex: 1;
+    background: hsla(211, 100%, 12%, 1);
+    background: radial-gradient(circle, hsla(211, 100%, 12%, 1) 0%, hsla(216, 100%, 4%, 1) 100%);
+    background: -moz-radial-gradient(circle, hsla(211, 100%, 12%, 1) 0%, hsla(216, 100%, 4%, 1) 100%);
+    background: -webkit-radial-gradient(circle, hsla(211, 100%, 12%, 1) 0%, hsla(216, 100%, 4%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#001D3D", endColorstr="#000814", GradientType=1 );
+  }
+
+  .container {
+    max-width: var(--container);
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+  }
+</style>
