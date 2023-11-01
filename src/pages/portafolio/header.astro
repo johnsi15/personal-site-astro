@@ -1,17 +1,103 @@
 <header>
-  <div>
-    <h1>Hi, Soy John Serrano</h1>
-    <h2>Ingeniero de Software</h2>
-    <p>
-      Soy un ingeniero de software con más de 7 años de experiencia. Apasionado por las tecnologías web, me especializo
-      en la creación de experiencias digitales excepcionales.
-    </p>
+  <div class='title'>
+    <h6>Hola, Soy</h6>
+    <h1>
+      <span style='--text-content: "John Serrano"; --start-color:#007CF0; --end-color:#00DFD8; '>John Serrano</span>
+      <span style='--text-content: "Ingeniero de Software"; --start-color:#7928CA; --end-color:#FF0080; --animation:a2;'
+        >Ingeniero de Software</span
+      >
+    </h1>
+    <!-- <h2>Ingeniero de Software</h2> -->
   </div>
+  <p class='description'>
+    Soy un ingeniero de software con más de 7 años de experiencia. Apasionado por las tecnologías web, me especializo en
+    la creación de experiencias digitales excepcionales.
+  </p>
   <div>foto</div>
 </header>
 
 <style>
   header {
     color: var(--color-white);
+  }
+
+  .title h6 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  .title h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: -0.06em;
+    text-align: center;
+  }
+  .title span {
+    display: block;
+    color: var(--color-white);
+    line-height: 1.1;
+    position: relative;
+    padding: 0 12px;
+  }
+
+  .title span::before {
+    animation-name: var(--animation, a);
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(90deg, var(--start-color), var(--end-color));
+    content: var(--text-content);
+    position: absolute;
+    inset: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    opacity: 1;
+  }
+
+  header p {
+    margin: 0;
+    max-width: 600px;
+    text-wrap: balance;
+  }
+
+  @keyframes a {
+    0%,
+    16.667%,
+    100% {
+      opacity: 1;
+    }
+
+    33.333%,
+    83.333% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes a2 {
+    0%,
+    100% {
+      opacity: 0;
+    }
+
+    33.333%,
+    50% {
+      opacity: 1;
+    }
+
+    16.667%,
+    66.667% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes a3 {
+    0%,
+    50%,
+    100% {
+      opacity: 0;
+    }
+
+    66.667%,
+    83.333% {
+      opacity: 1;
+    }
   }
 </style>
