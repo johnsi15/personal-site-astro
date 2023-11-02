@@ -1,36 +1,79 @@
 <section class='about'>
   <!-- <h2>Me encanta ser desarrollador web y construir cosas para la web.</h2> -->
-  <h2>Apasionado por el Desarrollo Web y la Creación de cosas para la web.</h2>
 
-  <article>
-    <!-- <p>
-      Hola, soy John Serrano comence a aprender desarrollo web en el 2011 obtuve una titulación, Tecnólogo en análisis y
-      desarrollo de sistemas de la información, apartir del 2014 tuve que parar mi carrera por algunos motivos
-      personales pero nunca pare de aprender, desde el 2016 estoy trabajando y aprendiendo muchas cosas.
-    </p> -->
-    <p>
-      ¡Hola! Soy John Serrano. Comencé mi viaje en el desarrollo web en 2011 y obtuve una titulación como Tecnólogo en
-      Análisis y Desarrollo de Sistemas. A partir del 2014, tuve que hacer una pausa en mi carrera por razones
-      personales esto solo duro 2 años, pero eso no me detuvo en mi búsqueda de conocimiento. Desde el año 2016, he
-      estado trabajando incansablemente y ampliando mis habilidades.
-    </p>
-    <!-- <p>
-      Actualmente me enfoco en el desarrollo front-end, creando productos y experiencias digitales. Mi pasión por la
-      tecnología y el aprendizaje constante me impulsa a mantenerme al día con las últimas tendencias y herramientas.
-    </p> -->
-    <p>
-      En la actualidad, mi enfoque se centra en el desarrollo front-end, donde creo productos y experiencias digitales.
-      Mi pasión por la tecnología y el aprendizaje constante me motiva a mantenerme al día con las últimas tendencias y
-      herramientas en el campo.
-    </p>
-    <!-- <p>Aquí hay algunas tecnologías con las que he estado trabajando recientemente:</p> -->
-    <p>Algunas de las tecnologías con las que he estado trabajando recientemente:</p>
-    <ul>
-      <li>✅ JavaScript (ES6+)</li>
-      <li>✅ React</li>
-      <li>✅ Node.js</li>
-      <li>✅ TypeScript</li>
-      <li>✅ Next.js</li>
-    </ul>
-  </article>
+  <div class='info'>
+    <h2>Apasionado por el Desarrollo Web y la Creación de cosas para la web.</h2>
+
+    <article>
+      <!-- <p>
+        Hola, soy John Serrano comence a aprender desarrollo web en el 2011 obtuve una titulación, Tecnólogo en análisis y
+        desarrollo de sistemas de la información, apartir del 2014 tuve que parar mi carrera por algunos motivos
+        personales pero nunca pare de aprender, desde el 2016 estoy trabajando y aprendiendo muchas cosas.
+      </p> -->
+      <p>
+        ¡Hola! Soy John Serrano. Comencé mi viaje en el desarrollo web en 2011 y obtuve una titulación como Tecnólogo en
+        Análisis y Desarrollo de Sistemas. A partir del 2014 y por 2 años tuve que hacer una pausa en mi carrera por
+        razones personales, pero eso no me detuvo en mi búsqueda de conocimiento. Desde el año 2016, he estado
+        trabajando incansablemente y ampliando mis habilidades.
+      </p>
+      <!-- <p>
+        Actualmente me enfoco en el desarrollo front-end, creando productos y experiencias digitales. Mi pasión por la
+        tecnología y el aprendizaje constante me impulsa a mantenerme al día con las últimas tendencias y herramientas.
+      </p> -->
+      <p>
+        En la actualidad, mi enfoque se centra en el desarrollo front-end, donde creo productos y experiencias
+        digitales. Mi pasión por la tecnología y el aprendizaje constante me motiva a mantenerme al día con las últimas
+        tendencias y herramientas en el campo.
+      </p>
+      <!-- <p>Aquí hay algunas tecnologías con las que he estado trabajando recientemente:</p> -->
+      <p>Algunas de las tecnologías con las que he estado trabajando recientemente:</p>
+      <ul>
+        <li>✅ JavaScript (ES6+)</li>
+        <li>✅ React</li>
+        <li>✅ Node.js</li>
+        <li>✅ TypeScript</li>
+        <li>✅ Next.js</li>
+      </ul>
+    </article>
+  </div>
+  <div class='image'>here image</div>
 </section>
+
+<style>
+  .about {
+    display: flex;
+    margin: 20px 0;
+  }
+
+  .info {
+    max-width: 600px;
+  }
+  h2 {
+    font-size: var(--font-size-large);
+    color: var(--color-white);
+    line-height: 2.3rem;
+    margin: 0;
+    text-wrap: balance;
+    margin-bottom: 32px;
+  }
+  article p {
+    color: var(--color-white);
+    opacity: 0.7;
+    font-size: var(--font-size-medium-text);
+    line-height: 1.5rem;
+    margin: 0 0 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    color: var(--color-white);
+    opacity: 0.7;
+    font-size: var(--font-size-medium-text);
+    line-height: 1.5rem;
+  }
+</style>

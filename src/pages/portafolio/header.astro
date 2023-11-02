@@ -1,42 +1,55 @@
 <header>
-  <div class='title'>
-    <h6>Hola, Soy</h6>
-    <h1>
-      <span style='--text-content: "John Serrano"; --start-color:#007CF0; --end-color:#00DFD8; '>John Serrano</span>
-      <span style='--text-content: "Ingeniero de Software"; --start-color:#7928CA; --end-color:#FF0080; --animation:a2;'
-        >Ingeniero de Software</span
-      >
-    </h1>
-    <!-- <h2>Ingeniero de Software</h2> -->
+  <article>
+    <div class='title'>
+      <h6>Hola, Soy</h6>
+      <h1>
+        <span style='--text-content: "John Serrano"; --start-color:#007CF0; --end-color:#00DFD8; '>John Serrano</span>
+        <span
+          style='--text-content: "Ingeniero de Software"; --start-color:#7928CA; --end-color:#FF0080; --animation:a2;'
+          >Ingeniero de Software</span
+        >
+      </h1>
+      <!-- <h2>Ingeniero de Software</h2> -->
+    </div>
+    <p class='description'>
+      Soy un ingeniero de software con más de 7 años de experiencia. Apasionado por las tecnologías web, me especializo
+      en la creación de experiencias digitales excepcionales.
+    </p>
+
+    <div class='buttons'>
+      <a class='button-1' href='#'>Mis Trabajos</a>
+      <a class='button-2' href='#'>Sobre Mi</a>
+      <!-- se puede cambiar el texto del button -->
+    </div>
+  </article>
+  <div class='image-profile'>
+    <img src='/profile.jpg' alt='Profile' width='500px' />
   </div>
-  <p class='description'>
-    Soy un ingeniero de software con más de 7 años de experiencia. Apasionado por las tecnologías web, me especializo en
-    la creación de experiencias digitales excepcionales.
-  </p>
-  <div>foto</div>
 </header>
 
 <style>
   header {
     color: var(--color-white);
+    display: flex;
+    align-items: center;
+    margin: 20px 0 50px;
   }
 
   .title h6 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: var(--font-size-medium-small);
   }
   .title h1 {
     margin: 0;
-    font-size: 3rem;
+    font-size: var(--font-size-x-large);
     letter-spacing: -0.06em;
-    text-align: center;
+    margin: 10px 0;
   }
   .title span {
     display: block;
     color: var(--color-white);
     line-height: 1.1;
     position: relative;
-    padding: 0 12px;
   }
 
   .title span::before {
@@ -50,6 +63,35 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 1;
+  }
+
+  .description {
+    font-size: var(--font-size-medium-small);
+    line-height: 1.6rem;
+    opacity: 0.7;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .buttons a {
+    padding: 12px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid var(--color-blue-500);
+    color: var(--color-blue-500);
+    font-size: var(--font-size-medium-small);
+    transition: all 0.3s;
+  }
+
+  .buttons a:hover {
+    color: var(--color-white);
+    background-color: var(--color-blue-500);
   }
 
   header p {

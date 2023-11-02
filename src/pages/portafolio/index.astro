@@ -28,18 +28,24 @@ import Header from './header.astro'
     --color-blue: #001d3d;
     --secondary-color: #002851;
     --tertiary-color: #004d94;
+    --color-blue-500: #007cff;
+    --color-blue-800: #004095;
     --light-gray: #344358;
     --color-gray: #2f3a4c;
     --dark-gray: #1f2532;
     --color-white: #fff;
+    --color-black: #000;
     --container: 1000px;
+    --font-size-small: 0.5rem;
+    --font-size-normal: 1rem;
+    --font-size-medium-small: 1.3rem;
+    --font-size-medium-text: 1.2rem;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 2rem;
+    --font-size-x-large: 3.3rem;
 
     flex: 1;
-    background: hsla(211, 100%, 12%, 1);
-    background: radial-gradient(circle, hsla(211, 100%, 12%, 1) 0%, hsla(216, 100%, 4%, 1) 100%);
-    background: -moz-radial-gradient(circle, hsla(211, 100%, 12%, 1) 0%, hsla(216, 100%, 4%, 1) 100%);
-    background: -webkit-radial-gradient(circle, hsla(211, 100%, 12%, 1) 0%, hsla(216, 100%, 4%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#001D3D", endColorstr="#000814", GradientType=1 );
+    background: var(--dark-color);
   }
 
   .container {
