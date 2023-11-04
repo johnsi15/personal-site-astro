@@ -1,10 +1,15 @@
 <section class='projects'>
+  <h6>Amo Lo Que Hago Algunos De Mis Proyectos</h6>
   <ul class='project_list'>
     <li class='project'>
       <div class='info'>
         <div>
           <span class='featured'>Proyecto destacado</span>
-          <h3>Resultados Elecciones Regionales Colombia 2023</h3>
+          <h3>
+            <a href='https://laopinion.github.io/elecciones-resultados/' rel='noopener noreferrer' target='_blank'
+              >Resultados Elecciones Regionales Colombia 2023</a
+            >
+          </h3>
           <p class='description'>
             El proyecto consiste en un módulo que muestra los resultados de las elecciones regionales en Norte de
             Santander Colombia, el módulo cuenta con 5 pestañas. Los datos se toman desde unos archivos XML que da la
@@ -66,13 +71,15 @@
       </div>
       <div class='image'>
         <a href='https://github.com/laopinion/elecciones-resultados' rel='noopener noreferrer' target='_blank'>
-          <img
-            src='/portafolio/projects/elecciones.jpg'
-            alt='Elecciones Regionales Resultados 2023'
-            width='580'
-            height='440'
-            loading='lazy'
-          />
+          <div class='filter'>
+            <img
+              src='/portafolio/projects/elecciones.jpg'
+              alt='Elecciones Regionales Resultados 2023'
+              width='580'
+              height='440'
+              loading='lazy'
+            />
+          </div>
         </a>
       </div>
     </li>
@@ -80,7 +87,11 @@
       <div class='info'>
         <div>
           <span class='featured'>Proyecto destacado</span>
-          <h3>Resultados Elecciones Regionales Colombia 2023</h3>
+          <h3>
+            <a href='https://laopinion.github.io/elecciones-resultados/' rel='noopener noreferrer' target='_blank'
+              >Resultados Elecciones Regionales Colombia 2023</a
+            >
+          </h3>
           <p class='description'>
             El proyecto consiste en un módulo que muestra los resultados de las elecciones regionales en Norte de
             Santander Colombia, el módulo cuenta con 5 pestañas. Los datos se toman desde unos archivos XML que da la
@@ -160,6 +171,16 @@
     margin: 100px 0;
   }
 
+  h6 {
+    font-size: var(--font-size-large);
+    color: var(--color-white);
+    line-height: 2.3rem;
+    margin: 0;
+    text-wrap: balance;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
   .project_list {
     padding: 0;
     margin: 0;
@@ -176,27 +197,77 @@
     margin-bottom: 100px;
   }
   .info {
-    /* grid-column: 7 / -1; */
-    text-align: right;
     position: relative;
-    grid-area: 1 / 7 / -1 / 13;
+    grid-area: 1 / 1 / -1 / 7;
   }
   .image {
-    /* grid-column: 1 / 8; */
-    grid-area: 1 / 1 / -1 / -1;
+    grid-area: 1 / 6 / -1 / -1;
     position: relative;
+    height: 100%;
     z-index: 1;
   }
+
   .image a {
     width: 100%;
     height: 100%;
-    /* background-color: var(--green);
-    border-radius: var(--border-radius); */
     vertical-align: middle;
+    background-color: var(--color-blue-700);
+    border-radius: 4px;
     display: flex;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+  .image a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0px;
+    z-index: 3;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background-color: var(--dark-color);
+    mix-blend-mode: screen;
+  }
+  .image a:hover {
+    background: transparent;
+    outline: 0px;
+  }
+  .image a:hover::before {
+    background: transparent;
+    filter: none;
+  }
+  .filter {
+    width: 100%;
+    border-radius: 4px;
+    mix-blend-mode: multiply;
+    filter: grayscale(100%) contrast(1) brightness(90%);
+    position: relative;
+  }
+  .image a:hover .filter {
+    background: transparent;
+    filter: none;
+  }
+  .filter img {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    max-width: none;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .project:nth-of-type(2n + 1) .info {
+    grid-column: 7 / -1;
+    text-align: right;
+  }
+  .project:nth-of-type(2n + 1) .image {
+    grid-column: 1 / 8;
   }
   .featured {
-    text-align: right;
     display: block;
     color: var(--color-blue-500);
     font-size: var(--font-size-small);
@@ -205,17 +276,24 @@
   h3 {
     margin: 0;
     font-size: var(--font-size-medium);
-    color: var(--color-white);
     opacity: 0.7;
-    text-align: right;
     margin: 0 0 20px;
+    text-wrap: balance;
+    line-height: 1.1;
+  }
+
+  h3 a {
+    color: var(--color-white);
+    text-decoration: none;
+  }
+  h3 a:hover {
+    color: var(--color-blue-500);
   }
   .description {
     font-size: var(--font-size-normal);
     line-height: 1.3rem;
     color: var(--color-white);
     opacity: 0.7;
-    text-align: right;
     margin: 0;
     background-color: var(--color-blue-900);
     padding: 25px 30px;
@@ -230,15 +308,17 @@
     list-style: none;
     display: flex;
     gap: 20px;
-    justify-content: end;
     color: var(--color-white);
     font-size: var(--font-size-small);
     margin: 25px 0 10px;
   }
   .project_links {
     display: flex;
-    justify-content: end;
     gap: 20px;
+  }
+  .project:nth-of-type(2n + 1) .project_tech_list,
+  .project:nth-of-type(2n + 1) .project_links {
+    justify-content: end;
   }
   .project_links a {
     text-decoration: none;
