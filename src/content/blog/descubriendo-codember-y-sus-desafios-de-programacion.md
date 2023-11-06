@@ -86,7 +86,7 @@ taza ta za taza -> taza2ta1za1
 casas casa casasas -> casas1casa1casas1
 ```
 
-Mi solución:
+**Mi solución:**
 ```ts
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
@@ -126,6 +126,62 @@ async function messages() {
 })()
 ```
 
+**Importación de Módulos:**
+```ts
+import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+```
+En esta sección, se importan dos módulos de Node.js. readFile se utiliza para leer archivos de forma asíncrona, y resolve se usa para resolver rutas de archivos.
+
+**Definición de un Tipo:**
+```ts
+export type WordCount = {
+  [word: string]: number
+}
+```
+Se define un tipo llamado **WordCount**, que es un objeto donde las claves son palabras (cadena) y los valores son números que representan la cantidad de veces que aparece esa palabra.
+
+**Función Asíncrona messages():**
+```ts
+const filePath = resolve('./message_01.txt')
+const wordList = await readFile(filePath, { encoding: 'utf8' })
+
+let wordsCount: WordCount = {}
+let resultMessage = ''
+
+wordList.split(' ').forEach(word => {
+  const wordSanitized = word.toLowerCase()
+  wordsCount[wordSanitized] !== undefined ? (wordsCount[wordSanitized] += 1) : (wordsCount[wordSanitized] = 1)
+})
+```
+
+La función resolve se utiliza para obtener la ruta absoluta del archivo message_01.txt. Luego, readFile se usa para leer el contenido del archivo en formato UTF-8 y se almacena en la variable wordList.
+
+Se inicializan dos variables: wordsCount, que será un objeto de tipo WordCount para contar las palabras, y resultMessage, que contendrá el resultado de la operación.
+
+Se divide el contenido del archivo en palabras individuales utilizando split(' '). Luego, se recorre cada palabra y se realiza un conteo de la frecuencia de cada palabra en wordsCount. Se convierten las palabras a minúsculas para que el conteo no sea sensible a mayúsculas y minúsculas.
+
+**Generación del Resultado:**
+```ts
+const words = Object.keys(wordsCount)
+for (const word of words) {
+  resultMessage += `${word}${wordsCount[word]}`
+}
+
+console.log(resultMessage)
+```
+
+Se obtienen todas las palabras únicas del objeto wordsCount y se genera un resultado que combina la palabra y su frecuencia.
+
+Finalmente, se imprime el resultado en la consola.
+
+```ts
+;(async () => {
+  await messages()
+})()
+```
+
+Al final del código, se define una función autoejecutable que llama a messages() para iniciar el proceso. Esto asegura que la función se ejecute inmediatamente al cargar el script.
 
 # Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
