@@ -183,7 +183,7 @@ Finalmente, se imprime el resultado en la consola.
 
 Al final del código, se define una función autoejecutable que llama a messages() para iniciar el proceso. Esto asegura que la función se ejecute inmediatamente al cargar el script.
 
-Puedes encontrar el código completo en el siguiente enlace [código desafío 01](https://github.com/johnsi15/codember) si gustas puedes darle estrellita al repositorio.
+Puedes encontrar el código completo en el siguiente enlace [código desafío 01](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
 
 ## Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
