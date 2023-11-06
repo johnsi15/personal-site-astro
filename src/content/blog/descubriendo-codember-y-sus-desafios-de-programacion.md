@@ -1,22 +1,22 @@
 ---
 title: "Descubriendo Codember y sus Desafíos de Programación"
-publishedDate: "2023-11-05T16:29:10.000Z"
-updatedDate: "2023-11-05T17:09:31.000Z"
-pubDate: "2023-11-05T16:29:10.000Z"
+publishedDate: "2023-11-06T16:29:10.000Z"
+updatedDate: "2023-11-06T17:09:31.000Z"
+pubDate: "2023-11-06T16:29:10.000Z"
 description: "Descubre Codember y su emocionante mundo de desafíos de programación. Resuelve retos en tu lenguaje favorito, ya sea Python, PHP, JavaScript, Go, TypeScript y más. Además, desbloquea pistas secretas para descubrir misterios ocultos en el camino."
 tags: ["JavaScript", "Programación", "development", "webdeveloment", "desarrollo-web", "Python", "PHP", "JavaScript", "TypeScript", "Codember", "Desafios", "retos", "pruebas", "secretos"]
 primaryTag: { name: 'Desarrollo-web', slug: 'desarrollo-web' }
 excerpt: "Descubre Codember y su emocionante mundo de desafíos de programación. Resuelve retos en tu lenguaje favorito, ya sea Python, PHP, JavaScript, Go, TypeScript y más. Además, desbloquea pistas secretas para descubrir misterios ocultos en el camino."
 canonicalURL: "https://johnserrano.co/blog/descubriendo-codember-y-sus-desafios-de-programacion"
 isDraft: false
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1697643034/John%20Serrano/Blog%20Post/codigo-limpio-en-javascript-deuda-tecnica-refactorizacion/k69ul2yssn9t83xwirqm.webp"
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1699289192/John%20Serrano/Blog%20Post/descubriendo-codember-y-sus-desafios-de-programacion/base-portada_ozpsyf.webp"
 ---
 
-# ¿Qué es codember y sus desafíos de programación?
+## ¿Qué es codember y sus desafíos de programación?
 
 Codember es un emocionante sitio web que presenta desafíos semanales de programación. Cada semana, puedes sumergirte en la resolución de estos **desafíos** utilizando tu **lenguaje de programación favorito**. Pero eso no es todo, también puedes descubrir **secretos ocultos** y acumular valiosos puntos.
 
-# La dinámica de los desafíos y sus secretos:
+## La dinámica de los desafíos y sus secretos:
 
 * **Resuelve Rápido, Gana Más**: La dinámica es sencilla; cuanto **más rápido** resuelvas un desafío, más **puntos acumulas**. La velocidad es la clave para ascender en el **ranking**.
 
@@ -25,11 +25,11 @@ Codember es un emocionante sitio web que presenta desafíos semanales de program
 * **Premios**: Existe la **posibilidad** que se den **algunos** premios a los primeros puestos del ranking.
 
 
-# Codember fue creado por Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/):
+## Codember fue creado por Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/):
 
 Codember fue creado por Miguel Angel Duran, también conocido como midudev. Su pasión por la programación y su deseo de ofrecer una plataforma desafiante para la comunidad de desarrolladores han dado vida a este emocionante proyecto.
 
-# Como funciona Codember
+## Como funciona Codember
 
 Al acceder al siguiente [enlace](https://codember.dev/), puedes iniciar sesión con tu cuenta de **GitHub**. Una vez que hayas iniciado sesión, tendrás acceso a una serie de comandos, como `help`, `ls`, `cd`, `submit`, `hint`, `clear`, y más.
 
@@ -65,7 +65,7 @@ casas casa casasas -> casas1casa1casas1
 submit perro3gato3coche1sol1
 ```
 
-# Solución del primer desafío
+## Solución del primer desafío
 
 El primer desafío lo resolví con TypeScript, pero ten en cuenta que puedes abordarlos con tu lenguaje de programación favorito. Estoy emocionado por seguir actualizando en la medida de lo posible esta publicación con los próximos desafíos y sus respectivas explicaciones.
 
@@ -183,7 +183,11 @@ Finalmente, se imprime el resultado en la consola.
 
 Al final del código, se define una función autoejecutable que llama a messages() para iniciar el proceso. Esto asegura que la función se ejecute inmediatamente al cargar el script.
 
-# Conclusiones
+Puedes encontrar el código completo en el siguiente enlace [código desafío 01](https://github.com/johnsi15/codember) si gustas puedes darle estrellita al repositorio.
+
+## Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
+
+Quiero expresar mi sincero agradecimiento a Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/) por ser una fuente constante de inspiración que nos impulsa a seguir aprendiendo y a mejorar como desarrolladores web. Su dedicación y pasión nos motivan a nunca dejar de aprender y a alcanzar nuevos niveles de excelencia en nuestra carrera. ¡Gracias, midudev, por ser un faro en nuestro viaje de desarrollo web!
 
 
