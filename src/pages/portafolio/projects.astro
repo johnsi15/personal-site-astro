@@ -11,10 +11,11 @@
             >
           </h3>
           <p class='description'>
-            El proyecto consiste en un módulo que muestra los resultados de las elecciones regionales en Norte de
-            Santander Colombia, el módulo cuenta con 5 pestañas. Los datos se toman desde unos archivos XML que da la
-            registraduría de Colombia y se construyo una API para transformar esos xml a JSON y de esa manera consumir
-            los datos.
+            El proyecto consiste en un módulo web que muestra los resultados de las elecciones regionales en Norte de
+            Santander, Colombia. El módulo cuenta con cinco pestañas, cada una de las cuales muestra los resultados de
+            una corporación de cargos públicos. Los datos se obtienen de archivos XML proporcionados por la
+            Registraduría Nacional del Estado Civil de Colombia. Para facilitar el consumo de los datos, se ha
+            construido una API que transforma los archivos XML en formato JSON.
           </p>
           <ul class='project_tech_list'>
             <li>HTML5</li>
@@ -80,86 +81,6 @@
               loading='lazy'
             />
           </div>
-        </a>
-      </div>
-    </li>
-    <li class='project'>
-      <div class='info'>
-        <div>
-          <span class='featured'>Proyecto destacado</span>
-          <h3>
-            <a href='https://laopinion.github.io/elecciones-resultados/' rel='noopener noreferrer' target='_blank'
-              >Resultados Elecciones Regionales Colombia 2023</a
-            >
-          </h3>
-          <p class='description'>
-            El proyecto consiste en un módulo que muestra los resultados de las elecciones regionales en Norte de
-            Santander Colombia, el módulo cuenta con 5 pestañas. Los datos se toman desde unos archivos XML que da la
-            registraduría de Colombia y se construyo una API para transformar esos xml a JSON y de esa manera consumir
-            los datos.
-          </p>
-          <ul class='project_tech_list'>
-            <li>HTML5</li>
-            <li>Sass</li>
-            <li>JavaScript</li>
-            <li>NodeJS</li>
-            <li>Express</li>
-          </ul>
-          <div class='project_links'>
-            <a
-              href='https://github.com/laopinion/elecciones-resultados'
-              aria-label='GitHub Link'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                role='img'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                stroke-width='2'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                class='feather feather-github'
-                ><title>GitHub</title><path
-                  d='M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22'
-                ></path></svg
-              >
-            </a>
-            <a
-              href='https://laopinion.github.io/elecciones-resultados/'
-              aria-label='External Link'
-              class='external'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                role='img'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                stroke-width='2'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                class='feather feather-external-link'
-                ><title>External Link</title><path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'
-                ></path><polyline points='15 3 21 3 21 9'></polyline><line x1='10' y1='14' x2='21' y2='3'></line></svg
-              >
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class='image'>
-        <a href='https://github.com/laopinion/elecciones-resultados' rel='noopener noreferrer' target='_blank'>
-          <img
-            src='/portafolio/projects/elecciones.jpg'
-            alt='Elecciones Regionales Resultados 2023'
-            width='580'
-            height='440'
-            loading='lazy'
-          />
         </a>
       </div>
     </li>
@@ -285,6 +206,7 @@
   h3 a {
     color: var(--color-white);
     text-decoration: none;
+    transition: all 0.3s;
   }
   h3 a:hover {
     color: var(--color-blue-500);
