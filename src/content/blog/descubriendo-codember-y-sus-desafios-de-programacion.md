@@ -188,6 +188,6 @@ Puedes encontrar el código completo en el siguiente enlace [código desafío 01
 ## Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
 
-Quiero expresar mi sincero agradecimiento a Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/) por ser una fuente constante de inspiración que nos impulsa a seguir aprendiendo y a mejorar como desarrolladores web. Su dedicación y pasión nos motivan a nunca dejar de aprender y a alcanzar nuevos niveles de excelencia en nuestra carrera. ¡Gracias, midudev, por ser un faro en nuestro viaje de desarrollo web!
+Quiero expresar mi **sincero agradecimiento** a Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/) por ser una fuente constante de **inspiración** que nos impulsa a **seguir aprendiendo y a mejorar como desarrolladores web**. Su dedicación y pasión nos **motivan** a **nunca dejar de aprender** y a alcanzar nuevos niveles de excelencia en nuestra carrera. ¡Gracias, **midudev**, por ser un faro en nuestro viaje de desarrollo web!
 
 
