@@ -67,10 +67,10 @@ submit perro3gato3coche1sol1
 
 ## Solución del primer desafío
 
-El primer desafío lo resolví con TypeScript, pero ten en cuenta que puedes abordarlos con tu lenguaje de programación favorito. Estoy emocionado por seguir actualizando en la medida de lo posible esta publicación con los próximos desafíos y sus respectivas explicaciones.
+El primer desafío lo resolví con **TypeScript**, pero ten en cuenta que puedes abordarlos con tu **lenguaje de programación favorito**. Estoy emocionado por seguir actualizando en la medida de lo posible esta publicación con los **próximos desafíos** y sus respectivas explicaciones.
 
 
-¡Hablemos sobre la solución! Si ya has explorado el primer desafío, es posible que hayas descubierto algunos secretos, solo por mencionar ya encontre los 3 primeros secretos, actualmente esta es mi posición y mi cantidad de puntos:
+¡Hablemos sobre la solución! Si ya has explorado el primer desafío, es posible que hayas descubierto algunos **secretos**, solo por mencionar ya encontre los **3 primeros secretos**, actualmente esta es **mi posición** y **mi cantidad de puntos**:
 
 ```bash
 Tu puntuación actual::
@@ -78,7 +78,7 @@ Posición: 367 (9201017 puntos)
 Retos: 1/1 － Secretos: 3/3
 ```
 
-Para el primer desafío debemos devolver el texto con la cantidad de veces que se repite ese texto todo pegado, ejemplos:
+Para el primer desafío debemos devolver el **texto** con la **cantidad de veces que se repite** ese texto todo pegado, ejemplos:
 
 ```text
 llaveS casa CASA casa llaves -> llaves2casa3
