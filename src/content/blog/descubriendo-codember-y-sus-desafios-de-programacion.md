@@ -131,7 +131,7 @@ async function messages() {
 import { readFile } from 'node:fs/promises'
 import { resolve } from 'node:path'
 ```
-En esta sección, se importan dos módulos de Node.js. readFile se utiliza para leer archivos de forma asíncrona, y resolve se usa para resolver rutas de archivos.
+En esta sección, se importan dos módulos de **Node.js**. **readFile** se utiliza para leer archivos de forma asíncrona, y resolve se usa para resolver rutas de archivos.
 
 **Definición de un Tipo:**
 ```ts
@@ -155,11 +155,11 @@ wordList.split(' ').forEach(word => {
 })
 ```
 
-La función resolve se utiliza para obtener la ruta absoluta del archivo message_01.txt. Luego, readFile se usa para leer el contenido del archivo en formato UTF-8 y se almacena en la variable wordList.
+La función resolve se utiliza para obtener la ruta absoluta del archivo `message_01.txt`. Luego, readFile se usa para leer el contenido del archivo en formato `UTF-8` y se almacena en la variable **wordList**.
 
-Se inicializan dos variables: wordsCount, que será un objeto de tipo WordCount para contar las palabras, y resultMessage, que contendrá el resultado de la operación.
+Se inicializan dos variables: wordsCount, que será un objeto de tipo **WordCount** para contar las palabras, y **resultMessage**, que contendrá el resultado de la operación.
 
-Se divide el contenido del archivo en palabras individuales utilizando split(' '). Luego, se recorre cada palabra y se realiza un conteo de la frecuencia de cada palabra en wordsCount. Se convierten las palabras a minúsculas para que el conteo no sea sensible a mayúsculas y minúsculas.
+Se divide el contenido del archivo en palabras individuales utilizando `split(' ')`. Luego, se recorre cada palabra y se realiza un conteo de la frecuencia de cada palabra en wordsCount. Se convierten las palabras a minúsculas para que el conteo no sea sensible a mayúsculas y minúsculas.
 
 **Generación del Resultado:**
 ```ts
@@ -181,7 +181,7 @@ Finalmente, se imprime el resultado en la consola.
 })()
 ```
 
-Al final del código, se define una función autoejecutable que llama a messages() para iniciar el proceso. Esto asegura que la función se ejecute inmediatamente al cargar el script.
+Al final del código, se define una función autoejecutable que llama a `messages()` para iniciar el proceso. Esto asegura que la función se ejecute inmediatamente al cargar el script.
 
 Puedes encontrar el código completo en el siguiente enlace [código desafío 01](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
 
