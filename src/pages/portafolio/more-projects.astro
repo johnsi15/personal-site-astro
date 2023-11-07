@@ -1,0 +1,177 @@
+---
+import IconoGithub from './icono-github.astro'
+import ExternalLink from './external-link.astro'
+---
+
+<section class='more_projects'>
+  <h6>Otros Proyectos Destacados</h6>
+
+  <ul class='project_list'>
+    <li>
+      <div class='project'>
+        <header>
+          <div class='project_top'>
+            <div class='folder'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                role='img'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                stroke-width='1'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                class='feather feather-folder'
+                ><title>Folder</title><path
+                  d='M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z'></path></svg
+              >
+            </div>
+            <div class='project_links'>
+              <a href='/' aria-label='GitHub Link' target='_blank' rel='noopener noreferrer'><IconoGithub /></a>
+              <a href='/' aria-label='External Link' class='external' target='_blank' rel='noopener noreferrer'
+                ><ExternalLink />
+              </a>
+            </div>
+          </div>
+
+          <h3 class='title'>
+            <a href='/' target='_blank' rel='noopener noreferrer'>API movies</a>
+          </h3>
+
+          <div class='description'>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo impedit ad deserunt! Enim sint quae rerum
+              possimus est delectus, repudiandae soluta illum eveniet porro quidem odio ipsa, non ex odit?
+            </p>
+          </div>
+        </header>
+        <footer>
+          <ul class='project_tech_list'>
+            <li>NextJS</li>
+            <li>MongoDB</li>
+            <li>JavaScript</li>
+          </ul>
+        </footer>
+      </div>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .more_projects {
+    margin: 100px 0;
+  }
+
+  h6 {
+    font-size: var(--font-size-large);
+    color: var(--color-white);
+    line-height: 2.3rem;
+    margin: 0;
+    text-wrap: balance;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .project_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    position: relative;
+  }
+
+  .project_links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .project_links a {
+    text-decoration: none;
+    color: var(--color-white);
+    opacity: 0.7;
+  }
+
+  .project {
+    background-color: var(--color-blue-900);
+    padding: 30px 28px;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px -15px rgb(4 126 255 / 50%);
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    overflow: auto;
+    width: 330px;
+  }
+  .project_top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    font-size: var(--font-size-normal);
+    line-height: 1.3rem;
+    color: var(--color-white);
+    opacity: 0.7;
+    background-color: var(--color-blue-900);
+  }
+
+  .description p {
+    margin: 0;
+  }
+
+  .title {
+    font-size: var(--font-size-medium);
+    line-height: 1.8rem;
+    margin: 0 0 10px;
+  }
+  .title a {
+    text-decoration: none;
+    color: var(--color-white);
+    opacity: 0.8;
+    position: static;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .title a:hover {
+    color: var(--color-blue-500);
+  }
+  .title a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .project_tech_list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: var(--color-white);
+    font-size: var(--font-size-small);
+    margin: 25px 0 10px;
+    opacity: 0.7;
+  }
+  .folder {
+    color: var(--color-blue-500);
+  }
+  .folder svg {
+    height: 40px;
+    width: 40px;
+  }
+</style>
