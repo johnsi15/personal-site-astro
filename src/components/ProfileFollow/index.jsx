@@ -6,7 +6,7 @@ const ProfileFollow = () => {
       <p>
         Soy <strong>John Serrano</strong>.{' '}
         <strong>Desarrollador Web Full-Stack</strong>. Entusiasta de las
-        tecnologías web: JavaScript, Node.js, Docker, Firebase, React, etc. Me
+        tecnologías web: JavaScript, Node.js, TypeScript, Docker, Firebase, React, etc. Me
         puedes encontrar en las siguientes redes sociales:
       </p>
       <ul className={styles.follow__buttons}>
