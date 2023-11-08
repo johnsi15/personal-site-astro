@@ -9,7 +9,7 @@ primaryTag: { name: 'Desarrollo-web', slug: 'desarrollo-web' }
 excerpt: "Descubre Codember y su emocionante mundo de desafíos de programación. Resuelve retos en tu lenguaje favorito, ya sea Python, PHP, JavaScript, Go, TypeScript y más. Además, desbloquea pistas secretas para descubrir misterios ocultos en el camino."
 canonicalURL: "https://johnserrano.co/blog/descubriendo-codember-y-sus-desafios-de-programacion"
 isDraft: false
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1699289192/John%20Serrano/Blog%20Post/descubriendo-codember-y-sus-desafios-de-programacion/base-portada_ozpsyf.webp"
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1699289192/John%20Serrano/Blog%20Post/descubriendo-codember-y-sus-desafios-de-programacion/base-portada_ozpsyf.jpg"
 ---
 
 ## ¿Qué es codember y sus desafíos de programación?
