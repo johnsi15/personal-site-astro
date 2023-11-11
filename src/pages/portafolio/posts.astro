@@ -20,8 +20,10 @@ const posts = blogEntries.slice(0, 3)
       posts.map(post => {
         return (
           <article>
-            <img src={post.data.featureImage} alt={post.data.title} loading='lazy' width='300' height='250' />
-            <h2>{post.data.title}</h2>
+            <img src={post.data.featureImage} alt={post.data.title} loading='lazy' width='340' height='200' />
+            <h2>
+              <a href={post.data.canonicalURL}>{post.data.title}</a>
+            </h2>
             <div class='description'>
               <p>{post.data.description}</p>
             </div>
@@ -50,9 +52,23 @@ const posts = blogEntries.slice(0, 3)
   .posts_list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
   }
 
   article img {
     object-fit: cover;
+    width: 100%;
+  }
+  .description p {
+    /* text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap; */
+  }
+
+  .description {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 </style>
