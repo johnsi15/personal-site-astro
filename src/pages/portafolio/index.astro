@@ -8,6 +8,7 @@ import Projects from './projects.astro'
 import MoreProjects from './more-projects.astro'
 import Testimonial from './testimonial.astro'
 import Contact from './contact.astro'
+import Posts from './posts.astro'
 ---
 
 <Layout
@@ -29,11 +30,15 @@ import Contact from './contact.astro'
       <MoreProjects />
       <Testimonial />
       <Contact />
+      <Posts />
     </section>
   </main>
 </Layout>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   #Portafolio {
     --primary-color: #003566;
     --dark-color: #000814;

@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content'
+
+const blogEntries = (
+  await getCollection('blog', ({ data }) => {
+    return data.isDraft !== true
+  })
+).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
+
+// const blogEntries = await getCollection('blog');
+// console.log({ posts: blogEntries[0].data })
+const posts = blogEntries.slice(0, 3)
+---
+
+<section class='posts'>
+  <h6>Últimos artículos publicados</h6>
+
+  <div class='posts_list'>
+    {
+      posts.map(post => {
+        return (
+          <article>
+            <img src={post.data.featureImage} alt={post.data.title} loading='lazy' width='300' height='250' />
+            <h2>{post.data.title}</h2>
+            <div class='description'>
+              <p>{post.data.description}</p>
+            </div>
+          </article>
+        )
+      })
+    }
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    margin: 100px 0;
+  }
+
+  h6 {
+    font-size: var(--font-size-large);
+    color: var(--color-white);
+    line-height: 2.3rem;
+    margin: 0;
+    text-wrap: balance;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .posts_list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  article img {
+    object-fit: cover;
+  }
+</style>
