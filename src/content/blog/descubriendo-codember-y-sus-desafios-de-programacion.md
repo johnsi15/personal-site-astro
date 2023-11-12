@@ -65,6 +65,10 @@ casas casa casasas -> casas1casa1casas1
 submit perro3gato3coche1sol1
 ```
 
+## Soluciones
+1. [Solución primer desafío](#solución-del-primer-desafío)
+2. [Solución segundo desafío](#solución-del-segundo-desafío)
+
 ## Solución del primer desafío
 
 El primer desafío lo resolví con **TypeScript**, pero ten en cuenta que puedes abordarlos con tu **lenguaje de programación favorito**. Estoy emocionado por seguir actualizando en la medida de lo posible esta publicación con los **próximos desafíos** y sus respectivas explicaciones.
@@ -184,6 +188,112 @@ Finalmente, se imprime el resultado en la consola.
 Al final del código, se define una función autoejecutable que llama a `messages()` para iniciar el proceso. Esto asegura que la función se ejecute inmediatamente al cargar el script.
 
 Puedes encontrar el código completo en el siguiente enlace [código desafío 01](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
+
+## Solución del segundo desafío
+
+Para el segundo desafío debemos desarrollar un **mini compilador** que tome una cadena de **texto** y devuelva **otra cadena de texto** con el resultado cumpliendo unas condiciones, ejemplos:
+
+```text
+- Entrada: "##*&"
+- Salida esperada: "4"
+- Explicación: Incrementa (1), incrementa (2), multiplica (4), imprime (4).
+
+- Entrada: "&##&*&@&"
+- Salida esperada: "0243"
+- Explicación: Imprime (0), incrementa (1), incrementa (2), imprime (2), multiplica (4), imprime (4), decrementa (3), imprime (3).
+```
+
+El defafío completo lo pueden encontrar en el siguiente [link](https://github.com/johnsi15/codember/tree/main/challenges/challenge-02).
+
+**Mi solución:**
+
+```ts
+import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+
+async function miniCompiler() {
+  let text = ''
+
+  try {
+    const filePath = resolve('./message_02.txt')
+    text = await readFile(filePath, { encoding: 'utf8' })
+  } catch (error) {
+    console.log('This is error -> ', error)
+  }
+
+  const listSymbols = text.split('')
+
+  const operations: Record<string, (count: number) => number> = {
+    '&': (count: number) => count,
+    '#': (count: number) => count + 1,
+    '@': (count: number) => count - 1,
+    '*': (count: number) => count * count,
+  }
+
+  let count = 0
+  let result = ''
+
+  listSymbols.forEach(symbol => {
+    count = operations[symbol](count)
+
+    result += symbol === '&' ? count : ''
+  })
+
+  console.log(result)
+}
+
+;(async () => {
+  await miniCompiler() // result -> 024899455
+})()
+
+```
+
+**Explicación del código**, la primera parte del código es lo mismo que hicimos con el desafío anterior así que no voy a entrar al detalle de eso. Revisemos el resto de la solución.
+
+`const listSymbols = text.split('');`
+
+Se convierte el contenido del archivo en una lista de símbolos utilizando el método `split('')`.
+
+```ts
+const operations: Record<string, (count: number) => number> = {
+  '&': (count: number) => count,
+  '#': (count: number) => count + 1,
+  '@': (count: number) => count - 1,
+  '*': (count: number) => count * count,
+};
+```
+
+Se define un objeto operations que asigna símbolos a funciones que realizan operaciones en un contador, se podría haber resuelto con condicionales `if` pero creo que de esta manera queda más escalable el código y menos largo.
+
+```ts
+let count = 0;
+let result = '';
+```
+Se inicializan las variables `count` y `result`.
+
+```ts
+listSymbols.forEach(symbol => {
+  count = operations[symbol](count);
+  result += symbol === '&' ? count : '';
+});
+```
+
+Se itera sobre cada símbolo en `listSymbols`.
+Se aplica la operación correspondiente al símbolo utilizando el objeto `operations`.
+Se construye el resultado concatenando el valor actual de `count` solo si el símbolo es `&`.
+
+```ts
+(async () => {
+  await miniCompiler(); // result -> 024899455
+})();
+```
+
+Al final se imprime el resultado final en la consola.
+
+En resumen, el código lee el contenido de un archivo, realiza **operaciones** basadas en **símbolos en un contador** y luego imprime el resultado en la consola. La lógica de las operaciones está definida en el **objeto operations**. 
+
+Puedes encontrar el código completo en el siguiente enlace [código desafío 02](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
+
 
 ## Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
