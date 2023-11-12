@@ -21,11 +21,13 @@ const posts = blogEntries.slice(0, 3)
         return (
           <article>
             <img src={post.data.featureImage} alt={post.data.title} loading='lazy' width='340' height='200' />
-            <h2>
-              <a href={post.data.canonicalURL}>{post.data.title}</a>
-            </h2>
-            <div class='description'>
-              <p>{post.data.description}</p>
+            <div class='post_info'>
+              <h2 class='title'>
+                <a href={post.data.canonicalURL}>{post.data.title}</a>
+              </h2>
+              <div class='description'>
+                <p>{post.data.description}</p>
+              </div>
             </div>
           </article>
         )
@@ -35,7 +37,7 @@ const posts = blogEntries.slice(0, 3)
 </section>
 
 <style>
-  .testimonials {
+  .posts {
     margin: 100px 0;
   }
 
@@ -52,23 +54,70 @@ const posts = blogEntries.slice(0, 3)
   .posts_list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 10px;
+    gap: 20px;
+  }
+  article {
+    position: relative;
+    border-radius: 4px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+    border: 1px solid var(--color-blue-500);
+  }
+
+  article:hover {
+    box-shadow: 0 5px 30px -15px var(--color-blue-700);
+  }
+
+  article:hover .title {
+    color: var(--color-yellow);
   }
 
   article img {
     object-fit: cover;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
     width: 100%;
   }
-  .description p {
-    /* text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap; */
+
+  article:nth-of-type(2) {
+    transform: translateY(-18px);
   }
 
-  .description {
+  .title {
+    font-size: var(--font-size-medium);
+    line-height: 1.8rem;
+    color: var(--color-blue-500);
+    margin: 0 0 15px;
+    transition: all 0.3s;
+  }
+
+  .title a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .title a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+
+  .post_info {
+    padding: 10px 8px 12px;
+  }
+
+  .description p {
     display: -webkit-box;
-    overflow: hidden;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: var(--font-size-medium-text);
+    line-height: 1.5rem;
+    color: var(--color-white-opacity-70);
+    margin: 0;
   }
 </style>
