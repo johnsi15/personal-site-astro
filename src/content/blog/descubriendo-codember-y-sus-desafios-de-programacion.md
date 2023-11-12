@@ -263,7 +263,7 @@ const operations: Record<string, (count: number) => number> = {
 };
 ```
 
-Se define un objeto operations que asigna símbolos a funciones que realizan operaciones en un contador, se podría haber resuelto con condicionales `if` pero creo que de esta manera queda más escalable el código y menos largo.
+Se define un **objeto `operations`** que asigna símbolos a funciones que realizan operaciones en un contador, se podría haber resuelto con condicionales `if` pero creo que de esta manera queda más escalable el código y menos largo.
 
 ```ts
 let count = 0;
