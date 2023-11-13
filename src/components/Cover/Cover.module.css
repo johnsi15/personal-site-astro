@@ -24,7 +24,7 @@
 }      
 @media screen and (max-width: 768px) {
   .Cover {
-    padding: 0 0 35px;
+    padding: 40px 0 35px;
   }
   .inner { 
     width: 96%;
