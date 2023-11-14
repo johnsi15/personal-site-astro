@@ -209,11 +209,13 @@ import Close from './close.astro'
     display: flex;
     gap: 20px;
   }
+
   header .button {
     border: none;
     padding: 10px;
     box-sizing: border-box;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
     font-weight: bold;
     border-radius: 3px;
   }
@@ -222,9 +224,19 @@ import Close from './close.astro'
     background-color: var(--background-color-button);
   }
 
+  header .buttons .saber_mas:hover {
+    box-shadow: 4px 4px 0 0 var(--text-gray);
+    transform: translate(-5px, -5px);
+  }
+
   header .portafolio {
     color: var(--text-black);
     background-color: var(--background-color-secondary);
+  }
+
+  header .buttons .portafolio:hover {
+    box-shadow: 4px 4px 0 0 var(--text-yellow);
+    transform: translate(-5px, -5px);
   }
 
   header .grid .text h1 {
