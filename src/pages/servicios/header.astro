@@ -44,9 +44,8 @@ import Close from './close.astro'
     <div class='text'>
       <h1>Desarrollo de Sitios Web Profesionales</h1>
       <p>
-        Potencia tu presencia en línea con nuestros servicios profesionales de
-        desarrollo web. Diseñamos sitios web a medida que impulsan tu negocio y
-        capturan la atención de tu audiencia objetivo.
+        Potencia tu presencia en línea con nuestros servicios profesionales de desarrollo web. Diseñamos sitios web a
+        medida que impulsan tu negocio y capturan la atención de tu audiencia objetivo.
       </p>
       <div class='buttons'>
         <a href='#servicios' class='button saber_mas'>Saber más</a>
@@ -54,10 +53,7 @@ import Close from './close.astro'
       </div>
     </div>
     <div class='image'>
-      <img
-        src='/servicios/developer-2.jpg'
-        alt='Desarrollo de sitios web Profesionales'
-      />
+      <img src='/servicios/developer-2.jpg' alt='Desarrollo de sitios web Profesionales' />
     </div>
   </div>
 </header>
@@ -70,7 +66,7 @@ import Close from './close.astro'
   const close = document.querySelector('.close') as HTMLElement
   const menuMobile = document.querySelector('.menuMobile') as HTMLElement
 
-  listItem.forEach((item) => {
+  listItem.forEach(item => {
     item.addEventListener('mouseenter', () => {
       const { left, top, width, height } = item.getBoundingClientRect()
 
@@ -88,24 +84,22 @@ import Close from './close.astro'
       menuBackDrop.style.visibility = 'hidden'
     })
 
-    item.addEventListener('click', (event) => {
+    item.addEventListener('click', event => {
       const el = event.target as Element
       removeClassActiev()
       el.classList.add('active')
 
-      if (
-        el.parentElement?.parentElement?.parentElement?.style.transform ===
-        'translateX(0px)'
-      ) {
-        menuMobile.style.transform = 'translateX(-100%)'
+      if (menuMobile?.classList.contains('activeMenu')) {
+        // menuMobile.style.transform = 'translateX(-100%)'
+        menuMobile.classList.toggle('activeMenu')
         hamburger?.classList.remove('is-active')
-        document.body.style.overflow = 'scroll'
+        document.body.style.overflowY = 'scroll'
       }
     })
   })
 
   const removeClassActiev = () => {
-    listItem.forEach((item) => {
+    listItem.forEach(item => {
       // console.log(item.firstElementChild)
       if (item.firstElementChild?.classList.contains('active')) {
         item.firstElementChild.classList.remove('active')
@@ -116,16 +110,16 @@ import Close from './close.astro'
   btnHamburger.addEventListener('click', () => {
     hamburger?.classList.toggle('is-active')
     // menuMobile.style.display = 'block'
-    menuMobile.style.transform = 'translateX(0)'
-    // if (hamburger?.classList.contains('is-active')) {
-    // }
-    document.body.style.overflow = 'hidden'
+    // menuMobile.style.transform = 'translateX(0)'
+    menuMobile.classList.toggle('activeMenu')
+    document.body.style.overflowY = 'hidden'
   })
 
   close.addEventListener('click', () => {
     hamburger?.classList.remove('is-active')
-    menuMobile.style.transform = 'translateX(-100%)'
-    document.body.style.overflow = 'scroll'
+    // menuMobile.style.transform = 'translateX(-100%)'
+    menuMobile.classList.toggle('activeMenu')
+    document.body.style.overflowY = 'scroll'
   })
 </script>
 
@@ -150,21 +144,9 @@ import Close from './close.astro'
   }
   header {
     background: hsla(221, 51%, 16%, 1);
-    background: linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    background: -moz-linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      130deg,
-      hsla(221, 51%, 16%, 1) 30%,
-      hsla(0, 0%, 0%, 1) 100%
-    );
+    background: linear-gradient(130deg, hsla(221, 51%, 16%, 1) 30%, hsla(0, 0%, 0%, 1) 100%);
+    background: -moz-linear-gradient(130deg, hsla(221, 51%, 16%, 1) 30%, hsla(0, 0%, 0%, 1) 100%);
+    background: -webkit-linear-gradient(130deg, hsla(221, 51%, 16%, 1) 30%, hsla(0, 0%, 0%, 1) 100%);
     min-height: 50vh;
     padding: 10px 0 30px;
     display: grid;
@@ -364,6 +346,7 @@ import Close from './close.astro'
   @media screen and (max-width: 768px) {
     header {
       position: relative;
+      min-height: auto;
       z-index: 2;
     }
     .hamburger {
@@ -373,15 +356,16 @@ import Close from './close.astro'
       display: block;
       position: absolute;
       left: 2px;
-      top: 2px;
+      top: 5px;
     }
     header .container_servicios.nav {
       justify-content: center;
       position: fixed;
       background: #090f1c;
       top: 0;
+      height: 45px;
+      margin: 0;
       z-index: 1;
-      height: 40px;
     }
     header .container_servicios ul li:hover > a {
       color: var(--link-color);
@@ -422,11 +406,15 @@ import Close from './close.astro'
       height: 100%;
       width: 100%;
     }
+
+    .menuMobile.activeMenu {
+      transform: translateX(0);
+    }
     header .grid {
       grid-template-columns: 1fr;
       align-self: start;
       margin: 40px auto 0;
-      width: 96%;
+      width: 92%;
     }
     header .image {
       display: none;
