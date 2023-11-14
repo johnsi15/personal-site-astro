@@ -36,10 +36,11 @@ import Search from './Search'
 
 <script>
   const hamburger = document.querySelector('#Hamburger')
+  const header = document.querySelector('.Header')
+
   if (hamburger) {
-    const header = document.querySelector('.Header')
     const nav = document.querySelector('.Header nav')
-    hamburger.addEventListener('click', (e) => {
+    hamburger.addEventListener('click', e => {
       // console.log(e?.target)
       if (header && !header.classList.contains('active_header')) {
         header?.classList.add('active_header')
@@ -52,13 +53,40 @@ import Search from './Search'
       }
     })
   }
+
+  let lastScrollTop = 0
+
+  window.addEventListener('scroll', function () {
+    let scrollTop = document.documentElement.scrollTop
+
+    if (scrollTop > lastScrollTop) {
+      // El scroll va hacia abajo
+      header?.classList.remove('header_show')
+      header?.classList.add('header_hidden')
+    } else {
+      // El scroll va hacia arriba
+      header?.classList.remove('header_hidden')
+      header?.classList.add('header_show')
+    }
+
+    if (scrollTop <= 0) {
+      header?.classList.remove('header_show')
+    }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop // Asignar el valor actual a lastScrollTop
+  })
 </script>
 
 <style>
   .Header {
-    height: 50px;
-    background: #1c1c1c;
-    /* border-bottom: 2px solid #ffffff;  */
+    height: 70px;
+    transform: translateY(0px);
+    background-color: #000814;
+    position: sticky;
+    top: 0;
+    z-index: 15;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    backdrop-filter: blur(10px);
   }
 
   .header__menu {
@@ -96,6 +124,19 @@ import Search from './Search'
 
   .menu a:hover {
     color: #0078ae;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .header_hidden {
+      transform: translateY(calc(70px * -1));
+      background-color: #000814;
+    }
+
+    .header_show {
+      transform: translateY(0px);
+      box-shadow: 0 5px 30px -10px rgb(0 124 255 / 60%);
+      background-color: rgb(0 8 20 / 85%);
+    }
   }
 
   @media screen and (max-width: 768px) {
