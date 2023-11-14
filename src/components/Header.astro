@@ -82,7 +82,9 @@ import Search from './Search'
     height: 70px;
     transform: translateY(0px);
     background-color: #000814;
-    position: sticky;
+    box-shadow: none;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 15;
     transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -128,11 +130,13 @@ import Search from './Search'
 
   @media (prefers-reduced-motion: no-preference) {
     .header_hidden {
+      height: 70px;
       transform: translateY(calc(70px * -1));
-      background-color: #000814;
+      box-shadow: 0 5px 30px -10px rgb(0 124 255 / 60%);
     }
 
     .header_show {
+      height: 70px;
       transform: translateY(0px);
       box-shadow: 0 5px 30px -10px rgb(0 124 255 / 60%);
       background-color: rgb(0 8 20 / 85%);

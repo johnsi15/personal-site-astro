@@ -2,12 +2,13 @@
   position: relative;
   width: 280px;
 }
+
 .search__results {
   position: absolute;
   top: 100%;
   right: 0;
   background: #ffffff;
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.22);
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.22);
   padding: 12px 14px;
   max-width: 100%;
   box-sizing: border-box;
@@ -20,19 +21,22 @@
   display: grid;
   grid-template-columns: 1fr auto;
 }
+
 .search__form input {
   outline: none;
   border: 1px solid #eeeeee;
   border-radius: 2px 0 0 2px;
   color: #1c1c1c;
   padding: 5px;
-  width: 95%;
+  height: 35px;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .search__form button {
-  background: #0078ae url('/lupa.svg') center/20px no-repeat;
+  background: #001d3d url('/lupa.svg') center/20px no-repeat;
   height: 100%;
-  border: 1px solid #0078ae;
+  border: 1px solid #004095;
   border-radius: 0 2px 2px 0;
   cursor: pointer;
   padding: 0;
@@ -53,6 +57,7 @@
   text-decoration: none;
   color: #1c1c1c;
 }
+
 .title:hover {
   opacity: 0.9;
   color: #0078ae;
