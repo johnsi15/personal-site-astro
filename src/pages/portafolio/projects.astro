@@ -1,6 +1,6 @@
 ---
-import IconoExternalLink from './icono-external-link.astro'
-import IconoGithub from './icono-github.astro'
+import IconoExternalLink from './icons/icono-external-link.astro'
+import IconoGithub from './icons/icono-github.astro'
 ---
 
 <section id='projects' class='projects'>
@@ -372,6 +372,10 @@ import IconoGithub from './icono-github.astro'
     text-decoration: none;
     color: var(--color-white);
     opacity: 0.7;
+    transition: all 0.3s;
+  }
+  .project_links a:hover {
+    color: var(--color-blue-500);
   }
   svg {
     height: 20px;
