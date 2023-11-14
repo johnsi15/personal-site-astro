@@ -2,9 +2,10 @@
 interface Props {
   urlPhoto: string
   name: string
+  description?: string
 }
 
-const { urlPhoto, name } = Astro.props
+const { urlPhoto, name, description } = Astro.props
 ---
 
 <li class='testimonial splide__slide'>
@@ -13,7 +14,7 @@ const { urlPhoto, name } = Astro.props
   </div>
   <div class='description'>
     <p>
-      <slot />
+      {description}
     </p>
     <span>{name}</span>
   </div>
