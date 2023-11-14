@@ -30,13 +30,33 @@ import IconoFacebook from './icons/icono-facebook.astro'
     list-style: none;
     margin: 10px auto 0;
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: center;
     align-items: center;
+    position: relative;
+  }
+
+  .social_list::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    display: inline-block;
+    width: 130px;
+    background-color: var(--color-white-opacity-70);
+    left: 25px;
+  }
+  .social_list::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    display: inline-block;
+    width: 130px;
+    background-color: var(--color-white-opacity-70);
+    right: 25px;
   }
 
   li {
-    background: var(--color-blue-900);
+    /* background: var(--color-blue-900); */
     height: 35px;
     width: 35px;
     display: flex;
@@ -47,8 +67,11 @@ import IconoFacebook from './icons/icono-facebook.astro'
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
 
+  li:hover a {
+    color: var(--color-blue-500);
+  }
   li:hover {
-    background-color: var(--color-blue-700);
+    transform: translateY(-3px);
   }
 
   li a {
