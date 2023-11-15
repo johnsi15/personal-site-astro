@@ -155,4 +155,16 @@ body {
   .container {
     width: 96%;
   }
+
+  body.blur {
+    overflow: hidden;
+  }
+
+  body.blur main>*,
+  body.blur .header__menu #Search_content {
+    filter: blur(5px) brightness(0.7);
+    transition: var(--transition);
+    pointer-events: none;
+    user-select: none;
+  }
 }

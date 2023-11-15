@@ -1,5 +1,5 @@
 ---
-import HeaderLink from './HeaderLink.astro'
+import Menu from './Menu.astro'
 import Hamburger from './Hamburger'
 import Search from './Search'
 ---
@@ -7,29 +7,17 @@ import Search from './Search'
 <!-- https://github.com/withastro/astro/issues/5493 -->
 <header class='Header'>
   <div class='header__menu container'>
-    <Hamburger client:load />
     <nav class='nav'>
-      <ul class='menu'>
-        <li>
-          <HeaderLink href='/'>John Serrano</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink href='/sobre-mi'>Sobre mi</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink href='/blog'>Blog</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink href='/tags/react'>React</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink href='/portafolio'>Portafolio</HeaderLink>
-        </li>
-        <li>
-          <HeaderLink href='/servicios'>Servicios</HeaderLink>
-        </li>
-      </ul>
+      <Menu />
     </nav>
+    <div class='menu_mobile'>
+      <Hamburger client:load />
+      <aside aria-hidden='false' tabindex='1'>
+        <nav>
+          <Menu />
+        </nav>
+      </aside>
+    </div>
     <Search client:load />
   </div>
 </header>
@@ -39,17 +27,15 @@ import Search from './Search'
   const header = document.querySelector('.Header')
 
   if (hamburger) {
-    const nav = document.querySelector('.Header nav')
+    const menu_mobile = document.querySelector('.Header .menu_mobile')
     hamburger.addEventListener('click', e => {
       // console.log(e?.target)
-      if (header && !header.classList.contains('active_header')) {
-        header?.classList.add('active_header')
-        nav?.classList.add('active_nav')
-        document.body.style.overflowY = 'hidden'
+      if (header && !menu_mobile?.classList.contains('active_nav')) {
+        menu_mobile?.classList.add('active_nav')
+        document.body.classList.add('blur')
       } else {
-        header?.classList.remove('active_header')
-        nav?.classList.remove('active_nav')
-        document.body.style.overflowY = 'scroll'
+        menu_mobile?.classList.remove('active_nav')
+        document.body.classList.remove('blur')
       }
     })
   }
@@ -78,6 +64,9 @@ import Search from './Search'
 </script>
 
 <style>
+  :root {
+    --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
   .Header {
     height: 70px;
     transform: translateY(0px);
@@ -87,8 +76,23 @@ import Search from './Search'
     width: 100%;
     top: 0;
     z-index: 15;
-    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transition: var(--transition);
     backdrop-filter: blur(10px);
+    --primary-color: #003566;
+    --dark-color: #000814;
+    --color-blue: #001d3d;
+    --secondary-color: #002851;
+    --tertiary-color: #004d94;
+    --color-blue-500: #007cff;
+    --color-blue-600: #005fdf;
+    --color-blue-700: #004bb4;
+    --color-blue-800: #004095;
+    --color-blue-900: #002e6b;
+    --light-gray: #344358;
+    --color-gray: #2f3a4c;
+    --dark-gray: #1f2532;
+    --color-white: #fff;
+    --color-white-opacity-70: #ffffffb3;
   }
 
   .header__menu {
@@ -101,30 +105,6 @@ import Search from './Search'
   .nav {
     display: flex;
     align-items: center;
-  }
-
-  .menu {
-    list-style: none;
-    margin: 0 auto;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc((90px * 6));
-  }
-
-  .menu a {
-    text-decoration: none;
-    color: #ffffff;
-    text-transform: capitalize;
-    font-size: 1.3rem;
-    font-weight: 400;
-    line-height: 1.6rem;
-    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
-  }
-
-  .menu a:hover {
-    color: #007cff;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -144,7 +124,6 @@ import Search from './Search'
 
   @media screen and (max-width: 768px) {
     .Header {
-      position: fixed;
       top: 0;
       width: 100%;
       display: flex;
@@ -152,9 +131,7 @@ import Search from './Search'
       justify-content: space-between;
       z-index: 19;
     }
-    .active_header {
-      position: fixed;
-    }
+
     .nav {
       display: none;
       transition: 0.2s;
@@ -165,32 +142,50 @@ import Search from './Search'
       padding: 0;
       height: 100vh;
       width: 100vw;
+      order: 2;
       z-index: 20;
     }
-    .active_nav {
-      display: block;
+
+    .menu_mobile {
+      order: 2;
     }
-    .menu {
-      flex-direction: column;
-      margin: 0;
-      height: 100vh;
+    .menu_mobile aside {
+      display: flex;
+      -webkit-box-pack: center;
       justify-content: center;
-      width: 100%;
+      -webkit-box-align: center;
+      align-items: center;
+      position: fixed;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      padding: 50px 10px;
+      width: min(75vw, 400px);
+      height: 100vh;
+      outline: 0px;
+      background-color: var(--dark-color);
+      box-shadow: -10px 0px 30px -15px var(--color-blue-500);
+      z-index: 9;
+      transform: translateX(100vw);
+      visibility: hidden;
+      transition: var(--transition);
     }
 
-    .menu li {
-      margin: 0;
-      padding: 15px 0;
-      margin: 0;
+    .menu_mobile nav {
+      display: flex;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      align-items: center;
       width: 100%;
-    }
-    .menu li:last-child {
-      margin-bottom: 100px;
-    }
-    .menu a {
-      display: block;
+      flex-direction: column;
+      color: var(--color-white);
       text-align: center;
-      width: 100%;
+    }
+
+    .menu_mobile.active_nav aside {
+      transform: translateX(0vw);
+      visibility: visible;
     }
   }
 </style>

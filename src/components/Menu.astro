@@ -1,0 +1,75 @@
+---
+import HeaderLink from './HeaderLink.astro'
+---
+
+<ul class='menu'>
+  <li>
+    <HeaderLink href='/'>John Serrano</HeaderLink>
+  </li>
+  <li>
+    <HeaderLink href='/sobre-mi'>Sobre mi</HeaderLink>
+  </li>
+  <li>
+    <HeaderLink href='/blog'>Blog</HeaderLink>
+  </li>
+  <li>
+    <HeaderLink href='/tags/react'>React</HeaderLink>
+  </li>
+  <li>
+    <HeaderLink href='/portafolio'>Portafolio</HeaderLink>
+  </li>
+  <li>
+    <HeaderLink href='/servicios'>Servicios</HeaderLink>
+  </li>
+</ul>
+
+<style>
+  .menu {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc((90px * 6));
+  }
+
+  .menu a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: 1.6rem;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  }
+
+  .menu a:hover {
+    color: #007cff;
+  }
+
+  @media screen and (max-width: 768px) {
+    .menu {
+      flex-direction: column;
+      margin: 0;
+      height: 100vh;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .menu li {
+      margin: 0;
+      padding: 15px 0;
+      margin: 0;
+      width: 100%;
+    }
+    .menu li:last-child {
+      margin-bottom: 100px;
+    }
+    .menu a {
+      display: block;
+      text-align: center;
+      width: 100%;
+    }
+  }
+</style>

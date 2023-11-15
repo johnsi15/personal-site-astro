@@ -147,4 +147,16 @@ import Social from './social.astro'
       opacity: 1;
     }
   }
+
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    header img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
 </style>

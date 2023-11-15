@@ -13,7 +13,7 @@ const Hamburger = () => {
     <button
       aria-label='Hamburger'
       id='Hamburger'
-      className={`${styles.hamburger} ${styles['hamburger--emphatic']} ${
+      className={`${styles.hamburger} ${styles['hamburger--collapse']} ${
         active ? styles['is-active'] : ''
       }`}
       type='button'
