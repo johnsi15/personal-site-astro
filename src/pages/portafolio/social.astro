@@ -3,9 +3,13 @@ import IconoGithub from './icons/icono-github.astro'
 import IconoLinkedin from './icons/icono-linkedin.astro'
 import IconoTwitter from './icons/icono-twitter.astro'
 import IconoFacebook from './icons/icono-facebook.astro'
+interface Props {
+  borders: boolean
+}
+const { borders } = Astro.props
 ---
 
-<ul class='social_list'>
+<ul class=`social_list ${borders ? 'borders' : ''}`>
   <li>
     <a href='https://github.com/johnsi15' aria-label='GitHub' target='_blank' rel='noreferrer'><IconoGithub /></a>
   </li>
@@ -36,7 +40,7 @@ import IconoFacebook from './icons/icono-facebook.astro'
     position: relative;
   }
 
-  .social_list::after {
+  .borders::after {
     content: '';
     position: absolute;
     height: 1px;
@@ -45,7 +49,7 @@ import IconoFacebook from './icons/icono-facebook.astro'
     background-color: var(--color-white-opacity-70);
     left: 25px;
   }
-  .social_list::before {
+  .borders::before {
     content: '';
     position: absolute;
     height: 1px;

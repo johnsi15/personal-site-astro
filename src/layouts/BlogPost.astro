@@ -1,49 +1,44 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import type { CollectionEntry } from 'astro:content'
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
 // import FormattedDate from '../components/FormattedDate.astro';
-import PostHeader from '../components/PostHeader';
+import PostHeader from '../components/PostHeader'
 import '../styles/highlight.css'
 
-type Props = CollectionEntry<'blog'>['data'];
+type Props = CollectionEntry<'blog'>['data']
 
-const { title, 
-	description, 
-	publishedDate, 
-	updatedDate, 
-	featureImage,
-	primaryTag = { name: 'JavaScript', slug: 'javascript' } } = Astro.props;
+const {
+  title,
+  description,
+  publishedDate,
+  featureImage,
+  primaryTag = { name: 'JavaScript', slug: 'javascript' },
+} = Astro.props
 // console.log({ primaryTag })
 
 const primaryAuthor = { name: 'John Serrano' }
 ---
 
-<html lang="es">
-	<head>
-		<BaseHead 
-			title={title} 
-			description={description} 
-			image={featureImage} 
-			datePublished={publishedDate}
-		/>
-	</head>
+<html lang='es'>
+  <head>
+    <BaseHead title={title} description={description} image={featureImage} datePublished={publishedDate} />
+  </head>
 
-	<body>
-		<Header />
-		<main>
-			<article>
-				<PostHeader
-					title={title}
-					cover={featureImage ? featureImage : '/gallery.jpg'}
-					published_at={publishedDate}
-					primary_author={primaryAuthor}
-					primary_tag={primaryTag}
-				/>
-				<slot />
-			</article>
-		</main>
-		<Footer />
-	</body>
+  <body>
+    <Header />
+    <main>
+      <article>
+        <PostHeader
+          title={title}
+          published_at={publishedDate}
+          primary_author={primaryAuthor}
+          primary_tag={primaryTag}
+        />
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
 </html>

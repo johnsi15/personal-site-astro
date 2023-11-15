@@ -1,4 +1,3 @@
-
 .apoyar {
   max-width: 700px;
   margin: 50px auto 70px;
@@ -8,16 +7,20 @@
   border-top: 2px solid #eeeeee;
   padding-top: 30px;
 }
-.apoyar p {            
-  text-align: center; 
+
+.apoyar p {
+  text-align: center;
   font-size: 1.25rem;
   line-height: 1.5rem;
   border: none;
 }
+
 .apoyar .cripto {
   font-size: 1rem;
 }
+
 .citaBible {
   font-style: italic;
   margin-top: 20px;
+  font-weight: bold;
 }

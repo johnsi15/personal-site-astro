@@ -4,8 +4,9 @@ const ProfileApoyar = () => {
   return (
     <div className={styles.apoyar}>
       <p>
-        Si te gusta lo que lees puedes apoyarme haciendo una donación con
-        PayPal, de antemano gracias por tu apoyo.
+        Si te gusta lo que lees y quieres respaldar mi trabajo, puedes realizar una donación a través de PayPal.
+        Además, estoy disponible para recibir tu apoyo por correo electrónico en <strong>me@johnserrano.co</strong> si
+        prefieres otras opciones. Tu apoyo ayuda a mantener este proyecto en marcha. ¡Gracias por tu apoyo!
       </p>
       <form
         action='https://www.paypal.com/cgi-bin/webscr'

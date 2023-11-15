@@ -5,7 +5,6 @@ import PostProfile from '../PostProfile'
 
 const PostHeader = ({
   title,
-  cover,
   capitalize = false,
   primary_author,
   primary_tag,

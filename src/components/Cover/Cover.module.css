@@ -1,18 +1,17 @@
 .Cover {
   position: relative;
-  color: #ffffff;
+  color: #ffffffb3;
   height: auto;
   padding: 50px 0;
-  /* width: 700px;
-  margin: 0 auto;*/
-  background: #0078ae;
-  /* border-radius: 5px; */
+  background: #000814;
   border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;  
+  border-bottom-left-radius: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-top: 1px solid #001d3d;
 }
+
 .inner {
   margin: 0 auto;
   display: flex;
@@ -21,12 +20,14 @@
   justify-content: center;
   z-index: 11;
   width: 1000px;
-}      
+}
+
 @media screen and (max-width: 768px) {
   .Cover {
     padding: 0 0 35px;
   }
-  .inner { 
+
+  .inner {
     width: 96%;
   }
 }

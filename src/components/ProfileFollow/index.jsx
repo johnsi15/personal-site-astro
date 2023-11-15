@@ -4,10 +4,9 @@ const ProfileFollow = () => {
   return (
     <div className={styles.follow}>
       <p>
-        Soy <strong>John Serrano</strong>.{' '}
-        <strong>Desarrollador Web Full-Stack</strong>. Entusiasta de las
-        tecnologías web: JavaScript, Node.js, Docker, Firebase, React, etc. Me
-        puedes encontrar en las siguientes redes sociales:
+        Soy <strong>John Serrano ingeniero de software</strong> con más de 7 años de experiencia. Me especializo en la creación de
+        experiencias digitales de alto impacto. Entusiasta de las <strong>tecnologías web</strong>: JavaScript, TypeScript, Node.js, Docker,
+        Firebase, React, etc. Me puedes encontrar en las siguientes redes sociales:
       </p>
       <ul className={styles.follow__buttons}>
         <li>
@@ -19,8 +18,8 @@ const ProfileFollow = () => {
             <img
               alt='en Facebook'
               src='/follow/Facebook.svg'
-              width='32'
-              height='32'
+              width='28'
+              height='28'
             />
           </a>
         </li>
@@ -33,14 +32,14 @@ const ProfileFollow = () => {
             <img
               alt='Twitter'
               src='/follow/Twitter.svg'
-              width='32'
-              height='32'
+              width='28'
+              height='28'
             />
           </a>
         </li>
         <li>
           <a href='https://github.com/johnsi15' target='_blank' title='GitHub'>
-            <img alt='GitHub' src='/follow/Github.svg' width='32' height='32' />
+            <img alt='GitHub' src='/follow/Github.svg' width='28' height='28' />
           </a>
         </li>
         <li>
@@ -52,8 +51,8 @@ const ProfileFollow = () => {
             <img
               alt='LinkedIn'
               src='/follow/LinkedIn.svg'
-              width='32'
-              height='32'
+              width='28'
+              height='28'
             />
           </a>
         </li>

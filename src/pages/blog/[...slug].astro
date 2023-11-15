@@ -11,7 +11,7 @@ import PostsGrid from '../../components/PostsGrid'
 export async function getStaticPaths() {
   const posts = await getCollection('blog')
 
-  return posts.map((post) => ({
+  return posts.map(post => ({
     params: { slug: post.slug },
     props: post,
   }))
@@ -24,9 +24,7 @@ const blogEntries = (
   await getCollection('blog', ({ data }) => {
     return data.isDraft !== true && data.title !== post.data.title
   })
-).sort(
-  (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
-)
+).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
 
 const morePosts = blogEntries.slice(0, 3)
 
@@ -90,12 +88,13 @@ const { Content } = await post.render()
   }
   .post__body pre {
     font-size: 1rem;
+    line-height: 1.3rem;
   }
 
   .post__body p a {
     position: relative;
     font-weight: 700;
-    color: #0078ae;
+    color: #004bb4;
     text-decoration: none;
   }
 
@@ -110,7 +109,7 @@ const { Content } = await post.render()
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0078ae;
+    background-color: #004bb4;
     visibility: visible;
     transform: scaleX(1);
     transition: all 0.3s ease-in-out 0s;
@@ -141,7 +140,7 @@ const { Content } = await post.render()
 
   blockquote a {
     text-decoration: none;
-    color: #0078ae;
+    color: #004bb4;
   }
   blockquote a:hover {
     text-decoration: underline;
