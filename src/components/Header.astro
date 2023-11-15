@@ -110,22 +110,21 @@ import Search from './Search'
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 45px;
-    width: calc((80px * 6));
+    width: calc((90px * 6));
   }
 
   .menu a {
     text-decoration: none;
     color: #ffffff;
     text-transform: capitalize;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 400;
     line-height: 1.6rem;
-    transition: 0.2s;
+    transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
 
   .menu a:hover {
-    color: #0078ae;
+    color: #007cff;
   }
 
   @media (prefers-reduced-motion: no-preference) {

@@ -2,7 +2,6 @@
 import styles from './PostsDetailHome.module.css'
 
 const PostsDetailHome = ({ slug, featureImage, title, excerpt = '' }) => {
-  let excerpt_custom = excerpt ? excerpt.slice(0, 160) : ''
   return (
     <>
       <article className={styles.post}>
@@ -20,7 +19,7 @@ const PostsDetailHome = ({ slug, featureImage, title, excerpt = '' }) => {
           <h2 className={styles.title}>
             <a href={`/blog/${encodeURIComponent(slug)}`}>{title}</a>
           </h2>
-          <p className={styles.excerpt}>{excerpt_custom}...</p>
+          <p className={styles.excerpt}>{excerpt}...</p>
         </div>
       </article>
     </>

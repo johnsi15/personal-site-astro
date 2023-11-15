@@ -107,10 +107,11 @@
     border: 1px solid var(--color-blue-500);
     color: var(--color-blue-500);
     font-size: var(--font-size-medium-small);
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   }
   .skill:hover {
     color: var(--color-blue);
     background-color: var(--color-blue-500);
+    transform: translate(-5px, -5px);
   }
 </style>

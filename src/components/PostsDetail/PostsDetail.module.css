@@ -16,16 +16,23 @@
   width: 100%;
 }
 
-.title h2 {
-  font-size: 1.7rem;
-  line-height: 2rem;
+.post__header>a {
+  display: flex;
+}
+
+.post h2 {
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   margin: 0 0 15px;
-  transition: .2s;
 }
 
 .excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 1.2rem;
-  line-height: 1.7rem;
+  line-height: 1.5rem;
   margin: 0;
 }
 
@@ -33,11 +40,12 @@
   text-decoration: none;
   color: #1c1c1c;
   display: flex;
+  transition: all .2s;
 }
 
-.title:hover h2 {
+.title:hover {
   opacity: 0.9;
-  color: #0078ae;
+  color: #007cff;
 }
 
 .profile {
@@ -49,14 +57,14 @@
   opacity: 1;
 }
 
-.profile__name { 
-  position: absolute;            
+.profile__name {
+  position: absolute;
   bottom: -20px;
   left: -32px;
   text-align: center;
   width: 100px;
   opacity: 0;
-  transition: .2s; 
+  transition: .2s;
 }
 
 .profile_avatar {
@@ -87,31 +95,31 @@
   font-weight: 700;
 }
 
-.post__meta > a {
+.post__meta>a {
   position: relative;
   font-weight: 700;
-  color: #0078ae;
+  color: #004bb4;
   text-decoration: none;
 }
 
-.post__meta > a:hover {
+.post__meta>a:hover {
   color: #1c1c1c;
 }
 
-.post__meta > a:before {
+.post__meta>a:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #0078ae;
+  background-color: #004bb4;
   visibility: visible;
   transform: scaleX(1);
   transition: all 0.3s ease-in-out 0s;
 }
 
-.post__meta > a:hover:before {
+.post__meta>a:hover:before {
   visibility: hidden;
   transform: scaleX(0);
 }

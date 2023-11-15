@@ -30,14 +30,15 @@
   padding: 5px;
   height: 35px;
   box-sizing: border-box;
+  font-size: 1rem;
   width: 100%;
 }
 
 .search__form button {
   background: #001d3d url('/lupa.svg') center/20px no-repeat;
   height: 100%;
-  border: 1px solid #004095;
-  border-radius: 0 2px 2px 0;
+  border: 1px solid #007cff;
+  border-radius: 0 4px 4px 0;
   cursor: pointer;
   padding: 0;
   text-indent: -9999px;
@@ -56,11 +57,11 @@
 .title {
   text-decoration: none;
   color: #1c1c1c;
+  transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
 .title:hover {
-  opacity: 0.9;
-  color: #0078ae;
+  color: #004095;
 }
 
 @media screen and (max-width: 768px) {

@@ -11,15 +11,18 @@
 }
 
 .title {
-  font-size: 1.7rem;
-  line-height: 2rem;
+  font-size: 1.5rem;
+  line-height: 1.8rem;
   margin: 0 0 15px;
-  transition: .2s;
 }
 
 .excerpt {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   font-size: 1.2rem;
-  line-height: 1.7rem;
+  line-height: 1.5rem;
   margin: 0;
 }
 
@@ -27,12 +30,13 @@
   display: flex;
 }
 
-.title > a {
+.title>a {
   text-decoration: none;
   color: #1c1c1c;
+  transition: all .2s;
 }
 
-.title > a:hover {
+.title>a:hover {
   opacity: 0.9;
-  color: #0078ae;
+  color: #007cff;
 }
