@@ -6,7 +6,7 @@ import sitemap from '@astrojs/sitemap'
 import react from '@astrojs/react'
 
 // https://astro.build/config
-import vercel from '@astrojs/vercel/static'
+// import vercel from '@astrojs/vercel/static'
 // DOC: https://docs.astro.build/es/guides/integrations-guide/vercel/
 import partytown from '@astrojs/partytown'
 
@@ -39,7 +39,7 @@ export default defineConfig({
     }),
   ],
   output: 'static',
-  adapter: vercel({
-    analytics: true,
-  }),
+  // adapter: vercel({
+  //   analytics: true,
+  // }),
 })

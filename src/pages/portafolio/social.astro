@@ -87,14 +87,10 @@ const { borders } = Astro.props
     transform: translateY(-3px);
   }
 
-  /* li a::before {
-    content: '';
-    display: block;
-    position: absolute;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    top: 0px;
-    left: 0px;
-  } */
+  @media screen and (max-width: 768px) {
+    .borders::after,
+    .borders::before {
+      width: 50px;
+    }
+  }
 </style>
