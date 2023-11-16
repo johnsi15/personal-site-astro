@@ -179,7 +179,10 @@ body {
   }
 
   body.blur main>*,
-  body.blur .header__menu #Search_content {
+  body.blur .header__menu #Search_content,
+  body.blur #Blog>*,
+  body.blur #Posts>*,
+  body.blur #Sobre-mi {
     filter: blur(5px) brightness(0.7);
     transition: var(--transition);
     pointer-events: none;
