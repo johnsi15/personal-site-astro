@@ -66,11 +66,19 @@ const { Content } = await post.render()
 
   .post__body {
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1.4;
     font-weight: 400;
     margin: 0 auto;
     max-width: 700px;
     overflow: hidden;
+  }
+  .post__body h2 {
+    font-size: 1.5em;
+    line-height: 1.1;
+    margin: 25px 0 15px;
+  }
+  .post__body h2 + p {
+    margin-top: 0;
   }
   .post__body h5 {
     font-size: 1.5rem;
@@ -88,7 +96,7 @@ const { Content } = await post.render()
   }
   .post__body pre {
     font-size: 1rem;
-    line-height: 1.3rem;
+    line-height: 1.3;
   }
 
   .post__body p a {
@@ -290,6 +298,10 @@ const { Content } = await post.render()
   @media screen and (max-width: 768px) {
     .post__body figure {
       margin: 0.2em 0 1.3em;
+    }
+
+    #Post .more__posts {
+      margin: 50px auto 30px;
     }
 
     .post__body .kg-bookmark-container {

@@ -24,3 +24,13 @@
   margin-top: 20px;
   font-weight: bold;
 }
+
+@media screen and (max-width: 768px) {
+  .citaBible {
+    text-align: center;
+  }
+
+  .apoyar {
+    margin-bottom: 50px;
+  }
+}

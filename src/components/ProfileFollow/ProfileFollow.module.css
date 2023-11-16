@@ -8,9 +8,10 @@
   border-top: 2px solid #eeeeee;
   padding-top: 30px;
 }
+
 .follow p {
   border: none;
-  line-height: 1.5rem;
+  line-height: 1.3;
 }
 
 .follow__buttons {
@@ -23,9 +24,16 @@
   width: 100%;
 }
 
-.follow__buttons li{
+.follow__buttons li {
   display: inline;
 }
-.follow__buttons img{
+
+.follow__buttons img {
   width: 32px;
+}
+
+@media screen and (max-width: 768px) {
+  .follow {
+    margin: 30px auto 50px;
+  }
 }

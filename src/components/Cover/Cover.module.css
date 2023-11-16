@@ -25,6 +25,8 @@
 @media screen and (max-width: 768px) {
   .Cover {
     padding: 0 0 35px;
+    margin-top: 70px;
+    border-radius: 0;
   }
 
   .inner {

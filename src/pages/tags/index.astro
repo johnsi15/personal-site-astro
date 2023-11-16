@@ -9,7 +9,9 @@ const posts = (
   await getCollection('blog', ({ data }) => {
     return data.isDraft !== true
   })
-).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
+)
+  .sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
+  .slice(0, 20)
 // console.log({ posts: posts[0].data });
 // const isProduction = import.meta.env.PROD
 ---
@@ -31,5 +33,11 @@ const posts = (
   #Tag {
     /* margin-top: 30px; */
     flex: 1;
+  }
+
+  @media screen and (max-width: 768px) {
+    #Tag {
+      margin-top: 100px;
+    }
   }
 </style>
