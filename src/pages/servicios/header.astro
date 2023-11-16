@@ -35,6 +35,9 @@ import Close from './close.astro'
         <li>
           <a href='#contacto'>Contacto</a>
         </li>
+        <li class='mobile'>
+          <a href='/'>John Serrano</a>
+        </li>
       </ul>
     </nav>
     <div id='menu-backdrop'></div>
@@ -126,6 +129,9 @@ import Close from './close.astro'
 <style>
   .btnHamburger,
   .close {
+    display: none;
+  }
+  .mobile {
     display: none;
   }
   #menu-backdrop {
@@ -356,6 +362,9 @@ import Close from './close.astro'
   }
 
   @media screen and (max-width: 768px) {
+    .mobile {
+      display: block;
+    }
     header {
       position: relative;
       min-height: auto;
