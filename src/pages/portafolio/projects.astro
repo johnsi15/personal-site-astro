@@ -384,4 +384,26 @@ import IconoGithub from './icons/icono-github.astro'
   svg.feather {
     fill: none;
   }
+
+  @media screen and (max-width: 768px) {
+    .image {
+      grid-column: 1 / -1;
+      height: 100%;
+      opacity: 0.25;
+    }
+
+    .project:nth-of-type(2n + 1) .image {
+      grid-column: 1 / -1;
+    }
+
+    .project:nth-of-type(2n + 1) .info {
+      grid-column: 1 / -1;
+      text-align: left;
+    }
+
+    .project .info {
+      grid-column: 1 / -1;
+      padding: 25px 25px 20px;
+    }
+  }
 </style>
