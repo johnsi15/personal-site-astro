@@ -4,7 +4,7 @@
 
 @media screen and (max-width: 768px) {
   .hamburger {
-    padding: 10px 15px;
+    padding: 5px 10px;
     outline: none;
     display: inline-block;
     cursor: pointer;
@@ -18,8 +18,8 @@
     border: 0;
     margin: 0;
     overflow: visible;
-    order: 1;
     position: relative;
+    top: 3px;
     z-index: 10;
   }
 

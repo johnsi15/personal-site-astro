@@ -39,17 +39,26 @@
   color: #ffffff;
 }
 
-.previous, .next {
+.previous,
+.next {
   width: 80px;
-} 
+}
 
-.disabled { display: none; }  
+.disabled {
+  display: none;
+}
 
 @media screen and (max-width: 768px) {
+
+  .pagination-container {
+    width: 100%;
+  }
+
   .pagination {
     flex-wrap: wrap;
     row-gap: 10px;
   }
+
   .item {
     margin: 0px 0 10px;
   }

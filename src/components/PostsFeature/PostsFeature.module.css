@@ -125,10 +125,16 @@
 @media screen and (max-width: 768px) {
   .PostsFeature {
     grid-template-columns: minmax(300px, 1fr);
+    margin: 50px 0 20px;
   }
 
   .PostsFeature .picture {
     height: 200px;
     width: 100%;
+  }
+
+  .post__meta {
+    justify-content: flex-start;
+    gap: 20px;
   }
 }

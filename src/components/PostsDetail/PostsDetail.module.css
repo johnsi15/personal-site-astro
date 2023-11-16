@@ -123,3 +123,15 @@
   visibility: hidden;
   transform: scaleX(0);
 }
+
+@media screen and (max-width: 768px) {
+  .post {
+    min-height: auto;
+  }
+
+  .post__meta {
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 10px;
+  }
+}

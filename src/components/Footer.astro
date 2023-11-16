@@ -93,4 +93,24 @@ import Social from '@/pages/portafolio/social.astro'
   .text a:last-child {
     margin: 0;
   }
+
+  @media screen and (max-width: 768px) {
+    #Footer {
+      height: auto;
+      padding: 20px 0 30px;
+    }
+
+    .text {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .services {
+      order: 3;
+    }
+
+    .right {
+      order: 2;
+    }
+  }
 </style>

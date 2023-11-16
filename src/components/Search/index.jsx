@@ -14,7 +14,7 @@ const Search = () => {
           <input
             type='text'
             value={search}
-            placeholder='Buscar'
+            placeholder='Algolia'
             onChange={onChange}
           />
         </label>

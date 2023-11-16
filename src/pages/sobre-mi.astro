@@ -73,12 +73,13 @@ import Layout from '../layouts/index.astro'
 
 <style>
   .main {
-    margin: 70px auto 50px auto;
+    margin: 30px auto 50px auto;
     max-width: 700px;
   }
 
   .citaBible {
     font-style: italic;
+    font-weight: bold;
   }
 
   h2 {
@@ -143,5 +144,11 @@ import Layout from '../layouts/index.astro'
     gap: 10px;
     font-size: 1.2rem;
     line-height: 1.5rem;
+  }
+
+  @media screen and (max-width: 768px) {
+    .citaBible {
+      text-align: center;
+    }
   }
 </style>

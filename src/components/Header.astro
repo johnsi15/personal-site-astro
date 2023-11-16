@@ -133,21 +133,12 @@ import Search from './Search'
       display: flex;
       align-items: center;
       justify-content: space-between;
+      position: fixed;
       z-index: 19;
     }
 
     .nav {
       display: none;
-      transition: 0.2s;
-      position: fixed;
-      left: 0;
-      top: 50px;
-      background: #1c1c1c;
-      padding: 0;
-      height: 100vh;
-      width: 100vw;
-      order: 2;
-      z-index: 20;
     }
 
     .menu_mobile {
@@ -168,12 +159,13 @@ import Search from './Search'
       width: min(75vw, 400px);
       height: 100vh;
       outline: 0px;
-      background-color: var(--dark-color);
-      box-shadow: -10px 0px 30px -15px var(--color-blue-500);
+      background-color: var(--secondary-color);
+      box-shadow: -10px 0px 30px -15px rgb(0 124 255 / 70%);
       z-index: 9;
       transform: translateX(100vw);
       visibility: hidden;
       transition: var(--transition);
+      box-sizing: border-box;
     }
 
     .menu_mobile nav {
