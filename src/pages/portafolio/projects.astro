@@ -314,6 +314,8 @@ import IconoGithub from './icons/icono-github.astro'
     color: var(--color-blue-500);
     font-size: var(--font-size-small);
     margin: 10px 0;
+    position: relative;
+    z-index: 2;
   }
   h3 {
     margin: 0;
@@ -386,6 +388,9 @@ import IconoGithub from './icons/icono-github.astro'
   }
 
   @media screen and (max-width: 768px) {
+    .projects {
+      margin: 55px auto;
+    }
     .image {
       grid-column: 1 / -1;
       height: 100%;

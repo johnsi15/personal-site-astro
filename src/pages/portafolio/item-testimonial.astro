@@ -52,4 +52,22 @@ const { urlPhoto, name, description } = Astro.props
     font-weight: bold;
     color: var(--color-yellow);
   }
+
+  @media screen and (max-width: 768px) {
+    .testimonial {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 20px 15px;
+      min-height: auto;
+    }
+
+    .description p {
+      max-height: 200px;
+      overflow-y: scroll;
+    }
+
+    .photo {
+      justify-self: center;
+    }
+  }
 </style>

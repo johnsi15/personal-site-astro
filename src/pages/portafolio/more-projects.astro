@@ -398,7 +398,7 @@ import IconoFolder from './icons/icono-folder.astro'
   }
   .title a {
     text-decoration: none;
-    color: var(--color-white-opacity-70);
+    color: var(--color-white);
     position: static;
     display: inline-block;
     transition: all 0.3s;
@@ -427,5 +427,10 @@ import IconoFolder from './icons/icono-folder.astro'
   }
   .folder {
     height: 40px;
+  }
+  @media screen and (max-width: 768px) {
+    .more_projects {
+      margin: 55px auto;
+    }
   }
 </style>

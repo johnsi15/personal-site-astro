@@ -61,12 +61,27 @@ const testimonials = {
   const splideTestimonials = new Splide('#splide-testimonials', {
     type: 'loop',
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     interval: 4000,
     pagination: false,
     gap: '2rem',
     padding: '2rem',
+    breakpoints: {
+      768: {
+        gap: '1rem',
+        padding: '1rem',
+      },
+    },
   })
+
+  // splideTestimonials.on('mounted', function () {
+  //   const secondSlide = document.querySelector('.splide__list #splide-testimonials-slide02')
+  //   const terceSlide = document.querySelector('.splide__list #splide-testimonials-slide03')
+
+  //   if (secondSlide) {
+  //     secondSlide.style.height = '350px' // Altura fija deseada para el segundo elemento
+  //   }
+  // })
 
   splideTestimonials.mount()
 </script>
@@ -90,5 +105,10 @@ const testimonials = {
     margin: 0;
     padding: 0;
     list-style: none;
+  }
+  @media screen and (max-width: 768px) {
+    .testimonials {
+      margin: 55px auto;
+    }
   }
 </style>
