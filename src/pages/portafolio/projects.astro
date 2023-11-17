@@ -392,6 +392,10 @@ import IconoGithub from './icons/icono-github.astro'
       opacity: 0.25;
     }
 
+    .project {
+      margin-bottom: 30px;
+    }
+
     .project:nth-of-type(2n + 1) .image {
       grid-column: 1 / -1;
     }
@@ -404,6 +408,57 @@ import IconoGithub from './icons/icono-github.astro'
     .project .info {
       grid-column: 1 / -1;
       padding: 25px 25px 20px;
+    }
+
+    h3 {
+      opacity: 0.8;
+      margin-bottom: 10px;
+      text-wrap: initial;
+      position: relative;
+      z-index: 2;
+    }
+
+    .project_tech_list {
+      justify-content: flex-start;
+      -webkit-box-pack: start;
+      margin: 10px 0px;
+      flex-flow: wrap;
+      gap: 3px 10px;
+    }
+
+    .project .project_tech_list:nth-of-type(2n + 1) {
+      justify-content: flex-start;
+      -webkit-box-pack: start;
+    }
+
+    .project:nth-of-type(2n + 1) .project_links {
+      justify-content: flex-start;
+      -webkit-box-pack: start;
+    }
+
+    .filter {
+      filter: grayscale(100%) contrast(1) brightness(50%);
+    }
+
+    .description {
+      padding: 20px 0px;
+      background-color: transparent;
+      box-shadow: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    .image a:hover::before {
+      background-color: var(--dark-color);
+      filter: inherit;
+    }
+
+    .image a:hover .filter {
+      filter: grayscale(100%) contrast(1) brightness(50%);
+    }
+
+    .image a:hover {
+      background-color: var(--color-blue-600);
     }
   }
 </style>
