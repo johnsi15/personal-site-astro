@@ -28,8 +28,7 @@ import Search from './Search'
 
   if (hamburger) {
     const menu_mobile = document.querySelector('.Header .menu_mobile')
-    hamburger.addEventListener('click', e => {
-      // console.log(e?.target)
+    hamburger.addEventListener('click', () => {
       if (header && !menu_mobile?.classList.contains('active_nav')) {
         menu_mobile?.classList.add('active_nav')
         document.body.classList.add('blur')
