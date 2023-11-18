@@ -26,7 +26,7 @@
   outline: none;
   border: 1px solid #eeeeee;
   border-radius: 2px 0 0 2px;
-  color: #1c1c1c;
+  color: #000814;
   padding: 5px;
   height: 35px;
   box-sizing: border-box;
@@ -56,7 +56,7 @@
 
 .title {
   text-decoration: none;
-  color: #1c1c1c;
+  color: #000814;
   transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
