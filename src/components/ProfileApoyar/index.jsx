@@ -4,11 +4,18 @@ const ProfileApoyar = () => {
   return (
     <div className={styles.apoyar}>
       <p>
-        Si te gusta lo que lees y quieres respaldar mi trabajo, puedes realizar una donación a través de PayPal.
+        Si te gusta lo que lees y quieres respaldar mi trabajo, puedes realizar una donación a través de Tarjeta de crédito o PSE.
         Además, estoy disponible para recibir tu apoyo por correo electrónico en <strong>me@johnserrano.co</strong> si
         prefieres otras opciones. Tu apoyo ayuda a mantener este proyecto en marcha. ¡Gracias por tu apoyo!
       </p>
-      <form
+      <a 
+        className={styles.linkDonacion} 
+        href="https://link.mercadopago.com.co/johnserrano"  
+        aria-label='Mercado Pago' 
+        target='_blank'
+        rel='noopener noreferrer'
+      >Donar aquí</a>
+      {/* <form
         action='https://www.paypal.com/cgi-bin/webscr'
         method='post'
         target='_top'
@@ -23,7 +30,7 @@ const ProfileApoyar = () => {
           title='PayPal - The safer, easier way to pay online!'
           alt='Donate with PayPal button'
         />
-      </form>
+      </form> */}
       <p className={styles.cripto}>
         Puedes donar criptomonedas con: <br />
         <strong>TRX Tron red TRC20:</strong> <br />

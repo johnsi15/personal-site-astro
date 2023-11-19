@@ -25,6 +25,22 @@
   font-weight: bold;
 }
 
+.linkDonacion {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #000814;
+  border: 1px solid var(--color-blue-500);
+  color: #ffffff;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.linkDonacion:hover,
+.linkDonacion:active {
+  box-shadow: 0 0 10px var(--color-blue-500);
+}
+
 @media screen and (max-width: 768px) {
   .citaBible {
     text-align: center;
