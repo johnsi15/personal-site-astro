@@ -12,7 +12,7 @@ isDraft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1701029542/John%20Serrano/Blog%20Post/mis-3-extensiones-favoritas-de-vs-code-que-te-ayudaran-en-el-desarrollo-web/vscode_exz3rp.jpg"
 ---
 
-Como desarrollador web, siempre estoy buscando formas de mejorar mi **productividad** y **eficiencia**. Una de las mejores maneras de hacerlo es usar **extensiones de Visual Studio Code**. En este artículo, te voy a contar sobre **mis 3 extensiones favoritas de VS Code** que me ayudan a hacer mi trabajo mejor. Estas extensiones son: 
+Como desarrollador web, siempre estoy buscando formas de mejorar mi **productividad** y **eficiencia**. Una de las mejores maneras de hacerlo es usar extensiones de Visual Studio Code. En este artículo, te voy a contar sobre **mis 3 extensiones favoritas de VS Code** que me ayudan a hacer mi trabajo mejor. Estas extensiones son: 
 
 * Error Lens
 * Console Ninja
