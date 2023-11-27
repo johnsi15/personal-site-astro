@@ -37,13 +37,16 @@
       </ul>
     </article>
   </div>
-  <div class='image'>here image</div>
+  <div class='image'>
+    <img src='/portafolio/profile/john-serrano-info.png' alt='Profile description' width='320px' loading='lazy' />
+  </div>
 </section>
 
 <style>
   .about {
     display: flex;
     margin: 20px 0;
+    gap: 30px;
   }
 
   .info {
@@ -84,6 +87,18 @@
     align-items: center;
     width: 100%;
     color: var(--color-white);
+    position: relative;
+  }
+
+  .image::after {
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 50px;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgb(0 8 20) 0%, rgba(0, 0, 0, 0) 20%);
   }
 
   @media screen and (max-width: 768px) {
