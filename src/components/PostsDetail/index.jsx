@@ -50,7 +50,7 @@ const PostsDetail = ({
             >
               <img
                 className={styles.profile__image}
-                src='/profile.jpg'
+                src='/profile.webp'
                 alt={primary_author}
                 width='35'
                 height='35'

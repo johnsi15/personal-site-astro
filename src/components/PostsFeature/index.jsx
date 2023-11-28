@@ -44,7 +44,7 @@ const PostsFeature = ({ data, slug }) => {
             >
               <img
                 className={styles.profile__image}
-                src='/profile.jpg'
+                src='/profile.webp'
                 alt={primaryAuthor}
                 width='35'
                 height='35'

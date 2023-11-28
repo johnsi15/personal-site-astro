@@ -90,7 +90,14 @@ const { borders } = Astro.props
   @media screen and (max-width: 768px) {
     .borders::after,
     .borders::before {
-      width: 50px;
+      width: 60px;
+    }
+
+    .borders::after {
+      left: 0;
+    }
+    .borders::before {
+      right: 0;
     }
   }
 </style>
