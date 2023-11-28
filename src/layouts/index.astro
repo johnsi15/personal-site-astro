@@ -23,6 +23,30 @@ const { title, description, image, datePublished } = Astro.props
       })(window, document, 'script', 'dataLayer', 'GTM-MKJQTJ3')
     </script>
     <!-- End Google Tag Manager -->
+    <script>
+      partytown = {
+        resolveUrl: (url, location, type) => {
+          if (type === 'script') {
+            const siteUrl = 'https://johnserrano.co/proxytown'
+
+            if (url.hostname === 'www.googletagmanager.com') {
+              const proxyUrl = new URL(`${siteUrl}/gtm`)
+
+              const gtmId = new URL(url).searchParams.get('id')
+              gtmId && proxyUrl.searchParams.append('id', gtmId)
+
+              return proxyUrl
+            } else if (url.hostname === 'www.google-analytics.com') {
+              const proxyUrl = new URL(`${siteUrl}/ga`)
+
+              return proxyUrl
+            }
+          }
+
+          return url
+        },
+      }
+    </script>
     <BaseHead
       title={title || SITE_TITLE}
       description={description || SITE_DESCRIPTION}
@@ -45,12 +69,13 @@ const { title, description, image, datePublished } = Astro.props
       <slot />
       <Footer />
     </section>
-  </body><style>
-    #Layout {
-      display: flex;
-      flex-direction: column;
-      margin: 0;
-      min-height: 100vh;
-    }
-  </style>
+    <style>
+      #Layout {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        min-height: 100vh;
+      }
+    </style>
+  </body>
 </html>
