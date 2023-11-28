@@ -38,13 +38,16 @@ export default defineConfig({
           const proxiedHosts = [
             'googletagmanager.com',
             'connect.facebook.net',
-            'pagead2.googlesyndication.com',
-            'google-analytics.com'
+            'pagead2.googlesyndication.com'
           ]
 
           if (proxiedHosts.includes(url.hostname)) {
-            // const proxyUrl = new URL('/proxytown/gtm', 'https://johnserrano.co');
-            const proxyUrl = new URL(location.origin);
+            const proxyUrl = new URL('/proxytown/gtm', 'https://johnserrano.co');
+            // const proxyUrl = new URL(location.origin);
+            proxyUrl.searchParams.append('url', url.href);
+            return proxyUrl;
+          } else if (url.hostname === 'www.google-analytics.com') {
+            const proxyUrl = new URL('/proxytown/ga', 'https://johnserrano.co');
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
           }
