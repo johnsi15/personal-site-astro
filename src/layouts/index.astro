@@ -2,6 +2,7 @@
 import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
+import Gtm from '../components/gtm.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 const { title, description, image, datePublished } = Astro.props
 ---
@@ -9,44 +10,7 @@ const { title, description, image, datePublished } = Astro.props
 <!DOCTYPE html>
 <html lang='es'>
   <head>
-    <!-- Google Tag Manager -->
-    <script type='text/partytown'>
-      ;(function (w, d, s, l, i) {
-        w[l] = w[l] || []
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : ''
-        j.async = true
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-        f.parentNode.insertBefore(j, f)
-      })(window, document, 'script', 'dataLayer', 'GTM-MKJQTJ3')
-    </script>
-    <!-- End Google Tag Manager -->
-    <script>
-      partytown = {
-        resolveUrl: (url, location, type) => {
-          if (type === 'script') {
-            const siteUrl = 'https://johnserrano.co/proxytown'
-
-            if (url.hostname === 'www.googletagmanager.com') {
-              const proxyUrl = new URL(`${siteUrl}/gtm`)
-
-              const gtmId = new URL(url).searchParams.get('id')
-              gtmId && proxyUrl.searchParams.append('id', gtmId)
-
-              return proxyUrl
-            } else if (url.hostname === 'www.google-analytics.com') {
-              const proxyUrl = new URL(`${siteUrl}/ga`)
-
-              return proxyUrl
-            }
-          }
-
-          return url
-        },
-      }
-    </script>
+    <Gtm />
     <BaseHead
       title={title || SITE_TITLE}
       description={description || SITE_DESCRIPTION}

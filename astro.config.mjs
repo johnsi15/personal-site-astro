@@ -34,6 +34,21 @@ export default defineConfig({
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       config: {
+        resolveUrl: (url, location, type) => {
+          const proxiedHosts = [
+            'googletagmanager.com',
+            'connect.facebook.net',
+            'pagead2.googlesyndication.com',
+          ]
+
+          if (proxiedHosts.includes(url.hostname)) {
+            const proxyUrl = new URL('https://johnserrano.co/proxytown', 'gtm');
+            proxyUrl.searchParams.append('url', url.href);
+            return proxyUrl;
+          }
+    
+          return url;
+        },
         forward: ['dataLayer.push', 'fbq'],
       },
     }),
