@@ -11,26 +11,10 @@ const ProfileApoyar = () => {
       <a 
         className={styles.linkDonacion} 
         href="https://link.mercadopago.com.co/johnserrano"  
-        aria-label='Mercado Pago' 
+        aria-label='Donar aquí Mercado Pago' 
         target='_blank'
         rel='noopener noreferrer'
       >Donar aquí</a>
-      {/* <form
-        action='https://www.paypal.com/cgi-bin/webscr'
-        method='post'
-        target='_top'
-      >
-        <input type='hidden' name='cmd' value='_s-xclick' />
-        <input type='hidden' name='hosted_button_id' value='SJZPTCRX7TYGA' />
-        <input
-          type='image'
-          src='https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png'
-          border='0'
-          name='submit'
-          title='PayPal - The safer, easier way to pay online!'
-          alt='Donate with PayPal button'
-        />
-      </form> */}
       <p className={styles.cripto}>
         Puedes donar criptomonedas con: <br />
         <strong>TRX Tron red TRC20:</strong> <br />

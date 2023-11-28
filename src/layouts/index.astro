@@ -1,31 +1,43 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-const { 
-  title, 
-  description, 
-  image,
-  datePublished,
-} = Astro.props;
+import BaseHead from '../components/BaseHead.astro'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+const { title, description, image, datePublished } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<BaseHead 
-      title={title || SITE_TITLE} 
+<html lang='es'>
+  <head>
+    <!-- Google Tag Manager -->
+    <script type='text/partytown'>
+      ;(function (w, d, s, l, i) {
+        w[l] = w[l] || []
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : ''
+        j.async = true
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+        f.parentNode.insertBefore(j, f)
+      })(window, document, 'script', 'dataLayer', 'GTM-MKJQTJ3')
+    </script>
+    <!-- End Google Tag Manager -->
+    <BaseHead
+      title={title || SITE_TITLE}
       description={description || SITE_DESCRIPTION}
       image={image}
       datePublished={datePublished}
     />
-	</head>
-	<body>
+  </head>
+  <body>
     <!-- Google Tag Manager (noscript) -->
     <noscript>
-      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKJQTJ3"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      <iframe
+        src='https://www.googletagmanager.com/ns.html?id=GTM-MKJQTJ3'
+        height='0'
+        width='0'
+        style='display:none;visibility:hidden'></iframe>
     </noscript>
     <!-- End Google Tag Manager (noscript) -->
     <section id='Layout'>
@@ -33,14 +45,12 @@ const {
       <slot />
       <Footer />
     </section>
-	</body>
+  </body><style>
+    #Layout {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      min-height: 100vh;
+    }
+  </style>
 </html>
-
-<style>
-  #Layout {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-  }
-</style>
