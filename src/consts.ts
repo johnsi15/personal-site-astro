@@ -9,7 +9,7 @@ export const openGraph = {
   url: 'https://johnserrano.co',
   title: SITE_TITLE,
   description: SITE_DESCRIPTION,
-  image: 'https://johnserrano.co/default.jpg',
+  image: 'https://johnserrano.co/default.png',
   site_name: 'johnserrano.co',
   imageWidth: 1200,
   imageHeight: 630
