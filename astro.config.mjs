@@ -44,7 +44,6 @@ export default defineConfig({
 
           if (proxiedHosts.includes(url.hostname)) {
             const proxyUrl = new URL('/proxytown/gtm', 'https://johnserrano.co');
-            console.log(proxyUrl)
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
           }
