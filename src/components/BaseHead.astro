@@ -94,45 +94,6 @@ const {
   })}
 ></script>
 
-<!-- Google Tag Manager -->
-<script type='text/partytown'>
-  ;(function (w, d, s, l, i) {
-    w[l] = w[l] || []
-    w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' })
-    var f = d.getElementsByTagName(s)[0],
-      j = d.createElement(s),
-      dl = l != 'dataLayer' ? '&l=' + l : ''
-    j.async = true
-    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-    f.parentNode.insertBefore(j, f)
-  })(window, document, 'script', 'dataLayer', 'GTM-MKJQTJ3')
-</script>
-<!-- End Google Tag Manager -->
-
-<script>
-  partytown = {
-    forward: ['dataLayer.push'],
-    resolveUrl: url => {
-      const siteUrl = 'https://johnserrano.co/proxytown'
-
-      if (url.hostname === 'www.googletagmanager.com') {
-        const proxyUrl = new URL(`${siteUrl}/gtm`)
-
-        const gtmId = new URL(url).searchParams.get('id')
-        gtmId && proxyUrl.searchParams.append('id', gtmId)
-
-        return proxyUrl
-      } else if (url.hostname === 'www.google-analytics.com') {
-        const proxyUrl = new URL(`${siteUrl}/ga`)
-
-        return proxyUrl
-      }
-
-      return url
-    },
-  }
-</script>
-
 <!-- <script
   async
   src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083367533294626'
