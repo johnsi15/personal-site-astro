@@ -35,10 +35,11 @@ export default defineConfig({
       // Adds dataLayer.push as a forwarding-event.
       config: {
         resolveUrl: (url, location, type) => {
+          console.log(url)
+          console.log(location)
           const proxiedHosts = [
             'googletagmanager.com',
-            'connect.facebook.net',
-            'pagead2.googlesyndication.com'
+            'connect.facebook.net'
           ]
 
           if (proxiedHosts.includes(url.hostname)) {
@@ -48,6 +49,10 @@ export default defineConfig({
             return proxyUrl;
           } else if (url.hostname === 'www.google-analytics.com') {
             const proxyUrl = new URL('/proxytown/ga', 'https://johnserrano.co');
+            proxyUrl.searchParams.append('url', url.href);
+            return proxyUrl;
+          } else if (url.hostname === 'pagead2.googlesyndication.com') {
+            const proxyUrl = new URL('/proxytown/pagead2', 'https://johnserrano.co');
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
           }

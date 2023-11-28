@@ -16,6 +16,10 @@
     {
       "source": "/proxytown/events",
       "destination": "https://connect.facebook.net/en_US/fbevents.js"
+    },
+    {
+      "source": "/proxytown/pagead2",
+      "destination": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083367533294626"
     }
   ],
   "headers": [
