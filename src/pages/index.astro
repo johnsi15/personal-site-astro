@@ -1,28 +1,24 @@
 ---
 import PostCard from '../components/PostCard.astro'
 import Layout from '../layouts/index.astro'
-import Ads01 from './ads/ads-01.astro'
-import Ads02 from './ads/ads-02.astro'
 ---
 
 <Layout>
   <main id='Home' class='container'>
     <div class='main'>
-      <Ads01 />
       <h1 style='display: none;'>Desarrollador web - John Serrano</h1>
       <h2>¿Quién soy?</h2>
       <p>
-        Tecnólogo en análisis y desarrollo de sistemas de la información graduado en el SENA(Colombia) y <strong
-          >Desarrollador Web Full-Stack</strong
-        >. Entusiasta de las tecnologías web: JavaScript, Node.js, Docker, Firebase, React, etc.. Comparto mis
-        conocimientos a través de mi
-        <a href='/blog'>blog</a>. Puedes leer más <a href='/sobre-mi'>sobre mi</a>.
+        Soy un <strong>ingeniero de software</strong> con más de 7 años de experiencia. Me especializo en la creación de
+        experiencias digitales de alto impacto. Entusiasta de las tecnologías web: JavaScript, TypeScript, Node.js, Docker,
+        Firebase, React, etc.. Comparto mis conocimientos a través de mi
+        <a href='/blog'>blog</a>. Puedes leer más <a href='/sobre-mi'>sobre mí</a>.
       </p>
 
       <h2>De qué hablo en mi blog</h2>
       <p>
         <a href='/tags/desarrollo-web'> Desarrollo web</a>, Tutoriales, artículos sobre tecnologías: JavaScript,
-        Node.js, Docker, React, python, etc.
+        TypeScript, Node.js, Docker, React, python, CSS, etc.
       </p>
 
       <!-- <Pauta /> -->
@@ -34,8 +30,6 @@ import Ads02 from './ads/ads-02.astro'
         >
       </p>
 
-      <Ads02 />
-
       <h2>Últimos artículos publicados</h2>
       <!-- {posts.length > 0 && <Posts posts={posts} columns='2' />} -->
       <PostCard columns={2} />
@@ -46,46 +40,47 @@ import Ads02 from './ads/ads-02.astro'
           href='https://twitter.com/Jandrey15'
           rel='noreferrer'
           target='_blank'>(soy @jandrey15)</a
-        >.
+        >. También puedes contactarme enviándome un correo electrónico a <strong>me@johnserrano.co</strong>. Estoy aquí
+        para recibir tus comentarios, sugerencias o ayudarte a resolver cualquier problema que puedas tener.
       </p>
-    </div>
 
-    <div class='apoyar'>
-      <p>Si te gusta lo que lees puedes apoyarme haciendo una donación con PayPal, de antemano gracias por tu apoyo.</p>
-      <form action='https://www.paypal.com/cgi-bin/webscr' method='post' target='_top'>
-        <input type='hidden' name='cmd' value='_s-xclick' />
-        <input type='hidden' name='hosted_button_id' value='SJZPTCRX7TYGA' />
-        <input
-          id='button_paypal'
-          type='image'
-          src='https://www.paypalobjects.com/webstatic/en_US/btn/btn_donate_pp_142x27.png'
-          name='submit'
-          title='PayPal - The safer, easier way to pay online!'
-          alt='Donate with PayPal button'
-        />
-      </form>
-      <p class='cripto'>
-        Puedes donar criptomonedas con: <br />
-        <strong>TRX Tron red TRC20:</strong>
-        <br />
-        TR3nVEsRexQkdXasRLAXLW2n7DmyS7ksrq <br />
-        <strong>BTC Bitcoin red BTC:</strong>
-        <br />
-        1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q <br />
-        <strong>BNB Smart Chain BSC:</strong>
-        <br />
-        0xe8ac8dc8e56208d4dad5f719ba627436187acc16
-      </p>
-      <q class='citaBible'
-        >Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q
-      >
+      <h2>Apoyo</h2>
+      <div class='apoyar'>
+        <p>
+          Si te gusta lo que lees y quieres respaldar mi trabajo, puedes realizar una donación a través de PayPal.
+          Además, estoy disponible para recibir tu apoyo por correo electrónico en <strong>me@johnserrano.co</strong> si
+          prefieres otras opciones. Tu apoyo ayuda a mantener este proyecto en marcha. ¡Gracias por tu apoyo!
+        </p>
+        <a
+          class='linkDonacion'
+          href='https://link.mercadopago.com.co/johnserrano'
+          aria-label='Mercado Pago'
+          target='_blank'
+          rel='noopener noreferrer'>Donar aquí</a
+        >
+        <p class='cripto'>
+          Puedes donar criptomonedas con: <br />
+          <strong>TRX Tron red TRC20:</strong>
+          <br />
+          TR3nVEsRexQkdXasRLAXLW2n7DmyS7ksrq <br />
+          <strong>BTC Bitcoin red BTC:</strong>
+          <br />
+          1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q <br />
+          <strong>BNB Smart Chain BSC:</strong>
+          <br />
+          0xe8ac8dc8e56208d4dad5f719ba627436187acc16
+        </p>
+        <q class='citaBible'
+          >Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q
+        >
+      </div>
     </div>
   </main>
 </Layout>
 
 <style>
   .main {
-    margin: 70px auto 0 auto;
+    margin: 50px auto 0 auto;
     max-width: 700px;
   }
 
@@ -111,21 +106,33 @@ import Ads02 from './ads/ads-02.astro'
 
   .citaBible {
     font-style: italic;
+    font-weight: bold;
   }
 
   h2 {
     font-size: 2rem;
     font-weight: 700;
-    margin: 70px 0 0;
+    margin: 50px 0 0;
   }
 
   p {
     font-size: 1.25rem;
-    line-height: 2rem;
+    line-height: 1.4;
     font-weight: 400;
     margin: 20px 0 0;
     border-bottom: 2px solid #eeeeee;
-    padding-bottom: 35px;
+    padding-bottom: 30px;
+    position: relative;
+  }
+
+  .boder_background::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to bottom, rgba(0, 17, 34, 0.3), rgb(0 124 255 / 0%));
   }
 
   p strong {
@@ -135,7 +142,7 @@ import Ads02 from './ads/ads-02.astro'
   p > a {
     position: relative;
     font-weight: 700;
-    color: #0078ae;
+    color: #004bb4;
     text-decoration: none;
   }
 
@@ -150,7 +157,7 @@ import Ads02 from './ads/ads-02.astro'
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #0078ae;
+    background-color: #004bb4;
     visibility: visible;
     transform: scaleX(1);
     transition: all 0.3s ease-in-out 0s;
@@ -162,5 +169,28 @@ import Ads02 from './ads/ads-02.astro'
   }
   .contact {
     margin-bottom: 70px;
+  }
+
+  .linkDonacion {
+    --color-blue-500: #007cff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #000814;
+    border: 1px solid var(--color-blue-500);
+    color: #ffffff;
+    font-size: 1.3rem;
+    transition: all 0.3s;
+  }
+
+  .linkDonacion:hover,
+  .linkDonacion:active {
+    box-shadow: 0 0 10px var(--color-blue-500);
+  }
+
+  @media screen and (max-width: 768px) {
+    .citaBible {
+      text-align: center;
+    }
   }
 </style>

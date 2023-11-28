@@ -14,7 +14,7 @@ const Pagination = ({
   }
 
   return (
-    <div className='pagination-container'>
+    <div className={styles['pagination-container']}>
       <ul className={styles.pagination}>
         <li
           onClick={previousPage}

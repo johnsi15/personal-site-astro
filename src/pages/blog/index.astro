@@ -1,26 +1,26 @@
 ---
 import Layout from '../../layouts/index.astro'
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 import PostsFeature from '../../components/PostsFeature'
 import PostsPagination from '../../components/PostsPagination'
 
 // DESC
-const posts = (await getCollection('blog', ({ data }) => {
-  return data.isDraft !== true;
-})).sort(
-	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
-);
+const posts = (
+  await getCollection('blog', ({ data }) => {
+    return data.isDraft !== true
+  })
+).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
 const total = posts.length
 const limit = 2
 const pages = Math.ceil(total / limit)
 const meta = {
-	pagination: {
-		limit: 9,
-		page: 1,
-		pages,
-		total
-	}
+  pagination: {
+    limit: 9,
+    page: 1,
+    pages,
+    total,
+  },
 }
 // console.log({ meta })
 // console.log({ posts: posts[0].data });
@@ -28,19 +28,22 @@ const isProduction = import.meta.env.PROD
 ---
 
 <Layout
-	title= 'Blog - John Serrano'
-	description= 'De qué hablo en mi blog: Desarrollo web, Tutoriales, artículos sobre tecnologías: JavaScript, Node.js, Docker, React, python, etc.'
-	url= 'https://johnserrano.co/blog'
-	titleOpenGraph= 'Blog - John Serrano'
+  title='Blog - John Serrano | Frontend, JavaScript, TypeScript, React, Node.js'
+  description='Explora mi blog dedicado al Desarrollo Web y Frontend, donde encontrarás artículos informativos y tutoriales sobre programación y tecnologías destacadas como JavaScript, TypeScript, Node.js, React, Python, entre otras.'
+  url='https://johnserrano.co/blog'
+  titleOpenGraph='Blog - John Serrano'
 >
-	<section id='Blog' class='container'>
-		<PostsFeature {...posts[3]} />
-		<!-- <Pauta /> -->
-		<PostsPagination
-			client:visible
-			posts={posts}
-			meta={meta}
-			isProduction={isProduction}
-		/>
-	</section>
+  <section id='Blog' class='container'>
+    <PostsFeature {...posts[3]} />
+    <!-- <Pauta /> -->
+    <PostsPagination client:visible posts={posts} meta={meta} isProduction={isProduction} />
+  </section>
 </Layout>
+
+<style>
+  @media screen and (max-width: 768px) {
+    #Blog {
+      margin-top: 70px;
+    }
+  }
+</style>

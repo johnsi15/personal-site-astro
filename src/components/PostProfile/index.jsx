@@ -16,7 +16,7 @@ const PostProfile = ({
           <a href='/sobre-mi' className={styles.profile_avatar}>
             <img
               className={styles.profile__image}
-              src='/profile.jpg'
+              src='/profile.webp'
               alt={primary_author.name}
               width='35'
               height='35'

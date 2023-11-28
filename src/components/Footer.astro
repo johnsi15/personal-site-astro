@@ -1,67 +1,116 @@
 ---
-const today = new Date();
+const today = new Date()
+import Social from '@/pages/portafolio/social.astro'
 ---
 
 <footer id='Footer'>
-	<div class='text'>
-		<div class='copyright'>
-			<span>© 2015 - {today.getFullYear()}</span>
-			{' '}
-			por johnserrano.co
-		</div>
-			<a href='/legal' class='legal' rel='nofollow'>Aviso legal y política de privacidad</a>
-		<div class='services'>
-			<a class='alojado' href='https://vercel.com/' rel='noreferrer' target='_blank'>Alojado en Vercel ❤️</a>
-		</div>
-		<p>All rights reserved</p>
-	</div>
+  <div class='text'>
+    <div class='services'>
+      <a href='/legal' class='legal' rel='nofollow'>Aviso legal y política de privacidad</a>
+      <a class='alojado' href='https://vercel.com/' rel='noreferrer' target='_blank'>Alojado en Vercel ❤️</a>
+    </div>
+    <div>
+      <Social borders={false} />
+    </div>
+    <div class='right'>
+      <div class='copyright'>
+        <span>© 2015 - {today.getFullYear()}</span>
+        {' '}
+        por johnserrano.co
+      </div>
+      <p>All rights reserved</p>
+    </div>
+  </div>
 </footer>
 
 <style>
-	#Footer {
-		height: 200px;
-		background: #1c1c1c;
-		color: #ffffff;
-		display: flex;
-		align-items: center;
-	}
+  #Footer {
+    height: 150px;
+    background: #000814;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #001d3d;
+    --color-blue-500: #007cff;
+    --color-white: #ffffff;
+  }
 
-	.services {
-		display: flex;
-		max-width: 260px;
-		justify-content: center;
-		margin: 0 auto 10px;
-		width: 100%;
-	}
+  .services {
+    display: flex;
+    max-width: 260px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    gap: 5px;
+    width: 100%;
+  }
 
-	.text {          
-		margin: 0 auto;
-		font-weight: 400;
-		text-align: center;
-		width: 330px;
-	}
+  .text {
+    margin: 0 auto;
+    font-weight: 400;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 30px;
+  }
 
-	.copyright {
-		margin-bottom: 10px;
-	}
+  .copyright {
+    margin-bottom: 0px;
+  }
 
-	p { margin: 0 0 10px; }
+  p {
+    margin: 0;
+  }
 
-	.copyright a {
-		text-decoration: none;
-		color: #eaeaea;
-		transition: .2s;
-	}
+  .copyright a {
+    text-decoration: none;
+    color: #eaeaea;
+    transition: 0.2s;
+  }
 
-	.legal, .alojado {
-		text-decoration: none;
-		color: #eaeaea;
-		display: block;
-		margin-bottom: 10px;
-		transition: .2s;
-	}
+  .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+  }
 
-	.text a:hover { color: #ffffff; }
+  .legal,
+  .alojado {
+    text-decoration: none;
+    color: #eaeaea;
+    display: block;
+    transition: 0.2s;
+  }
 
-	.text a:last-child { margin: 0 }
+  .text a:hover {
+    color: #ffffff;
+  }
+
+  .text a:last-child {
+    margin: 0;
+  }
+
+  @media screen and (max-width: 768px) {
+    #Footer {
+      height: auto;
+      padding: 20px 0 30px;
+    }
+
+    .text {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .services {
+      order: 3;
+    }
+
+    .right {
+      order: 2;
+    }
+  }
 </style>

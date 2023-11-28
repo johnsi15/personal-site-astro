@@ -1,10 +1,11 @@
 .Newsletter {
-  background: #eaeaea;
+  background-color: #000814;
   padding: 30px 20px;
   border-radius: 5px;
   width: 500px;
   margin: 70px auto 80px;
-} 
+}
+
 .message {
   font-size: 1.3rem;
   line-height: 1.6rem;
@@ -16,9 +17,12 @@
   text-align: center;
   font-size: 1.5rem;
   line-height: 1.9rem;
+  color: #007cff;
   margin: 0;
 }
+
 .Newsletter span {
+  color: #007cff;
   text-align: center;
   font-size: 1.5rem;
   line-height: 1.9rem;
@@ -36,19 +40,20 @@
 }
 
 .newsletter input {
-  border: none;
-  border-radius: 2px;
-  border: 1px solid #444444;
+  border-radius: 4px;
+  border: 1px solid #007cff;
   outline: none;
   padding-left: 10px;
   box-sizing: border-box;
+  font-weight: bold;
+  font-size: 1rem;
   height: 40px;
   transition: .2s;
   width: 220px;
 }
 
 .newsletter input:focus {
-  border-color: #0078ae;
+  border-color: #004095;
 }
 
 .newsletter button {
@@ -57,14 +62,19 @@
   width: 150px;
   border: none;
   color: #ffffff;
-  border-radius: 2px;
+  border-radius: 4px;
   cursor: pointer;
-  background: #0078ae;
+  background: #004095;
   font-size: 1.2rem;
+  transition: all .2s ease;
 }
 
 .newsletter button:active {
   transform: scale(1.1);
+}
+
+.newsletter button:hover {
+  opacity: .8;
 }
 
 .messageRequest {
@@ -74,13 +84,15 @@
   right: 0;
   font-size: 13px;
   text-align: center;
-  color: #1c1c1c;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 768px) {
   .Newsletter {
+    margin: 20px auto 30px;
     width: 85%;
   }
+
   .newsletter input {
     margin-bottom: 20px;
   }

@@ -1,16 +1,14 @@
-// Place any global data in this file.
-// You can import this data from anywhere in your site by using the `import` keyword.
+export const SITE_TITLE = 'Desarrollador web - John Serrano | Frontend, JavaScript, TypeScript, React, Node.js';
+export const SITE_DESCRIPTION = 'Ingeniero de software con más de 7 años de experiencia, especializado en la creación de experiencias digitales de alto impacto. Desarrollo web y entusiasta de tecnologías web como JavaScript, TypeScript, Node.js y React.js. Comprometido con el desarrollo web, aporto soluciones innovadoras y busco constantemente mejorar las experiencias digitales.';
 
-export const SITE_TITLE = 'Desarrollador web - John Serrano | Frontend, JavaScript, React, Node.js';
-export const SITE_DESCRIPTION = 'Desarrollador Web Full-Stack un apasionado y entusiasta de las tecnología web: JavaScript, Node.js, Docker, Firebase, React, etc..';
+// 
 export const LANG = 'es'
 export const openGraph = {
   type: 'website',
   locale: 'es_CO',
   url: 'https://johnserrano.co',
-  title: 'Desarrollador web - John Serrano',
-  description:
-    'Desarrollador Web Full-Stack un apasionado y entusiasta de las tecnología web: JavaScript, Node.js, Docker, Firebase, React, etc..',
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   image: 'https://johnserrano.co/default.jpg',
   site_name: 'johnserrano.co',
   imageWidth: 1200,

@@ -25,13 +25,15 @@ const PostsFeature = ({ data, slug }) => {
 
       <div className={styles.content}>
         <header className={styles.post__header}>
-          <a
-            className={styles.title}
-            href={`/blog/${encodeURIComponent(slug)}`}
-          >
-            <h2>{title}</h2>
-          </a>
-          <p>{excerpt ? excerpt.substring(0, 160) : null}</p>
+          <h2>
+            <a
+              className={styles.title}
+              href={`/blog/${encodeURIComponent(slug)}`}
+            >
+              {title}
+            </a>
+          </h2>
+          <p>{excerpt}</p>
         </header>
         <footer className={styles.post__meta}>
           <div className={styles.profile}>
@@ -42,7 +44,7 @@ const PostsFeature = ({ data, slug }) => {
             >
               <img
                 className={styles.profile__image}
-                src='/profile.jpg'
+                src='/profile.webp'
                 alt={primaryAuthor}
                 width='35'
                 height='35'
