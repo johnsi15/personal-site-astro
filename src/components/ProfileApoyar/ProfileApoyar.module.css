@@ -1,4 +1,3 @@
-
 .apoyar {
   max-width: 700px;
   margin: 50px auto 70px;
@@ -8,16 +7,46 @@
   border-top: 2px solid #eeeeee;
   padding-top: 30px;
 }
-.apoyar p {            
-  text-align: center; 
+
+.apoyar p {
+  text-align: center;
   font-size: 1.25rem;
-  line-height: 1.5rem;
+  line-height: 1.3;
   border: none;
 }
+
 .apoyar .cripto {
   font-size: 1rem;
 }
+
 .citaBible {
   font-style: italic;
   margin-top: 20px;
+  font-weight: bold;
+}
+
+.linkDonacion {
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #000814;
+  border: 1px solid var(--color-blue-500);
+  color: #ffffff;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+}
+
+.linkDonacion:hover,
+.linkDonacion:active {
+  box-shadow: 0 0 10px var(--color-blue-500);
+}
+
+@media screen and (max-width: 768px) {
+  .citaBible {
+    text-align: center;
+  }
+
+  .apoyar {
+    margin-bottom: 50px;
+  }
 }

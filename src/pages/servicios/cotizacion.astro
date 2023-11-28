@@ -1,29 +1,21 @@
 <section class='cotizacion' id='contacto'>
   <div class='content'>
     <figure data-aos='fade-up' data-aos-delay='400'>
-      <img
-        src='/servicios/quote.svg'
-        alt='Cotización'
-        width='600'
-        height='600'
-      />
+      <img src='/servicios/quote.svg' alt='Cotización' width='600' height='600' />
     </figure>
 
     <div class='textCotizacion'>
       <p>
         ¡Obtén tu <strong>cotización</strong> personalizada hoy mismo! Descubre cómo
-        <strong>nuestros servicios</strong> de desarrollo web y marketing digital
-        pueden impulsar tu negocio en línea. ¡No esperes más para llevarlo al siguiente
-        nivel! Solicita una cotización y comienza a crecer en el mundo digital.
+        <strong>nuestros servicios</strong> de desarrollo web y marketing digital pueden impulsar tu negocio en línea. ¡No
+        esperes más para llevarlo al siguiente nivel! Solicita una cotización y comienza a crecer en el mundo digital.
       </p>
       <!-- <a
         class='button'
         href='https://wa.me/3115055761?text=Hola,%20quiero%20saber%20m%C3%A1s%20sobre%20los%20servicios%20que%20ofrecen.%20%C2%BFPuede%20ayudarme?%20'
         target='_blank'>Solicita una Cotización</a
       > -->
-      <a class='button' href='mailto:me@johnserrano.co' target='_blank'
-        >Solicita una Cotización</a
-      >
+      <a class='button' href='mailto:me@johnserrano.co' target='_blank'>Solicita una Cotización</a>
     </div>
   </div>
 </section>
@@ -34,16 +26,6 @@
     padding: 100px 0;
     background-color: var(--background-color-secondary);
   }
-  /* .cotizacion .button {
-    border: none;
-    padding: 20px;
-    color: var(--text-black);
-    background-color: var(--text-yellow);
-    text-decoration: none;
-    font-size: var(--font-size-l);
-    border: none;
-    border-radius: 5px;
-  } */
 
   .cotizacion .content {
     display: flex;
@@ -73,7 +55,6 @@
   }
   .cotizacion .button {
     box-shadow: 0px 1px 0px 0px #fca211;
-    /* background: linear-gradient(to bottom, #ffed64 5%, #fca211 100%); */
     background-color: #fca211;
     border-radius: 6px;
     border: 1px solid var(--background-color);
@@ -90,13 +71,13 @@
     box-sizing: border-box;
   }
   .cotizacion .button:hover {
-    /* background: linear-gradient(to bottom, #fca211 5%, #ffed64 100%); */
     background-color: var(--background-color);
     color: #fca211;
+    box-shadow: 0 0 10px rgb(252 162 17 / 80%);
   }
   .cotizacion .button:active {
-    position: relative;
-    top: 1px;
+    transform: translateY(-3px);
+    box-shadow: 0 0 10px rgb(9 15 28 / 40%);
   }
 
   @media screen and (max-width: 768px) {

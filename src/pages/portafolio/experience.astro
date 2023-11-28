@@ -1,0 +1,131 @@
+<section class='experiences'>
+  <h6>Donde He Trabajado</h6>
+
+  <ul class='experiences_list'>
+    <li class='experience'>
+      <h3>La Opinión <span>Software Engineer</span></h3>
+      <span class='date'>Dicciembre 2020 - Actualidad</span>
+      <ul class='description'>
+        <li>
+          🚀 Desarrolle un sistema para guardar las transacciones de PAYU y dependiendo del estado de la transacción
+          activar una suscripción digital, se desarrollo con Node.js, Express, MongoDB, NodeMailer.
+        </li>
+        <li>🚀 Desarrolle el sitio web chicaqhubo Cúcuta con Next.js, React, MongoDB.</li>
+        <li>
+          🚀 Realice la integración de Google ShowCase con el sistema de paywall dando contenido extendido en el sitio
+          web de La Opinión.
+        </li>
+      </ul>
+    </li>
+    <li class='experience'>
+      <h3>
+        La Opinión
+        <span>Desarrollador web Full Stack</span>
+      </h3>
+      <span class='date'>Marzo 2016 - Enero 2021</span>
+      <ul class='description'>
+        <li>🚀 Desarrolle e implemente la integración de la pasarela de pagos de PAYU.</li>
+        <li>
+          🚀 Elimine trabajo manual automatizando el proceso de crear las plantillas para el envió de correos masivos.
+        </li>
+        <li>
+          🚀 Diseñe y desarrolle push notifications con Firebase y Node.js para el back-end y como base de datos se uso
+          MongoDB.
+        </li>
+      </ul>
+    </li>
+    <li class='experience'>
+      <h3>
+        Plasticos formosa
+        <span>Programador de Software</span>
+      </h3>
+      <span class='date'>Junio 2012 - Enero 2013</span>
+      <ul class='description'>
+        <li>🚀 Entregue algunas aplicaciones en Java y PHP</li>
+        <li>🚀 Desarrollo una aplicación tipo intranet con un sistema de votos en PHP y MYSQL.</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<style>
+  .experiences {
+    margin: 50px 0;
+  }
+  h6 {
+    font-size: var(--font-size-large);
+    color: var(--color-white);
+    line-height: 2.3rem;
+    margin: 0;
+    text-wrap: balance;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .experiences_list {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    flex-flow: wrap;
+    gap: 25px;
+  }
+
+  .experience {
+    color: var(--color-white);
+    border: 1px solid var(--color-blue-500);
+    border-radius: 4px;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s;
+    width: 400px;
+  }
+
+  .experience:hover {
+    box-shadow: 0px 0px 16px 1px rgb(0, 124, 255, 0.33);
+    -webkit-box-shadow: 0px 0px 16px 1px rgb(0, 124, 255, 0.33);
+    -moz-box-shadow: 0px 0px 16px 1px rgb(0, 124, 255, 0.33);
+  }
+
+  .experience:last-child {
+    width: 480px;
+  }
+
+  .description {
+    padding: 0;
+    margin: 15px 0 0;
+    list-style: none;
+  }
+
+  .description li {
+    margin-bottom: 10px;
+    font-size: var(--font-size-normal);
+    line-height: 1.3rem;
+    opacity: 0.7;
+  }
+  .description li:last-child {
+    margin: 0;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: var(--font-size-medium);
+    color: var(--color-yellow);
+    margin-bottom: 8px;
+    line-height: 1.1;
+  }
+  .experience span {
+    font-size: var(--font-size-medium-text);
+    color: var(--color-white);
+    opacity: 0.7;
+  }
+
+  .experience h3 span {
+    opacity: 1;
+  }
+  .experience .date {
+    font-size: var(--font-size-normal);
+  }
+</style>

@@ -14,14 +14,6 @@ const PostsDetail = ({
   primary_author = 'John Serrano',
   publishedDate,
 }) => {
-  // {post.excerpt.slice(0, 92)}...
-  let excerpt_custom = excerpt ? excerpt.slice(0, 160) : ''
-  // console.log(published_at)
-  // https://github.com/you-dont-need/You-Dont-Need-Momentjs
-  // const timeAgo = formatDistanceStrict(new Date(published_at), new Date(), {
-  //   locale: es,
-  //   addSuffix: true,
-  // })
   const { timeAgo } = getTimeDate({ publishedDate })
 
   return (
@@ -38,13 +30,15 @@ const PostsDetail = ({
             />
           </a>
           <div className={styles.content}>
-            <a
-              className={styles.title}
-              href={`/blog/${encodeURIComponent(slug)}`}
-            >
-              <h2>{title}</h2>
-            </a>
-            <p className={styles.excerpt}>{excerpt_custom}...</p>
+            <h2>
+              <a
+                className={styles.title}
+                href={`/blog/${encodeURIComponent(slug)}`}
+              >
+                {title}
+              </a>
+            </h2>
+            <p className={styles.excerpt}>{excerpt}</p>
           </div>
         </header>
         <footer className={styles.post__meta}>
@@ -56,7 +50,7 @@ const PostsDetail = ({
             >
               <img
                 className={styles.profile__image}
-                src='/profile.jpg'
+                src='/profile.webp'
                 alt={primary_author}
                 width='35'
                 height='35'

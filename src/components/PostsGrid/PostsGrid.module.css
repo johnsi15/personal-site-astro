@@ -11,21 +11,27 @@
 
 .Posts {
   display: grid;
-          grid-template-columns: repeat(2, 340px);
-          grid-column-gap: 20px;
-          grid-row-gap: 30px;
-          margin: 30px 0 0;
-          padding-bottom: 50px;
-          border-bottom: 2px solid #eeeeee;
+  grid-template-columns: repeat(2, 340px);
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  margin: 30px 0 0;
+  padding-bottom: 50px;
+  border-bottom: 2px solid #eeeeee;
 }
 
 @media screen and (max-width: 768px) {
   .PostsThree {
     grid-template-columns: repeat(2, 300px);
+    margin: 0 auto;
+    gap: 10px;
+    padding-bottom: 20px;
   }
 }
+
 @media screen and (max-width: 630px) {
-  .PostsThree, .Posts {
+
+  .PostsThree,
+  .Posts {
     grid-template-columns: minmax(300px, 1fr);
   }
 }

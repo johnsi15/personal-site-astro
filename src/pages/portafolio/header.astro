@@ -1,0 +1,184 @@
+---
+import Social from './social.astro'
+---
+
+<header>
+  <article>
+    <div class='title'>
+      <h6>Hola, Soy</h6>
+      <h1>
+        <span style='--text-content: "John Serrano"; --start-color: #FFC300; --end-color:#FFC300; '>John Serrano</span>
+        <span
+          style='--text-content: "Ingeniero de Software"; --start-color:#b2e0ff; --end-color:#b2e0ff; --animation:a2;'
+          >Ingeniero de Software</span
+        >
+      </h1>
+      <!-- <h2>Ingeniero de Software</h2> -->
+    </div>
+    <p class='description'>
+      Soy un ingeniero de software con más de 7 años de experiencia. Me especializo en la creación de experiencias
+      digitales de alto impacto.
+    </p>
+
+    <div class='buttons'>
+      <a class='button-1' href='#projects'>Mis Trabajos</a>
+      <a class='button-2' href='#about'>Conóceme</a>
+    </div>
+  </article>
+  <div class='image-profile'>
+    <img src='/portafolio/profile/john-serrano.png' alt='Profile' width='330px' height='459px' />
+    <Social borders={true} />
+  </div>
+</header>
+
+<style>
+  header {
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    margin: 20px 0 100px;
+    justify-content: space-around;
+  }
+
+  article {
+    max-width: 500px;
+  }
+
+  .image-profile {
+    position: relative;
+  }
+
+  .image-profile::after {
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: 45px;
+    height: 100%;
+    position: absolute;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgb(0 8 20) 0%, rgba(0, 0, 0, 0) 20%);
+  }
+
+  .title h6 {
+    margin: 0;
+    font-size: var(--font-size-medium-small);
+  }
+  .title h1 {
+    margin: 0;
+    font-size: var(--font-size-x-large);
+    letter-spacing: -0.06em;
+    margin: 10px 0;
+  }
+  .title span {
+    display: block;
+    color: var(--color-white);
+    line-height: 1.1;
+    position: relative;
+  }
+
+  .title span::before {
+    animation-name: var(--animation, a);
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    background: linear-gradient(90deg, var(--start-color), var(--end-color));
+    content: var(--text-content);
+    position: absolute;
+    inset: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-color: var(--start-color);
+    opacity: 1;
+  }
+
+  .description {
+    font-size: var(--font-size-medium-small);
+    line-height: 1.6rem;
+    opacity: 0.7;
+  }
+
+  .buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .buttons a {
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid var(--color-blue-500);
+    color: var(--color-blue-500);
+    font-size: var(--font-size-medium-small);
+    transition: all 0.3s;
+  }
+
+  .buttons a:hover {
+    outline: none;
+    box-shadow: 4px 4px 0 0 var(--color-blue-500);
+    transform: translate(-5px, -5px);
+  }
+
+  header p {
+    margin: 0;
+    max-width: 600px;
+    text-wrap: balance;
+  }
+
+  @keyframes a {
+    0%,
+    16.667%,
+    100% {
+      opacity: 1;
+    }
+
+    33.333%,
+    83.333% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes a2 {
+    0%,
+    100% {
+      opacity: 0;
+    }
+
+    33.333%,
+    50% {
+      opacity: 1;
+    }
+
+    16.667%,
+    66.667% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes a3 {
+    0%,
+    50%,
+    100% {
+      opacity: 0;
+    }
+
+    66.667%,
+    83.333% {
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    header {
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 85px;
+      margin-bottom: 50px;
+    }
+
+    header img {
+      object-fit: cover;
+      width: 100%;
+    }
+  }
+</style>

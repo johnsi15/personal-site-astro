@@ -8,13 +8,13 @@ const Search = () => {
   // console.log('This is state the component -> ', state)
 
   return (
-    <div className={styles.Search}>
+    <div id="Search_content" className={styles.Search}>
       <form className={styles.search__form} onSubmit={handleSubmit}>
         <label>
           <input
             type='text'
             value={search}
-            placeholder='Buscar'
+            placeholder='Algolia'
             onChange={onChange}
           />
         </label>
