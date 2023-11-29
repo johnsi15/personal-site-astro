@@ -12,13 +12,13 @@ const { title, description, image, datePublished } = Astro.props
 <html lang='es'>
   <head>
     <Gtm />
-    <AdSense />
     <BaseHead
       title={title || SITE_TITLE}
       description={description || SITE_DESCRIPTION}
       image={image}
       datePublished={datePublished}
     />
+    <AdSense />
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

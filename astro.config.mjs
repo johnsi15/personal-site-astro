@@ -45,10 +45,6 @@ export default defineConfig({
             // const proxyUrl = new URL(location.origin);
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
-          } else if (url.hostname === 'pagead2.googlesyndication.com') {
-            const proxyUrl = new URL('/proxytown/adsense', location.origin);
-            proxyUrl.searchParams.append('url', url.href);
-            return proxyUrl;
           }
     
           return url;
