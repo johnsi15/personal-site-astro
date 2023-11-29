@@ -39,20 +39,13 @@ export default defineConfig({
           console.log({ location })
           const proxiedHosts = [
             'googletagmanager.com',
-            'connect.facebook.net'
+            'connect.facebook.net',
+            'pagead2.googlesyndication.com'
           ]
 
           if (proxiedHosts.includes(url.hostname)) {
             const proxyUrl = new URL('/proxytown/gtm', location.origin);
             // const proxyUrl = new URL(location.origin);
-            proxyUrl.searchParams.append('url', url.href);
-            return proxyUrl;
-          } else if (url.hostname === 'www.google-analytics.com') {
-            const proxyUrl = new URL('/proxytown/ga', location.origin);
-            proxyUrl.searchParams.append('url', url.href);
-            return proxyUrl;
-          } else if (url.hostname === 'pagead2.googlesyndication.com') {
-            const proxyUrl = new URL('/proxytown/pagead2', location.origin);
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
           }
