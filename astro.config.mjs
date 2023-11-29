@@ -34,10 +34,7 @@ export default defineConfig({
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       config: {
-        debug: true,
         resolveUrl: (url, location, type) => {
-          console.log({ url })
-          console.log({ location })
           const proxiedHosts = [
             'googletagmanager.com',
             'connect.facebook.net',
