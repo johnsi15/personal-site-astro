@@ -7,7 +7,7 @@
     },
     {
       "source": "/proxytown/:match*",
-      "destination": "https://stage.johnserrano.co/:match*"
+      "destination": "https://www.googletagmanager.com/gtag/js"
     }
   ],
   "headers": [
