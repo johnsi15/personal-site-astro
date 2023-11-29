@@ -42,12 +42,8 @@ export default defineConfig({
           ]
 
           if (proxiedHosts.includes(url.hostname)) {
-            const proxyUrl = new URL('/proxytown/gtm', 'https://johnserrano.co');
+            const proxyUrl = new URL('/proxytown/gtm', location.origin);
             // const proxyUrl = new URL(location.origin);
-            proxyUrl.searchParams.append('url', url.href);
-            return proxyUrl;
-          } else if (url.hostname === 'www.google-analytics.com') {
-            const proxyUrl = new URL('/proxytown/ga', 'https://johnserrano.co');
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
           }

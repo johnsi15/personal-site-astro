@@ -6,16 +6,8 @@
       "destination": "/_next/static/service-worker.js"
     },
     {
-      "source": "/proxytown/gtm",
+      "source": "/proxytown/:match*",
       "destination": "https://www.googletagmanager.com/gtag/js"
-    },
-    {
-      "source": "/proxytown/ga",
-      "destination": "https://www.google-analytics.com/analytics.js"
-    },
-    {
-      "source": "/proxytown/events",
-      "destination": "https://connect.facebook.net/en_US/fbevents.js"
     }
   ],
   "headers": [
