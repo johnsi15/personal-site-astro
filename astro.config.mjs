@@ -37,12 +37,16 @@ export default defineConfig({
         resolveUrl: (url, location, type) => {
           const proxiedHosts = [
             'googletagmanager.com',
-            'connect.facebook.net'
+            'connect.facebook.net',
           ]
 
           if (proxiedHosts.includes(url.hostname)) {
             const proxyUrl = new URL('/proxytown/gtm', location.origin);
             // const proxyUrl = new URL(location.origin);
+            proxyUrl.searchParams.append('url', url.href);
+            return proxyUrl;
+          } else if (url.hostname === 'pagead2.googlesyndication.com') {
+            const proxyUrl = new URL('/proxytown/adsense', location.origin);
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
           }

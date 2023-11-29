@@ -8,6 +8,10 @@
     {
       "source": "/proxytown/:match*",
       "destination": "https://www.googletagmanager.com/gtag/js"
+    },
+    {
+      "source": "/proxytown/:match*",
+      "destination": "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3083367533294626"
     }
   ],
   "headers": [
