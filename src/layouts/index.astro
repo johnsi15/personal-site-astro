@@ -3,6 +3,7 @@ import BaseHead from '../components/BaseHead.astro'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 import Gtm from '../components/gtm.astro'
+import AdSense from '../components/adsense.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 const { title, description, image, datePublished } = Astro.props
 ---
@@ -11,6 +12,7 @@ const { title, description, image, datePublished } = Astro.props
 <html lang='es'>
   <head>
     <Gtm />
+    <AdSense />
     <BaseHead
       title={title || SITE_TITLE}
       description={description || SITE_DESCRIPTION}
