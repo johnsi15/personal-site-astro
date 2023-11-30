@@ -66,16 +66,11 @@ submit perro3gato3coche1sol1
 ```
 
 ## Soluciones
-- [¿Qué es codember y sus desafíos de programación?](#qué-es-codember-y-sus-desafíos-de-programación)
-- [La dinámica de los desafíos y sus secretos:](#la-dinámica-de-los-desafíos-y-sus-secretos)
-- [Codember fue creado por Miguel Ángel Durán (midudev):](#codember-fue-creado-por-miguel-ángel-durán-midudev)
-- [Como funciona Codember](#como-funciona-codember)
-- [Soluciones](#soluciones)
-- [Solución del primer desafío](#solución-del-primer-desafío)
-- [Solución del segundo desafío](#solución-del-segundo-desafío)
-- [Solución del tercer desafío](#solución-del-tercer-desafío)
-- [Solución cuarto desafío](#solución-cuarto-desafío)
-- [Conclusiones](#conclusiones)
+
+1. [Solución del primer desafío](#solución-del-primer-desafío)
+2. [Solución del segundo desafío](#solución-del-segundo-desafío)
+3. [Solución del tercer desafío](#solución-del-tercer-desafío)
+4. [Solución del cuarto desafío](#solución-del-cuarto-desafío)
 
 ## Solución del primer desafío
 
