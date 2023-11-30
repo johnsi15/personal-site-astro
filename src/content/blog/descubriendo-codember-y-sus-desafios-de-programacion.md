@@ -415,7 +415,7 @@ Puedes encontrar el código completo en el siguiente enlace [código desafío 03
 
 ## Solución del cuarto desafío
 
-En el cuarto desafío nos dicen los siguiente "Hackers dañan sistema de archivos" debemos analiza la lista de nombres de archivos y sus checksums donde debemos buscar en el archivo real número 33 (de todos los archivos reales, el 33º en orden de apareción) y envía su checksum con submit. Ejemplos:
+En el cuarto desafío nos dicen los siguiente **"Hackers dañan sistema de archivos"** debemos analiza la lista de nombres de archivos y sus checksums donde debemos buscar en el archivo real número 33 (de todos los archivos reales, el 33º en orden de apareción) y envía su checksum con submit. Ejemplos:
 
 ```txt
 + Nombre del archivo: xyzz33-xy
