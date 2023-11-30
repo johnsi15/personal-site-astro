@@ -38,7 +38,6 @@ export default defineConfig({
           const proxiedHosts = [
             'googletagmanager.com',
             'connect.facebook.net',
-            'pagead2.googlesyndication.com'
           ]
 
           if (proxiedHosts.includes(url.hostname)) {

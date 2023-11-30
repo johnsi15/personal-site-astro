@@ -1,8 +1,8 @@
 ---
 title: "Descubriendo Codember y sus Desafíos de Programación"
 publishedDate: "2023-11-06T16:29:10.000Z"
-updatedDate: "2023-11-21T17:09:31.000Z"
-pubDate: "2023-11-21T16:29:10.000Z"
+updatedDate: "2023-11-29T17:09:31.000Z"
+pubDate: "2023-11-29T16:29:10.000Z"
 description: "Descubre Codember y su emocionante mundo de desafíos de programación. Resuelve retos en tu lenguaje favorito, ya sea Python, PHP, JavaScript, Go, TypeScript y más. Además, desbloquea pistas secretas para descubrir misterios ocultos en el camino."
 tags: ["JavaScript", "Programación", "development", "webdeveloment", "desarrollo-web", "Python", "PHP", "JavaScript", "TypeScript", "Codember", "Desafios", "retos", "pruebas", "secretos"]
 primaryTag: { name: 'Desarrollo-web', slug: 'desarrollo-web' }
@@ -11,11 +11,11 @@ canonicalURL: "https://johnserrano.co/blog/descubriendo-codember-y-sus-desafios-
 isDraft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1699289192/John%20Serrano/Blog%20Post/descubriendo-codember-y-sus-desafios-de-programacion/base-portada_ozpsyf.jpg"
 ---
-
+<!-- omit from toc -->
 ## ¿Qué es codember y sus desafíos de programación?
 
 Codember es un emocionante sitio web que presenta desafíos semanales de programación. Cada semana, puedes sumergirte en la resolución de estos **desafíos** utilizando tu **lenguaje de programación favorito**. Pero eso no es todo, también puedes descubrir **secretos ocultos** y acumular valiosos puntos.
-
+<!-- omit from toc -->
 ## La dinámica de los desafíos y sus secretos:
 
 * **Resuelve Rápido, Gana Más**: La dinámica es sencilla; cuanto **más rápido** resuelvas un desafío, más **puntos acumulas**. La velocidad es la clave para ascender en el **ranking**.
@@ -24,11 +24,11 @@ Codember es un emocionante sitio web que presenta desafíos semanales de program
 
 * **Premios**: Existe la **posibilidad** que se den **algunos** premios a los primeros puestos del ranking.
 
-
+<!-- omit from toc -->
 ## Codember fue creado por Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/):
 
 Codember fue creado por Miguel Angel Duran, también conocido como midudev. Su pasión por la programación y su deseo de ofrecer una plataforma desafiante para la comunidad de desarrolladores han dado vida a este emocionante proyecto.
-
+<!-- omit from toc -->
 ## Como funciona Codember
 
 Al acceder al siguiente [enlace](https://codember.dev/), puedes iniciar sesión con tu cuenta de **GitHub**. Una vez que hayas iniciado sesión, tendrás acceso a una serie de comandos, como `help`, `ls`, `cd`, `submit`, `hint`, `clear`, y más.
@@ -64,11 +64,14 @@ casas casa casasas -> casas1casa1casas1
 2. Envía tu solución con el comando "submit" en la terminal, por ejemplo así:
 submit perro3gato3coche1sol1
 ```
-
+<!-- omit from toc -->
 ## Soluciones
-1. [Solución primer desafío](#solución-del-primer-desafío)
-2. [Solución segundo desafío](#solución-del-segundo-desafío)
-3. [Solución tercer desafío](#solución-del-tercer-desafío)
+
+- [Solución del primer desafío](#solución-del-primer-desafío)
+- [Solución del segundo desafío](#solución-del-segundo-desafío)
+- [Solución del tercer desafío](#solución-del-tercer-desafío)
+- [Solución del cuarto desafío](#solución-del-cuarto-desafío)
+
 
 ## Solución del primer desafío
 
@@ -410,6 +413,102 @@ Es importante destacar que cuando usamos una **cadena como argumento para match*
 
 Puedes encontrar el código completo en el siguiente enlace [código desafío 03](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
 
+## Solución del cuarto desafío
+
+En el cuarto desafío nos dicen los siguiente **"Hackers dañan sistema de archivos"** debemos analiza la lista de nombres de archivos y sus checksums donde debemos buscar en el archivo real número 33 (de todos los archivos reales, el 33º en orden de apareción) y envía su checksum con submit. Ejemplos:
+
+```txt
++ Nombre del archivo: xyzz33-xy
++ Resultado: ✅ Real (El checksum es válido)
+
++ Nombre del archivo: abcca1-ab1
++ Resultado: ❌ Falso (El checksum debería ser b1, es incorrecto)
+
++ Nombre del archivo: abbc11-ca
++ Resultado: ❌ Falso (El checksum debería ser ac, el orden es incorrecto)
+```
+
+El defafío completo lo pueden encontrar en el siguiente [link](https://github.com/johnsi15/codember/tree/main/challenges/challenge-04).
+
+**Mi solución:**
+
+```ts
+import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+
+async function filesQuarantine() {
+  let readFilesQuarantine = ''
+
+  try {
+    const filePath = resolve('./files_quarantine.txt')
+    readFilesQuarantine = await readFile(filePath, { encoding: 'utf8' })
+  } catch (error) {
+    console.log('This is error read file -> ', error)
+  }
+
+  const listFileNames = readFilesQuarantine.split('\n')
+
+  const INDEXFILENAME = 33
+  let validUnchecksumCount = 0
+
+  for (const fileName of listFileNames) {
+    const [text, unchecksum] = fileName.split('-')
+
+    const notRepeatWord = text.split('').filter((character, _, self) => self.indexOf(character) === self.lastIndexOf(character)).join('')
+
+    if (unchecksum === notRepeatWord) {
+      validUnchecksumCount++
+      if (validUnchecksumCount === INDEXFILENAME) {
+        console.log('valid unchecksum -> ' + unchecksum)
+        break
+      }
+    }
+  }
+}
+
+;(async () => {
+  await filesQuarantine() // result -> O2hrQ
+})()
+```
+
+**Explicación del código**, la primera parte del código es lo mismo que hacemos en los desafíos anteriores así que no voy a entrar al detalle de eso. Revisemos el resto de la solución.
+
+```ts
+const listFileNames = readFilesQuarantine.split('\n');
+
+const INDEXFILENAME = 33;
+let validUnchecksumCount = 0;
+```
+
+Lo primero que hacemos es dividir la cadena `readFilesQuarantine` en un array de nombres de archivo, donde cada nombre de archivo está separado por un carácter de nueva línea `(\n)`.
+
+Declaramos dos variables `INDEXFILENAME` y `validUnchecksumCount`. La variable `INDEXFILENAME` se usa para almacenar el índice del nombre de archivo que estamos buscando. La variable `validUnchecksumCount` se usa para realizar un seguimiento de la **cantidad de unchecksums válidos** que hemos encontrado.
+
+```ts
+const [text, unchecksum] = fileName.split('-');
+
+const notRepeatWord = text.split('').filter((character, _, self) => self.indexOf(character) === self.lastIndexOf(character)).join('')
+```
+
+Iteramos sobre el array `listFilesNames`, donde cada iteración asigna el nombre de archivo actual a la variable `fileName`. dividimos el nombre de archivo actual en dos partes: **la parte de texto y la parte de unchecksum**. La parte de texto es todo lo anterior al guion `(-)`, y la parte de `unchecksum` es todo lo que está después del guion `(-)`.
+
+Creamos una nueva cadena llamada `notRepeatWord` eliminando todos los caracteres duplicados de la parte de texto. El método `split('')` divide la parte de texto en un array de caracteres. El método `filter()` filtra el array de caracteres para que solo incluya **caracteres que no estén repetidos** y esto lo logramos gracias a `indexOf` y `lastIndexOf`. El método `join('')` une el array de caracteres filtrado nuevamente en una cadena.
+
+```ts
+if (unchecksum === notRepeatWord) {
+  validUnchecksumCount++;
+  if (validUnchecksumCount === INDEXFILENAME) {
+    console.log('valid unchecksum -> ' + unchecksum);
+    break;
+  }
+}
+```
+
+Por último verificamos si la parte de `unchecksum` es igual a la cadena `notRepeatWord`. Si son iguales, entonces el `unchecksum` es válido, y la variable `validUnchecksumCount` se incrementa. Si la variable `validUnchecksumCount` es igual a la variable `INDEXFILENAME`, entonces el bucle se termina y el `unchecksum` válido se imprime en la consola.
+
+Puedes encontrar el código completo en el siguiente enlace [código desafío 04](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
+
+<!-- omit from toc -->
 ## Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
 

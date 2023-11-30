@@ -6,7 +6,7 @@
       "destination": "/_next/static/service-worker.js"
     },
     {
-      "source": "/proxytown/:match*",
+      "source": "/proxytown/gtm",
       "destination": "https://www.googletagmanager.com/gtag/js"
     }
   ],
