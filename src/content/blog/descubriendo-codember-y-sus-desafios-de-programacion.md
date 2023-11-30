@@ -11,11 +11,11 @@ canonicalURL: "https://johnserrano.co/blog/descubriendo-codember-y-sus-desafios-
 isDraft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1699289192/John%20Serrano/Blog%20Post/descubriendo-codember-y-sus-desafios-de-programacion/base-portada_ozpsyf.jpg"
 ---
-
+<!-- omit from toc -->
 ## ¿Qué es codember y sus desafíos de programación?
 
 Codember es un emocionante sitio web que presenta desafíos semanales de programación. Cada semana, puedes sumergirte en la resolución de estos **desafíos** utilizando tu **lenguaje de programación favorito**. Pero eso no es todo, también puedes descubrir **secretos ocultos** y acumular valiosos puntos.
-
+<!-- omit from toc -->
 ## La dinámica de los desafíos y sus secretos:
 
 * **Resuelve Rápido, Gana Más**: La dinámica es sencilla; cuanto **más rápido** resuelvas un desafío, más **puntos acumulas**. La velocidad es la clave para ascender en el **ranking**.
@@ -24,11 +24,11 @@ Codember es un emocionante sitio web que presenta desafíos semanales de program
 
 * **Premios**: Existe la **posibilidad** que se den **algunos** premios a los primeros puestos del ranking.
 
-
+<!-- omit from toc -->
 ## Codember fue creado por Miguel Ángel Durán [(midudev)](https://www.linkedin.com/in/midudev/):
 
 Codember fue creado por Miguel Angel Duran, también conocido como midudev. Su pasión por la programación y su deseo de ofrecer una plataforma desafiante para la comunidad de desarrolladores han dado vida a este emocionante proyecto.
-
+<!-- omit from toc -->
 ## Como funciona Codember
 
 Al acceder al siguiente [enlace](https://codember.dev/), puedes iniciar sesión con tu cuenta de **GitHub**. Una vez que hayas iniciado sesión, tendrás acceso a una serie de comandos, como `help`, `ls`, `cd`, `submit`, `hint`, `clear`, y más.
@@ -64,13 +64,14 @@ casas casa casasas -> casas1casa1casas1
 2. Envía tu solución con el comando "submit" en la terminal, por ejemplo así:
 submit perro3gato3coche1sol1
 ```
-
+<!-- omit from toc -->
 ## Soluciones
 
-1. [Solución del primer desafío](#solución-del-primer-desafío)
-2. [Solución del segundo desafío](#solución-del-segundo-desafío)
-3. [Solución del tercer desafío](#solución-del-tercer-desafío)
-4. [Solución del cuarto desafío](#solución-del-cuarto-desafío)
+- [Solución del primer desafío](#solución-del-primer-desafío)
+- [Solución del segundo desafío](#solución-del-segundo-desafío)
+- [Solución del tercer desafío](#solución-del-tercer-desafío)
+- [Solución del cuarto desafío](#solución-del-cuarto-desafío)
+
 
 ## Solución del primer desafío
 
@@ -412,7 +413,7 @@ Es importante destacar que cuando usamos una **cadena como argumento para match*
 
 Puedes encontrar el código completo en el siguiente enlace [código desafío 03](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
 
-## Solución cuarto desafío
+## Solución del cuarto desafío
 
 En el cuarto desafío nos dicen los siguiente "Hackers dañan sistema de archivos" debemos analiza la lista de nombres de archivos y sus checksums donde debemos buscar en el archivo real número 33 (de todos los archivos reales, el 33º en orden de apareción) y envía su checksum con submit. Ejemplos:
 
@@ -507,7 +508,7 @@ Por último verificamos si la parte de `unchecksum` es igual a la cadena `notRep
 
 Puedes encontrar el código completo en el siguiente enlace [código desafío 04](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
 
-
+<!-- omit from toc -->
 ## Conclusiones
 Codember es el lugar perfecto para poner a prueba tus habilidades de programación, aprender nuevos conceptos y competir con otros entusiastas de la programación. ¡Únete a la comunidad de Codember y acepta el desafío!
 
