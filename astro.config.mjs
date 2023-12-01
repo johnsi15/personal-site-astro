@@ -45,6 +45,10 @@ export default defineConfig({
             // const proxyUrl = new URL(location.origin);
             proxyUrl.searchParams.append('url', url.href);
             return proxyUrl;
+          } else if (url.hostname === 'www.google-analytics.com') {
+            const proxyUrl = new URL('/proxytown/ga', location.origin);
+            proxyUrl.searchParams.append('url', url.href);
+            return proxyUrl;
           }
     
           return url;
