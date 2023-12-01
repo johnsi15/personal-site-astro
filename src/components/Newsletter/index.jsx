@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import styles from './Newsletter.module.css'
 
-const URL_API = 'https://contact.johnserrano.co/api/contact'
+// const URL_API = 'https://contact.johnserrano.co/api/contact'
+const URL_API = 'http://localhost:3001/api/contact'
 
 function Newsletter() {
   const [message, setMessage] = useState('')
@@ -11,8 +12,9 @@ function Newsletter() {
   function handleSubmit(e) {
     e.preventDefault()
     const form = e.target
+    // console.log(form)
+
     const formData = new FormData(form)
-    // console.log(formData)
 
     // const formJson = Object.fromEntries(formData.entries())
     // console.log(formJson)
@@ -22,17 +24,18 @@ function Newsletter() {
 
     setButtonDisabled(true)
 
+    const dataJson = JSON.stringify( Object.fromEntries(formData.entries()))
+
     fetch(URL_API, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData),
+      body: dataJson,
     })
       .then((res) => res.json())
       .then((data) => {
-        // console.info(data)
         setMessage(data?.message)
         setStatus(data?.status)
         // document.getElementById('formContactenos').reset()
