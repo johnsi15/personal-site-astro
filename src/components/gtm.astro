@@ -1,36 +1,10 @@
-<script>
-  const searchParams = new URL(window.location.href)
-  const isDebug = searchParams.searchParams.get('gtm_debug')
-
-  const scripts = [
-    {
-      src: 'https://www.googletagmanager.com/gtm.js?id=GTM-MKJQTJ3',
-      text: null,
-    },
-    {
-      src: null,
-      text: `
-        window.dataLayer = window.dataLayer || [];
-        function gtag() {
-          dataLayer.push(arguments);
-        }
-
-        gtag('js', new Date());
-        gtag('config', 'G-LNDKYQHR93');
-      `,
-    },
-  ]
-
-  function injectScripts() {
-    scripts.forEach(s => {
-      const script = document.createElement('script')
-      script.type = isDebug ? 'text/javascript' : 'text/partytown'
-
-      if (s.src) script.src = s.src
-      if (s.text) script.text = s.text
-      document.head.appendChild(script)
-    })
+<script type='text/partytown' src='https://www.googletagmanager.com/gtag/js?id=GTM-MKJQTJ3'></script>
+<script type='text/partytown'>
+  window.dataLayer = window.dataLayer || []
+  function gtag() {
+    dataLayer.push(arguments)
   }
+  gtag('js', new Date())
 
-  injectScripts()
+  gtag('config', 'G-LNDKYQHR93')
 </script>
