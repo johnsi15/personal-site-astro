@@ -1,41 +1,39 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-const { 
-  title, 
-  description, 
-  image,
-  datePublished,
-  video
-} = Astro.props;
+import BaseHead from '../components/BaseHead.astro'
+import Gtm from '../components/gtm.astro'
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
+const { title, description, image, datePublished, video } = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<BaseHead 
-      title={title || SITE_TITLE} 
+<html lang='es'>
+  <head>
+    <Gtm />
+    <BaseHead
+      title={title || SITE_TITLE}
       description={description || SITE_DESCRIPTION}
       image={image}
       datePublished={datePublished}
     />
-    {video && (
-      <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
-      <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
-    )}
-	</head>
-	<body>
+    {
+      video && (
+        <>
+          <script src='https://cdn.plyr.io/3.7.8/plyr.polyfilled.js' />
+          <link rel='stylesheet' href='https://cdn.plyr.io/3.7.8/plyr.css' />
+        </>
+      )
+    }
+  </head>
+  <body>
     <section id='Layout'>
       <slot />
     </section>
-	</body>
+  </body><style>
+    #Layout {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      min-height: 100vh;
+    }
+  </style>
 </html>
-
-<style>
-  #Layout {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    min-height: 100vh;
-  }
-</style>
