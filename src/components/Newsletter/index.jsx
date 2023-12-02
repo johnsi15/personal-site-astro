@@ -1,8 +1,7 @@
 import { useState } from 'react'
 import styles from './Newsletter.module.css'
 
-// const URL_API = 'https://contact.johnserrano.co/api/contact'
-const URL_API = 'http://localhost:3001/api/contact'
+const URL_API = 'https://contact.johnserrano.co/api/contact'
 
 function Newsletter() {
   const [message, setMessage] = useState('')
