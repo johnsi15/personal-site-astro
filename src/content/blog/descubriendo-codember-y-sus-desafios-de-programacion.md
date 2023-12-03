@@ -71,6 +71,7 @@ submit perro3gato3coche1sol1
 - [Solución del segundo desafío](#solución-del-segundo-desafío)
 - [Solución del tercer desafío](#solución-del-tercer-desafío)
 - [Solución del cuarto desafío](#solución-del-cuarto-desafío)
+- [Solución del quinto desafío](#solución-del-quinto-desafío)
 
 
 ## Solución del primer desafío
@@ -507,6 +508,33 @@ if (unchecksum === notRepeatWord) {
 Por último verificamos si la parte de `unchecksum` es igual a la cadena `notRepeatWord`. Si son iguales, entonces el `unchecksum` es válido, y la variable `validUnchecksumCount` se incrementa. Si la variable `validUnchecksumCount` es igual a la variable `INDEXFILENAME`, entonces el bucle se termina y el `unchecksum` válido se imprime en la consola.
 
 Puedes encontrar el código completo en el siguiente enlace [código desafío 04](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
+
+## Solución del quinto desafío
+En el quinto desafío tenemos **el problema final** que dice lo siquiente: Finalmente los hackers han conseguido acceder a la base de datos y la han dejado corrupta. Pero parece que han dejado un mensaje oculto en la base de datos. ¿Podrás encontrarlo?
+
+**Ejemplos:**
+
+```txt
+Entrada: 1a421fa,alex,alex9@gmail.com,18,Barcelona
+Resultado: ✅ Válido
+
+Entrada: 9412p_m,maria,mb@hotmail.com,22,CDMX
+Resultado: ❌ Inválido (id no es alfanumérica, sobra el _)
+
+Entrada: 494ee0,madeval,mdv@twitch.tv,,
+Resultado: ✅ Válido (age y location son opcionales)
+
+Entrada: 494ee0,madeval,twitch.tv,22,Montevideo
+Resultado: ❌ Inválido (email no es válido)
+```
+
+El defafío completo lo pueden encontrar en el siguiente [link](https://github.com/johnsi15/codember/tree/main/challenges/challenge-05).
+
+**Mi solución:**
+
+```ts
+// code here
+```
 
 <!-- omit from toc -->
 ## Conclusiones
