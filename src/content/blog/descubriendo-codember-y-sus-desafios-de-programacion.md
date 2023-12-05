@@ -649,6 +649,8 @@ Se realiza una serie de comprobaciones para determinar si un **usuario es invál
 
 Si se determina que el usuario es inválido, se agrega la inicial del nombre de usuario al array `messageHidden`.
 
+Puedes encontrar el código completo en el siguiente enlace [código desafío 05](https://github.com/johnsi15/codember) si gustas puedes **darle estrellita** al repositorio.
+
 ¡Fue un placer abordar todos estos desafíos contigo! Espero que las soluciones proporcionadas hayan cumplido tus expectativas. Quedo a tu disposición para futuras consultas. ¡Nos vemos el próximo año con más desafíos!
 
 <!-- omit from toc -->
