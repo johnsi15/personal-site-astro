@@ -533,8 +533,123 @@ El defafío completo lo pueden encontrar en el siguiente [link](https://github.c
 **Mi solución:**
 
 ```ts
-// code here
+import { readFile } from 'node:fs/promises'
+import { resolve } from 'node:path'
+
+async function databaseAttacked() {
+  let readFilesDbAttacked = ''
+
+  try {
+    const filePath = resolve('./database_attacked.txt')
+    readFilesDbAttacked = await readFile(filePath, { encoding: 'utf8' })
+  } catch (error) {
+    console.log('This is error read file -> ', error)
+  }
+
+  const listFileUsers = readFilesDbAttacked.split('\n')
+
+  const messageHidden: string[] = []
+
+  listFileUsers.forEach(user => {
+    const [id, username, email, ...rest] = user.split(',')
+
+    const regexAlfaNumber = new RegExp(/^[A-Za-z0-9]+$/, 'g')
+    const regexEmail = new RegExp(/^\w+@[a-z]+\.[a-z]{2,3}/, 'g')
+    const regexNumber = new RegExp(/^[0-9]+$/, 'g')
+    const regexLocation = new RegExp(/^[A-Za-z \s]+$/, 'g')
+
+    let age: string | null = null
+    let location: string | null = null
+    if (rest.length === 2) {
+      age = rest[0]
+      location = rest[1]
+    } else {
+      age = null
+      location = rest[0]
+    }
+
+    let invalidUser = false
+
+    if (!id || !username || !email) {
+      invalidUser = true
+    } else if (!id.match(regexAlfaNumber) || !username.match(regexAlfaNumber) || !email.match(regexEmail)) {
+      invalidUser = true
+    } else if ((age && !age.match(regexNumber)) || (location && !location.match(regexLocation))) {
+      invalidUser = true
+    }
+
+    if (invalidUser) {
+      messageHidden.push(username.charAt(0))
+    }
+  })
+
+  console.log(messageHidden.join(''))
+}
+
+;(async () => {
+  await databaseAttacked() // result -> youh4v3beenpwnd
+})()
 ```
+
+**Explicación del código**, la primera parte del código es lo mismo que hacemos en los desafíos anteriores así que no voy a entrar al detalle de eso. Revisemos el resto de la solución.
+
+```ts
+const listFileUsers = readFilesDbAttacked.split('\n');
+
+
+```
+
+Dividimos el contenido por cada salto de línea creando un array llamado `listFileUsers`, donde cada elemento es una línea del archivo.
+
+```ts
+const [id, username, email, ...rest] = user.split(',');
+
+const regexAlfaNumber = new RegExp(/^[A-Za-z0-9]+$/, 'g');
+const regexEmail = new RegExp(/^\w+@[a-z]+\.[a-z]{2,3}/, 'g');
+const regexNumber = new RegExp(/^[0-9]+$/, 'g');
+const regexLocation = new RegExp(/^[A-Za-z \s]+$/, 'g');
+
+```
+En la primera línea de código, se divide cada línea del archivo en campos separados por comas y se asignan a las variables `id`, `username`, `email` y `rest`. `rest` contendrá cualquier otro dato que esté presente después de email, en este caso puede ser `age` o `location`.
+
+Se definen **expresiones regulares para validar diferentes tipos de datos**: alfanuméricos, direcciones de correo electrónico, números y ubicaciones.
+
+```ts
+let age: string | null = null;
+let location: string | null = null;
+
+if (rest.length === 2) {
+  age = rest[0];
+  location = rest[1];
+} else {
+  age = null;
+  location = rest[0];
+}
+```
+
+Dependiendo de la longitud de `rest` **(los datos adicionales después de email)**, se asigna el `age` y el `location` o solo la ubicación. Si la longitud es 2, se asume que la edad está presente.
+
+```ts
+let invalidUser = false;
+
+if (!id || !username || !email) {
+  invalidUser = true;
+} else if (!id.match(regexAlfaNumber) || !username.match(regexAlfaNumber) || !email.match(regexEmail)) {
+  invalidUser = true;
+} else if ((age && !age.match(regexNumber)) || (location && !location.match(regexLocation))) {
+  invalidUser = true;
+}
+
+if (invalidUser) {
+  messageHidden.push(username.charAt(0));
+}
+```
+
+Se realiza una serie de comprobaciones para determinar si un **usuario es inválido**. Esto incluye verificar la existencia de `id`, `username` y `email`, y luego aplicar las expresiones regulares para garantizar que **cumplan con ciertos criterios**.
+
+Si se determina que el usuario es inválido, se agrega la inicial del nombre de usuario al array `messageHidden`.
+
+¡Fue un placer abordar todos estos desafíos contigo! Espero que las soluciones proporcionadas hayan cumplido tus expectativas. Quedo a tu disposición para futuras consultas. ¡Nos vemos el próximo año con más desafíos!
 
 <!-- omit from toc -->
 ## Conclusiones
