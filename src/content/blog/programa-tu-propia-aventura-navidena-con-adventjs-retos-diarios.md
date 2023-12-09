@@ -47,6 +47,6 @@ En la medida de lo posible, estaré actualizando la tabla con las soluciones. Si
 
 ## Conclusiones
 
-**AdventJS** no solo es un proyecto de programación; es una experiencia festiva que une a la **comunidad global de desarrolladores** en torno a la creatividad, el **aprendizaje** y la **diversión**. Únete a la celebración, **mejora tus habilidades** y comparte el **espíritu navideño** mientras resuelves retos diarios con AdventJS.
+**AdventJS** no solo es un proyecto de programación; es una experiencia festiva que une a la **comunidad global de desarrolladores** en torno a la creatividad, el **aprendizaje** y la **diversión**. Únete a la celebración, **mejora tus habilidades** y comparte el **espíritu navideño** mientras resuelves retos diarios con [AdventJS](https://adventjs.dev/).
 
 Gracias a **Miguel Ángel Durán** [(midudev)](https://www.linkedin.com/in/midudev/) por traer estos proyectos que nos retan a ser mejores desarrolladores y a seguir aprendiendo nuevas cosas.
