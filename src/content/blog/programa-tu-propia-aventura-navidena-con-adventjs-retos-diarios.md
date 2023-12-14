@@ -39,7 +39,10 @@ Prepárate para pensar creativamente y encontrar soluciones eficientes mientras 
 |   <img src="https://adventjs.dev/challenges-2023/4.png" width="50" />  	|    4 	|   [Dale la vuelta a los paréntesis](https://adventjs.dev/es/challenges/2023/4)   	|    🟠        	|    [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-04)      	|    280    	|
 |   <img src="https://adventjs.dev/challenges-2023/5.png" width="50" />  	|    5 	|   [El CyberTruck de Santa](https://adventjs.dev/es/challenges/2023/5)   	|      🟠      	|     [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-05)     	|     170   	|
 |   <img src="https://adventjs.dev/challenges-2023/6.png" width="50" /> 	|   6  	|  [Los renos a prueba ](https://adventjs.dev/es/challenges/2023/6)   	|      🟢      	|   [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-06)       	|     360   	|
-|     	|     	|      	|            	|          	|        	|
+|   <img src="https://adventjs.dev/challenges-2023/7.png" width="50" />  	|   7  	| [Las cajas en 3D](https://adventjs.dev/es/challenges/2023/7)    	|      🟢      	|    [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-07)      	|    290    	|
+| <img src="https://adventjs.dev/challenges-2023/8.png" width="50" /> 	|   8  	|   [Ordenando el almacén](https://adventjs.dev/es/challenges/2023/8)   	|     🟠       	|    [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-08)      	|    270    	|
+|  <img src="https://adventjs.dev/challenges-2023/9.png" width="50" />   	|   9  	|  [Alterna las luces](https://adventjs.dev/es/challenges/2023/9)    	|      🟢      	|      [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-09)     	|    360    	|
+|    <img src="https://adventjs.dev/challenges-2023/10.png" width="50" />  	|   10  	|   [Crea tu propio árbol de navidad](https://adventjs.dev/es/challenges/2023/10)   	|    🟢        	|    [solución](https://github.com/johnsi15/adventjs/tree/main/challenges/challenge-10)      	|   280     	|
 
 
 En la medida de lo posible, estaré actualizando la tabla con las soluciones. Si **te gustaría apoyar**, sería genial si pudieras darle una **estrellita** al [repositorio](https://github.com/johnsi15/adventjs). ¡Muchas gracias por tu **colaboración** y **apoyo**! 🌟
