@@ -82,7 +82,7 @@ Ambos métodos producirán la misma ruta `about/` en nuestro sitio web. Este enf
 En la imagen anterior, podemos observar la estructura completa de nuestro proyecto. Vamos a detallar cada parte:
 
 * **Archivo index.astro:** Este archivo es la página principal de nuestro sitio web. Aquí, tenemos una importación de un Layout que define la estructura general de la página.
-* **Carpeta components/:** Esta carpeta contiene componentes reutilizables que se utilizan en varias partes del proyecto.
+* **Carpeta components/:** Esta carpeta contiene componentes reutilizables que se utilizan en varias partes del proyecto. Es decir pequeños fragmentos de HTML que podemos reutilizar.
 * **Carpeta pages/:** Aquí es donde se encuentran todos los archivos que representan páginas individuales de nuestro sitio web. Cada archivo dentro de esta carpeta define una ruta específica en nuestro sitio.
 * **Archivo Layout.astro:** Este archivo define el diseño y la estructura común que se aplicará a todas las páginas de nuestro sitio web. Es importado y utilizado en `index.astro`.
 * **Carpeta public/:** Esta carpeta contiene archivos estáticos como imágenes, íconos y otros recursos que serán accesibles públicamente desde nuestro sitio web.
@@ -425,7 +425,133 @@ export default defineConfig({
 });
 ```
 
-Con todo esto ya tenemos tailwind instalado y funcionando.
+Con todo esto ya tenemos **tailwind instalado** y **funcionando**, voy aplicar algunas clases y podremos observar algunos cambios de los estilos.
+
+**index.astro**
+```html
+<main class='flex flex-col gap-4 items-start'>
+  <h1 class='text-4xl text-center'>Hello World</h1>
+  <a href='/about' class='text-rose-600 text-xl hover:underline'>About here</a>
+
+  <Button />
+</main>
+```
+
+Aunque no voy a entrar en detalles sobre el propósito de cada clase, observamos cambios en los estilos, como colores de texto, tamaños de fuentes y espacios entre elementos.
 
 
+**about.astro**
+```html
+---
+const styleAnchor = 'text-rose-600 text-xl hover:underline'
+---
 
+ <nav class='flex gap-4 mb-12'>
+  <a href='/' class={styleAnchor}>Inicio</a>
+  <a href='/about' class={styleAnchor}>Sobre mi</a>
+</nav>
+
+<h1 class='text-4xl text-center mb-16'>Sobre mi</h1>
+```
+
+Algo interesante en este código es que definimos un conjunto de **clases CSS** mediante una **variable** de **JavaScript**, lo que nos permite reutilizar estas clases fácilmente en varios elementos del HTML.
+
+```html
+<button id='button' class='px-4 py-2 rounded bg-rose-500 text-slate-200 hover:opacity-90 my-14 mx-auto'>
+  Haz clic
+</button>
+```
+
+Por último el componente `Button` con estilos de color tamaño y bordes.
+
+
+## Instalación de un framework UI
+
+Para instalar @astrojs/preact, vamos a ejecutar el siguiente comando: `npx astro add preact` muy parecido con tailwind le damos a todo que yes, esto lo que va hacer es instalar y agregar la configuración necesaria para que todo funcione correctamente.
+
+**astro.config.mjs**
+```js
+import preact from "@astrojs/preact";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [tailwind(), preact()]
+});
+```
+
+Ahora, vamos a crear un simple contador de números para explorar cómo se integra Preact con Astro.
+
+Lo primero es el componente del contador lo creamos dentro de la carpeta components:
+
+```tsx
+import { useState } from 'preact/hooks'
+
+export function Counter() {
+  const [count, setCount] = useState(0)
+
+  const styleButton = 'text-4xl rounded border-2 border-slate-200 w-10 h-16 active:scale-95 hover:opacity-70'
+
+  return (
+    <div className='flex gap-2 flex-col items-center justify-center'>
+      <h3 className='text-3xl m-5 tracking-widest'>Contador: {count}</h3>
+
+      <div className='flex gap-5'>
+        <button onClick={() => setCount(count + 1)} className={styleButton}>
+          +
+        </button>
+        <button onClick={() => setCount((currentCount: number) => currentCount - 1)} className={styleButton}>
+          -
+        </button>
+      </div>
+    </div>
+  )
+}
+```
+
+Un componente con un estado muy sencillo es prácticamente como escribirlo con React.js, pero Preact es un poco más liviano y para este ejemplo viene bien. Lo único a destacar es la parte de las clases que las reutilizamos.
+
+Ahora viene lo que para mi es lo más importante que es la integración del componente con Astro:
+
+**index.astro**
+```html
+---
+import { Counter } from '../components/Counter'
+---
+
+<section class='my-5 w-full'>
+  <Counter client:visible />
+</section>
+```
+
+En nuestra página principal lo primero es importar el componente como lo veniamos haciendo con **Astro**, y lo segundo es llamar el componente `<Counter />` pero acá viene lo diferente para que funcione el componente debemos pasarle una directiva `client:visible` donde le indicamos a **Astro** que ese componente es **interactivo** que necesita de JavaScript, en Astro lo llaman `Islas`. 
+
+Existen otras directivas que podemos utilizar, las cuales varían según el momento o la acción con la que queremos que el componente haga render. `client:load`, `client:visible`, `client:idle`, `client:media`, etc.
+
+
+## Desplegar página web
+
+1. Crea una cuenta gratuita en **Netlify** si aún no tienes una.  Anota tu nombre de usuario. Verás tu panel de control y cualquiera de los sitios que crees en https://app.netlify.com/teams/username.
+
+2. Haz clic en **Add new site** > **Import an existing project**. Se te pedirá que te conectes a un proveedor de **Git**. Elige GitHub y sigue los pasos que aparecen en pantalla para autenticar tu cuenta de GitHub. A continuación, elige el repositorio **GitHub** de tu proyecto de Astro de la lista proporcionada.
+
+3. En el último paso, **Netlify** te mostrará la configuración del sitio de tu aplicación. Los valores predeterminados deben ser correctos para tu proyecto **Astro**, así que puedes desplazarte hacia abajo y **hacer clic en Deploy site**.
+
+Y listo **felicitaciones** ya tienes un sitio web con astro desplegado.
+
+Te dejo el link de mi ejemplo: https://extraordinary-horse-d6cbd9.netlify.app/
+
+Dejo el link del repositorio, [código completo](https://github.com/johnsi15/astro-website). Si te fue útil te invito a darle una estrilla al repositorio, muchas gracias.
+
+## Conclusiones
+
+En conclusión, **Astro** es una opción atractiva para desarrolladores que buscan una forma moderna y eficiente de construir aplicaciones web, ofreciendo simplicidad, rendimiento y flexibilidad en un paquete integrado. En resumen estás son algunas de sus características y ventajas:
+
+1. **Simplicidad y Flexibilidad:** Astro ofrece una sintaxis familiar de HTML y JavaScript para crear aplicaciones web de forma sencilla y flexible.
+
+2. **Optimizaciones de Rendimiento:** Genera código HTML estático y optimizado para mejorar la velocidad de carga y la experiencia del usuario.
+
+3. **Compatibilidad con React y Preact:** Permite utilizar React o Preact para aprovechar sus bibliotecas de componentes mientras se optimiza el rendimiento. Y muchas más herramientas son compatibles con Astro.
+
+4. **Directivas Avanzadas:** Ofrece directivas avanzadas para controlar el renderizado de componentes de manera eficiente.
+
+5. **Crecimiento del Ecosistema:** Aunque es una herramienta relativamente nueva, **Astro** está ganando popularidad rápidamente y cuenta con una comunidad activa de desarrolladores.
