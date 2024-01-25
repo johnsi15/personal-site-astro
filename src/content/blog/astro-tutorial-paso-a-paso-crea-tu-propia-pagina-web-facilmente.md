@@ -95,5 +95,337 @@ import Layout from '../layouts/Layout.astro'
 ---
 ```
 
-con los --- podemos ejecutar JS hacer importaciones de archivos, librerias, props de Astro. En nuestro caso estamos importando el Layout que representa una parte común de nuestro sitio web que se replicara en cada página que lo importemos y usemos.
+con los --- podemos ejecutar JS hacer importaciones de archivos, librerias, **props de Astro**. En nuestro caso estamos importando el Layout que representa una parte común de nuestro sitio web que se replicara en cada página que lo importemos y usemos.
+
+Seguido de eso tenemos todo el html de nuestra página principal en este caso esta envuelto por un `<Layout />`. Si podemos ver el Layout resive unos props esto es algo muy parecido a React.js, luego revisaremos el Layout más a profundidad.
+
+```jsx
+<Layout title='Página principal'>
+  <main>
+    <h1>Hello World</h1>
+  </main>
+</Layout>
+```
+
+Tenemos un tag `main` y un `h1` con el `texto Hello World` y por último tenemos los styles.
+
+```css
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
+```
+
+Utilizando la etiqueta `<style>`, podemos agregar todos los estilos que afectarán a nuestra página en el archivo `index.astro`. Es importante destacar que estos estilos no son **globales**; es decir, solo afectarán a **los elementos** dentro de la página específica donde se definen.
+
+En caso de que necesitemos aplicar **estilos globales** que afecten a todo el sitio web, ASTRO proporciona **directivas** que nos permiten agregar estilos globales de manera sencilla y efectiva, más adelante veremos como se aplican.
+
+Ahora vamos a crear el archivo `about.astro` y agreguemos el `Layout` el `html` necesario y los `styles`.
+
+**about.astro**
+
+```html
+---
+import Layout from '../layouts/Layout.astro'
+---
+
+<Layout title='Sobre mi'>
+  <main>
+    <a href='/'>Inicio</a>
+    <a href='/about/'>Sobre mi</a>
+    <h1>Sobre mi</h1>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
+```
+
+El código para la página **"about"** es muy similar al archivo `index.astro`, con algunos cambios y adiciones específicas. Algunas de las modificaciones incluyen:
+
+1. **Cambio en el título de la propiedad en el Layout:** Dado que estamos en otra página, el título de la propiedad en el **Layout** se ha actualizado para reflejar el contenido de la página "about".
+2. **Agregado de etiquetas `<a>` para navegación entre páginas:** Se han añadido etiquetas `<a>` para permitir la navegación entre páginas, proporcionando enlaces a otras páginas del sitio web desde la página "about".
+
+Estos cambios y adiciones ayudan a personalizar la **página "about"** y la diferencian del archivo `index.astro`, asegurando una experiencia de usuario buena y navegación fluida en el sitio web.
+
+## Archivo Layout.astro
+
+Revisemos el archivo **Layout.astro**, donde encontraremos algunas partes fundamentales para la estructura y funcionamiento de nuestro sitio web:
+
+```html
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+  }
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>
+```
+
+Lo primero que podemos notar son las **Props de Astro** y una interface esto ya es cosa de TypeScript.
+
+```js
+---
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+```
+
+La interface como mencione es algo de **TypeScript** no lo voy a explicar en este punto pero tengo un [artículo](https://johnserrano.co/blog/typescript-desde-cero-descubriendo-sus-ventajas-y-fundamentos-basicos) donde hablo sobre los `types` y que es TypeScript.
+
+Con la palabra `Astro.props` podemos acceder a todas la props que nos pasen al componente Layout, también podemos acceder a otros valores desde `Astro` como `cookies`, `params`, `site`, `url`, `redirect`, `generator`, etc.
+
+Después de revisar la parte del JS en el archivo `Layout.astro`, nos adentramos en el HTML que define la estructura básica de cada página en nuestro sitio web. Este HTML comúnmente incluye: head, body, title, metas y algo en particular es que tenemos algo nuevo llamado `<slot />`
+
+Una característica importante a destacar es el uso de la etiqueta `<slot />`, que es parte de la especificación de **Web Components**. Esta etiqueta se utiliza para definir puntos de **inserción dentro del HTML** donde los componentes secundarios pueden insertar su contenido. Es especialmente útil para la **composición de componentes y la creación de diseños flexibles y reutilizables**.
+
+Esto es muy parecido a los `children` en **React.js**, es importante tener en cuenta que en **Astro** también se pueden utilizar **slots nombrados**, una característica **avanzada** que permite una mayor **flexibilidad en la composición de componentes**. Sin embargo, dado que este tutorial se centra en los conceptos básicos de Astro y la creación de una **página web simple**, no exploraremos en detalle esta funcionalidad más avanzada en este momento.
+
+Gracias al **slot**, podemos visualizar todo el HTML que hemos colocado en las páginas `index.astro` y `about.astro`. Esto se logra al envolver dicho **HTML** con el **componente Layout**, lo que nos permite obtener toda la estructura HTML necesaria para nuestro sitio.
+
+```html
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+  }
+
+  html {
+    font-family: system-ui, sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
+
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+</style>
+```
+
+Ya por último tenemos los **styles** con una **directiva**, te acuerdas que mencione las directivas bueno acá estamos usando la directiva `is:global` con esta directiva le indicamos que todos los styles son de tipo globales y afectara todas las páginas de nuestro sitio web.
+
+## Carpeta components
+
+En la carpeta components podemos agregar todos los componentes que necesitemos no necesariamente tienen que ir en esta carpeta pero por convención se agregan en está carpeta, y tenemos un componente llamado Card.astro donde tenemos lo mismo que ya se menciono anteiormente los props de que le paso al componente accedemos con Astro.props el HTML y los styles para ese componente.
+
+En la carpeta **components**, podemos agregar todos los componentes que necesitemos. Aunque no es estrictamente necesario que los componentes vayan en esta carpeta, por convención se suelen colocar aquí. Un ejemplo de componente que podemos encontrar es `Card.astro`, donde se definen los **props** y su respectivo acceso mediante `Astro.props`, el **HTML** específico del componente, y los **estilos asociados**.
+
+```html
+---
+interface Props {
+	title: string;
+	body: string;
+	href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<li class="link-card">
+	<a href={href} target="_blank">
+		<h2>
+			{title}
+			<span>&rarr;</span>
+		</h2>
+		<p>
+			{body}
+		</p>
+	</a>
+</li>
+
+<style>
+	.link-card {
+		list-style: none;
+		display: flex;
+		padding: 1px;
+		background-color: #23262d;
+		background-image: none;
+		background-size: 400%;
+		border-radius: 7px;
+		background-position: 100%;
+		transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+		box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+	}
+	.link-card > a {
+		width: 100%;
+		text-decoration: none;
+		line-height: 1.4;
+		padding: calc(1.5rem - 1px);
+		border-radius: 8px;
+		color: white;
+		background-color: #23262d;
+		opacity: 0.8;
+	}
+	h2 {
+		margin: 0;
+		font-size: 1.25rem;
+		transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+	}
+	p {
+		margin-top: 0.5rem;
+		margin-bottom: 0;
+	}
+	.link-card:is(:hover, :focus-within) {
+		background-position: 0;
+		background-image: var(--accent-gradient);
+	}
+	.link-card:is(:hover, :focus-within) h2 {
+		color: rgb(var(--accent-light));
+	}
+</style>
+```
+El llamado de este componente lo hacemos en about.astro.
+
+```html
+<Card
+  title='John Serrano'
+  body='Ejemplo de como desarrollar un sitio web con Astro'
+  href='https://johnserrano.co'
+/>
+```
+
+Algo que no mencione antes es que podemos acceder a los valores que obtenemos de las props desde el **HTML** con las llaves `{ }` esto es muy parecido a como escribimos **JSX** pero no es lo mismo. Más información sobre el tema visita la [doc](https://docs.astro.build/es/core-concepts/astro-syntax/) oficial.
+
+```jsx
+<p>
+  {body}
+</p>
+```
+
+Otro ejemplo es usar atributos dinámicos:
+
+```html
+---
+const nombre = "Astro";
+---
+<h1 class={nombre}>Se admiten expresiones de atributos</h1>
+
+<MyComponent templateLiteralNameAttribute={`MiNombreEs${nombre}`} />
+```
+
+**HTML Dinamico:**
+
+Astro puede mostrar HTML condicionalmente utilizando operadores lógicos JSX y expresiones ternarias.
+
+```html
+---
+const visible = true;
+---
+{visible && <p>¡Muéstramelo!</p>}
+
+{visible ? <p>¡Muéstramelo!</p> : <p>¡Si no, muéstramelo!</p>}
+```
+
+## Manejo de eventos
+
+¿Qué pasaría si quisiéramos agregar un evento para escuchar los clics en un botón utilizando Astro? Veamos un ejemplo de cómo podríamos hacerlo.
+
+```html
+<button id='button'>Haz clic</button>
+
+<script>
+  function handleClick() {
+    console.log('¡click here...!')
+  }
+
+  const button = document.getElementById('button')
+
+  button?.addEventListener('click', handleClick)
+</script>
+```
+
+Tenes un elemento de tipo `button` y ahora tenemos algo nuevo también podemos usar la etiqueta **script** para agregar **JavaScript** del lado del cliente, en este caso para agregar el **evento click del botón**. Así de fácil podemos agregar eventos con **astro** y el código no hay mucho que explicar es el mismo JS de siempre.
+
+
+## Agregar Tailwind CSS en Astro
+
+Quiero cambiar los styles de los anchor `<a>` y también del botón que agregue por cierto me falto mencionar el botón lo llame en la página principal index.astro. Volviendo al tema voy agregar tailwind.
+
+Ejecutamos el comando en la terminal `npx astro add tailwind` y le damos `yes`  a todo con esto lo que hace es instalar tailwind agregar la config que necesita astro para que funcione tailwind y listo.
+
+Una vez instalado nos crea un archivo llamado `tailwind.config.mjs` para toda la config de tailwind y en la config de `astro.config.mjs` agrega lo necesario para que todo funcione bien.
+
+```js
+import { defineConfig } from 'astro/config';
+
+import tailwind from "@astrojs/tailwind";
+
+// https://astro.build/config
+export default defineConfig({
+  integrations: [tailwind()]
+});
+```
+
+Con todo esto ya tenemos tailwind instalado y funcionando.
+
+
 
