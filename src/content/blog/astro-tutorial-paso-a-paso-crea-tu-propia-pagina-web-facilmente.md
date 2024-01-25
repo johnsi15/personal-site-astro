@@ -528,7 +528,7 @@ En nuestra página principal lo primero es importar el componente como lo veniam
 Existen otras directivas que podemos utilizar, las cuales varían según el momento o la acción con la que queremos que el componente haga render. `client:load`, `client:visible`, `client:idle`, `client:media`, etc.
 
 
-## Desplegar página web
+## Desplegar la página web con Netlify
 
 1. Crea una cuenta gratuita en **Netlify** si aún no tienes una.  Anota tu nombre de usuario. Verás tu panel de control y cualquiera de los sitios que crees en https://app.netlify.com/teams/username.
 
