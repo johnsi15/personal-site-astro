@@ -55,7 +55,7 @@ const ProfileFollow = () => {
             </a>
           </li>
           <li>
-            <a href='https://www.facebook.com/johnserrano15' aria-label='Facebook' target='_blank' rel='noreferrer'>
+            <a href='https://www.facebook.com/johnserranodev' aria-label='Facebook' target='_blank' rel='noreferrer'>
               <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'
                   ><path
                     fill='none'
