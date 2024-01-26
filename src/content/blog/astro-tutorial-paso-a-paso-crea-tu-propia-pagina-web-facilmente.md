@@ -59,7 +59,7 @@ Una vez completada la instalación, accedemos a nuestro proyecto y ejecutamos `n
 
 ## Estructura básica de una página
 
-Antes de explorar la estructura básica de una página en Astro, es importante mencionar algunos archivos y carpetas clave. Una vez que tengamos abierto el proyecto en nuestro editor de código, encontraremos los siguientes archivos y carpetas:
+Antes de explorar la estructura básica de **una página en Astro**, es importante mencionar algunos archivos y carpetas clave. Una vez que tengamos abierto el proyecto en nuestro editor de código, encontraremos los siguientes archivos y carpetas:
 
 * **astro.config.mjs:** Este archivo contiene toda la configuración necesaria para Astro, incluyendo la adición de nuevas dependencias, herramientas, y más.
 * **tsconfig.json:** Aquí se encuentra toda la configuración relacionada con TypeScript.
@@ -81,11 +81,11 @@ Ambos métodos producirán la misma ruta `about/` en nuestro sitio web. Este enf
 
 En la imagen anterior, podemos observar la estructura completa de nuestro proyecto. Vamos a detallar cada parte:
 
-* **Archivo index.astro:** Este archivo es la página principal de nuestro sitio web. Aquí, tenemos una importación de un Layout que define la estructura general de la página.
-* **Carpeta components/:** Esta carpeta contiene componentes reutilizables que se utilizan en varias partes del proyecto. Es decir pequeños fragmentos de HTML que podemos reutilizar.
-* **Carpeta pages/:** Aquí es donde se encuentran todos los archivos que representan páginas individuales de nuestro sitio web. Cada archivo dentro de esta carpeta define una ruta específica en nuestro sitio.
-* **Archivo Layout.astro:** Este archivo define el diseño y la estructura común que se aplicará a todas las páginas de nuestro sitio web. Es importado y utilizado en `index.astro`.
-* **Carpeta public/:** Esta carpeta contiene archivos estáticos como imágenes, íconos y otros recursos que serán accesibles públicamente desde nuestro sitio web.
+* **Archivo index.astro:** Este archivo es la página principal de nuestro sitio web. Aquí, tenemos una importación de un **Layout** que define la estructura general de la página.
+* **Carpeta components/:** Esta carpeta contiene **componentes reutilizables** que se utilizan en varias partes del proyecto. Es decir pequeños **fragmentos de HTML** que podemos reutilizar.
+* **Carpeta pages/:** Aquí es donde se encuentran todos los archivos que **representan páginas individuales** de nuestro sitio web. Cada archivo dentro de esta carpeta define una ruta específica en nuestro sitio.
+* **Archivo Layout.astro:** Este archivo define el **diseño y la estructura común** que se aplicará a todas las páginas de nuestro sitio web. Es importado y utilizado en `index.astro`.
+* **Carpeta public/:** Esta carpeta contiene **archivos estáticos** como imágenes, íconos y otros recursos que serán accesibles públicamente desde nuestro sitio web.
 
 Esta estructura proporciona una organización clara y modular para nuestro **proyecto Astro**, lo que facilita el desarrollo y la gestión de nuestro sitio web. Revisemos el archivo `index.astro`.
 
@@ -95,9 +95,9 @@ import Layout from '../layouts/Layout.astro'
 ---
 ```
 
-con los --- podemos ejecutar JS hacer importaciones de archivos, librerias, **props de Astro**. En nuestro caso estamos importando el Layout que representa una parte común de nuestro sitio web que se replicara en cada página que lo importemos y usemos.
+con los **---** podemos ejecutar JS hacer importaciones de archivos, librerias, **props de Astro**. En nuestro caso estamos importando el **Layout** que representa una parte común de nuestro sitio web que se replicara en cada página que lo importemos y usemos.
 
-Seguido de eso tenemos todo el html de nuestra página principal en este caso esta envuelto por un `<Layout />`. Si podemos ver el Layout resive unos props esto es algo muy parecido a React.js, luego revisaremos el Layout más a profundidad.
+Seguido de eso tenemos todo el **html de nuestra página principal** en este caso esta envuelto por un `<Layout />`. Si podemos ver el **Layout** resive unos props esto es algo muy parecido a React.js, luego revisaremos el Layout más a profundidad.
 
 ```jsx
 <Layout title='Página principal'>
@@ -275,8 +275,6 @@ Ya por último tenemos los **styles** con una **directiva**, te acuerdas que men
 
 ## Carpeta components
 
-En la carpeta components podemos agregar todos los componentes que necesitemos no necesariamente tienen que ir en esta carpeta pero por convención se agregan en está carpeta, y tenemos un componente llamado Card.astro donde tenemos lo mismo que ya se menciono anteiormente los props de que le paso al componente accedemos con Astro.props el HTML y los styles para ese componente.
-
 En la carpeta **components**, podemos agregar todos los componentes que necesitemos. Aunque no es estrictamente necesario que los componentes vayan en esta carpeta, por convención se suelen colocar aquí. Un ejemplo de componente que podemos encontrar es `Card.astro`, donde se definen los **props** y su respectivo acceso mediante `Astro.props`, el **HTML** específico del componente, y los **estilos asociados**.
 
 ```html
@@ -374,7 +372,7 @@ const nombre = "Astro";
 
 **HTML Dinamico:**
 
-Astro puede mostrar HTML condicionalmente utilizando operadores lógicos JSX y expresiones ternarias.
+Astro puede mostrar HTML condicionalmente utilizando **operadores lógicos JSX** y expresiones ternarias.
 
 ```html
 ---
@@ -387,7 +385,7 @@ const visible = true;
 
 ## Manejo de eventos
 
-¿Qué pasaría si quisiéramos agregar un evento para escuchar los clics en un botón utilizando Astro? Veamos un ejemplo de cómo podríamos hacerlo.
+¿Qué pasaría si quisiéramos **agregar un evento** para escuchar los clics en un botón utilizando Astro? Veamos un ejemplo de cómo podríamos hacerlo.
 
 ```html
 <button id='button'>Haz clic</button>
@@ -437,7 +435,7 @@ Con todo esto ya tenemos **tailwind instalado** y **funcionando**, voy aplicar a
 </main>
 ```
 
-Aunque no voy a entrar en detalles sobre el propósito de cada clase, observamos cambios en los estilos, como colores de texto, tamaños de fuentes y espacios entre elementos.
+Aunque no voy a entrar en detalles sobre el **propósito de cada clase**, observamos cambios en los estilos, como colores de texto, tamaños de fuentes y espacios entre elementos.
 
 
 **about.astro**
@@ -467,7 +465,7 @@ Por último el componente `Button` con estilos de color tamaño y bordes.
 
 ## Instalación de un framework UI
 
-Para instalar @astrojs/preact, vamos a ejecutar el siguiente comando: `npx astro add preact` muy parecido con tailwind le damos a todo que yes, esto lo que va hacer es instalar y agregar la configuración necesaria para que todo funcione correctamente.
+Para instalar **@astrojs/preact**, vamos a ejecutar el siguiente comando: `npx astro add preact` muy parecido con tailwind le damos a todo que **yes**, esto lo que va hacer es instalar y agregar la configuración necesaria para que todo funcione correctamente.
 
 **astro.config.mjs**
 ```js
@@ -479,7 +477,7 @@ export default defineConfig({
 });
 ```
 
-Ahora, vamos a crear un simple contador de números para explorar cómo se integra Preact con Astro.
+Ahora, vamos a crear un simple contador de números para explorar cómo se integra **Preact con Astro**.
 
 Lo primero es el componente del contador lo creamos dentro de la carpeta components:
 
@@ -508,7 +506,7 @@ export function Counter() {
 }
 ```
 
-Un componente con un estado muy sencillo es prácticamente como escribirlo con React.js, pero Preact es un poco más liviano y para este ejemplo viene bien. Lo único a destacar es la parte de las clases que las reutilizamos.
+Un componente con un estado muy sencillo es prácticamente como escribirlo con **React.js**, pero **Preact es un poco más liviano** y para este ejemplo viene bien. Lo único a destacar es la parte de las clases que las reutilizamos.
 
 Ahora viene lo que para mi es lo más importante que es la integración del componente con Astro:
 
@@ -544,14 +542,14 @@ Dejo el link del repositorio, [código completo](https://github.com/johnsi15/ast
 
 ## Conclusiones
 
-En conclusión, **Astro** es una opción atractiva para desarrolladores que buscan una forma moderna y eficiente de construir aplicaciones web, ofreciendo simplicidad, rendimiento y flexibilidad en un paquete integrado. En resumen estás son algunas de sus características y ventajas:
+En conclusión, **Astro** es una opción atractiva para desarrolladores que buscan una forma moderna y eficiente de **construir páginas web o aplicaciones web**, ofreciendo simplicidad, rendimiento y **flexibilidad** en un paquete integrado. En resumen estás son algunas de sus características y ventajas:
 
-1. **Simplicidad y Flexibilidad:** Astro ofrece una sintaxis familiar de HTML y JavaScript para crear aplicaciones web de forma sencilla y flexible.
+1. **Simplicidad y flexibilidad:** Astro ofrece una sintaxis familiar de HTML y JavaScript para crear aplicaciones web de forma sencilla y flexible.
 
-2. **Optimizaciones de Rendimiento:** Genera código HTML estático y optimizado para mejorar la velocidad de carga y la experiencia del usuario.
+2. **Optimizaciones de rendimiento:** Genera código HTML estático y optimizado para mejorar la velocidad de carga y la experiencia del usuario.
 
 3. **Compatibilidad con React y Preact:** Permite utilizar React o Preact para aprovechar sus bibliotecas de componentes mientras se optimiza el rendimiento. Y muchas más herramientas son compatibles con Astro.
 
-4. **Directivas Avanzadas:** Ofrece directivas avanzadas para controlar el renderizado de componentes de manera eficiente.
+4. **Directivas avanzadas:** Ofrece directivas avanzadas para controlar el renderizado de componentes de manera eficiente.
 
-5. **Crecimiento del Ecosistema:** Aunque es una herramienta relativamente nueva, **Astro** está ganando popularidad rápidamente y cuenta con una comunidad activa de desarrolladores.
+5. **Crecimiento del ecosistema:** Aunque es una herramienta relativamente nueva, **Astro** está ganando popularidad rápidamente y cuenta con una comunidad activa de desarrolladores.
