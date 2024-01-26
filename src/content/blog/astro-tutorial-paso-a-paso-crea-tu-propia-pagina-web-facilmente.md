@@ -40,16 +40,16 @@ Algunos aspectos destacados incluyen:
 4. Terminal o línea de comando para ejecutar todos los comandos.
 5. Muchas ganas de aprender
 
-## Instalación de ASTRO
+## Instalación de Astro
 
-Para iniciar un nuevo proyecto con **ASTRO**, utiliza el siguiente comando en tu terminal: `npm create astro@latest` este comando iniciará el proceso de creación del proyecto y te guiará a través de varias configuraciones iniciales. Al ejecutarlo, se te presentarán algunas preguntas importantes, tales como:
+Para iniciar un nuevo proyecto con **Astro**, utiliza el siguiente comando en tu terminal: `npm create astro@latest` este comando iniciará el proceso de creación del proyecto y te guiará a través de varias configuraciones iniciales. Al ejecutarlo, se te presentarán algunas preguntas importantes, tales como:
 
-* **Ubicación del Proyecto:** Selecciona la ubicación en la que deseas crear tu proyecto ASTRO. Por default es `./` donde estes ubicado en la terminal, en mi caso coloque `./astro-website`.
+* **Ubicación del Proyecto:** Selecciona la ubicación en la que deseas crear tu proyecto Astro. Por default es `./` donde estes ubicado en la terminal, en mi caso coloque `./astro-website`.
 * **¿Cómo te gustaría comenzar tu nuevo proyecto?**: Puedes elegir entre varias opciones para iniciar el proyecto, incluso comenzarlo totalmente vacío. En mi caso, seleccioné que incluyera los archivos de muestra.
 * **Tipo de Proyecto (TypeScript, JavaScript, etc.):** Decide si deseas utilizar TypeScript u otro tipo de configuración para tu proyecto. Puedes escoger **TypeScript** para seguir el tutorial.
 * **Inicialización con Git:** Opta por inicializar tu proyecto con Git si planeas gestionar el control de versiones. Yo lo inicialice le di yes.
 
-Ejemplo:
+**Ejemplo:**
 ![Ejemplo de instalación](https://res.cloudinary.com/john-serrano/image/upload/v1706134076/John%20Serrano/Blog%20Post/astro-tutorial-paso-a-paso-crea-tu-propia-pagina-web-facilmente/Captura_de_pantalla_2024-01-24_170655_hogxkh.jpg)
 
 Una vez completada la instalación, accedemos a nuestro proyecto y ejecutamos `npm run dev` para iniciar el modo de desarrollo. Esto nos proporcionará una URL para acceder al sitio web, que será `http://localhost:4321/`.
@@ -59,14 +59,14 @@ Una vez completada la instalación, accedemos a nuestro proyecto y ejecutamos `n
 
 ## Estructura básica de una página
 
-Antes de explorar la estructura básica de una página en ASTRO, es importante mencionar algunos archivos y carpetas clave. Una vez que tengamos abierto el proyecto en nuestro editor de código, encontraremos los siguientes archivos y carpetas:
+Antes de explorar la estructura básica de una página en Astro, es importante mencionar algunos archivos y carpetas clave. Una vez que tengamos abierto el proyecto en nuestro editor de código, encontraremos los siguientes archivos y carpetas:
 
-* **astro.config.mjs:** Este archivo contiene toda la configuración necesaria para ASTRO, incluyendo la adición de nuevas dependencias, herramientas, y más.
+* **astro.config.mjs:** Este archivo contiene toda la configuración necesaria para Astro, incluyendo la adición de nuevas dependencias, herramientas, y más.
 * **tsconfig.json:** Aquí se encuentra toda la configuración relacionada con TypeScript.
 * **Carpeta src/:** En esta carpeta se encuentra todo nuestro código fuente, donde desarrollaremos la lógica y diseño de nuestra página.
 * **Carpeta public/:** Esta carpeta contiene archivos públicos como logos, iconos, y otros recursos accesibles para nuestra página web.
 
-Estos archivos y carpetas proporcionan la base sobre la cual construiremos **nuestro proyecto en ASTRO**, permitiéndonos personalizar y estructurar nuestro sitio web de manera efectiva.
+Estos archivos y carpetas proporcionan la base sobre la cual construiremos **nuestro proyecto en Astro**, permitiéndonos personalizar y estructurar nuestro sitio web de manera efectiva.
 
 Dentro de la carpeta `src/`, encontramos tres carpetas, pero la más importante es la de `pages/`. Cada archivo dentro de esta carpeta hace referencia a una ruta de nuestro sitio web. Por defecto, dentro de `pages/` está `index.astro`, que representa la página principal.
 
@@ -75,7 +75,7 @@ Para crear una **ruta** como, por ejemplo, `about/`, podemos seguir dos enfoques
 Crear un archivo about.astro directamente en la carpeta `pages/`.
 Crear una carpeta `about/` dentro de `pages/` y dentro de esta carpeta, colocar un archivo `index.astro`.
 
-Ambos métodos producirán la misma ruta `about/` en nuestro sitio web. Este enfoque de estructura de carpetas nos permite organizar nuestras páginas de manera clara y lógica dentro del proyecto ASTRO.
+Ambos métodos producirán la misma ruta `about/` en nuestro sitio web. Este enfoque de estructura de carpetas nos permite organizar nuestras páginas de manera clara y lógica dentro del proyecto Astro.
 
 ![Estructura de carpetas](https://res.cloudinary.com/john-serrano/image/upload/v1706190554/John%20Serrano/Blog%20Post/astro-tutorial-paso-a-paso-crea-tu-propia-pagina-web-facilmente/Captura_de_pantalla_2024-01-25_084854_ajgemf.jpg)
 
@@ -87,7 +87,7 @@ En la imagen anterior, podemos observar la estructura completa de nuestro proyec
 * **Archivo Layout.astro:** Este archivo define el diseño y la estructura común que se aplicará a todas las páginas de nuestro sitio web. Es importado y utilizado en `index.astro`.
 * **Carpeta public/:** Esta carpeta contiene archivos estáticos como imágenes, íconos y otros recursos que serán accesibles públicamente desde nuestro sitio web.
 
-Esta estructura proporciona una organización clara y modular para nuestro **proyecto ASTRO**, lo que facilita el desarrollo y la gestión de nuestro sitio web. Revisemos el archivo `index.astro`.
+Esta estructura proporciona una organización clara y modular para nuestro **proyecto Astro**, lo que facilita el desarrollo y la gestión de nuestro sitio web. Revisemos el archivo `index.astro`.
 
 ```js
 ---
@@ -125,7 +125,7 @@ Tenemos un tag `main` y un `h1` con el `texto Hello World` y por último tenemos
 
 Utilizando la etiqueta `<style>`, podemos agregar todos los estilos que afectarán a nuestra página en el archivo `index.astro`. Es importante destacar que estos estilos no son **globales**; es decir, solo afectarán a **los elementos** dentro de la página específica donde se definen.
 
-En caso de que necesitemos aplicar **estilos globales** que afecten a todo el sitio web, ASTRO proporciona **directivas** que nos permiten agregar estilos globales de manera sencilla y efectiva, más adelante veremos como se aplican.
+En caso de que necesitemos aplicar **estilos globales** que afecten a todo el sitio web, Astro proporciona **directivas** que nos permiten agregar estilos globales de manera sencilla y efectiva, más adelante veremos como se aplican.
 
 Ahora vamos a crear el archivo `about.astro` y agreguemos el `Layout` el `html` necesario y los `styles`.
 
@@ -408,7 +408,7 @@ Tenes un elemento de tipo `button` y ahora tenemos algo nuevo también podemos u
 
 ## Agregar Tailwind CSS en Astro
 
-Quiero cambiar los styles de los anchor `<a>` y también del botón que agregue por cierto me falto mencionar el botón lo llame en la página principal index.astro. Volviendo al tema voy agregar tailwind.
+Quiero cambiar los styles de los anchor `<a>` y también del botón que agregue por cierto me falto mencionar el botón lo llame en la página principal `index.astro`. Volviendo al tema voy agregar **tailwind**.
 
 Ejecutamos el comando en la terminal `npx astro add tailwind` y le damos `yes`  a todo con esto lo que hace es instalar tailwind agregar la config que necesita astro para que funcione tailwind y listo.
 
@@ -525,7 +525,7 @@ import { Counter } from '../components/Counter'
 
 En nuestra página principal lo primero es importar el componente como lo veniamos haciendo con **Astro**, y lo segundo es llamar el componente `<Counter />` pero acá viene lo diferente para que funcione el componente debemos pasarle una directiva `client:visible` donde le indicamos a **Astro** que ese componente es **interactivo** que necesita de JavaScript, en Astro lo llaman `Islas`. 
 
-Existen otras directivas que podemos utilizar, las cuales varían según el momento o la acción con la que queremos que el componente haga render. `client:load`, `client:visible`, `client:idle`, `client:media`, etc.
+Existen otras directivas que podemos utilizar, las cuales varían según el momento o la acción con laASTRO que queremos que el componente haga render. `client:load`, `client:visible`, `client:idle`, `client:media`, etc.
 
 
 ## Desplegar la página web con Netlify
