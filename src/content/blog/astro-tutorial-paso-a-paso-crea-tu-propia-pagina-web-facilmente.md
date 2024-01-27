@@ -274,7 +274,6 @@ Gracias al **slot**, podemos visualizar todo el HTML que hemos colocado en las p
 Ya por último tenemos los **styles** con una **directiva**, te acuerdas que mencione las directivas bueno acá estamos usando la directiva `is:global` con esta directiva le indicamos que todos los styles son de tipo globales y afectara todas las páginas de nuestro sitio web.
 
 ## Carpeta components
-
 En la carpeta **components**, podemos agregar todos los componentes que necesitemos. Aunque no es estrictamente necesario que los componentes vayan en esta carpeta, por convención se suelen colocar aquí. Un ejemplo de componente que podemos encontrar es `Card.astro`, donde se definen los **props** y su respectivo acceso mediante `Astro.props`, el **HTML** específico del componente, y los **estilos asociados**.
 
 ```html
@@ -435,7 +434,7 @@ Con todo esto ya tenemos **tailwind instalado** y **funcionando**, voy aplicar a
 </main>
 ```
 
-Aunque no voy a entrar en detalles sobre el **propósito de cada clase**, observamos cambios en los estilos, como colores de texto, tamaños de fuentes y espacios entre elementos.
+Aunque no voy a entrar en detalles sobre el **propósito de cada clase**, observamos cambios en los estilos, como **colores de texto**, **tamaños de fuentes** y espacios entre elementos.
 
 
 **about.astro**
@@ -523,7 +522,7 @@ import { Counter } from '../components/Counter'
 
 En nuestra página principal lo primero es importar el componente como lo veniamos haciendo con **Astro**, y lo segundo es llamar el componente `<Counter />` pero acá viene lo diferente para que funcione el componente debemos pasarle una directiva `client:visible` donde le indicamos a **Astro** que ese componente es **interactivo** que necesita de JavaScript, en Astro lo llaman `Islas`. 
 
-Existen otras directivas que podemos utilizar, las cuales varían según el momento o la acción con laASTRO que queremos que el componente haga render. `client:load`, `client:visible`, `client:idle`, `client:media`, etc.
+Existen otras directivas que podemos utilizar, las cuales varían según el momento o la acción con la que queremos que el componente haga render. `client:load`, `client:visible`, `client:idle`, `client:media`, etc.
 
 
 ## Desplegar la página web con Netlify
