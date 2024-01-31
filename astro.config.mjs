@@ -27,6 +27,7 @@ export default defineConfig({
     drafts: true,
   },
   site: 'https://johnserrano.co',
+  trailingSlash: 'never',
   integrations: [
     mdx(),
     sitemap(),

@@ -333,9 +333,9 @@ export default useFetch;
 ```
     
 
-Nuestro código tiene un pequeño problema ya que si revisamos la consola de nuestro navegador nos va mostrar la siguiente advertencia.
-![](/content/images/2020/03/image.png)
-"Warning: An Effect function must not return anything besides a function, which is used for clean-up." Este es el mensaje que vemos en la consola.
+Nuestro código tiene un pequeño problema ya que si revisamos la consola de nuestro navegador nos va mostrar la siguiente advertencia:
+
+> "Warning: An Effect function must not return anything besides a function, which is used for clean-up." Este es el mensaje que vemos en la consola.
 
 Lo que pasa es que en nuestro **useEffect** no podemos devolver una promesa. Las funciones **asincrónicas** de JavaScript siempre devuelven una promesa y useEffect debe devolver exclusivamente otra función, entonces que podemos hacer para solucionar este problema veamos cómo quedaría nuestro código:
 
