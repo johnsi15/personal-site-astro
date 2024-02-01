@@ -88,11 +88,17 @@ Para comenzar con el **plan gratuito** es mas que suficiente si ya tienes una em
 En este caso vamos a ver la configuración para un proyecto en la web con **JavaScript**, lo primero que tenemos que hacer es crear una cuenta en firebase si ya tiene un correo gmail lo único que tienes que hacer es ingresar a [https://console.firebase.google.com/](https://console.firebase.google.com/).
 
 Listo una vez dentro de la consola de firebase lo que tenemos que hacer es crear un proyecto.
-![Añadir proyecto en Firebase](https://static.johnserrano.co/content/images/2021/01/image.png)
+
+> Añadir proyecto en Firebase
+
 Le damos click en añadir proyecto esto constara de 3 pasos el primero es darle un nombre el segundo es activar google analytics si quieren lo pueden desactivar y el tercero es darle a **crear el proyecto** y esperamos que termine ese proceso.
-![Consola de administración](/content/images/2021/01/image-1.png)
+
+> Consola de administración
+
 Este serie el resultado final, con esto tenemos acceso a varios de sus servicios. Hacemos click en el **icono Web** para iniciar el flujo de trabajo de configuración.
-![Aplicación en Firebase](/content/images/2021/01/image-2.png)
+
+>Aplicación en Firebase
+
 Le damos un nombre y le damos registrar, ese nombre es interno solo se puede ver en la consola, con esto obtenemos el código para inicializar nuestra **aplicación**, podemos copiar ese código ir a nuestro editor de código favorito crear un html y pegar ese código, algo así como esto.
 
 ```html

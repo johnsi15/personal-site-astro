@@ -107,11 +107,12 @@ const Hola = () => (
 export default Hola
 ```
     
-Podemos ver que es un componente sin estado y sin props lo único diferente es ***Link ***lo cual lo importamos de ***gatsby-link*** y el resto ya lo sabemos importamos un componente **Layout **y agregamos nuestro *jsx* y exportamos nuestro componente **Hola**.
+Podemos ver que es un componente sin estado y sin props lo único diferente es ***Link*** lo cual lo importamos de ***gatsby-link*** y el resto ya lo sabemos importamos un componente **Layout** y agregamos nuestro *jsx* y exportamos nuestro componente **Hola**.
 
 Podemos ir al navegador directamente [http://localhost:8000/hola](http://localhost:8000/hola) y cargara la nueva página.
-![Página Hola](/content/images/2020/05/image-4.png)
-Podemos dar click en *Regresar al inicio* y volver a la página principal. También podemos agregar un ***Link ***desde la página principal para ir a nuestra nueva página veamos cómo queda el código.
+
+
+Podemos dar click en *Regresar al inicio* y volver a la página principal. También podemos agregar un ***Link*** desde la página principal para ir a nuestra nueva página veamos cómo queda el código.
 
 ```javascript
 // index.js
