@@ -12,7 +12,12 @@ export interface Props {
   dateModified?: Date
 }
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site)
+function removeTrailingSlash(str: string) {
+  return str.replace(/\/+$/, '')
+}
+
+const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString())
+
 const {
   title,
   description,
@@ -50,7 +55,7 @@ const {
 
 <!-- Open Graph / Facebook -->
 <meta property='og:type' content='website' />
-<meta property='og:url' content={Astro.url} />
+<meta property='og:url' content={canonicalURL} />
 <meta property='og:title' content={title || openGraph.title} />
 <meta property='og:description' content={description || openGraph.description} />
 <meta property='og:image' content={new URL(image, Astro.url)} />
@@ -60,7 +65,7 @@ const {
 <!-- Twitter -->
 <meta property='twitter:card' content={twitter.cardType} />
 <meta property='twitter:site' name='twitter:site' content={twitter.handle} />
-<meta property='twitter:url' content={Astro.url} />
+<meta property='twitter:url' content={canonicalURL} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
@@ -72,7 +77,7 @@ const {
     '@type': 'BlogPosting',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': Astro.url,
+      '@id': canonicalURL,
     },
     headline: title,
     image: [new URL(image, Astro.url)],
