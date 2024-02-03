@@ -2,8 +2,6 @@
 import Layout from '../../layouts/index.astro'
 import { getCollection } from 'astro:content'
 import PostsGrid from '../../components/PostsGrid'
-// import Cover from '../../components/Cover';
-// import PostTitle from '../../components/PostTitle';
 
 const posts = (
   await getCollection('blog', ({ data }) => {
@@ -12,18 +10,9 @@ const posts = (
 )
   .sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
   .slice(0, 20)
-// console.log({ posts: posts[0].data });
-// const isProduction = import.meta.env.PROD
 ---
 
-<Layout
-  title='Tags - John Serrano | Frontend, JavaScript, TypeScript, React, Node.js'
-  url='https://johnserrano.co/tags'
-  titleOpenGraph='Tags - John Serrano | Frontend, JavaScript, TypeScript, React, Node.js'
->
-  <!-- <Cover client:load>
-    <PostTitle client:load capitalize='capitalize'>JavaScript</PostTitle>
-  </Cover> -->
+<Layout title='Tags' url='https://johnserrano.co/tags' titleOpenGraph='Tags'>
   <section id='Tag' class='container'>
     {posts.length > 0 && <PostsGrid posts={posts} columns='3' />}
   </section>
@@ -31,7 +20,6 @@ const posts = (
 
 <style>
   #Tag {
-    /* margin-top: 30px; */
     flex: 1;
   }
 
