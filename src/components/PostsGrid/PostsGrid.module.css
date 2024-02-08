@@ -23,7 +23,7 @@
   .PostsThree {
     grid-template-columns: repeat(2, 300px);
     margin: 0 auto;
-    gap: 10px;
+    gap: 20px;
     padding-bottom: 20px;
   }
 }

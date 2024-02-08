@@ -136,4 +136,8 @@
     gap: 20px;
     margin-top: 10px;
   }
+
+  .post__header img {
+    display: none;
+  }
 }
