@@ -1,3 +1,19 @@
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: left;
+}
+
+.noMoney {
+  margin-top: 40px;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+}
+
 .apoyar {
   max-width: 700px;
   margin: 50px auto 70px;
@@ -9,7 +25,6 @@
 }
 
 .apoyar p {
-  text-align: center;
   font-size: 1.25rem;
   line-height: 1.3;
   border: none;
@@ -41,6 +56,16 @@
   box-shadow: 0 0 10px var(--color-blue-500);
 }
 
+.linkDonacion.bgWhite {
+  background-color: #e2e8f0;
+  color: #000814;
+}
+
+.btns {
+  display: flex;
+  gap: 16px;
+}
+
 @media screen and (max-width: 768px) {
   .citaBible {
     text-align: center;
@@ -48,5 +73,11 @@
 
   .apoyar {
     margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .linkDonacion {
+    font-size: 1.1rem;
   }
 }

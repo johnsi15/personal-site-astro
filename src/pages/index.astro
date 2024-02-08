@@ -34,32 +34,37 @@ import Layout from '../layouts/index.astro'
       <!-- {posts.length > 0 && <Posts posts={posts} columns='2' />} -->
       <PostCard columns={2} />
 
-      <h2>Contacto</h2>
-      <p class='contact'>
-        Puedes ponerte en contacto conmigo públicamente por las redes sociales Mencíoname en Twitter <a
-          href='https://twitter.com/Jandrey15'
-          rel='noreferrer'
-          target='_blank'>(soy @jandrey15)</a
-        >. También puedes contactarme enviándome un correo electrónico a <strong>me@johnserrano.co</strong>. Estoy aquí
-        para recibir tus comentarios, sugerencias o ayudarte a resolver cualquier problema que puedas tener.
-      </p>
-
       <h2>Apoyo</h2>
       <div class='apoyar'>
         <p>
-          Si te gusta lo que lees y quieres respaldar mi trabajo, puedes realizar una donación a través de Tarjeta de
-          crédito o PSE. Además, estoy disponible para recibir tu apoyo por correo electrónico en
+          Estoy muy feliz de que disfrutes del contenido de johnserrano.co, si te gusta lo que lees y quieres respaldar
+          mi trabajo, puedes realizar una donación a través de Tarjeta de crédito o PSE. Además, estoy disponible para
+          recibir tu apoyo por correo electrónico en
           <strong>me@johnserrano.co</strong> si prefieres otras opciones. Tu apoyo ayuda a mantener este proyecto en marcha.
           ¡Gracias por tu apoyo!
         </p>
-        <a
-          class='linkDonacion'
-          href='https://link.mercadopago.com.co/johnserrano'
-          aria-label='Donar aquí Mercado Pago'
-          target='_blank'
-          rel='noopener noreferrer'>Donar aquí</a
-        >
-        <p class='cripto'>
+
+        <div class='btns'>
+          <a
+            class='linkDonacion'
+            href='https://link.mercadopago.com.co/johnserrano'
+            aria-label='Donar aquí Mercado Pago'
+            target='_blank'
+            rel='noopener noreferrer'>Donar aquí</a
+          >
+
+          <a
+            href='https://www.buymeacoffee.com/jandrey15'
+            class='linkDonacion bg-white'
+            aria-label='Tu apoyo es importante'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <img src='/bmc-logo.svg' alt='Cómprame un café' width={20} height={20} />
+            Cómprame un café
+          </a>
+        </div>
+        <!-- <p class='cripto'>
           Puedes donar criptomonedas con: <br />
           <strong>TRX Tron red TRC20:</strong>
           <br />
@@ -70,11 +75,31 @@ import Layout from '../layouts/index.astro'
           <strong>BNB Smart Chain BSC:</strong>
           <br />
           0xe8ac8dc8e56208d4dad5f719ba627436187acc16
-        </p>
-        <q class='citaBible'
-          >Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q
-        >
+        </p> -->
       </div>
+
+      <h2>Apoyo no monetario</h2>
+      <div class='apoyar'>
+        <p>
+          Otra manera de ayudarme es difundiéndolo de boca en boca! Si consideras que el contenido que comparto en
+          johnserrano.co puede ser valioso para tus amig@s y compañer@s, te invito a compartirlo en Twitter, LinkedIn o
+          en la plataforma que prefieras. Tu recomendación puede marcar la diferencia. ✨
+        </p>
+      </div>
+
+      <h2>Contacto</h2>
+      <p class='contact'>
+        Puedes ponerte en contacto conmigo públicamente por las redes sociales Mencíoname en Twitter <a
+          href='https://twitter.com/Jandrey15'
+          rel='noreferrer'
+          target='_blank'>(soy @jandrey15)</a
+        >. También puedes contactarme enviándome un correo electrónico a <strong>me@johnserrano.co</strong>. Estoy aquí
+        para recibir tus comentarios, sugerencias o ayudarte a resolver cualquier problema que puedas tener.
+      </p>
+
+      <q class='citaBible'
+        >Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q
+      >
     </div>
   </main>
 </Layout>
@@ -91,13 +116,14 @@ import Layout from '../layouts/index.astro'
 
   .apoyar {
     max-width: 700px;
-    margin: 0 auto 100px;
+    margin: 0 auto 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 2px solid #eeeeee;
+    padding-bottom: 30px;
   }
   .apoyar p {
-    text-align: center;
     border: none;
   }
 
@@ -108,6 +134,8 @@ import Layout from '../layouts/index.astro'
   .citaBible {
     font-style: italic;
     font-weight: bold;
+    margin-bottom: 50px;
+    display: block;
   }
 
   h2 {
@@ -170,6 +198,7 @@ import Layout from '../layouts/index.astro'
   }
   .contact {
     margin-bottom: 70px;
+    border: none;
   }
 
   .linkDonacion {
@@ -184,6 +213,16 @@ import Layout from '../layouts/index.astro'
     transition: all 0.3s;
   }
 
+  .bg-white {
+    background-color: #e2e8f0;
+    color: #000814;
+  }
+
+  .btns {
+    display: flex;
+    gap: 16px;
+  }
+
   .linkDonacion:hover,
   .linkDonacion:active {
     box-shadow: 0 0 10px var(--color-blue-500);
@@ -192,6 +231,12 @@ import Layout from '../layouts/index.astro'
   @media screen and (max-width: 768px) {
     .citaBible {
       text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .linkDonacion {
+      font-size: 1.1rem;
     }
   }
 </style>
