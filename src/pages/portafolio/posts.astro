@@ -13,7 +13,7 @@ const posts = blogEntries.slice(0, 3)
 ---
 
 <section class='posts'>
-  <h6>Últimos artículos publicados</h6>
+  <h6>Últimos Artículos Publicados</h6>
 
   <div class='posts_list'>
     {
@@ -34,6 +34,8 @@ const posts = blogEntries.slice(0, 3)
       })
     }
   </div>
+
+  <a class='btn_cv' href='https://cv.johnserrano.co/' target='_blank'>Explorar Versión Minimalista De Mi Portafolio</a>
 </section>
 
 <style>
@@ -47,7 +49,7 @@ const posts = blogEntries.slice(0, 3)
     line-height: 2.3rem;
     margin: 0;
     text-wrap: balance;
-    margin-bottom: 40px;
+    margin-bottom: 58px;
     text-align: center;
   }
 
@@ -121,12 +123,38 @@ const posts = blogEntries.slice(0, 3)
     margin: 0;
   }
 
+  .btn_cv {
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    background: transparent;
+    border: 1px solid var(--color-blue-500);
+    color: var(--color-blue-500);
+    font-size: var(--font-size-medium-small);
+    transition: all 0.3s;
+    outline: none;
+    margin: 100px auto 0;
+    display: flex;
+    max-width: max-content;
+  }
+
+  .btn_cv:hover {
+    box-shadow: 4px 4px 0 0 var(--color-blue-500);
+    transform: translate(-5px, -5px);
+  }
+
   @media screen and (max-width: 768px) {
     .posts {
       margin-top: 50px;
     }
     article:nth-of-type(2) {
       transform: translateY(0px);
+    }
+    .btn_cv {
+      line-height: 1.6rem;
+      margin-top: 80px;
+      text-align: center;
+      width: 260px;
     }
   }
 </style>

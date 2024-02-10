@@ -3,6 +3,7 @@ import IconoGithub from './icons/icono-github.astro'
 import IconoLinkedin from './icons/icono-linkedin.astro'
 import IconoTwitter from './icons/icono-twitter.astro'
 import IconoFacebook from './icons/icono-facebook.astro'
+import IconoYoutube from './icons/icono-youtube.astro'
 interface Props {
   borders: boolean
 }
@@ -26,6 +27,11 @@ const { borders } = Astro.props
       ><IconoFacebook /></a
     >
   </li>
+  <li>
+    <a href='https://www.youtube.com/@johnserranodev' aria-label='YouTube' target='_blank' rel='noreferrer'
+      ><IconoYoutube /></a
+    >
+  </li>
 </ul>
 
 <style>
@@ -34,7 +40,7 @@ const { borders } = Astro.props
     list-style: none;
     margin: 10px auto 0;
     display: flex;
-    gap: 10px;
+    gap: 7px;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -47,7 +53,7 @@ const { borders } = Astro.props
     display: inline-block;
     width: 100px;
     background-color: var(--color-white-opacity-70);
-    left: -40px;
+    left: -60px;
   }
   .borders::before {
     content: '';
@@ -56,7 +62,7 @@ const { borders } = Astro.props
     display: inline-block;
     width: 100px;
     background-color: var(--color-white-opacity-70);
-    right: -40px;
+    right: -60px;
   }
 
   li {
@@ -94,10 +100,10 @@ const { borders } = Astro.props
     }
 
     .borders::after {
-      left: 0;
+      left: -5px;
     }
     .borders::before {
-      right: 0;
+      right: -5px;
     }
   }
 </style>
