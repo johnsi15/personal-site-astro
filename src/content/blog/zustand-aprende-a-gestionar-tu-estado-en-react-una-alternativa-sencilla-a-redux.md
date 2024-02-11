@@ -40,4 +40,33 @@ Debes tener instalada algunas herramientas y contar con algunos conocimientos b�
 
 Una vez que tengas estos requisitos instalados y configurados en tu sistema, estarás listo para continuar con el tutorial.
 
+## Iniciando y creando el proyecto 🚀
+
+Vamos a crear un estado para gestionar un carrito de compras, lo primero es iniciar el proyecto y darle un nombre lo vamos hacer con vite el nombre es de su preferencia. 
+
+`npm create vite@latest`
+
+Nos va hacer varias preguntas como darle un nombre a nuestro proyecto el framework que vamos a utilizar y la variente en este caso vamos a usar **TypeScript** con **SWC** que es una alternativa a babel.
+
+```shell
+✔ Project name: … shopping-cart
+✔ Select a framework: › React
+✔ Select a variant: › TypeScript + SWC
+```
+
+Ahora lo que vamos hacer es entrar a nuestro proyecto y hacer una instalación de todos los paquetes que vienen por defecto.
+
+```shell
+cd shopping-cart
+npm install
+```
+
+## Instalación de Zustand y creando una store
+
+Lo primero es instalar Zustand:
+
+`npm install zustand -E`
+
+Con -E para que instale la versión exacta.
+
 
