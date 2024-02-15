@@ -457,5 +457,5 @@ Zustand es una opción **simple** y **eficiente** para gestionar el estado en ap
 
 Una de las ventajas clave de **Zustand** es que no requiere el uso de un **Provider**, lo que simplifica la integración y reduce la necesidad de encadenar proveedores en la jerarquía de componentes. Con Zustand, puedes gestionar el **estado** de manera **flexible**, definiendo tus propias **acciones** y mutadores para actualizar el estado según tus necesidades específicas.
 
-Te dejo todo el código en el siguiente [repositorio](https://github.com/johnsi15/zustand-shopping-cart) si te gusta el contenido deja tu estreilla en el repositorio✨.
+Te dejo todo el código en el siguiente [repositorio](https://github.com/johnsi15/zustand-shopping-cart) si te gusta el contenido deja tu estrellita en el repositorio✨.
 
