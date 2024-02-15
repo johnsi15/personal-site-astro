@@ -28,7 +28,7 @@ const ProfileApoyar = () => {
           target='_blank'
           rel='noopener noreferrer'
         >
-          <img src='/bmc-logo.svg' alt='Cómprame un café' width={20} height={20} />
+          <img src='/bmc-logo.svg' alt='Ayúdame con tu donación' width={20} height={20} />
           Cómprame un café
         </a>
       </div>
