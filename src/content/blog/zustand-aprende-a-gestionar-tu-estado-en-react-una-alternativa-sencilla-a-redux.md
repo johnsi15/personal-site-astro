@@ -185,7 +185,6 @@ export default App
 
 Definimos una interfaz llamada `Product` que describe la estructura de un producto, con propiedades como `id`, `name` y `price`.
 
-
 Obtenemos el método `addItem` del estado del carrito de compras utilizando `useShoppingCart`. Esta función se utiliza para agregar un producto al carrito, como parametro recibimos el **state** y con el podemos acceder al método `addItem`.
 
 Definimos una función llamada `handlerAdd` que recibe un producto como argumento y devuelve otra función. Esta función devuelta se usa como manejador de eventos para los botones "Add item cart" de cada producto en la lista. Cuando se hace clic en un botón, se llama a esta función para agregar el producto correspondiente al carrito utilizando el método `addItem`.
@@ -283,6 +282,8 @@ export const useShoppingCart = create<ShoppingCart>((set, get) => ({
   clearCart: () => set({ items: [] }),
 }))
 ```
+
+> Nota: Para acceder al estado almacenado en la store, podemos usar el método `get() `que está seguido de `set()`. Con este enfoque, tenemos acceso completo al estado.
 
 ¡Perfecto! Ahora vamos a invocar todos estos métodos desde nuestro componente `App` y observemos cómo funciona en acción.
 
@@ -386,4 +387,87 @@ export default App
 Algo que podemos observar con todo esto es que estamos llamando a cada rato `useShoppingCart` algo que podría hacer es separa nuestro código en pequeños componentes pero quiero también enseñarte una funcionalidad de **Zustand** llamada `shallow`.
 
 
+Lo primero que debemos hacer es importar el hook `useShallow` de la biblioteca **zustand/react/shallow**. Luego, lo implementamos de la siguiente manera:
+
+```tsx
+import { useShallow } from 'zustand/react/shallow'
+
+const { items, addItem, increaseQuantity, decreaseQuantity, removeItem, clearCart, getTotalPrice } = useShoppingCart(
+    useShallow(state => ({
+      items: state.items,
+      addItem: state.addItem,
+      increaseQuantity: state.increaseQuantity,
+      decreaseQuantity: state.decreaseQuantity,
+      removeItem: state.removeItem,
+      clearCart: state.clearCart,
+      getTotalPrice: state.getTotalPrice,
+    }))
+  )
+```
+
+Estamos utilizando el hook `useShallow` para evitar que los componentes vuelvan a renderizarse innecesariamente si las propiedades del estado no han cambiado.
+
+Por defecto si no usamos **shallow**, Zustand detecta los cambios con igualdad estricta (old === new), lo cual es eficiente para estados atómicos.
+
+Debido a que la igualdad estricta por defecto no sería útil en este caso para evaluar **objetos**, ya que provocaría **un re-renderizado incluso si el objeto no ha cambiado**. Por eso, utilizamos el hook `useShallow` para evitar este comportamiento y optimizar el rendimiento del componente.
+
+Todo esto aplica en el caso de que deseemos usar **objetos** para recuperar los estados de nuestro `store`.
+
+## Persistir el store 
+
+También existe un **middleware** con el cual podemos persistir el estado de nuesta aplicación debemos important el middleware`import { persist } from 'zustand/middleware'` por defecto usa **localStorage** para persistir la data. Vemoamos como quedaría nuestro `store` implementando el middleware.
+
+```tsx
+import { persist } from 'zustand/middleware'
+
+export const useShoppingCart = create<ShoppingCart>()(
+  persist(
+    (set, get) => ({
+      items: [],
+      addItem: (product, quantity = 1) => {
+
+      },
+      removeItem: productId => {
+
+      },
+      increaseQuantity: (productId, quantity = 1) => {
+
+      },
+      decreaseQuantity: (productId, quantity = 1) => {
+
+      },
+      getTotalPrice: () => {
+
+      },
+      clearCart: () => set({ }),
+    }),
+    {
+      name: 'shopping-cart',
+      // storage: createJSONStorage(() => sessionStorage) es cun campo opcional si NO queremos usar localStorage.
+    }
+  )
+)
+```
+
+Cuando envolvemos nuestro storage con el `middleware`, podemos proporcionarle opciones adicionales, como el nombre. Esto nos permite personalizar cómo se almacena y accede al estado en el almacenamiento persistente.
+
+## Conclusiones
+
+Zustand es una opción simple y eficiente: Para gestionar el estado en aplicaciones React, especialmente cuando se trata de aplicaciones pequeñas o medianas, Zustand ofrece una solución simple y eficiente.
+
+Sin necesidad de Provider: Una de las ventajas clave de Zustand es que no requiere el uso de un Provider, lo que simplifica la integración y reduce la necesidad de encadenar proveedores en la jerarquía de componentes.
+
+Flexibilidad en la gestión del estado: Con Zustand, puedes gestionar el estado de manera flexible, definiendo tus propias acciones y mutadores para actualizar el estado según tus necesidades específicas.
+
+Rendimiento optimizado: Zustand utiliza una combinación de inmutabilidad estructural y comparación superficial para optimizar el rendimiento, lo que significa que las actualizaciones de estado solo provocan re-renders cuando sea necesario.
+
+Buena alternativa a Redux: Si bien Redux es una herramienta poderosa, puede resultar compleja para proyectos más pequeños o medianos. Zustand ofrece una alternativa más ligera y fácil de usar, especialmente cuando la complejidad del estado no es tan alta.
+
+Documentación detallada y activa comunidad: Zustand cuenta con una documentación clara y una comunidad activa que proporciona soporte y recursos adicionales para aquellos que están aprendiendo a usarlo.
+
+Compatibilidad con TypeScript: Zustand es compatible con TypeScript, lo que facilita la tipificación segura del estado y las acciones dentro de tu aplicación.
+
+Fácil integración con React: Al ser una biblioteca diseñada específicamente para React, Zustand se integra fácilmente con proyectos existentes y sigue los principios de la biblioteca, como el enfoque de componentes y la gestión del ciclo de vida.
+
+En resumen, Zustand es una excelente opción para gestionar el estado en aplicaciones React, especialmente cuando se busca simplicidad, rendimiento y flexibilidad en el manejo del estado de la aplicación.
 
