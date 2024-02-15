@@ -9,7 +9,7 @@ primaryTag: { name: 'Zustand', slug: 'zustand' }
 excerpt: "Descubre qué es Zustand, sus ventajas y cómo puedes gestionar el estado de tu aplicación en pocas líneas de código. También compatible con TypeScript."
 canonicalURL: "https://johnserrano.co/blog/zustand-aprende-a-gestionar-tu-estado-en-react-una-alternativa-sencilla-a-redux"
 isDraft: false
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1697643034/John%20Serrano/Blog%20Post/codigo-limpio-en-javascript-deuda-tecnica-refactorizacion/k69ul2yssn9t83xwirqm.webp"
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1708016497/John%20Serrano/Blog%20Post/zustand-aprende-a-gestionar-tu-estado-en-react-una-alternativa-sencilla-a-redux/viwegf4ocrn9kvcqkv2d.jpg"
 ---
 
 ## ¿Qué es Zustand?
@@ -453,21 +453,9 @@ Cuando envolvemos nuestro storage con el `middleware`, podemos proporcionarle op
 
 ## Conclusiones
 
-Zustand es una opción simple y eficiente: Para gestionar el estado en aplicaciones React, especialmente cuando se trata de aplicaciones pequeñas o medianas, Zustand ofrece una solución simple y eficiente.
+Zustand es una opción **simple** y **eficiente** para gestionar el estado en aplicaciones React, especialmente cuando se trata de **aplicaciones pequeñas o medianas**, Zustand ofrece una solución simple y eficiente.
 
-Sin necesidad de Provider: Una de las ventajas clave de Zustand es que no requiere el uso de un Provider, lo que simplifica la integración y reduce la necesidad de encadenar proveedores en la jerarquía de componentes.
+Una de las ventajas clave de **Zustand** es que no requiere el uso de un **Provider**, lo que simplifica la integración y reduce la necesidad de encadenar proveedores en la jerarquía de componentes. Con Zustand, puedes gestionar el **estado** de manera **flexible**, definiendo tus propias **acciones** y mutadores para actualizar el estado según tus necesidades específicas.
 
-Flexibilidad en la gestión del estado: Con Zustand, puedes gestionar el estado de manera flexible, definiendo tus propias acciones y mutadores para actualizar el estado según tus necesidades específicas.
-
-Rendimiento optimizado: Zustand utiliza una combinación de inmutabilidad estructural y comparación superficial para optimizar el rendimiento, lo que significa que las actualizaciones de estado solo provocan re-renders cuando sea necesario.
-
-Buena alternativa a Redux: Si bien Redux es una herramienta poderosa, puede resultar compleja para proyectos más pequeños o medianos. Zustand ofrece una alternativa más ligera y fácil de usar, especialmente cuando la complejidad del estado no es tan alta.
-
-Documentación detallada y activa comunidad: Zustand cuenta con una documentación clara y una comunidad activa que proporciona soporte y recursos adicionales para aquellos que están aprendiendo a usarlo.
-
-Compatibilidad con TypeScript: Zustand es compatible con TypeScript, lo que facilita la tipificación segura del estado y las acciones dentro de tu aplicación.
-
-Fácil integración con React: Al ser una biblioteca diseñada específicamente para React, Zustand se integra fácilmente con proyectos existentes y sigue los principios de la biblioteca, como el enfoque de componentes y la gestión del ciclo de vida.
-
-En resumen, Zustand es una excelente opción para gestionar el estado en aplicaciones React, especialmente cuando se busca simplicidad, rendimiento y flexibilidad en el manejo del estado de la aplicación.
+Te dejo todo el código en el siguiente [repositorio](https://github.com/johnsi15/zustand-shopping-cart) si te gusta el contenido deja tu estreilla en el repositorio✨.
 
