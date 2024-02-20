@@ -4,7 +4,7 @@ publishedDate: "2024-02-14T16:29:10.000Z"
 updatedDate: "2024-02-15T17:09:31.000Z"
 pubDate: "2024-02-14T16:29:10.000Z"
 description: "Descubre qué es Zustand, sus ventajas y cómo puedes gestionar el estado de tu aplicación en pocas líneas de código. También compatible con TypeScript."
-tags: ["JavaScript", "Programación", "development", "webdeveloment", "desarrollo-web", "TypeScript", "frontend", "front-end", "Redux", "Zustand", "software", "web", "johnserrano.co", "johnserrano", "React", "estado"]
+tags: ["JavaScript", "programación", "development", "webdeveloment", "desarrollo-web", "TypeScript", "frontend", "front-end", "redux", "zustand", "software", "web", "johnserrano.co", "johnserrano", "estado", "react"]
 primaryTag: { name: 'Zustand', slug: 'zustand' }
 excerpt: "Descubre qué es Zustand, sus ventajas y cómo puedes gestionar el estado de tu aplicación en pocas líneas de código. También compatible con TypeScript."
 canonicalURL: "https://johnserrano.co/blog/zustand-aprende-a-gestionar-tu-estado-en-react-una-alternativa-sencilla-a-redux"
