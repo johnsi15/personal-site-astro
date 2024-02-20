@@ -11,75 +11,44 @@ export async function getStaticPaths() {
     return data.isDraft !== true
   })
 
-  let filteredPosts = allPosts.filter(p => {
-    return p.data.title && p.data.publishedDate
-  })
+  const uniqueTags = [...new Set(allPosts.map(post => post.data.tags).flat())]
 
-  let dix = {}
-  // console.log({filteredPosts})
-  filteredPosts.forEach(post => {
-    // console.log(post.data.tags)
-    post.data.tags.forEach(tag => {
-      if (!dix[tag]) dix[tag] = 0
-      dix[tag] += 1
-    })
-  })
-  // console.log('dix', dix); // <-- prints out our tag-cloud data.
-  interface Tags {
-    params: { tag: string }
-    props: { primaryTag: string; count: string }
-  }
+  return uniqueTags.map(tag => {
+    const filteredPosts = allPosts.filter(post => post.data.tags.includes(tag))
 
-  let array: Tags[] = []
-  // format the data to return from getStaticPaths()
-  for (let prop in dix) {
-    let data = {
-      params: { tag: prop.toLocaleLowerCase().replaceAll(' ', '-') },
-      props: { primaryTag: prop, count: dix[prop] },
+    return {
+      params: { tag: tag.toLocaleLowerCase().replaceAll(' ', '-') },
+      props: { posts: filteredPosts },
     }
-    array.push(data)
-  }
-  return array
+  })
 }
 
 type Props = CollectionEntry<'blog'>
-const allPosts = await getCollection('blog', ({ data }) => {
-  return data.isDraft !== true
-})
 
-const { primaryTag } = Astro.props
 const { tag } = Astro.params
-// console.log(Astro.props)
-// console.log({ primaryTag })
-// console.log({ tag })
+const { posts } = Astro.props
 
-// grab the selected tag from the url (dynamic [tag])
-let filteredPosts = allPosts.filter(p => {
+let filteredPosts = posts.filter(p => {
   return p.data.title && p.data.publishedDate
 })
 
 // DESC
 let blogEntries = filteredPosts.sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
-
-let posts = blogEntries.filter(p => {
-  // console.log(p.data.tags)
-  return p.data.tags.includes(primaryTag)
-})
 ---
 
 <Layout
-  title={`${primaryTag}`}
+  title={`Etiqueta ${tag}`}
   description=''
   url={`https://johnserrano.co/tags/${tag}`}
-  titleOpenGraph={`${primaryTag}`}
+  titleOpenGraph={`${tag}`}
   datePublished=''
   modified=''
 >
   <Cover>
-    <PostTitle capitalize='capitalize'>{primaryTag}</PostTitle>
+    <PostTitle capitalize='capitalize'>{tag}</PostTitle>
   </Cover>
   <section id='Tag' class='container'>
-    <PostsGrid posts={posts} columns='3' />
+    <PostsGrid posts={blogEntries} columns='3' />
   </section>
 </Layout>
 
