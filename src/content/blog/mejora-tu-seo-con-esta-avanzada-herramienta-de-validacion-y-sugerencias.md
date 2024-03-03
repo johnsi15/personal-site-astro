@@ -9,7 +9,7 @@ primaryTag: { name: 'Zustand', slug: 'zustand' }
 excerpt: "Potencia tu presencia en línea con validación instantánea y sugerencias AI de SEO. Optimiza tus contenidos y maximiza tu impacto hoy."
 canonicalURL: "https://johnserrano.co/blog/mejora-tu-seo-con-esta-avanzada-herramienta-de-validacion-y-sugerencias"
 isDraft: false
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1709497982/John%20Serrano/Blog%20Post/mejora-tu-seo-con-esta-avanzada-herramienta-de-validacion-y-sugerencias/seocheckai_y9j58i.jpg"
+featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1709498345/John%20Serrano/Blog%20Post/mejora-tu-seo-con-esta-avanzada-herramienta-de-validacion-y-sugerencias/seocheckai_mpb376.jpg"
 ---
 
 ¿Quieres asegurarte de que cada artículo que escribas tenga un impacto máximo en línea? Presentamos una nueva herramienta diseñada para **simplificar** y mejorar tu proceso de redacción y **optimización SEO**.
@@ -28,7 +28,7 @@ Esta herramienta va más allá al utilizar **Inteligencia Artificial** para suge
 
 No dejes que tus artículos **pasen desapercibidos** en la web. Con esta herramienta de **validación** y **sugerencias** SEO, puedes estar seguro de que cada pieza de contenido que crees esté optimizada para el éxito en línea.
 
-Prueba la **herramienta** en el siguiente enlace y lleva tu **SEO** al siguiente nivel: https://seocheckai.com/
+> Prueba la **herramienta** en el siguiente enlace y lleva tu **SEO** al siguiente nivel: https://seocheckai.com/
 
 ## Conclusiones
 
