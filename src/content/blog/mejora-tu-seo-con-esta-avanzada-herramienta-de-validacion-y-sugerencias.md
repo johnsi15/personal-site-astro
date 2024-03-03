@@ -5,7 +5,7 @@ updatedDate: "2024-03-03T17:09:31.000Z"
 pubDate: "2024-03-03T16:29:10.000Z"
 description: "Potencia tu presencia en línea con validación instantánea y sugerencias AI de SEO. Optimiza tus contenidos y maximiza tu impacto hoy."
 tags: ["seo", "programación", "development", "webdeveloment", "desarrollo-web", "software", "web", "johnserrano.co", "johnserrano", "herramienta", "sugerencias", "ai", "ia", "inteligencia-artificial"]
-primaryTag: { name: 'Zustand', slug: 'zustand' }
+primaryTag: { name: 'SEO', slug: 'seo' }
 excerpt: "Potencia tu presencia en línea con validación instantánea y sugerencias AI de SEO. Optimiza tus contenidos y maximiza tu impacto hoy."
 canonicalURL: "https://johnserrano.co/blog/mejora-tu-seo-con-esta-avanzada-herramienta-de-validacion-y-sugerencias"
 isDraft: false
