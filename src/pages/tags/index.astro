@@ -12,7 +12,12 @@ const posts = (
   .slice(0, 20)
 ---
 
-<Layout title='Tags' url='https://johnserrano.co/tags' titleOpenGraph='Tags'>
+<Layout
+  title='Tags'
+  description='Encuentra artículos sobre desarrollo web, tutoriales, tecnología y mucho más.'
+  url='https://johnserrano.co/tags'
+  titleOpenGraph='Tags'
+>
   <section id='Tag' class='container'>
     {posts.length > 0 && <PostsGrid posts={posts} columns='3' />}
   </section>

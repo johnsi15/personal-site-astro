@@ -45,7 +45,7 @@ const ProfileFollow = () => {
             </a>
           </li>
           <li>
-            <a href='https://twitter.com/Jandrey15' aria-label='Twitter' target='_blank' rel='noreferrer'>
+            <a href='https://twitter.com/johnserranodev' aria-label='Twitter' target='_blank' rel='noreferrer'>
             <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'
               ><path
                 fill='currentColor'
