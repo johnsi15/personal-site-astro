@@ -15,6 +15,6 @@ export const openGraph = {
   imageHeight: 630
 }
 export const twitter = {
-  handle: '@jandrey15',
+  handle: '@johnserranodev',
   cardType: 'summary_large_image'
 }
