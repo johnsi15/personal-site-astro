@@ -26,7 +26,7 @@ export default defineConfig({
     },
     drafts: true,
   },
-  site: 'https://johnserrano.co',
+  site: 'https://johnserrano.co/',
   trailingSlash: 'never',
   integrations: [
     mdx(),
@@ -54,7 +54,7 @@ export default defineConfig({
       },
     }),
   ],
-  output: 'static',
+  output: 'hybrid',
   // adapter: vercel({
   //   analytics: true,
   // }),
