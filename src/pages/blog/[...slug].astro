@@ -1,5 +1,5 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content'
+import { type CollectionEntry, getCollection } from 'astro:content'
 import BlogPost from '../../layouts/BlogPost.astro'
 
 // import PostHeader from '../../components/PostHeader';
@@ -184,7 +184,9 @@ const { Content } = await post.render()
   .post__body .kg-bookmark-container {
     color: #15171a;
     text-decoration: none;
-    box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
+    box-shadow:
+      0 2px 5px -1px rgba(0, 0, 0, 0.15),
+      0 0 1px rgba(0, 0, 0, 0.09);
 
     display: flex;
     min-height: 148px;

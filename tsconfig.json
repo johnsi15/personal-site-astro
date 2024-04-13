@@ -8,7 +8,6 @@
       ],
     },
     "strictNullChecks": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "react"
+    "allowJs": true,
   }
 }

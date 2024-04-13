@@ -1,13 +1,8 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-
-// https://astro.build/config
+import vercel from '@astrojs/vercel/serverless'
 import react from '@astrojs/react'
-
-// https://astro.build/config
-// import vercel from '@astrojs/vercel/static'
-// DOC: https://docs.astro.build/es/guides/integrations-guide/vercel/
 import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
@@ -26,7 +21,7 @@ export default defineConfig({
     },
     drafts: true,
   },
-  site: 'https://johnserrano.co',
+  site: 'https://johnserrano.co/',
   trailingSlash: 'never',
   integrations: [
     mdx(),
@@ -54,8 +49,10 @@ export default defineConfig({
       },
     }),
   ],
-  output: 'static',
-  // adapter: vercel({
-  //   analytics: true,
-  // }),
+  output: 'hybrid',
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  })
 })
