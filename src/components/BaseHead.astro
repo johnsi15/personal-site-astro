@@ -12,11 +12,12 @@ export interface Props {
   dateModified?: Date
 }
 
-function removeTrailingSlash(str: string) {
-  return str.replace(/\/+$/, '')
-}
+// function removeTrailingSlash(str: string) {
+//   return str.replace(/\/+$/, '')
+// }
 
-const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString())
+// const canonicalURL = removeTrailingSlash(new URL(Astro.url.pathname, Astro.site).toString())
+const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 
 const {
   title,
@@ -97,4 +98,4 @@ const {
     },
     description: description,
   })}
-></script>
+/>
