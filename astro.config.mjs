@@ -1,13 +1,8 @@
 import { defineConfig } from 'astro/config'
 import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
-
-// https://astro.build/config
+import vercel from '@astrojs/vercel/serverless'
 import react from '@astrojs/react'
-
-// https://astro.build/config
-// import vercel from '@astrojs/vercel/static'
-// DOC: https://docs.astro.build/es/guides/integrations-guide/vercel/
 import partytown from '@astrojs/partytown'
 
 // https://astro.build/config
@@ -55,7 +50,7 @@ export default defineConfig({
     }),
   ],
   output: 'hybrid',
-  // adapter: vercel({
-  //   analytics: true,
-  // }),
+  adapter: vercel({
+    analytics: true,
+  })
 })
