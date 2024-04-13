@@ -1,20 +1,19 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection } from 'astro:content'
 import PostsGrid from './PostsGrid'
 
-const blogEntries = (await getCollection('blog', ({ data }) => {
-  return data.isDraft !== true;
-})).sort(
-	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()
-);
+const blogEntries = (
+  await getCollection('blog', ({ data }) => {
+    return data.isDraft !== true
+  })
+).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
 
 // const blogEntries = await getCollection('blog');
-const { columns } = Astro.props;
+const { columns } = Astro.props
 // console.log({ posts: blogEntries[0].data })
 const posts = blogEntries.slice(0, 4)
 ---
 
-<section class="PostCard">
-  <!-- {blogEntries.map(post => <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>)} -->
-  <PostsGrid client:load posts={posts} columns={columns}/>
+<section class='PostCard'>
+  <PostsGrid client:load posts={posts} columns={columns} />
 </section>
