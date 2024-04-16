@@ -1,37 +1,20 @@
 ---
-import { CollectionEntry, getCollection } from 'astro:content';
+import { type CollectionEntry, getCollection } from 'astro:content'
 
 export async function getStaticPaths({ paginate }) {
-  // const blogPages = [{
-  //   astronaut: 'Neil Armstrong',
-  // }, {
-  //   astronaut: 'Buzz Aldrin',
-  // }, {
-  //   astronaut: 'Sally Ride',
-  // }, {
-  //   astronaut: 'John Glenn',
-  // }];
+  const posts = await getCollection('blog')
+  const blogPages = posts.map(post => ({
+    post: post.data.title,
+  }))
 
-  const posts = await getCollection('blog');
-	const blogPages=  posts.map((post) => ({
-		post: post.data.title,
-	}));
-  // Genera páginas para nuestro array de astronautas, con 2 elementos por página
-  return paginate(blogPages, { pageSize: 2 });
+  return paginate(blogPages, { pageSize: 2 })
 }
-type Props = CollectionEntry<'blog'>;
-// Todos los datos paginados se pasan en la prop "page"
-const { page } = Astro.props;
+type Props = CollectionEntry<'blog'>
+// const { page } = Astro.props
 
 // console.log(page)
 ---
 
-<!--Muestra el número de página actual. ¡También puedes utilizar Astro.params.page!-->
-<!-- <h1>Página {page.currentPage}</h1>
-<ul>
-  {page.data.map(({ post }) => <li>{post}</li>)}
-</ul> -->
-
-<!-- https://rimdev.io/creating-a-pagination-component-with-astro/ -->
-
-{page}
+<!-- {
+  page
+} -->
