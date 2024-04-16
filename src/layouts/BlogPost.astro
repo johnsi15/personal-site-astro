@@ -50,3 +50,24 @@ const primaryAuthor = { name: 'John Serrano' }
     <Footer />
   </body>
 </html>
+
+<script>
+  function enviarDatosEvento() {
+    fetch('http://localhost:4321/api/view-content-fb.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error en la solicitud')
+      }
+      return response.json()
+    })
+    .then(data => {
+      console.log('Respuesta:', data)
+    })
+    .catch(error => {
+      console.error('Error:', error)
+    })
+  }
+
+  // Llama a la función para enviar datos de evento cuando se cargue una página
+  window.addEventListener('load', enviarDatosEvento)
+</script>
