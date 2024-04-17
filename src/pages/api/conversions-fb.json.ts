@@ -5,7 +5,7 @@ export const prerender = false
 export const POST: APIRoute = async ({ params, request, clientAddress }) => {
   const uaString = request.headers.get('user-agent')
   // const { type } = request.body
-  const { event_name, event_id, event_source_url, fbp, fbc } = await request.json()
+  const { event_name, event_id, event_source_url, fbp, fbc, title } = await request.json()
   console.log(event_name)
   // const cookie = request.headers.get('cookie')
 
@@ -23,9 +23,16 @@ export const POST: APIRoute = async ({ params, request, clientAddress }) => {
           fbp,
           fbc,
         },
+        ...(title
+          ? {
+              custom_data: {
+                content_name: title,
+              },
+            }
+          : {}),
       },
     ],
-    test_event_code: 'TEST5179',
+    test_event_code: 'TEST78988',
   })
 
   const TOKEN = import.meta.env.ACCESS_TOKEN_FB_API
