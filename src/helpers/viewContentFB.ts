@@ -1,4 +1,4 @@
-import { sendEventData } from '@/helpers/scriptEventFB'
+import { sendEventData } from './sendEventData'
 
 window.addEventListener('load', () => {
   const title = document.querySelector('h1')?.textContent
