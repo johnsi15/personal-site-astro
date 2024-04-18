@@ -5,7 +5,7 @@ export const prerender = false
 export const POST: APIRoute = async ({ params, request, clientAddress }) => {
   const uaString = request.headers.get('user-agent')
   // const { type } = request.body
-  const { event_name, event_id, event_source_url, fbp, fbc, title } = await request.json()
+  const { event_name, event_id, event_source_url, fbp, fbc, title, fn, em } = await request.json()
   console.log(event_name)
   // const cookie = request.headers.get('cookie')
 
@@ -22,6 +22,8 @@ export const POST: APIRoute = async ({ params, request, clientAddress }) => {
           client_user_agent: uaString,
           fbp,
           fbc,
+          ...(fn ? { fn } : {}),
+          ...(em ? { em } : {}),
         },
         ...(title
           ? {

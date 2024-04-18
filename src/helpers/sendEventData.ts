@@ -2,9 +2,11 @@ interface Props {
   event_name: string
   event_id: string
   title?: string | null
+  fn?: string | null
+  em?: string | null
 }
 
-export function sendEventData({ event_name, event_id, title = null }: Props) {
+export function sendEventData({ event_name, event_id, title = null, fn = null, em = null }: Props) {
   const domain = window.location.origin
   const queryString = window.location.search
 
@@ -34,6 +36,8 @@ export function sendEventData({ event_name, event_id, title = null }: Props) {
     fbp: `fb.1.${creationTime}.${randomNumber}`,
     ...(hasFbclid ? { fbc: `fb.1.${creationTimeFbc}.${fbclid}` } : {}),
     ...(title ? { title } : {}),
+    ...(fn ? { fn } : {}),
+    ...(em ? { em } : {}),
   }
 
   fetch(`${domain}/api/conversions-fb.json`, {
@@ -53,3 +57,11 @@ export function sendEventData({ event_name, event_id, title = null }: Props) {
       console.error('Error:', error)
     })
 }
+
+document?.querySelector('a[aria-label="Donar aquí Mercado Pago"]')?.addEventListener('click', () => {
+  sendEventData({ event_name: 'Donate', event_id: 'donate_button_id' })
+})
+
+document?.querySelector('a[aria-label="Tu apoyo es importante"]')?.addEventListener('click', () => {
+  sendEventData({ event_name: 'Donate', event_id: 'donate_coffee_id' })
+})
