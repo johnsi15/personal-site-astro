@@ -42,7 +42,7 @@ const { Content } = await post.render()
 
     <ProfileFollow />
     <ProfileApoyar />
-    <Newsletter client:visible />
+    <Newsletter client:only='react' />
     <h2 class='more__posts'>Otros artículos</h2>
     {morePosts.length > 0 && <PostsGrid posts={morePosts} columns='3' />}
   </section>
