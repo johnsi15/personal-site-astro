@@ -14,7 +14,7 @@ excerpt: El día de hoy voy a explicar cómo funcionan los media query lo veremo
 description: El día de hoy voy a explicar cómo funcionan los media query lo veremos con ejemplo muy simple, primero que todo que es un media query...
 primaryTag: { name: 'responsive', slug: 'responsive' }
 canonicalURL: "https://johnserrano.co/blog/medias-query"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683383976/John%20Serrano/Blog%20Post/medias-query/responsive_dh1yzn.jpg"
 ---
 

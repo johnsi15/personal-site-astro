@@ -19,7 +19,7 @@ excerpt: Vamos a ver cómo manejar las sesiones con express un framework de node
 description: Vamos a ver cómo manejar las sesiones con express un framework de nodejs y como persistir esas sesiones con ayuda de connect-mongo.
 primaryTag: { name: 'express', slug: 'express' }
 canonicalURL: "https://johnserrano.co/blog/manejo-de-sesiones-con-express"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683207808/John%20Serrano/Blog%20Post/manejo-de-sesiones-con-express/sessions-express_nxoqoe.jpg"
 ---
 

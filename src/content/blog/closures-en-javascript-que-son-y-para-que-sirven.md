@@ -13,7 +13,7 @@ tags:
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 excerpt: "Cuando definimos una función y adentro otra función precisamente de eso se trata los closures pero veamos cómo funcionan y para qué sirven."
 canonicalURL: "https://johnserrano.co/blog/closures-en-javascript-que-son-y-para-que-sirven"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1680391473/John%20Serrano/Blog%20Post/closures-en-javascript-que-son-y-para-que-sirven/closures_nq1bkk.jpg"
 ---
 

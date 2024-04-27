@@ -11,7 +11,7 @@ excerpt: Cuando Trabajamos con React por lo general tenemos que configurar y usa
 description: Cuando Trabajamos con React por lo general tenemos que configurar y usar herramientas como webpack, Babel, un linter, servir nuestra aplicación desde el serve.
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/introduccion-a-next-js-el-framework-de-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682887560/John%20Serrano/Blog%20Post/introduccion-a-next-js-el-framework-de-react/nextjs_yibklg.jpg"
 ---
 

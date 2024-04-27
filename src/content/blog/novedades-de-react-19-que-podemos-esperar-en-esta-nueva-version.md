@@ -8,7 +8,7 @@ tags: ["JavaScript", "programación", "development", "webdeveloment", "desarroll
 primaryTag: { name: 'React', slug: 'react' }
 excerpt: "Tras los hooks, React 19 promete ser otro hito en el desarrollo. Descubre más sobre este próximo lanzamiento que seguirá al 18.2.0 de junio de 2022."
 canonicalURL: "https://johnserrano.co/blog/novedades-de-react-19-que-podemos-esperar-en-esta-nueva-version"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1712408986/John%20Serrano/Blog%20Post/novedades-de-react-19-que-podemos-esperar-en-esta-nueva-version/react19_gufm1n.jpg"
 ---
 

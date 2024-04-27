@@ -14,7 +14,7 @@ tags:
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 excerpt: Firebase es un conjunto de herramientas conocido como BAAS (Backend as a Service) o Backend como Servicio el cual nos brinda servicios para desarrollar nuestra.
 canonicalURL: "https://johnserrano.co/blog/que-es-firebase-y-que-podemos-hacer-configuracion-inicial"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682884284/John%20Serrano/Blog%20Post/que-es-firebase-y-que-podemos-hacer-configuracion-inicial/Firebase_tfewys.jpg"
 ---
 

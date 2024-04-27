@@ -15,7 +15,7 @@ excerpt: Babel es una herramienta que nos permite transformar nuestro código JS
 description: Babel es una herramienta que nos permite transformar nuestro código JS de última generación a JS que cualquier navegador o versión de node.js entienda.
 primaryTag: { name: 'platzi', slug: 'platzi' }
 canonicalURL: "https://johnserrano.co/blog/platzi-te-regala-un-mes-de-suscripcion"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683581392/John%20Serrano/Blog%20Post/platzi-te-regala-un-mes-de-suscripcion/Referido_yz8e03.jpg"
 ---
 

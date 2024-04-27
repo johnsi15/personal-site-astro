@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content'
 
 const blogEntries = (
   await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true
+    return data.draft !== true
   })
 ).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
 

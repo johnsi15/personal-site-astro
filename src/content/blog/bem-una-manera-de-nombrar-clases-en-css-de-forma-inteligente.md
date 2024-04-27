@@ -8,7 +8,7 @@ tags: ["Css", "Programación", "development", "webdeveloment", "desarrollo-web",
 primaryTag: { name: 'Css', slug: 'css' }
 excerpt: "Descubre cómo BEM, la metodología de nomenclatura de clases en CSS, revoluciona la forma en que organizas y desarrollas tus proyectos web. Aprende a crear código CSS más limpio y mantenible, mejora la colaboración en equipo y evita conflictos de estilos."
 canonicalURL: "https://johnserrano.co/blog/bem-una-manera-de-nombrar-clases-en-css-de-forma-inteligente"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1694898177/John%20Serrano/Blog%20Post/bem-una-manera-de-nombrar-clases-en-css-de-forma-inteligente/base-portada_sfn7zg.webp"
 ---
 

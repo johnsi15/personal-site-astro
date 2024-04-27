@@ -7,7 +7,7 @@ import PostsPagination from '../../components/PostsPagination'
 // DESC
 const posts = (
   await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true
+    return data.draft !== true
   })
 ).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort

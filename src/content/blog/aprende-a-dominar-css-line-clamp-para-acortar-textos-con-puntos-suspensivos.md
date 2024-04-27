@@ -8,7 +8,7 @@ tags: ["Css", "Programación", "development", "webdeveloment", "desarrollo-web",
 primaryTag: { name: 'Css', slug: 'css' }
 excerpt: "Descubre cómo agregar puntos suspensivos al final de tus textos con la propiedad CSS Line-Clamp. Este tutorial te guiará paso a paso, enseñándote a acortar tus contenidos, mejorando así la experiencia del usuario y la estética de tu diseño web."
 canonicalURL: "https://johnserrano.co/blog/aprende-a-dominar-css-line-clamp-para-acortar-textos-con-puntos-suspensivos"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1700429793/John%20Serrano/Blog%20Post/aprende-a-dominar-css-line-clamp-para-acortar-textos-con-puntos-suspensivos/line-clamp-css_ujrjyv.jpg"
 ---
 

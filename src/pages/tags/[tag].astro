@@ -8,7 +8,7 @@ import PostTitle from '../../components/PostTitle'
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true
+    return data.draft !== true
   })
 
   const uniqueTags = [...new Set(allPosts.map(post => post.data.tags).flat())]

@@ -15,7 +15,7 @@ excerpt: En este pequeño artículo crearemos un menú desplegable con solo css 
 description: En este pequeño artículo crearemos un menú desplegable con solo css apoyándonos de la pseudo-clase hover para poder llevar acabo el menú...
 primaryTag: { name: 'css', slug: 'css' }
 canonicalURL: "https://johnserrano.co/blog/menu-despegable-con-css"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683583889/John%20Serrano/Blog%20Post/menu-despegable-con-css/menuHover-2_w5wanp.jpg"
 ---
 

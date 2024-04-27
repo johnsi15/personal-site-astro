@@ -13,7 +13,7 @@ excerpt: como cargar notas, artículos o lo que sea de una forma infinita usando
 description: como cargar notas, artículos o lo que sea de una forma infinita usando angular js con ayuda de una librería.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/angular-js-scroll-infinito"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683320075/John%20Serrano/Blog%20Post/angular-js-scroll-infinito/scroll_nbbkjr.jpg"
 ---
 

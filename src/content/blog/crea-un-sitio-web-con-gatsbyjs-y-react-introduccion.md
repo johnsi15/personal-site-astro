@@ -17,7 +17,7 @@ excerpt: Rápido en todo lo que importa, así se define GatsbyJS, cuando trabaja
 description: Rápido en todo lo que importa, así se define GatsbyJS, cuando trabajamos con React o estamos comenzando a trabajar con React necesitamos configurar muchas cosas...
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/crea-un-sitio-web-con-gatsbyjs-y-react-introduccion"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682886680/John%20Serrano/Blog%20Post/crea-un-sitio-web-con-gatsbyjs-y-react-introduccion/Gatsby2_n55yfy.jpg"
 ---
 

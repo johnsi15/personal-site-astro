@@ -19,7 +19,6 @@ export default defineConfig({
       // Enable word wrap to prevent horizontal scrolling
       wrap: true,
     },
-    drafts: true,
   },
   site: 'https://johnserrano.co/',
   trailingSlash: 'never',
@@ -31,19 +30,16 @@ export default defineConfig({
       // Adds dataLayer.push as a forwarding-event.
       config: {
         resolveUrl: (url, location, type) => {
-          const proxiedHosts = [
-            'googletagmanager.com',
-            'connect.facebook.net',
-          ]
+          const proxiedHosts = ['googletagmanager.com', 'connect.facebook.net']
 
           if (proxiedHosts.includes(url.hostname)) {
-            const proxyUrl = new URL('/proxytown/gtm', location.origin);
+            const proxyUrl = new URL('/proxytown/gtm', location.origin)
             // const proxyUrl = new URL(location.origin);
-            proxyUrl.searchParams.append('url', url.href);
-            return proxyUrl;
+            proxyUrl.searchParams.append('url', url.href)
+            return proxyUrl
           }
-    
-          return url;
+
+          return url
         },
         forward: ['dataLayer.push', 'fbq'],
       },
@@ -54,5 +50,5 @@ export default defineConfig({
     webAnalytics: {
       enabled: true,
     },
-  })
+  }),
 })

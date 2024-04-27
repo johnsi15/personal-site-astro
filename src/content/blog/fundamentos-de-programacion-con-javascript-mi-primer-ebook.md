@@ -12,7 +12,7 @@ tags:
 excerpt: Aprende los fundamentos de programación con uno de los lenguajes de programación más demandados de la industria. Aprende desde cero hasta dominar JavaScript.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/fundamentos-de-programacion-con-javascript-mi-primer-ebook"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682885564/John%20Serrano/Blog%20Post/fundamentos-de-programacion-con-javascript-mi-primer-ebook/Facebook_1200x630_n7ihgi.jpg"
 ---
 

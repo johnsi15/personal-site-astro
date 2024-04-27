@@ -12,7 +12,7 @@ excerpt: Antes de descargar cualquier instalador de MongoDB es importante verifi
 description: Antes de descargar cualquier instalador de MongoDB es importante verificar que versión de MongoDB necesitas.
 primaryTag: { name: 'mongo', slug: 'mongo' }
 canonicalURL: "https://johnserrano.co/blog/introduccion-a-next-js-el-framework-de-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683212160/John%20Serrano/Blog%20Post/instalacion-de-mongodb/mongo_1_hzcds5.jpg"
 ---
 

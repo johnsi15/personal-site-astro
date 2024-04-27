@@ -15,7 +15,7 @@ excerpt: Manejo de rutas del lado del front-end gracias a esta librería que est
 description: Manejo de rutas del lado del front-end gracias a esta librería que está inspirada en express router veremos unos  ejemplos de su implementación.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/manejo-de-rutas-con-page-js"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683216196/John%20Serrano/Blog%20Post/manejo-de-rutas-con-page-js/pagejs_lqse0j.jpg"
 ---
 

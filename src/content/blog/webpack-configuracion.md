@@ -17,7 +17,7 @@ excerpt: Cómo hacer una configuración muy básica con webpack para comenzar nu
 description: Cómo hacer una configuración muy básica con webpack para comenzar nuestros proyectos y hacernos el proceso de desarrollo más fácil y feliz.
 primaryTag: { name: 'webpack', slug: 'webpack' }
 canonicalURL: "https://johnserrano.co/blog/webpack-configuracion"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683229049/John%20Serrano/Blog%20Post/webpack-configuracion/webpack_w7ntc1.jpg"
 ---
 

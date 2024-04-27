@@ -8,7 +8,7 @@ tags: ["VScode", "Programación", "development", "webdeveloment", "desarrollo-we
 primaryTag: { name: 'VScode', slug: 'vscode' }
 excerpt: "¿Eres un desarrollador web? ¿Quieres mejorar tu productividad y eficiencia? Si es así, entonces necesitas probar estas 3 extensiones de VS Code. Estas extensiones te ayudarán a identificar y solucionar errores, depurar y mejorar tu código."
 canonicalURL: "https://johnserrano.co/blog/mis-3-extensiones-favoritas-de-vs-code-que-te-ayudaran-en-el-desarrollo-web"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1701029542/John%20Serrano/Blog%20Post/mis-3-extensiones-favoritas-de-vs-code-que-te-ayudaran-en-el-desarrollo-web/vscode_exz3rp.jpg"
 ---
 

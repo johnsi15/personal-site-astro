@@ -17,7 +17,7 @@ tags:
 primaryTag: { name: 'Python', slug: 'python' }
 excerpt: "En este artículo aprenderemos a instalar Python en estos dos sistemas operativos al igual que la instalación de virtualenv y la creación de un entorno"
 canonicalURL: "https://johnserrano.co/blog/instalacion-de-python-virtualenv"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682779382/John%20Serrano/Blog%20Post/instalacion-de-python-virtualenv/portadaInstalacionVirtuaalPython_kdbywj.jpg"
 ---
 

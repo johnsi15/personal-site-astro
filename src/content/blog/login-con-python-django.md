@@ -15,7 +15,7 @@ excerpt: Vamos a crear un login solo con python y django ya en un artículo ante
 description: Vamos a crear un login solo con python y django ya en un artículo anterior creamos un login con python social auth.
 primaryTag: { name: 'Django', slug: 'django' }
 canonicalURL: "https://johnserrano.co/blog/login-con-python-django"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683734197/John%20Serrano/Blog%20Post/login-con-python-django/portadaLoginDjangol_kyq9am.jpg"
 ---
 

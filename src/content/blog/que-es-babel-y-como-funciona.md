@@ -21,7 +21,7 @@ excerpt: Babel es una herramienta que nos permite transformar nuestro código JS
 description: Babel es una herramienta que nos permite transformar nuestro código JS de última generación a JS que cualquier navegador o versión de node.js entienda.
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/que-es-babel-y-como-funciona"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683210447/John%20Serrano/Blog%20Post/que-es-babel-y-como-funciona/Babel_f9ipm1.jpg"
 ---
 

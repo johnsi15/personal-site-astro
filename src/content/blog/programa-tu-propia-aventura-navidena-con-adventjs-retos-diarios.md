@@ -8,7 +8,7 @@ tags: ["AdventJS", "Programación", "development", "webdeveloment", "desarrollo-
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 excerpt: "¡Celebra la temporada navideña con código! 🎄✨ Participa en AdventJS y enfrenta un reto de programación diario durante los primeros 25 días de diciembre. Resuelve retos de programación y gana puntos."
 canonicalURL: "https://johnserrano.co/blog/programa-tu-propia-aventura-navidena-con-adventjs-retos-diarios"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1702137693/John%20Serrano/Blog%20Post/programa-tu-propia-aventura-navidena-con-adventjs-retos-diarios/l8xumtoixipimwu41ghs.jpg"
 ---
 

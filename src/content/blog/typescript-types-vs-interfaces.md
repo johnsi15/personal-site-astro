@@ -3,12 +3,12 @@ title: "TypeScript, Types vs interfaces"
 publishedDate: "2024-04-27T16:29:10.000Z"
 updatedDate: "2024-04-27T17:09:31.000Z"
 pubDate: "2024-04-27T16:29:10.000Z"
-description: "Cuando se trata de TypeScript, hay dos formas de definir tipos: "types" e "interfaces". Vamos a explorar las diferencias y similitudes entre tipos e interfaces, así como cuándo es apropiado usar cada uno."
+description: "Cuando se trata de TypeScript, hay dos formas de definir tipos: 'types' e 'interfaces'. Vamos a explorar las diferencias y similitudes entre tipos e interfaces, así como cuándo es apropiado usar cada uno."
 tags: ["JavaScript", "Programación", "development", "webdeveloment", "desarrollo-web", "JavaScript", "TypeScript"]
-primaryTag: { name: 'TypeScript', slug: 'typescript' }
-excerpt: "Cuando se trata de TypeScript, hay dos formas de definir tipos: "types" e "interfaces". Vamos a explorar las diferencias y similitudes entre tipos e interfaces, así como cuándo es apropiado usar cada uno."
+primaryTag: { name: "TypeScript", slug: "typescript" }
+excerpt: "Cuando se trata de TypeScript, hay dos formas de definir tipos: 'types' e 'interfaces'. Vamos a explorar las diferencias y similitudes entre tipos e interfaces, así como cuándo es apropiado usar cada uno."
 canonicalURL: "https://johnserrano.co/blog/typescript-types-vs-interfaces"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1714237227/John%20Serrano/Blog%20Post/types-vs-interface/Dise%C3%B1o_sin_t%C3%ADtulo_fciqsh.png"
 ---
 

@@ -14,7 +14,7 @@ excerpt: Hola amigos el día de hoy les raigo un artículo donde les explicare l
 description: Hola amigos el día de hoy les raigo un artículo donde les explicare la forma de comenzar con python, comenzando de lo más básico y en futuros artículos..
 primaryTag: { name: 'Python', slug: 'python' }
 canonicalURL: "https://johnserrano.co/blog/primeros-pasos-con-python"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683578543/John%20Serrano/Blog%20Post/primeros-pasos-con-python/primerosPasos_rwaa03.jpg"
 ---
 

@@ -18,7 +18,7 @@ excerpt: Testing de nuestras aplicaciones web en este caso con mocha y chai, cha
 description: Testing de nuestras aplicaciones web en este caso con mocha y chai, chai es una librería de aserción que nos facilita el uso de mocha y chai usa interfaces.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/test-con-mocha-y-chai"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683212764/John%20Serrano/Blog%20Post/test-con-mocha-y-chai/mocha_nk82oo.jpg"
 ---
 

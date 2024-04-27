@@ -16,7 +16,7 @@ excerpt: El día de hoy traigo un artículo con algunos ejemplos de cómo usar f
 description: El día de hoy traigo un artículo con algunos ejemplos de cómo usar flexbox de css3, como ya lo saben o si no lo saben flexbox es un modo de diseño que...
 primaryTag: { name: 'flex', slug: 'flex' }
 canonicalURL: "https://johnserrano.co/blog/flexbox"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683566387/John%20Serrano/Blog%20Post/flexbox/flex_p3e9pz.jpg"
 ---
 

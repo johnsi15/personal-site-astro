@@ -8,7 +8,7 @@ tags: ["Programación", "development", "webdeveloment", "desarrollo-web", "pagin
 primaryTag: { name: 'Página Web', slug: 'pagina-web' }
 excerpt: "Descubre las plataformas y herramientas más destacadas para desarrollar una página web sin necesidad de conocimientos técnicos extensos."
 canonicalURL: "https://johnserrano.co/blog/desarrollo-web-simplificado-descubre-5-herramientas-para-desarrollar-una-pagina-web"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1704820530/John%20Serrano/Blog%20Post/desarrollo-web-simplificado-descubre-5-herramientas-para-desarrollar-una-pagina-web/herramientas_zhju9h.jpg"
 ---
 

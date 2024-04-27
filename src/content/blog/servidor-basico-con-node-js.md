@@ -14,7 +14,7 @@ excerpt: Instalar node js express para montar un server básico gracias a estas 
 description: Instalar node js express para montar un server básico gracias a estas dos tecnologías es algo corto este articulo.
 primaryTag: { name: 'nodejs', slug: 'nodejs' }
 canonicalURL: "https://johnserrano.co/blog/servidor-basico-con-node-js"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683316703/John%20Serrano/Blog%20Post/servidor-basico-con-node-js/serverBasic_hjwpvf.jpg"
 ---
 
