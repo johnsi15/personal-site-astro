@@ -182,4 +182,4 @@ Cuando trabajes con características avanzadas como tipos mapeados, tipos condic
 
 Los tipos suelen ser más flexibles y expresivos. Ofrecen un rango más amplio de características avanzadas que las interfaces no pueden igualar.
 
-Si te gusto y te fue útil te invito a que lo compartas y me sigas en las diferentes redes sociales.
+**Si te gusto y te fue útil te invito a que lo compartas y me sigas en las diferentes redes sociales.**
