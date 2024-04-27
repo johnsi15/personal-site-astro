@@ -18,7 +18,7 @@ excerpt: La esencia de docker es poder crear contenedores ligeros, portables par
 description: La esencia de docker es poder crear contenedores ligeros, portables para todo tipo de aplicación que se puedan ejecutar en cualquier maquina con docker.
 primaryTag: { name: 'docker', slug: 'docker' }
 canonicalURL: "https://johnserrano.co/blog/instalacion-de-docker"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683147403/John%20Serrano/Blog%20Post/instalacion-de-docker/Docker_bwniuf.jpg"
 ---
 

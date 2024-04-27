@@ -16,7 +16,7 @@ excerpt: ECMAScript 2015 es un estándar que fue ratificado en junio de 2015, ES
 description: ECMAScript 2015 es un estándar que fue ratificado en junio de 2015, ES2015 es una actualización importante del idioma, y la primera actualización importante del lenguaje.
 primaryTag: { name: 'ES2015', slug: 'es2015' }
 canonicalURL: "https://johnserrano.co/blog/caracteristicas-es2015"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683233456/John%20Serrano/Blog%20Post/caracteristicas-es2015/ES2015Final_kb1rvi.jpg"
 ---
 

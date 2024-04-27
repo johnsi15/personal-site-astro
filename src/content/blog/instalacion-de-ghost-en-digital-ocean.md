@@ -18,7 +18,7 @@ excerpt: El día de hoy les explicare como instalar ghost en DigitalOcean que es
 description: El día de hoy les explicare como instalar ghost en DigitalOcean que es un servicio de hosting cloud, donde podemos crear varios servidores y montar el sis..
 primaryTag: { name: 'ghost', slug: 'ghost' }
 canonicalURL: "https://johnserrano.co/blog/instalacion-de-ghost-en-digital-ocean"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683580158/John%20Serrano/Blog%20Post/instalacion-de-ghost-en-digital-ocean/digitalOcean_edobba.jpg"
 ---
 

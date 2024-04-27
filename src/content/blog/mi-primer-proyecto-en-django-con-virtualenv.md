@@ -16,7 +16,7 @@ excerpt: En este pequeño artículo les explicare paso a paso como crear su prim
 description: En este pequeño artículo les explicare paso a paso como crear su primer proyecto con Django en virtualenv...
 primaryTag: { name: 'Django', slug: 'django' }
 canonicalURL: "https://johnserrano.co/blog/mi-primer-proyecto-en-django-con-virtualenv"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683823895/John%20Serrano/Blog%20Post/mi-primer-proyecto-en-django-con-virtualenv/portadaPrimerProyecto_hdqupv.jpg"
 ---
 

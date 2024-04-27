@@ -8,7 +8,7 @@ tags: ["Promesas-en-JavaScript", "Asincronía-en-JavaScript", "development", "we
 primaryTag: { name: 'Promesas', slug: 'promesas' }
 excerpt: "Descubre cómo manejar la asincronía de forma eficiente en JavaScript con promesas. Aprende a optimizar tu código asincrónico y simplifica la complejidad de la asincronía en JavaScript."
 canonicalURL: "https://johnserrano.co/blog/promesas-en-javascript-como-manejar-la-asincronia-de-forma-eficiente"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1688242692/John%20Serrano/Blog%20Post/promesas-en-javascript-como-manejar-la-asincronia-de-forma-eficiente/Promesas_en_JavaScript_Como_manejar_la_asincron%C3%ADa_de_forma_eficiente_jy0qpm.png"
 ---
 

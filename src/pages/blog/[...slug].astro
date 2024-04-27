@@ -22,7 +22,7 @@ const post = Astro.props
 
 const blogEntries = (
   await getCollection('blog', ({ data }) => {
-    return data.isDraft !== true && data.title !== post.data.title
+    return data.draft !== true && data.title !== post.data.title
   })
 ).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf())
 

@@ -8,7 +8,7 @@ tags: ["astro", "development", "webdeveloment", "desarrollo-web", "pagina-web", 
 primaryTag: { name: 'Astro', slug: 'astro' }
 excerpt: "Descubre lo rápido y sencillo que es construir tu propia página web con ASTRO. Aprende cómo hacerlo con este tutorial detallado y sin complicaciones."
 canonicalURL: "https://johnserrano.co/blog/astro-tutorial-paso-a-paso-crea-tu-propia-pagina-web-facilmente"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1706223118/John%20Serrano/Blog%20Post/astro-tutorial-paso-a-paso-crea-tu-propia-pagina-web-facilmente/astro_zmclou.jpg"
 ---
 

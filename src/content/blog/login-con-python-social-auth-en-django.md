@@ -15,7 +15,7 @@ excerpt: EL día de hoy vamos a realizar un login con python  Social auth  en dj
 description: EL día de hoy vamos a realizar un login con python  Social auth  en django , lo vamos hacer con Facebook de igual
 primaryTag: { name: 'Django', slug: 'django' }
 canonicalURL: "https://johnserrano.co/blog/login-con-python-social-auth-en-django"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683735003/John%20Serrano/Blog%20Post/login-con-python-social-auth-en-django/portadaLoginSocial_vp5sib.jpg"
 ---
 

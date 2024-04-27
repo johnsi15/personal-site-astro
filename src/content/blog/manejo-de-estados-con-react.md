@@ -17,7 +17,7 @@ excerpt: En un post anterior se habló de los primeros pasos con React pero nunc
 description: En un post anterior se habló de los primeros pasos con React pero nunca tocamos el state, con este nuevo post vamos a ver cómo manejar el estado.
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/manejo-de-estados-con-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683046917/John%20Serrano/Blog%20Post/manejo-de-estados-con-react/react-state_kopuwv.jpg"
 ---
 

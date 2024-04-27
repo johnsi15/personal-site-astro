@@ -8,7 +8,7 @@ tags: ["seo", "programación", "development", "webdeveloment", "desarrollo-web",
 primaryTag: { name: 'SEO', slug: 'seo' }
 excerpt: "Potencia tu presencia en línea con validación instantánea y sugerencias AI de SEO. Optimiza tus contenidos y maximiza tu impacto hoy."
 canonicalURL: "https://johnserrano.co/blog/mejora-tu-seo-con-esta-avanzada-herramienta-de-validacion-y-sugerencias"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1709498345/John%20Serrano/Blog%20Post/mejora-tu-seo-con-esta-avanzada-herramienta-de-validacion-y-sugerencias/seocheckai_mpb376.jpg"
 ---
 

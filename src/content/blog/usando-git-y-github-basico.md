@@ -17,7 +17,7 @@ excerpt: El día de hoy les traigo un artículo donde explicare como es la insta
 description: El día de hoy les traigo un artículo donde explicare como es la instalación de git y cómo combinarlo con GitHub que son y sus diferencias.
 primaryTag: { name: 'git', slug: 'git' }
 canonicalURL: "https://johnserrano.co/blog/usando-git-y-github-basico"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683737820/John%20Serrano/Blog%20Post/usando-git-y-github-basico/portadaGityGitHub_mazsyc.jpg"
 ---
 

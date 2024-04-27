@@ -15,7 +15,7 @@ excerpt: El día de hoy les traigo un artículo de la creación de una aplicaci�
 description: El día de hoy les traigo un artículo de la creación de una aplicación web básica con vistas basadas en clases un CRUD completo.
 primaryTag: { name: 'django', slug: 'django' }
 canonicalURL: "https://johnserrano.co/blog/crud-con-django-y-python-windows-y-linux"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683823509/John%20Serrano/Blog%20Post/crud-con-django-y-python-windows-y-linux/CrudDjangoPortada-01_ikzl6o.jpg"
 ---
 

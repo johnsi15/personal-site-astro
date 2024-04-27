@@ -13,7 +13,7 @@ excerpt: Lo primero que se debe hacer es perderle el miedo usar la terminal y pe
 description: Lo primero que se debe hacer es perderle el miedo usar la terminal y pensar porque no hacerlo desde la terminal vamos a ver algunos casos de uso.
 primaryTag: { name: 'terminal', slug: 'terminal' }
 canonicalURL: "https://johnserrano.co/blog/manejo-basico-de-la-terminal"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683211064/John%20Serrano/Blog%20Post/manejo-basico-de-la-terminal/terminal_1_cinxhp.jpg"
 ---
 

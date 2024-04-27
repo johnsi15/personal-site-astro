@@ -8,7 +8,7 @@ tags: ["JavaScript", "Programación", "development", "webdeveloment", "desarroll
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 excerpt: "Aprende cómo el Código Limpio en JavaScript puede impulsar la calidad de tu desarrollo web. Explora estrategias para abordar la Deuda Técnica y mejorar la mantenibilidad a través de la Refactorización. Descubre prácticas esenciales para optimizar tu código y garantizar un rendimiento óptimo en proyectos web."
 canonicalURL: "https://johnserrano.co/blog/codigo-limpio-en-javascript-deuda-tecnica-refactorizacion"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1697643034/John%20Serrano/Blog%20Post/codigo-limpio-en-javascript-deuda-tecnica-refactorizacion/k69ul2yssn9t83xwirqm.webp"
 ---
 

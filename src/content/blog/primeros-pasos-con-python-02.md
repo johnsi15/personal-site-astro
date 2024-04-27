@@ -17,7 +17,7 @@ excerpt: En este artículo vamos a seguir donde quedamos, vamos a ver los ciclos
 description: En este artículo vamos a seguir donde quedamos, vamos a ver los ciclos y ejemplos, vectores y por ultimo tipo de datos complejos, espero que sea...
 primaryTag: { name: 'Python', slug: 'python' }
 canonicalURL: "https://johnserrano.co/blog/primeros-pasos-con-python-02"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683577508/John%20Serrano/Blog%20Post/primeros-pasos-con-python-02/primerosPasos02_zpxuor.jpg"
 ---
 

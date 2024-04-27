@@ -15,7 +15,7 @@ excerpt: Redux es una librería que nos ayuda a controlar estado de nuestras apl
 description: Redux es una librería que nos ayuda a controlar estado de nuestras aplicaciones de una forma más fácil y no sufrir como lo vimos en el ejemplo del artículo.
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/introduccion-a-redux-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683046444/John%20Serrano/Blog%20Post/introduccion-a-redux-react/react-redux-compressor_ah5feo.jpg"
 ---
 

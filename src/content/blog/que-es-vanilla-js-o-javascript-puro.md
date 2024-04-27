@@ -15,7 +15,7 @@ excerpt: Vanilla JS es una iniciativa, en forma de framework que intenta enseña
 description: Vanilla JS es una iniciativa, en forma de framework que intenta enseñar las grandes ventajas de no usar frameworks o librerias y es solo JavaScript puro
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/que-es-vanilla-js-o-javascript-puro"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683238564/John%20Serrano/Blog%20Post/que-es-vanilla-js-o-javascript-puro/vanillajs_gbyba0.jpg"
 ---
 

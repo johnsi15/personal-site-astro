@@ -13,7 +13,7 @@ excerpt: Con JavaScript El día de hoy les traigo un pequeño artículo donde ex
 description: Con JavaScript El día de hoy les traigo un pequeño artículo donde explico cómo realizar un juego con JavaScript Muy básico...
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/juego-basico-con-javascript-piedra-papel-y-tijera"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683823053/John%20Serrano/Blog%20Post/juego-basico-con-javascript-piedra-papel-y-tijera/PortadajuegoPP-TJS_qwh0gl.jpg"
 ---
 

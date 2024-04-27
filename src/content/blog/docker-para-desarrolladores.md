@@ -16,7 +16,7 @@ excerpt: Hagamos nuestro primer hola mundo en docker, desde la terminal ejecutam
 description: Hagamos nuestro primer hola mundo en docker, desde la terminal ejecutamos un docker run hello-world en el output debemos ver algo como esto.
 primaryTag: { name: 'docker', slug: 'docker' }
 canonicalURL: "https://johnserrano.co/blog/docker-para-desarrolladores"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683056872/John%20Serrano/Blog%20Post/docker-para-desarrolladores/DockerDesarrolladores_bj1bsu.jpg"
 ---
 

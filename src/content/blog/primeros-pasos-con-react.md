@@ -20,7 +20,7 @@ excerpt: React es una biblioteca de JavaScript para construir interfaces de usua
 description: React es una biblioteca de JavaScript para construir interfaces de usuarios, construida y mantenido por Facebook, basada en componentes y uso de un virtual DOM.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/primeros-pasos-con-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683218951/John%20Serrano/Blog%20Post/primeros-pasos-con-react/react-web_uvphts.jpg"
 ---
 

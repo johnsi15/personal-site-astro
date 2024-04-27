@@ -16,7 +16,7 @@ excerpt: Hoy les traigo un pequeño artículo para manejar slides con una librer
 description: Hoy les traigo un pequeño artículo para manejar slides con una librería llamada responsive slides que nos permite mostrar varias imágenes como un carrousel.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 canonicalURL: "https://johnserrano.co/blog/responsive-slides-js"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683731729/John%20Serrano/Blog%20Post/responsive-slides-js/responsiveslide_jiyrdt.jpg"
 ---
 

@@ -15,7 +15,7 @@ excerpt: Amigos el día de hoy vamos a instalar mysql crear una base de datos y 
 description: Amigos el día de hoy vamos a instalar mysql crear una base de datos y hacer una conexión a través de python y dajngo...
 primaryTag: { name: 'python', slug: 'python' }
 canonicalURL: "https://johnserrano.co/blog/mysql-con-python-django"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683730124/John%20Serrano/Blog%20Post/mysql-con-python-django/mysqlDjango_xg1tki.jpg"
 ---
 

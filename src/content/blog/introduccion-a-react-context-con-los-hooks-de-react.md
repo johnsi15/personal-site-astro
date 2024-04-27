@@ -13,7 +13,7 @@ tags:
 primaryTag: { name: 'react', slug: 'react' }
 excerpt: Gracias a los context de React podemos pasar datos a través de componentes sin necesidad de pasar esos datos por los props manualmente en cada nivel.
 canonicalURL: "https://johnserrano.co/blog/introduccion-a-react-context-con-los-hooks-de-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682885259/John%20Serrano/Blog%20Post/introduccion-a-react-context-con-los-hooks-de-react/react-context_wcznou.jpg"
 ---
 

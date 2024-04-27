@@ -12,7 +12,7 @@ excerpt: Seguramente habrás escuchando sobre React Router y si no es así el d�
 description: Seguramente habrás escuchando sobre React Router y si no es así el día de hoy vas aprender a trabajar con esta librería la cual nos ayuda con el manejo de ruta.
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/aprende-a-crear-rutas-con-react-router"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682885734/John%20Serrano/Blog%20Post/aprende-a-crear-rutas-con-react-router/react-router_vooifr.jpg"
 ---
 

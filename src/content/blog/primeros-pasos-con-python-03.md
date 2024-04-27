@@ -19,7 +19,7 @@ excerpt: Hola amigos el día de hoy vamos a seguir con los primeros pasos en pyt
 description: Hola amigos el día de hoy vamos a seguir con los primeros pasos en python, hoy vamos a ver lo que son las funciones y las clases como instancia de objetos..
 primaryTag: { name: 'python', slug: 'python' }
 canonicalURL: "https://johnserrano.co/blog/primeros-pasos-con-python-03"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683384577/John%20Serrano/Blog%20Post/primeros-pasos-con-python-03/primerosPasos03_teq55c.jpg"
 ---
 

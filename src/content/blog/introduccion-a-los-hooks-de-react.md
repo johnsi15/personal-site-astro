@@ -12,7 +12,7 @@ excerpt: Los Hooks son una nueva característica en React 16.8. Estos te permite
 description: Los Hooks son una nueva característica en React 16.8. Estos te permiten usar el estado y otras características de React sin escribir una clase.
 primaryTag: { name: 'hooks', slug: 'hooks' }
 canonicalURL: "https://johnserrano.co/blog/introduccion-a-los-hooks-de-react"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682887375/John%20Serrano/Blog%20Post/introduccion-a-los-hooks-de-react/react-hooks_crwe4f.jpg"
 ---
 

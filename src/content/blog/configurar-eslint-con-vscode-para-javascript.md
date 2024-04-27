@@ -14,7 +14,7 @@ excerpt: Cuando  creamos aplicaciones en JavaScript es difícil mantener un orde
 description: Cuando  creamos aplicaciones en JavaScript es difícil mantener un orden en el  código esto se ve sobre todo cuando trabajamos en equipo, gracias a ESlint podem.
 primaryTag: { name: 'eslint', slug: 'eslint' }
 canonicalURL: "https://johnserrano.co/blog/configurar-eslint-con-vscode-para-javascript"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683046325/John%20Serrano/Blog%20Post/configurar-eslint-con-vscode-para-javascript/eslint-1_fuhyxq.jpg"
 ---
 

@@ -8,7 +8,7 @@ tags: ["JavaScript", "programación", "development", "webdeveloment", "desarroll
 primaryTag: { name: 'Zustand', slug: 'zustand' }
 excerpt: "Descubre qué es Zustand, sus ventajas y cómo puedes gestionar el estado de tu aplicación en pocas líneas de código. También compatible con TypeScript."
 canonicalURL: "https://johnserrano.co/blog/zustand-aprende-a-gestionar-tu-estado-en-react-una-alternativa-sencilla-a-redux"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1708016497/John%20Serrano/Blog%20Post/zustand-aprende-a-gestionar-tu-estado-en-react-una-alternativa-sencilla-a-redux/viwegf4ocrn9kvcqkv2d.jpg"
 ---
 

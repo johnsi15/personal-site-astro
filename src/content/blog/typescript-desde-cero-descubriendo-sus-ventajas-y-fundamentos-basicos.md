@@ -8,7 +8,7 @@ tags: ["TypeScript", "Programación", "development", "webdeveloment", "desarroll
 primaryTag: { name: 'TypeScript', slug: 'typescript' }
 excerpt: "Explora los fundamentos y ventajas de TypeScript, un lenguaje de programación que potencia el desarrollo con tipos estáticos. Aprende cómo usarlo para un código más sólido y mejora tus habilidades."
 canonicalURL: "https://johnserrano.co/blog/typescript-desde-cero-descubriendo-sus-ventajas-y-fundamentos-basicos"
-isDraft: false
+draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1692387795/John%20Serrano/Blog%20Post/typescript-desde-cero-descubriendo-sus-ventajas-y-fundamentos-basicos/typescript_mort2b.webp"
 ---
 
