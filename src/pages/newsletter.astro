@@ -1,0 +1,175 @@
+---
+import Layout from '../layouts/generic.astro'
+---
+
+<Layout title='Mantente a la Vanguardia: ¡Suscríbete a Nuestro Boletín de Programación Hoy Mismo!'>
+  <div class='relative h-full w-full bg-slate-950 pb-20'>
+    <div
+      class='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'
+    >
+    </div>
+    <section class='w-[768px] m-auto pt-20 relative z-10'>
+      <h1 class='text-white text-3xl md:text-6xl text-center font-bold'>
+        Suscríbete a mi Boletín de <span class='text-yellow-500'>Programación y Tecnología</span>
+      </h1>
+      <p class='text-white mt-6 text-2xl md:text-3xl text-center'>¡Potencia tus Conocimientos en Programación!</p>
+      <div class='grid grid-cols-2 gap-4 mt-16 justify-items-center'>
+        <div class='text'>
+          <h2 class='text-white mt-8 text-xl md:text-2xl text-pretty text-center'>
+            Recibe las últimas noticias, consejos y recursos directamente en tu bandeja de entrada con nuestro exclusivo
+            boletín de programación. Mantente informado, inspirado y empoderado en tu camino de codificación.
+          </h2>
+        </div>
+        <div class='image w-[250px] h-[250px]'>
+          <img
+            src='/newsletter/email-newsletter.webp'
+            alt='Newsletter John Serrano'
+            class='rounded-full object-cover w-[250px] h-[250px]'
+          />
+        </div>
+      </div>
+
+      <form class='flex gap-x-4 w-[500px] mt-16 flex-wrap justify-center items-center m-auto'>
+        <input
+          type='text'
+          name='names'
+          placeholder='Nombre'
+          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500'
+        />
+        <input
+          type='email'
+          name='email'
+          placeholder='Correo electrónico'
+          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500'
+        />
+
+        <button
+          type='submit'
+          class='bg-yellow-500 shadow-lg shadow-white/20 text-black text-xl px-6 py-3 mt-7 mb-3 rounded-md hover:scale-105 transition'
+          >Si, Potenciar Mis Conocimientos!</button
+        >
+        <span class='text-white'
+          >Al ingresar su correo electrónico, acepta nuestra <a href='/legal' target='_blank' class='text-yellow-500'
+            >Política de Privacidad</a
+          >.</span
+        >
+      </form>
+    </section>
+
+    <section class='w-[820px] m-auto mt-20 relative z-10'>
+      <h2 class='text-white text-xl md:text-3xl text-center font-semibold'>
+        ¡Obtén <span class='text-yellow-500 font-bold text-2xl md:text-4xl'>Gratis un Libro</span> para Aprender Programación
+        en uno de los Lenguajes Más Demandados de la Industria!
+      </h2>
+
+      <div class='mt-16 w-[200px] m-auto'>
+        <a class='book-container' href='https://pay.hotmart.com/O67718482D' target='_blank' rel='noreferrer noopener'>
+          <div class='book'>
+            <img
+              alt='Fundamentos de programación'
+              src='https://d2sofvawe08yqg.cloudfront.net/fundamentos-de-programacin-con-javascript/s_hero2x?1620647084'
+            />
+          </div>
+        </a>
+      </div>
+
+      <p class='text-yellow-500 text-2xl text-center mt-16 italic'>
+        ¡Únete Ahora y Desarrolla tus Habilidades como Profesional!
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .book-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 600px;
+  }
+
+  @keyframes initAnimation {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-30deg);
+    }
+  }
+
+  .book {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg);
+    transition: 1s ease;
+    animation: 1s ease 0s 1 initAnimation;
+  }
+
+  .book-container:hover .book,
+  .book-container:focus .book {
+    transform: rotateY(0deg);
+  }
+
+  .book > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 200px;
+    height: 300px;
+    transform: translateZ(17.5px);
+    background-color: rgb(234 179 8);
+    border-radius: 0 2px 2px 0;
+    /* box-shadow: 5px 5px 20px #dedede; */
+  }
+
+  .book::before {
+    position: absolute;
+    content: ' ';
+    background-color: blue;
+    left: 0;
+    top: 3px;
+    width: 33px;
+    height: 294px;
+    transform: translateX(179.5px) rotateY(90deg);
+    background: linear-gradient(
+      90deg,
+      #fff 0%,
+      #f9f9f9 5%,
+      #fff 10%,
+      #f9f9f9 15%,
+      #fff 20%,
+      #f9f9f9 25%,
+      #fff 30%,
+      #f9f9f9 35%,
+      #fff 40%,
+      #f9f9f9 45%,
+      #fff 50%,
+      #f9f9f9 55%,
+      #fff 60%,
+      #f9f9f9 65%,
+      #fff 70%,
+      #f9f9f9 75%,
+      #fff 80%,
+      #f9f9f9 85%,
+      #fff 90%,
+      #f9f9f9 95%,
+      #fff 100%
+    );
+  }
+
+  .book::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ' ';
+    width: 200px;
+    height: 300px;
+    transform: translateZ(-17.5px);
+    background-color: rgb(234 179 8);
+    border-radius: 0 2px 2px 0;
+    /* box-shadow: -10px 0 15px 5px #dedede; */
+  }
+</style>
