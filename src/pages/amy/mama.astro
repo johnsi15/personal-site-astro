@@ -9,22 +9,29 @@ import Layout from '../../layouts/generic.astro'
   image='https://res.cloudinary.com/john-serrano/image/upload/v1685043055/John%20Serrano/Andrey%20-%20Ammi/dia-de-la-mama/poster_nxsbuo.jpg'
 >
   <main>
-    <section class="container_mylove">
+    <section class='container_mylove'>
       <h1>Feliz Día a la Mejor Mamá de este Mundo</h1>
-    
-      <div class="video">
+
+      <div class='video'>
         <!-- <video id="player" playsinline controls data-poster="/path/to/poster.jpg"> -->
-        <video id="player" playsinline controls>
-          <source src="https://res.cloudinary.com/john-serrano/video/upload/v1684944982/John%20Serrano/Andrey%20-%20Ammi/dia-de-la-mama/Mi_reina_feliz_d%C3%ADa_mam%C3%A1_xkp5lm.mp4" type="video/mp4" />
+        <video id='player' playsinline controls>
+          <source
+            src='https://res.cloudinary.com/john-serrano/video/upload/v1684944982/John%20Serrano/Andrey%20-%20Ammi/dia-de-la-mama/Mi_reina_feliz_d%C3%ADa_mam%C3%A1_xkp5lm.mp4'
+            type='video/mp4'
+          />
           <!-- <source src="/path/to/video.webm" type="video/webm" /> -->
-        
+
           <!-- Captions are optional -->
           <!-- <track kind="captions" label="English captions" src="/path/to/captions.vtt" srclang="en" default /> -->
         </video>
       </div>
 
       <footer>
-        <p>En este día quiero decirte que eres una de las mejores mamás de este mundo y te mereces muchas cosas bonitas 💑 porque eres una gran mujer una mujer muy valiosa e importante para Mi. 😍 Te amo mucho mi amor hermosa con mucho cariño y amor Andrey Serrano. 💖💖</p>
+        <p>
+          En este día quiero decirte que eres una de las mejores mamás de este mundo y te mereces muchas cosas bonitas
+          💑 porque eres una gran mujer una mujer muy valiosa e importante para Mi. 😍 Te amo mucho mi amor hermosa con
+          mucho cariño y amor Andrey Serrano. 💖💖
+        </p>
         <time>28 de Mayo del 2023</time>
       </footer>
     </section>
@@ -32,12 +39,12 @@ import Layout from '../../layouts/generic.astro'
 </Layout>
 
 <script>
-  const player = new Plyr('#player', { title: 'La mejor mamá del este mundo...'});
+  const player = new Plyr('#player', { title: 'La mejor mamá del este mundo...' })
 </script>
 
 <style>
   :root {
-    --plyr-color-main: #0093E9;
+    --plyr-color-main: #0093e9;
   }
 
   main {
@@ -46,8 +53,8 @@ import Layout from '../../layouts/generic.astro'
 
     /* background-color: #4158D0;
     background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); */
-    background-color: #0093E9;
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-color: #0093e9;
+    background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%);
 
     padding: 20px 0;
     height: 100%;
@@ -60,8 +67,7 @@ import Layout from '../../layouts/generic.astro'
     line-height: 3rem;
     margin: 0 0 20px;
     background: rgba(214, 175, 235, 1);
-    background: radial-gradient(circle, rgba(214, 175, 235, 1) 50%,rgba(185, 220, 255, 1) 100%); 100%);
-    /* background: radial-gradient(circle, rgba(205,180,219,1) 50%, rgba(162,210,255,1) 100%); */
+    background: radial-gradient(circle, rgba(214, 175, 235, 1) 50%, rgba(185, 220, 255, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(2px 2px #001d3d);
