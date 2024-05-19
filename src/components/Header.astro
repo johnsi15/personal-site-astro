@@ -31,10 +31,10 @@ import Search from './Search'
     hamburger.addEventListener('click', () => {
       if (header && !menu_mobile?.classList.contains('active_nav')) {
         menu_mobile?.classList.add('active_nav')
-        document.body.classList.add('blur')
+        document.body.classList.add('blur_custom')
       } else {
         menu_mobile?.classList.remove('active_nav')
-        document.body.classList.remove('blur')
+        document.body.classList.remove('blur_custom')
       }
     })
   }
