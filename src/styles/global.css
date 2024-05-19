@@ -4,12 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700&display=swap');
-
 :root {
   --width: 1000px;
-  --font-main: 'Source Sans Pro', system-ui, sans-serif;
-  --font-secondary: 'Source Sans Pro', system-ui, sans-serif;
   --font-scael: 1em;
   --background-color: #fff;
   --heading-color: #1c1c1c;
@@ -33,8 +29,6 @@ html {
 }
 
 body {
-  font-family: var(--font-secondary);
-  font-size: 16px;
   font-weight: 400;
   color: var(--heading-color);
   margin: 0;
@@ -81,15 +75,15 @@ body {
     align-items: flex-start;
   }
 
-  body.blur {
+  body.blur_custom {
     overflow: hidden;
   }
 
-  body.blur main>*,
-  body.blur .header__menu #Search_content,
-  body.blur #Blog>*,
-  body.blur #Posts>*,
-  body.blur #Sobre-mi {
+  body.blur_custom main>*,
+  body.blur_custom .header__menu #Search_content,
+  body.blur_custom #Blog>*,
+  body.blur_custom #Posts>*,
+  body.blur_custom #Sobre-mi {
     filter: blur(5px) brightness(0.7);
     transition: var(--transition);
     pointer-events: none;
