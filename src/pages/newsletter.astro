@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/generic.astro'
+import ExampleEmail from '../components/ExampleEmail.astro'
 ---
 
 <Layout title='Mantente a la Vanguardia: ¡Suscríbete a Nuestro Boletín de Programación Hoy Mismo!'>
@@ -20,11 +21,11 @@ import Layout from '../layouts/generic.astro'
             boletín de programación. Mantente informado, inspirado y empoderado en tu camino de codificación.
           </h2>
         </div>
-        <div class='image w-[200px] h-[200px]'>
+        <div class='image w-[180px] h-[180px]'>
           <img
             src='/newsletter/email-newsletter.webp'
             alt='Newsletter John Serrano'
-            class='rounded-full object-cover w-[200px] h-[200px]'
+            class='rounded-full object-cover w-[180px] h-[180px]'
           />
         </div>
       </div>
@@ -59,7 +60,7 @@ import Layout from '../layouts/generic.astro'
     <section class='w-[820px] m-auto mt-20 relative z-10'>
       <h2 class='text-white text-xl md:leading-relaxed md:text-3xl text-center font-semibold'>
         ¡Obtén <span class='text-black bg-yellow-500 px-2 rounded font-bold text-2xl md:text-4xl'>Gratis un Libro</span>
-        para Aprender Programación en uno de los Lenguajes Más Demandados de la Industria!
+        para Aprender Programación con uno de los Lenguajes Más Demandados de la Industria!
       </h2>
 
       <div class='mt-16 w-[200px] m-auto'>
@@ -78,6 +79,15 @@ import Layout from '../layouts/generic.astro'
       >
         ¡Únete Ahora y Desarrolla tus Habilidades como Profesional!
       </p>
+    </section>
+
+    <section class='w-[820px] m-auto mt-20 relative z-10'>
+      <h2 class="text-2xl text-white text-center mb-8">Mira un ejemplo del correo que recibirás 👇</h2>
+      <ExampleEmail />
+    </section>
+
+    <section class='w-[600px] m-auto mt-20 relative z-10'>
+      <span class="text-white text-xl text-center block">Si tienes alguna pregunta o comentario, no dudes en contactarme. Puedes encontrar en las redes sociales como <strong class="text-yellow-500 font-semibold">@johnserranodev</strong>. ¡Espero que disfrutes el contenido y te sea de gran ayuda en tu camino como desarrollador!</span>
     </section>
   </div>
 </Layout>
