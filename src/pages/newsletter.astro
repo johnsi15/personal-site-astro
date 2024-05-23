@@ -13,18 +13,18 @@ import Layout from '../layouts/generic.astro'
         Suscríbete a mi Boletín de <span class='text-yellow-500'>Programación y Tecnología</span>
       </h1>
       <p class='text-white mt-6 text-2xl md:text-3xl text-center'>¡Potencia tus Conocimientos en Programación!</p>
-      <div class='grid grid-cols-2 gap-4 mt-16 justify-items-center'>
+      <div class='grid grid-cols-2 gap-4 mt-16 justify-items-center items-center'>
         <div class='text'>
-          <h2 class='text-white mt-8 text-xl md:text-2xl text-pretty text-center'>
+          <h2 class='text-white text-xl md:text-2xl text-pretty text-center'>
             Recibe las últimas noticias, consejos y recursos directamente en tu bandeja de entrada con nuestro exclusivo
             boletín de programación. Mantente informado, inspirado y empoderado en tu camino de codificación.
           </h2>
         </div>
-        <div class='image w-[250px] h-[250px]'>
+        <div class='image w-[200px] h-[200px]'>
           <img
             src='/newsletter/email-newsletter.webp'
             alt='Newsletter John Serrano'
-            class='rounded-full object-cover w-[250px] h-[250px]'
+            class='rounded-full object-cover w-[200px] h-[200px]'
           />
         </div>
       </div>
@@ -33,23 +33,23 @@ import Layout from '../layouts/generic.astro'
         <input
           type='text'
           name='names'
-          placeholder='Nombre'
-          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500'
+          placeholder='Nombres'
+          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
         />
         <input
           type='email'
           name='email'
           placeholder='Correo electrónico'
-          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500'
+          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
         />
 
         <button
           type='submit'
-          class='bg-yellow-500 shadow-lg shadow-white/20 text-black text-xl px-6 py-3 mt-7 mb-3 rounded-md hover:scale-105 transition'
+          class='bg-yellow-500 font-semibold shadow-lg shadow-yellow-500/30 text-black text-xl px-6 py-3 mt-7 mb-4 rounded-md hover:scale-105 transition'
           >Si, Potenciar Mis Conocimientos!</button
         >
         <span class='text-white'
-          >Al ingresar su correo electrónico, acepta nuestra <a href='/legal' target='_blank' class='text-yellow-500'
+          >Al ingresar tu correo electrónico, aceptas nuestra <a href='/legal' target='_blank' class='text-yellow-500'
             >Política de Privacidad</a
           >.</span
         >
@@ -57,9 +57,9 @@ import Layout from '../layouts/generic.astro'
     </section>
 
     <section class='w-[820px] m-auto mt-20 relative z-10'>
-      <h2 class='text-white text-xl md:text-3xl text-center font-semibold'>
-        ¡Obtén <span class='text-yellow-500 font-bold text-2xl md:text-4xl'>Gratis un Libro</span> para Aprender Programación
-        en uno de los Lenguajes Más Demandados de la Industria!
+      <h2 class='text-white text-xl md:leading-relaxed md:text-3xl text-center font-semibold'>
+        ¡Obtén <span class='text-black bg-yellow-500 px-2 rounded font-bold text-2xl md:text-4xl'>Gratis un Libro</span>
+        para Aprender Programación en uno de los Lenguajes Más Demandados de la Industria!
       </h2>
 
       <div class='mt-16 w-[200px] m-auto'>
@@ -73,7 +73,9 @@ import Layout from '../layouts/generic.astro'
         </a>
       </div>
 
-      <p class='text-yellow-500 text-2xl text-center mt-16 italic'>
+      <p
+        class='text-yellow-500 text-2xl text-center mt-[100px] italic font-semibold bg-gray-900 w-fit m-auto px-7 py-2 rounded-md'
+      >
         ¡Únete Ahora y Desarrolla tus Habilidades como Profesional!
       </p>
     </section>
