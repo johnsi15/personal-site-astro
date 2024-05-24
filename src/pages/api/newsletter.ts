@@ -1,5 +1,7 @@
 import type { APIRoute } from 'astro'
 
+export const prerender = false
+
 const res = (
   body: {
     message: string
@@ -10,13 +12,7 @@ const res = (
 
 interface FormData {
   email: string
-  first_name: string
-  last_name: string
-  phone: string
-  motorcycle: string
-  type_person: string
-  city: string
-  listId: string
+  names: string | null
 }
 
 export const POST: APIRoute = async ({ request }) => {
@@ -25,7 +21,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (request.headers.get('Content-Type') === 'application/json') {
     const formData: FormData = await request.json()
-    const { email, first_name } = formData
+    const { email, names } = formData
 
     if (!email) {
       return res({ message: 'Email is required' }, { status: 400 })
@@ -34,7 +30,7 @@ export const POST: APIRoute = async ({ request }) => {
     const dataRegister = {
       email,
       attributes: {
-        NOMBRE: first_name,
+        NOMBRE: names ?? 'Anónimo',
       },
       listIds: [4],
       emailBlacklisted: false,
@@ -54,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     try {
       const response = await fetch(url, options)
-
+      console.info({ response })
       if (!response.ok) {
         return res({ message: 'Bad request' }, { status: 400, statusText: response.statusText })
       }

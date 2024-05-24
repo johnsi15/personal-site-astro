@@ -42,12 +42,14 @@ import ExampleEmail from '../components/ExampleEmail.astro'
           name='names'
           placeholder='Nombres'
           class='px-3 py-2 rounded mb-4 md:mb-0 text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
+          required
         />
         <input
           type='email'
           name='email'
           placeholder='Correo electrónico'
           class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
+          required
         />
 
         <button
@@ -109,7 +111,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
 </Layout>
 
 <script>
-  const form = document.getElementById('form_event') as HTMLFormElement
+  const form = document.getElementById('form_newsletter') as HTMLFormElement
 
   form?.addEventListener('submit', async event => {
     event.preventDefault()
@@ -141,8 +143,8 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       if (res.status !== 204) {
         data = await res.json()
       }
+      console.info({ data, res })
 
-      console.log({ data, res })
       submitter.disabled = false
 
       form.reset()
