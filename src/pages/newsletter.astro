@@ -3,19 +3,19 @@ import Layout from '../layouts/generic.astro'
 import ExampleEmail from '../components/ExampleEmail.astro'
 ---
 
-<Layout title='Mantente a la Vanguardia: ¡Suscríbete a Nuestro Boletín de Programación Hoy Mismo!'>
+<Layout title='Mantente Informado y mejora como desarrollador: ¡Suscríbete a Mi Boletín de Programación Hoy Mismo!'>
   <div class='relative h-full w-full bg-slate-950 pb-20'>
     <div
       class='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'
     >
     </div>
-    <section class='w-[768px] m-auto pt-20 relative z-10'>
-      <h1 class='text-white text-3xl md:text-6xl text-center font-bold'>
+    <section class='w-full px-2 md:px-0 md:w-[768px] m-auto pt-20 relative z-10'>
+      <h1 class='text-white text-4xl md:text-6xl text-center font-bold'>
         Suscríbete a mi Boletín de <span class='text-yellow-500'>Programación y Tecnología</span>
       </h1>
       <p class='text-white mt-6 text-2xl md:text-3xl text-center'>¡Potencia tus Conocimientos en Programación!</p>
-      <div class='grid grid-cols-2 gap-4 mt-16 justify-items-center items-center'>
-        <div class='text'>
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-16 justify-items-center items-center'>
+        <div class='text order-2'>
           <h2 class='text-white text-xl md:text-2xl text-pretty text-center'>
             Recibe las últimas noticias, consejos y recursos directamente en tu bandeja de entrada con nuestro exclusivo
             boletín de programación. Mantente informado, inspirado y empoderado en tu camino de codificación.
@@ -30,12 +30,14 @@ import ExampleEmail from '../components/ExampleEmail.astro'
         </div>
       </div>
 
-      <form class='flex gap-x-4 w-[500px] mt-16 flex-wrap justify-center items-center m-auto'>
+      <form
+        class='flex gap-x-4 flex-col w-full md:flex-row md:w-[500px] mt-16 flex-wrap justify-center items-center m-auto'
+      >
         <input
           type='text'
           name='names'
           placeholder='Nombres'
-          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
+          class='px-3 py-2 rounded mb-4 md:mb-0 text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
         />
         <input
           type='email'
@@ -49,7 +51,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
           class='bg-yellow-500 font-semibold shadow-lg shadow-yellow-500/30 text-black text-xl px-6 py-3 mt-7 mb-4 rounded-md hover:scale-105 transition'
           >Si, Potenciar Mis Conocimientos!</button
         >
-        <span class='text-white'
+        <span class='text-white text-center'
           >Al ingresar tu correo electrónico, aceptas nuestra <a href='/legal' target='_blank' class='text-yellow-500'
             >Política de Privacidad</a
           >.</span
@@ -57,7 +59,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       </form>
     </section>
 
-    <section class='w-[820px] m-auto mt-20 relative z-10'>
+    <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-20 relative z-10'>
       <h2 class='text-white text-xl md:leading-relaxed md:text-3xl text-center font-semibold'>
         ¡Obtén <span class='text-black bg-yellow-500 px-2 rounded font-bold text-2xl md:text-4xl'>Gratis un Libro</span>
         para Aprender Programación con uno de los Lenguajes Más Demandados de la Industria!
@@ -75,19 +77,23 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       </div>
 
       <p
-        class='text-yellow-500 text-2xl text-center mt-[100px] italic font-semibold bg-gray-900 w-fit m-auto px-7 py-2 rounded-md'
+        class='text-yellow-500 text-xl md:text-2xl text-center mt-[100px] italic font-semibold bg-gray-900 w-fit m-auto px-7 py-2 rounded-md'
       >
         ¡Únete Ahora y Desarrolla tus Habilidades como Profesional!
       </p>
     </section>
 
-    <section class='w-[820px] m-auto mt-20 relative z-10'>
-      <h2 class="text-2xl text-white text-center mb-8">Mira un ejemplo del correo que recibirás 👇</h2>
+    <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-20 relative z-10'>
+      <h2 class='text-2xl text-white text-center mb-8'>Mira un ejemplo del correo que recibirás 👇</h2>
       <ExampleEmail />
     </section>
 
-    <section class='w-[600px] m-auto mt-20 relative z-10'>
-      <span class="text-white text-xl text-center block">Si tienes alguna pregunta o comentario, no dudes en contactarme. Puedes encontrar en las redes sociales como <strong class="text-yellow-500 font-semibold">@johnserranodev</strong>. ¡Espero que disfrutes el contenido y te sea de gran ayuda en tu camino como desarrollador!</span>
+    <section class='w-full px-2 md:px-0 md:w-[600px] m-auto mt-20 relative z-10'>
+      <span class='text-white text-xl text-center block'
+        >Si tienes alguna pregunta o comentario, no dudes en contactarme. Puedes encontrar en las redes sociales como <strong
+          class='text-yellow-500 font-semibold'>@johnserranodev</strong
+        >. ¡Espero que disfrutes el contenido y te sea de gran ayuda en tu camino como desarrollador!</span
+      >
     </section>
   </div>
 </Layout>
