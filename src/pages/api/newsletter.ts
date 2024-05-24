@@ -50,7 +50,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     try {
       const response = await fetch(url, options)
-      console.info({ response })
+
       if (!response.ok) {
         return res({ message: 'Bad request' }, { status: 400, statusText: response.statusText })
       }
