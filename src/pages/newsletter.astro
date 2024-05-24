@@ -14,8 +14,8 @@ import ExampleEmail from '../components/ExampleEmail.astro'
         Suscríbete a mi Boletín de <span class='text-yellow-500'>Programación y Tecnología</span>
       </h1>
       <p class='text-white mt-6 text-2xl md:text-3xl text-center'>¡Potencia tus Conocimientos en Programación!</p>
-      <div class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-16 justify-items-center items-center'>
-        <div class='text order-2'>
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 justify-items-center items-center'>
+        <div class='text order-2 md:-order-none'>
           <h2 class='text-white text-xl md:text-2xl text-pretty text-center'>
             Recibe las últimas noticias, consejos y recursos directamente en tu bandeja de entrada con nuestro exclusivo
             boletín de programación. Mantente informado, inspirado y empoderado en tu camino de codificación.
@@ -31,8 +31,12 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       </div>
 
       <form
-        class='flex gap-x-4 flex-col w-full md:flex-row md:w-[500px] mt-16 flex-wrap justify-center items-center m-auto'
+        id='form_newsletter'
+        class='flex gap-x-4 flex-col w-full md:flex-row md:w-[500px] mt-20 flex-wrap justify-center items-center m-auto'
       >
+        <span class='inline-block text-white text-2xl mt-2 mb-5 border-b border-yellow-500 rounded px-2 pb-2'
+          >¡Suscribirme y Mejorar como Dev!</span
+        >
         <input
           type='text'
           name='names'
@@ -48,7 +52,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
 
         <button
           type='submit'
-          class='bg-yellow-500 font-semibold shadow-lg shadow-yellow-500/30 text-black text-xl px-6 py-3 mt-7 mb-4 rounded-md hover:scale-105 transition'
+          class='bg-yellow-500 font-semibold shadow-lg shadow-yellow-500/30 text-black text-lg md:text-xl px-6 py-3 mt-7 mb-4 rounded-md hover:scale-105 transition'
           >Si, Potenciar Mis Conocimientos!</button
         >
         <span class='text-white text-center'
@@ -59,7 +63,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       </form>
     </section>
 
-    <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-20 relative z-10'>
+    <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-28 relative z-10'>
       <h2 class='text-white text-xl md:leading-relaxed md:text-3xl text-center font-semibold'>
         ¡Obtén <span class='text-black bg-yellow-500 px-2 rounded font-bold text-2xl md:text-4xl'>Gratis un Libro</span>
         para Aprender Programación con uno de los Lenguajes Más Demandados de la Industria!
@@ -86,6 +90,12 @@ import ExampleEmail from '../components/ExampleEmail.astro'
     <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-20 relative z-10'>
       <h2 class='text-2xl text-white text-center mb-8'>Mira un ejemplo del correo que recibirás 👇</h2>
       <ExampleEmail />
+
+      <a
+        href='#form_newsletter'
+        class='bg-yellow-500 w-fit mx-auto block font-semibold shadow-lg shadow-yellow-500/30 text-black text-lg md:text-xl px-6 py-3 mt-12 mb-4 rounded-md hover:scale-105 transition'
+        >¡Suscribirme y Mejorar como Dev!</a
+      >
     </section>
 
     <section class='w-full px-2 md:px-0 md:w-[600px] m-auto mt-20 relative z-10'>
