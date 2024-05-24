@@ -108,6 +108,75 @@ import ExampleEmail from '../components/ExampleEmail.astro'
   </div>
 </Layout>
 
+<script>
+  const form = document.getElementById('form_event') as HTMLFormElement
+
+  form?.addEventListener('submit', async event => {
+    event.preventDefault()
+    const formData = new FormData(form)
+
+    const submitter = event.submitter as HTMLButtonElement
+    submitter.disabled = true
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      })
+
+      if (!res.ok) {
+        window.toast({
+          title: 'Error en el Registro',
+          message: 'Hubo un problema al intentar registrar los datos. Por favor, inténtalo de nuevo más tarde.',
+          location: 'bottom-center',
+          icon: false,
+          type: 'error',
+        })
+        return
+      }
+
+      let data = {}
+
+      if (res.status !== 204) {
+        data = await res.json()
+      }
+
+      console.log({ data, res })
+      submitter.disabled = false
+
+      form.reset()
+
+      if (res.status !== 201 && res.status !== 204) {
+        window.toast({
+          title: 'Error en el Registro',
+          message: 'Hubo un problema al intentar registrar los datos. Por favor, inténtalo de nuevo más tarde.',
+          location: 'bottom-center',
+          icon: false,
+          type: 'error',
+        })
+        return
+      }
+
+      window.toast({
+        title: '¡Gracias por suscribirte!',
+        message: 'Por favor, verifica tu bandeja de entrada para descargar tu libro.',
+        location: 'bottom-center',
+        icon: false,
+        type: 'success',
+      })
+    } catch (error) {
+      window.toast({
+        title: 'Error en el Registro',
+        message: 'Hubo un problema al intentar registrar los datos. Por favor, inténtalo de nuevo más tarde.',
+        location: 'bottom-center',
+        icon: false,
+        type: 'error',
+      })
+    }
+  })
+</script>
+
 <style>
   .book-container {
     display: flex;
