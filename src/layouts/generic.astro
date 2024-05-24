@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
 import Gtm from '../components/gtm.astro'
+import Toast from '../components/Toast.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
 const { title, description, image, datePublished, video } = Astro.props
 
@@ -31,6 +32,7 @@ import '@fontsource/source-sans-pro/700.css'
   <body>
     <section id='Layout'>
       <slot />
+      <Toast />
     </section>
     <style>
       #Layout {
