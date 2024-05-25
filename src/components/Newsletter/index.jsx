@@ -4,7 +4,7 @@ import { sendEventData } from '@/helpers/sendEventData'
 
 const URL_API = '/api/newsletter'
 
-function Newsletter() {
+function Newsletter({ margin = true }) {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState(null)
   const [buttonDisabled, setButtonDisabled] = useState(false)
@@ -92,7 +92,7 @@ function Newsletter() {
   }
 
   return (
-    <div className={styles.Newsletter}>
+    <div className={`${styles.Newsletter} ${!margin ? 'm-0' : 'mt-[70px] mb-[80px] m-auto'}`}>
       <h3>¿Te gusta lo que lees?</h3>
       <span>Suscríbete</span>
       <p className='text-white text-lg text-center mt-2'>
