@@ -71,7 +71,12 @@ import '@fontsource/source-sans-pro/700.css'
       document.addEventListener('mouseleave', function (e) {
         if (!e.relatedTarget) {
           const modal = document.querySelector('#dialog_newsletter') as HTMLDialogElement
-          modal.showModal()
+          const seenModal = window.localStorage.getItem('modal_newsletter')
+
+          if (!seenModal) {
+            modal.showModal()
+            window.localStorage.setItem('modal_newsletter', 'true')
+          }
         }
       })
     </script>
