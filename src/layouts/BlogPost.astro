@@ -6,6 +6,8 @@ import Footer from '../components/Footer.astro'
 import PostHeader from '../components/PostHeader'
 import Gtm from '../components/gtm.astro'
 import AdSense from '../components/adsense.astro'
+import ModalNewsletter from '@/components/ModalNewsletter.astro'
+import Newsletter from '@/components/Newsletter'
 import '../styles/highlight.css'
 
 type Props = CollectionEntry<'blog'>['data']
@@ -52,6 +54,26 @@ import '@fontsource/source-sans-pro/700.css'
       </article>
     </main>
     <Footer />
+
+    <ModalNewsletter id='dialog_newsletter' open='Ver más'>
+      <main slot='main'>
+        <Newsletter client:only='react' margin={false} />
+      </main>
+      <button slot='close'>
+        <svg fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='size-7'>
+          <path stroke-linecap='round' stroke-linejoin='round' d='M6 18 18 6M6 6l12 12'></path>
+        </svg>
+      </button>
+    </ModalNewsletter>
     <script src='../helpers/scriptEventFB.ts'></script>
+
+    <script>
+      document.addEventListener('mouseleave', function (e) {
+        if (!e.relatedTarget) {
+          const modal = document.querySelector('#dialog_newsletter') as HTMLDialogElement
+          modal.showModal()
+        }
+      })
+    </script>
   </body>
 </html>
