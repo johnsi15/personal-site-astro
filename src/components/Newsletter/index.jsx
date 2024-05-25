@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styles from './Newsletter.module.css'
 import { sendEventData } from '@/helpers/sendEventData'
 
-const URL_API = 'http://localhost:4321/api/newsletter'
+const URL_API = '/api/newsletter'
 
 function Newsletter() {
   const [message, setMessage] = useState('')
