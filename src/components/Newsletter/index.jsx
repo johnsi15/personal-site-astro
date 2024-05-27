@@ -2,9 +2,9 @@ import { useState } from 'react'
 import styles from './Newsletter.module.css'
 import { sendEventData } from '@/helpers/sendEventData'
 
-const URL_API = 'https://contact.johnserrano.co/api/contact'
+const URL_API = '/api/newsletter'
 
-function Newsletter() {
+function Newsletter({ margin = true }) {
   const [message, setMessage] = useState('')
   const [status, setStatus] = useState(null)
   const [buttonDisabled, setButtonDisabled] = useState(false)
@@ -12,7 +12,6 @@ function Newsletter() {
   const handleSubmit = async e => {
     e.preventDefault()
     const form = e.target
-    // console.log(form)
 
     const formData = new FormData(form)
 
@@ -24,20 +23,40 @@ function Newsletter() {
 
     setButtonDisabled(true)
 
-    const dataJson = JSON.stringify(Object.fromEntries(formData.entries()))
+    const formDataObj = {}
+    for (const [key, value] of formData.entries()) {
+      if (key === 'firstName') {
+        formDataObj['names'] = value
+      } else {
+        formDataObj[key] = value
+      }
+    }
+
+    // const dataJson = JSON.stringify(Object.fromEntries(formData))
+    const dataJson = JSON.stringify(formDataObj)
 
     const hashName = await codeHashSHA256(formData.get('firstName'))
     const hashEmail = await codeHashSHA256(formData.get('email'))
 
     fetch(URL_API, {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
+      headers: { 'content-type': 'application/json' },
       body: dataJson,
     })
-      .then(res => res.json())
+      .then(res => {
+        if (!res.ok) {
+          throw new Error('Algo salio mal :(')
+        }
+
+        if (res.status === 204) {
+          return {
+            message: '¡Gracias por suscribirte! Revisa tu bandeja de entrada para descargar tu libro.',
+            status: 200,
+          }
+        }
+
+        return res.json()
+      })
       .then(data => {
         setMessage(data?.message)
         setStatus(data?.status)
@@ -56,6 +75,7 @@ function Newsletter() {
       .finally(() => {
         // console.log('Se termino la promise')
         setButtonDisabled(false)
+        form.reset()
       })
   }
 
@@ -72,15 +92,12 @@ function Newsletter() {
   }
 
   return (
-    <div className={styles.Newsletter}>
+    <div className={`${styles.Newsletter} ${!margin ? 'm-0' : 'mt-[70px] mb-[80px] m-auto'}`}>
       <h3>¿Te gusta lo que lees?</h3>
       <span>Suscríbete</span>
-      {(status === 200 || status === 500) && (
-        <p id='message_newsletter' className={styles.message}>
-          {message}
-        </p>
-      )}
-
+      <p className='text-white text-lg text-center mt-2'>
+        🔥 ¡Obtén Gratis un Libro para Aprender Programación con uno de los Lenguajes Más Demandados de la Industria! 👇
+      </p>
       <form id='form_newsletter' method='post' className={styles.newsletter} onSubmit={handleSubmit}>
         <input type='text' name='firstName' placeholder='Nombres' required />
         <input type='email' name='email' placeholder='Email' required />
@@ -89,7 +106,7 @@ function Newsletter() {
           Suscribirme
         </button>
 
-        <aside className={styles.messageRequest}>{message}</aside>
+        <aside className='text-white mt-5 text-base text-center text-pretty w-[320px]'>{message}</aside>
       </form>
     </div>
   )

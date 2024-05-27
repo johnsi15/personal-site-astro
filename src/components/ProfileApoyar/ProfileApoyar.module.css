@@ -49,6 +49,8 @@
   color: #ffffff;
   font-size: 1.3rem;
   transition: all 0.3s;
+  display: flex;
+  column-gap: 3px;
 }
 
 .linkDonacion:hover,
@@ -64,6 +66,7 @@
 .btns {
   display: flex;
   gap: 16px;
+  margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {

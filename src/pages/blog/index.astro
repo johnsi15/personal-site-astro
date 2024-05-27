@@ -34,6 +34,7 @@ const isProduction = import.meta.env.PROD
   titleOpenGraph='Blog - John Serrano'
 >
   <section id='Blog' class='container'>
+    <h1 style='display: none;'>Blog - John Serrano</h1>
     <PostsFeature {...posts[3]} />
     <!-- <Pauta /> -->
     <PostsPagination client:visible posts={posts} meta={meta} isProduction={isProduction} />

@@ -1,0 +1,302 @@
+---
+import Layout from '../layouts/generic.astro'
+import ExampleEmail from '../components/ExampleEmail.astro'
+---
+
+<Layout title='Mantente informado y mejora como desarrollador: ¡Suscríbete a Mi Boletín de Programación Hoy Mismo!'>
+  <div class='relative h-full w-full bg-slate-950 pb-20'>
+    <div
+      class='absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]'
+    >
+    </div>
+    <section class='w-full px-2 md:px-0 md:w-[768px] m-auto pt-20 relative z-10'>
+      <h1 class='text-white text-4xl md:text-6xl text-center font-bold'>
+        Suscríbete a mi Boletín de <span class='text-yellow-500'>Programación y Tecnología</span>
+      </h1>
+      <p class='text-white mt-6 text-2xl md:text-3xl text-center'>¡Potencia tus Conocimientos en Programación!</p>
+      <div class='grid grid-cols-1 md:grid-cols-2 gap-4 mt-20 justify-items-center items-center'>
+        <div class='text order-2 md:-order-none'>
+          <h2 class='text-white text-xl md:text-2xl text-pretty text-center'>
+            Recibe las últimas noticias, consejos y recursos directamente en tu bandeja de entrada con nuestro exclusivo
+            boletín de programación. Mantente informado, inspirado y empoderado en tu camino de codificación.
+          </h2>
+        </div>
+        <div class='image w-[180px] h-[180px]'>
+          <img
+            src='/newsletter/email-newsletter.webp'
+            alt='Newsletter John Serrano'
+            class='rounded-full object-cover w-[180px] h-[180px]'
+          />
+        </div>
+      </div>
+
+      <form
+        id='form_newsletter'
+        class='flex gap-x-4 flex-col w-full md:flex-row md:w-[500px] mt-20 flex-wrap justify-center items-center m-auto'
+      >
+        <span class='inline-block text-white text-xl md:text-2xl mt-2 mb-5 border-b border-yellow-500 rounded px-2 pb-2'
+          >¡Suscribirme y Mejorar como Dev!</span
+        >
+        <input
+          type='text'
+          name='names'
+          placeholder='Nombres'
+          class='px-3 py-2 rounded mb-4 md:mb-0 text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
+          required
+        />
+        <input
+          type='email'
+          name='email'
+          placeholder='Correo electrónico'
+          class='px-3 py-2 rounded text-black focus:outline-none text-lg border border-yellow-500 w-full md:w-[230px]'
+          required
+        />
+
+        <button
+          type='submit'
+          class='bg-yellow-500 font-semibold shadow-lg shadow-yellow-500/30 text-black text-lg md:text-xl px-6 py-3 mt-7 mb-4 rounded-md hover:scale-105 transition'
+          >Si, Potenciar Mis Conocimientos!</button
+        >
+        <span class='text-white text-center'
+          >Al ingresar tu correo electrónico, aceptas nuestra <a href='/legal' target='_blank' class='text-yellow-500'
+            >Política de Privacidad</a
+          >.</span
+        >
+      </form>
+    </section>
+
+    <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-28 relative z-10'>
+      <h2 class='text-white text-xl md:leading-relaxed md:text-3xl text-center font-semibold'>
+        ¡Obtén <span class='text-black bg-yellow-500 px-2 rounded font-bold text-2xl md:text-4xl'>Gratis un Libro</span>
+        para Aprender Programación con uno de los Lenguajes Más Demandados de la Industria!
+      </h2>
+
+      <div class='mt-16 w-[200px] m-auto'>
+        <a class='book-container' href='https://pay.hotmart.com/O67718482D' target='_blank' rel='noreferrer noopener'>
+          <div class='book'>
+            <img
+              alt='Fundamentos de programación'
+              src='https://d2sofvawe08yqg.cloudfront.net/fundamentos-de-programacin-con-javascript/s_hero2x?1620647084'
+            />
+          </div>
+        </a>
+      </div>
+
+      <p
+        class='text-yellow-500 text-xl md:text-2xl text-center mt-[100px] italic font-semibold bg-gray-900 w-fit m-auto px-7 py-2 rounded-md'
+      >
+        ¡Únete Ahora y Desarrolla tus Habilidades como Profesional!
+      </p>
+    </section>
+
+    <section class='w-full px-2 md:px-0 md:w-[820px] m-auto mt-20 relative z-10'>
+      <h2 class='text-2xl text-white text-center mb-8'>Mira un ejemplo del correo que recibirás 👇</h2>
+      <ExampleEmail />
+
+      <a
+        href='#form_newsletter'
+        class='heartbeat bg-yellow-500 w-fit mx-auto block font-semibold shadow-lg shadow-yellow-500/30 text-black text-lg md:text-xl px-6 py-3 mt-12 mb-4 rounded-md hover:scale-105 transition'
+        >¡Suscribirme y Mejorar como Dev!</a
+      >
+    </section>
+
+    <section class='w-full px-2 md:px-0 md:w-[600px] m-auto mt-20 relative z-10'>
+      <span class='text-white text-xl text-center block'
+        >Si tienes alguna pregunta o comentario, no dudes en contactarme. Puedes encontrar en las redes sociales como <strong
+          class='text-yellow-500 font-semibold'>@johnserranodev</strong
+        >. ¡Espero que disfrutes el contenido y te sea de gran ayuda en tu camino como desarrollador!</span
+      >
+    </section>
+  </div>
+</Layout>
+
+<script>
+  const form = document.getElementById('form_newsletter') as HTMLFormElement
+
+  form?.addEventListener('submit', async event => {
+    event.preventDefault()
+    const formData = new FormData(form)
+
+    const submitter = event.submitter as HTMLButtonElement
+    submitter.disabled = true
+
+    try {
+      const res = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData)),
+      })
+
+      if (!res.ok) {
+        window.toast({
+          title: 'Error en el Registro',
+          message: 'Hubo un problema al intentar registrar los datos. Por favor, inténtalo de nuevo más tarde.',
+          location: 'bottom-center',
+          icon: false,
+          type: 'error',
+        })
+        return
+      }
+
+      let data = {}
+
+      if (res.status !== 204) {
+        data = await res.json()
+      }
+      console.info({ data, res })
+
+      submitter.disabled = false
+
+      form.reset()
+
+      if (res.status !== 201 && res.status !== 204) {
+        window.toast({
+          title: 'Error en el Registro',
+          message: 'Hubo un problema al intentar registrar los datos. Por favor, inténtalo de nuevo más tarde.',
+          location: 'bottom-center',
+          icon: false,
+          type: 'error',
+        })
+        return
+      }
+
+      window.toast({
+        title: '¡Gracias por suscribirte!',
+        message: 'Por favor, revisa tu bandeja de entrada para descargar tu libro.',
+        location: 'bottom-center',
+        icon: false,
+        type: 'success',
+      })
+    } catch (error) {
+      window.toast({
+        title: 'Error en el Registro',
+        message: 'Hubo un problema al intentar registrar los datos. Por favor, inténtalo de nuevo más tarde.',
+        location: 'bottom-center',
+        icon: false,
+        type: 'error',
+      })
+    }
+  })
+</script>
+
+<style>
+  .heartbeat {
+    /* Generated by Animista */
+    animation: heartbeat 1.5s ease-in-out infinite both;
+  }
+
+  @keyframes heartbeat {
+    from {
+      transform: scale(1);
+      transform-origin: center center;
+      animation-timing-function: ease-out;
+    }
+    10% {
+      transform: scale(0.91);
+      animation-timing-function: ease-in;
+    }
+    17% {
+      transform: scale(0.98);
+      animation-timing-function: ease-out;
+    }
+    33% {
+      transform: scale(0.87);
+      animation-timing-function: ease-in;
+    }
+    45% {
+      transform: scale(1);
+      animation-timing-function: ease-out;
+    }
+  }
+  .book-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 600px;
+  }
+
+  @keyframes initAnimation {
+    0% {
+      transform: rotateY(0deg);
+    }
+    100% {
+      transform: rotateY(-30deg);
+    }
+  }
+
+  .book {
+    width: 200px;
+    height: 300px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg);
+    transition: 1s ease;
+    animation: 1s ease 0s 1 initAnimation;
+  }
+
+  .book-container:hover .book,
+  .book-container:focus .book {
+    transform: rotateY(0deg);
+  }
+
+  .book > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: red;
+    width: 200px;
+    height: 300px;
+    transform: translateZ(17.5px);
+    background-color: rgb(234 179 8);
+    border-radius: 0 2px 2px 0;
+    /* box-shadow: 5px 5px 20px #dedede; */
+  }
+
+  .book::before {
+    position: absolute;
+    content: ' ';
+    background-color: blue;
+    left: 0;
+    top: 3px;
+    width: 33px;
+    height: 294px;
+    transform: translateX(179.5px) rotateY(90deg);
+    background: linear-gradient(
+      90deg,
+      #fff 0%,
+      #f9f9f9 5%,
+      #fff 10%,
+      #f9f9f9 15%,
+      #fff 20%,
+      #f9f9f9 25%,
+      #fff 30%,
+      #f9f9f9 35%,
+      #fff 40%,
+      #f9f9f9 45%,
+      #fff 50%,
+      #f9f9f9 55%,
+      #fff 60%,
+      #f9f9f9 65%,
+      #fff 70%,
+      #f9f9f9 75%,
+      #fff 80%,
+      #f9f9f9 85%,
+      #fff 90%,
+      #f9f9f9 95%,
+      #fff 100%
+    );
+  }
+
+  .book::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: ' ';
+    width: 200px;
+    height: 300px;
+    transform: translateZ(-17.5px);
+    background-color: rgb(234 179 8);
+    border-radius: 0 2px 2px 0;
+    /* box-shadow: -10px 0 15px 5px #dedede; */
+  }
+</style>

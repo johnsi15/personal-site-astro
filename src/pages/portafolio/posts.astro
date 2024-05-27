@@ -17,11 +17,11 @@ const posts = blogEntries.slice(0, 3)
 
   <div class='posts_list'>
     {
-      posts.map(post => {
+      posts.map((post, index) => {
         return (
           <article>
             <img src={post.data.featureImage} alt={post.data.title} loading='lazy' width='340' height='200' />
-            <div class='post_info'>
+            <div class={`post_info ${index === 0 || index === 2 ? 'min-h-[210px]' : ''}`}>
               <h2 class='title'>
                 <a href={post.data.canonicalURL}>{post.data.title}</a>
               </h2>
@@ -51,6 +51,7 @@ const posts = blogEntries.slice(0, 3)
     text-wrap: balance;
     margin-bottom: 58px;
     text-align: center;
+    font-weight: 700;
   }
 
   .posts_list {
@@ -63,6 +64,7 @@ const posts = blogEntries.slice(0, 3)
     border-radius: 4px;
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
     border: 1px solid var(--color-blue-800);
+    height: max-content;
   }
 
   article:hover {
@@ -77,6 +79,7 @@ const posts = blogEntries.slice(0, 3)
     object-fit: cover;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
+    height: 200px;
     width: 100%;
   }
 
@@ -90,6 +93,7 @@ const posts = blogEntries.slice(0, 3)
     color: var(--color-blue-500);
     margin: 0 0 15px;
     transition: all 0.3s;
+    font-weight: 700;
   }
 
   .title a {
