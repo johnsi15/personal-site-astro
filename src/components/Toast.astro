@@ -327,4 +327,17 @@
     color: hsl(210, 100%, 27%);
     border: solid 2px hsl(210, 100%, 27%);
   }
+
+  @media screen and (max-width: 768px) {
+    .toaster {
+      width: 100%;
+      transform: translateX(0px);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      & ol.rack {
+        align-items: center;
+      }
+    }
+  }
 </style>

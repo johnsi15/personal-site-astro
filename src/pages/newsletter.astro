@@ -34,7 +34,8 @@ import ExampleEmail from '../components/ExampleEmail.astro'
         id='form_newsletter'
         class='flex gap-x-4 flex-col w-full md:flex-row md:w-[500px] mt-20 flex-wrap justify-center items-center m-auto'
       >
-        <span class='inline-block text-white text-xl md:text-2xl mt-2 mb-5 border-b border-yellow-500 rounded px-2 pb-2'
+        <span
+          class='text_up_form inline-block text-white text-xl md:text-2xl mt-2 mb-5 border-b border-yellow-500 rounded px-2 pb-2'
           >¡Suscribirme y Mejorar como Dev!</span
         >
         <input
@@ -177,6 +178,17 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       })
     }
   })
+
+  const textUpForm = document.querySelector('.text_up_form')
+  const submitButton = document.querySelector('#form_newsletter button')
+  const searchParams = new URLSearchParams(window.location.search)
+
+  if (textUpForm && submitButton) {
+    if (searchParams.has('utm_source') && searchParams.get('utm_source') === 'newsletter') {
+      textUpForm.textContent = `¡Descarga tu Libro de Programación Gratis!`
+      submitButton.textContent = 'Descargar Libro 🚀'
+    }
+  }
 </script>
 
 <style>
