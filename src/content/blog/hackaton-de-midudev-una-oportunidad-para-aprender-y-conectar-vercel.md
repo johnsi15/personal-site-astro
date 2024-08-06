@@ -75,6 +75,6 @@ Con este video cierro una serie de videos donde te enseñé cuál fue mi proceso
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/q_iuznbTR1Q" frameborder="0" allowfullscreen></iframe>
 
-Enlace proyecto en GitHub [aquí]([http](https://github.com/johnsi15/seocheck-ai)).
+Enlace proyecto en GitHub [aquí](https://github.com/johnsi15/seocheck-ai).
 
 Gracias por tu tiempo y espero que puedas participar en el evento. Contáctame por las redes y cuéntame si vas a participar y con qué proyecto. 💪
