@@ -69,4 +69,12 @@ En este vídeo quiero mostrarles lo que he estado haciendo en el proyecto con el
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qVSIG78ukw0" frameborder="0" allowfullscreen></iframe>
 
+## Mi proyecto final
+
+Con este video cierro una serie de videos donde te enseñé cuál fue mi proceso en el desarrollo y participación en la hackathon. En este último video, te muestro el funcionamiento final de la aplicación, cómo integré **Playwright**, **Server Actions** y el modelo de **OpenAI GPT-4o-mini**. Espero que puedas apoyar **mi proyecto en GitHub** dándole una estrellita.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/q_iuznbTR1Q" frameborder="0" allowfullscreen></iframe>
+
+Enlace proyecto en GitHub [aquí]([http](https://github.com/johnsi15/seocheck-ai)).
+
 Gracias por tu tiempo y espero que puedas participar en el evento. Contáctame por las redes y cuéntame si vas a participar y con qué proyecto. 💪
