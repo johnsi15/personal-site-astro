@@ -47,7 +47,7 @@ let blogEntries = filteredPosts.sort((a, b) => b.data.publishedDate.valueOf() - 
   <Cover>
     <PostTitle capitalize='capitalize'>{tag}</PostTitle>
   </Cover>
-  <section id='Tag' class='container'>
+  <section id='Tag' class='container_old'>
     <PostsGrid posts={blogEntries} columns='3' />
   </section>
 </Layout>
