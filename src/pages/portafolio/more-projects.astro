@@ -2,52 +2,31 @@
 import IconoGithub from './icons/icono-github.astro'
 import IconoExternalLink from './icons/icono-external-link.astro'
 import IconoFolder from './icons/icono-folder.astro'
+import Project from './Project.astro'
 ---
 
 <section class='more_projects'>
   <h6 data-aos='fade-up' data-aos-delay='50'>Otros Proyectos Destacados</h6>
 
   <ul class='project_list'>
-    <li data-aos='fade-up' data-aos-delay='50'>
-      <div class='project'>
-        <header>
-          <div class='project_top'>
-            <div class='folder'>
-              <IconoFolder />
-            </div>
-            <div class='project_links'>
-              <a
-                href='https://seocheckai.com/'
-                aria-label='External Link'
-                class='external'
-                target='_blank'
-                rel='noopener noreferrer'
-                ><IconoExternalLink />
-              </a>
-            </div>
-          </div>
-
-          <h3 class='title'>
-            <a href='https://seocheckai.com/' target='_blank' rel='noopener noreferrer'> SEOcheckAI</a>
-          </h3>
-
-          <div class='description'>
-            <p>
-              SEOcheckAI es el fruto de mi dedicación para optimizar la validación del contenido que publico en mi blog.
-              Este proyecto agiliza el proceso al analizar el SEO de mis títulos y descripciones, ofreciéndome
-              sugerencias para mejorarlo.
-            </p>
-          </div>
-        </header>
-        <footer>
-          <ul class='project_tech_list'>
-            <li>NextJS</li>
-            <li>OpenAI</li>
-            <li>TailwindCSS</li>
-          </ul>
-        </footer>
-      </div>
-    </li>
+    <Project
+      title='seocheckAI'
+      description='Desarrollé SEOCHECKAI con el objetivo de ofrecer un análisis SEO completo para sitios web. Este proyecto me permitió participar en la hackathon de Midudev + Vercel, donde integré varios modelos de OpenAI, utilicé Playwright para el scraping de datos, y aproveché el SDK de Vercel. Una experiencia llena de aprendizaje y crecimiento.'
+      link='https://seocheckai.com/'
+      externalLink='https://seocheckai.com/'
+      githubLink='https://github.com/johnsi15/seocheck-ai'
+      techList={['NextJS', 'OpenAI', 'TailwindCSS']}
+    />
+    <Project
+      title='Resultados Elecciones Regionales Colombia 2023'
+      description=`El proyecto consiste en un módulo web que muestra los resultados de las elecciones regionales en Norte de
+              Santander, Colombia. El módulo cuenta con cinco pestañas, cada una de las cuales muestra los resultados de
+              una corporación de cargos públicos.`
+      link='https://laopinion.github.io/elecciones-resultados/'
+      externalLink='https://laopinion.github.io/elecciones-resultados/'
+      githubLink='https://github.com/laopinion/elecciones-resultados'
+      techList={['HTML5', 'JavaScript', 'NodeJS']}
+    />
     <li data-aos='fade-up' data-aos-delay='50'>
       <div class='project'>
         <header>
