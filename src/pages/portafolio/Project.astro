@@ -12,7 +12,7 @@ interface Props {
   externalLink?: string
 }
 
-const { title, description, link, techList, githubLink, externalLink } = Astro.props
+const { title, description, link, techList = [], githubLink, externalLink } = Astro.props
 ---
 
 <li data-aos='fade-up' data-aos-delay='50'>
