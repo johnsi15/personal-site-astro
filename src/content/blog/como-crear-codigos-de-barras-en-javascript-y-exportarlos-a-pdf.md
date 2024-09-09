@@ -3,14 +3,16 @@ title: "¿Cómo crear códigos de barras en JavaScript y exportarlos a PDF?"
 publishedDate: "2024-09-09T10:29:10.000Z"
 updatedDate: "2024-09-09T17:09:31.000Z"
 pubDate: "2024-09-09T10:29:10.000Z"
-description: "Hace unos días, mientras desarrollaba un sistema de inventario, me enfrenté al desafío de generar códigos de barras que pudieran ser leídos por un lector de códigos."
+description: "Desarrollé un sistema de inventario y enfrenté el desafío de generar códigos de barras legibles por un lector. Aquí te muestro cómo hacerlo en JavaScript."
 tags: ["JavaScript", "programación", "development", "webdeveloment", "desarrollo-web", "codebar", "frontend", "front-end", "codigo-de-barras", "software", "web", "johnserrano.co", "johnserrano", "pdf"]
 primaryTag: { name: 'codebar', slug: 'codebar' }
-excerpt: "Hace unos días, mientras desarrollaba un sistema de inventario, me enfrenté al desafío de generar códigos de barras que pudieran ser leídos por un lector de códigos."
+excerpt: "Desarrollé un sistema de inventario y enfrenté el desafío de generar códigos de barras legibles por un lector. Aquí te muestro cómo hacerlo en JavaScript."
 canonicalURL: "https://johnserrano.co/blog/como-crear-codigos-de-barras-en-javascript-y-exportarlos-a-pdf"
 draft: false
 featureImage: "https://download.johnserrano.co/Captura%20de%20pantalla%202024-08-23%20104748.png"
 ---
+
+Aprende a generar códigos de barras en JavaScript y a exportarlos a PDF de manera sencilla.
 
 ## Introducción
 
