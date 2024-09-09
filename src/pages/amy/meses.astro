@@ -14,8 +14,43 @@ import '@splidejs/splide/css/core'
   description='Mi reina hermosa, mi amor, mi todo, le doy gracias a Dios por haberte colocado en mi vida.'
 >
   <section class='main'>
-    <section class='container_mylove'>
+    <section class='container_mylove relative'>
       <h1>Andrey 💖 Ammi</h1>
+      <div class='lineatemp absolute -left-5 h-full w-2 items-center flex-col hidden md:flex'>
+        <div class='line w-[2px] h-[500px] bg-yellow-200 rounded-sm relative top-1'></div>
+        <div class='disco h-4 w-4 bg-yellow-200 rounded-full'></div>
+        <div class='line w-[2px] h-[400px] bg-yellow-200 rounded-sm relative bottom-1'></div>
+        <div class='disco h-4 w-4 bg-yellow-200 rounded-full relative bottom-2'></div>
+        <div class='line w-[2px] h-[400px] bg-yellow-200 rounded-sm relative bottom-3'></div>
+      </div>
+      <div class='mt-9 mb-7 border-b pb-5 border-yellow-200'>
+        <section id='splide-meses' class='splide' aria-label='Felices 22 meses'>
+          <div class='splide__track'>
+            <ul class='splide__list'>
+              <li class='splide__slide'>
+                <img src=`https://download.johnserrano.co/20240813_211619.jpg` alt='Foto 1' />
+              </li>
+              <li class='splide__slide'>
+                <img src=`https://download.johnserrano.co/IMG_20240714_133237_758.jpg` alt='Foto 2' />
+              </li>
+              <li class='splide__slide'>
+                <img src=`https://download.johnserrano.co/IMG_20240727_174053_840.jpg` alt='Foto 3' />
+              </li>
+            </ul>
+          </div>
+        </section>
+        <p class='!font-normal !mt-5'>
+          <strong class='text-yellow-500'>Felices 22 meses mi amor hermosa</strong> ❤️ eres una de las cosas más lindas que
+          me ha pasado en mi vida te amo con todo mi corazón y pensamientos. Gracias por todo el amor y tiempo que me das
+          mi amor eres la mejor mujer y novia de este mundo. Le doy gracias a Dios por colocarte en mi vida, cada día más
+          enamorado de ti y tu forma de ser eres una gran mujer mi amor nunca olvides que te amo mucho y te llevo en mis
+          pensamientos. Se que a veces no soy muy expresivo pero trato de demostrar lo mucho que te amo y lo importante que
+          eres para mi vida y mientras Dios me de vida y salud siempre te voy amar. Dios te bendiga mi amor hoy y siempre
+          te llevo en mi corazón mi futura esposa. Tu voz es mi sonido favorito. ❤️
+          <time class='text-base block italic font-normal text-yellow-400'>12 de Septiembre del 2024</time>
+        </p>
+      </div>
+
       <p class='text_nuestro_amor'>
         Mi amor hermoso, felices 10 meses mi reina, mi todo mi futura esposa, gracias por todo el amor y cariño que me
         das, por tu tiempo, gracias por todo mi amor, han sido 10 meses muy hermosos donde hemos compartido muchos
@@ -954,6 +989,39 @@ import '@splidejs/splide/css/core'
     },
   })
 
+  const splideMonths = new Splide('#splide-meses', {
+    type: 'loop',
+    arrows: false,
+    height: '25rem',
+    perPage: 2,
+    perMove: 1,
+    autoplay: true,
+    gap: '10px',
+    grid: {
+      // You can define rows/cols instead of dimensions.
+      dimensions: [
+        [1, 1],
+        [1, 1],
+      ],
+      gap: {
+        row: '6px',
+        col: '6px',
+      },
+    },
+    breakpoints: {
+      640: {
+        height: '25rem',
+        perPage: 1,
+        grid: {
+          dimensions: [
+            [1, 1],
+            [1, 1],
+          ],
+        },
+      },
+    },
+  })
+
   const splide2 = new Splide('#splide2', {
     type: 'loop',
     arrows: false,
@@ -1089,6 +1157,7 @@ import '@splidejs/splide/css/core'
   splide1.mount({ Grid })
   splide2.mount()
   splideBibly.mount()
+  splideMonths.mount({ Grid })
 
   document.querySelector('.mes1 button')?.addEventListener('click', () => {
     // console.info('ok click')
