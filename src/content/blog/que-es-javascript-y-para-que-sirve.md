@@ -7,7 +7,7 @@ description: "En el ámbito del desarrollo web, JavaScript es un nombre que resu
 tags: ["aprender", "Programación", "development", "webdeveloment", "desarrollo-web", "javascript", "programadore", 'johnserranodev']
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
 excerpt: "En el ámbito del desarrollo web, JavaScript es un nombre que resuena con prominencia. Es un lenguaje de scripting poderoso que da vida a páginas web estáticas."
-canonicalURL: "https://johnserrano.co/blog/como-aprender-a-programar-desde-cero"
+canonicalURL: "https://johnserrano.co/blog/que-es-javascript-y-para-que-sirve"
 draft: false
 featureImage: "https://download.johnserrano.co/JavaScript-logo.png"
 ---
