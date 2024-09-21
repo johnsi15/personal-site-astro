@@ -19,7 +19,7 @@ featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683320075/
 
 Hola que tal gente como están, espero que bien  el día de hoy traigo un artículo donde veremos como cargar notas, artículos o lo que sea de una forma infinita usando angular js con ayuda de una librería.
 
-Para comenzar debemos tener un pequeño server corriendo para traer la información que deseamos mostrar, en este ejemplo use node.js con express para crear el server desde cero lo puedes ver en el siguiente artículo [http://blog.johnserrano.co/servidor-basico-con-node-js/](http://blog.johnserrano.co/servidor-basico-con-node-js/), ya que en este post no tocare esa parte solo explicare como crear el cargue de notas infinitas con angular js.
+Para comenzar debemos tener un pequeño server corriendo para traer la información que deseamos mostrar, en este ejemplo use node.js con express para crear el server desde cero lo puedes ver en el siguiente artículo [https://johnserrano.co/blog/servidor-basico-con-node-js/](https://johnserrano.co/blog/servidor-basico-con-node-js/), ya que en este post no tocare esa parte solo explicare como crear el cargue de notas infinitas con angular js.
 
 Para comenzar creamos un archivo script.js o como gusten llamarlo pero que tenga la extensión .js también creamos un archivo html el cual nombre index.html, agregamos una simple estructura en html, enlazamos las librerías necesarias para hacer que funcione nuestro ejemplo.
 
