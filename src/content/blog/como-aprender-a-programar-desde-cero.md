@@ -4,7 +4,7 @@ publishedDate: "2024-09-21T16:29:10.000Z"
 updatedDate: "2024-09-21T17:09:31.000Z"
 pubDate: "2024-09-21T16:29:10.000Z"
 description: "Aprender a programar puede parecer un desafío monumental. Si tuvieras que empezar de nuevo, ¿por dónde comenzarías? Te ayudare a construir una base sólida en programación."
-tags: ["aprender", "Programación", "development", "webdeveloment", "desarrollo-web", "javascript", "programadore"]
+tags: ["aprender", "development", "webdeveloment", "desarrollo-web", "javascript", "programadore", 'programacion']
 primaryTag: { name: 'Programación', slug: 'programacion' }
 excerpt: "Aprender a programar puede parecer un desafío monumental. Si tuvieras que empezar de nuevo, ¿por dónde comenzarías? Te ayudare a construir una base sólida en programación."
 canonicalURL: "https://johnserrano.co/blog/como-aprender-a-programar-desde-cero"
