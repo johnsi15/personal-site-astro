@@ -13,21 +13,25 @@ export async function getStaticPaths() {
 
   const uniqueTags = [...new Set(allPosts.map(post => post.data.tags).flat())]
 
-  return uniqueTags
-    .map(tag => {
-      const tagClean = tag.toLocaleLowerCase()
+  return uniqueTags.map(tag => {
+    const tagClean = tag.toLocaleLowerCase()
 
-      const filteredPosts = allPosts.filter(post => {
-        const tags = post.data.tags.map(t => t.toLocaleLowerCase())
-        return tags.includes(tagClean)
-      })
+    const filteredPosts = allPosts.filter(post => {
+      const tags = post.data.tags.map(t =>
+        t
+          .toLocaleLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+      )
 
-      return {
-        params: { tag: tagClean.replaceAll(' ', '-') },
-        props: { posts: filteredPosts },
-      }
+      return tags.includes(tagClean)
     })
-    .slice(0, 27)
+
+    return {
+      params: { tag: tagClean.replaceAll(' ', '-') },
+      props: { posts: filteredPosts },
+    }
+  })
 }
 
 const { tag } = Astro.params
