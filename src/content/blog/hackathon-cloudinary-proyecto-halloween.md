@@ -61,3 +61,5 @@ Si te ha gustado mi proyecto, te invito a visitar el repositorio en GitHub. ¡No
 La hackathon me permitió mejorar tanto habilidades técnicas como la creatividad, aprendiendo a combinar Astro y Cloudinary para crear contenido visual optimizado con multiples opciones de manipular las imágenes. Además, fortalecí mi capacidad de trabajar bajo presión y enfocar esfuerzos en soluciones eficientes, logrando desarrollar un proyecto funcional y atractivo en pocos días.
 
 ¡Anímate a probarlo y crea tus propios stickers de Halloween! Espero que lo disfrutes tanto como yo lo hice desarrollándolo. ❤️
+
+🔗 https://hallowstick.netlify.app/ 🎃👻
