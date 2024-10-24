@@ -9,7 +9,7 @@ primaryTag: { name: 'hackathon', slug: 'hackathon' }
 excerpt: "Participa en esta gran oportunidad para aprender, crear y conectar con otros desarrolladores en el hackatón de Midudev. ¡No te lo pierdas!"
 canonicalURL: "https://johnserrano.co/blog/hackaton-de-midudev-una-oportunidad-para-aprender-y-conectar-vercel"
 draft: false
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1721915962/John%20Serrano/Blog%20Post/tcubzloovmups9pup0ug.png"
+featureImage: "https://download.johnserrano.co/tcubzloovmups9pup0ug.png"
 ---
 
 
