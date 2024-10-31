@@ -12,7 +12,7 @@ draft: false
 featureImage: "https://download.johnserrano.co/share-hallowstick.png"
 ---
 
-🎃 ¡Patícipe en la hackathon de [Cloudinary](https://cloudinary.com/) junto a Miguel Ángel Durán García con mi proyecto: [HallowStick](https://hallowstick.netlify.app/)! 👻
+🎃 ¡Partícipe en la hackathon de [Cloudinary](https://cloudinary.com/) junto a Miguel Ángel Durán García con mi proyecto: [HallowStick](https://hallowstick.netlify.app/)! 👻
 
 Durante la última semana, estuve trabajando en HallowStick, una web interactiva que transforma tus imágenes o fotos en stickers con temática de Halloween. 🧛‍♂️🧟‍♀️🎨 
 
@@ -47,6 +47,8 @@ Participar en esta hackathon me permitió poner en práctica habilidades tanto t
 Además, exploré cómo aplicar filtros avanzados, **cambiar fondos** y modificar aspectos visuales de las imágenes de manera eficiente. Esta experiencia me enseñó lo poderosa que puede ser la combinación de un **framework** ligero como Astro con herramientas multimedia como Cloudinary, optimizando tanto el flujo de trabajo como los resultados finales.
 
 Otro aspecto clave fue **entender los desafíos técnicos** al trabajar con servicios externos y mejorar la experiencia de usuario en la web, como la creación de stickers personalizables que se puedan compartir fácilmente en redes sociales. También descubrí la importancia de gestionar bien los recursos visuales para asegurar un **rendimiento óptimo del sitio**.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/njnbxddR38U?si=TUS4xtqvOM5xXSQr" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
 
 ## Agradecimientos
 
