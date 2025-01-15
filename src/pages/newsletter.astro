@@ -53,6 +53,8 @@ import ExampleEmail from '../components/ExampleEmail.astro'
           required
         />
 
+        <input type='hidden' name='utmSource' value='' />
+
         <button
           type='submit'
           class='bg-yellow-500 font-semibold shadow-lg shadow-yellow-500/30 text-black text-lg md:text-xl px-6 py-3 mt-7 mb-4 rounded-md hover:scale-105 transition'
@@ -113,6 +115,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
 
 <script>
   const form = document.getElementById('form_newsletter') as HTMLFormElement
+  const searchParams = new URLSearchParams(window.location.search)
 
   form?.addEventListener('submit', async event => {
     event.preventDefault()
@@ -181,12 +184,26 @@ import ExampleEmail from '../components/ExampleEmail.astro'
 
   const textUpForm = document.querySelector('.text_up_form')
   const submitButton = document.querySelector('#form_newsletter button')
-  const searchParams = new URLSearchParams(window.location.search)
 
   if (textUpForm && submitButton) {
-    if (searchParams.has('utm_source') && searchParams.get('utm_source') === 'newsletter') {
+    const inputUTM = form.querySelector('input[name="utmSource"]') as HTMLInputElement
+
+    if (searchParams.get('utm_source') === 'newsletter') {
       textUpForm.textContent = `¡Descarga tu Libro de Programación Gratis!`
       submitButton.textContent = 'Descargar Libro 🚀'
+
+      if (inputUTM) {
+        inputUTM.value = 'newsletter'
+      }
+    }
+
+    if (searchParams.get('utm_source') === 'roadmap') {
+      textUpForm.textContent = `Tu guía para ser FrontEnd en 2025 👨‍💻`
+      submitButton.textContent = 'Descubre el Roadmap 2025 🚀'
+
+      if (inputUTM) {
+        inputUTM.value = 'roadmap'
+      }
     }
   }
 </script>
