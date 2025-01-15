@@ -13,6 +13,7 @@ const res = (
 interface FormData {
   email: string
   names: string | null
+  utmSource: string | null
 }
 
 export const POST: APIRoute = async ({ request }) => {
@@ -21,7 +22,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (request.headers.get('Content-Type') === 'application/json') {
     const formData: FormData = await request.json()
-    const { email, names } = formData
+    const { email, names, utmSource } = formData
 
     if (!email) {
       return res({ message: 'Email is required' }, { status: 400 })
@@ -31,6 +32,7 @@ export const POST: APIRoute = async ({ request }) => {
       email,
       attributes: {
         NOMBRE: names ?? 'Anónimo',
+        UTM_SOURCE: utmSource ?? 'directo',
       },
       listIds: [4],
       emailBlacklisted: false,
