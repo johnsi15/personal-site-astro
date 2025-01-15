@@ -26,6 +26,7 @@ Comienza por entender lo básico de cómo se comunican los navegadores y los ser
 
 - **HTTP/HTTPS**: Aprende cómo los datos se mueven a través de la web.
 - **DNS y Nombres de Dominio**: Comprende cómo los sitios web están conectados a direcciones IP.
+- **Hosting**: Entiende que es un hosting tipos de hosting, que es una VPS, que es el cloud.
 
 🕒 Tiempo estimado: Dedica 1-2 días para entender el flujo de cómo se entregan las páginas web a los usuarios.
 
@@ -90,10 +91,10 @@ Aunque existen alternativas como _Vue.js_ y _Angular_, **React** destaca porque:
 
 **Relacionadas con JavaScript:**
 
-- Linters y Formatters: Usa herramientas como Prettier y ESLint.
-- Bundles de Módulos: Aprende sobre herramientas como Vite o turbopack.
-- DevTools de Navegadores: Domina el inspector de elementos y la depuración de tu código.
-- API web: descubra las API integradas del navegador para tareas como obtener datos, manipular el DOM o acceder a la geolocalización.
+- **Linters y Formatters**: Usa herramientas como Prettier y ESLint.
+- **Bundles de Módulos**: Aprende sobre herramientas como Vite o turbopack.
+- **DevTools de Navegadores**: Domina el inspector de elementos y la depuración de tu código.
+- **API web**: descubra las API integradas del navegador para tareas como obtener datos, manipular el DOM o acceder a la geolocalización.
 
 **TypeScript**
 
