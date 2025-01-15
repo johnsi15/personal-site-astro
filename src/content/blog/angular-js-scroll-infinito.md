@@ -3,12 +3,7 @@ title: Angular js Scroll infinito
 publishedDate: "2017-02-05T19:22:39.000Z"
 updatedDate: "2020-02-13T21:47:34.000Z"
 pubDate: "2017-02-05T19:22:39.000Z"
-tags:
-- JavaScript
-- Front-End
-- Angular
-- scroll
-- scroll-infinito
+tags: ["JavaScript", "frontend", "angular", "scroll", "scroll-infinito"]
 excerpt: como cargar notas, artículos o lo que sea de una forma infinita usando angular js con ayuda de una librería.
 description: como cargar notas, artículos o lo que sea de una forma infinita usando angular js con ayuda de una librería.
 primaryTag: { name: 'JavaScript', slug: 'javascript' }
