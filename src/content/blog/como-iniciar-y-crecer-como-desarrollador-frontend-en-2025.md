@@ -108,6 +108,13 @@ Explora temas avanzados como **SSR** (Renderizado del Lado del Servidor), **Hook
 
 **Componentes de orden superior (HOC)**: comprenda cómo usar los HOC para reutilizar la lógica de los componentes.
 
+## Tendencias clave para este 2025
+
+- Astro
+- Laravel cloud
+- Tailwind CSS versión 4
+- TypeScript
+
 ## 🎥 Te dejo un vídeo donde explico cada uno de estos pasos de manera detallada. ¡No te lo pierdas!
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QaaH6PLO8C8?si=WjVdUybU4rBgWoZL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
