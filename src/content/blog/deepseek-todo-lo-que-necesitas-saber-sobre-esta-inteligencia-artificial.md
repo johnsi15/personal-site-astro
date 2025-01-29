@@ -1,8 +1,8 @@
 ---
 title: "DeepSeek: Todo lo que necesitas saber sobre esta inteligencia artificial, su funcionamiento y sus aplicaciones"
-publishedDate: "2024-01-07T16:29:10.000Z"
-updatedDate: "2024-01-07T17:09:31.000Z"
-pubDate: "2024-01-07T16:29:10.000Z"
+publishedDate: "2025-01-29T16:29:10.000Z"
+updatedDate: "2025-01-29T17:09:31.000Z"
+pubDate: "2025-01-29T16:29:10.000Z"
 description: "Descubre DeepSeek, la IA que revoluciona la tecnología. Conoce cómo funciona, sus características y ventajas frente a otras IA. ¡Explora su potencial!"
 tags: ["Programación", "development", "webdeveloment", "desarrollo-web", "pagina-web", "sitio-web", "deepseek", "ia", "ai", "openai"]
 primaryTag: { name: 'IA', slug: 'ia' }
