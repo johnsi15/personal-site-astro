@@ -19,6 +19,7 @@ const blog = defineCollection({
     primaryTag: z.object({ name: z.string(), slug: z.string() }),
     publishedDate: z.string().transform(str => new Date(str)),
     canonicalURL: z.string().url(),
+    featured: z.boolean().default(false),
   }),
 })
 

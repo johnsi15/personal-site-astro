@@ -10,6 +10,7 @@ excerpt: "Si estás buscando convertirte en desarrollador frontend, esta guía e
 canonicalURL: "https://johnserrano.co/blog/como-iniciar-y-crecer-como-desarrollador-frontend-en-2025"
 draft: false
 featureImage: "https://download.johnserrano.co/miniatura-de-youtube-que-aprender-2025.png"
+featured: true
 ---
 
 Si estás buscando convertirte en desarrollador **frontend**, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino.

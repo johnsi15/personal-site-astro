@@ -25,6 +25,7 @@ const meta = {
 // console.log({ meta })
 // console.log({ posts: posts[0].data });
 const isProduction = import.meta.env.PROD
+const postFeatured = posts.filter(post => post.data.featured === true)[0]
 ---
 
 <Layout
@@ -35,7 +36,7 @@ const isProduction = import.meta.env.PROD
 >
   <section id='Blog' class='container_old'>
     <h1 style='display: none;'>Blog - John Serrano</h1>
-    <PostsFeature {...posts[2]} />
+    <PostsFeature {...postFeatured} />
     <!-- <Pauta /> -->
     <PostsPagination client:visible posts={posts} meta={meta} isProduction={isProduction} />
   </section>
