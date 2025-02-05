@@ -1,28 +1,38 @@
 ---
-title: "BEM Una manera de nombrar clases en CSS de forma inteligente"
+title: "BEM en CSS: La metodología para estructurar tus clases de forma óptima"
 publishedDate: "2023-09-16T16:29:10.000Z"
 updatedDate: "2023-09-16T17:09:31.000Z"
 pubDate: "2023-09-16T16:29:10.000Z"
-description: "Descubre cómo BEM, la metodología de nomenclatura de clases en CSS, revoluciona la forma en que organizas y desarrollas tus proyectos web. Aprende a crear código CSS más limpio y mantenible, mejora la colaboración en equipo y evita conflictos de estilos."
-tags: ["Css", "Programación", "development", "webdeveloment", "desarrollo-web", "bem", "BEM", "Metodología", "clases", "class", "frontend", "front-end", "css"]
+description: "BEM CSS es una metodología para nombrar clases en HTML y CSS de forma consistente. Aprende a organizar tu código con la convención Bloque, Elemento y Modificador, y mejora la mantenibilidad y colaboración en tus proyectos web."
+tags: ["Css", "Programación", "development", "webdeveloment", "desarrollo-web", "bem", "BEM", "Metodología", "clases", "class", "frontend", "front-end", "css", "johnserrano"]
 primaryTag: { name: 'Css', slug: 'css' }
-excerpt: "Descubre cómo BEM, la metodología de nomenclatura de clases en CSS, revoluciona la forma en que organizas y desarrollas tus proyectos web. Aprende a crear código CSS más limpio y mantenible, mejora la colaboración en equipo y evita conflictos de estilos."
+excerpt: "BEM CSS es una metodología para nombrar clases en HTML y CSS de forma consistente. Aprende a organizar tu código con la convención Bloque, Elemento y Modificador, y mejora la mantenibilidad y colaboración en tus proyectos web."
 canonicalURL: "https://johnserrano.co/blog/bem-una-manera-de-nombrar-clases-en-css-de-forma-inteligente"
 draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1694898177/John%20Serrano/Blog%20Post/bem-una-manera-de-nombrar-clases-en-css-de-forma-inteligente/base-portada_sfn7zg.webp"
 ---
 
-## ¿Qué es la metodología de BEM en CSS?
+Al escribir código CSS, especialmente en proyectos de gran tamaño, es fundamental adoptar un enfoque sistemático. De lo contrario, realizar cambios o mejoras más adelante puede volverse complicado.
 
-La **metodología BEM** (Block, Element, Modifier) es un enfoque de nomenclatura y estructuración de **clases** en **CSS** que se utiliza para escribir estilos de manera más organizada y modular en aplicaciones web. Esta metodología ayuda a crear un **código CSS** más **claro** y **comprensible**, evitando **conflictos** y facilitando la **reutilización** de estilos.
+Aquí es donde la metodología **BEM (Bloque, Elemento, Modificador)** cobra importancia, convirtiéndose en una herramienta clave para los desarrolladores web al aportar orden y claridad al código.
 
-En la metodología **BEM**, los estilos se dividen en tres partes:
+### ¿Qué es la metodología de BEM en CSS?
 
-1. Block **(Bloque)**: Representa un componente independiente y autónomo de la interfaz de usuario. Los bloques se nombran en función de su función, como **"boton"** o **"encabezado"**.
+La **metodología BEM** (Block, Element, Modifier) es un enfoque de nomenclatura y estructuración de **clases** en **CSS** que se utiliza para escribir estilos de manera más organizada y modular en aplicaciones web.
 
-2. Element **(Elemento)**: Son partes de un **bloque** que no tienen sentido o uso fuera de ese bloque. Los elementos se nombran utilizando el **nombre del bloque** seguido de dos guiones bajos y el nombre del elemento, como **"boton__icono"** dentro del bloque **"boton"**.
+Esta metodología ayuda a crear un **código CSS** más **claro** y **comprensible**, evitando **conflictos** y facilitando la **reutilización** de estilos.
 
-3. Modifier **(Modificador)**: Son variantes o **estados** de un bloque o elemento. Los modificadores se nombran con el nombre del bloque o elemento seguido de **dos guiones bajos** y el nombre del modificador, como **"boton--grande"** para un botón más grande.
+## En la metodología BEM, los estilos se dividen en tres partes:
+
+**1. Block (Bloque)**: Representa un componente independiente y autónomo de la interfaz de usuario. Los bloques se nombran en función de su función, como **"boton"** o **"encabezado"**.
+
+**2. Element (Elemento)**: Son partes de un **bloque** que no tienen sentido o uso fuera de ese bloque. Los elementos se nombran utilizando el **nombre del bloque** seguido de dos guiones bajos y el nombre del elemento, como **"boton__icono"** dentro del bloque **"boton"**.
+
+**3. Modifier (Modificador)**: Son variantes o **estados** de un bloque o elemento. Los modificadores se nombran con el nombre del bloque o elemento seguido de **dos guiones medios** y el nombre del modificador, como **"boton--grande"** para un botón más grande.
+
+![Ejemplo de un card con estilos CSS siguiento metodología BEM](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*7T8Rl0D2jSBhwjlG.png)
+
+> Ejemplo de un card con estilos CSS siguiento metodología BEM, (La imagen ha sido tomada de medium.com)
 
 ## Ventajas
 
@@ -47,6 +57,15 @@ En la metodología **BEM**, los estilos se dividen en tres partes:
 4. **Complejidad en casos especiales**: Algunas situaciones, como estilos condicionales basados en interacciones de usuario, pueden volverse más complejas de implementar con BEM, lo que podría requerir soluciones adicionales.
 
 En general, la elección de utilizar la metodología BEM depende del **tipo de proyecto**, su **escala** y las **preferencias** del equipo de desarrollo. Puede ser especialmente beneficioso en proyectos **grandes** y **colaborativos**, pero en proyectos más pequeños o simples, se puede optar por enfoques de nomenclatura de clases más sencillos.
+
+## ¿Quieres ir un paso más allá?
+
+Si estás interesado en potenciar tu carrera como **desarrollador frontend** o desarrollador Web, te recomiendo leer este artículo:
+
+**[Cómo iniciar y crecer como desarrollador frontend en 2025](https://johnserrano.co/blog/como-iniciar-y-crecer-como-desarrollador-frontend-en-2025)**
+
+En él encontrarás **consejos prácticos**, **recursos** y estrategias para comenzar y avanzar en el mundo del desarrollo frontend.
+
 
 ## Ejemplos:
 
@@ -98,4 +117,6 @@ Aquí, hemos estructurado el encabezado con elementos y dos modificadores para i
 
 En conclusión, la metodología BEM **(Block, Element, Modifier)** es una técnica efectiva para la organización y nomenclatura de clases en CSS, pero es mucho más que una simple metodología de nomenclatura de clases; es una poderosa herramienta que puede **transformar** la forma en que **desarrollamos** y **mantenemos** proyectos web. 
 
-Al adoptar BEM, te embarcas en un viaje hacia la **organización**, la **reutilización** y la **claridad** en tu código CSS. Proporciona una **estructura sólida** que facilita la **colaboración** entre desarrolladores, **reduce conflictos** de estilos y hace que tus proyectos sean más **escalables**. A medida que te sumerges en el mundo de **BEM**, descubres que nombrar clases de manera **inteligente** es más que una práctica, es una filosofía que mejora la **eficiencia** y la **calidad** de tus desarrollos frontend.
+Al adoptar BEM, te embarcas en un viaje hacia la **organización**, la **reutilización** y la **claridad** en tu código CSS. Proporciona una **estructura sólida** que facilita la **colaboración** entre desarrolladores, **reduce conflictos** de estilos y hace que tus proyectos sean más **escalables**. 
+
+A medida que te sumerges en el mundo de **BEM**, descubres que nombrar clases de manera **inteligente** es más que una práctica, es una filosofía que mejora la **eficiencia** y la **calidad** de tus desarrollos frontend.

@@ -1,5 +1,5 @@
 ---
-title: Aprende a crear rutas con React Router
+title: "Aprende a crear rutas en React con React Router DOM"
 publishedDate: "2020-06-14T22:49:11.000Z"
 updatedDate: "2020-06-15T16:45:25.000Z"
 pubDate: "2020-06-14T22:49:11.000Z"
@@ -8,17 +8,21 @@ tags:
 - react-router
 - JavaScript
 - routes
-excerpt: Seguramente habrás escuchando sobre React Router y si no es así el día de hoy vas aprender a trabajar con esta librería la cual nos ayuda con el manejo de ruta.
-description: Seguramente habrás escuchando sobre React Router y si no es así el día de hoy vas aprender a trabajar con esta librería la cual nos ayuda con el manejo de ruta.
+excerpt: "Aprende a usar React Router y React Router DOM para gestionar rutas en tus aplicaciones web. Descubre cómo navegar entre páginas, crear rutas dinámicas y mejorar la experiencia de usuario con esta potente librería para React."
+description: "Aprende a usar React Router y React Router DOM para gestionar rutas en tus aplicaciones web. Descubre cómo navegar entre páginas, crear rutas dinámicas y mejorar la experiencia de usuario con esta potente librería para React."
 primaryTag: { name: 'react', slug: 'react' }
 canonicalURL: "https://johnserrano.co/blog/aprende-a-crear-rutas-con-react-router"
 draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1682885734/John%20Serrano/Blog%20Post/aprende-a-crear-rutas-con-react-router/react-router_vooifr.jpg"
 ---
 
-Seguramente habrás escuchando sobre **[React Router](https://reacttraining.com/react-router/)** y si no es así el día de hoy vas aprender a trabajar con esta librería la cual nos ayuda con el manejo de rutas en nuestra aplicación. Al día de hoy **React Router** se puede trabajar tanto para web como para móvil, siendo `react-router-dom` para web y `react-router-native` para móvil.
+¿Sabías que transformar tu aplicación React en una **SPA** puede mejorar notablemente la experiencia del usuario? En este artículo aprenderás a usar **[React Router](https://reacttraining.com/react-router/)** y React Router DOM para gestionar la navegación en tus aplicaciones web. 
 
-Vamos a trabajar en la parte web y comenzaremos con una aplicación creada con `creat-react-app` como código base y vamos a convertirla en una **SPA **(single page application) gracias a React Router.
+Descubre cómo crear rutas dinámicas, manejar errores 404 y aprovechar Hooks para un enrutamiento moderno y eficiente.
+
+Al día de hoy **React Router** se puede trabajar tanto para web como para móvil, siendo `react-router-dom` para web y `react-router-native` para móvil.
+
+Vamos a trabajar en la parte web y comenzaremos con una aplicación creada con `creat-react-app` como código base y vamos a convertirla en una **SPA**(single page application) gracias a React Router.
 
 ### ¿Qué es React Router?
 
@@ -59,6 +63,14 @@ Este componente cuanta con algunas propiedades.
 **Component:** Le pasamos un componente para renderizar solo cuando la ubicación coincide. En este caso el componente se monta y se desmonta no se actualiza.
 
 **Render:** Le pasamos una función para montar el componente en línea.
+
+## ¿Quieres ir un paso más allá?
+
+Si estás interesado en potenciar tu carrera como **desarrollador frontend**, te recomiendo leer este artículo:
+
+**[Cómo iniciar y crecer como desarrollador frontend en 2025](https://johnserrano.co/blog/como-iniciar-y-crecer-como-desarrollador-frontend-en-2025)**
+
+En él encontrarás **consejos prácticos**, **recursos** y estrategias para comenzar y avanzar en el mundo del desarrollo frontend.
 
 ### Requisitos
 
@@ -271,10 +283,17 @@ export default Blog
 
 Lo primero es importar el hook y obtener el **params** que definimos en el **Route**, con este hook es muy fácil acceder al params que indicamos en el Route si vamos al navegador y damos click en el nuevo link que tiene como nombre aprende vamos a ver lo siguiente.
 ![Hook Params](https://res.cloudinary.com/john-serrano/image/upload/v1682886334/John%20Serrano/Blog%20Post/aprende-a-crear-rutas-con-react-router/image-4_khkzbr.png)
-### Conclusiones
 
-Podemos concluir que **React Router** nos provee de todos componentes necesarios para convertir nuestro proyecto en una **SPA **y obtener una navegación entre nuestros componentes sin perder el historial de navegación.
+## Conclusiones
+
+Podemos concluir que **React Router** nos provee de todos componentes necesarios para convertir nuestro proyecto en una **SPA** y obtener una navegación entre nuestros componentes sin perder el historial de navegación.
 
 Espero haya sido de tu ayuda este articulo para comenzar o comprender un poco mejor el manejo de esta librería igualmente pueden ir a la [documentación](https://reacttraining.com/react-router/web/guides/quick-start) oficial en la cual pueden encontrar muchos más ejemplos y componentes que no se vieron en este artículo, hasta la próxima.
 
 Código completo del ejemplo esta en [GitHub](https://github.com/blog-johnserrano/routes-react).
+
+## ¿Te ha sido útil este tutorial?
+
+Comparte tus experiencias y dudas sobre el uso de React Router en tus proyectos a través de mis redes sociales. Además, si te interesa seguir aprendiendo, suscríbete a mi boletín para recibir más tutoriales y recursos útiles.
+
+Gracias por leer. ❤️
