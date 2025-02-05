@@ -3,17 +3,17 @@ title: "Cómo Iniciar y Crecer como Desarrollador Frontend en 2025"
 publishedDate: "2025-01-15T10:29:10.000Z"
 updatedDate: "2025-01-15T17:09:31.000Z"
 pubDate: "2025-01-15T10:29:10.000Z"
-description: "Si estás buscando convertirte en desarrollador frontend, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino."
+description: "Si estás buscando convertirte en desarrollador frontend o desarrollador web, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino."
 tags: ["JavaScript", "programación", "development", "webdeveloment", "desarrollo-web", "frontend", "front-end", "2025", "software", "web", "johnserrano.co", "johnserrano", "roadmap"]
 primaryTag: { name: 'FrontEnd', slug: 'frontend' }
-excerpt: "Si estás buscando convertirte en desarrollador frontend, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino."
+excerpt: "Si estás buscando convertirte en desarrollador frontend o desarrollador web, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino."
 canonicalURL: "https://johnserrano.co/blog/como-iniciar-y-crecer-como-desarrollador-frontend-en-2025"
 draft: false
 featureImage: "https://download.johnserrano.co/miniatura-de-youtube-que-aprender-2025.png"
 featured: true
 ---
 
-Si estás buscando convertirte en desarrollador **frontend**, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino.
+Si estás buscando convertirte en desarrollador **frontend** o desarrollador web, esta guía es para ti. Ya sea que estés empezando desde cero o ya conozcas lo básico, aquí encontrarás un enfoque claro para aprender las habilidades que realmente importan y destacar en el camino.
 
 He creado una **[plantilla gratuita de roadmap](https://bit.ly/3PD7I2e)** para hacerte más fácil la forma de ir aprendiendo todas estas herramientas y tecnologías.
 
@@ -53,7 +53,7 @@ Ejemplo: Usa **Flexbox** para centrar elementos o **Grid** para crear diseños d
 
 **4. JavaScript**
 
-JavaScript añade interactividad a los sitios web. Te ayudará a:
+JavaScript es un lenguaje de programación que añade interactividad a los sitios web. Te permitirá:
 
 - Validar formularios.
 - Crear menús desplegables.
@@ -66,7 +66,7 @@ JavaScript añade interactividad a los sitios web. Te ayudará a:
 
 Aprende a rastrear cambios en tu código y colaborar con otros.
 
-Ejemplo: Crea un repositorio en GitHub para tus proyectos.
+Ejemplo: Crea un repositorio en GitHub para tus proyectos de software.
 
 🕒 Tiempo estimado: 1 semana para aprender comandos básicos como inicializar un repositorio, hacer commits y subir código.
 
