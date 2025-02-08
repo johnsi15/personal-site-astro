@@ -46,19 +46,16 @@ Imaginemos que estamos trabajando en un proyecto JavaScript en el que es impresc
 
 **Prettier como formateador**:
 Se encargará de aplicar un formato consistente en todo el código.
-_Script:_
 
 `npm run format`
 
 **ESLint como linter**:
 Detecta errores y aplica buenas prácticas de codificación.
-_Script:_
 
 `npm run lint`
 
 **Vitest como framework de pruebas**:
 Valida que el código funcione según lo esperado mediante pruebas unitarias.
-_Script:_
 
 `npm run test`
 
