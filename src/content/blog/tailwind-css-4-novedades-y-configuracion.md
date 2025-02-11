@@ -223,6 +223,14 @@ En la versión 4, ahora usamos **capas nativas de CSS** y ya no modificamos la r
 
 Este cambio permite que las utilidades personalizadas sigan funcionando sin interferir con las capas nativas de CSS.
 
+## ¿Quieres ir un paso más allá?
+
+Si estás interesado en potenciar tu carrera como **desarrollador frontend** o desarrollador Web, te recomiendo leer este artículo:
+
+**[Cómo iniciar y crecer como desarrollador frontend en 2025](https://johnserrano.co/blog/como-iniciar-y-crecer-como-desarrollador-frontend-en-2025)**
+
+En él encontrarás **consejos prácticos**, **recursos** y estrategias para comenzar y avanzar en el mundo del desarrollo frontend.
+
 
 ## Nueva paleta de colores
 
