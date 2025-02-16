@@ -353,10 +353,14 @@ Esta nueva forma facilita la integración de funcionalidades adicionales sin mod
 
 ## 🎥 Te dejo un vídeo donde te explico todo los detalles:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Rk1nXWmzX7s?si=1V64tvWWDCizbQxl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Rk1nXWmzX7s?si=1V64tvWWDCizbQxl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
 
 ## Conclusión
 
 Tailwind CSS 4 trae cambios significativos que mejoran la productividad y la flexibilidad en el desarrollo frontend. Con nuevas utilidades, una API más clara y mejor rendimiento, esta versión es una gran actualización para los desarrolladores que buscan optimizar su flujo de trabajo.
 
 Gracias por leer. ❤️
+
+## Si te interesa aprender cómo instalar Tailwind v4 en React y Vite, te invito a ver el siguiente vídeo:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pXxwrCx2SgQ?si=HffwtG1Xqk1ipqMw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
