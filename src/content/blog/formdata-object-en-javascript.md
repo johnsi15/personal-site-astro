@@ -112,6 +112,12 @@ Los atributos `name` de cada campo son esenciales, ya que determinan las claves 
 
 Es ideal cuando ya **tienes un formulario HTML definido** y quieres enviar todos sus datos sin tener que **procesarlos manualmente**. Esto simplifica la lógica de manejo de formularios dinámicos en aplicaciones web.
 
+## ¿Quieres ir un paso más allá?
+
+Si estás interesado en potenciar tu carrera como **desarrollador frontend** o desarrollador Web, te recomiendo leer este artículo:
+
+**[Cómo iniciar y crecer como desarrollador frontend en 2025](https://johnserrano.co/blog/como-iniciar-y-crecer-como-desarrollador-frontend-en-2025)**
+
 ## Cómo manipular y serializar los datos enviados desde un formulario
 
 **Algunas API no aceptan objetos FormData**:
