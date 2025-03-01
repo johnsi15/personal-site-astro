@@ -98,6 +98,7 @@ const { Content } = await post.render()
   .post__body pre {
     font-size: 1rem;
     line-height: 1.3;
+    margin-bottom: 1.5rem;
   }
 
   .post__body p {
@@ -308,6 +309,44 @@ const { Content } = await post.render()
     left: 0;
     width: 100%;
     height: 100%;
+  }
+
+  .post__body table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    margin: 20px 0;
+  }
+
+  .post__body thead {
+    display: table-header-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+  }
+  .post__body tr {
+    display: table-row;
+    vertical-align: inherit;
+    unicode-bidi: isolate;
+    border-color: inherit;
+  }
+
+  .post__body table th {
+    text-align: left;
+    background: rgb(246, 246, 246);
+    padding: 0.5rem;
+    border: 1px solid #d6d6d7;
+  }
+
+  .post__body tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    unicode-bidi: isolate;
+    border-color: inherit;
+  }
+
+  .post__body tbody td {
+    padding: 0.5rem;
+    border: 1px solid #d6d6d7;
   }
 
   @media screen and (max-width: 768px) {
