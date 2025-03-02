@@ -4,7 +4,7 @@ publishedDate: "2025-02-08T10:29:10.000Z"
 updatedDate: "2025-02-08T17:09:31.000Z"
 pubDate: "2025-02-08T10:29:10.000Z"
 description: "Optimiza la calidad de tu código y agiliza tu flujo de trabajo integrando Husky y Lint-Staged. Aprende a configurar pre-commit hooks que ejecuten test, lint y formateo, garantizando altos estándares de desarrollo en cada commit."
-tags: ["JavaScript", "programación", "development", "webdeveloment", "desarrollo-web", "formateo", "frontend", "front-end", "lint", "software", "web", "johnserrano.co", "johnserrano", "pre-commit", "test", "hooks"]
+tags: ["JavaScript", "programación", "development", "webdeveloment", "desarrollo-web", "formateo", "frontend", "front-end", "lint", "software", "web", "johnserrano.co", "johnserrano", "pre-commit", "test", "hooks", "husky"]
 primaryTag: { name: 'Husky', slug: 'husky' }
 excerpt: "Optimiza la calidad de tu código y agiliza tu flujo de trabajo integrando Husky y Lint-Staged. Aprende a configurar pre-commit hooks que ejecuten test, lint y formateo, garantizando altos estándares de desarrollo en cada commit."
 canonicalURL: "https://johnserrano.co/blog/husky-y-lint-staged-como-configurar-y-automatizar-pre-commit-hooks"
