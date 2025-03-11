@@ -355,6 +355,10 @@ Esta nueva forma facilita la integración de funcionalidades adicionales sin mod
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Rk1nXWmzX7s?si=1V64tvWWDCizbQxl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
 
+> También te dejo una lista de reproducción donde te enseño cuatro métodos para instalar Tailwind en cualquier tipo de proyecto, además de cómo instalar y configurar fuentes correctamente. 🎥
+
+[Lista de reproducción](https://www.youtube.com/playlist?list=PLxru3eE7DwDCQse8N_D5gSy8FFMhM54Tr)
+
 ## Conclusión
 
 Tailwind CSS 4 trae cambios significativos que mejoran la productividad y la flexibilidad en el desarrollo frontend. Con nuevas utilidades, una API más clara y mejor rendimiento, esta versión es una gran actualización para los desarrolladores que buscan optimizar su flujo de trabajo.

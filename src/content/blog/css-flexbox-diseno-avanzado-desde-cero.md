@@ -120,7 +120,12 @@ Los valores posibles son:
 - **column-reverse**: Invierte la dirección de column, de abajo hacia arriba.
 
 **Ejemplo**:
-https://codepen.io/johnserranodev/pen/JojyJOg
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="flex-direction" src="https://codepen.io/johnserranodev/embed/JojyJOg?default-tab=" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/JojyJOg">
+  flex-direction</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ## flex-wrap
 
@@ -139,7 +144,12 @@ Determina si los elementos flexibles deben ajustarse dentro del contenedor o si 
 - **wrap-reverse**: Similar a wrap, pero invierte el orden de las líneas.
 
 **Ejemplo**:
-https://codepen.io/johnserranodev/pen/XJWaaYd
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="flex-wrap" src="https://codepen.io/johnserranodev/embed/XJWaaYd?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/XJWaaYd">
+  flex-wrap</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ## flex-flow
 
@@ -174,7 +184,14 @@ Controla la alineación de los elementos a lo largo del eje principal.
 - **space-evenly**: Distribuye el espacio de manera uniforme entre los elementos.
 
 **Ejemplo**:
-https://codepen.io/johnserranodev/pen/xbxLLaq?editors=1100
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="justify-content" src="https://codepen.io/johnserranodev/embed/xbxLLaq?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/xbxLLaq">
+  justify-content</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+> Cambiar el zoom 0.5x para ver el ejemplo correctamente.
 
 ## align-items
 
@@ -197,7 +214,14 @@ Define cómo se alinean los elementos en el eje transversal.
 - **stretch (por defecto)**: Hace que los elementos ocupen todo el espacio disponible en el eje transversal.
 
 **Ejemplo**:
-https://codepen.io/johnserranodev/pen/WbNEEYq?editors=1100
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="align-items" src="https://codepen.io/johnserranodev/embed/WbNEEYq?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/WbNEEYq">
+  align-items</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
+
+> Cambiar el zoom 0.5x para ver el ejemplo correctamente.
 
 ## gap, row-gap, column-gap
 
@@ -215,7 +239,12 @@ Define el espacio entre los elementos flexibles dentro del contenedor.
 Funciona como un margen mínimo entre elementos, sin afectar los bordes externos.
 
 **Ejemplo**:
-https://codepen.io/johnserranodev/pen/bNGrrZy?editors=1100
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="gap, row-gap, column-gap" src="https://codepen.io/johnserranodev/embed/bNGrrZy?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/bNGrrZy">
+  gap, row-gap, column-gap</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ## Te invito a leer este artículo donde te explico las últimas novedades de Tailwind CSS 👇
 
@@ -251,7 +280,12 @@ El valor indica qué parte del espacio libre debe ocupar el elemento en relació
 Es importante destacar que los valores negativos no son válidos.
 
 **Ejemplo, order y flex-grow**:
-https://codepen.io/johnserranodev/pen/VYwzzNX?editors=1100
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="order and flex-grow" src="https://codepen.io/johnserranodev/embed/VYwzzNX?default-tab=result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/VYwzzNX">
+  order and flex-grow</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 ## flex-shrink
 
@@ -364,7 +398,12 @@ Aplicamos Flexbox a la lista de navegación **(.navigation)**, permitiendo que l
 Esto crea un menú de navegación alineado a la derecha, permitiendo que los elementos se ajusten si el espacio es insuficiente.
 
 Puedes ver todo el ejemplo completo acá:
-https://codepen.io/johnserranodev/pen/jEOLGNE
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="Ejemplo menú" src="https://codepen.io/johnserranodev/embed/jEOLGNE?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/johnserranodev/pen/jEOLGNE">
+  Ejemplo menú</a> by John Serrano (<a href="https://codepen.io/johnserranodev">@johnserranodev</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
 
 
 ## Conclusiones
