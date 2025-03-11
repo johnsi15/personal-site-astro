@@ -20,6 +20,8 @@ draft: false
 featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1683566387/John%20Serrano/Blog%20Post/flexbox/flex_p3e9pz.jpg"
 ---
 
+> 🚨 Este contenido está **desactualizado**. Te invito a leer mi nuevo artículo, donde explico en detalle y con ejemplos cómo funciona Flexbox: 👉 [CSS FlexBox: Diseño avanzado desde cero](https://johnserrano.co/blog/css-flexbox-diseno-avanzado-desde-cero).
+
 El día de hoy traigo un artículo con algunos ejemplos de cómo usar **flexbox de css3**, como ya lo saben o si no lo saben flexbox es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos.
 
 Bueno espero que sea de su ayuda vamos a ver un par de ejemplo y su comportamiento.
