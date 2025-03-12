@@ -175,6 +175,8 @@ El HTML semántico mejora la accesibilidad y optimización para motores de búsq
 
 `<section>`: Secciones temáticas.
 
+`<main>`: Contenido principal de la página, único y relevante.
+
 `<footer>`: Pie de página.
 
 `<aside>`: Contenido relacionado o complementario.
@@ -201,7 +203,7 @@ Además, algunas **etiquetas también pueden influir** en cómo se presentan tus
 
 **Atributo alternativo (`alt`)**: Utilizado en imágenes, ayuda a los motores de búsqueda a comprender su contenido cuando no se pueden cargar visualmente.
 
-**Etiqueta canónica (`rel="canonical"`)**: Resuelve problemas de contenido duplicado especificando la versión preferida de una página.
+**Etiqueta canónica (`rel="canonical"`)**: Resuelve problemas de contenido duplicado especificando la versión preferida de una página. `<link rel="canonical" href="/url-canonical/">`
 
 ## Etiquetas relevantes para redes sociales:
 
