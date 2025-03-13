@@ -380,3 +380,8 @@ Aunque por sí solo genera **páginas estáticas**, su verdadero potencial se ma
 Dominar HTML no solo es el primer paso en el camino del desarrollo web, sino que también sienta **las bases para comprender** y manejar tecnologías web más avanzadas.
 
 Gracias por leer. ❤️
+
+## 🎥 Aprende con ejemplos prácticos
+Si quieres ver HTML en acción, te dejo este video donde explico paso a paso cómo usar sus etiquetas y aplicar buenas prácticas. ¡No te lo pierdas! 👇
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mI_RDbjMfVQ?si=AddTBJ1KMOhIZQ8M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
