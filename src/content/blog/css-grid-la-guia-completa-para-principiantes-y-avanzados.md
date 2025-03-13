@@ -86,7 +86,7 @@ Son los elementos hijos directos del contenedor de la cuadrícula. En este ejemp
 
 ## Grid Line
 
-Son las líneas divisorias que conforman la estructura de la cuadrícula. Pueden ser **verticales (líneas de columna)** o **horizontales (líneas de fila)** y se encuentran a ambos lados de una fila o columna. En este ejemplo, la línea amarilla representa una línea de columna.
+Son las líneas divisorias que conforman la estructura de la cuadrícula. Pueden ser **verticales (líneas de columna)** o **horizontales (líneas de fila)** y se encuentran a ambos lados de una fila o columna. En este ejemplo, la línea verde representa una línea de columna.
 
 
 ![Grid línea](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ic2bqqdp4mlrpjz8ss9n.png)
@@ -471,9 +471,9 @@ Los grids por áreas no reemplazan la forma tradicional de definir cuadrículas 
 
 Para utilizar este método, debemos conocer dos propiedades esenciales:
 
-- grid-template-areas: Define la disposición de las áreas en el grid. Cada texto entre comillas representa una fila.
+- **grid-template-areas**: Define la disposición de las áreas en el grid. Cada texto entre comillas representa una fila.
 
-- grid-area: Asigna un nombre específico a cada ítem hijo del grid.
+- **grid-area**: Asigna un nombre específico a cada ítem hijo del grid.
 
 ## Ejemplo práctico de Grid por áreas
 
