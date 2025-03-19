@@ -22,6 +22,12 @@ Ninguno de estos métodos fue diseñado específicamente para la maquetación y,
 
 En esta guía, exploraremos los conceptos **clave de Grid** según la versión más reciente de la especificación. No abordaremos la sintaxis obsoleta de Internet Explorer, aunque Grid sigue siendo compatible con IE 11.
 
+## 🎥 Aprende CSS Grid con ejemplos prácticos
+
+Si quieres ver CSS Grid en acción y descubrir cómo crear diseños responsivos de forma sencilla, aquí tienes un video donde explico paso a paso cómo estructurar tus cuadrículas y aplicar buenas prácticas. 👇
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8REXun8U5OY?si=KMqEfPixtLKNT8Fu" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
+
 ## Conceptos básicos de CSS Grid
 
 Desde marzo de 2017, la mayoría de los navegadores incorporaron soporte nativo y **sin prefijos para CSS Grid**, incluyendo **Chrome**, **Firefox**, **Safari** (también en iOS) y **Opera**. 
