@@ -20,6 +20,13 @@ Su principal ventaja es que no está restringido a una **sola dirección**, lo q
 
 Aunque **Flexbox** es una herramienta poderosa para diseños a pequeña escala, como la distribución de elementos dentro de un componente, es **importante mencionar** que para diseños de mayor escala, [CSS Grid](https://johnserrano.co/blog/css-grid-la-guia-completa-para-principiantes-y-avanzados) suele ser una mejor opción.
 
+## 🎥 Aprende Flexbox con ejemplos prácticos
+
+Si quieres ver Flexbox en acción y descubrir cómo alinear y distribuir elementos de forma eficiente, aquí tienes un video donde explico paso a paso su funcionamiento y mejores prácticas. 👇
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xMdTBbXwAzY?si=U8IAgWL5tHSid-e-" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
+
+
 ## ¿Quieres dominar CSS Grid y mejorar tus diseños?
 
 Si aún te cuesta organizar elementos en CSS, **Grid** es la clave para crear estructuras flexibles y ordenadas sin complicaciones. 
