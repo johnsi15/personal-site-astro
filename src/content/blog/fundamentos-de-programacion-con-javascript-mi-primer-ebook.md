@@ -24,13 +24,13 @@ En el ebook toco varios temas desde los diagramas de flujos hasta la programaci�
 
 Si aún no me conoces déjame me presento:
 
-> Mi nombre es **John Serrano **Desarrollador Web Full-Stack. Amante de JavaScript y entusiasta de las tecnologías web: Node.js, Docker, Firebase, React, etc. Con varios años de experiencia tanto en empresas privadas y como FreeLancer. En constante proceso de aprendizaje sobre todas las nuevas tecnologías.
+> Mi nombre es **John Serrano** Desarrollador Web Full-Stack. Amante de JavaScript y entusiasta de las tecnologías web: Node.js, Docker, Firebase, React, etc. Con varios años de experiencia tanto en empresas privadas y como FreeLancer. En constante proceso de aprendizaje sobre todas las nuevas tecnologías.
 
 🎉🎉🎉 El ebook lo puedes encontrar en ➡ [Ebook](https://pay.hotmart.com/O67718482D?checkoutMode=0&amp;bid=1647810350199)
 
 Si tienes problemas para realizar el pago por [hotmart](https://pay.hotmart.com/O67718482D?checkoutMode=0&amp;bid=1647810350199) puedes hacerlo por mercado pago ➡ [Ebook]( https://mpago.li/2h6obrT), cuando realices el pago si es por mercado pago me tienes que avisar puede ser por un correo 📫 me@johnserrano.co para hacerte entrega del 📒 ebook.
 
-🙏 Desde ya gracias por tu confianza sé que este ebook va a hacer de gran ayuda y te hará un mejor **desarrollador **ya sea si estas comenzado en este mundo de la programación o para reforzar conceptos y temas sobre JavaScript.
+🙏 Desde ya gracias por tu confianza sé que este ebook va a hacer de gran ayuda y te hará un mejor **desarrollador** ya sea si estas comenzado en este mundo de la programación o para reforzar conceptos y temas sobre JavaScript.
 
 *La luz en las tinieblas resplandece, y las tinieblas no prevalecieron contra ella.
 S. Juan 1:5*

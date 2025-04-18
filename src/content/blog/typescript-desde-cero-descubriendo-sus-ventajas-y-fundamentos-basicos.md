@@ -19,6 +19,10 @@ TypeScript es un lenguaje de programación desarrollado por Microsoft que es un 
 
 Aprender TypeScript es beneficioso por varias razones. En primer lugar, TypeScript proporciona un sistema de **tipos estático** que ayuda a detectar errores en el código durante la fase de desarrollo. Esto permite encontrar y corregir errores más temprano, lo que resulta en un **código más robusto** y menos propenso a errores en tiempo de ejecución.
 
+## 🎥 TypeScript desde CERO 👇
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1DWtpeW68dU?si=Mi0hBtVciyN--WOF" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
+
 ## Ventajas de aprender TypeScript
 
 Una de las ventajas de TypeScript es que mejora la capacidad de mantenimiento del código a medida que el proyecto crece en tamaño y complejidad. Al tener **tipos definidos** de manera explícita, el código se vuelve más legible y comprensible, lo que facilita la colaboración en equipos de desarrollo y la comprensión del código existente.
