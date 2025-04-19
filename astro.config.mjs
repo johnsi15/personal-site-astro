@@ -35,7 +35,8 @@ export default defineConfig({
           url.hostname === 'www.googletagmanager.com' &&
           url.pathname.startsWith('/debug/bootstrap')
         ) {
-          var proxyUrl = new URL(`https://${location.hostname}/proxytown/gtm${url.pathname}${url.search}`)
+          const proxyUrl = new URL(`https://${location.hostname}/proxytown/gtm${url.pathname}${url.search}`)
+
           return proxyUrl
         }
 
