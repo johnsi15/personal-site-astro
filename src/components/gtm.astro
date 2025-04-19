@@ -1,5 +1,11 @@
-<!-- Google Tag Manager -->
-<script type='text/partytown' src='https://www.googletagmanager.com/gtag/js?id=GTM-MKJQTJ3'></script>
+---
+const GTM_ID = 'GTM-MKJQTJ3'
+const isProd = import.meta.env.MODE === 'production'
+const GTM_SRC = `https://www.googletagmanager.com/gtag/js?id=${GTM_ID}${isProd ? '' : '&l=dataLayer&debug_mode=true'}`
+---
+
+<!-- Google Tag Manager - GA4 + Partytown -->
+<script type='text/partytown' src={GTM_SRC}></script>
 
 <script type='text/partytown'>
   window.dataLayer = window.dataLayer || []
@@ -7,5 +13,5 @@
     dataLayer.push(arguments)
   }
   gtag('js', new Date())
-  gtag('config', 'GTM-MKJQTJ3')
+  gtag('config', '{GTM_ID}')
 </script>
