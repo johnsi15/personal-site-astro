@@ -34,15 +34,20 @@ export default defineConfig({
           const proxiedHosts = ['googletagmanager.com', 'connect.facebook.net']
 
           if (proxiedHosts.includes(url.hostname)) {
-            let pathname = url.pathname.substring(1)
+            if (url.pathname.includes('/debug/')) {
+              console.log('Debug URL detected, setting no-cors mode:', url.href)
+              const proxyUrl = new URL(url.href)
+              proxyUrl.searchParams.append('__ptNoCors', 'true')
+              return proxyUrl
+            }
 
+            let pathname = url.pathname.substring(1)
             const proxyUrl = new URL(`/proxytown/gtm/${pathname}`, location.origin)
 
             url.searchParams.forEach((value, key) => {
               proxyUrl.searchParams.append(key, value)
             })
 
-            console.log('Proxying URL:', url.href, 'to', proxyUrl.href)
             return proxyUrl
           }
 
