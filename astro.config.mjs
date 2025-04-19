@@ -30,23 +30,18 @@ export default defineConfig({
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       resolveUrl: function (url, location, type) {
-        console.log('Partytown resolveUrl called for:', url.href, 'type:', type) // Log al inicio de la función
-
+        console.log('Partytown resolveUrl called (Astro config) for:', url.href, 'type:', type) // Log desde Astro config
         if (
           type === 'script' &&
           url.hostname === 'www.googletagmanager.com' &&
           url.pathname.includes('/debug/bootstrap')
         ) {
-          console.log('Partytown: Matched GTM debug URL for proxying:', url.href) // Log si la condición coincide
-          var proxyUrl = new URL(
-            `https://<span class="math-inline">\{location\.hostname\}/proxytown/gtm</span>{url.pathname}${url.search}`
-          )
-          console.log('Partytown: Proxying GTM debug URL to:', proxyUrl.href) // Log la URL de proxy generada
+          console.log('Astro config: Matched GTM debug URL for proxying:', url.href)
+          const proxyUrl = new URL(`https://${location.hostname}/proxytown/gtm${url.pathname}${url.search}`)
+          console.log('Astro config: Proxying GTM debug URL to:', proxyUrl.href)
           return proxyUrl
         }
-
-        console.log('Partytown: Not proxying URL:', url.href)
-
+        console.log('Astro config: Not proxying URL:', url.href)
         return url
       },
       config: {
