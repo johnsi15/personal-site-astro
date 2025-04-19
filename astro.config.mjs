@@ -30,20 +30,28 @@ export default defineConfig({
     partytown({
       // Adds dataLayer.push as a forwarding-event.
       resolveUrl: function (url, location, type) {
+        console.log('Partytown resolveUrl called for:', url.href, 'type:', type) // Log al inicio de la función
+
         if (
           type === 'script' &&
           url.hostname === 'www.googletagmanager.com' &&
-          url.pathname.startsWith('/debug/bootstrap')
+          url.pathname.includes('/debug/bootstrap')
         ) {
-          const proxyUrl = new URL(`https://${location.hostname}/proxytown/gtm${url.pathname}${url.search}`)
-
+          console.log('Partytown: Matched GTM debug URL for proxying:', url.href) // Log si la condición coincide
+          var proxyUrl = new URL(
+            `https://<span class="math-inline">\{location\.hostname\}/proxytown/gtm</span>{url.pathname}${url.search}`
+          )
+          console.log('Partytown: Proxying GTM debug URL to:', proxyUrl.href) // Log la URL de proxy generada
           return proxyUrl
         }
+
+        console.log('Partytown: Not proxying URL:', url.href)
 
         return url
       },
       config: {
         forward: ['dataLayer.push', 'fbq'],
+        debug: true,
       },
     }),
     tailwind(),
