@@ -42,9 +42,7 @@ export default defineConfig({
               proxyUrl.searchParams.append(key, value)
             })
 
-            if (pathname.includes('debug')) {
-              console.log('Proxying GTM debug URL:', proxyUrl.href)
-            }
+            console.log(`[Partytown] Proxying: ${url.href} → ${proxyUrl.href}`)
 
             return proxyUrl
           }
