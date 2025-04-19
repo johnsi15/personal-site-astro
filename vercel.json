@@ -4,15 +4,6 @@
     {
       "source": "/service-worker.js",
       "destination": "/_next/static/service-worker.js"
-    },
-    {
-      "source": "/proxytown/gtm",
-      "has": [
-        {
-          "type": "query"
-        }
-      ],
-      "destination": "https://www.googletagmanager.com/gtm.js"
     }
   ],
   "headers": [
