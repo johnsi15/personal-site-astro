@@ -8,10 +8,6 @@
     {
       "source": "/proxytown/gtm/:path*",
       "destination": "https://www.googletagmanager.com/:path*"
-    },
-    {
-      "source": "/proxytown/gtm/debug/:path*",
-      "destination": "https://www.googletagmanager.com/debug/:path*"
     }
   ],
   "headers": [
