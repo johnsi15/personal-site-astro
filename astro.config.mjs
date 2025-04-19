@@ -34,17 +34,15 @@ export default defineConfig({
           const proxiedHosts = ['googletagmanager.com', 'connect.facebook.net']
 
           if (proxiedHosts.includes(url.hostname)) {
-            const proxyUrl = new URL('/proxytown/gtm', location.origin)
-            // const proxyUrl = new URL(location.origin);
-            const pathname = url.pathname.substring(1)
+            let pathname = url.pathname.substring(1)
 
-            proxyUrl.pathname = `/proxytown/gtm/${pathname}`
+            const proxyUrl = new URL(`/proxytown/gtm/${pathname}`, location.origin)
 
-            // proxyUrl.searchParams.append('url', url.href)
             url.searchParams.forEach((value, key) => {
               proxyUrl.searchParams.append(key, value)
             })
 
+            console.log('Proxying URL:', url.href, 'to', proxyUrl.href)
             return proxyUrl
           }
 
