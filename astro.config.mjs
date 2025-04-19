@@ -36,7 +36,15 @@ export default defineConfig({
           if (proxiedHosts.includes(url.hostname)) {
             const proxyUrl = new URL('/proxytown/gtm', location.origin)
             // const proxyUrl = new URL(location.origin);
-            proxyUrl.searchParams.append('url', url.href)
+            const pathname = url.pathname.substring(1)
+
+            proxyUrl.pathname = `/proxytown/gtm/${pathname}`
+
+            // proxyUrl.searchParams.append('url', url.href)
+            url.searchParams.forEach((value, key) => {
+              proxyUrl.searchParams.append(key, value)
+            })
+
             return proxyUrl
           }
 
