@@ -8,6 +8,10 @@
     {
       "source": "/proxytown/gtm/:path*",
       "destination": "https://connect.facebook.net/:path*"
+    },
+    {
+      "source": "/proxytown/gtm/:path*",
+      "destination": "https://www.googletagmanager.com/:path*"
     }
   ],
   "headers": [

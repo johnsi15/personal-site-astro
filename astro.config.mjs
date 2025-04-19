@@ -29,6 +29,18 @@ export default defineConfig({
     react(),
     partytown({
       // Adds dataLayer.push as a forwarding-event.
+      resolveUrl: function (url, location, type) {
+        if (
+          type === 'script' &&
+          url.hostname === 'www.googletagmanager.com' &&
+          url.pathname.startsWith('/debug/bootstrap')
+        ) {
+          var proxyUrl = new URL(`https://${location.hostname}/proxytown/gtm${url.pathname}${url.search}`)
+          return proxyUrl
+        }
+
+        return url
+      },
       config: {
         forward: ['dataLayer.push', 'fbq'],
       },
