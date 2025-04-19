@@ -7,7 +7,12 @@
     },
     {
       "source": "/proxytown/gtm",
-      "destination": "https://www.googletagmanager.com/gtag/js"
+      "has": [
+        {
+          "type": "query"
+        }
+      ],
+      "destination": "https://www.googletagmanager.com/gtm.js"
     }
   ],
   "headers": [
