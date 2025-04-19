@@ -43,6 +43,7 @@ export default defineConfig({
           return url
         },
         forward: ['dataLayer.push', 'fbq'],
+        debug: true,
       },
     }),
     tailwind(),
