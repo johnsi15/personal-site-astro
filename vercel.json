@@ -6,8 +6,12 @@
       "destination": "/_next/static/service-worker.js"
     },
     {
-      "source": "/proxytown/gtm",
-      "destination": "https://www.googletagmanager.com/gtag/js"
+      "source": "/proxytown/gtm/:path*",
+      "destination": "https://www.googletagmanager.com/:path*"
+    },
+    {
+      "source": "/proxytown/fb/:path*",
+      "destination": "https://connect.facebook.net/:path*"
     }
   ],
   "headers": [

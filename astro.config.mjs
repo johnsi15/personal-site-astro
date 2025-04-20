@@ -34,15 +34,29 @@ export default defineConfig({
           const proxiedHosts = ['googletagmanager.com', 'connect.facebook.net']
 
           if (proxiedHosts.includes(url.hostname)) {
-            const proxyUrl = new URL('/proxytown/gtm', location.origin)
-            // const proxyUrl = new URL(location.origin);
-            proxyUrl.searchParams.append('url', url.href)
+            let proxyPath
+
+            if (url.hostname === 'connect.facebook.net') {
+              proxyPath = '/proxytown/fb'
+            } else if (url.hostname === 'googletagmanager.com') {
+              proxyPath = '/proxytown/gtm'
+            }
+
+            let pathname = url.pathname.substring(1)
+
+            const proxyUrl = new URL(`${proxyPath}/${pathname}`, location.origin)
+
+            url.searchParams.forEach((value, key) => {
+              proxyUrl.searchParams.append(key, value)
+            })
+
             return proxyUrl
           }
 
           return url
         },
         forward: ['dataLayer.push', 'fbq'],
+        debug: false,
       },
     }),
     tailwind(),
