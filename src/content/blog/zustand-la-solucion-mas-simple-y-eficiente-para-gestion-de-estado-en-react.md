@@ -1,8 +1,8 @@
 ---
 title: "Zustand: La solución más simple y eficiente para gestión de Estado en React"
-publishedDate: "2024-02-14T16:29:10.000Z"
-updatedDate: "2024-02-15T17:09:31.000Z"
-pubDate: "2024-02-14T16:29:10.000Z"
+publishedDate: "2025-04-26T16:29:10.000Z"
+updatedDate: "2025-04-27T17:09:31.000Z"
+pubDate: "2025-04-26T16:29:10.000Z"
 description: "En este artículo te guiaré desde qué es Zustand, sus ventajas sobre otras opciones, hasta cómo implementar un contador utilizando middlewares como persist y devtools, e incluso integrar validaciones con Zod."
 tags: ["JavaScript", "programación", "development", "webdeveloment", "desarrollo-web", "TypeScript", "frontend", "front-end", "redux", "zustand", "software", "web", "johnserrano.co", "johnserrano", "estado", "react"]
 primaryTag: { name: 'Zustand', slug: 'zustand' }
