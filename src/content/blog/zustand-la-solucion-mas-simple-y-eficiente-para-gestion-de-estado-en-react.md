@@ -106,10 +106,14 @@ Con esto tienes un contador funcional, sin necesidad de reducers, actions ni con
 
 Zustand permite utilizar middlewares para ampliar funcionalidades.
 
-Instalamos las dependencias:
+Lo primero que debemos hacer es instalar la [extensión Redux DevTools de Chrome](https://chromewebstore.google.com/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) para utilizar el middleware devtools.
 
-```bash
-npm install zustand/middleware
+
+```typescript
+import { devtools } from 'zustand/middleware'
+
+// Envolvemos todo nuestro store con devtools
+const usePlainStore = create(devtools((set) => ...))
 ```
 
 Modificamos el store:
