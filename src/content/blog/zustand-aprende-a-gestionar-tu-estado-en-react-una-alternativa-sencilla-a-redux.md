@@ -18,6 +18,11 @@ Zustand es una biblioteca de gestión de estado para **React** que ofrece una fo
 
 Zustand es una **alternativa ligera y flexible** a bibliotecas más complejas como **Redux**, ofreciendo una sintaxis más concisa y una **curva de aprendizaje** más suave para aquellos que no están familiarizados con los **patrones de gestión de estado** tradicionales.
 
+## 🚀 Te comparto un vídeo donde te muestro DOS ejemplos prácticos creados desde cero
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kFyroSKn0_I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
+
+
 ## Introducción
 
 En el desarrollo de aplicaciones en **React**, la gestión del estado es un aspecto crucial que, si no se aborda adecuadamente, puede complicar el **mantenimiento** y **escalabilidad** del proyecto. 
