@@ -3,6 +3,25 @@
 
   <ul class='experiences_list'>
     <li class='experience'>
+      <h3>Xuma Insurtech <span>Software Engineer</span></h3>
+      <span class='date'>Agosto 2024 - Actualidad</span>
+      <ul class='description'>
+        <li>
+          ✅ Desarrollé el sitio web principal de Catalítico utilizando React, TypeScript y Tailwind CSS, logrando una
+          interfaz moderna, responsiva y optimizada para velocidad.
+        </li>
+        <li>
+          ✅ Diseñé y programé un panel de administración interno para Catalítico, permitiendo a los editores gestionar
+          dinámicamente secciones del homepage: agregar textos, activar/desactivar bloques y reorganizar módulos
+          visuales.
+        </li>
+        <li>
+          ✅ Lideré el rediseño del portal del periódico El Pilón, utilizando Next.js con App Router, e integrando
+          WordPress como CMS headless.
+        </li>
+      </ul>
+    </li>
+    <li class='experience'>
       <h3>La Opinión <span>Software Engineer</span></h3>
       <span class='date'>Dicciembre 2020 - Actualidad</span>
       <ul class='description'>
@@ -67,9 +86,10 @@
     padding: 0;
     list-style: none;
     margin: 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
-    flex-flow: wrap;
+    /* flex-flow: wrap; */
     gap: 25px;
   }
 
@@ -91,9 +111,9 @@
     -moz-box-shadow: 0px 0px 16px 1px rgb(0, 124, 255, 0.33);
   }
 
-  .experience:last-child {
+  /* .experience:last-child {
     width: 480px;
-  }
+  } */
 
   .description {
     padding: 0;
