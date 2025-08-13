@@ -48,7 +48,8 @@ skills.forEach((skill, i) => rows[i % 4].push(skill))
       rows.map((row, idx) => (
         <div class={`marquee-row ${idx % 2 === 0 ? 'to-right' : 'to-left'}`}>
           <ul>
-            {row.concat(row, row, row, row).map(skill => (
+            {/* Duplicamos el array para animación infinita */}
+            {row.concat(row).map(skill => (
               <li class='skill'>
                 <span>{skill}</span>
               </li>
@@ -131,15 +132,27 @@ skills.forEach((skill, i) => rows[i % 4].push(skill))
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-play-state: running;
-    width: fit-content;
+    width: max-content;
+    min-width: 100%;
+    --marquee-width: 0px;
   }
   .marquee-row.to-right ul {
     animation-name: marquee-right;
-    animation-duration: 85s;
+    animation-duration: 70s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
   }
   .marquee-row.to-left ul {
     animation-name: marquee-left;
-    animation-duration: 85s;
+    animation-duration: 70s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
   }
   .marquee-row:hover ul {
     animation-play-state: paused;
@@ -159,23 +172,22 @@ skills.forEach((skill, i) => rows[i % 4].push(skill))
   .skill:hover {
     color: var(--color-blue);
     background-color: var(--color-blue-500);
-    /* transform: translate(-5px, -5px); */
   }
 
   @keyframes marquee-right {
     0% {
-      transform: translateX(-50%);
+      transform: translateX(calc(-1 * var(--marquee-width)));
     }
     100% {
-      transform: translateX(0%);
+      transform: translateX(0);
     }
   }
   @keyframes marquee-left {
     0% {
-      transform: translateX(-50%);
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(calc(-1 * var(--marquee-width)));
     }
   }
   .marquee-row:hover ul {
@@ -191,3 +203,16 @@ skills.forEach((skill, i) => rows[i % 4].push(skill))
     }
   }
 </style>
+
+<script>
+  // Calcula el ancho real del ul y lo asigna como variable CSS para animación perfecta
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.marquee-row ul').forEach(ul => {
+      if (ul instanceof HTMLElement) {
+        // El ancho de la mitad (porque está duplicado)
+        const totalWidth = ul.scrollWidth / 2
+        ul.style.setProperty('--marquee-width', `${totalWidth}px`)
+      }
+    })
+  })
+</script>
