@@ -12,7 +12,7 @@ draft: false
 featureImage: "https://download.johnserrano.co/solid.webp"
 ---
 
-# Introducción a los principios SOLID en la Programación Orientada a Objetos
+## Introducción a los principios SOLID en la Programación Orientada a Objetos
 
 En el desarrollo de software, escribir código limpio, modular y fácil de mantener es fundamental. Aquí es donde entran los principios **SOLID**: un conjunto de reglas que ayudan a diseñar clases y componentes bien estructurados.  
 

@@ -1,16 +1,23 @@
 ---
 import Project from './Project.astro'
+import Layout from '@/layouts/index.astro'
 import { projects } from '@/helpers/conts'
 ---
 
-<section class='more_projects'>
-  <h6 data-aos='fade-up' data-aos-delay='50'>Otros Proyectos Destacados</h6>
-
-  <ul class='project_list'>
-    {
-      projects
-        .slice(0, 9)
-        .map((project, idx) => (
+<Layout
+  title='Portafolio - Proyectos | Frontend, JavaScript, TypeScript, React, Node.js'
+  description='John Serrano es un ingeniero de software apasionado, experto en la creación e implementación de soluciones tecnológicas que dan vida a experiencias digitales únicas.'
+  image='/portafolio/portada-john-serrano.png'
+  url='https://johnserrano.co/portafolio/proyectos'
+  titleOpenGraph='Portafolio - Proyectos | Frontend, JavaScript, TypeScript, React, Node.js'
+  date=''
+  modified=''
+>
+  <section id='Portafolio' class='more_projects'>
+    <h1 data-aos='fade-up' data-aos-delay='50'>Proyectos</h1>
+    <ul class='project_list'>
+      {
+        projects.map((project, idx) => (
           <Project
             title={project.title}
             description={project.description}
@@ -22,47 +29,74 @@ import { projects } from '@/helpers/conts'
             data-aos-delay={50 + idx * 50}
           />
         ))
-    }
-  </ul>
-
-  <a class='btn_see_more' href='/portafolio/proyectos'>Ver más</a>
-</section>
+      }
+    </ul>
+  </section>
+</Layout>
 
 <script>
   import AOS from 'aos'
   import 'aos/dist/aos.css'
 
   AOS.init({
-    // Global settings:
-    disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-    initClassName: 'aos-init', // class applied after initialization
-    animatedClassName: 'aos-animate', // class applied on animation
-    useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-    disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-    debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-    throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-    // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-    offset: 120, // offset (in px) from the original trigger point
-    delay: 0, // values from 0 to 3000, with step 50ms
-    duration: 400, // values from 0 to 3000, with step 50ms
-    easing: 'ease-in-out', // default easing for AOS animations
-    once: true, // whether animation should happen only once - while scrolling down
-    mirror: false, // whether elements should animate out while scrolling past them
-    anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+    disable: false,
+    startEvent: 'DOMContentLoaded',
+    initClassName: 'aos-init',
+    animatedClassName: 'aos-animate',
+    useClassNames: false,
+    disableMutationObserver: false,
+    debounceDelay: 50,
+    throttleDelay: 99,
+    offset: 120,
+    delay: 0,
+    duration: 400,
+    easing: 'ease-in-out',
+    once: true,
+    mirror: false,
+    anchorPlacement: 'top-bottom',
   })
 </script>
 
 <style>
-  .more_projects {
-    margin: 100px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  #Portafolio {
+    --primary-color: #003566;
+    --dark-color: #000814;
+    --color-blue: #001d3d;
+    --secondary-color: #002851;
+    --tertiary-color: #004d94;
+    --color-blue-500: #007cff;
+    --color-blue-600: #005fdf;
+    --color-blue-700: #004bb4;
+    --color-blue-800: #004095;
+    --color-blue-900: #002e6b;
+    --light-gray: #344358;
+    --color-gray: #2f3a4c;
+    --dark-gray: #1f2532;
+    --color-white: #fff;
+    --color-white-opacity-70: #ffffffb3;
+    --color-black: #000;
+    --color-yellow: #ffc300;
+    --container: 1000px;
+    --font-size-small: 0.98rem;
+    --font-size-normal: 1rem;
+    --font-size-medium-small: 1.3rem;
+    --font-size-medium-text: 1.2rem;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 2rem;
+    --font-size-x-large: 3.3rem;
+
+    flex: 1;
+    background: var(--dark-color);
+    /* margin-top: 60px;
+    padding-top: 10px; */
   }
 
-  h6 {
+  .more_projects {
+    background-color: var(--dark-color);
+    padding: 50px 0 100px;
+  }
+
+  h1 {
     font-size: var(--font-size-large);
     color: var(--color-white);
     line-height: 2.3rem;
@@ -72,34 +106,30 @@ import { projects } from '@/helpers/conts'
     text-align: center;
     font-weight: 700;
   }
-
   .project_list {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 15px;
     position: relative;
+    max-width: var(--container);
   }
-
   .project_list li {
     transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
   }
-
   .project_list li:hover .project,
   .project_list li:focus-within .project {
     transform: translateY(-7px);
     box-shadow: 0 10px 30px -15px var(--color-blue-700);
   }
-
   .project_links {
     display: flex;
     align-items: center;
     -webkit-box-align: center;
     margin-right: -10px;
   }
-
   .project_links a {
     text-decoration: none;
     color: var(--color-white);
@@ -113,12 +143,10 @@ import { projects } from '@/helpers/conts'
     position: relative;
     z-index: 1;
   }
-
   .project_links a:hover,
   .project_links a:focus {
     color: var(--color-blue-500);
   }
-
   .project {
     background-color: var(--color-blue-900);
     padding: 30px 28px;
@@ -143,18 +171,15 @@ import { projects } from '@/helpers/conts'
     align-items: center;
     margin-bottom: 30px;
   }
-
   .description {
     font-size: var(--font-size-normal);
     line-height: 1.3rem;
     color: var(--color-white-opacity-70);
     background-color: var(--color-blue-900);
   }
-
   .description p {
     margin: 0;
   }
-
   .title {
     font-size: var(--font-size-medium);
     line-height: 1.8rem;
@@ -192,23 +217,6 @@ import { projects } from '@/helpers/conts'
   }
   .folder {
     height: 40px;
-  }
-  .btn_see_more {
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    background: transparent;
-    border: 1px solid var(--color-blue-500);
-    color: var(--color-blue-500);
-    font-size: var(--font-size-medium-small);
-    transition: all 0.3s;
-    outline: none;
-    display: inline-block;
-    margin: 20px auto 0 auto;
-  }
-  .btn_see_more:hover {
-    box-shadow: 4px 4px 0 0 var(--color-blue-500);
-    transform: translate(-5px, -5px);
   }
   @media screen and (max-width: 768px) {
     .more_projects {
