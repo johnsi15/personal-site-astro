@@ -1,90 +1,7 @@
 ---
 import Project from './Project.astro'
 import Layout from '@/layouts/index.astro'
-
-const projects = [
-  {
-    title: 'seocheckAI',
-    description:
-      'Desarrollé seocheckAI con el objetivo de ofrecer un análisis SEO completo para sitios web. Este proyecto me permitió participar en la hackathon de Midudev + Vercel, donde integré varios modelos de OpenAI, utilicé Playwright para el scraping de datos, y aproveché el SDK de Vercel. Una experiencia llena de aprendizaje y crecimiento.',
-    link: 'https://seocheckai.com/',
-    externalLink: 'https://seocheckai.com/',
-    githubLink: 'https://github.com/johnsi15/seocheck-ai',
-    techList: ['NextJS', 'OpenAI', 'TailwindCSS'],
-  },
-  {
-    title: 'Resultados Elecciones Regionales Colombia 2023',
-    description:
-      'El proyecto consiste en un módulo web que muestra los resultados de las elecciones regionales en Norte de Santander, Colombia. El módulo cuenta con cinco pestañas, cada una de las cuales muestra los resultados de una corporación de cargos públicos.',
-    link: 'https://laopinion.github.io/elecciones-resultados/',
-    externalLink: 'https://laopinion.github.io/elecciones-resultados/',
-    githubLink: 'https://github.com/laopinion/elecciones-resultados',
-    techList: ['HTML5', 'JavaScript', 'NodeJS'],
-  },
-  {
-    title: 'Formulario de Registro con Brevo',
-    description:
-      'En este proyecto desarrollé un formulario de registro para Geeparts utilizando Brevo para la gestión del envío del correo electrónico. Utilizando la API de Brevo me conecte para enviar los datos del formulario directamente a una lista de contactos.',
-    link: 'https://github.com/johnsi15/event-geeparts',
-    externalLink: 'https://www.linkedin.com/in/jandreys15/details/projects/',
-    githubLink: 'https://github.com/johnsi15/event-geeparts',
-    techList: ['Astro', 'Brevo', 'TailwindCSS'],
-  },
-  {
-    title: 'API de Películas (REST)',
-    description:
-      'Desarrolle una API REST de películas, diseñada para ofrecer una amplia gama de funcionalidades relacionadas con la gestión de películas. Desde la obtención de información sobre películas hasta la creación y actualización de registros.',
-    link: 'https://movies-john-serrano.koyeb.app/api/movies/public',
-    externalLink: 'https://movies-john-serrano.koyeb.app/api/movies/public',
-    githubLink: 'https://github.com/johnsi15/apiMoviesTypeScript',
-    techList: ['TypeScript', 'NodeJS', 'MongoDB'],
-  },
-  {
-    title: 'Revista La Ó',
-    description:
-      'Trabaje en la creación de la página web "Revista La Ó", llevando del impreso esta revista a lo digital donde puedes encontrar, últimas noticias y novedades de la farándula y eventos de entretenimiento favoritos.',
-    link: 'https://www.laopinion.com.co/la-o',
-    externalLink: 'https://www.laopinion.com.co/la-o',
-    githubLink: '',
-    techList: ['JavaScript', 'Sass', 'Drupal 9'],
-  },
-  {
-    title: 'Ingresos y Gastos',
-    description:
-      'Desarrollé una aplicación web diseñada para llevar un registro detallado de tus ingresos y gastos. Con esta herramienta, puedes tener un control de tus gastos mensuales, todo organizado en diversas categorías para clasificar los tipos de gastos.',
-    link: 'https://contabilidad.johnserrano.co/',
-    externalLink: 'https://contabilidad.johnserrano.co/',
-    githubLink: 'https://github.com/jandrey15/accounting-app',
-    techList: ['NextJS', 'Airtable', 'Tremor'],
-  },
-  {
-    title: 'Portafolio para Clientes',
-    description:
-      'Este módulo fue desarrollado con ReactJS, ofrece a nuestros clientes una buena experiencia para elegir la estrategia publicitaria que mejor se adapte a los objetivos de los usuarios. El módulo se destaca por su atractivo diseño y la facilidad de navegación.',
-    link: 'https://portafolio-para-clientes.netlify.app/',
-    externalLink: 'https://portafolio-para-clientes.netlify.app/',
-    githubLink: 'https://github.com/laopinion/module-portafolio-clientes',
-    techList: ['ReactJS', 'Vite', 'Sass'],
-  },
-  {
-    title: 'Lista de Lecturas',
-    description:
-      '"Lista de Lecturas" es una solución a una prueba técnica para gestionar tu lista personalizada de libros. Con la capacidad de filtrar por categorías y cantidad de páginas, esta herramienta se adapta a tus preferencias, permitiéndote encontrar fácilmente los libros que se ajustan a tus intereses.',
-    link: 'https://books-list-andrey.netlify.app/',
-    externalLink: 'https://books-list-andrey.netlify.app/',
-    githubLink: 'https://github.com/johnsi15/pruebas-tecnicas/tree/main/pruebas/01-reading-list',
-    techList: ['ReactJS', 'Zustand', 'Framer Motion'],
-  },
-  {
-    title: 'Buscador de Películas',
-    description:
-      'Esta aplicación de búsqueda de películas, desarrollada como parte de una prueba técnica utilizando ReactJS, su enfoque se centra en el uso de los diferentes hooks de ReactJS. Diseñada para brindar una experiencia de usuario fluida y eficiente, la aplicación presenta optimizaciones clave.',
-    link: 'https://search-movies-list.netlify.app/',
-    externalLink: 'https://search-movies-list.netlify.app/',
-    githubLink: 'https://github.com/johnsi15/buscador-peliculas',
-    techList: ['ReactJS', 'TypeScript', 'Debounce'],
-  },
-]
+import { projects } from '@/helpers/conts'
 ---
 
 <Layout
@@ -107,7 +24,7 @@ const projects = [
             link={project.link}
             externalLink={project.externalLink}
             githubLink={project.githubLink}
-            techList={project.techList}
+            techList={project.techList ?? []}
             data-aos='fade-up'
             data-aos-delay={50 + idx * 50}
           />

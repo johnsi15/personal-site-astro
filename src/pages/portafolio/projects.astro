@@ -1,177 +1,111 @@
 ---
 import IconoExternalLink from './icons/icono-external-link.astro'
 import IconoGithub from './icons/icono-github.astro'
+import { featuredProjects } from '@/helpers/conts'
 ---
 
 <section id='projects' class='projects'>
   <h6>Amo Lo Que Hago Algunos De Mis Proyectos</h6>
   <ul class='project_list'>
-    <li class='project'>
-      <div class='info'>
-        <div>
-          <span class='featured'>Proyecto destacado</span>
-          <h3>
-            <a href='https://topautos.com.co/' rel='noopener noreferrer' target='_blank'>Top Autos</a>
-          </h3>
-          <div class='description'>
-            <p>
-              Tuve el placer de desarrollar este increíble proyecto, Top Autos, una plataforma de venta de autos nuevos
-              y usados al estilo tucarro.com. El proyecto cuenta con múltiples filtros, diversas categorías, y una
-              hermosa galería con funcionalidad de zoom. Lo desarrollé con Next.js, utilizando WordPress como un
-              headless CMS para gestionar toda la data, configurando varios plugins para optimizar su funcionamiento.
-            </p>
-          </div>
-          <ul class='project_tech_list'>
-            <li>NextJS</li>
-            <li>WordPress</li>
-            <li>TailwindCSS</li>
-            <li>PhotoSwipe</li>
-            <li>PdfLib</li>
-          </ul>
-          <div class='project_links'>
-            <a
-              href='https://topautos.com.co/'
-              aria-label='External Link'
-              class='external'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <IconoExternalLink />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class='image'>
-        <a href='https://topautos.com.co/' rel='noopener noreferrer' target='_blank'>
-          <div class='filter'>
-            <img
-              src='/portafolio/projects/top-autos-project.webp'
-              alt='Top Autos'
-              width='580'
-              height='400'
-              loading='lazy'
-            />
-          </div>
-        </a>
-      </div>
-    </li>
-    <li class='project'>
-      <div class='info'>
-        <div>
-          <span class='featured'>Proyecto destacado</span>
-          <h3>
-            <a href='https://geeparts.co/' rel='noopener noreferrer' target='_blank'>Geeparts Ecommerce</a>
-          </h3>
-          <div class='description'>
-            <p>
-              He tenido el privilegio de crear y configurar "Geeparts", una tienda en línea que satisface las
-              necesidades de entusiastas de las dos ruedas. Esta plataforma, construida con la versátil solución de
-              Tienda Nube y respaldada por la seguridad de Open Pay como pasarela de pagos en línea, ofrece una
-              experiencia de compra sin igual.
-            </p>
-            <p>
-              Trabajar en Geeparts ha sido un proyecto emocionante, y estoy orgulloso de haber contribuido una
-              plataforma en línea que ofrece todo lo que los amantes de las motos necesitan.
-            </p>
-          </div>
-          <ul class='project_tech_list'>
-            <li>HTML5</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Tienda Nube</li>
-            <li>Ecommerce</li>
-          </ul>
-          <div class='project_links'>
-            <a
-              href='https://geeparts.co/'
-              aria-label='External Link'
-              class='external'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <IconoExternalLink />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class='image'>
-        <a href='https://geeparts.co/' rel='noopener noreferrer' target='_blank'>
-          <div class='filter'>
-            <img
-              src='/portafolio/projects/geeparts.webp'
-              alt='Geeparts Colombia'
-              width='580'
-              height='400'
-              loading='lazy'
-            />
-          </div>
-        </a>
-      </div>
-    </li>
-    <li class='project'>
-      <div class='info'>
-        <div>
-          <span class='featured'>Proyecto destacado</span>
-          <h3>
-            <a
-              href='https://main--clinquant-belekoy-d41c33.netlify.app/chicaqhubo'
-              rel='noopener noreferrer'
-              target='_blank'>Chica Q'hubo Cúcuta</a
-            >
-          </h3>
-          <div class='description'>
-            <p>
-              Como desarrollador web, he tenido el honor de contribuir a un proyecto muy especial: "Chica Q'Hubo". Esta
-              sección del periódico Q'Hubo ofrece a las mujeres de la región una plataforma para destacar su belleza y
-              compartir su historia de vida con miles de lectores diarios.
-            </p>
-          </div>
-          <ul class='project_tech_list'>
-            <li>NextJS</li>
-            <li>MongoDB</li>
-            <li>JavaScript</li>
-            <li>ReactJS</li>
-            <li>Axios</li>
-          </ul>
-          <div class='project_links'>
-            <a
-              href='https://github.com/johnsi15/chica-qhubo'
-              aria-label='GitHub Link'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <IconoGithub />
-            </a>
-            <a
-              href='https://main--clinquant-belekoy-d41c33.netlify.app/chicaqhubo'
-              aria-label='External Link'
-              class='external'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
-              <IconoExternalLink />
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class='image'>
-        <a
-          href='https://main--clinquant-belekoy-d41c33.netlify.app/chicaqhubo'
-          rel='noopener noreferrer'
-          target='_blank'
-        >
-          <div class='filter'>
-            <img
-              src='/portafolio/projects/chica-qhubo.webp'
-              alt='Chica Qhubo Cúcuta'
-              width='580'
-              height='400'
-              loading='lazy'
-            />
-          </div>
-        </a>
-      </div>
-    </li>
+    {
+      featuredProjects.map((project, idx) => {
+        const isOdd = idx % 2 === 1
+
+        return (
+          <li class='project'>
+            {isOdd ? (
+              <>
+                <div class='image'>
+                  <a href={project.link} rel='noopener noreferrer' target='_blank'>
+                    <div class='filter'>
+                      <img src={project.image} alt={project.title} width='580' height='400' loading='lazy' />
+                    </div>
+                  </a>
+                </div>
+                <div class='info'>
+                  <div>
+                    <span class='featured'>Proyecto destacado</span>
+                    <h3>
+                      <a href={project.link} rel='noopener noreferrer' target='_blank'>
+                        {project.title}
+                      </a>
+                    </h3>
+                    <div class='description'>
+                      <p>{project.description}</p>
+                    </div>
+                    <ul class='project_tech_list'>
+                      {project.techList.map(tech => (
+                        <li>{tech}</li>
+                      ))}
+                    </ul>
+                    <div class='project_links'>
+                      {project.githubLink && (
+                        <a href={project.githubLink} aria-label='GitHub Link' rel='noopener noreferrer' target='_blank'>
+                          <IconoGithub />
+                        </a>
+                      )}
+                      <a
+                        href={project.externalLink || project.link}
+                        aria-label='External Link'
+                        class='external'
+                        rel='noopener noreferrer'
+                        target='_blank'
+                      >
+                        <IconoExternalLink />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <div class='info'>
+                  <div>
+                    <span class='featured'>Proyecto destacado</span>
+                    <h3>
+                      <a href={project.link} rel='noopener noreferrer' target='_blank'>
+                        {project.title}
+                      </a>
+                    </h3>
+                    <div class='description'>
+                      <p>{project.description}</p>
+                    </div>
+                    <ul class='project_tech_list'>
+                      {project.techList.map(tech => (
+                        <li>{tech}</li>
+                      ))}
+                    </ul>
+                    <div class='project_links'>
+                      {project.githubLink && (
+                        <a href={project.githubLink} aria-label='GitHub Link' rel='noopener noreferrer' target='_blank'>
+                          <IconoGithub />
+                        </a>
+                      )}
+                      <a
+                        href={project.externalLink || project.link}
+                        aria-label='External Link'
+                        class='external'
+                        rel='noopener noreferrer'
+                        target='_blank'
+                      >
+                        <IconoExternalLink />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class='image'>
+                  <a href={project.link} rel='noopener noreferrer' target='_blank'>
+                    <div class='filter'>
+                      <img src={project.image} alt={project.title} width='580' height='400' loading='lazy' />
+                    </div>
+                  </a>
+                </div>
+              </>
+            )}
+          </li>
+        )
+      })
+    }
   </ul>
 </section>
 
