@@ -1,120 +1,113 @@
-<section id='about' class='about'>
-  <!-- <h2>Me encanta ser desarrollador web y construir cosas para la web.</h2> -->
+---
+import IconoGithub from '@/components/portafolio/icons/icono-github.astro'
+import IconoLinkedin from '@/components/portafolio/icons/icono-linkedin.astro'
+import IconoTwitter from '@/components/portafolio/icons/icono-twitter.astro'
+import IconoFacebook from '@/components/portafolio/icons/icono-facebook.astro'
+import IconoYoutube from '@/components/portafolio/icons/icono-youtube.astro'
 
-  <div class='info'>
-    <h2>Apasionado por la tecnología y el desarrollo web.</h2>
+interface Props {
+  borders: boolean
+}
 
-    <article>
-      <!-- <p>
-        Hola, soy John Serrano comence a aprender desarrollo web en el 2011 obtuve una titulación, Tecnólogo en análisis y
-        desarrollo de sistemas de la información, apartir del 2014 tuve que parar mi carrera por algunos motivos
-        personales pero nunca pare de aprender, desde el 2016 estoy trabajando y aprendiendo muchas cosas.
-      </p> -->
-      <p>
-        ¡Hola! Soy John Serrano. Comencé mi viaje en el desarrollo web en 2011 y obtuve una titulación como Tecnólogo en
-        Análisis y Desarrollo de Sistemas. A partir del 2014 y por 2 años tuve que hacer una pausa en mi carrera por
-        razones personales, pero eso no me detuvo en mi búsqueda de conocimiento. Desde el año 2016, he estado
-        trabajando incansablemente y ampliando mis habilidades.
-      </p>
-      <!-- <p>
-        Actualmente me enfoco en el desarrollo front-end, creando productos y experiencias digitales. Mi pasión por la
-        tecnología y el aprendizaje constante me impulsa a mantenerme al día con las últimas tendencias y herramientas.
-      </p> -->
-      <p>
-        En la actualidad, mi enfoque se centra en el desarrollo front-end, donde creo productos y experiencias
-        digitales. Mi pasión por la tecnología y el aprendizaje constante me motiva a mantenerme al día con las últimas
-        tendencias y herramientas en el campo.
-      </p>
-      <!-- <p>Aquí hay algunas tecnologías con las que he estado trabajando recientemente:</p> -->
-      <p>Algunas de las tecnologías con las que he estado trabajando recientemente:</p>
-      <ul>
-        <li>✅ JavaScript (ES6+)</li>
-        <li>✅ React</li>
-        <li>✅ Node.js</li>
-        <li>✅ TypeScript</li>
-        <li>✅ Next.js</li>
-        <li>✅ MongoDB</li>
-      </ul>
-    </article>
-  </div>
-  <div class='image'>
-    <img
-      src='/portafolio/profile/john-serrano-info.png'
-      alt='Profile description'
-      width='320px'
-      height='438px'
-      loading='lazy'
-    />
-  </div>
-</section>
+const { borders } = Astro.props
+---
+
+<ul class=`social_list ${borders ? 'borders' : ''}`>
+  <li>
+    <a href='https://github.com/johnsi15' aria-label='GitHub' target='_blank' rel='noreferrer'><IconoGithub /></a>
+  </li>
+  <li>
+    <a href='https://www.linkedin.com/in/jandreys15' aria-label='Linkedin' target='_blank' rel='noreferrer'
+      ><IconoLinkedin /></a
+    >
+  </li>
+  <li>
+    <a href='https://twitter.com/johnserranodev' aria-label='Twitter' target='_blank' rel='noreferrer'
+      ><IconoTwitter /></a
+    >
+  </li>
+  <li>
+    <a href='https://www.facebook.com/johnserranodev' aria-label='Facebook' target='_blank' rel='noreferrer'
+      ><IconoFacebook /></a
+    >
+  </li>
+  <li>
+    <a href='https://www.youtube.com/@johnserranodev' aria-label='YouTube' target='_blank' rel='noreferrer'
+      ><IconoYoutube /></a
+    >
+  </li>
+</ul>
 
 <style>
-  .about {
-    display: flex;
-    margin: 20px 0;
-    gap: 30px;
-  }
-
-  .info {
-    max-width: 600px;
-  }
-  h2 {
-    font-size: var(--font-size-large);
-    color: var(--color-white);
-    line-height: 2.3rem;
-    margin: 0;
-    text-wrap: balance;
-    margin-bottom: 32px;
-    font-weight: 700;
-  }
-  article p {
-    color: var(--color-white);
-    opacity: 0.7;
-    font-size: var(--font-size-medium-text);
-    line-height: 1.5rem;
-    margin: 0 0 20px;
-  }
-
-  ul {
-    list-style: none;
+  .social_list {
     padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    color: var(--color-white);
-    opacity: 0.7;
-    font-size: var(--font-size-medium-text);
-    line-height: 1.5rem;
-  }
-
-  .image {
+    list-style: none;
+    margin: 10px auto 0;
     display: flex;
+    gap: 7px;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    color: var(--color-white);
     position: relative;
   }
 
-  .image::after {
+  .borders::after {
     content: '';
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    height: 100%;
     position: absolute;
-    background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgb(0 8 20) 0%, rgba(0, 0, 0, 0) 20%);
+    height: 1px;
+    display: inline-block;
+    width: 100px;
+    background-color: var(--color-white-opacity-70);
+    left: -60px;
+  }
+  .borders::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    display: inline-block;
+    width: 100px;
+    background-color: var(--color-white-opacity-70);
+    right: -60px;
+  }
+
+  li {
+    /* background: var(--color-blue-900); */
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li a {
+    text-decoration: none;
+    color: var(--color-white);
+    position: relative;
+    opacity: 0.7;
+    display: inline-block;
+    text-decoration-skip-ink: auto;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li:hover a {
+    color: var(--color-blue-500);
+  }
+  li:hover {
+    transform: translateY(-3px);
   }
 
   @media screen and (max-width: 768px) {
-    .about {
-      flex-direction: column;
+    .borders::after,
+    .borders::before {
+      width: 60px;
     }
 
-    .image {
-      display: none;
+    .borders::after {
+      left: -5px;
+    }
+    .borders::before {
+      right: -5px;
     }
   }
 </style>
