@@ -151,4 +151,15 @@
   .experience .date {
     font-size: var(--font-size-normal);
   }
+
+  @media screen and (max-width: 768px) {
+    .experiences_list {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .experience {
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
 </style>

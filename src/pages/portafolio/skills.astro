@@ -1,106 +1,162 @@
-<section class='skills'>
+---
+const skills = [
+  'HTML',
+  'CSS',
+  'Docker',
+  'TypeScript',
+  'NodeJS',
+  'ES6',
+  'React',
+  'Google Firebase',
+  'Sass',
+  'JavaScript',
+  'MongoDB',
+  'NextJS',
+  'APIS',
+  'NPM',
+  'Yarn',
+  'Git',
+  'JOI',
+  'HAPI/BOOM',
+  'Astro',
+  'ESLint',
+  'Express',
+  'JWT',
+  'Passport',
+  'Vite',
+  'Zod',
+  'Tailwind CSS',
+  'Bootstrap',
+  'Axios',
+  'GraphQL',
+  'Turso',
+  'Prisma',
+  'Redis',
+  'Drizzle ORM',
+  'WordPress',
+  'Zustand',
+]
+
+const rows: string[][] = [[], [], [], []]
+skills.forEach((skill, i) => rows[i % 4].push(skill))
+---
+
+<section class='skills-marquee'>
   <h6>Tecnologías y Herramientas</h6>
-  <ul>
-    <li class='skill'>
-      <span>HTML</span>
-    </li>
-    <li class='skill'>
-      <span>CSS</span>
-    </li>
-    <li class='skill'>
-      <span>Docker</span>
-    </li>
-    <li class='skill'>
-      <span>TypeScript</span>
-    </li>
-    <li class='skill'>
-      <span>NodeJS</span>
-    </li>
-    <li class='skill'>
-      <span>ES6</span>
-    </li>
-    <li class='skill'>
-      <span>React</span>
-    </li>
-    <li class='skill'>
-      <span>Google Firebase</span>
-    </li>
-    <li class='skill'>
-      <span>Sass</span>
-    </li>
-    <li class='skill'>
-      <span>JavaScript</span>
-    </li>
-    <li class='skill'>
-      <span>MongoDB</span>
-    </li>
-    <li class='skill'>
-      <span>NextJS</span>
-    </li>
-    <li class='skill'>
-      <span>APIS</span>
-    </li>
-    <li class='skill'>
-      <span>NPM</span>
-    </li>
-    <li class='skill'>
-      <span>Yarn</span>
-    </li>
-    <li class='skill'>
-      <span>Git</span>
-    </li>
-    <li class='skill'>
-      <span>JOI</span>
-    </li>
-    <li class='skill'>
-      <span>HAPI/BOOM</span>
-    </li>
-    <li class='skill'>
-      <span>Astro</span>
-    </li>
-    <li class='skill'>
-      <span>ESLint</span>
-    </li>
-    <li class='skill'>
-      <span>Express</span>
-    </li>
-    <li class='skill'>
-      <span>JWT</span>
-    </li>
-    <li class='skill'>
-      <span>Passport</span>
-    </li>
-    <li class='skill'>
-      <span>Vite</span>
-    </li>
-  </ul>
+  <div class='marquee-rows'>
+    {
+      rows.map((row, idx) => (
+        <div class={`marquee-row ${idx % 2 === 0 ? 'to-right' : 'to-left'}`}>
+          <ul>
+            {/* Duplicamos el array para animación infinita */}
+            {row.concat(row).map(skill => (
+              <li class='skill'>
+                <span>{skill}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
 </section>
 
 <style>
-  .skills {
-    margin: 100px 0;
+  .skills-marquee {
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    max-width: 650px;
   }
-  h6 {
+  .skills-marquee::before,
+  .skills-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .skills-marquee::before {
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      var(--dark-color) 0%,
+      var(--dark-color) 20%,
+      rgba(0, 8, 20, 0.9) 40%,
+      rgba(0, 8, 20, 0.6) 60%,
+      rgba(0, 8, 20, 0.3) 80%,
+      transparent 100%
+    );
+  }
+  .skills-marquee::after {
+    right: 0;
+    background: linear-gradient(
+      -90deg,
+      var(--dark-color) 0%,
+      var(--dark-color) 20%,
+      rgba(0, 8, 20, 0.9) 40%,
+      rgba(0, 8, 20, 0.6) 60%,
+      rgba(0, 8, 20, 0.3) 80%,
+      transparent 100%
+    );
+  }
+  .skills-marquee h6 {
     font-size: var(--font-size-large);
     color: var(--color-white);
     line-height: 2.3rem;
-    margin: 0;
-    text-wrap: balance;
-    margin-bottom: 40px;
+    margin: 0 0 40px 0;
     text-align: center;
     font-weight: 700;
   }
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
+  .marquee-rows {
     display: flex;
-    max-width: 600px;
-    justify-content: center;
-    gap: 18px 20px;
-    flex-flow: wrap;
+    flex-direction: column;
+    gap: 18px;
+    position: relative;
+    z-index: 1;
   }
-
+  .marquee-row {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .marquee-row ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-play-state: running;
+    width: max-content;
+    min-width: 100%;
+    --marquee-width: 0px;
+  }
+  .marquee-row.to-right ul {
+    animation-name: marquee-right;
+    animation-duration: 70s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+  }
+  .marquee-row.to-left ul {
+    animation-name: marquee-left;
+    animation-duration: 70s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-iteration-count: infinite;
+  }
+  .marquee-row:hover ul {
+    animation-play-state: paused;
+  }
   .skill {
     padding: 8px 30px;
     border-radius: 5px;
@@ -109,15 +165,54 @@
     color: var(--color-blue-500);
     font-size: var(--font-size-medium-small);
     transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    white-space: nowrap;
+    user-select: none;
+    flex-shrink: 0;
   }
   .skill:hover {
     color: var(--color-blue);
     background-color: var(--color-blue-500);
-    transform: translate(-5px, -5px);
+  }
+
+  @keyframes marquee-right {
+    0% {
+      transform: translateX(calc(-1 * var(--marquee-width)));
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes marquee-left {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-1 * var(--marquee-width)));
+    }
+  }
+  .marquee-row:hover ul {
+    animation-play-state: paused;
   }
   @media screen and (max-width: 768px) {
-    .skills {
+    .skills-marquee {
       margin: 55px auto;
+    }
+    .skills-marquee::before,
+    .skills-marquee::after {
+      width: 60px;
     }
   }
 </style>
+
+<script>
+  // Calcula el ancho real del ul y lo asigna como variable CSS para animación perfecta
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.marquee-row ul').forEach(ul => {
+      if (ul instanceof HTMLElement) {
+        // El ancho de la mitad (porque está duplicado)
+        const totalWidth = ul.scrollWidth / 2
+        ul.style.setProperty('--marquee-width', `${totalWidth}px`)
+      }
+    })
+  })
+</script>
