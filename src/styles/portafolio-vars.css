@@ -1,0 +1,29 @@
+#Portafolio {
+  --primary-color: #003566;
+  --dark-color: #000814;
+  --color-blue: #001d3d;
+  --secondary-color: #002851;
+  --tertiary-color: #004d94;
+  --color-blue-500: #007cff;
+  --color-blue-600: #005fdf;
+  --color-blue-700: #004bb4;
+  --color-blue-800: #004095;
+  --color-blue-900: #002e6b;
+  --light-gray: #344358;
+  --color-gray: #2f3a4c;
+  --dark-gray: #1f2532;
+  --color-white: #fff;
+  --color-white-opacity-70: #ffffffb3;
+  --color-black: #000;
+  --color-yellow: #ffc300;
+  --container: 1000px;
+  --font-size-small: 0.98rem;
+  --font-size-normal: 1rem;
+  --font-size-medium-small: 1.3rem;
+  --font-size-medium-text: 1.2rem;
+  --font-size-medium: 1.5rem;
+  --font-size-large: 2rem;
+  --font-size-x-large: 3.3rem;
+  flex: 1;
+  background: var(--dark-color);
+}
