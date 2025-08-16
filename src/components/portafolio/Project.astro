@@ -1,5 +1,183 @@
 ---
-import ProjectInner from '@/pages/portafolio/Project.astro'
+import IconoExternalLink from '@/components/portafolio/icons/icono-external-link.astro'
+import IconoFolder from '@/components/portafolio/icons/icono-folder.astro'
+import IconoGithub from '@/components/portafolio/icons/icono-github.astro'
+
+interface Props {
+  title: string
+  description: string
+  link: string
+  techList: string[]
+  githubLink?: string
+  externalLink?: string
+}
+
+const { title, description, link, techList = [], githubLink, externalLink } = Astro.props
 ---
 
-<ProjectInner />
+<li data-aos='fade-up' data-aos-delay='50'>
+  <div class='project'>
+    <header>
+      <div class='project_top'>
+        <div class='folder'>
+          <IconoFolder />
+        </div>
+        <div class='project_links'>
+          {
+            githubLink && (
+              <a href={githubLink} aria-label='GitHub Link' target='_blank' rel='noopener noreferrer'>
+                <IconoGithub />
+              </a>
+            )
+          }
+          {
+            externalLink && (
+              <a
+                href={externalLink}
+                aria-label='External Link'
+                class='external'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                <IconoExternalLink />
+              </a>
+            )
+          }
+        </div>
+      </div>
+
+      <h3 class='title'>
+        <a href={link} target='_blank' rel='noopener noreferrer'>{title}</a>
+      </h3>
+
+      <div class='description'>
+        <p>
+          {description}
+        </p>
+      </div>
+    </header>
+    <footer>
+      <ul class='project_tech_list'>
+        {techList.map(item => <li>{item}</li>)}
+      </ul>
+    </footer>
+  </div>
+</li>
+
+<style>
+  li {
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li:hover .project,
+  li:focus-within .project {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 30px -15px var(--color-blue-700);
+  }
+
+  .project_links {
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    margin-right: -10px;
+  }
+
+  .project_links a {
+    text-decoration: none;
+    color: var(--color-white);
+    opacity: 0.7;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 5px 7px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .project_links a:hover,
+  .project_links a:focus {
+    color: var(--color-blue-500);
+  }
+
+  .project {
+    background-color: var(--color-blue-900);
+    padding: 30px 28px;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative;
+    border-radius: 4px;
+    transition: all 0.3s;
+    height: 100%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    overflow: auto;
+  }
+  .project_top {
+    display: flex;
+    justify-content: space-between;
+    -webkit-box-pack: justify;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  .description {
+    font-size: var(--font-size-normal);
+    line-height: 1.3rem;
+    color: var(--color-white-opacity-70);
+    background-color: var(--color-blue-900);
+  }
+
+  .description p {
+    margin: 0;
+  }
+
+  .title {
+    font-size: var(--font-size-medium);
+    line-height: 1.8rem;
+    margin: 0 0 10px;
+    font-weight: 700;
+  }
+  .title a {
+    text-decoration: none;
+    color: var(--color-white);
+    position: static;
+    display: inline-block;
+    transition: all 0.3s;
+  }
+  .title a:hover {
+    color: var(--color-blue-500);
+  }
+  .title a::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+  }
+  .project_tech_list {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    color: var(--color-white-opacity-70);
+    font-size: var(--font-size-small);
+    margin: 25px 0 10px;
+  }
+  .folder {
+    height: 40px;
+  }
+  @media screen and (max-width: 768px) {
+    .more_projects {
+      margin: 55px auto;
+    }
+  }
+</style>

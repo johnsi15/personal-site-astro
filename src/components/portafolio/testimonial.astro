@@ -1,5 +1,92 @@
 ---
-import TestimonialInner from '@/pages/portafolio/testimonial.astro'
+import '@splidejs/splide/css'
+import '@splidejs/splide/css/core'
+import ItemTestimonial from '@/components/portafolio/item-testimonial.astro'
+import { testimonials } from '@/helpers/conts'
 ---
 
-<TestimonialInner />
+<section id='splide-testimonials' class='testimonials splide'>
+  <h6 id='carousel-heading'>¿Qué Dicen Las Personas Sobre Mí?</h6>
+  <div class='splide__track'>
+    <ul class='splide__list'>
+      <ItemTestimonial
+        urlPhoto='/portafolio/testimonials/1643735328431.jpg'
+        name='Jhonatan Miranda'
+        description={testimonials.jhonatan.description}
+      />
+
+      <ItemTestimonial
+        urlPhoto='/portafolio/testimonials/1712508059162.jpg'
+        name='Esperanza Arango'
+        description={testimonials.esperanza.description}
+      />
+
+      <ItemTestimonial
+        urlPhoto='/portafolio/testimonials/1516954429725.jpg'
+        name='Leonardo Restrepo'
+        description={testimonials.leonardo.description}
+      />
+
+      <ItemTestimonial
+        urlPhoto='/portafolio/testimonials/1628608329531.jpg'
+        name='Camilo Galvis'
+        description={testimonials.camilo.description}
+      />
+
+      <ItemTestimonial
+        urlPhoto='/portafolio/testimonials/1692720724464.jpg'
+        name='Gabriel Moncada Figueroa'
+        description={testimonials.gabriel.description}
+      />
+    </ul>
+  </div>
+</section>
+
+<script>
+  import Splide from '@splidejs/splide'
+  const splideTestimonials = new Splide('#splide-testimonials', {
+    type: 'loop',
+    arrows: false,
+    autoplay: true,
+    interval: 4000,
+    pagination: false,
+    gap: '2rem',
+    padding: '2rem',
+    breakpoints: {
+      768: {
+        gap: '1rem',
+        padding: '1rem',
+      },
+    },
+  })
+
+  splideTestimonials.mount()
+</script>
+
+<style>
+  .testimonials {
+    margin: 100px 0;
+  }
+
+  h6 {
+    font-size: var(--font-size-large);
+    color: var(--color-white);
+    line-height: 2.3rem;
+    margin: 0;
+    text-wrap: balance;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 700;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  @media screen and (max-width: 768px) {
+    .testimonials {
+      margin: 55px auto;
+    }
+  }
+</style>

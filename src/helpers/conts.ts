@@ -141,3 +141,67 @@ export const featuredProjects = [
     image: '/portafolio/projects/geeparts.webp',
   },
 ]
+
+export const skills = [
+  'HTML',
+  'CSS',
+  'Docker',
+  'TypeScript',
+  'NodeJS',
+  'ES6',
+  'React',
+  'Google Firebase',
+  'Sass',
+  'JavaScript',
+  'MongoDB',
+  'NextJS',
+  'APIS',
+  'NPM',
+  'Yarn',
+  'Git',
+  'JOI',
+  'HAPI/BOOM',
+  'Astro',
+  'ESLint',
+  'Express',
+  'JWT',
+  'Passport',
+  'Vite',
+  'Zod',
+  'Tailwind CSS',
+  'Bootstrap',
+  'Axios',
+  'GraphQL',
+  'Turso',
+  'Prisma',
+  'Redis',
+  'Drizzle ORM',
+  'WordPress',
+  'Zustand',
+]
+
+export const testimonials = {
+  jhonatan: {
+    description: `Apasionado, inteligente, resolutivo y ¡cree en lo que hace!. John Andrey trabajó en mi equipo durante los
+        últimos cuatro años. Su rol fue clave para el equipo ya que aportó toda su experiencia y conocimientos con mucha
+        generosidad. Se consiguieron logros importantes gracias a su buen desempeño y disfrutamos del trabajo. Si algun@
+        tiene la oportunidad de tenerlo en su equipo como técnico o desarrollador web, no los va a defraudar.`,
+  },
+  leonardo: {
+    description: `John es un Excelente desarrollador, Muy organizado, táctico y proactivo, su código es ordenado y siempre esta
+        atento a los detalles, sin duda es una persona que siempre vendrá bien al equipo!`,
+  },
+  camilo: {
+    description: `
+        Excelente persona, muy entregado a su profesión, y con disposición continúa de estar aprendiendo y mejorando.`,
+  },
+  gabriel: {
+    description: `Excelente profesional, atento al detalle, en búsqueda de mejorar los procesos, con autoaprendizaje y puntualidad
+        en todas sus tareas.`,
+  },
+  esperanza: {
+    description: `He tenido el gusto de trabajar con John diferentes proyectos en 7 años y en cada uno de ellos he encontrado a una persona que propone soluciones, encuentra rutas para hace posible las ideas, construye desde su saber modelos eficientes para lograr los objetivos deseados. 
+
+    Quien tenga el placer de trabajar con él tendrá en su equipo a una persona capacitada, con capacidad de creación, construcción y análisis, lo que se traduce en proyectos exitosos.`,
+  },
+}

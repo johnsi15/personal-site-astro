@@ -1,5 +1,111 @@
 ---
-import SocialInner from '@/pages/portafolio/social.astro'
+import IconoGithub from '@/components/portafolio/icons/icono-github.astro'
+import IconoLinkedin from '@/components/portafolio/icons/icono-linkedin.astro'
+import IconoTwitter from '@/components/portafolio/icons/icono-twitter.astro'
+import IconoFacebook from '@/components/portafolio/icons/icono-facebook.astro'
+import IconoYoutube from '@/components/portafolio/icons/icono-youtube.astro'
+interface Props {
+  borders: boolean
+}
+const { borders } = Astro.props
 ---
 
-<SocialInner />
+<ul class=`social_list ${borders ? 'borders' : ''}`>
+  <li>
+    <a href='https://github.com/johnsi15' aria-label='GitHub' target='_blank' rel='noreferrer'><IconoGithub /></a>
+  </li>
+  <li>
+    <a href='https://www.linkedin.com/in/jandreys15' aria-label='Linkedin' target='_blank' rel='noreferrer'
+      ><IconoLinkedin /></a
+    >
+  </li>
+  <li>
+    <a href='https://twitter.com/johnserranodev' aria-label='Twitter' target='_blank' rel='noreferrer'
+      ><IconoTwitter /></a
+    >
+  </li>
+  <li>
+    <a href='https://www.facebook.com/johnserranodev' aria-label='Facebook' target='_blank' rel='noreferrer'
+      ><IconoFacebook /></a
+    >
+  </li>
+  <li>
+    <a href='https://www.youtube.com/@johnserranodev' aria-label='YouTube' target='_blank' rel='noreferrer'
+      ><IconoYoutube /></a
+    >
+  </li>
+</ul>
+
+<style>
+  .social_list {
+    padding: 0;
+    list-style: none;
+    margin: 10px auto 0;
+    display: flex;
+    gap: 7px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .borders::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    display: inline-block;
+    width: 100px;
+    background-color: var(--color-white-opacity-70);
+    left: -60px;
+  }
+  .borders::before {
+    content: '';
+    position: absolute;
+    height: 1px;
+    display: inline-block;
+    width: 100px;
+    background-color: var(--color-white-opacity-70);
+    right: -60px;
+  }
+
+  li {
+    /* background: var(--color-blue-900); */
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li a {
+    text-decoration: none;
+    color: var(--color-white);
+    position: relative;
+    opacity: 0.7;
+    display: inline-block;
+    text-decoration-skip-ink: auto;
+    padding: 10px;
+    transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  li:hover a {
+    color: var(--color-blue-500);
+  }
+  li:hover {
+    transform: translateY(-3px);
+  }
+
+  @media screen and (max-width: 768px) {
+    .borders::after,
+    .borders::before {
+      width: 60px;
+    }
+
+    .borders::after {
+      left: -5px;
+    }
+    .borders::before {
+      right: -5px;
+    }
+  }
+</style>
