@@ -1,41 +1,5 @@
 ---
-const skills = [
-  'HTML',
-  'CSS',
-  'Docker',
-  'TypeScript',
-  'NodeJS',
-  'ES6',
-  'React',
-  'Google Firebase',
-  'Sass',
-  'JavaScript',
-  'MongoDB',
-  'NextJS',
-  'APIS',
-  'NPM',
-  'Yarn',
-  'Git',
-  'JOI',
-  'HAPI/BOOM',
-  'Astro',
-  'ESLint',
-  'Express',
-  'JWT',
-  'Passport',
-  'Vite',
-  'Zod',
-  'Tailwind CSS',
-  'Bootstrap',
-  'Axios',
-  'GraphQL',
-  'Turso',
-  'Prisma',
-  'Redis',
-  'Drizzle ORM',
-  'WordPress',
-  'Zustand',
-]
+import { skills } from '@/helpers/conts'
 
 const rows: string[][] = [[], [], [], []]
 skills.forEach((skill, i) => rows[i % 4].push(skill))
@@ -48,7 +12,6 @@ skills.forEach((skill, i) => rows[i % 4].push(skill))
       rows.map((row, idx) => (
         <div class={`marquee-row ${idx % 2 === 0 ? 'to-right' : 'to-left'}`}>
           <ul>
-            {/* Duplicamos el array para animación infinita */}
             {row.concat(row).map(skill => (
               <li class='skill'>
                 <span>{skill}</span>
