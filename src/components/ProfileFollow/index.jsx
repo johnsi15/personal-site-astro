@@ -28,7 +28,7 @@ const ProfileFollow = () => {
           </a>
         </li>
         <li>
-          <a href='https://www.linkedin.com/in/jandreys15' aria-label='Linkedin' target='_blank' rel='noreferrer'>
+          <a href='https://www.linkedin.com/in/johnserranodev' aria-label='Linkedin' target='_blank' rel='noreferrer'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               role='img'
