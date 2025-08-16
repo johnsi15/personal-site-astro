@@ -196,7 +196,7 @@ app.listen(3000, () => {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "John Serrano <jandreys15@gmail.com> (https://twitter.com/jandrey15)",
+  "author": "John Serrano <johnserrano@gmail.com> (https://twitter.com/johnserranodev)",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3"

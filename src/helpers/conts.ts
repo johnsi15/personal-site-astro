@@ -49,7 +49,7 @@ export const projects = [
     description:
       'En este proyecto desarrollé un formulario de registro para Geeparts utilizando Brevo para la gestión del envío del correo electrónico. Utilizando la API de Brevo me conecte para enviar los datos del formulario directamente a una lista de contactos.',
     link: 'https://github.com/johnsi15/event-geeparts',
-    externalLink: 'https://www.linkedin.com/in/jandreys15/details/projects/',
+    externalLink: 'https://www.linkedin.com/in/johnserranodev/details/projects/',
     githubLink: 'https://github.com/johnsi15/event-geeparts',
     techList: ['Astro', 'Brevo', 'TailwindCSS'],
   },
