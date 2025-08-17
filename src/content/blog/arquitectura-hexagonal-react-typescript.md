@@ -12,6 +12,7 @@ draft: false
 featureImage: "https://download.johnserrano.co/architecture-hexagonal.webp"
 ---
 
+
 Inspirado por enfoques pragmáticos: menos capas, más claridad. Aquí no seguimos el “purismo” hexagonal; tomamos lo que aporta valor en UI y evitamos sobre-ingeniería.
 
 Objetivo: que alguien que está aprendiendo pueda aplicarlo en 1 tarde.
@@ -44,10 +45,12 @@ Si el proyecto crece o necesitas intercambiar fuentes de datos, añades un repos
 Regla práctica: empieza con tipos. Si luego necesitas comportamiento/validación compleja, refactorizas a clase.
 
 ```typescript
-// src/domain/Product.ts
+// src/core/products/domain/Product.ts
 export type Product = {
-  name: string;
-  image: string;
+  id: number;
+  title: string;
+  description: string;
+  category: string;
   price: number;
 };
 ```
@@ -57,18 +60,35 @@ export type Product = {
 Aísla fetch/axios en un único punto. Centralizas errores y auth. Si cambias fetch por axios, solo tocas aquí.
 
 ```typescript
-// src/infrastructure/APIClient.ts
+// src/core/api-client.ts
 export class APIClient {
-  constructor(private readonly baseUrl: string, private readonly fetchImpl: typeof fetch = fetch) {}
+  constructor(
+    private readonly baseURL: string,
+    private readonly fetchImpl: typeof fetch = fetch
+  ) {}
 
-  async get<T>(path: string): Promise<T> {
-    const res = await this.fetchImpl(`${this.baseUrl}${path}`);
-    if (!res.ok) {
-      // Manejo de errores muy simple para el ejemplo
-      const msg = `HTTP ${res.status} al GET ${path}`;
-      throw new Error(msg);
+  async get<T>(endpoint: string): Promise<T> {
+    const response = await this.fetchImpl(`${this.baseURL}${endpoint}`);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`);
     }
-    return res.json() as Promise<T>;
+    
+    return response.json();
+  }
+
+  async post<T>(endpoint: string, data: unknown): Promise<T> {
+    const response = await this.fetchImpl(`${this.baseURL}${endpoint}`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    
+    if (!response.ok) {
+      throw new Error(`HTTP Error: ${response.status} - ${response.statusText}`);
+    }
+    
+    return response.json();
   }
 }
 ```
@@ -77,20 +97,47 @@ export class APIClient {
 
 Empieza simple: sin repositorio. Orquesta la llamada y devuelve dominio directamente.
 
+Hay dos enfoques principales:
+
+**Enfoque 1: Auto-contenido**
 ```typescript
-// src/application/ListProducts.ts
+// src/core/products/application/ListProducts.ts
 import type { Product } from "../domain/Product";
-import { APIClient } from "../infrastructure/APIClient";
+import { APIClient } from "../../api-client";
 
 export class ListProducts {
-  constructor(private readonly api: APIClient) {}
+  private readonly apiClient: APIClient
 
-  async execute(): Promise<Product[]> {
-    // Aquí podrías mapear/filtrar/ordenar si hace falta
-    return this.api.get<Product[]>("/products");
+  constructor() {
+    this.apiClient = new APIClient()
+  }
+
+  async getProducts(): Promise<Product[]> {
+    const response = await this.apiClient.get<{ products: Product[] }>('/products')
+    return response.products
   }
 }
 ```
+
+**Enfoque 2: Inyección de dependencias**
+```typescript
+// src/application/ListProductsWithDI.ts
+import type { Product } from "../domain/Product";
+import { APIClient } from "../infrastructure/APIClient";
+
+export class ListProductsWithDI {
+  constructor(private readonly api: APIClient) {}
+
+  async execute(): Promise<Product[]> {
+    const response = await this.api.get<{ products: Product[] }>("/products");
+    return response.products;
+  }
+}
+```
+
+**¿Cuál elegir?**
+- **Auto-contenido**: Más simple para prototipos y casos simples. Menos configuración inicial.
+- **Inyección**: Más testeable y flexible. Mejor para casos complejos donde necesitas diferentes configuraciones.
 
 ### ¿Qué es un DTO y cuándo usarlo?
 
@@ -114,9 +161,9 @@ Ejemplo con DTO y mapeo en el caso de uso:
 ```typescript
 // src/application/ProductDTO.ts
 export type ProductDTO = {
-  name: string;
-  imageUrl: string;   // renombrado para la UI
-  displayPrice: string; // precio formateado
+  title: string;          // mantiene el nombre original
+  imageUrl: string;       // renombrado desde thumbnail para la UI
+  displayPrice: string;   // precio formateado
 };
 ```
 
@@ -127,13 +174,17 @@ import type { ProductDTO } from "./ProductDTO";
 import { APIClient } from "../infrastructure/APIClient";
 
 export class ListProductsWithDTO {
-  constructor(private readonly api: APIClient) {}
+  private readonly apiClient: APIClient
 
-  async execute(): Promise<ProductDTO[]> {
-    const products = await this.api.get<Product[]>("/products");
-    return products.map(p => ({
-      name: p.name,
-      imageUrl: p.image,
+  constructor() {
+    this.apiClient = new APIClient()
+  }
+
+  async getProducts(): Promise<ProductDTO[]> {
+    const response = await this.apiClient.get<{ products: Product[] }>("/products");
+    return response.products.map(p => ({
+      title: p.title,
+      imageUrl: p.thumbnail,
       displayPrice: `$${p.price.toFixed(2)}`,
     }));
   }
@@ -149,17 +200,14 @@ Idea práctica:
 Mantén la UI enfocada en presentar datos y gestionar estado/errores.
 
 ```tsx
-// src/ui/HomePage.tsx
+// src/components/products/products-list.tsx
 import React, { useEffect, useState } from "react";
-import type { Product } from "../domain/Product";
-import { APIClient } from "../infrastructure/APIClient";
-import { ListProducts } from "../application/ListProducts";
-// Si prefieres DTO, importa ListProductsWithDTO y ProductDTO en su lugar.
+import type { Product } from "../../core/products/domain/Product";
+import { ListProducts } from "../../core/products/application/ListProducts";
 
-const api = new APIClient(import.meta.env.VITE_API_URL ?? "https://api.example.com");
-const listProducts = new ListProducts(api);
+const listProducts = new ListProducts();
 
-export const HomePage: React.FC = () => {
+export const ProductsList: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -168,8 +216,8 @@ export const HomePage: React.FC = () => {
     let mounted = true;
     (async () => {
       try {
-        const data = await listProducts.execute();
-        if (mounted) setProducts(data);
+        const data = await listProducts.getProducts();
+        if (mounted) setProducts(data.slice(0, 2)); // Solo mostrar 2 productos
       } catch (e: any) {
         if (mounted) setError(e?.message ?? "No se pudo cargar productos");
       } finally {
@@ -184,13 +232,17 @@ export const HomePage: React.FC = () => {
 
   return (
     <div>
-      <h1>Productos</h1>
+      <h1>
+        Lista de productos ({products.length} productos encontrados)
+      </h1>
       <ul>
-        {products.map((p, index) => (
-          <li key={p.name} data-testid={`product-id-${index}`}>
-            <img src={p.image} alt={p.name} width={80} height={80} />
-            <h3>{p.name}</h3>
-            <p>Precio: ${p.price}</p>
+        {products.map((product, index) => (
+          <li key={product.title} data-testid={'product-id-' + index}>
+            <div>
+              <img src={product.thumbnail} alt={product.title} width={80} height={80} />
+              <h3>{product.title}</h3>
+              <p>Precio: ${product.price}</p>
+            </div>
           </li>
         ))}
       </ul>
@@ -211,7 +263,7 @@ Añádelos cuando:
 ## Puerto de repositorio (dominio)
 
 ```typescript
-// src/domain/ProductRepository.ts
+// src/core/products/domain/ProductRepository.ts
 import type { Product } from "./Product";
 
 export interface ProductRepository {
@@ -223,14 +275,16 @@ export interface ProductRepository {
 
 ```typescript
 // src/infrastructure/HttpProductRepository.ts
-import type { Product } from "../domain/Product";
-import type { ProductRepository } from "../domain/ProductRepository";
-import { APIClient } from "./APIClient";
+import type { Product } from "../core/products/domain/Product";
+import type { ProductRepository } from "../core/products/domain/ProductRepository";
+import { APIClient } from "../core/api-client";
 
 export class HttpProductRepository implements ProductRepository {
   constructor(private readonly api: APIClient) {}
-  getProducts(): Promise<Product[]> {
-    return this.api.get<Product[]>("/products");
+  
+  async getProducts(): Promise<Product[]> {
+    const response = await this.api.get<{ products: Product[] }>("/products");
+    return response.products;
   }
 }
 ```
@@ -244,7 +298,8 @@ import type { ProductRepository } from "../domain/ProductRepository";
 
 export class ListProductsWithRepo {
   constructor(private readonly repo: ProductRepository) {}
-  execute(): Promise<Product[]> {
+  
+  async getProducts(): Promise<Product[]> {
     // Si solo delega, cuestiónate si esta capa aporta valor (Middle Man).
     return this.repo.getProducts();
   }
@@ -255,21 +310,21 @@ export class ListProductsWithRepo {
 
 ```typescript
 // src/app/composition.ts
-import { APIClient } from "../infrastructure/APIClient";
+import { APIClient } from "../core/api-client";
 import { HttpProductRepository } from "../infrastructure/HttpProductRepository";
 import { ListProductsWithRepo } from "../application/ListProductsWithRepo";
 
-const api = new APIClient(import.meta.env.VITE_API_URL ?? "https://api.example.com");
+const api = new APIClient();
 const repo = new HttpProductRepository(api);
 
 // Si quisieras memoria, bastaría con cambiar la implementación del puerto:
-// const repo = new InMemoryProductRepository([{ name: "A", image: "/a.png", price: 10 }]);
+// const repo = new InMemoryProductRepository([{ title: "A", thumbnail: "/a.png", price: 10 }]);
 
 export const listProducts = new ListProductsWithRepo(repo);
 ```
 
 Cómo funciona en la práctica:
-- La UI usa listProducts.execute().
+- La UI usa listProducts.getProducts().
 - Si mañana cambias de REST a GraphQL o a IndexedDB, implementas otro repositorio y no tocas ni UI ni casos de uso (salvo wiring).
 
 ### (Mis) Problemas con ejemplos
@@ -280,14 +335,20 @@ Si tu caso es casi-CRUD y el reto principal está en la UX/estado, no en reglas 
 
 Ejemplo suficiente para empezar:
 ```typescript
-// src/application/ListProducts.ts
+// src/core/products/application/ListProducts.ts
 import type { Product } from "../domain/Product";
-import { APIClient } from "../infrastructure/APIClient";
+import { APIClient } from "../../api-client";
 
 export class ListProducts {
-  constructor(private readonly api: APIClient) {}
-  execute(): Promise<Product[]> {
-    return this.api.get<Product[]>("/products");
+  private readonly apiClient: APIClient
+
+  constructor() {
+    this.apiClient = new APIClient()
+  }
+
+  async getProducts(): Promise<Product[]> {
+    const response = await this.apiClient.get<{ products: Product[] }>('/products')
+    return response.products
   }
 }
 ```
@@ -328,8 +389,10 @@ import { APIClient } from "../infrastructure/APIClient";
 
 export class ListProductsSimple {
   constructor(private readonly api: APIClient) {}
-  execute(): Promise<Product[]> {
-    return this.api.get<Product[]>("/products");
+  
+  async execute(): Promise<Product[]> {
+    const response = await this.api.get<{ products: Product[] }>("/products");
+    return response.products;
   }
 }
 ```
@@ -389,7 +452,11 @@ export class ListProductsToDTO {
   constructor(private readonly repo: ProductRepository) {}
   async execute(): Promise<ProductDTO[]> {
     const products = await this.repo.getProducts();
-    return products.map(p => ({ name: p.name, imageUrl: p.image, displayPrice: `$${p.price.toFixed(2)}` }));
+    return products.map(p => ({ 
+      title: p.title, 
+      imageUrl: p.thumbnail, 
+      displayPrice: `$${p.price.toFixed(2)}` 
+    }));
   }
 }
 ```
@@ -419,8 +486,8 @@ import axios from "axios";
 
 export class ListProductsAxiosInline {
   async execute(): Promise<Product[]> {
-    const res = await axios.get<Product[]>(`https://.../products`);
-    return res.data;
+    const res = await axios.get<{ products: Product[] }>(`https://dummyjson.com/products`);
+    return res.data.products;
   }
 }
 // Funciona, pero mezclas infraestructura (axios) en aplicación.
@@ -460,8 +527,9 @@ import { APIClientAxios } from "../infrastructure/APIClientAxios";
 
 export class ListProductsWithAPIClientAxios {
   constructor(private readonly api: APIClientAxios) {}
-  execute(): Promise<Product[]> {
-    return this.api.get<Product[]>("/products");
+  async execute(): Promise<Product[]> {
+    const response = await this.api.get<{ products: Product[] }>("/products");
+    return response.products;
   }
 }
 ```
@@ -492,16 +560,19 @@ import type { Product } from "../../domain/Product";
 import { ListProductsWithAPIClientAxios } from "../ListProductsWithAPIClientAxios";
 
 class FakeAPI {
-  constructor(private readonly data: Product[]) {}
+  constructor(private readonly data: { products: Product[] }) {}
   async get<T>(_path: string): Promise<T> {
     return this.data as unknown as T;
   }
 }
 
 test("devuelve productos desde el adapter", async () => {
-  const fake = new FakeAPI([{ name: "A", image: "/a.png", price: 10 }]);
+  const fake = new FakeAPI({ 
+    products: [{ title: "A", thumbnail: "/a.png", price: 10 } as Product] 
+  });
   const usecase = new ListProductsWithAPIClientAxios(fake as any);
-  await expect(usecase.execute()).resolves.toHaveLength(1);
+  const result = await usecase.execute();
+  expect(result).toHaveLength(1);
 });
 ```
 
@@ -537,20 +608,22 @@ Cómo testear esta funcionalidad:
 Ejemplo con MSW:
 
 ```typescript
-// src/ui/HomePage.test.tsx
+// src/tests/App.test.tsx
 import { render, screen } from "@testing-library/react";
-import { rest } from "msw";
 import { setupServer } from "msw/node";
+import { http, HttpResponse } from "msw";
 import React from "react";
-import { HomePage } from "./HomePage";
+import { ProductsList } from "../components/products/products-list";
 
-const apiUrl = "https://api.example.com";
+const apiUrl = "https://dummyjson.com/products";
 const server = setupServer(
-  rest.get(`${apiUrl}/products`, (_req, res, ctx) =>
-    res(ctx.json([
-      { name: "Product Zero", image: "/img0.png", price: 10 },
-      { name: "Product One", image: "/img1.png", price: 15 },
-    ]))
+  http.get(`${apiUrl}/products`, () =>
+    HttpResponse.json({
+      products: [
+        { title: "Essence Mascara Lash Princess", thumbnail: "/img0.png", price: 10 },
+        { title: "Eyeshadow Palette with Mirror", thumbnail: "/img1.png", price: 15 },
+      ]
+    })
   )
 );
 
@@ -558,21 +631,18 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-// Ajusta según tu runner (Vitest/Jest). Con Vitest podrías hacer:
-// vi.stubEnv("VITE_API_URL", apiUrl);
-
 test("muestra productos al cargar", async () => {
-  render(<HomePage />);
+  render(<ProductsList />);
   const items = await screen.findAllByTestId(/product-id-\d+/);
   expect(items).toHaveLength(2);
-  expect(screen.getByText("Product Zero")).toBeInTheDocument();
-  expect(screen.getByText("Product One")).toBeInTheDocument();
+  expect(screen.getByText("Essence Mascara Lash Princess")).toBeInTheDocument();
+  expect(screen.getByText("Eyeshadow Palette with Mirror")).toBeInTheDocument();
 });
 
 test("muestra error si la API falla", async () => {
-  server.use(rest.get(`${apiUrl}/products`, (_req, res, ctx) => res(ctx.status(500))));
-  render(<HomePage />);
-  const error = await screen.findByText(/No se pudo cargar productos|HTTP 500/);
+  server.use(http.get(`${apiUrl}/products`, () => HttpResponse.error()));
+  render(<ProductsList />);
+  const error = await screen.findByText(/No se pudo cargar productos|HTTP Error/);
   expect(error).toBeInTheDocument();
 });
 ```
@@ -588,10 +658,10 @@ E2E con Playwright (idea, sin código extenso):
 
 Que el repo “grite” el dominio. En vez de “components/services/utils”, prefiere por feature:
 
-- src/domain/Product.ts
-- src/application/ListProducts.ts
-- src/infrastructure/APIClient.ts
-- src/ui/HomePage.tsx
+- src/core/products/domain/Product.ts
+- src/core/products/application/ListProducts.ts
+- src/core/api-client.ts
+- src/components/products/products-list.tsx
 
 Cuando la app crezca, separa por features (products, cart, auth) manteniendo esta idea.
 
@@ -609,6 +679,8 @@ En próximos artículos voy a traer uno sobre Screaming Architecture.
 ### Conclusión
 - Ponemos en el centro el dominio (si lo hay), pero priorizamos simplicidad: no siempre necesitas capas intermedias entre lógica de aplicación, fuente de datos y UI.
 - Testea donde más valor aporta: UI sociable con MSW y un E2E de humo con Playwright. Si el dominio crece, añade repositorios y tests unitarios rápidos en memoria.
+
+Puedes encontrar el código completo del ejemplo en [GitHub](https://github.com/johnsi15/tutoriales/tree/main/ia-engineer-context/example-react).
 
 ### Glosario (términos clave)
 
@@ -647,5 +719,3 @@ export class ListProductsMiddleMan {
 - Relación con otros tests:
   - Complementa a los tests de UI con MSW (rápidos y representativos en local/CI).
   - No reemplaza tests unitarios donde haya lógica compleja: si el dominio crece, añádelos.
-
-
