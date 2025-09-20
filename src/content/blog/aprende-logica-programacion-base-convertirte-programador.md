@@ -9,7 +9,7 @@ primaryTag: { name: 'Lógica de programación', slug: 'logica' }
 excerpt: "Descubre cómo la lógica de programación se convierte en el primer paso para pensar como programador. Aprende sus fundamentos, ejemplos prácticos y recursos modernos para comenzar desde cero."
 canonicalURL: "https://johnserrano.co/blog/aprende-logica-programacion-base-convertirte-programador"
 draft: false
-featureImage: "https://res.cloudinary.com/john-serrano/image/upload/v1697643034/John%20Serrano/Blog%20Post/codigo-limpio-en-javascript-deuda-tecnica-refactorizacion/k69ul2yssn9t83xwirqm.webp"
+featureImage: "https://download.johnserrano.co/logica-dev.webp"
 ---
 
 ¿Quieres aprender a programar y no sabes por dónde empezar?  
