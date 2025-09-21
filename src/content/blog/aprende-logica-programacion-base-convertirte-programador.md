@@ -33,7 +33,7 @@ La lógica de programación es la **técnica para organizar y planificar instruc
 
 En otras palabras: es aprender a traducir ideas en pasos claros que una computadora pueda entender y ejecutar.  
 
-El reto del programador es estructurar esas instrucciones de manera precisa, porque las máquinas no entienden mensajes subjetivos. Para ellas, **cada paso debe estar escrito en el orden correcto y sin ambigüedades**.  
+El reto del programador es estructurar esas instrucciones de manera precisa, porque las máquinas no entienden mensajes subjetivos. Para ellas, **cada paso debe estar escrito en el orden correcto y sin ambigüedades**.
 
 ### ¿Qué es un algoritmo?  
 
@@ -95,6 +95,10 @@ Por ejemplo, tu rutina al despertar puede verse como un algoritmo:
 Incluso aquí puedes identificar **variables** y **constantes**: el clima del día puede variar (variable), pero cepillarte los dientes siempre es un paso fijo (constante).
 
 Ejercicios como este son una gran forma de entrenar tu razonamiento lógico antes de dar el salto al código.
+
+## 🎥 Te dejo un vídeo donde te explico ejercicios de lógica:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2cfSTWHb0iY?si=UWw7nrl2x9P2qDdS" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowfullscreen loading="lazy"></iframe>
 
 ### ¿Dónde aprender lógica de programación?
 
