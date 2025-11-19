@@ -128,7 +128,7 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(Object.fromEntries(formData)),
+        body: JSON.stringify(Object.fromEntries(formData.entries())),
       })
 
       if (!res.ok) {
@@ -147,7 +147,6 @@ import ExampleEmail from '../components/ExampleEmail.astro'
       if (res.status !== 204) {
         data = await res.json()
       }
-      console.info({ data, res })
 
       submitter.disabled = false
 
