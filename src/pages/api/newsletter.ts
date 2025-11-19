@@ -53,7 +53,12 @@ export const POST: APIRoute = async ({ request }) => {
     try {
       const response = await fetch(url, options)
 
+      console.info('Response status:', response.status)
+      console.info('Request IP (aprox):', request.headers.get('x-forwarded-for'))
+
       if (!response.ok) {
+        const errorData = await response.json() // Captura el body del error
+        console.error('Error de Brevo completo:', JSON.stringify(errorData))
         return res({ message: 'Bad request' }, { status: 400, statusText: response.statusText })
       }
 
