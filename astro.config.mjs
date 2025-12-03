@@ -4,7 +4,8 @@ import sitemap from '@astrojs/sitemap'
 import vercel from '@astrojs/vercel/serverless'
 import react from '@astrojs/react'
 import partytown from '@astrojs/partytown'
-import tailwind from '@astrojs/tailwind'
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
@@ -21,8 +22,10 @@ export default defineConfig({
       wrap: true,
     },
   },
+
   site: 'https://johnserrano.co/',
   trailingSlash: 'never',
+
   integrations: [
     mdx(),
     sitemap(),
@@ -59,12 +62,17 @@ export default defineConfig({
         debug: false,
       },
     }),
-    tailwind(),
   ],
-  output: 'hybrid',
+
+  output: 'server',
+
   adapter: vercel({
     webAnalytics: {
       enabled: true,
     },
   }),
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 })
