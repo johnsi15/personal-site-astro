@@ -9,6 +9,16 @@ export const projects = [
     techList: ['ReactJS', 'Zustand', 'TypeScript'],
   },
   {
+    title: 'Geeparts Ecommerce',
+    description:
+      'He tenido el privilegio de crear y configurar "Geeparts", una tienda en línea que satisface las necesidades de entusiastas de las dos ruedas. Esta plataforma, construida con la versátil solución de Tienda Nube y respaldada por la seguridad de Open Pay como pasarela de pagos en línea, ofrece una experiencia de compra sin igual. Trabajar en Geeparts ha sido un proyecto emocionante, y estoy orgulloso de haber contribuido una plataforma en línea que ofrece todo lo que los amantes de las motos necesitan.',
+    link: 'https://geeparts.co/',
+    externalLink: 'https://geeparts.co/',
+    githubLink: '',
+    techList: ['HTML5', 'CSS', 'JavaScript', 'Tienda Nube', 'Ecommerce'],
+    image: '/portafolio/projects/geeparts.webp',
+  },
+  {
     title: 'HallowStick',
     description:
       'HallowStick te permite generar imágenes personalizadas con temáticas de Halloween, incluyendo calabazas, brujas, fantasmas y zombies, agregando un toque creativo tipo sticker. 🧟 Estas imágenes se pueden descargar y compartir fácilmente en redes sociales, como WhatsApp y otras plataformas, ofreciendo una forma divertida de celebrar Halloween y sorprender a tus amigos con diseños únicos.',
@@ -111,6 +121,16 @@ export const projects = [
 
 export const featuredProjects = [
   {
+    title: 'Biblia Quiz',
+    description:
+      'Biblia Quiz es una plataforma web interactiva desarrollada con NextJS y TypeScript, que utiliza inteligencia artificial para crear cuestionarios y juegos bíblicos personalizados. Gracias a la integración de AI SDK y Zod, ofrece validaciones robustas y experiencias dinámicas. El proyecto emplea TailwindCSS para una interfaz moderna y responsiva, y Zustand para la gestión eficiente del estado.',
+    link: 'https://bibliaquiz.com/',
+    externalLink: 'https://bibliaquiz.com/',
+    githubLink: '',
+    techList: ['NextJS', 'AI SDK', 'zustand', 'TypeScript', 'TailwindCSS'],
+    image: '/portafolio/projects/biblia-quiz.webp',
+  },
+  {
     title: 'Linknote',
     description:
       'Linknote es una plataforma web creada para que desarrolladores de todos los niveles puedan guardar, organizar y descubrir enlaces útiles relacionados con la programación de manera intuitiva y eficiente. Imagina un centro personal y colaborativo donde encontrar recursos, documentación, tutoriales o compartir tus hallazgos es cuestión de segundos.',
@@ -129,16 +149,6 @@ export const featuredProjects = [
     githubLink: '',
     techList: ['NextJS', 'WordPress', 'TailwindCSS', 'PhotoSwipe', 'PdfLib'],
     image: '/portafolio/projects/top-autos-project.webp',
-  },
-  {
-    title: 'Geeparts Ecommerce',
-    description:
-      'He tenido el privilegio de crear y configurar "Geeparts", una tienda en línea que satisface las necesidades de entusiastas de las dos ruedas. Esta plataforma, construida con la versátil solución de Tienda Nube y respaldada por la seguridad de Open Pay como pasarela de pagos en línea, ofrece una experiencia de compra sin igual. Trabajar en Geeparts ha sido un proyecto emocionante, y estoy orgulloso de haber contribuido una plataforma en línea que ofrece todo lo que los amantes de las motos necesitan.',
-    link: 'https://geeparts.co/',
-    externalLink: 'https://geeparts.co/',
-    githubLink: '',
-    techList: ['HTML5', 'CSS', 'JavaScript', 'Tienda Nube', 'Ecommerce'],
-    image: '/portafolio/projects/geeparts.webp',
   },
 ]
 
