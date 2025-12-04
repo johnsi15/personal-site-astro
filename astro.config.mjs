@@ -5,7 +5,7 @@ import vercel from '@astrojs/vercel/serverless'
 import react from '@astrojs/react'
 import partytown from '@astrojs/partytown'
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from '@tailwindcss/vite'
 
 // https://astro.build/config
 export default defineConfig({
@@ -64,7 +64,7 @@ export default defineConfig({
     }),
   ],
 
-  output: 'server',
+  output: 'static',
 
   adapter: vercel({
     webAnalytics: {
