@@ -15,8 +15,7 @@ export const projects = [
     link: 'https://geeparts.co/',
     externalLink: 'https://geeparts.co/',
     githubLink: '',
-    techList: ['HTML5', 'CSS', 'JavaScript', 'Tienda Nube', 'Ecommerce'],
-    image: '/portafolio/projects/geeparts.webp',
+    techList: ['HTML5', 'CSS', 'JavaScript', 'E-comm'],
   },
   {
     title: 'HallowStick',

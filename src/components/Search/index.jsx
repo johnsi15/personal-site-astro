@@ -8,15 +8,10 @@ const Search = () => {
   // console.log('This is state the component -> ', state)
 
   return (
-    <div id="Search_content" className={styles.Search}>
+    <div id='Search_content' className={styles.Search}>
       <form className={styles.search__form} onSubmit={handleSubmit}>
         <label>
-          <input
-            type='text'
-            value={search}
-            placeholder='Algolia'
-            onChange={onChange}
-          />
+          <input type='text' value={search} placeholder='Algolia' onChange={onChange} className='bg-white' />
         </label>
         <button type='submit'>Buscar</button>
       </form>
@@ -25,10 +20,7 @@ const Search = () => {
           {data.map(({ id, title, slug }) => {
             return (
               <article className={styles['post-item']} key={id}>
-                <a
-                  className={styles.title}
-                  href={`/blog/${encodeURIComponent(slug)}`}
-                >
+                <a className={styles.title} href={`/blog/${encodeURIComponent(slug)}`}>
                   {title}
                 </a>
               </article>
