@@ -1,7 +1,7 @@
 {
   "name": "personal-site-astro",
   "type": "module",
-  "version": "4.0.1",
+  "version": "5.16.4",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -13,27 +13,27 @@
   "author": "John Serrano",
   "license": "MIT",
   "dependencies": {
-    "@astrojs/mdx": "2.3.0",
-    "@astrojs/react": "3.3.0",
-    "@astrojs/rss": "4.0.5",
-    "@astrojs/sitemap": "3.1.2",
-    "@astrojs/tailwind": "5.1.0",
-    "@astrojs/vercel": "7.5.3",
+    "@astrojs/mdx": "4.3.12",
+    "@astrojs/react": "4.4.2",
+    "@astrojs/rss": "4.0.14",
+    "@astrojs/sitemap": "3.6.0",
+    "@astrojs/vercel": "9.0.2",
     "@fontsource/source-sans-pro": "^5.0.8",
     "@justinribeiro/lite-youtube": "1.7.1",
     "@splidejs/splide": "4.1.4",
     "@splidejs/splide-extension-grid": "0.4.1",
+    "@tailwindcss/vite": "4.1.17",
     "algoliasearch": "4.23.3",
     "aos": "2.3.4",
-    "astro": "4.6.1",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "tailwindcss": "3.4.3",
-    "tailwindcss-animated": "^1.1.2"
+    "astro": "5.16.4",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "tailwindcss": "4.1.17",
+    "tailwindcss-animated": "2.0.0"
   },
   "devDependencies": {
     "@astrojs/partytown": "2.0.4",
-    "@types/react": "18.2.77",
-    "@types/react-dom": "18.2.25"
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3"
   }
 }

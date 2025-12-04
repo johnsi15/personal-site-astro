@@ -4,6 +4,8 @@
   License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
  */
 
+@import 'tailwindcss';
+
 :root {
   --width: 1000px;
   --font-scael: 1em;
@@ -79,10 +81,10 @@ body {
     overflow: hidden;
   }
 
-  body.blur_custom main>*,
+  body.blur_custom main > *,
   body.blur_custom .header__menu #Search_content,
-  body.blur_custom #Blog>*,
-  body.blur_custom #Posts>*,
+  body.blur_custom #Blog > *,
+  body.blur_custom #Posts > *,
   body.blur_custom #Sobre-mi {
     filter: blur(5px) brightness(0.7);
     transition: var(--transition);
