@@ -1,5 +1,14 @@
 export const projects = [
   {
+    title: 'Top Autos',
+    description:
+      'Tuve el placer de desarrollar este increíble proyecto, Top Autos, una plataforma de venta de autos nuevos y usados al estilo tucarro.com. El proyecto cuenta con múltiples filtros, diversas categorías, y una hermosa galería con funcionalidad de zoom. Lo desarrollé con Next.js, utilizando WordPress como un headless CMS para gestionar toda la data, configurando varios plugins para optimizar su funcionamiento.',
+    link: 'https://topautos.com.co/',
+    externalLink: 'https://topautos.com.co/',
+    githubLink: '',
+    techList: ['NextJS', 'WordPress', 'TailwindCSS'],
+  },
+  {
     title: 'Catalítico',
     description:
       'Desarrollé el sitio web principal de Catalítico utilizando React, TypeScript y Tailwind CSS, logrando una interfaz moderna, responsiva y optimizada para velocidad. Diseñé y programé un panel de administración interno para Catalítico, permitiendo a los editores gestionar dinámicamente secciones del homepage: agregar textos, activar/desactivar bloques y reorganizar módulos visuales.',
@@ -130,6 +139,16 @@ export const featuredProjects = [
     image: '/portafolio/projects/biblia-quiz.webp',
   },
   {
+    title: 'El Pilon',
+    description:
+      'El Pilón es un medio de comunicación digital cuyo backend está desarrollado en WordPress y el frontend en NextJS. Toda la información se consume mediante GraphQL, con queries personalizadas creadas en WordPress. Además, se implementó Redis para optimizar el rendimiento y la gestión de caché, logrando una plataforma ágil y escalable.',
+    link: 'https://elpilon.com.co/',
+    externalLink: 'https://elpilon.com.co/',
+    githubLink: '',
+    techList: ['NextJS', 'WordPress', 'TailwindCSS', 'TypeScript', 'GraphQL'],
+    image: '/portafolio/projects/el-pilon.webp',
+  },
+  {
     title: 'Linknote',
     description:
       'Linknote es una plataforma web creada para que desarrolladores de todos los niveles puedan guardar, organizar y descubrir enlaces útiles relacionados con la programación de manera intuitiva y eficiente. Imagina un centro personal y colaborativo donde encontrar recursos, documentación, tutoriales o compartir tus hallazgos es cuestión de segundos.',
@@ -138,16 +157,6 @@ export const featuredProjects = [
     githubLink: 'https://github.com/johnsi15/linknote',
     techList: ['NextJS', 'Clerk', 'Turso', 'Drizzle ORM', 'Zod'],
     image: '/portafolio/projects/linknotedev.webp',
-  },
-  {
-    title: 'Top Autos',
-    description:
-      'Tuve el placer de desarrollar este increíble proyecto, Top Autos, una plataforma de venta de autos nuevos y usados al estilo tucarro.com. El proyecto cuenta con múltiples filtros, diversas categorías, y una hermosa galería con funcionalidad de zoom. Lo desarrollé con Next.js, utilizando WordPress como un headless CMS para gestionar toda la data, configurando varios plugins para optimizar su funcionamiento.',
-    link: 'https://topautos.com.co/',
-    externalLink: 'https://topautos.com.co/',
-    githubLink: '',
-    techList: ['NextJS', 'WordPress', 'TailwindCSS', 'PhotoSwipe', 'PdfLib'],
-    image: '/portafolio/projects/top-autos-project.webp',
   },
 ]
 
