@@ -1,6 +1,28 @@
 ---
 import '@splidejs/splide/css'
 import '@splidejs/splide/css/core'
+import { projects } from '../../helpers/conts'
+
+// Mapeo de proyectos con imágenes (ajusta según tus imágenes disponibles)
+const projectImages: Record<string, string> = {
+  'Top Autos': '/portafolio/projects/top-autos-project.webp',
+  'Geeparts Ecommerce': '/servicios/works/work-1.webp',
+  "Chica Q'hubo Cúcuta": '/servicios/works/chicaqhubo.webp',
+  'Resultados Elecciones Regionales Colombia 2023': '/servicios/works/elecciones.webp',
+  'Revista La Ó': '/servicios/works/la-o.webp',
+  'Ingresos y Gastos': '/servicios/works/contabilidad.webp',
+  'Portafolio para Clientes': '/servicios/works/module-portafolio.webp',
+}
+
+// Función para extraer el tipo de proyecto de la descripción
+const getProjectType = (description: string): string => {
+  if (description.toLowerCase().includes('tienda')) return 'Tienda en Línea'
+  if (description.toLowerCase().includes('api')) return 'API REST'
+  if (description.toLowerCase().includes('módulo')) return 'Módulo'
+  if (description.toLowerCase().includes('aplicación')) return 'Aplicación Web'
+  if (description.toLowerCase().includes('revista')) return 'Página Web'
+  return 'Sitio Web'
+}
 ---
 
 <section class='trabajos' id='trabajos'>
@@ -11,112 +33,23 @@ import '@splidejs/splide/css/core'
   <div id='splide-works' class='splide' aria-label='Works'>
     <div class='splide__track'>
       <ul class='splide__list'>
-        <li class='splide__slide'>
-          <a href='https://geeparts.co/' target='_blank'>
-            <img src='/servicios/works/work-1.webp' alt='Geeparts' width='360' height='380' loading='lazy' />
-            <h3 class='title'>Geeparts</h3>
-            <p class='text'>Tienda en Línea</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://especiales.laopinion.com.co/transito/index.html' target='_blank'>
-            <img
-              src='/servicios/works/especial-transito.webp'
-              alt='Especial transito'
-              width='360'
-              height='380'
-              loading='lazy'
-            />
-            <h3 class='title'>Especial de Tránsito</h3>
-            <p class='text'>Landing Page</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://codesandbox.io/s/echarts-map-colombia-4etjj2' target='_blank'>
-            <img
-              src='/servicios/works/elecciones.webp'
-              alt='Elecciones Resultados'
-              width='360'
-              height='380'
-              loading='lazy'
-            />
-            <h3 class='title'>Elecciones Resultados</h3>
-            <p class='text'>Módulo</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://especiales.laopinion.com.co/frontera/index.html' target='_blank'>
-            <img
-              src='/servicios/works/especial-frontera.webp'
-              alt='Especial Frontera'
-              width='360'
-              height='380'
-              loading='lazy'
-            />
-            <h3 class='title'>Especial Frontera</h3>
-            <p class='text'>Landing Page</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://qhubocucuta.com/chicaqhubo' target='_blank'>
-            <img src='/servicios/works/chicaqhubo.webp' alt='Chica Qhubo' width='360' height='380' loading='lazy' />
-            <h3 class='title'>Chica Qhubo</h3>
-            <p class='text'>Sitio Web</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://contabilidad.johnserrano.co/' target='_blank'>
-            <img
-              src='/servicios/works/contabilidad.webp'
-              alt='Ingresos y Gastos'
-              width='360'
-              height='380'
-              loading='lazy'
-            />
-            <h3 class='title'>Ingresos y Gastos</h3>
-            <p class='text'>Aplicación Web</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://johnserrano.co/' target='_blank'>
-            <img src='/servicios/works/personal-site.webp' alt='John Serrano' width='360' height='380' loading='lazy' />
-            <h3 class='title'>Sitio Web Personal</h3>
-            <p class='text'>Sitio Web</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://www.laopinion.com.co/' target='_blank'>
-            <img
-              src='/servicios/works/module-portafolio.webp'
-              alt='John Serrano'
-              width='360'
-              height='380'
-              loading='lazy'
-            />
-            <h3 class='title'>Portafolio para Clientes</h3>
-            <p class='text'>Módulo</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://www.laopinion.com.co/centro-de-preferencias' target='_blank'>
-            <img
-              src='/servicios/works/centro-preferencias.webp'
-              alt='John Serrano'
-              width='360'
-              height='380'
-              loading='lazy'
-            />
-            <h3 class='title'>Centro de Preferencias</h3>
-            <p class='text'>Página Web con Admin</p>
-          </a>
-        </li>
-        <li class='splide__slide'>
-          <a href='https://www.laopinion.com.co/la-o' target='_blank'>
-            <img src='/servicios/works/la-o.webp' alt='John Serrano' width='360' height='380' loading='lazy' />
-            <h3 class='title'>Revista La Ó</h3>
-            <p class='text'>Página Web</p>
-          </a>
-        </li>
+        {
+          projects.map(project => (
+            <li class='splide__slide'>
+              <a href={project.externalLink} target='_blank' rel='noopener noreferrer'>
+                <img
+                  src={projectImages[project.title] || '/servicios/works/default.webp'}
+                  alt={project.title}
+                  width='360'
+                  height='380'
+                  loading='lazy'
+                />
+                <h3 class='title'>{project.title}</h3>
+                <p class='text'>{getProjectType(project.description)}</p>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -197,14 +130,18 @@ import '@splidejs/splide/css/core'
     margin: 0;
   }
 
+  .splide__list .splide__slide img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+  }
+
   @media screen and (max-width: 768px) {
     .trabajos {
       height: auto;
     }
-    .trabajos ul img {
-      width: 100%;
+    .splide__list .splide__slide img {
       height: auto;
-      object-fit: cover;
     }
     .trabajos h2 {
       margin: 0 10px;
