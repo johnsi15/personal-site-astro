@@ -26,8 +26,8 @@
     "algoliasearch": "4.23.3",
     "aos": "2.3.4",
     "astro": "5.16.4",
-    "react": "19.2.1",
-    "react-dom": "19.2.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
     "tailwindcss": "4.1.17",
     "tailwindcss-animated": "2.0.0"
   },
