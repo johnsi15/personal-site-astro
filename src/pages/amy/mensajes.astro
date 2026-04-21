@@ -1,0 +1,649 @@
+---
+import Layout from '../../layouts/index.astro'
+---
+
+<Layout title='Para Ti, Mi Amor | Andrey' description='Un mensaje especial para Amy'>
+  <section class='scratch-container'>
+    <header class='header'>
+      <h1>Para Ti, Mi Amor 💖</h1>
+      <p>Raspa cada tarjeta para descubrir un mensaje de amor</p>
+    </header>
+
+    <div class='cards-grid'>
+      <div class='card-wrapper' data-revealed='false'>
+        <div class='card-content'>
+          <p>
+            Mi reina, eres lo más hermoso que me ha pasado en la vida. Dios te puso en mi camino y no puedo estar más
+            agradecido. 💖
+          </p>
+        </div>
+        <canvas class='scratch-layer' width='300' height='200'></canvas>
+        <div class='scratch-hint'>
+          <span>Raspa aquí</span>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'><path d='m3 14 4-4 4 4 4-4 4 4'></path><path d='M12 19V5'></path></svg
+          >
+        </div>
+      </div>
+
+      <div class='card-wrapper' data-revealed='false'>
+        <div class='card-content'>
+          <p>Cada día me enamoro más de ti. Tu sonrisa ilumina mis días y tu voz es mi sonido favorito del mundo. 😍</p>
+        </div>
+        <canvas class='scratch-layer' width='300' height='200'></canvas>
+        <div class='scratch-hint'>
+          <span>Raspa aquí</span>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'><path d='m3 14 4-4 4 4 4-4 4 4'></path><path d='M12 19V5'></path></svg
+          >
+        </div>
+      </div>
+
+      <div class='card-wrapper' data-revealed='false'>
+        <div class='card-content'>
+          <p>
+            Gracias por tanto amor, por tu tiempo y paciencia. Eres mi compañera perfecta. Te amo con toda mi alma. ❤️
+          </p>
+        </div>
+        <canvas class='scratch-layer' width='300' height='200'></canvas>
+        <div class='scratch-hint'>
+          <span>Raspa aquí</span>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'><path d='m3 14 4-4 4 4 4-4 4 4'></path><path d='M12 19V5'></path></svg
+          >
+        </div>
+      </div>
+
+      <div class='card-wrapper' data-revealed='false'>
+        <div class='card-content'>
+          <p>
+            Dios siga bendiciendo nuestra relación, te amo mucho mi ya casi esposa bella. Mi corazón siempre será tuyo.
+            Forever yours. 💑
+          </p>
+        </div>
+        <canvas class='scratch-layer' width='300' height='200'></canvas>
+        <div class='scratch-hint'>
+          <span>Raspa aquí</span>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'><path d='m3 14 4-4 4 4 4-4 4 4'></path><path d='M12 19V5'></path></svg
+          >
+        </div>
+      </div>
+
+      <div class='card-wrapper final-card' data-revealed='false'>
+        <div class='card-content final'>
+          <div class='heart-animation'>💖</div>
+          <p class='final-text'>
+            Mi amor, eres mi todo. Prometo amarte hoy, mañana y siempre. Eres mi todo, mi ya casi esposa, mi vida. Te
+            amo infinitamente.
+          </p>
+          <div class='heart-animation'>💖</div>
+        </div>
+        <canvas class='scratch-layer' width='300' height='250'></canvas>
+        <div class='scratch-hint'>
+          <span>Último mensaje - Raspa aquí</span>
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            stroke-width='2'
+            stroke-linecap='round'
+            stroke-linejoin='round'><path d='m3 14 4-4 4 4 4-4 4 4'></path><path d='M12 19V5'></path></svg
+          >
+        </div>
+      </div>
+    </div>
+
+    <div class='progress'>
+      <p id='progress-text'>Mensajes revelados: 0 / 5</p>
+      <div class='progress-bar'>
+        <div id='progress-fill'></div>
+      </div>
+    </div>
+
+    <div id='final-message' class='final-message hidden'>
+      <h2>¡Te Amo, Mi Reina! 💖</h2>
+      <p>Gracias por ser parte de mi vida. Que tengas un hermoso y buen día, te amo mucho.</p>
+      <p class='signature'>Con todo mi amor, Andrey 💑</p>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .scratch-container {
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 50%, #f48fb1 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Centramos el contenido si hay espacio */
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .header h1 {
+    font-size: 2.5rem;
+    color: #c2185b;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .header p {
+    color: #880e4f;
+    font-size: 1.1rem;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    width: 100%;
+    justify-items: center;
+  }
+
+  .card-wrapper {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(195, 47, 91, 0.3);
+    cursor: crosshair;
+    transition:
+      transform 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+
+  .card-wrapper:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px rgba(195, 47, 91, 0.4);
+  }
+
+  .card-wrapper.final-card {
+    height: 250px;
+  }
+
+  .card-wrapper[data-revealed='true'] {
+    pointer-events: none;
+  }
+
+  .card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    z-index: 1;
+  }
+
+  .card-content p {
+    text-align: center;
+    font-size: 1rem;
+    color: #880e4f;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .card-content.final {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-content.final .final-text {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .heart-animation {
+    font-size: 2rem;
+    animation: heartbeat 1s ease-in-out infinite;
+  }
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+
+  .scratch-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    /* Eliminamos el gradiente CSS para que el canvas se vea */
+    background: transparent;
+    transition: opacity 0.5s ease;
+  }
+
+  .scratch-hint {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    font-weight: 600;
+    pointer-events: none;
+  }
+
+  .scratch-hint svg {
+    animation: scratchHint 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scratchHint {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(5px);
+    }
+  }
+
+  .card-wrapper[data-revealed='true'] .scratch-layer {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .card-wrapper[data-revealed='true'] .scratch-hint {
+    display: none;
+  }
+
+  .progress {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .progress p {
+    color: #880e4f;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  .progress-bar {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .progress-bar div {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #e91e63 0%, #c2185b 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+
+  .final-message {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(195, 47, 91, 0.4);
+    animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden; /* Volvemos a ocultar el desbordamiento local */
+  }
+
+  .final-message.hidden {
+    display: none;
+  }
+
+  .final-message h2,
+  .final-message p {
+    position: relative;
+    z-index: 2;
+  }
+
+  .final-message h2 {
+    font-size: 2.5rem;
+    color: #c2185b;
+    margin-bottom: 1rem;
+  }
+
+  .final-message p {
+    color: #880e4f;
+    font-size: 1.2rem;
+    line-height: 1.8;
+  }
+
+  .final-message .signature {
+    margin-top: 1.5rem;
+    font-weight: 700;
+    font-size: 1.4rem;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px) scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header h1 {
+      font-size: 1.8rem;
+    }
+
+    .card-wrapper {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>
+
+<style is:global>
+  body {
+    overflow-x: hidden;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const cards = document.querySelectorAll('.card-wrapper')
+    const progressFill = document.getElementById('progress-fill')
+    const progressText = document.getElementById('progress-text')
+    const finalMessage = document.getElementById('final-message')
+    let revealedCount = 0
+
+    const ctxCache = new WeakMap()
+
+    cards.forEach(card => {
+      const canvas = card.querySelector('.scratch-layer') as HTMLCanvasElement
+      if (!canvas) return
+
+      const ctx = canvas.getContext('2d')
+      if (!ctx) return
+
+      ctxCache.set(canvas, ctx)
+
+      ctx.fillStyle = '#e91e63'
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      const pattern = ctx.createLinearGradient(0, 0, canvas.width, canvas.height)
+      pattern.addColorStop(0, '#e91e63')
+      pattern.addColorStop(0.5, '#c2185b')
+      pattern.addColorStop(1, '#ad1457')
+      ctx.fillStyle = pattern
+      ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+      ctx.font = 'bold 20px sans-serif'
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)'
+      ctx.textAlign = 'center'
+      ctx.fillText('💖 💖 💖', canvas.width / 2, canvas.height / 2)
+
+      let isDrawing = false
+      let lastX = -1
+      let lastY = -1
+
+      function getCanvasCoordinates(e: MouseEvent | TouchEvent, canvas: HTMLCanvasElement) {
+        const rect = canvas.getBoundingClientRect()
+        const scaleX = canvas.width / rect.width
+        const scaleY = canvas.height / rect.height
+
+        if (e instanceof TouchEvent && e.touches.length > 0) {
+          return {
+            x: (e.touches[0].clientX - rect.left) * scaleX,
+            y: (e.touches[0].clientY - rect.top) * scaleY,
+          }
+        } else if (e instanceof MouseEvent) {
+          return {
+            x: (e.clientX - rect.left) * scaleX,
+            y: (e.clientY - rect.top) * scaleY,
+          }
+        }
+        return { x: 0, y: 0 }
+      }
+
+      function scratch(e: MouseEvent | TouchEvent) {
+        if (!isDrawing) return
+        e.preventDefault()
+
+        const coords = getCanvasCoordinates(e, canvas)
+        const ctx = ctxCache.get(canvas)
+        if (!ctx) return
+
+        ctx.globalCompositeOperation = 'destination-out'
+        ctx.beginPath()
+        ctx.arc(coords.x, coords.y, 30, 0, Math.PI * 2)
+        ctx.fill()
+
+        if (lastX !== 0 || lastY !== 0) {
+          ctx.beginPath()
+          ctx.moveTo(lastX, lastY)
+          ctx.lineTo(coords.x, coords.y)
+          ctx.lineWidth = 60
+          ctx.lineCap = 'round'
+          ctx.stroke()
+        }
+
+        lastX = coords.x
+        lastY = coords.y
+
+        checkReveal(card as HTMLElement, canvas)
+      }
+
+      canvas.addEventListener('mousedown', e => {
+        isDrawing = true
+        const coords = getCanvasCoordinates(e, canvas)
+        lastX = coords.x
+        lastY = coords.y
+        scratch(e)
+      })
+
+      canvas.addEventListener('mousemove', e => scratch(e))
+
+      canvas.addEventListener('mouseup', () => {
+        isDrawing = false
+      })
+      canvas.addEventListener('mouseleave', () => {
+        isDrawing = false
+      })
+
+      canvas.addEventListener(
+        'touchstart',
+        e => {
+          isDrawing = true
+          const coords = getCanvasCoordinates(e, canvas)
+          lastX = coords.x
+          lastY = coords.y
+          scratch(e)
+        },
+        { passive: false },
+      )
+
+      canvas.addEventListener(
+        'touchmove',
+        e => {
+          e.preventDefault()
+          scratch(e)
+        },
+        { passive: false },
+      )
+
+      canvas.addEventListener('touchend', () => {
+        isDrawing = false
+      })
+    })
+
+    function checkReveal(card: HTMLElement, canvas: HTMLCanvasElement) {
+      const ctx = ctxCache.get(canvas)
+      if (!ctx) return
+
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+      const pixels = imageData.data
+      let transparentPixels = 0
+
+      for (let i = 3; i < pixels.length; i += 4) {
+        if (pixels[i] === 0) {
+          transparentPixels++
+        }
+      }
+
+      const percentRevealed = (transparentPixels / (pixels.length / 4)) * 100
+
+      if (percentRevealed > 40 && card.dataset.revealed !== 'true') {
+        card.dataset.revealed = 'true'
+        revealedCount++
+        updateProgress()
+
+        // Efecto visual: desvanecer canvas restante suavemente
+        canvas.style.transition = 'opacity 1s ease'
+        canvas.style.opacity = '0'
+
+        if (revealedCount === cards.length) {
+          showFinalMessage()
+        }
+      }
+    }
+
+    function updateProgress() {
+      if (progressFill) {
+        progressFill.style.width = `${(revealedCount / cards.length) * 100}%`
+      }
+      if (progressText) {
+        progressText.textContent = `Mensajes revelados: ${revealedCount} / ${cards.length}`
+      }
+    }
+
+    function showFinalMessage() {
+      setTimeout(() => {
+        if (finalMessage) {
+          finalMessage.classList.remove('hidden')
+          createConfetti()
+
+          // Scroll suave hacia el mensaje final
+          finalMessage.scrollIntoView({ behavior: 'smooth', block: 'center' })
+        }
+      }, 500)
+    }
+
+    function createConfetti() {
+      // Inyectar keyframes de forma global para que los elementos dinámicos puedan usarlos
+      if (!document.getElementById('confetti-keyframes')) {
+        const styleTag = document.createElement('style')
+        styleTag.id = 'confetti-keyframes'
+        styleTag.textContent = `
+          @keyframes confettiFallAnim {
+            0%   { transform: translateY(0px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(105vh) rotate(720deg); opacity: 0; }
+          }
+        `
+        document.head.appendChild(styleTag)
+      }
+
+      // Crear wrapper con estilos 100% inline para evitar el scoping de Astro
+      const container = document.createElement('div')
+      container.setAttribute(
+        'style',
+        [
+          'position:fixed',
+          'top:0',
+          'left:0',
+          'width:100vw',
+          'height:100vh',
+          'pointer-events:none',
+          'z-index:9999',
+          'overflow:hidden',
+        ].join(';'),
+      )
+      document.body.appendChild(container)
+
+      const colors = ['#f48fb1', '#f06292', '#ec407a', '#e91e63', '#c2185b', '#ad1457', '#ffd700', '#ff69b4']
+
+      for (let i = 0; i < 120; i++) {
+        const piece = document.createElement('div')
+        const left = Math.random() * 100
+        const width = Math.random() * 10 + 6
+        const height = Math.random() * 10 + 6
+        const color = colors[Math.floor(Math.random() * colors.length)]
+        const radius = Math.random() > 0.5 ? '50%' : '2px'
+        const duration = (Math.random() * 3 + 3).toFixed(2)
+        const delay = (Math.random() * 3).toFixed(2)
+
+        piece.setAttribute(
+          'style',
+          [
+            'position:absolute',
+            `left:${left}%`,
+            'top:-20px',
+            `width:${width}px`,
+            `height:${height}px`,
+            `background-color:${color}`,
+            `border-radius:${radius}`,
+            `animation:confettiFallAnim ${duration}s ${delay}s linear forwards`,
+          ].join(';'),
+        )
+
+        container.appendChild(piece)
+      }
+
+      // Limpiar el confeti tras la animación
+      setTimeout(() => container.remove(), 8000)
+    }
+  })
+</script>
