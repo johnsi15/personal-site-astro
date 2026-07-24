@@ -162,7 +162,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro'
           </div>
 
           <!-- Gráfica de crecimiento -->
-          <svg class='mt-4 w-full' viewBox='0 0 400 150' fill='none' aria-hidden='true'>
+          <svg class='hero-chart mt-4 w-full' viewBox='0 0 400 150' fill='none' aria-hidden='true'>
             <defs>
               <linearGradient id='hero-line' x1='0' y1='0' x2='400' y2='0' gradientUnits='userSpaceOnUse'>
                 <stop stop-color='#8b5cf6'></stop>
@@ -172,6 +172,9 @@ import WhatsAppIcon from './WhatsAppIcon.astro'
                 <stop stop-color='#8b5cf6' stop-opacity='0.35'></stop>
                 <stop offset='1' stop-color='#8b5cf6' stop-opacity='0'></stop>
               </linearGradient>
+              <clipPath id='hero-area-clip'>
+                <rect class='hero-area-clip__rect' x='0' y='0' width='0' height='150' />
+              </clipPath>
             </defs>
             <g stroke='#ffffff' stroke-opacity='0.06'>
               <line x1='0' y1='37.5' x2='400' y2='37.5'></line>
@@ -179,15 +182,21 @@ import WhatsAppIcon from './WhatsAppIcon.astro'
               <line x1='0' y1='112.5' x2='400' y2='112.5'></line>
             </g>
             <path
+              class='hero-area'
               d='M0 138 C35 136 55 128 85 120 S145 96 185 84 S255 56 300 40 S365 20 400 12 L400 150 L0 150 Z'
-              fill='url(#hero-area)'></path>
+              fill='url(#hero-area)'
+              clip-path='url(#hero-area-clip)'></path>
             <path
+              class='hero-line'
               d='M0 138 C35 136 55 128 85 120 S145 96 185 84 S255 56 300 40 S365 20 400 12'
+              fill='none'
               stroke='url(#hero-line)'
               stroke-width='3'
               stroke-linecap='round'></path>
-            <circle cx='400' cy='12' r='5' fill='#e879f9'></circle>
-            <circle cx='400' cy='12' r='9' fill='#e879f9' fill-opacity='0.25'></circle>
+            <g class='hero-chart__point'>
+              <circle cx='400' cy='12' r='9' fill='#e879f9' fill-opacity='0.25'></circle>
+              <circle cx='400' cy='12' r='5' fill='#e879f9'></circle>
+            </g>
           </svg>
 
           <div class='mt-4 grid grid-cols-3 gap-2.5'>

@@ -310,6 +310,44 @@ import '@fontsource/source-sans-pro/600.css'
     transform: rotate(-45deg);
   }
 
+  /* --- Gráfica de crecimiento (draw-in) --- */
+  .hero-chart .hero-line {
+    stroke-dasharray: 520;
+    stroke-dashoffset: 520;
+    animation: hero-line-draw 2.2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s forwards;
+  }
+
+  .hero-chart .hero-area-clip__rect {
+    animation: hero-area-grow 2.2s cubic-bezier(0.22, 0.61, 0.36, 1) 0.4s forwards;
+  }
+
+  .hero-chart__point {
+    transform-box: fill-box;
+    transform-origin: 50% 50%;
+    transform: scale(0);
+    opacity: 0;
+    animation: hero-point-pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 2.5s forwards;
+  }
+
+  @keyframes hero-line-draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes hero-area-grow {
+    to {
+      width: 400px;
+    }
+  }
+
+  @keyframes hero-point-pop {
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
   /* --- Tarjetas flotantes del hero --- */
   .animate-float-slow {
     animation: floaty 6s ease-in-out infinite;
@@ -344,6 +382,25 @@ import '@fontsource/source-sans-pro/600.css'
     .animate-float-slow,
     .animate-float-fast {
       animation: none !important;
+    }
+
+    .hero-chart .hero-line,
+    .hero-chart .hero-area-clip__rect,
+    .hero-chart__point {
+      animation: none !important;
+    }
+
+    .hero-chart .hero-line {
+      stroke-dashoffset: 0;
+    }
+
+    .hero-chart .hero-area-clip__rect {
+      width: 400px;
+    }
+
+    .hero-chart__point {
+      opacity: 1;
+      transform: none;
     }
 
     .animate-ping {
