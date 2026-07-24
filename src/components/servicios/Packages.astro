@@ -1,0 +1,154 @@
+---
+import { whatsappLinks } from './data'
+
+const packages = [
+  {
+    name: 'Sitio web',
+    tagline: 'Presencia digital sólida para tu negocio.',
+    features: [
+      'Portafolio y páginas de tus servicios',
+      'Formulario de contacto y WhatsApp directo',
+      'Diseño responsive, optimizado para celular',
+      'Velocidad de carga optimizada',
+      'SEO técnico on-page',
+    ],
+    cta: whatsappLinks.sitioWeb,
+    featured: false,
+    icon: 'M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9',
+  },
+  {
+    name: 'Tienda online',
+    tagline: 'Vende todos los días, incluso mientras duermes.',
+    features: [
+      'Catálogo organizado por categorías y marcas',
+      'Pasarela de pagos integrada',
+      'Envíos integrados',
+      'Checkout sin fricción, pensado para el celular',
+      'Velocidad de carga y SEO técnico on-page',
+    ],
+    cta: whatsappLinks.tiendaOnline,
+    featured: true,
+    icon: 'M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z',
+  },
+  {
+    name: 'Tienda + pauta',
+    tagline: 'La solución completa: tienda que convierte + tráfico.',
+    features: [
+      'Todo lo incluido en Tienda online',
+      'Montaje de campañas en Meta Ads',
+      'Montaje de campañas en Google Ads',
+      'Ajuste y optimización según resultados',
+    ],
+    cta: whatsappLinks.tiendaPauta,
+    featured: false,
+    icon: 'M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z',
+  },
+]
+---
+
+<section id='servicios' class='relative scroll-mt-24 py-20 md:py-28'>
+  <!-- Glow -->
+  <div
+    aria-hidden='true'
+    class='pointer-events-none absolute bottom-0 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-fuchsia-600/10 blur-[140px]'
+  >
+  </div>
+
+  <div class='relative mx-auto max-w-6xl px-5'>
+    <div class='mx-auto max-w-2xl text-center'>
+      <span data-reveal class='text-xs font-semibold tracking-[0.2em] text-violet-400 uppercase'>Servicios</span>
+      <h2
+        data-reveal
+        style='--reveal-delay: 100ms'
+        class='mt-3 text-3xl font-bold tracking-tight text-white text-balance md:text-4xl'
+      >
+        Elige lo que tu negocio necesita hoy
+      </h2>
+      <p data-reveal style='--reveal-delay: 200ms' class='mt-4 text-lg leading-relaxed text-zinc-400'>
+        Sin precios genéricos de paquete: cada cotización es personalizada según el alcance de tu proyecto.
+      </p>
+    </div>
+
+    <div class='mt-14 grid items-stretch gap-6 lg:grid-cols-3'>
+      {
+        packages.map((pkg, index) => (
+          <article
+            data-reveal
+            style={`--reveal-delay: ${index * 120}ms`}
+            class:list={[
+              'group relative flex flex-col rounded-3xl p-[1.5px] transition duration-500 ease-out hover:-translate-y-0.5',
+              pkg.featured
+                ? 'bg-gradient-to-b from-violet-500/70 via-fuchsia-500/30 to-transparent shadow-2xl shadow-violet-950/50 hover:from-violet-500/85 hover:via-fuchsia-500/40 hover:shadow-violet-900/60'
+                : 'bg-white/10 hover:bg-white/15',
+            ]}
+          >
+            {pkg.featured && (
+              <span class='absolute -top-3 left-1/2 z-20 -translate-x-1/2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-4 py-1 text-xs font-bold tracking-wide text-white uppercase shadow-lg shadow-violet-600/40 ring-1 ring-white/10'>
+                Recomendado
+              </span>
+            )}
+            <div class='flex h-full flex-col rounded-[calc(1.5rem-1.5px)] bg-[#0c0c14]/95 p-7 backdrop-blur md:p-8'>
+              <span
+                class:list={[
+                  'inline-flex size-11 items-center justify-center rounded-xl border',
+                  pkg.featured
+                    ? 'border-violet-400/30 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/20 text-violet-200'
+                    : 'border-white/10 bg-white/5 text-violet-300',
+                ]}
+              >
+                <svg class='size-6' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='1.8' aria-hidden='true'>
+                  <path stroke-linecap='round' stroke-linejoin='round' d={pkg.icon} />
+                </svg>
+              </span>
+
+              <h3 class='mt-5 text-2xl font-bold text-white'>{pkg.name}</h3>
+              <p class='mt-1.5 text-zinc-400'>{pkg.tagline}</p>
+
+              <ul class='mt-6 flex flex-col gap-3.5'>
+                {pkg.features.map(feature => (
+                  <li class='flex items-start gap-3'>
+                    <svg
+                      class:list={['mt-1 size-4 shrink-0', pkg.featured ? 'text-fuchsia-400' : 'text-violet-400']}
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      stroke='currentColor'
+                      stroke-width='3'
+                      aria-hidden='true'
+                    >
+                      <path stroke-linecap='round' stroke-linejoin='round' d='M5 13l4 4L19 7' />
+                    </svg>
+                    <span class='leading-relaxed text-zinc-300'>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class='mt-auto pt-8'>
+                <a
+                  href={pkg.cta}
+                  target='_blank'
+                  rel='noreferrer'
+                  class:list={[
+                    'inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400',
+                    pkg.featured
+                      ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white shadow-lg shadow-violet-600/30 hover:shadow-violet-500/50 hover:brightness-110'
+                      : 'border border-white/15 bg-white/5 text-white hover:border-violet-400/40 hover:bg-white/10',
+                  ]}
+                >
+                  Cotización personalizada
+                  <svg class='size-4' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'>
+                    <path stroke-linecap='round' stroke-linejoin='round' d='M17 8l4 4m0 0l-4 4m4-4H3' />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <p data-reveal class='mx-auto mt-10 max-w-xl text-center text-sm text-zinc-500'>
+      ¿No sabes cuál te conviene? Escríbeme por WhatsApp, reviso tu caso y te recomiendo la mejor opción para tu
+      negocio.
+    </p>
+  </div>
+</section>

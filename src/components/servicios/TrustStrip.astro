@@ -1,0 +1,25 @@
+---
+import { recentWork } from './data'
+---
+
+<section aria-label='Trabajos recientes' class='border-y border-white/5 bg-white/[0.02]'>
+  <div data-reveal class='mx-auto max-w-6xl px-5 py-10 md:py-12'>
+    <p class='text-center text-xs font-semibold tracking-[0.2em] text-zinc-500 uppercase'>Trabajos recientes</p>
+    <ul class='mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 md:gap-x-14'>
+      {
+        recentWork.map(work => (
+          <li>
+            <a
+              href={work.url}
+              target='_blank'
+              rel='noreferrer'
+              class='text-lg font-bold text-zinc-500 transition hover:text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400 md:text-xl'
+            >
+              {work.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

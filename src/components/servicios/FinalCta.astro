@@ -1,0 +1,46 @@
+---
+import { whatsappLinks, WHATSAPP_DISPLAY } from './data'
+import WhatsAppIcon from './WhatsAppIcon.astro'
+---
+
+<section id='contacto' class='relative scroll-mt-24 px-5 py-20 md:py-28'>
+  <div
+    data-reveal
+    class='relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-violet-400/20 bg-gradient-to-b from-violet-500/10 via-white/[0.03] to-transparent px-6 py-16 text-center backdrop-blur md:px-12 md:py-20'
+  >
+    <!-- Glow interno -->
+    <div
+      aria-hidden='true'
+      class='pointer-events-none absolute -top-32 left-1/2 h-[320px] w-[520px] -translate-x-1/2 rounded-full bg-violet-500/20 blur-[100px]'
+    >
+    </div>
+
+    <div class='relative'>
+      <h2 class='text-3xl font-bold tracking-tight text-white text-balance md:text-5xl'>
+        ¿Hablamos de
+        <span class='bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent'>tu proyecto</span>?
+      </h2>
+      <p class='mx-auto mt-5 max-w-xl text-lg leading-relaxed text-zinc-400'>
+        Cuéntame qué necesita tu negocio y te respondo con una cotización personalizada. Sin compromiso, sin lenguaje
+        técnico.
+      </p>
+
+      <div class='mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row'>
+        <a
+          href={whatsappLinks.general}
+          target='_blank'
+          rel='noreferrer'
+          class='inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-9 py-4 text-lg font-semibold text-white shadow-xl shadow-violet-600/30 transition hover:-translate-y-0.5 hover:shadow-violet-500/50 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400'
+        >
+          <WhatsAppIcon class='size-6' />
+          Escribir por WhatsApp
+        </a>
+      </div>
+
+      <p class='mt-6 text-sm text-zinc-500'>
+        WhatsApp directo: <span class='font-semibold text-zinc-300'>{WHATSAPP_DISPLAY}</span> · Base en Cúcuta,
+        Colombia — trabajo remoto para toda Latinoamérica
+      </p>
+    </div>
+  </div>
+</section>
