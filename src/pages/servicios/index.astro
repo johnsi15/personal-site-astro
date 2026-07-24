@@ -5,10 +5,13 @@ import Hero from '../../components/servicios/Hero.astro'
 import TrustStrip from '../../components/servicios/TrustStrip.astro'
 import Features from '../../components/servicios/Features.astro'
 import CaseStudy from '../../components/servicios/CaseStudy.astro'
+import AboutJohn from '../../components/servicios/AboutJohn.astro'
 import Process from '../../components/servicios/Process.astro'
 import Packages from '../../components/servicios/Packages.astro'
+import Faq from '../../components/servicios/Faq.astro'
 import FinalCta from '../../components/servicios/FinalCta.astro'
 import Footer from '../../components/servicios/Footer.astro'
+import MobileWhatsAppCta from '../../components/servicios/MobileWhatsAppCta.astro'
 
 import '@fontsource/source-sans-pro/600.css'
 ---
@@ -25,11 +28,14 @@ import '@fontsource/source-sans-pro/600.css'
       <TrustStrip />
       <Features />
       <CaseStudy />
+      <AboutJohn />
       <Process />
       <Packages />
+      <Faq />
       <FinalCta />
     </main>
     <Footer />
+    <MobileWhatsAppCta />
   </div>
 
   <noscript>
@@ -47,25 +53,88 @@ import '@fontsource/source-sans-pro/600.css'
 
   // --- Nav: transparente -> sólido con blur al hacer scroll ---
   const nav = document.getElementById('site-nav')
-  const updateNav = () => nav?.classList.toggle('scrolled', window.scrollY > 16)
-  updateNav()
-  window.addEventListener('scroll', updateNav, { passive: true })
+  const mobileStickyCta = document.getElementById('mobile-whatsapp-cta')
+  const hero = document.getElementById('inicio')
+  const contact = document.getElementById('contacto')
+
+  const updatePageUi = () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 16)
+
+    if (mobileStickyCta && hero && contact) {
+      const afterHero = hero.getBoundingClientRect().bottom < 80
+      const beforeFinalCta = contact.getBoundingClientRect().top > window.innerHeight * 0.8
+      mobileStickyCta.classList.toggle('is-visible', afterHero && beforeFinalCta)
+    }
+  }
+
+  updatePageUi()
+  window.addEventListener('scroll', updatePageUi, { passive: true })
+  window.addEventListener('resize', updatePageUi)
 
   // --- Menú móvil ---
   const menuToggle = document.getElementById('menu-toggle')
+  const closeMobileMenu = (restoreFocus = false) => {
+    nav?.classList.remove('menu-open')
+    menuToggle?.classList.remove('open')
+    menuToggle?.setAttribute('aria-expanded', 'false')
+    menuToggle?.setAttribute('aria-label', 'Abrir menú de navegación')
+    document.body.style.overflow = ''
+    if (restoreFocus) menuToggle?.focus()
+  }
+
   menuToggle?.addEventListener('click', () => {
     const isOpen = nav?.classList.toggle('menu-open') ?? false
     menuToggle.classList.toggle('open', isOpen)
     menuToggle.setAttribute('aria-expanded', String(isOpen))
     menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación')
+    document.body.style.overflow = isOpen ? 'hidden' : ''
   })
 
   document.querySelectorAll('#mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => closeMobileMenu())
+  })
+
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav?.classList.contains('menu-open')) closeMobileMenu(true)
+  })
+
+  document.addEventListener('click', event => {
+    if (nav?.classList.contains('menu-open') && event.target instanceof Node && !nav.contains(event.target)) {
+      closeMobileMenu(true)
+    }
+  })
+
+  // --- Estado activo de la navegación ---
+  const navLinks = document.querySelectorAll<HTMLAnchorElement>('[data-nav-link]')
+  const sections = ['inicio', 'servicios', 'casos', 'proceso', 'contacto']
+    .map(id => document.getElementById(id))
+    .filter((section): section is HTMLElement => Boolean(section))
+
+  const sectionObserver = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        navLinks.forEach(link => {
+          const isCurrent = link.hash === `#${entry.target.id}`
+          link.classList.toggle('is-current', isCurrent)
+          if (isCurrent) link.setAttribute('aria-current', 'location')
+          else link.removeAttribute('aria-current')
+        })
+      })
+    },
+    { rootMargin: '-35% 0px -55% 0px' }
+  )
+  sections.forEach(section => sectionObserver.observe(section))
+
+  // --- Medición de clics hacia WhatsApp ---
+  const trackingWindow = window as typeof window & { dataLayer?: Array<Record<string, string>> }
+  document.querySelectorAll<HTMLElement>('[data-whatsapp-location]').forEach(link => {
     link.addEventListener('click', () => {
-      nav?.classList.remove('menu-open')
-      menuToggle?.classList.remove('open')
-      menuToggle?.setAttribute('aria-expanded', 'false')
-      menuToggle?.setAttribute('aria-label', 'Abrir menú de navegación')
+      trackingWindow.dataLayer = trackingWindow.dataLayer || []
+      trackingWindow.dataLayer.push({
+        event: 'whatsapp_click',
+        location: link.dataset.whatsappLocation || 'unknown',
+      })
     })
   })
 
@@ -174,6 +243,11 @@ import '@fontsource/source-sans-pro/600.css'
     box-shadow: 0 10px 30px rgb(0 0 0 / 0.35);
   }
 
+  #site-nav [data-nav-link].is-current {
+    background-color: rgb(255 255 255 / 0.07);
+    color: #ffffff;
+  }
+
   /* --- Menú móvil --- */
   #mobile-menu {
     display: none;
@@ -182,6 +256,16 @@ import '@fontsource/source-sans-pro/600.css'
   #site-nav.menu-open #mobile-menu {
     display: block;
     animation: menu-in 0.25s ease-out;
+  }
+
+  #mobile-whatsapp-cta {
+    bottom: max(0.75rem, env(safe-area-inset-bottom));
+  }
+
+  #mobile-whatsapp-cta.is-visible {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
   }
 
   @keyframes menu-in {

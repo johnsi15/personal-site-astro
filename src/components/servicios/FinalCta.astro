@@ -30,6 +30,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro'
           href={whatsappLinks.general}
           target='_blank'
           rel='noreferrer'
+          data-whatsapp-location='final_cta'
           class='inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-9 py-4 text-lg font-semibold text-white shadow-xl shadow-violet-600/30 transition hover:-translate-y-0.5 hover:shadow-violet-500/50 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400'
         >
           <WhatsAppIcon class='size-6' />
@@ -37,7 +38,7 @@ import WhatsAppIcon from './WhatsAppIcon.astro'
         </a>
       </div>
 
-      <p class='mt-6 text-sm text-zinc-500'>
+      <p class='mt-6 text-sm text-zinc-400'>
         WhatsApp directo: <span class='font-semibold text-zinc-300'>{WHATSAPP_DISPLAY}</span> · Base en Cúcuta,
         Colombia — trabajo remoto para toda Latinoamérica
       </p>
