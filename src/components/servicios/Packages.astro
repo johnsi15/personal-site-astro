@@ -132,6 +132,7 @@ const packages = [
                   target='_blank'
                   rel='noreferrer'
                   data-whatsapp-location={`package_${pkg.name.toLowerCase().replaceAll(' ', '_').replaceAll('+', 'plus')}`}
+                  data-whatsapp-service={pkg.name}
                   class:list={[
                     'inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3.5 text-base font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400',
                     pkg.featured

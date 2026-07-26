@@ -14,12 +14,76 @@ import Footer from '../../components/servicios/Footer.astro'
 import MobileWhatsAppCta from '../../components/servicios/MobileWhatsAppCta.astro'
 
 import '@fontsource/source-sans-pro/600.css'
+
+const serviceStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  '@id': 'https://johnserrano.co/servicios#professional-service',
+  name: 'John Serrano - Desarrollo web y tiendas online',
+  url: 'https://johnserrano.co/servicios',
+  image: 'https://johnserrano.co/servicios/og-servicios.jpg',
+  description:
+    'Diseño y desarrollo de sitios web y tiendas online para negocios en Latinoamérica, con catálogo, pagos, envíos y campañas digitales.',
+  telephone: '+57 310 602 9831',
+  founder: {
+    '@type': 'Person',
+    name: 'John Serrano',
+    jobTitle: 'Ingeniero de software',
+    url: 'https://johnserrano.co',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Cúcuta',
+    addressRegion: 'Norte de Santander',
+    addressCountry: 'CO',
+  },
+  areaServed: {
+    '@type': 'AdministrativeArea',
+    name: 'Latinoamérica',
+  },
+  sameAs: [
+    'https://www.linkedin.com/in/johnserranodev',
+    'https://github.com/johnsi15',
+    'https://www.facebook.com/johnserranodev',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Servicios de desarrollo web',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Sitio web',
+          description: 'Sitio web para presentar servicios, recibir contactos y conectar con WhatsApp.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Tienda online',
+          description: 'Tienda con catálogo, pasarela de pagos, envíos y experiencia optimizada para celular.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: 'Tienda online y pauta',
+          description: 'Tienda online con montaje y ajuste de campañas en Meta y Google.',
+        },
+      },
+    ],
+  },
+}
 ---
 
 <Layout
   title='Sitios web y tiendas online para negocios | John Serrano'
   description='Diseño y desarrollo de sitios web y tiendas online que convierten visitas en clientes. Caso real: una tienda que pasó de $0 a $20–25M COP/mes en ventas online. Cotiza por WhatsApp.'
   image='/servicios/og-servicios.jpg'
+  structuredData={serviceStructuredData}
 >
   <div id='servicios-page'>
     <Nav />
@@ -49,6 +113,8 @@ import '@fontsource/source-sans-pro/600.css'
 </Layout>
 
 <script>
+  import { sendEventData } from '../../helpers/sendEventData'
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
   // --- Nav: transparente -> sólido con blur al hacer scroll ---
@@ -127,13 +193,43 @@ import '@fontsource/source-sans-pro/600.css'
   sections.forEach(section => sectionObserver.observe(section))
 
   // --- Medición de clics hacia WhatsApp ---
-  const trackingWindow = window as typeof window & { dataLayer?: Array<Record<string, string>> }
+  const trackingWindow = window as typeof window & { dataLayer?: Array<Record<string, unknown>> }
+  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
+  const queryParams = new URLSearchParams(window.location.search)
+
+  attributionKeys.forEach(key => {
+    const value = queryParams.get(key)
+    if (value) sessionStorage.setItem(key, value)
+  })
+
   document.querySelectorAll<HTMLElement>('[data-whatsapp-location]').forEach(link => {
     link.addEventListener('click', () => {
+      const ctaLocation = link.dataset.whatsappLocation || 'unknown'
+      const serviceName = link.dataset.whatsappService || 'general'
+      const eventId = `whatsapp_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`
+      const attribution = Object.fromEntries(
+        attributionKeys.flatMap(key => {
+          const value = sessionStorage.getItem(key)
+          return value ? [[key, value]] : []
+        })
+      )
+
       trackingWindow.dataLayer = trackingWindow.dataLayer || []
       trackingWindow.dataLayer.push({
         event: 'whatsapp_click',
-        location: link.dataset.whatsappLocation || 'unknown',
+        ga4_event_name: 'generate_lead',
+        contact_method: 'whatsapp',
+        cta_location: ctaLocation,
+        service_name: serviceName,
+        page_path: window.location.pathname,
+        event_id: eventId,
+        ...attribution,
+      })
+
+      sendEventData({
+        event_name: 'Contact',
+        event_id: eventId,
+        title: `WhatsApp · ${serviceName} · ${ctaLocation}`,
       })
     })
   })

@@ -1,7 +1,6 @@
 const WHATSAPP_NUMBER = '573106029831'
 
-const buildWhatsAppLink = (message: string) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+const buildWhatsAppLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
 export const WHATSAPP_DISPLAY = '+57 310 602 9831'
 
@@ -15,7 +14,7 @@ export const whatsappLinks = {
 export const recentWork = [
   { name: 'GeeParts', url: 'https://geeparts.co/' },
   { name: 'Top Autos', url: 'https://topautos.com.co/' },
+  { name: 'Malalakids', url: 'https://malalakids.com/' },
   { name: 'Catalítico', url: 'https://www.catalitico.com.co/' },
-  { name: 'HallowStick', url: 'https://hallowstick.netlify.app/' },
   { name: 'seocheckAI', url: 'https://seocheckai.com/' },
 ]
