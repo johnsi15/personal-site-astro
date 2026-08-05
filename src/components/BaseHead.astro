@@ -9,6 +9,7 @@ export interface Props {
   image?: string
   datePublished?: Date
   dateModified?: Date
+  structuredData?: Record<string, unknown>
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
@@ -19,7 +20,34 @@ const {
   image = '/default.png',
   datePublished = '2015-09-15T15:49:50-05:00',
   dateModified = '',
+  structuredData,
 } = Astro.props
+
+const defaultStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  mainEntityOfPage: {
+    '@type': 'WebPage',
+    '@id': canonicalURL,
+  },
+  headline: title,
+  image: [new URL(image, Astro.url)],
+  datePublished: datePublished,
+  dateModified: dateModified,
+  author: {
+    '@type': 'Person',
+    name: 'John Serrano',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'John Serrano',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://johnserrano.co/default.jpg',
+    },
+  },
+  description: description,
+}
 ---
 
 <!-- Global Metadata -->
@@ -69,29 +97,5 @@ const {
 
 <script
   type='application/ld+json'
-  set:html={JSON.stringify({
-    '@context': 'http://schema.org',
-    '@type': 'BlogPosting',
-    mainEntityOfPage: {
-      '@type': 'WebPage',
-      '@id': canonicalURL,
-    },
-    headline: title,
-    image: [new URL(image, Astro.url)],
-    datePublished: datePublished,
-    dateModified: dateModified,
-    author: {
-      '@type': 'Person',
-      name: 'John Serrano',
-    },
-    publisher: {
-      '@type': 'Organization',
-      name: 'John Serrano',
-      logo: {
-        '@type': 'ImageObject',
-        url: 'https://johnserrano.co/default.jpg',
-      },
-    },
-    description: description,
-  })}
+  set:html={JSON.stringify(structuredData || defaultStructuredData)}
 />

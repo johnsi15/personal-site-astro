@@ -1,0 +1,220 @@
+---
+import { whatsappLinks } from './data'
+import WhatsAppIcon from './WhatsAppIcon.astro'
+---
+
+<section id='inicio' class='relative overflow-hidden pt-28 pb-16 md:pt-40 md:pb-24'>
+  <!-- Glows de fondo -->
+  <div
+    aria-hidden='true'
+    class='pointer-events-none absolute -top-48 left-1/2 h-[560px] w-[900px] max-w-none -translate-x-1/2 rounded-full bg-violet-600/20 blur-[140px]'
+  >
+  </div>
+  <div
+    aria-hidden='true'
+    class='pointer-events-none absolute top-64 -left-40 h-[380px] w-[380px] rounded-full bg-fuchsia-600/10 blur-[120px]'
+  >
+  </div>
+  <div
+    aria-hidden='true'
+    class='pointer-events-none absolute -right-40 bottom-0 h-[380px] w-[380px] rounded-full bg-blue-600/10 blur-[120px]'
+  >
+  </div>
+
+  <div class='relative mx-auto grid max-w-6xl items-center gap-14 px-5 lg:grid-cols-[1.05fr_1fr] lg:gap-10'>
+    <div class='text-center lg:text-left'>
+      <span
+        data-reveal
+        class='inline-flex items-center gap-2 rounded-full border border-violet-400/30 bg-violet-500/10 px-4 py-1.5 text-xs font-semibold tracking-wide text-violet-300 uppercase'
+      >
+        <span class='size-1.5 rounded-full bg-violet-400'></span>
+        Sitios web y tiendas online · Latinoamérica
+      </span>
+
+      <h1
+        data-reveal
+        style='--reveal-delay: 100ms'
+        class='mt-6 text-4xl leading-[1.1] font-bold tracking-tight text-white text-balance md:text-6xl'
+      >
+        Sitios web y tiendas online
+        <span class='bg-gradient-to-r from-violet-400 via-fuchsia-400 to-violet-400 bg-clip-text text-transparent'>
+          pensados para convertir</span
+        >
+      </h1>
+
+      <p
+        data-reveal
+        style='--reveal-delay: 200ms'
+        class='mx-auto mt-6 max-w-xl text-lg leading-relaxed text-zinc-400 md:text-xl lg:mx-0'
+      >
+        Soy John Serrano, ingeniero de software con más de 10 años de experiencia. Construyo canales digitales rápidos,
+        claros y preparados para convertir el tráfico de tu negocio en oportunidades de venta.
+      </p>
+
+      <div
+        data-reveal
+        style='--reveal-delay: 300ms'
+        class='mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start'
+      >
+        <a
+          href={whatsappLinks.general}
+          target='_blank'
+          rel='noreferrer'
+          data-whatsapp-location='hero'
+          class='inline-flex w-full items-center justify-center gap-2.5 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-8 py-4 text-base font-semibold text-white shadow-xl shadow-violet-600/30 transition hover:-translate-y-0.5 hover:shadow-violet-500/50 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400 sm:w-auto'
+        >
+          <WhatsAppIcon />
+          Cotizar por WhatsApp
+        </a>
+        <a
+          href='#casos'
+          class='inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-8 py-4 text-base font-semibold text-zinc-200 backdrop-blur transition hover:-translate-y-0.5 hover:border-white/30 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400 sm:w-auto'
+        >
+          Ver caso real
+          <svg class='size-4' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M19 14l-7 7m0 0l-7-7m7 7V3'></path>
+          </svg>
+        </a>
+      </div>
+
+      <p data-reveal style='--reveal-delay: 400ms' class='mt-5 text-sm text-zinc-400'>
+        Atención directa con John · Cotización personalizada, sin compromiso
+      </p>
+    </div>
+
+    <!-- Visual: mockup de un caso real -->
+    <div data-reveal style='--reveal-delay: 250ms' class='relative mx-auto w-full max-w-md pb-8 lg:max-w-none'>
+      <!-- Tarjeta flotante: después -->
+      <div
+        class='animate-float-slow absolute -top-6 -right-2 z-10 flex items-center gap-3 rounded-2xl border border-white/10 bg-[#12121c]/90 px-4 py-3 shadow-xl shadow-violet-950/40 backdrop-blur-md sm:-right-6'
+      >
+        <span class='flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-violet-500 to-fuchsia-500'>
+          <svg class='size-5 text-white' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M13 7h8m0 0v8m0-8l-8 8-4-4-6 6'></path>
+          </svg>
+        </span>
+        <span>
+          <span class='block text-[11px] font-semibold tracking-wide text-zinc-400 uppercase'>Ventas online / mes</span>
+          <span class='block text-sm font-bold text-white'>$0 → $20–25M <span class='text-fuchsia-400'>COP</span></span>
+        </span>
+      </div>
+
+      <!-- Tarjeta flotante: visitas -->
+      <div
+        class='animate-float-fast absolute bottom-0 -left-2 z-10 flex items-center gap-3 rounded-2xl border border-white/10 bg-[#12121c]/90 px-4 py-3 shadow-xl shadow-violet-950/40 backdrop-blur-md sm:-left-6'
+      >
+        <span class='flex size-9 items-center justify-center rounded-full bg-gradient-to-br from-blue-500 to-violet-500'>
+          <svg class='size-5 text-white' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'>
+            <path stroke-linecap='round' stroke-linejoin='round' d='M15 12a3 3 0 11-6 0 3 3 0 016 0z'></path>
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              d='M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z'
+            ></path>
+          </svg>
+        </span>
+        <span>
+          <span class='block text-[11px] font-semibold tracking-wide text-zinc-400 uppercase'>Visitas al año</span>
+          <span class='block text-sm font-bold text-white'>+500.000</span>
+        </span>
+      </div>
+
+      <!-- Ventana del navegador -->
+      <div
+        class='overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] shadow-2xl shadow-violet-950/50 backdrop-blur-xl'
+        role='img'
+        aria-label='Panel ilustrativo de resultados de una tienda online real: crecimiento de ventas de $0 a 20-25 millones de pesos mensuales'
+      >
+        <div class='flex items-center gap-3 border-b border-white/10 bg-white/[0.03] px-4 py-3'>
+          <span class='flex gap-1.5'>
+            <span class='size-2.5 rounded-full bg-zinc-600'></span>
+            <span class='size-2.5 rounded-full bg-zinc-600'></span>
+            <span class='size-2.5 rounded-full bg-zinc-600'></span>
+          </span>
+          <span
+            class='flex flex-1 items-center gap-1.5 rounded-full border border-white/10 bg-black/30 px-3 py-1 text-xs text-zinc-400'
+          >
+            <svg class='size-3 text-emerald-400' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'>
+              <path
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                d='M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'></path>
+            </svg>
+            Canal de ventas online
+          </span>
+        </div>
+
+        <div class='p-5'>
+          <div class='flex items-center justify-between'>
+            <div>
+              <p class='text-xs font-semibold tracking-wide text-zinc-500 uppercase'>Panel de la tienda</p>
+              <p class='mt-0.5 text-lg font-bold text-white'>Ventas online</p>
+            </div>
+            <span
+              class='inline-flex items-center gap-1.5 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-300'
+            >
+              <span class='relative flex size-1.5'>
+                <span class='absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60'></span>
+                <span class='relative inline-flex size-1.5 rounded-full bg-emerald-400'></span>
+              </span>
+              Activa 24/7
+            </span>
+          </div>
+
+          <!-- Gráfica de crecimiento -->
+          <svg class='hero-chart mt-4 w-full' viewBox='0 0 400 150' fill='none' aria-hidden='true'>
+            <defs>
+              <linearGradient id='hero-line' x1='0' y1='0' x2='400' y2='0' gradientUnits='userSpaceOnUse'>
+                <stop stop-color='#8b5cf6'></stop>
+                <stop offset='1' stop-color='#e879f9'></stop>
+              </linearGradient>
+              <linearGradient id='hero-area' x1='0' y1='0' x2='0' y2='150' gradientUnits='userSpaceOnUse'>
+                <stop stop-color='#8b5cf6' stop-opacity='0.35'></stop>
+                <stop offset='1' stop-color='#8b5cf6' stop-opacity='0'></stop>
+              </linearGradient>
+              <clipPath id='hero-area-clip'>
+                <rect class='hero-area-clip__rect' x='0' y='0' width='0' height='150' />
+              </clipPath>
+            </defs>
+            <g stroke='#ffffff' stroke-opacity='0.06'>
+              <line x1='0' y1='37.5' x2='400' y2='37.5'></line>
+              <line x1='0' y1='75' x2='400' y2='75'></line>
+              <line x1='0' y1='112.5' x2='400' y2='112.5'></line>
+            </g>
+            <path
+              class='hero-area'
+              d='M0 138 C35 136 55 128 85 120 S145 96 185 84 S255 56 300 40 S365 20 400 12 L400 150 L0 150 Z'
+              fill='url(#hero-area)'
+              clip-path='url(#hero-area-clip)'></path>
+            <path
+              class='hero-line'
+              d='M0 138 C35 136 55 128 85 120 S145 96 185 84 S255 56 300 40 S365 20 400 12'
+              fill='none'
+              stroke='url(#hero-line)'
+              stroke-width='3'
+              stroke-linecap='round'></path>
+            <g class='hero-chart__point'>
+              <circle cx='400' cy='12' r='9' fill='#e879f9' fill-opacity='0.25'></circle>
+              <circle cx='400' cy='12' r='5' fill='#e879f9'></circle>
+            </g>
+          </svg>
+
+          <div class='mt-4 grid grid-cols-3 gap-2.5'>
+            <div class='rounded-xl border border-violet-400/20 bg-violet-500/10 px-3 py-2.5'>
+              <p class='text-[10px] font-semibold tracking-wide text-violet-300/80 uppercase'>Ticket prom.</p>
+              <p class='mt-0.5 text-sm font-bold text-white'>$360.000</p>
+            </div>
+            <div class='rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5'>
+              <p class='text-[10px] font-semibold tracking-wide text-zinc-500 uppercase'>Pagos</p>
+              <p class='mt-0.5 text-sm font-bold text-zinc-300'>Integrados</p>
+            </div>
+            <div class='rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5'>
+              <p class='text-[10px] font-semibold tracking-wide text-zinc-500 uppercase'>Envíos</p>
+              <p class='mt-0.5 text-sm font-bold text-zinc-300'>Integrados</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,92 @@
+---
+import { whatsappLinks } from './data'
+import WhatsAppIcon from './WhatsAppIcon.astro'
+
+const links = [
+  { label: 'Inicio', href: '#inicio' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Caso real', href: '#casos' },
+  { label: 'Proceso', href: '#proceso' },
+  { label: 'Contacto', href: '#contacto' },
+]
+---
+
+<header id='site-nav' class='fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,border-color] duration-300'>
+  <nav class='mx-auto flex max-w-6xl items-center justify-between px-5 py-4' aria-label='Navegación principal'>
+    <a
+      href='/'
+      class='text-lg font-bold tracking-tight text-white transition hover:opacity-80 focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400'
+    >
+      John <span class='bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent'>Serrano</span>
+    </a>
+
+    <ul class='hidden items-center gap-1 md:flex'>
+      {
+        links.map(link => (
+          <li>
+            <a
+              href={link.href}
+              data-nav-link
+              class='rounded-full px-4 py-2 text-sm font-semibold text-zinc-300 transition hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400'
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href={whatsappLinks.general}
+      target='_blank'
+      rel='noreferrer'
+      data-whatsapp-location='nav'
+      class='hidden items-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-violet-600/25 transition hover:-translate-y-0.5 hover:shadow-violet-500/40 hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400 md:inline-flex'
+    >
+      <WhatsAppIcon class='size-4' />
+      WhatsApp
+    </a>
+
+    <button
+      id='menu-toggle'
+      type='button'
+      aria-expanded='false'
+      aria-controls='mobile-menu'
+      aria-label='Abrir menú de navegación'
+      class='relative flex size-10 items-center justify-center rounded-full text-white transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400 md:hidden'
+    >
+      <span class='menu-bar menu-bar-top'></span>
+      <span class='menu-bar menu-bar-bottom'></span>
+    </button>
+  </nav>
+
+  <div id='mobile-menu' class='border-b border-white/10 px-5 pb-6 md:hidden'>
+    <ul class='flex flex-col gap-1 pt-2'>
+      {
+        links.map(link => (
+          <li>
+            <a
+              href={link.href}
+              data-nav-link
+              class='block rounded-xl px-4 py-3 text-base font-semibold text-zinc-200 transition hover:bg-white/5 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400'
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+      <li class='pt-3'>
+        <a
+          href={whatsappLinks.general}
+          target='_blank'
+          rel='noreferrer'
+          data-whatsapp-location='mobile_menu'
+          class='inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-violet-600 to-fuchsia-600 px-5 py-3 text-base font-semibold text-white shadow-lg shadow-violet-600/25 transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet-400'
+        >
+          <WhatsAppIcon class='size-5' />
+          Escribir por WhatsApp
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>

@@ -4,7 +4,7 @@ const ProfileFollow = () => {
   return (
     <div className={styles.follow}>
       <p>
-        Soy <strong>John Serrano ingeniero de software</strong> con más de 7 años de experiencia. Me especializo en la
+        Soy <strong>John Serrano ingeniero de software</strong> con más de 10 años de experiencia. Me especializo en la
         creación de experiencias digitales de alto impacto. Entusiasta de las <strong>tecnologías web</strong>:
         JavaScript, TypeScript, Node.js, Docker, Firebase, React, etc. Me puedes encontrar en las siguientes redes
         sociales:

@@ -1,0 +1,79 @@
+---
+const questions = [
+  {
+    question: '¿Cuánto cuesta un sitio web o una tienda online?',
+    answer:
+      'Cada proyecto se cotiza según el número de páginas o productos, las integraciones necesarias y el alcance del acompañamiento. Después del diagnóstico recibirás una propuesta clara antes de comenzar.',
+  },
+  {
+    question: '¿Cuánto tiempo toma desarrollar el proyecto?',
+    answer:
+      'Depende del alcance, la cantidad de contenido y las integraciones. En la propuesta quedarán definidos el calendario, las entregas y lo que necesito de tu negocio para avanzar sin retrasos.',
+  },
+  {
+    question: '¿Podré administrar productos o contenido?',
+    answer:
+      'La plataforma se define durante el diagnóstico. Si necesitas actualizar catálogo, precios o contenido, la propuesta contemplará una solución que puedas administrar y el acompañamiento para aprender a usarla.',
+  },
+  {
+    question: '¿El dominio y el hosting están incluidos?',
+    answer:
+      'Se revisa en el diagnóstico. Puedo trabajar con lo que ya tienes o recomendar las opciones adecuadas. La propuesta indicará con claridad qué está incluido y qué servicios se pagan directamente a terceros.',
+  },
+  {
+    question: '¿La pauta incluye gestión mensual?',
+    answer:
+      'El servicio contempla el montaje y ajuste de campañas en Meta y Google. Si necesitas acompañamiento continuo, su duración y alcance se definen por separado según los objetivos y el presupuesto del negocio.',
+  },
+  {
+    question: '¿Trabajas con negocios fuera de Colombia?',
+    answer:
+      'Sí. Trabajo de forma remota con negocios en toda Latinoamérica. Las reuniones, revisiones y entregas se realizan en línea.',
+  },
+]
+---
+
+<section id='preguntas' class='relative scroll-mt-24 border-y border-white/5 bg-white/[0.02] py-20 md:py-28'>
+  <div class='mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16'>
+    <div>
+      <span data-reveal class='text-xs font-semibold tracking-[0.2em] text-violet-400 uppercase'>Preguntas frecuentes</span>
+      <h2 data-reveal style='--reveal-delay: 100ms' class='mt-3 text-3xl font-bold tracking-tight text-white text-balance md:text-4xl'>
+        Lo que conviene aclarar antes de comenzar
+      </h2>
+      <p data-reveal style='--reveal-delay: 200ms' class='mt-4 text-lg leading-relaxed text-zinc-400'>
+        Sin letra pequeña: el alcance, los tiempos y las responsabilidades quedan definidos en la propuesta.
+      </p>
+    </div>
+
+    <div class='divide-y divide-white/10 border-y border-white/10'>
+      {
+        questions.map((item, index) => (
+          <details data-reveal style={`--reveal-delay: ${(index % 3) * 80}ms`} class='group'>
+            <summary class='flex cursor-pointer list-none items-center justify-between gap-5 py-5 text-left text-lg font-semibold text-white focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-violet-400'>
+              {item.question}
+              <span class='relative flex size-7 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/5 text-violet-300 transition duration-300 group-open:rotate-45 group-open:border-violet-400/30'>
+                <svg class='size-4' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' aria-hidden='true'>
+                  <path stroke-linecap='round' d='M12 5v14M5 12h14' />
+                </svg>
+              </span>
+            </summary>
+            <p class='max-w-2xl pb-6 pr-10 leading-relaxed text-zinc-400'>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<script type='application/ld+json' set:html={JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: questions.map(item => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+})} />

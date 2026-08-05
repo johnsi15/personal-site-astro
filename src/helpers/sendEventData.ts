@@ -42,7 +42,11 @@ export function sendEventData({ event_name, event_id, title = null, fn = null, e
 
   fetch(`${domain}/api/conversions-fb.json`, {
     method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify(data),
+    keepalive: true,
   })
     .then(response => {
       if (!response.ok) {
