@@ -13,11 +13,11 @@
   "author": "John Serrano",
   "license": "MIT",
   "dependencies": {
-    "@astrojs/mdx": "4.3.12",
-    "@astrojs/react": "4.4.2",
-    "@astrojs/rss": "4.0.14",
-    "@astrojs/sitemap": "3.6.0",
-    "@astrojs/vercel": "9.0.2",
+    "@astrojs/mdx": "7.0.5",
+    "@astrojs/react": "6.0.2",
+    "@astrojs/rss": "4.0.19",
+    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/vercel": "11.0.4",
     "@fontsource/source-sans-pro": "^5.0.8",
     "@justinribeiro/lite-youtube": "1.7.1",
     "@splidejs/splide": "4.1.4",
@@ -25,15 +25,15 @@
     "@tailwindcss/vite": "4.1.17",
     "algoliasearch": "4.23.3",
     "aos": "2.3.4",
-    "astro": "5.16.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "tailwindcss": "4.1.17",
-    "tailwindcss-animated": "2.0.0"
+    "astro": "7.1.6",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tailwindcss": "4.3.3",
+    "tailwindcss-animated": "2.1.0"
   },
   "devDependencies": {
-    "@astrojs/partytown": "2.0.4",
-    "@types/react": "19.2.7",
-    "@types/react-dom": "19.2.3"
+    "@astrojs/partytown": "2.1.7",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4"
   }
 }
