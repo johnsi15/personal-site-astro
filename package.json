@@ -14,7 +14,7 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/mdx": "7.0.5",
-    "@astrojs/react": "6.0.2",
+    "@astrojs/react": "7.0.1",
     "@astrojs/rss": "4.0.19",
     "@astrojs/sitemap": "3.7.3",
     "@astrojs/vercel": "11.0.4",

@@ -12,7 +12,7 @@ const Posts = ({ posts = [], columns }) => {
         {posts.map((post) => (
           <PostsDetail
             key={post.id}
-            slug={post.slug}
+            slug={post.id}
             {...post.data}
             collection={post.collection}
           />
@@ -27,7 +27,7 @@ const Posts = ({ posts = [], columns }) => {
       {posts.map((post) => (
         <PostsDetailHome
           key={post.id}
-          slug={post.slug}
+          slug={post.id}
           {...post.data}
           collection={post.collection}
         />

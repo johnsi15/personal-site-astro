@@ -19,11 +19,11 @@ const serviceStructuredData = {
   '@context': 'https://schema.org',
   '@type': 'ProfessionalService',
   '@id': 'https://johnserrano.co/servicios#professional-service',
-  name: 'John Serrano - Desarrollo web y tiendas online',
+  name: 'John Serrano - Desarrollo web, tiendas online y sistemas a medida',
   url: 'https://johnserrano.co/servicios',
   image: 'https://johnserrano.co/servicios/og-servicios.jpg',
   description:
-    'Diseño y desarrollo de sitios web y tiendas online para negocios en Latinoamérica, con catálogo, pagos, envíos y campañas digitales.',
+    'Diseño y desarrollo de sitios web, tiendas online y sistemas a medida para negocios en Latinoamérica, con catálogo, pagos, envíos y herramientas de gestión.',
   telephone: '+57 310 602 9831',
   founder: {
     '@type': 'Person',
@@ -54,6 +54,14 @@ const serviceStructuredData = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Service',
+          name: 'Sistemas y aplicaciones web a medida',
+          description: 'Herramientas para gestionar inventarios, clientes y procesos internos según la operación del negocio.',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
           name: 'Sitio web',
           description: 'Sitio web para presentar servicios, recibir contactos y conectar con WhatsApp.',
         },
@@ -80,8 +88,8 @@ const serviceStructuredData = {
 ---
 
 <Layout
-  title='Sitios web y tiendas online para negocios | John Serrano'
-  description='Diseño y desarrollo de sitios web y tiendas online que convierten visitas en clientes. Caso real: una tienda que pasó de $0 a $20–25M COP/mes en ventas online. Cotiza por WhatsApp.'
+  title='Sitios web, tiendas online y sistemas a medida | John Serrano'
+  description='Sitios web, tiendas online y sistemas a medida para negocios. Caso real: una tienda que pasó de $0 a $20–25M COP/mes en ventas online. Cotiza por WhatsApp.'
   image='/servicios/og-servicios.jpg'
   structuredData={serviceStructuredData}
 >

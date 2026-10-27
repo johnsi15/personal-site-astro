@@ -34,6 +34,16 @@
     {
       "source": "/ebook",
       "destination": "https://johnserrano.co/blog/fundamentos-de-programacion-con-javascript-mi-primer-ebook"
+    },
+    {
+      "source": "/blog/:page(\\d+)",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
     }
   ]
 }

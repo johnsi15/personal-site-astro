@@ -1,241 +1,148 @@
 ---
 import PostCard from '../components/PostCard.astro'
 import Layout from '../layouts/index.astro'
+import WhatsAppIcon from '../components/servicios/WhatsAppIcon.astro'
+import Recommendations from '../components/Recommendations.astro'
+import { recentWork, whatsappLinks } from '../components/servicios/data'
+
+const services = [
+  { number: '01', title: 'Sitios web', description: 'Presenta tu negocio, muestra tus servicios y facilita que tus próximos clientes te contacten.', href: '/servicios#sitio-web' },
+  { number: '02', title: 'Tiendas online', description: 'Vende tus productos con un catálogo organizado, pagos y envíos integrados, también desde el celular.', href: '/servicios#tienda-online' },
+  { number: '03', title: 'Sistemas y aplicaciones web a medida', description: 'Organiza inventarios, clientes y procesos con una herramienta construida para la operación de tu negocio.', href: '/servicios#sistemas-a-medida' },
+]
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Desarrollador web en Cúcuta | Tiendas online y sistemas a medida – John Serrano',
+  url: 'https://johnserrano.co/',
+  description: 'Sitios web, tiendas online y sistemas a medida para negocios en Colombia.',
+  about: { '@type': 'Person', name: 'John Serrano', jobTitle: 'Ingeniero de software', url: 'https://johnserrano.co/sobre-mi' },
+}
 ---
 
-<Layout>
-  <main id='Home' class='container_old'>
-    <div class='main'>
-      <h1 style='display: none;'>Desarrollador web: John Serrano especializado en JavaScript y React</h1>
-      <h2>¿Quién soy?</h2>
-      <p>
-        Soy un <strong>ingeniero de software</strong> con más de 10 años de experiencia. Me especializo en la creación de
-        experiencias digitales de alto impacto. Entusiasta de las tecnologías web: JavaScript, TypeScript, Node.js, Docker,
-        Firebase, React, etc.. Comparto mis conocimientos a través de mi
-        <a href='/blog'>blog</a>. Puedes leer más <a href='/sobre-mi'>sobre mí</a>.
-      </p>
-
-      <h2>De qué hablo en mi blog</h2>
-      <p>
-        <a href='/tags/desarrollo-web'> Desarrollo web</a>, Tutoriales, artículos sobre tecnologías: JavaScript,
-        TypeScript, Node.js, Docker, React, python, CSS, etc.
-      </p>
-
-      <!-- <Pauta /> -->
-
-      <h2>📒 Ebooks publicados</h2>
-      <p>
-        <a href='https://pay.hotmart.com/O67718482D' target='_blank' rel='noreferrer'>
-          Fundamentos de programación con JavaScript</a
-        >
-      </p>
-
-      <h2>Últimos artículos publicados</h2>
-      <PostCard columns={2} />
-
-      <h2>Apoyo</h2>
-      <div class='apoyar'>
-        <p>
-          Estoy muy feliz de que disfrutes del contenido de johnserrano.co, si te gusta lo que lees y quieres respaldar
-          mi trabajo, puedes realizar una donación a través de Tarjeta de crédito o PSE. Además, estoy disponible para
-          recibir tu apoyo por correo electrónico en
-          <strong>me@johnserrano.co</strong> si prefieres otras opciones. Tu apoyo ayuda a mantener este proyecto en marcha.
-          ¡Gracias por tu apoyo!
-        </p>
-
-        <div class='btns'>
-          <a
-            class='linkDonacion'
-            href='https://link.mercadopago.com.co/johnserrano'
-            aria-label='Donar aquí Mercado Pago'
-            target='_blank'
-            rel='noopener noreferrer'>Donar aquí</a
-          >
-
-          <a
-            href='https://www.buymeacoffee.com/jandrey15'
-            class='linkDonacion bg-white flex gap-1'
-            aria-label='Tu apoyo es importante'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            <img src='/bmc-logo.svg' alt='Ayúdame con tu donación' width={20} height={20} />
-            Cómprame un café
+<Layout
+  title='Desarrollador web en Cúcuta | Tiendas online y sistemas a medida – John Serrano'
+  description='Ingeniero de software con +10 años. Creo tiendas online, sitios web y sistemas a medida que generan ventas. Cotiza por WhatsApp.'
+  structuredData={structuredData}
+>
+  <main id='Home'>
+    <section class='hero' aria-labelledby='home-title'>
+      <div class='wrap'>
+        <p class='eyebrow'>John Serrano · Desarrollo web en Cúcuta</p>
+        <h1 id='home-title'>Sitios web, tiendas online y sistemas a medida para negocios en Colombia</h1>
+        <p class='intro'>Soy John, ingeniero de software con más de 10 años de experiencia. Te ayudo a vender online, recibir más contactos y simplificar la operación de tu negocio.</p>
+        <div class='actions'>
+          <a class='button primary' href={whatsappLinks.home} target='_blank' rel='noopener noreferrer'>
+            <WhatsAppIcon /> Cotizar por WhatsApp
           </a>
+          <a class='button secondary' href='/servicios'>Explorar servicios <span aria-hidden='true'>↗</span></a>
         </div>
-        <!-- <p class='cripto'>
-          Puedes donar criptomonedas con: <br />
-          <strong>TRX Tron red TRC20:</strong>
-          <br />
-          TR3nVEsRexQkdXasRLAXLW2n7DmyS7ksrq <br />
-          <strong>BTC Bitcoin red BTC:</strong>
-          <br />
-          1Bd849Xr3T3i9nn96uF2JuYhp98wZyod6Q <br />
-          <strong>BNB Smart Chain BSC:</strong>
-          <br />
-          0xe8ac8dc8e56208d4dad5f719ba627436187acc16
-        </p> -->
+        <p class='hero-note'>Atención directa conmigo · Desde Cúcuta para toda Colombia</p>
       </div>
+    </section>
 
-      <h2>Apoyo no monetario</h2>
-      <div class='apoyar'>
-        <p>
-          Otra manera de ayudarme es difundiéndolo de boca en boca! Si consideras que el contenido que comparto en
-          johnserrano.co puede ser valioso para tus amig@s y compañer@s, te invito a compartirlo en Twitter, LinkedIn o
-          en la plataforma que prefieras. Tu recomendación puede marcar la diferencia. ✨
-        </p>
+    <section class='work-strip' aria-label='Proyectos desarrollados'>
+      <div class='wrap'>
+        <p class='eyebrow'>Negocios y proyectos con los que he trabajado</p>
+        <ul>{recentWork.map(work => <li><a href={work.url} target='_blank' rel='noopener noreferrer'>{work.name}</a></li>)}</ul>
       </div>
+    </section>
 
-      <h2>Contacto</h2>
-      <p class='contact'>
-        Puedes ponerte en contacto conmigo públicamente por las redes sociales Mencíoname en Twitter <a
-          href='https://twitter.com/johnserranodev'
-          rel='noreferrer'
-          target='_blank'>(soy @johnserranodev)</a
-        >. También puedes contactarme enviándome un correo electrónico a <strong>me@johnserrano.co</strong>. Estoy aquí
-        para recibir tus comentarios, sugerencias o ayudarte a resolver cualquier problema que puedas tener.
-      </p>
+    <section class='wrap section' aria-labelledby='services-title'>
+      <p class='eyebrow'>Servicios</p>
+      <h2 id='services-title'>Una solución para lo que tu negocio necesita</h2>
+      <div class='service-grid'>
+        {services.map(service => (
+          <article class='service-card'>
+            <span class='service-number' aria-hidden='true'>{service.number}</span>
+            <h3>{service.title}</h3>
+            <p>{service.description}</p>
+            <a href={service.href}>Ver servicio <span aria-hidden='true'>↗</span><span class='sr-only'>: {service.title}</span></a>
+          </article>
+        ))}
+      </div>
+      <a class='text-link' href='/servicios#casos'>Conoce un caso real: de $0 a $20–25M COP al mes en ventas online <span aria-hidden='true'>→</span></a>
+    </section>
 
-      <q class='citaBible'
-        >Jesús le dijo: Yo soy el camino, y la verdad, y la vida; nadie viene al Padre, sino por mí. Juan 14:6</q
-      >
-    </div>
+    <section class='about-band'>
+      <div class='wrap about-content'>
+        <div><p class='eyebrow'>Tu proyecto, conmigo</p><h2>De la idea a una herramienta que puedas usar todos los días</h2></div>
+        <div><p>Reviso contigo qué necesita tu negocio y defino el alcance, los tiempos y las integraciones antes de comenzar. Tú conoces tu operación; yo me encargo de convertir esa necesidad en una solución web.</p><a class='text-link' href='/sobre-mi'>Conoce más sobre mí <span aria-hidden='true'>→</span></a></div>
+      </div>
+    </section>
+
+    <div class='wrap section'><Recommendations /></div>
+
+    <section class='contact-band' aria-labelledby='contact-title'>
+      <div class='wrap'>
+        <p class='eyebrow'>Hablemos de tu negocio</p>
+        <h2 id='contact-title'>¿Qué necesitas construir?</h2>
+        <p>Cuéntame qué vendes o qué proceso quieres mejorar y revisamos juntos el siguiente paso.</p>
+        <div class='actions'>
+          <a class='button primary' href={whatsappLinks.home} target='_blank' rel='noopener noreferrer'><WhatsAppIcon /> Cotizar por WhatsApp</a>
+          <a class='email' href='mailto:me@johnserrano.co'>me@johnserrano.co</a>
+        </div>
+      </div>
+    </section>
+
+    <section class='wrap section blog' aria-labelledby='blog-title'>
+      <p class='eyebrow'>También comparto lo que aprendo</p>
+      <h2 id='blog-title'>Artículos para desarrolladores</h2>
+      <p>Tutoriales y experiencias de desarrollo web, JavaScript y arquitectura de software.</p>
+      <PostCard columns={2} />
+      <a class='text-link' href='/blog'>Ver todos los artículos <span aria-hidden='true'>→</span></a>
+    </section>
   </main>
 </Layout>
 
 <style>
-  .main {
-    margin: 50px auto 0 auto;
-    max-width: 700px;
+  #Home { width: 100%; font-family: 'Source Sans Pro', sans-serif; color: #13273d; }
+  .wrap { width: min(100% - 40px, 1000px); margin-inline: auto; }
+  .hero { background: #000814; color: #fff; padding: 76px 0 64px; border-bottom: 4px solid #007cff; }
+  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #0055b8; margin: 0 0 20px; }
+  .hero .eyebrow, .contact-band .eyebrow { color: #82baff; }
+  h1 { max-width: 920px; font-size: clamp(2.25rem, 5.4vw, 3.8rem); line-height: 1.08; font-weight: 700; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+  .intro { max-width: 680px; font-size: 1.35rem; line-height: 1.55; color: #c6d5e5; margin: 26px 0 30px; }
+  .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+  .button { display: inline-flex; gap: 10px; justify-content: center; align-items: center; padding: 15px 22px; border-radius: 6px; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+  .primary { color: #000814; background: #72e3b0; border: 1px solid #72e3b0; }
+  .primary:hover { background: #9bf0c9; }
+  .secondary { color: #fff; border: 1px solid #52657c; }
+  .secondary:hover { border-color: #82baff; }
+  .hero-note { color: #a2b4c9; font-size: .95rem; margin-top: 20px; }
+  .work-strip { width: 100%; padding: 28px 0; background: #f0f5fa; border-bottom: 1px solid #dbe4ee; }
+  .work-strip .eyebrow { font-size: .7rem; color: #4a6076; margin-bottom: 14px; }
+  .work-strip ul { list-style: none; display: flex; flex-wrap: wrap; gap: 12px 32px; padding: 0; margin: 0; }
+  .work-strip a { color: #243c54; font-size: 1.2rem; font-weight: 700; text-decoration: none; }
+  .work-strip a:hover { color: #0055b8; }
+  .section { padding-block: 72px; }
+  h2 { font-size: clamp(1.85rem, 3.5vw, 2.5rem); line-height: 1.15; font-weight: 700; letter-spacing: -.02em; margin: 0 0 22px; text-wrap: balance; }
+  .service-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 36px; }
+  .service-card { display: flex; flex-direction: column; padding: 26px; border: 1px solid #d6e1ec; border-top: 3px solid #007cff; border-radius: 4px; }
+  .service-number { font-size: .85rem; font-weight: 700; color: #53708c; }
+  h3 { font-size: 1.6rem; font-weight: 700; line-height: 1.2; margin: 22px 0 14px; }
+  .service-card p, .about-content p, .contact-band > .wrap > p, .blog > p { font-size: 1.15rem; line-height: 1.6; }
+  .service-card p { margin: 0 0 26px; color: #455a70; }
+  .service-card a { margin-top: auto; color: #0055b8; font-weight: 700; }
+  .text-link { display: inline-block; color: #0055b8; font-weight: 700; font-size: 1.1rem; margin-top: 28px; text-underline-offset: 4px; }
+  .about-band { width: 100%; background: #f0f5fa; padding: 56px 0; }
+  .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .about-content p { margin-top: 0; }
+  .about-content .eyebrow { font-size: .8rem; }
+  .contact-band { width: 100%; background: #001d3d; color: #fff; padding: 56px 0; }
+  .contact-band .actions { margin-top: 28px; }
+  .email { color: #c6d5e5; text-underline-offset: 4px; overflow-wrap: anywhere; }
+  .blog { max-width: 740px; }
+  .blog :global(#Posts) { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  a:focus-visible { outline: 3px solid #007cff; outline-offset: 5px; }
+  @media (max-width: 768px) {
+    .hero { padding-top: 112px; padding-bottom: 48px; }
+    .section { padding-block: 48px; }
+    .blog :global(#Posts) { grid-template-columns: minmax(0, 1fr); }
+    .service-grid, .about-content { grid-template-columns: 1fr; gap: 24px; }
   }
-
-  .cripto {
-    font-size: 1rem;
-  }
-
-  .apoyar {
-    max-width: 700px;
-    margin: 0 auto 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-bottom: 2px solid #eeeeee;
-    padding-bottom: 30px;
-  }
-  .apoyar p {
-    border: none;
-  }
-
-  .pauta {
-    margin: 20px 0;
-  }
-
-  .citaBible {
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 50px;
-    display: block;
-  }
-
-  h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin: 50px 0 0;
-  }
-
-  p {
-    font-size: 1.25rem;
-    line-height: 1.4;
-    font-weight: 400;
-    margin: 20px 0 0;
-    border-bottom: 2px solid #eeeeee;
-    padding-bottom: 30px;
-    position: relative;
-  }
-
-  .boder_background::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(to bottom, rgba(0, 17, 34, 0.3), rgb(0 124 255 / 0%));
-  }
-
-  p strong {
-    font-weight: 700;
-  }
-
-  p > a {
-    position: relative;
-    font-weight: 700;
-    color: #004bb4;
-    text-decoration: none;
-  }
-
-  p > a:hover {
-    color: #1c1c1c;
-  }
-
-  p > a:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #004bb4;
-    visibility: visible;
-    transform: scaleX(1);
-    transition: all 0.3s ease-in-out 0s;
-  }
-
-  p > a:hover:before {
-    visibility: hidden;
-    transform: scaleX(0);
-  }
-  .contact {
-    margin-bottom: 70px;
-    border: none;
-  }
-
-  .linkDonacion {
-    --color-blue-500: #007cff;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    background-color: #000814;
-    border: 1px solid var(--color-blue-500);
-    color: #ffffff;
-    font-size: 1.3rem;
-    transition: all 0.3s;
-  }
-
-  .bg-white {
-    background-color: #e2e8f0;
-    color: #000814;
-  }
-
-  .btns {
-    display: flex;
-    gap: 16px;
-  }
-
-  .linkDonacion:hover,
-  .linkDonacion:active {
-    box-shadow: 0 0 10px var(--color-blue-500);
-  }
-
-  @media screen and (max-width: 768px) {
-    .citaBible {
-      text-align: center;
-    }
-  }
-
-  @media screen and (max-width: 360px) {
-    .linkDonacion {
-      font-size: 1.1rem;
-    }
+  @media (max-width: 420px) {
+    .actions { align-items: stretch; flex-direction: column; }
+    .email { text-align: center; }
   }
 </style>

@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro'
 import Gtm from '../components/gtm.astro'
 import AdSense from '../components/adsense.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-const { title, description, image, datePublished } = Astro.props
+const { title, description, image, datePublished, dateModified, schemaType, structuredData } = Astro.props
 
 import '@fontsource/source-sans-pro/300.css'
 import '@fontsource/source-sans-pro/400.css'
@@ -21,6 +21,9 @@ import '@fontsource/source-sans-pro/700.css'
       description={description || SITE_DESCRIPTION}
       image={image}
       datePublished={datePublished}
+      dateModified={dateModified}
+      schemaType={schemaType}
+      structuredData={structuredData}
     />
     <AdSense />
   </head>

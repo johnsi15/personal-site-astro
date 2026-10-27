@@ -7,8 +7,9 @@ export interface Props {
   title: string
   description: string
   image?: string
-  datePublished?: Date
-  dateModified?: Date
+  datePublished?: Date | string
+  dateModified?: Date | string
+  schemaType?: 'WebPage' | 'AboutPage' | 'CollectionPage' | 'BlogPosting'
   structuredData?: Record<string, unknown>
 }
 
@@ -18,12 +19,19 @@ const {
   title,
   description,
   image = '/default.png',
-  datePublished = '2015-09-15T15:49:50-05:00',
-  dateModified = '',
+  datePublished,
+  dateModified,
+  schemaType = 'WebPage',
   structuredData,
 } = Astro.props
 
-const defaultStructuredData = {
+const toIsoDate = (value?: Date | string) => {
+  if (!value) return undefined
+  const date = value instanceof Date ? value : new Date(value)
+  return Number.isNaN(date.getTime()) ? undefined : date.toISOString()
+}
+
+const defaultStructuredData = schemaType === 'BlogPosting' ? {
   '@context': 'https://schema.org',
   '@type': 'BlogPosting',
   mainEntityOfPage: {
@@ -31,9 +39,9 @@ const defaultStructuredData = {
     '@id': canonicalURL,
   },
   headline: title,
-  image: [new URL(image, Astro.url)],
-  datePublished: datePublished,
-  dateModified: dateModified,
+  image: [new URL(image, Astro.site ?? Astro.url)],
+  datePublished: toIsoDate(datePublished),
+  dateModified: toIsoDate(dateModified),
   author: {
     '@type': 'Person',
     name: 'John Serrano',
@@ -47,6 +55,14 @@ const defaultStructuredData = {
     },
   },
   description: description,
+} : {
+  '@context': 'https://schema.org',
+  '@type': schemaType,
+  '@id': `${canonicalURL}#webpage`,
+  url: canonicalURL,
+  name: title,
+  description,
+  inLanguage: 'es-CO',
 }
 ---
 
@@ -83,7 +99,7 @@ const defaultStructuredData = {
 <meta property='og:url' content={canonicalURL} />
 <meta property='og:title' content={title || openGraph.title} />
 <meta property='og:description' content={description || openGraph.description} />
-<meta property='og:image' content={new URL(image, Astro.url)} />
+<meta property='og:image' content={new URL(image, Astro.site ?? Astro.url)} />
 <meta property='fb:pages' content='323137824476732' />
 <meta property='og:locale:alternate' content='es_LA' />
 
@@ -93,7 +109,7 @@ const defaultStructuredData = {
 <meta property='twitter:url' content={canonicalURL} />
 <meta property='twitter:title' content={title} />
 <meta property='twitter:description' content={description} />
-<meta property='twitter:image' content={new URL(image, Astro.url)} />
+<meta property='twitter:image' content={new URL(image, Astro.site ?? Astro.url)} />
 
 <script
   type='application/ld+json'
