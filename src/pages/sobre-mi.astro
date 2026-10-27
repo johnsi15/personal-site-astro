@@ -3,6 +3,7 @@ import Layout from '../layouts/index.astro'
 ---
 
 <Layout
+  schemaType='AboutPage'
   title='Sobre mí - John Serrano | Frontend, JavaScript, TypeScript, React, Node.js'
   description='¡Hola! Soy John Andrey Serrano, ingeniero de software con más de 10 años de experiencia. Me especializo en la creación de experiencias digitales de alto impacto.'
   url='https://johnserrano.co/sobre-mi'
@@ -69,6 +70,35 @@ import Layout from '../layouts/index.astro'
           rel='noreferrer'>Linkedin</a
         > gracias por leer y saludos.
       </p>
+
+      <section id='recursos' aria-labelledby='recursos-title'>
+        <h2 id='recursos-title'>Ebooks publicados</h2>
+        <p>
+          <a href='https://pay.hotmart.com/O67718482D' target='_blank' rel='noopener noreferrer'
+            >Fundamentos de programación con JavaScript</a
+          >: un recurso para dar tus primeros pasos en programación.
+        </p>
+      </section>
+
+      <section id='apoyo' aria-labelledby='apoyo-title'>
+        <h2 id='apoyo-title'>Apoya el contenido del blog</h2>
+        <p>
+          Si los artículos de johnserrano.co te resultan útiles y quieres respaldar mi trabajo, puedes
+          {' '}<a href='https://link.mercadopago.com.co/johnserrano' target='_blank' rel='noopener noreferrer'
+            >donar por Mercado Pago</a
+          >
+          {' '}
+          o <a href='https://www.buymeacoffee.com/jandrey15' target='_blank' rel='noopener noreferrer'
+            >comprarme un café</a
+          >. También puedes escribirme a <a href='mailto:me@johnserrano.co'>me@johnserrano.co</a> para otras opciones. ¡Gracias
+          por tu apoyo!
+        </p>
+        <h2>Apoyo no monetario</h2>
+        <p>
+          Compartir un artículo con tus amigos o compañeros también ayuda a que este proyecto siga creciendo. Si
+          encuentras algo útil en el blog, recomiéndalo en tus redes o de boca en boca.
+        </p>
+      </section>
 
       <q class='citaBible'
         >El que cree en mí, como dice la Escritura, de su interior correrán ríos de agua viva. Juan 7:38</q

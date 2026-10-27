@@ -16,6 +16,7 @@ const {
   title,
   description,
   publishedDate,
+  updatedDate,
   featureImage,
   primaryTag = { name: 'JavaScript', slug: 'javascript' },
 } = Astro.props
@@ -35,7 +36,9 @@ import '@fontsource/source-sans-pro/700.css'
       title={`${title} | John Serrano`}
       description={description}
       image={featureImage}
+      schemaType='BlogPosting'
       datePublished={publishedDate}
+      dateModified={updatedDate}
     />
     <AdSense />
   </head>

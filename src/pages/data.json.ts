@@ -1,12 +1,12 @@
 import { getCollection } from 'astro:content'
 
-export async function get({ params, request }) {
+export async function GET() {
   const allBlogPosts = await getCollection('blog')
   // console.log(allBlogPosts);
   const posts = allBlogPosts.map(post => {
-    return { id: post.id, slug: post.slug, body: post.body, ...post.data }
+    return { id: post.id, slug: post.id, body: post.body, ...post.data }
   })
-  return {
-    body: JSON.stringify(posts),
-  }
+  return new Response(JSON.stringify(posts), {
+    headers: { 'Content-Type': 'application/json' },
+  })
 }

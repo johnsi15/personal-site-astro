@@ -1,119 +1,162 @@
 ---
-const today = new Date()
 import Social from '@/components/portafolio/social.astro'
+import WhatsAppIcon from './servicios/WhatsAppIcon.astro'
+import { whatsappLinks } from './servicios/data'
+
+const year = new Date().getFullYear()
 ---
 
 <footer id='Footer'>
-  <div class='text'>
-    <div class='services'>
-      <a href='/legal' class='legal'>Aviso legal y política de privacidad</a>
-      <a class='alojado' href='https://vercel.com/' rel='noreferrer' target='_blank'>Alojado en Vercel ❤️</a>
-    </div>
-    <div>
-      <Social borders={false} />
-    </div>
-    <div class='right'>
-      <div class='copyright'>
-        <span>© 2015 - {today.getFullYear()}</span>
-        {' '}
-        por johnserrano.co
+  <div class='footer-wrap'>
+    <div class='footer-main'>
+      <div class='footer-brand'>
+        <a class='brand-name' href='/'>John Serrano<span aria-hidden='true'>.</span></a>
+        <p>Desarrollo web desde Cúcuta para negocios en Colombia.</p>
+        <div class='social-links'><Social borders={false} /></div>
       </div>
-      <p>All rights reserved</p>
+
+      <nav class='footer-services' aria-label='Servicios en el pie de página'>
+        <h2>Servicios</h2>
+        <ul>
+          <li><a href='/servicios#sitio-web'>Sitios web</a></li>
+          <li><a href='/servicios#tienda-online'>Tiendas online</a></li>
+          <li><a href='/servicios#sistemas-a-medida'>Sistemas a medida</a></li>
+          <li><a href='/servicios#casos'>Caso de éxito <span aria-hidden='true'>↗</span></a></li>
+        </ul>
+      </nav>
+
+      <div class='footer-contact'>
+        <h2>Hablemos de tu proyecto</h2>
+        <p>Cuéntame qué necesita tu negocio y revisamos cómo hacerlo realidad.</p>
+        <a class='whatsapp-button' href={whatsappLinks.home} target='_blank' rel='noopener noreferrer'>
+          <WhatsAppIcon /> Cotizar por WhatsApp
+        </a>
+        <a class='email' href='mailto:me@johnserrano.co'>me@johnserrano.co</a>
+      </div>
+    </div>
+
+    <nav class='footer-resources' aria-label='Recursos y enlaces legales'>
+      <a href='/blog'>Blog</a>
+      <a href='/sobre-mi'>Sobre mí</a>
+      <a href='/sobre-mi#recursos'>Ebook de JavaScript</a>
+      <a href='/sobre-mi#apoyo'>Apoyar el blog</a>
+      <a href='/legal'>Aviso legal y privacidad</a>
+    </nav>
+
+    <div class='footer-bottom'>
+      <p>© 2015–{year} John Serrano</p>
+      <a href='https://vercel.com/' target='_blank' rel='noopener noreferrer'>Alojado en Vercel <span aria-hidden='true'>↗</span></a>
     </div>
   </div>
 </footer>
 
 <style>
   #Footer {
-    height: 150px;
     background: #000814;
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    border-top: 1px solid #001d3d;
-    --color-blue-500: #007cff;
-    --color-white: #ffffff;
+    color: #fff;
+    border-top: 1px solid #243c54;
+    font-family: 'Source Sans Pro', sans-serif;
+    --color-blue-500: #82baff;
+    --color-white: #fff;
   }
 
-  .services {
-    display: flex;
-    max-width: 260px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 0 auto;
-    gap: 5px;
-    width: 100%;
+  .footer-wrap {
+    width: min(100% - 40px, 1000px);
+    margin-inline: auto;
   }
 
-  .text {
-    margin: 0 auto;
-    font-weight: 400;
-    text-align: center;
+  .footer-main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    gap: 30px;
+    grid-template-columns: 1.15fr .85fr 1.2fr;
+    gap: 48px;
+    padding-block: 56px 44px;
   }
 
-  .copyright {
-    margin-bottom: 0px;
+  .footer-main > * { min-width: 0; }
+
+  a { text-decoration: none; }
+
+  .brand-name {
+    display: inline-block;
+    font-size: 1.85rem;
+    font-weight: 700;
+    letter-spacing: -.03em;
+    line-height: 1.2;
+    color: #fff;
   }
+
+  .brand-name span { color: #72e3b0; }
 
   p {
-    margin: 0;
+    margin: 14px 0 0;
+    color: #a2b4c9;
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
-  .copyright a {
-    text-decoration: none;
-    color: #eaeaea;
-    transition: 0.2s;
+  .footer-brand p { max-width: 250px; }
+
+  .social-links { margin-top: 20px; }
+  .social-links :global(.social_list) { justify-content: flex-start; margin: 0; gap: 8px; }
+  .social-links :global(li) { width: 36px; height: 44px; }
+  .social-links :global(li a) { display: inline-flex; padding: 10px 6px; }
+  .social-links :global(a:focus-visible) { outline: 2px solid #82baff; outline-offset: 3px; border-radius: 3px; }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 14px;
   }
 
-  .right {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  ul { list-style: none; padding: 0; margin: 0; }
+  .footer-services a { display: inline-block; padding-block: 8px; color: #c6d5e5; font-size: 1rem; line-height: 1.5; }
+  .footer-contact p { margin: 0 0 20px; }
+
+  .whatsapp-button {
+    display: inline-flex;
     align-items: center;
-    gap: 5px;
+    justify-content: center;
+    gap: 10px;
+    background: #72e3b0;
+    color: #000814;
+    border: 1px solid #72e3b0;
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
   }
 
-  .legal,
-  .alojado {
-    text-decoration: none;
-    color: #eaeaea;
-    display: block;
-    transition: 0.2s;
+  .whatsapp-button:hover { background: #9bf0c9; }
+  .email { display: block; width: fit-content; margin-top: 10px; padding-block: 8px; color: #c6d5e5; overflow-wrap: anywhere; }
+
+  .footer-resources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 28px;
+    padding-block: 18px;
+    border-top: 1px solid #243c54;
   }
 
-  .text a:hover {
-    color: #ffffff;
+  .footer-resources a { color: #a2b4c9; font-size: .95rem; padding-block: 10px; }
+  .footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 24px; padding-block: 10px 24px; }
+  .footer-bottom p { margin: 0; font-size: .85rem; }
+  .footer-bottom a { color: #a2b4c9; font-size: .85rem; padding-block: 8px; }
+
+  .footer-services a:hover, .footer-resources a:hover, .footer-bottom a:hover, .email:hover { color: #82baff; text-decoration: underline; text-underline-offset: 4px; }
+  a:focus-visible { outline: 2px solid #82baff; outline-offset: 4px; border-radius: 3px; }
+
+  @media (max-width: 768px) {
+    .footer-main { grid-template-columns: 1fr 1fr; gap: 32px; padding-block: 40px 32px; }
+    .footer-brand { grid-column: 1 / -1; }
+    .footer-brand p { max-width: 100%; }
   }
 
-  .text a:last-child {
-    margin: 0;
-  }
-
-  @media screen and (max-width: 768px) {
-    #Footer {
-      height: auto;
-      padding: 20px 0 30px;
-      justify-content: center;
-      flex-direction: column;
-    }
-
-    .text {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      justify-content: center;
-    }
-
-    .services {
-      order: 3;
-    }
-
-    .right {
-      order: 2;
-    }
+  @media (max-width: 540px) {
+    .footer-main { grid-template-columns: 1fr; }
+    .footer-brand { grid-column: auto; }
+    .footer-resources { gap: 0 24px; }
+    .footer-bottom { flex-direction: column; align-items: flex-start; gap: 0; }
   }
 </style>

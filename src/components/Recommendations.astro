@@ -1,0 +1,43 @@
+---
+const recommendations = [
+  {
+    name: 'Top Autos',
+    quote: 'Estoy muy contento con el sitio web que John desarrolló para Top Autos. Hemos recibido comentarios muy positivos sobre cómo quedó y cómo presenta nuestro negocio.',
+  },
+  {
+    name: 'Malalakids',
+    quote: 'Quedé muy contenta con el resultado de la página de Malalakids. John hizo un gran trabajo y me gustó mucho cómo quedó el sitio.',
+  },
+  {
+    name: 'GeeParts',
+    quote: 'Llevamos más de tres años con el sitio web desarrollado por John y nuestra experiencia ha sido muy positiva. Durante este tiempo hemos visto crecer nuestras ventas y la tienda online ha sido parte de ese crecimiento.',
+  },
+]
+---
+
+<section aria-labelledby='recommendations-title' class='recommendations'>
+  <p class='eyebrow'>Testimonios de clientes</p>
+  <h2 id='recommendations-title'>La experiencia de trabajar conmigo</h2>
+  <p class='context'>Lo que cuentan los negocios para los que he desarrollado sitios web y tiendas online.</p>
+  <div class='quotes'>
+    {recommendations.map(item => (
+      <figure>
+        <blockquote><p>{item.quote}</p></blockquote>
+        <figcaption>{item.name}</figcaption>
+      </figure>
+    ))}
+  </div>
+</section>
+
+<style>
+  .recommendations { font-family: 'Source Sans Pro', sans-serif; }
+  .eyebrow { color: #0055b8; font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 20px; }
+  h2 { font-size: clamp(1.85rem, 3.5vw, 2.5rem); line-height: 1.15; font-weight: 700; letter-spacing: -.02em; margin: 0 0 22px; }
+  .context { font-size: 1.1rem; line-height: 1.6; color: #455a70; }
+  .quotes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; margin-top: 32px; }
+  figure { margin: 0; padding: 24px; background: #f0f5fa; border-radius: 4px; display: flex; flex-direction: column; }
+  blockquote { margin: 0 0 24px; font-size: 1.05rem; line-height: 1.65; color: #243c54; }
+  blockquote p { margin: 0; white-space: pre-line; }
+  figcaption { font-weight: 700; margin-top: auto; }
+  @media (max-width: 768px) { .quotes { grid-template-columns: 1fr; } }
+</style>
