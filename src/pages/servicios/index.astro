@@ -12,6 +12,7 @@ import Faq from '../../components/servicios/Faq.astro'
 import FinalCta from '../../components/servicios/FinalCta.astro'
 import Footer from '../../components/servicios/Footer.astro'
 import MobileWhatsAppCta from '../../components/servicios/MobileWhatsAppCta.astro'
+import ServiceDirectory from '../../components/servicios/ServiceDirectory.astro'
 
 import '@fontsource/source-sans-pro/600.css'
 
@@ -103,6 +104,7 @@ const serviceStructuredData = {
       <AboutJohn />
       <Process />
       <Packages />
+      <ServiceDirectory />
       <Faq />
       <FinalCta />
     </main>
@@ -121,7 +123,7 @@ const serviceStructuredData = {
 </Layout>
 
 <script>
-  import { sendEventData } from '../../helpers/sendEventData'
+  import { initWhatsAppTracking } from '../../helpers/whatsappTracking'
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
@@ -201,46 +203,7 @@ const serviceStructuredData = {
   sections.forEach(section => sectionObserver.observe(section))
 
   // --- Medición de clics hacia WhatsApp ---
-  const trackingWindow = window as typeof window & { dataLayer?: Array<Record<string, unknown>> }
-  const attributionKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term']
-  const queryParams = new URLSearchParams(window.location.search)
-
-  attributionKeys.forEach(key => {
-    const value = queryParams.get(key)
-    if (value) sessionStorage.setItem(key, value)
-  })
-
-  document.querySelectorAll<HTMLElement>('[data-whatsapp-location]').forEach(link => {
-    link.addEventListener('click', () => {
-      const ctaLocation = link.dataset.whatsappLocation || 'unknown'
-      const serviceName = link.dataset.whatsappService || 'general'
-      const eventId = `whatsapp_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`
-      const attribution = Object.fromEntries(
-        attributionKeys.flatMap(key => {
-          const value = sessionStorage.getItem(key)
-          return value ? [[key, value]] : []
-        })
-      )
-
-      trackingWindow.dataLayer = trackingWindow.dataLayer || []
-      trackingWindow.dataLayer.push({
-        event: 'whatsapp_click',
-        ga4_event_name: 'generate_lead',
-        contact_method: 'whatsapp',
-        cta_location: ctaLocation,
-        service_name: serviceName,
-        page_path: window.location.pathname,
-        event_id: eventId,
-        ...attribution,
-      })
-
-      sendEventData({
-        event_name: 'Contact',
-        event_id: eventId,
-        title: `WhatsApp · ${serviceName} · ${ctaLocation}`,
-      })
-    })
-  })
+  initWhatsAppTracking()
 
   // --- Reveal al hacer scroll (fade + slide-up) ---
   const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal]')

@@ -1,0 +1,27 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('automotive'),
+  { question: '¿Necesito una tienda de repuestos o un catálogo de vehículos?', answer: 'Si vendes referencias con precio y despacho definidos, revisamos una tienda con pagos. Si cada vehículo requiere asesoría y negociación, puede convenir un catálogo orientado al contacto. No son el mismo alcance.' },
+  { question: '¿Se puede filtrar por marca, modelo o compatibilidad?', answer: 'Se puede evaluar si tus datos permiten hacerlo de forma fiable. Hay que definir de dónde proviene la compatibilidad y quién la actualiza. No se debe inferir que una pieza sirve para un vehículo sin información validada por el negocio.' },
+]
+---
+<CommercialPage
+  title='Páginas web para repuestos y venta de autos | John Serrano'
+  description='Tiendas de repuestos y catálogos de vehículos con alcances distintos. Conoce los proyectos reales GeeParts y Top Autos para definir la web de tu negocio automotor.'
+  heading='Repuestos y autos: ayuda al cliente a encontrar la referencia correcta'
+  intro='No se compra un repuesto como se elige un carro. Tu web debe reflejar esa diferencia: facilitar la búsqueda de una pieza o dar información suficiente para consultar por un vehículo.'
+  label='Sector / Negocios automotores'
+  cta='una web para mi negocio de repuestos o autos'
+  question='Quiero contarte si vendo repuestos, vehículos o ambos y cómo administro mi catálogo.'
+  closingText='Cuéntame si vendes repuestos, vehículos o ambos y cómo administras tu catálogo.'
+  faqs={faqs}
+>
+  <section><h2>Menos consultas sin contexto, más información útil</h2><p>Si una ficha no identifica bien el producto, el cliente pregunta por WhatsApp sin saber si encontró lo que necesita. En vehículos, una galería pobre o datos incompletos hacen más difícil avanzar a una visita o una conversación comercial.</p><p>El trabajo empieza por ordenar la información que ya tienes. Los filtros deben apoyarse en datos consistentes; no compensan un catálogo sin referencias o con existencias desactualizadas.</p></section>
+  <section><h2>Dos proyectos reales, dos formas de vender</h2><div class='columns'><article><h3>GeeParts: comercio electrónico para motos</h3><p>Creé y configuré la tienda con Tiendanube e integré OpenPay. Es una referencia de venta de productos especializados mediante una plataforma de comercio electrónico administrable.</p><a href='https://geeparts.co/' target='_blank' rel='noopener noreferrer'>Visitar GeeParts ↗</a></article><article><h3>Top Autos: catálogo de vehículos</h3><p>Desarrollé una plataforma de autos nuevos y usados con categorías, múltiples filtros y galería con zoom. El frontend utiliza Next.js y el contenido se gestiona con WordPress desacoplado.</p><a href='https://topautos.com.co/' target='_blank' rel='noopener noreferrer'>Visitar Top Autos ↗</a></article></div></section>
+  <section><h2>Qué podemos construir para tu operación</h2><ul><li><strong>Para repuestos:</strong> catálogo por categorías, fichas con referencias y variantes, y pagos y envíos cuando se contrata una tienda.</li><li><strong>Para vehículos:</strong> fichas, fotografías, filtros acordados y un camino claro para consultar disponibilidad.</li><li><strong>Para ambos:</strong> experiencia móvil, contenido administrable según la plataforma y SEO técnico de las páginas contratadas.</li></ul><p>La conexión con tu inventario, un ERP o fuentes externas de datos requiere revisar disponibilidad de API, calidad de datos y costos antes de incluirla.</p></section>
+  <ProjectBudget type='automotive' />
+  <section><h2>Elige el punto de partida</h2><p>Para cobrar productos, consulta <a href='/servicios/tienda-online'>tiendas online</a>. Para presentar el negocio y recibir consultas, revisa <a href='/servicios/pagina-web-colombia'>páginas web en Colombia</a>. Si el cuello de botella está en las existencias o el seguimiento, podemos evaluar un <a href='/servicios/sistemas-a-medida'>sistema a medida</a>.</p></section>
+</CommercialPage>

@@ -1,6 +1,6 @@
-# Tracking de conversiones en /servicios
+# Tracking de clics de WhatsApp
 
-La página envía un evento a `dataLayer` cada vez que un visitante abre WhatsApp desde un CTA.
+El helper compartido `src/helpers/whatsappTracking.ts` envía un evento a `dataLayer` cada vez que un visitante hace clic en un CTA de WhatsApp identificado con `data-whatsapp-location`. Se utiliza en `/servicios`, home, footer y las páginas de servicios y sectores. Un clic no confirma un mensaje enviado ni una venta.
 
 ```js
 {
@@ -58,3 +58,12 @@ Si se requiere atribución directa en Ads, crear una etiqueta de conversión de 
 ## Meta
 
 El mismo clic envía `Contact` a la API de conversiones existente (`/api/conversions-fb.json`) con el mismo `event_id`. La petición usa `keepalive` para completarse aunque el navegador abra WhatsApp inmediatamente.
+
+## Ubicaciones de los botones
+
+- Home: `home_hero` y `home_contact`.
+- Footer compartido: `footer`.
+- Servicios y sectores nuevos: `commercial_hero` y `commercial_closing`; `service_name` identifica el servicio o sector.
+- `/servicios` conserva sus ubicaciones existentes.
+
+El helper se inicializa una sola vez por documento para evitar listeners duplicados. Se conserva el contrato de eventos de GTM y Meta. La recepción en GA4 depende de publicar y verificar la etiqueta descrita arriba.

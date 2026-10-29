@@ -1,0 +1,27 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('web'),
+  { question: '¿Incluye dominio, hosting y correo corporativo?', answer: 'Revisamos lo que ya tienes y lo que falta. La propuesta distingue el desarrollo de las renovaciones y de los servicios de terceros; el correo corporativo se contempla solo si queda incluido expresamente.' },
+  { question: '¿Garantizas aparecer primero en Google o en respuestas de IA?', answer: 'No. Trabajo la estructura técnica, el contenido claro y los datos del negocio, pero ni Google ni los motores de IA garantizan posiciones o menciones. La visibilidad requiere seguimiento y depende de factores externos.' },
+]
+---
+<CommercialPage
+  title='Diseño y desarrollo de páginas web en Colombia | John Serrano'
+  description='Páginas web para negocios en Colombia. Landing pages sencillas desde $600.000 COP, según complejidad. Conoce el alcance, un caso real y las condiciones.'
+  heading='Tu página web en Colombia: explica lo que haces y facilita el contacto'
+  intro='Cuando alguien recibe una recomendación de tu negocio, busca cómo comprobar que eres la opción adecuada. Tu web debe responder qué ofreces, a quién ayudas y cómo hablar contigo, sin obligarlo a recorrer tus redes.'
+  label='Servicio / Páginas web para negocios en Colombia'
+  cta='una página web para mi negocio en Colombia'
+  question='Quiero contarte qué servicios ofrezco y qué consultas necesito recibir desde mi página.'
+  closingText='Cuéntame qué ofrece tu negocio y qué consultas te gustaría recibir desde tu página.'
+  faqs={faqs}
+>
+  <section><h2>Que te recomienden no debería ser el final de la búsqueda</h2><p>Un perfil social puede mostrar actividad, pero no siempre explica tus servicios, tu zona de atención o tu forma de trabajar. Si esa información está dispersa, el cliente tiene que preguntar lo básico antes de saber si puede contratarte.</p><p>Soy John Serrano, ingeniero de software. Trabajo desde Cúcuta de forma remota con negocios en toda Colombia: las reuniones, revisiones y entregas se coordinan en línea. Organizo tu sitio alrededor de las decisiones del visitante: entender el servicio, revisar evidencia y encontrar un siguiente paso claro.</p></section>
+  <section><h2>Una web que ayude al cliente a elegirte</h2><div class='columns'><div><h3>Contenido que orienta</h3><ul><li>Páginas para explicar los servicios incluidos en el alcance.</li><li>Presentación del negocio, proyectos o testimonios que puedas respaldar.</li><li>Información de ubicación y zonas donde atiendes.</li></ul></div><div><h3>Una base técnica cuidada</h3><ul><li>Diseño adaptable a celular, tablet y escritorio.</li><li>Contacto por WhatsApp y formulario según la propuesta.</li><li>Jerarquía de encabezados, metadatos, indexabilidad y revisión de carga.</li></ul></div></div></section>
+  <section class='case'><p class='eyebrow'>Caso real / Top Autos</p><h2>Presentar el negocio y permitir explorar su oferta</h2><p>Desarrollé Top Autos, una plataforma de vehículos nuevos y usados con categorías, filtros y una galería con zoom. Utilicé Next.js y WordPress como gestor de contenido desacoplado.</p><p>Este catálogo reúne información y fotografías de los vehículos en un sitio que el negocio puede administrar. Sus filtros y funciones se desarrollaron para el alcance específico de Top Autos.</p><a href='https://topautos.com.co/' target='_blank' rel='noopener noreferrer'>Conocer Top Autos ↗</a></section>
+  <ProjectBudget type='web' />
+  <section><h2>Visibilidad para tu negocio con información comprobable</h2><p>Para SEO y para que los buscadores con IA entiendan tu negocio, priorizo respuestas concretas: qué haces, dónde atiendes, ejemplos reales y condiciones claras. La web debe comunicar tu cobertura real, sea una ciudad, varias regiones o todo el país, sin repetir páginas por ubicación que no aporten información útil.</p><p>Si necesitas cobrar productos en línea, el alcance correcto es una <a href='/servicios/tienda-online'>tienda online</a>.</p></section>
+</CommercialPage>

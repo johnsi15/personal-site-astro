@@ -4,6 +4,7 @@ import { whatsappLinks } from './data'
 const packages = [
   {
     id: 'sistemas-a-medida',
+    path: '/servicios/sistemas-a-medida',
     name: 'Sistemas y aplicaciones web a medida',
     tagline: 'Una herramienta para la forma en que opera tu negocio.',
     features: [
@@ -19,6 +20,7 @@ const packages = [
   },
   {
     id: 'sitio-web',
+    path: '/servicios/pagina-web-colombia',
     name: 'Sitio web',
     tagline: 'Presenta tu negocio con claridad y facilita el contacto.',
     features: [
@@ -35,6 +37,7 @@ const packages = [
   },
   {
     id: 'tienda-online',
+    path: '/servicios/tienda-online',
     name: 'Tienda online',
     tagline: 'Catálogo, pagos y envíos en un canal propio.',
     features: [
@@ -146,6 +149,7 @@ const packages = [
               </ul>
 
               <div class='mt-auto pt-8'>
+                {pkg.path && <a href={pkg.path} class='mb-5 inline-block text-sm font-semibold text-blue-300 underline underline-offset-4 hover:text-white'>Ver alcance, precios y condiciones →</a>}
                 <a
                   href={pkg.cta}
                   target='_blank'

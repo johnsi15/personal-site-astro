@@ -1,0 +1,27 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('store'),
+  { question: '¿Incluye plataforma, dominio, comisiones y publicidad?', answer: 'La cotización separa el desarrollo de las suscripciones, el dominio, las comisiones de pago y las aplicaciones de terceros. La inversión en anuncios y su gestión no se incluyen salvo que se contraten expresamente.' },
+  { question: '¿Una tienda nueva garantiza ventas?', answer: 'No. La tienda resuelve la experiencia de compra, pero las ventas dependen también del producto, el precio, el tráfico y la operación. En el caso confidencial publicado, las campañas las gestiona el cliente.' },
+]
+---
+<CommercialPage
+  title='Desarrollo de tiendas online en Colombia | John Serrano'
+  description='Crea un canal de venta propio con catálogo, pagos y envíos. Conoce el trabajo en GeeParts, el alcance del desarrollo y las condiciones de contratación.'
+  heading='Una tienda online para dejar de tomar cada pedido a mano'
+  intro='Si vendes por Instagram o WhatsApp, conoces la rutina: enviar fotos, confirmar existencias y explicar cómo pagar. Organicemos esa compra en un canal propio, sin perder el contacto con tus clientes.'
+  label='Servicio / Comercio electrónico'
+  cta='crear una tienda online'
+  question='Quiero revisar mi catálogo, mis medios de pago y cómo despacho los pedidos.'
+  closingText='Cuéntame cómo administras tu catálogo, recibes los pagos y despachas los pedidos.'
+  faqs={faqs}
+>
+  <section><h2>El problema no es solo tener dónde mostrar productos</h2><p>Un catálogo por chat te obliga a repetir respuestas y hace difícil seguir cada pedido. Una tienda necesita conectar lo que el cliente ve con lo que tu negocio puede entregar: variantes claras, existencias, costos de envío y un pago que se pueda completar desde el celular.</p><p>Antes de elegir tecnología, reviso contigo cuántas referencias manejas, quién actualizará precios y cómo preparas los despachos. La plataforma debe encajar con esa operación, no al revés.</p></section>
+  <section><h2>Qué incluye el desarrollo de tu canal de venta</h2><ul><li>Estructura del catálogo por categorías, con fichas de producto y variantes según el alcance acordado.</li><li>Configuración de la pasarela de pago y de las opciones de envío compatibles con la plataforma elegida.</li><li>Diseño responsive y revisión del recorrido desde el producto hasta el checkout.</li><li>SEO técnico on-page: títulos, descripciones, URLs y organización del contenido.</li><li>Pruebas del flujo de compra y acompañamiento para administrar la tienda según la propuesta.</li></ul></section>
+  <section class='case'><p class='eyebrow'>Caso real / GeeParts</p><h2>Comercio especializado en productos para motos</h2><p>En GeeParts creé y configuré una tienda sobre Tiendanube e integré OpenPay como pasarela de pagos. Es un ejemplo de cómo una plataforma administrable puede servir a un negocio con un catálogo especializado.</p><a href='https://geeparts.co/' target='_blank' rel='noopener noreferrer'>Visitar GeeParts ↗</a></section>
+  <ProjectBudget type='store' />
+  <section><h2>¿Tienes una plataforma o un sector en mente?</h2><p>Si ya decidiste trabajar con Shopify, revisa el <a href='/servicios/tienda-shopify'>servicio de configuración de tiendas Shopify</a>. También puedes ver cómo enfoco el comercio de <a href='/sectores/repuestos-y-autos'>repuestos y autos</a> o la venta de <a href='/sectores/ropa-infantil'>ropa infantil</a>.</p></section>
+</CommercialPage>

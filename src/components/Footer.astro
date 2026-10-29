@@ -18,9 +18,12 @@ const year = new Date().getFullYear()
       <nav class='footer-services' aria-label='Servicios en el pie de página'>
         <h2>Servicios</h2>
         <ul>
-          <li><a href='/servicios#sitio-web'>Sitios web</a></li>
-          <li><a href='/servicios#tienda-online'>Tiendas online</a></li>
-          <li><a href='/servicios#sistemas-a-medida'>Sistemas a medida</a></li>
+          <li><a href='/servicios/pagina-web-colombia'>Sitios web en Colombia</a></li>
+          <li><a href='/servicios/tienda-online'>Tiendas online</a></li>
+          <li><a href='/servicios/sistemas-a-medida'>Sistemas a medida</a></li>
+          <li><a href='/servicios/tienda-shopify'>Tiendas Shopify</a></li>
+          <li><a href='/sectores/repuestos-y-autos'>Repuestos y autos</a></li>
+          <li><a href='/sectores/ropa-infantil'>Ropa infantil</a></li>
           <li><a href='/servicios#casos'>Caso de éxito <span aria-hidden='true'>↗</span></a></li>
         </ul>
       </nav>
@@ -28,7 +31,7 @@ const year = new Date().getFullYear()
       <div class='footer-contact'>
         <h2>Hablemos de tu proyecto</h2>
         <p>Cuéntame qué necesita tu negocio y revisamos cómo hacerlo realidad.</p>
-        <a class='whatsapp-button' href={whatsappLinks.home} target='_blank' rel='noopener noreferrer'>
+        <a class='whatsapp-button' href={whatsappLinks.home} data-whatsapp-location='footer' target='_blank' rel='noopener noreferrer'>
           <WhatsAppIcon /> Cotizar por WhatsApp
         </a>
         <a class='email' href='mailto:me@johnserrano.co'>me@johnserrano.co</a>

@@ -1,0 +1,13 @@
+---
+import { commercialTerms, priceDescriptions } from '../../data/commercial-terms'
+interface Props { type: keyof typeof priceDescriptions }
+const { type } = Astro.props
+---
+<section class='scope'>
+  <h2>Inversión y plazo de tu proyecto</h2>
+  <div class='columns'>
+    <div><h3>Precio según el alcance</h3><p>{priceDescriptions[type]}</p><p>{commercialTerms.hourlyRates}</p></div>
+    <div><h3>Un calendario según tu proyecto</h3><p>{commercialTerms.timeline}</p><p>{commercialTerms.payment}</p></div>
+  </div>
+  <h3>Dominio, alojamiento y otros servicios</h3><p>{commercialTerms.costs}</p>
+</section>

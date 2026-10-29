@@ -1,0 +1,27 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('store'),
+  { question: '¿Qué proyectos has trabajado en Shopify?', answer: 'He trabajado en las tiendas Shopify de Malalakids y Amorette Kids, dos marcas de ropa infantil que puedes visitar en los enlaces de esta página.' },
+  { question: '¿Cualquier pasarela o transportadora funciona con Shopify?', answer: 'Antes de cotizar revisamos qué proveedores son compatibles con tu país y tu operación, sus requisitos y sus costos. Algunas integraciones requieren una aplicación o un desarrollo adicional.' },
+]
+---
+<CommercialPage
+  title='Configuración y desarrollo de tienda Shopify | John Serrano'
+  description='Tiendas Shopify desde $2.000.000 COP, según alcance. Referencias reales: Malalakids y Amorette Kids. Revisa catálogo, pagos, costos externos y condiciones.'
+  heading='Tienda Shopify: primero la operación, después las aplicaciones'
+  intro='Elegir Shopify no termina con escoger un tema. Hay que organizar variantes, comprobar los medios de pago y entender qué costos vas a mantener para vender desde Colombia.'
+  label='Servicio / Implementación en Shopify'
+  cta='revisar una tienda en Shopify'
+  question='Quiero revisar si Shopify encaja con mi catálogo, mis pagos y mis envíos.'
+  closingText='Revisemos si Shopify encaja con tu catálogo, tus medios de pago y tus envíos.'
+  faqs={faqs}
+>
+  <section><h2>Evita una tienda que dependa de aplicaciones que no necesitas</h2><p>Un tema atractivo puede quedarse corto cuando aparecen tallas, referencias o reglas de envío. Sumar aplicaciones sin revisar el flujo completo también puede aumentar los costos y complicar la administración.</p><p>El diagnóstico empieza por tu catálogo y tu país de venta. Comprobamos qué resuelve Shopify de forma nativa, qué exige una aplicación y qué no conviene prometer sin una validación técnica.</p></section>
+  <section><h2>Alcance propuesto para una implementación</h2><ol><li><strong>Tema y navegación:</strong> selección y adaptación del tema al contenido y a la identidad del negocio, dentro de sus posibilidades.</li><li><strong>Productos y colecciones:</strong> estructura de categorías, fichas y variantes, con una carga inicial delimitada.</li><li><strong>Pagos y envíos:</strong> configuración de proveedores compatibles y revisión de sus requisitos para tu operación.</li><li><strong>Compra desde celular:</strong> pruebas del catálogo, carrito y proceso de compra disponible en el plan elegido.</li><li><strong>SEO de lanzamiento:</strong> títulos, descripciones y revisión de URLs; si hay migración, evaluación de redirecciones.</li></ol><p>La personalización avanzada del checkout y el desarrollo de aplicaciones no se dan por incluidos: se valida su viabilidad y se cotizan aparte cuando corresponda.</p></section>
+  <section class='case'><p class='eyebrow'>Proyectos reales / Shopify</p><h2>Malalakids y Amorette Kids: marcas de ropa infantil en Shopify</h2><p>He trabajado en las tiendas de Malalakids y Amorette Kids, ambas sobre Shopify. Son referencias de mi trabajo con marcas que presentan sus productos y colecciones en esta plataforma.</p><p>Malalakids compartió esta recomendación: «Quedé muy contenta con el resultado de la página de Malalakids. John hizo un gran trabajo y me gustó mucho cómo quedó el sitio».</p><ul><li><a href='https://malalakids.com/' target='_blank' rel='noopener noreferrer'>Visitar Malalakids ↗</a></li><li><a href='https://amorettekids.com/' target='_blank' rel='noopener noreferrer'>Visitar Amorette Kids ↗</a></li></ul></section>
+  <ProjectBudget type='store' />
+  <section><h2>¿Shopify o una alternativa?</h2><p>Si todavía no has elegido plataforma, empieza por el servicio de <a href='/servicios/tienda-online'>tienda online</a>. Si vendes prendas con tallas y colores, revisa las necesidades específicas de <a href='/sectores/ropa-infantil'>una tienda de ropa infantil</a> antes de decidir qué instalar.</p></section>
+</CommercialPage>

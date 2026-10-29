@@ -1,0 +1,29 @@
+---
+import { commercialPages } from '../../data/commercial-pages'
+const published = commercialPages.filter(page => !page.draft)
+---
+<section class='directory' aria-labelledby='directory-title'>
+  <div class='directory-wrap'>
+    <p class='eyebrow'>Alcance, inversión y experiencia</p>
+    <h2 id='directory-title'>Encuentra el servicio para tu negocio</h2>
+    <p>Consulta qué incluye cada proyecto, sus precios de referencia y las condiciones antes de cotizar.</p>
+    <div class='directory-grid'>
+      <nav aria-label='Servicios detallados'><h3>Por lo que necesitas construir</h3><ul>{published.filter(page => page.path.startsWith('/servicios/')).map(page => <li><a href={page.path}>{page.name}<span aria-hidden='true'> ↗</span></a></li>)}</ul></nav>
+      <nav aria-label='Experiencia por sector'><h3>Por el sector de tu negocio</h3><ul>{published.filter(page => page.path.startsWith('/sectores/')).map(page => <li><a href={page.path}>{page.name}<span aria-hidden='true'> ↗</span></a></li>)}</ul></nav>
+    </div>
+  </div>
+</section>
+<style>
+  .directory { padding: 64px 20px; border-block: 1px solid #ffffff1a; color: #fff; }
+  .directory-wrap { max-width: 1152px; margin-inline: auto; }
+  .eyebrow { color: #82baff; font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; }
+  h2 { margin: 16px 0; font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 700; line-height: 1.2; }
+  p { color: #bdc9d9; line-height: 1.6; }
+  .directory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 36px; }
+  h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 16px; }
+  ul { list-style: none; padding: 0; }
+  a { display: flex; justify-content: space-between; color: #b4d7ff; border-top: 1px solid #ffffff26; padding: 16px 0; text-decoration: none; }
+  a:hover { color: #fff; text-decoration: underline; text-underline-offset: 4px; }
+  a:focus-visible { outline: 3px solid #82baff; outline-offset: 4px; }
+  @media (max-width: 768px) { .directory-grid { grid-template-columns: 1fr; gap: 32px; } }
+</style>

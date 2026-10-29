@@ -6,6 +6,7 @@ import react from '@astrojs/react'
 import partytown from '@astrojs/partytown'
 
 import tailwindcss from '@tailwindcss/vite'
+import { commercialPages } from './src/data/commercial-pages.ts'
 
 // https://astro.build/config
 export default defineConfig({
@@ -28,7 +29,9 @@ export default defineConfig({
 
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      filter: page => !commercialPages.some(entry => entry.draft && entry.path === new URL(page).pathname.replace(/\/$/, '')),
+    }),
     react(),
     partytown({
       // Adds dataLayer.push as a forwarding-event.

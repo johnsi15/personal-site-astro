@@ -1,0 +1,28 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('custom'),
+  { question: '¿Puedo conectar mis hojas de cálculo o herramientas actuales?', answer: 'Primero reviso la calidad de los datos y si las herramientas permiten exportarlos o usar una API. La importación, la limpieza de datos y las integraciones se incluyen solo cuando están descritas en el alcance.' },
+  { question: '¿Un desarrollo a medida siempre es la mejor opción?', answer: 'No. Si una herramienta existente resuelve tu operación, puede ser más conveniente configurarla. El desarrollo a medida tiene sentido cuando tus reglas o integraciones justifican construir y mantener una solución propia.' },
+]
+---
+<CommercialPage
+  title='Sistemas a medida: inventarios, CRM y paneles | John Serrano'
+  description='Desarrollo de sistemas web a medida para organizar inventarios, clientes y procesos. Caso real: panel de administración de Catalítico. Revisa alcance y condiciones.'
+  heading='Un sistema a medida para el proceso que ya no cabe en una hoja de cálculo'
+  intro='Cuando varias personas actualizan archivos distintos, los datos dejan de coincidir. Antes de programar, revisemos dónde se pierde información y qué necesita hacer cada usuario para que el sistema ayude de verdad.'
+  label='Servicio / Software para tu operación'
+  cta='un sistema web a medida'
+  question='Quiero mostrarte el proceso que hoy llevo en hojas de cálculo o herramientas separadas.'
+  closingText='Cuéntame qué proceso quieres mejorar, quién lo usa y cómo lo gestionas hoy.'
+  faqs={faqs}
+>
+  <section><h2>Empezar por el proceso, no por una lista de módulos</h2><p>Un inventario desactualizado, un seguimiento comercial disperso y un panel que nadie consulta son problemas distintos. Construir muchas pantallas no los resuelve si antes no acordamos quién registra la información, qué puede cambiar y qué decisiones necesita tomar.</p><p>La primera conversación sirve para delimitar una versión útil: el flujo principal, sus responsables y cómo comprobaremos que funciona. No propongo reemplazar toda tu operación de una sola vez.</p></section>
+  <section><h2>Tres necesidades, tres alcances posibles</h2><ul><li><strong>Inventarios:</strong> registrar entradas y salidas, consultar existencias y definir reglas por producto o ubicación según tu operación.</li><li><strong>CRM:</strong> centralizar contactos, etapas comerciales y tareas de seguimiento, con responsables claros.</li><li><strong>Paneles internos:</strong> administrar contenido o consultar indicadores a partir de fuentes de datos acordadas.</li></ul><p>Son opciones de desarrollo, no módulos que se incluyan automáticamente en un mismo precio. Roles de usuario, integraciones y reportes se especifican para cada proyecto.</p></section>
+  <section class='case'><p class='eyebrow'>Caso real / Catalítico</p><h2>Un panel para que los editores gestionen la página de inicio</h2><p>Además del sitio principal de Catalítico, diseñé y programé un panel interno para gestionar secciones de la página de inicio. Los editores pueden agregar textos, activar o desactivar bloques y reorganizar módulos visuales.</p><p>Desarrollé el panel con React, TypeScript y Tailwind CSS para que el equipo editorial pudiera administrar el contenido de la página de inicio.</p><a href='https://www.catalitico.com.co/' target='_blank' rel='noopener noreferrer'>Ver el sitio público de Catalítico ↗</a></section>
+  <section><h2>Qué se define y entrega en el proyecto</h2><ol><li><strong>Mapa del proceso:</strong> usuarios, reglas, datos y límites del primer alcance.</li><li><strong>Interfaz y desarrollo:</strong> pantallas y flujos aprobados, con los accesos y permisos definidos.</li><li><strong>Pruebas:</strong> revisión de los escenarios acordados con datos de ejemplo o datos autorizados por el negocio.</li><li><strong>Puesta en marcha:</strong> despliegue y acompañamiento de uso según la propuesta.</li></ol></section>
+  <ProjectBudget type='custom' />
+  <section><h2>¿Tu problema es operativo o comercial?</h2><p>Si necesitas vender productos con pagos y envíos, puede bastar una <a href='/servicios/tienda-online'>tienda online administrable</a>. Para el sector automotor, revisa la diferencia entre <a href='/sectores/repuestos-y-autos'>un catálogo de vehículos y una tienda de repuestos</a>.</p></section>
+</CommercialPage>

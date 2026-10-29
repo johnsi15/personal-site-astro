@@ -1,0 +1,29 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('web'),
+  { question: '¿Ya tienes un caso publicado de una firma de contadores?', answer: 'No hay un caso de firma contable documentado en este sitio. Esta página plantea un servicio para el sector; los prospectos no se presentan como clientes. Catalítico se menciona solo como referencia técnica de un panel, no como una firma contable.' },
+  { question: '¿Puedo recibir documentos contables desde la web?', answer: 'No se incluye por defecto. Antes de recibir documentos sensibles hay que definir datos necesarios, permisos, almacenamiento, conservación y responsabilidades. Un formulario comercial no debe convertirse sin evaluación en un repositorio de información confidencial.' },
+  { question: '¿El sitio garantiza clientes o cumplimiento normativo?', answer: 'No. La web ayuda a explicar y presentar los servicios, pero no garantiza contratación. Las credenciales, afirmaciones profesionales y políticas deben ser proporcionadas y validadas por la firma; el desarrollo no equivale a una certificación de cumplimiento.' },
+]
+---
+<CommercialPage
+  title='Páginas web para contadores y servicios profesionales | John Serrano'
+  description='Presenta los servicios de tu firma, muestra la experiencia de tu equipo y facilita consultas. Desarrollo de páginas web para contadores y servicios profesionales.'
+  heading='Una web para que tu próximo cliente entienda qué puede confiarle a tu firma'
+  intro='Decir «asesoría integral» no explica si atiendes una declaración puntual, la contabilidad de una empresa o un acompañamiento recurrente. Hagamos visibles tus servicios, su alcance y el siguiente paso para consultar.'
+  label='Sector / Contadores y servicios profesionales'
+  cta='una página web para mi firma de servicios profesionales'
+  question='Quiero contarte a quién atiende mi firma y qué servicios necesito explicar mejor.'
+  closingText='Cuéntame a quién atiende tu firma y qué servicios necesitas explicar mejor.'
+  faqs={faqs}
+>
+  <section><h2>La confianza empieza con información concreta</h2><p>Un visitante necesita saber si trabajas con personas naturales o empresas, qué tipo de asesoría prestas y cómo comienza la atención. Una web que solo enumera «contabilidad, impuestos y asesorías» deja esas decisiones sin resolver.</p><p>Propongo organizar cada servicio con el problema que atiende, a quién va dirigido, qué información necesita el cliente para consultar y qué no incluye. Los títulos profesionales, registros y testimonios se publican únicamente cuando la firma puede respaldarlos.</p></section>
+  <section><h2>Qué incluye una web orientada a consultas</h2><ul><li>Estructura para las líneas de servicio acordadas, con lenguaje comprensible para quien no es especialista.</li><li>Presentación del equipo y de sus credenciales verificadas por la firma.</li><li>Preguntas frecuentes para aclarar alcance y proceso de contratación.</li><li>Contacto por WhatsApp y formulario comercial según la propuesta, sin pedir documentos sensibles de forma innecesaria.</li><li>Diseño responsive, metadatos y jerarquía de contenido para buscadores.</li></ul></section>
+  <section class='case'><p class='eyebrow'>Experiencia en administración de contenido</p><h2>Un panel de administración real: Catalítico</h2><p>En Catalítico desarrollé el sitio principal y un panel interno para que los editores gestionaran textos, activaran o desactivaran bloques y reorganizaran módulos del homepage.</p><p>Este panel editorial es una referencia de mi trabajo en administración de contenido. Para una firma contable, revisaríamos sus procesos y necesidades en un proyecto propio.</p><a href='https://www.catalitico.com.co/' target='_blank' rel='noopener noreferrer'>Ver el sitio público de Catalítico ↗</a></section>
+  <section><h2>Una web informativa no es un portal de clientes</h2><p>Si necesitas expedientes, seguimiento de solicitudes o intercambio de documentos, el proyecto cambia: hay que definir accesos, responsabilidades y tratamiento de datos antes de desarrollar. No añado un área privada como si fuera solo una página más.</p><p>Podemos comenzar con una presencia comercial clara y evaluar un <a href='/servicios/sistemas-a-medida'>sistema a medida</a> cuando exista un proceso delimitado que lo justifique.</p></section>
+  <ProjectBudget type='web' />
+  <section><h2>Atención desde Cúcuta, con alcance definido</h2><p>Trabajo desde Cúcuta y puedo desarrollar tu proyecto de forma remota. Si buscas una web informativa para tu firma, consulta también <a href='/servicios/pagina-web-colombia'>el servicio de páginas web en Colombia</a>.</p></section>
+</CommercialPage>

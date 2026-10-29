@@ -1,0 +1,114 @@
+---
+import Layout from './index.astro'
+import WhatsAppIcon from '../components/servicios/WhatsAppIcon.astro'
+import { buildWhatsAppLink } from '../components/servicios/data'
+import { commercialPages } from '../data/commercial-pages'
+
+interface Props {
+  title: string
+  description: string
+  heading: string
+  intro: string
+  label: string
+  cta: string
+  question: string
+  closingText: string
+  faqs: { question: string; answer: string }[]
+}
+const { title, description, heading, intro, label, cta, question, closingText, faqs } = Astro.props
+const path = Astro.url.pathname.replace(/\/$/, '')
+const page = commercialPages.find(entry => entry.path === path)
+const draft = page?.draft ?? true
+const url = new URL(path, Astro.site).href
+const whatsapp = buildWhatsAppLink(`Hola John, me interesa ${cta}. ${question}`)
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    { '@type': 'WebPage', '@id': `${url}#webpage`, url, name: title, description, inLanguage: 'es-CO', mainEntity: { '@id': `${url}#service` } },
+    { '@type': 'Service', '@id': `${url}#service`, name: heading, url, description,
+      provider: { '@type': 'Person', '@id': 'https://johnserrano.co/#john-serrano', name: 'John Serrano', url: 'https://johnserrano.co/sobre-mi' },
+      areaServed: { '@type': 'Country', name: 'Colombia' } },
+    { '@type': 'BreadcrumbList', itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Inicio', item: 'https://johnserrano.co/' },
+      { '@type': 'ListItem', position: 2, name: 'Servicios', item: 'https://johnserrano.co/servicios' },
+      { '@type': 'ListItem', position: 3, name: page?.name ?? heading, item: url },
+    ] },
+    { '@type': 'FAQPage', '@id': `${url}#preguntas`, mainEntity: faqs.map(item => ({ '@type': 'Question', name: item.question, acceptedAnswer: { '@type': 'Answer', text: item.answer } })) },
+  ],
+}
+---
+
+<Layout title={title} description={description} structuredData={structuredData} noindex={draft}>
+  <main class='commercial'>
+    {draft && <aside class='draft'><div class='wrap'>Borrador de contenido · Pendiente de revisión editorial. Esta página no está habilitada para indexación.</div></aside>}
+    <header class='hero'>
+      <div class='wrap'>
+        <nav aria-label='Ruta de navegación'><a href='/'>Inicio</a><span aria-hidden='true'> / </span><a href='/servicios'>Servicios</a><span aria-hidden='true'> / </span><span>{page?.name}</span></nav>
+        <p class='eyebrow'>{label}</p>
+        <h1>{heading}</h1>
+        <p class='intro'>{intro}</p>
+        <a class='button' href={whatsapp} data-whatsapp-service={page?.name} data-whatsapp-location='commercial_hero' target='_blank' rel='noopener noreferrer'><WhatsAppIcon /> Hablemos por WhatsApp</a>
+        <p class='note'>Atención directa con John Serrano · Desde Cúcuta para Colombia</p>
+      </div>
+    </header>
+    <div class='wrap content'><slot /></div>
+    <section class='faq-band' aria-labelledby='faq-title'>
+      <div class='wrap faq-grid'>
+        <div><p class='eyebrow'>Antes de contratar</p><h2 id='faq-title'>Preguntas y condiciones</h2><p>La propuesta define lo que se entrega, cuánto cuesta y cómo se acompaña el proyecto.</p></div>
+        <div>{faqs.map(item => <details><summary>{item.question}</summary><p>{item.answer}</p></details>)}</div>
+      </div>
+    </section>
+    <section class='wrap closing' aria-labelledby='contact-title'>
+      <p class='eyebrow'>El siguiente paso</p><h2 id='contact-title'>Revisemos tu proyecto antes de elegir una solución</h2>
+      <p>{closingText}</p><a class='button' href={whatsapp} data-whatsapp-service={page?.name} data-whatsapp-location='commercial_closing' target='_blank' rel='noopener noreferrer'><WhatsAppIcon /> Consultar mi proyecto</a>
+    </section>
+    <nav class='related wrap' aria-label='Otros servicios y sectores'><h2>Servicios y experiencia por sector</h2><ul>{commercialPages.filter(entry => entry.path !== path && (draft || !entry.draft)).map(entry => <li><a href={entry.path}>{entry.name}</a></li>)}</ul></nav>
+  </main>
+</Layout>
+
+<style>
+  .commercial { font-family: 'Source Sans Pro', sans-serif; color: #13273d; }
+  .wrap { width: min(100% - 40px, 1000px); margin-inline: auto; }
+  .draft { background: #fff1ce; color: #62450a; padding: 16px 0; font-size: .95rem; }
+  .hero { background: #000814; color: #fff; padding: 36px 0 64px; border-bottom: 4px solid #007cff; }
+  .hero nav { color: #b6c9dd; margin-bottom: 48px; font-size: .95rem; }
+  .hero nav a { color: inherit; }
+  .eyebrow { font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #0055b8; margin: 0 0 18px; }
+  .hero .eyebrow { color: #82baff; }
+  h1 { max-width: 900px; font-size: clamp(2.4rem, 5vw, 3.8rem); line-height: 1.08; font-weight: 700; letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+  .intro { max-width: 760px; font-size: 1.35rem; line-height: 1.55; color: #c6d5e5; margin: 26px 0 30px; }
+  .button { display: inline-flex; gap: 10px; align-items: center; justify-content: center; background: #72e3b0; color: #000814; padding: 15px 22px; border-radius: 6px; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+  .button:hover { background: #9bf0c9; }
+  .note { color: #a2b4c9; font-size: .95rem; margin-top: 20px; }
+  .content { padding-block: 18px 64px; }
+  .content :global(section) { padding-top: 48px; }
+  h2, .content :global(h2) { font-size: clamp(1.8rem, 3vw, 2.4rem); line-height: 1.18; font-weight: 700; letter-spacing: -.02em; margin: 0 0 22px; text-wrap: balance; }
+  .content :global(h3) { font-size: 1.35rem; font-weight: 700; margin: 0 0 12px; }
+  .content :global(p), .content :global(li), .closing p, .faq-grid p { font-size: 1.15rem; line-height: 1.65; }
+  .content :global(p) { max-width: 800px; margin: 0 0 20px; }
+  .content :global(ul), .content :global(ol) { padding-left: 24px; list-style: revert; }
+  .content :global(li) { margin-bottom: 12px; }
+  .content :global(a), .related a { color: #0055b8; text-underline-offset: 4px; }
+  .content :global(.columns) { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .content :global(.case) { background: #f0f5fa; padding: 32px; border-left: 4px solid #007cff; margin-top: 48px; }
+  .content :global(.scope) { border-top: 1px solid #d6e1ec; margin-top: 48px; }
+  .faq-band { background: #f0f5fa; padding-block: 56px; }
+  .faq-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 48px; }
+  details { border-bottom: 1px solid #bdccdc; padding-block: 20px; }
+  details:first-child { border-top: 1px solid #bdccdc; }
+  summary { cursor: pointer; font-size: 1.15rem; font-weight: 700; }
+  details p { margin: 16px 0 0; }
+  .closing { padding-block: 64px; }
+  .closing p { max-width: 760px; margin-bottom: 24px; }
+  .related { padding-bottom: 64px; border-top: 1px solid #d6e1ec; padding-top: 32px; }
+  .related h2 { font-size: 1.35rem; }
+  .related ul { display: flex; gap: 16px 28px; flex-wrap: wrap; list-style: none; padding: 0; }
+  a:focus-visible, summary:focus-visible, .content :global(a:focus-visible) { outline: 3px solid #007cff; outline-offset: 5px; }
+  @media (max-width: 768px) {
+    .commercial { padding-top: 70px; }
+    .hero nav { margin-bottom: 32px; }
+    .content :global(.columns), .faq-grid { grid-template-columns: 1fr; gap: 24px; }
+    .content :global(.case) { padding: 24px; }
+    .hero { padding-bottom: 40px; }
+  }
+</style>

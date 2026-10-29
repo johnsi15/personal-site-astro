@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro'
 import Gtm from '../components/gtm.astro'
 import AdSense from '../components/adsense.astro'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts'
-const { title, description, image, datePublished, dateModified, schemaType, structuredData } = Astro.props
+const { title, description, image, datePublished, dateModified, schemaType, structuredData, noindex } = Astro.props
 
 import '@fontsource/source-sans-pro/300.css'
 import '@fontsource/source-sans-pro/400.css'
@@ -24,6 +24,7 @@ import '@fontsource/source-sans-pro/700.css'
       dateModified={dateModified}
       schemaType={schemaType}
       structuredData={structuredData}
+      noindex={noindex}
     />
     <AdSense />
   </head>
@@ -51,5 +52,9 @@ import '@fontsource/source-sans-pro/700.css'
       }
     </style>
     <script src='../helpers/pageViewFB.ts'></script>
+    <script>
+      import { initWhatsAppTracking } from '../helpers/whatsappTracking'
+      initWhatsAppTracking()
+    </script>
   </body>
 </html>

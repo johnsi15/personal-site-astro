@@ -32,6 +32,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/servicios/pagina-web-cucuta",
+      "destination": "/servicios/pagina-web-colombia",
+      "permanent": true
+    },
+    {
       "source": "/ebook",
       "destination": "https://johnserrano.co/blog/fundamentos-de-programacion-con-javascript-mi-primer-ebook"
     },

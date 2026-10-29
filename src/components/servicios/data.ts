@@ -1,6 +1,6 @@
 const WHATSAPP_NUMBER = '573106029831'
 
-const buildWhatsAppLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
+export const buildWhatsAppLink = (message: string) => `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`
 
 export const WHATSAPP_DISPLAY = '+57 310 602 9831'
 

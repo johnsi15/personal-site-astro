@@ -1,15 +1,22 @@
 ---
+import { commercialTerms, priceDescriptions } from '../../data/commercial-terms'
 const questions = [
   {
     question: '¿Cuánto cuesta un sitio web o una tienda online?',
     answer:
-      'Cada proyecto se cotiza según el número de páginas o productos, las integraciones necesarias y el alcance del acompañamiento. Después del diagnóstico recibirás una propuesta clara antes de comenzar.',
+      `${priceDescriptions.web} ${priceDescriptions.store} Los sistemas a medida tienen una referencia desde $3.000.000 COP, según alcance.`,
   },
   {
     question: '¿Cuánto tiempo toma desarrollar el proyecto?',
     answer:
-      'Depende del alcance, la cantidad de contenido y las integraciones. En la propuesta quedarán definidos el calendario, las entregas y lo que necesito de tu negocio para avanzar sin retrasos.',
+      commercialTerms.timeline,
   },
+  { question: '¿Cuál es la tarifa para trabajos por horas?', answer: commercialTerms.hourlyRates },
+  { question: '¿Cómo se paga el proyecto?', answer: commercialTerms.payment },
+  { question: '¿Cuántas rondas de ajustes incluye?', answer: commercialTerms.revisions },
+  { question: '¿Qué soporte recibo al entregar?', answer: commercialTerms.support },
+  { question: '¿Qué incluye el soporte anual y qué se cotiza aparte?', answer: commercialTerms.annualSupport },
+  { question: '¿A nombre de quién quedan el dominio y las cuentas?', answer: commercialTerms.ownership },
   {
     question: '¿Podré administrar productos o contenido?',
     answer:
@@ -18,7 +25,7 @@ const questions = [
   {
     question: '¿El dominio y el hosting están incluidos?',
     answer:
-      'Se revisa en el diagnóstico. Puedo trabajar con lo que ya tienes o recomendar las opciones adecuadas. La propuesta indicará con claridad qué está incluido y qué servicios se pagan directamente a terceros.',
+      commercialTerms.costs,
   },
   {
     question: '¿La pauta incluye gestión mensual?',

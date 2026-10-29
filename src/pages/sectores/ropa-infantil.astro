@@ -1,0 +1,26 @@
+---
+import CommercialPage from '../../layouts/CommercialPage.astro'
+import ProjectBudget from '../../components/servicios/ProjectBudget.astro'
+import { commercialFaqs } from '../../data/commercial-terms'
+const faqs = [
+  ...commercialFaqs('store'),
+  { question: '¿Cómo se organizan tallas, colores y existencias?', answer: 'Primero revisamos cómo identificas cada variante. La estructura se define con tus datos reales para evitar confundir una prenda disponible con una talla agotada. La carga inicial y cualquier sincronización se delimitan en la propuesta.' },
+]
+---
+<CommercialPage
+  title='Páginas web y tiendas para ropa infantil | John Serrano'
+  description='Una web para ropa infantil debe aclarar tallas, variantes y condiciones de compra. Referencias de trabajo: Malalakids y Amorette Kids. Consulta el alcance de tu proyecto.'
+  heading='Ropa infantil: que elegir una talla no se convierta en una conversación interminable'
+  intro='Las fotos atraen, pero la compra necesita detalles: medidas, colores, existencias y condiciones de cambio. Organicemos la información de tu marca para acompañar esa decisión desde el celular.'
+  label='Sector / Marcas de ropa infantil'
+  cta='una web o tienda para mi marca de ropa infantil'
+  question='Quiero revisar cómo presentar mis colecciones, tallas y variantes en una web.'
+  closingText='Cuéntame cómo organizas tus colecciones, tallas y colores para definir una tienda que puedas administrar.'
+  faqs={faqs}
+>
+  <section><h2>Una colección bonita necesita un catálogo comprensible</h2><p>Publicar una prenda no basta si el cliente no sabe cómo elegir la talla o qué color está disponible. Responder cada duda por mensaje consume tiempo y puede dejar la compra a medio camino.</p><p>La propuesta parte de cómo vendes hoy: por colecciones, prendas individuales o conjuntos. También revisamos cómo identificas las variantes para que el contenido publicado no prometa lo que ya no está disponible.</p></section>
+  <section class='case'><p class='eyebrow'>Referencias reales / Shopify</p><h2>Malalakids y Amorette Kids</h2><p>He trabajado en las tiendas Shopify de Malalakids y Amorette Kids. La recomendación publicada de Malalakids dice: «Quedé muy contenta con el resultado de la página de Malalakids. John hizo un gran trabajo y me gustó mucho cómo quedó el sitio».</p><ul><li><a href='https://malalakids.com/' target='_blank' rel='noopener noreferrer'>Conocer Malalakids ↗</a></li><li><a href='https://amorettekids.com/' target='_blank' rel='noopener noreferrer'>Conocer Amorette Kids ↗</a></li></ul></section>
+  <section><h2>Qué contempla una propuesta para tu marca</h2><ul><li>Estructura de colecciones y categorías que facilite explorar el catálogo.</li><li>Fichas con fotos, descripción y variantes, usando la información validada por la marca.</li><li>Espacio para guía de tallas y condiciones de compra, envío y cambios que proporcione el negocio.</li><li>Experiencia móvil y contacto por WhatsApp para las dudas que necesiten asesoría.</li><li>Si contratas una tienda: configuración de compra, pagos y envíos compatibles con la plataforma acordada.</li></ul><p>Los textos de políticas deben reflejar las condiciones reales de tu operación. El desarrollo web no sustituye su revisión legal ni incluye automáticamente fotografía de producto.</p></section>
+  <ProjectBudget type='store' />
+  <section><h2>La plataforma se elige después de entender el catálogo</h2><p>Revisa el servicio de <a href='/servicios/tienda-online'>tienda online</a> para una evaluación abierta o el de <a href='/servicios/tienda-shopify'>tienda Shopify</a> si ya estás considerando la plataforma utilizada por Malalakids y Amorette Kids.</p></section>
+</CommercialPage>
