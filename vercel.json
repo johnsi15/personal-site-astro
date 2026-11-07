@@ -1,5 +1,10 @@
 {
   "version": 2,
+  "git": {
+    "deploymentEnabled": {
+      "stage": false
+    }
+  },
   "rewrites": [
     {
       "source": "/service-worker.js",
