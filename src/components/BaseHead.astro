@@ -33,39 +33,42 @@ const toIsoDate = (value?: Date | string) => {
   return Number.isNaN(date.getTime()) ? undefined : date.toISOString()
 }
 
-const defaultStructuredData = schemaType === 'BlogPosting' ? {
-  '@context': 'https://schema.org',
-  '@type': 'BlogPosting',
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': canonicalURL,
-  },
-  headline: title,
-  image: [new URL(image, Astro.site ?? Astro.url)],
-  datePublished: toIsoDate(datePublished),
-  dateModified: toIsoDate(dateModified),
-  author: {
-    '@type': 'Person',
-    name: 'John Serrano',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'John Serrano',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://johnserrano.co/default.jpg',
-    },
-  },
-  description: description,
-} : {
-  '@context': 'https://schema.org',
-  '@type': schemaType,
-  '@id': `${canonicalURL}#webpage`,
-  url: canonicalURL,
-  name: title,
-  description,
-  inLanguage: 'es-CO',
-}
+const defaultStructuredData =
+  schemaType === 'BlogPosting'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalURL,
+        },
+        headline: title,
+        image: [new URL(image, Astro.site ?? Astro.url)],
+        datePublished: toIsoDate(datePublished),
+        dateModified: toIsoDate(dateModified),
+        author: {
+          '@type': 'Person',
+          name: 'John Serrano',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'John Serrano',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://johnserrano.co/default.jpg',
+          },
+        },
+        description: description,
+      }
+    : {
+        '@context': 'https://schema.org',
+        '@type': schemaType,
+        '@id': `${canonicalURL}#webpage`,
+        url: canonicalURL,
+        name: title,
+        description,
+        inLanguage: 'es-CO',
+      }
 ---
 
 <!-- Global Metadata -->
@@ -98,6 +101,7 @@ const defaultStructuredData = schemaType === 'BlogPosting' ? {
 {noindex && <meta name='robots' content='noindex, follow' />}
 
 <!-- Open Graph / Facebook -->
+<meta property='og:site_name' content='John Serrano' />
 <meta property='og:type' content='website' />
 <meta property='og:url' content={canonicalURL} />
 <meta property='og:title' content={title || openGraph.title} />
@@ -105,6 +109,7 @@ const defaultStructuredData = schemaType === 'BlogPosting' ? {
 <meta property='og:image' content={new URL(image, Astro.site ?? Astro.url)} />
 <meta property='fb:pages' content='323137824476732' />
 <meta property='og:locale:alternate' content='es_LA' />
+<meta name='verify-getalink' content='verify-getalink-12988' />
 
 <!-- Twitter -->
 <meta property='twitter:card' content={twitter.cardType} />
@@ -114,7 +119,4 @@ const defaultStructuredData = schemaType === 'BlogPosting' ? {
 <meta property='twitter:description' content={description} />
 <meta property='twitter:image' content={new URL(image, Astro.site ?? Astro.url)} />
 
-<script
-  type='application/ld+json'
-  set:html={JSON.stringify(structuredData || defaultStructuredData)}
-/>
+<script type='application/ld+json' set:html={JSON.stringify(structuredData || defaultStructuredData)} />
