@@ -1,0 +1,105 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import { seoStages, seoTaskIds, seoTools } from '../data/seo-playbook'
+import '@fontsource/source-sans-pro/400.css'
+import '@fontsource/source-sans-pro/600.css'
+import '@fontsource/source-sans-pro/700.css'
+import '../styles/seo-playbook.css'
+
+const toolById = new Map(seoTools.map(tool => [tool.id, tool]))
+const categories = [...new Set(seoTools.map(tool => tool.category))]
+---
+
+<!doctype html>
+<html lang='es' data-notebook-theme='dark'>
+  <head>
+    <BaseHead title='Cuaderno SEO / GEO: guía paso a paso y herramientas gratuitas | John Serrano' description='Una ruta práctica para aplicar SEO y GEO: auditoría, keywords, contenido, rendimiento y medición. Checklists y notas por proyecto, con herramientas gratuitas para empezar.' />
+    <script is:inline>
+      try { document.documentElement.dataset.notebookTheme = localStorage.getItem('seo-fieldnotes:theme') === 'light' ? 'light' : 'dark' } catch {}
+    </script>
+  </head>
+  <body class='seo-notebook'>
+    <a class='skip-link' href='#cuaderno-inicio'>Saltar al contenido</a>
+    <aside class='notebook-sidebar' aria-label='Navegación del cuaderno'>
+      <a class='notebook-brand' href='/seo-geo' aria-label='Cuaderno SEO GEO, inicio'><span class='brand-symbol' aria-hidden='true'>↗</span><span>FIELDNOTES<span class='brand-sub'>SEO / GEO PLAYBOOK</span></span></a>
+      <div class='sidebar-heading'>TU ESPACIO DE TRABAJO <span class='local-dot' title='Guardado en este navegador'></span></div>
+      <label class='sr-only' for='project-select'>Proyecto activo</label>
+      <select id='project-select'><option value=''>Sin proyecto · modo lectura</option></select>
+      <div class='project-actions'><button type='button' data-new-project>＋ Nuevo proyecto</button><button type='button' id='edit-project' disabled>Editar</button></div>
+      <nav aria-label='Etapas de la guía'>
+        <a class='overview-link' href='#cuaderno-inicio'><span aria-hidden='true'>⌂</span> Tu hoja de ruta <span>↗</span></a>
+        <p class='sidebar-heading'>EL MÉTODO <span>12 ETAPAS</span></p>
+        <ol class='stage-nav'>
+          {seoStages.map((stage, i) => <li><a href={`#${stage.id}`} data-stage-nav={stage.id}><span class='nav-number'>{String(i + 1).padStart(2, '0')}</span><span>{['Contexto y objetivos', 'Configura la medición', 'Auditoría técnica', 'Keywords e intención', 'Arquitectura web', 'Estrategia de contenido', 'SEO on-page', 'Schema y entidades', 'Velocidad y experiencia', 'Autoridad y SEO local', 'GEO y búsqueda con IA', 'Medir y volver a empezar'][i]}</span><span class='nav-complete' aria-label='Etapa completada' hidden>✓</span></a></li>)}
+        </ol>
+        <div class='sidebar-bottom-links'><a href='#herramientas'>◈ <span>Biblioteca de herramientas</span><span>{seoTools.length}</span></a><a href='#referencias'>↗ <span>Fuentes y lecturas</span></a></div>
+      </nav>
+      <div class='sidebar-footer'><span>Un proyecto. Un paso a la vez.</span><a href='/'>← johnserrano.co</a></div>
+    </aside>
+
+    <div class='notebook-workspace'>
+      <header class='notebook-topbar'>
+        <span><span class='topbar-muted'>Cuadernos /</span> SEO & GEO</span>
+        <div class='topbar-actions'><span class='public-label'><span aria-hidden='true'>◎</span> Guía pública</span><button type='button' id='theme-toggle' aria-label='Cambiar a tema claro'>☼ <span>Tema claro</span></button></div>
+      </header>
+      <main id='cuaderno-inicio'>
+        <section class='notebook-intro' aria-labelledby='page-title'>
+          <div class='eyebrow'><span class='accent-line'></span> DE LA TEORÍA A TU PRÓXIMA ACCIÓN</div>
+          <div class='intro-heading'><h1 id='page-title'>Menos pestañas.<br />Más <em>dirección.</em></h1><span class='edition'>CUADERNO 001<br /><strong>SEO + GEO</strong><br />EDICIÓN EN ESPAÑOL</span></div>
+          <p class='intro-copy'>Tu ruta para hacer visible un proyecto en buscadores y respuestas de IA. Qué revisar, con qué herramienta y cómo saber si puedes seguir.</p>
+          <div class='intro-tags'><span>✓ Primero, herramientas gratis</span><span>✓ A tu ritmo</span><span>✓ Apuntes por proyecto</span></div>
+        </section>
+
+        <section class='progress-panel' aria-labelledby='progress-title'>
+          <div class='progress-main'><div><p class='eyebrow'>TU PUNTO DE PARTIDA</p><h2 id='progress-title'>Primero, elige un proyecto.</h2><p id='project-description'>Puedes leer toda la guía sin crear uno.</p></div><div class='progress-number'><strong id='progress-percent'>0</strong><span>%<small>del checklist</small></span></div></div>
+          <progress id='overall-progress' value='0' max={seoTaskIds.length} aria-label='Tareas completadas'>0 de {seoTaskIds.length}</progress>
+          <div class='progress-bottom'><span id='progress-caption'>0 de {seoTaskIds.length} tareas · tu avance no es una puntuación SEO</span><a class='next-action' id='next-action' href='#contexto'>Comenzar la ruta <span aria-hidden='true'>↗</span></a></div>
+        </section>
+        <div class='storage-notice'><span aria-hidden='true'>⌁</span><p><strong>La guía es pública. Tus apuntes son locales.</strong> Se guardan solo en este navegador, no en el servidor. No incluyas secretos. Exporta un respaldo antes de cambiar de dispositivo o borrar datos.</p></div>
+        <div class='backup-bar'><span id='save-status' role='status' aria-live='polite'>Modo lectura · crea un proyecto para guardar tu avance</span><div><button type='button' id='export-notebook'>↓ Exportar JSON</button><button type='button' id='import-notebook'>↑ Importar</button><input id='import-file' type='file' accept='.json,application/json' hidden /></div></div>
+        <p id='notebook-error' class='error-message' role='alert' hidden></p>
+        <noscript><p class='error-message'>Puedes consultar la guía y todos sus enlaces sin JavaScript. Para proyectos, notas, filtros y respaldos necesitas activarlo.</p></noscript>
+
+        <section class='roadmap' aria-labelledby='roadmap-title'>
+          <div class='section-heading'><div><p class='eyebrow'>01 / LA HOJA DE RUTA</p><h2 id='roadmap-title'>Empieza aquí. Vuelve cuando lo necesites.</h2></div><span class='section-aside'>12 etapas · 3 pilares + medición</span></div>
+          <p class='section-description'>Sigue el orden la primera vez. Después, entra directamente en la etapa que necesite tu proyecto. Las casillas registran trabajo revisado, no resultados automáticos.</p>
+          <p class='method-primer'><strong>La brújula:</strong> el SEO combina <strong>técnica</strong> (que puedan acceder y entender tu web), <strong>contenido</strong> (resolver una necesidad) y <strong>autoridad</strong> (ganar confianza). GEO amplía el foco a la presencia en respuestas generativas. La medición te ayuda a decidir qué mejorar, sin garantizar posiciones ni citas.</p>
+          <div class='stage-list'>
+            {seoStages.map((stage, i) => (
+              <details class='stage-card' id={stage.id} open={i === 0} data-stage={stage.id}>
+                <summary><span class='stage-index'>{String(i + 1).padStart(2, '0')}</span><span class='stage-heading'><span class='stage-meta'>{stage.pillar}<span>·</span>{stage.time}</span><h3>{stage.title}</h3><span class='stage-subtitle'>{stage.subtitle}</span></span><span class='stage-count' data-stage-count={stage.id}>0/3</span><span class='expand-icon' aria-hidden='true'>＋</span></summary>
+                <div class='stage-content'>
+                  <p class='stage-why'>{stage.why}</p>
+                  <div class='task-list'>{stage.tasks.map((task, ti) => <label class='task-row'><input type='checkbox' data-task={`${stage.id}:${task.id}`} disabled /><span><strong><span class='task-number'>{ti + 1}.</span> {task.title}</strong><span class='task-detail'>{task.detail}</span></span></label>)}</div>
+                  <div class='stage-tools'><span class='mini-label'>TU KIT PARA ESTA ETAPA</span><div>{stage.tools.map(id => { const tool = toolById.get(id)!; return <a href={`#tool-${id}`} class='tool-chip'>{tool.name} <span aria-hidden='true'>↗</span></a> })}</div></div>
+                  <div class='stage-result'><span aria-hidden='true'>✓</span><p><strong>Puedes seguir cuando…</strong>{stage.done}</p></div>
+                  <p class='stage-warning'><strong>Ten en cuenta</strong> {stage.warning}</p>
+                  <div class='notes-heading'><label for={`notes-${stage.id}`}>Tus apuntes <span>solo en este navegador</span></label><button type='button' data-template={stage.id} disabled>＋ Insertar plantilla</button></div>
+                  <textarea id={`notes-${stage.id}`} data-notes={stage.id} maxlength='20000' rows='4' placeholder='Crea un proyecto para guardar hallazgos, URLs, evidencias y tu siguiente acción…' disabled></textarea>
+                  <div class='stage-footer'><span>Guardado local al escribir · máximo 20.000 caracteres</span><a href={`https://www.youtube.com/watch?v=9fDdxxrJUHA&t=${stage.video}s`} target='_blank' rel='noopener noreferrer'>Ver tema en el vídeo <span aria-hidden='true'>↗</span></a></div>
+                </div>
+              </details>
+            ))}
+          </div>
+        </section>
+
+        <section id='herramientas' class='tools-section' aria-labelledby='tools-title'>
+          <div class='section-heading'><div><p class='eyebrow'>02 / MENOS HERRAMIENTAS, MEJOR ELEGIDAS</p><h2 id='tools-title'>Tu caja de herramientas.</h2></div><span class='section-aside'>{seoTools.length} recursos, con contexto</span></div>
+          <p class='section-description'>Empieza con Search Console, PageSpeed y un rastreador. Añade herramientas cuando resuelvan un problema concreto, no por acumular suscripciones.</p>
+          <div class='tool-filters'><label class='search-field'><span aria-hidden='true'>⌕</span><span class='sr-only'>Buscar herramienta</span><input id='tool-search' type='search' placeholder='Busca una herramienta o una tarea…' /></label><label><span class='sr-only'>Filtrar por categoría</span><select id='tool-category'><option value=''>Todas las categorías</option>{categories.map(category => <option>{category}</option>)}</select></label><label><span class='sr-only'>Filtrar por acceso</span><select id='tool-access'><option value=''>Cualquier acceso</option><option value='free'>Gratis o freemium</option><option>Gratis</option><option>Freemium</option><option>Prueba / pago</option><option>Self-hosted</option></select></label><label class='favorites-filter'><input id='favorites-only' type='checkbox' /> Mis favoritas</label></div>
+          <p class='tool-results' id='tool-results' role='status'>{seoTools.length} herramientas · planes y límites pueden cambiar</p>
+          <div class='tool-grid'>{seoTools.map((tool, i) => <article class='tool-card' id={`tool-${tool.id}`} data-tool={tool.id} data-category={tool.category} data-access={tool.access} data-search={`${tool.name} ${tool.category} ${tool.use}`}><div class='tool-card-top'><span class:list={['access-badge', { 'free-badge': tool.access === 'Gratis' || tool.access === 'Freemium' }]}>{tool.access}</span><button type='button' class='favorite-button' data-favorite={tool.id} aria-label={`Guardar ${tool.name} en favoritas`} aria-pressed='false' disabled>☆</button></div><span class='tool-category'>{String(i + 1).padStart(2, '0')} / {tool.category}</span><h3><a href={tool.url} target='_blank' rel='noopener noreferrer'>{tool.name}<span aria-hidden='true'>↗</span></a></h3><p>{tool.use}</p><div class='tool-limit'><strong>Antes de usarla</strong><p>{tool.limit}</p></div>{tool.verified && <span class='verified-note'>Página del proveedor consultada · 12 nov 2026</span>}</article>)}</div>
+          <p id='tools-empty' class='empty-tools' hidden>No hay herramientas con estos filtros. Prueba otro término o desactiva «Mis favoritas».</p>
+          <p class='pricing-note'>“Freemium” indica funciones gratuitas con límites, no acceso completo. Las opciones sin verificación fechada no tienen cuotas garantizadas aquí. Confirma siempre condiciones y precios en el proveedor.</p>
+        </section>
+
+        <section class='openseo-note' aria-labelledby='openseo-title'><span class='eyebrow'>EN TU RADAR / SELF-HOSTED</span><h2 id='openseo-title'>OpenSEO en Cloudflare: sí, pero con presupuesto consciente.</h2><p>Es una herramienta complementaria, no un requisito para seguir esta guía. La documentación pide Node 22.6+, pnpm, Cloudflare con R2 habilitado y una cuenta DataForSEO. Activar R2 requiere un método de pago incluso dentro de su capa gratuita.</p><p>En Workers Free, el límite de peticiones del Workflow detiene el rastreo alrededor de 40 páginas y puede afectar la configuración de visibilidad IA. Evalúa Workers Paid o Docker si necesitas más. Crea la cuenta administradora inmediatamente después de desplegar, o evalúa Cloudflare Access.</p><a href='https://github.com/every-app/open-seo/blob/main/docs/SELF_HOSTING_CLOUDFLARE.md' target='_blank' rel='noopener noreferrer'>Abrir guía oficial de instalación ↗</a><span class='openseo-disclaimer'>Pendiente de implementar · no se ha desplegado ni conectado ningún servicio.</span></section>
+
+        <section id='referencias' class='references-section' aria-labelledby='references-title'><p class='eyebrow'>03 / APRENDER CON CRITERIO</p><h2 id='references-title'>Fuentes, no fórmulas mágicas.</h2><div class='reference-grid'><a href='https://www.youtube.com/watch?v=9fDdxxrJUHA' target='_blank' rel='noopener noreferrer'><span>01 / VÍDEO APORTADO</span><h3>El curso que inició este cuaderno ↗</h3><p>Accesos por tema en cada etapa, basados en los capítulos que compartiste. La guía es una síntesis propia, no una transcripción ni una validación de cada afirmación del vídeo.</p></a><a href='https://es.semrush.com/blog/google-seo-tools/' target='_blank' rel='noopener noreferrer'><span>02 / LECTURA APORTADA</span><h3>Herramientas de Google, paso a paso ↗</h3><p>Una referencia útil, con promoción comercial. Su recomendación de Mobile-Friendly Test está obsoleta: usa DevTools y pruebas reales en móvil; la herramienta fue retirada.</p></a><a href='https://developers.google.com/search/docs/fundamentals/seo-starter-guide?hl=es' target='_blank' rel='noopener noreferrer'><span>03 / FUENTE PRIMARIA</span><h3>Guía SEO de Google Search Central ↗</h3><p>Fundamentos de rastreo, organización, contenido e indexación. Tu referencia para contrastar recomendaciones y evitar mitos.</p></a><a href='https://developers.google.com/search/docs/appearance/ai-features?hl=es' target='_blank' rel='noopener noreferrer'><span>04 / SEO Y FUNCIONES IA</span><h3>Qué pide Google para sus respuestas IA ↗</h3><p>No exige optimizaciones especiales, llms.txt ni schema adicional para AI Overviews o AI Mode. La elegibilidad no garantiza aparecer ni ser citado.</p></a></div><div class='reference-extra'><a href='https://developers.google.com/search/blog/2023/12/google-search-console-mobile-usability' target='_blank' rel='noopener noreferrer'>Retirada del test móvil ↗</a><a href='https://developers.google.com/search/docs/essentials/spam-policies?hl=es' target='_blank' rel='noopener noreferrer'>Políticas de spam y enlaces ↗</a><a href='https://web.dev/articles/vitals?hl=es' target='_blank' rel='noopener noreferrer'>Core Web Vitals ↗</a></div></section>
+        <footer class='notebook-footer'><span>FIELDNOTES <span>/</span> Una metodología, no una promesa de rankings.</span><a href='#cuaderno-inicio'>Volver al inicio ↑</a></footer>
+      </main>
+    </div>
+    <dialog id='project-dialog' aria-labelledby='dialog-title'><form id='project-form'><div class='dialog-top'><p class='eyebrow'>TU CUADERNO DE TRABAJO</p><button type='button' id='close-dialog' aria-label='Cerrar'>×</button></div><h2 id='dialog-title'>Un proyecto, un punto de partida.</h2><p>El progreso y los apuntes se mantendrán separados para cada web.</p><label for='project-name'>Nombre del proyecto</label><input id='project-name' name='name' required maxlength='80' placeholder='Ej. Mi sitio personal' /><label for='project-url'>Web del proyecto <span>(opcional)</span></label><input id='project-url' name='url' maxlength='2048' placeholder='https://ejemplo.com' /><p id='project-form-error' role='alert' class='error-message' hidden></p><div class='dialog-actions'><button type='button' id='delete-project' class='danger-button' hidden>Eliminar proyecto</button><button type='submit' class='primary-button'>Guardar proyecto ↗</button></div><small>Solo en este navegador. Hasta 40 proyectos.</small></form></dialog>
+    <script src='../helpers/seo-playbook-client.ts'></script>
+  </body>
+</html>
